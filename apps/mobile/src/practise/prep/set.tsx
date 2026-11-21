@@ -1,26 +1,29 @@
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { Bookmark } from "lucide-react-native";
-import { Pressable, View } from "react-native";
+import { View } from "react-native";
 
-import { Button, EmptyState, RowList, Section, T } from "@/ds";
-import { Swap } from "@/motion";
+import { Label, QuietEmpty, Stone, T } from "@/ds";
+import { Press, Swap } from "@/motion";
 import { Rich } from "@/study/rich";
-import { space, useTheme } from "@/theme";
+import { layout, space, useTheme } from "@/theme";
 import { api } from "@/auth";
 import { haptic } from "@/lib/haptics";
 import { play, useLoad, useMove } from "../api";
 import type { PrepSet } from "../contract";
-import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StepStrip, Verdict } from "../frame";
-import { Story, AnswerRow } from "../parts";
+import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StepStrip } from "../frame";
+import { Story } from "../parts";
+import { stepFromPick } from "../player/adapt";
+import { useStepPlay } from "../player/step";
+import type { StepKey } from "../player/types";
 import { useReactions } from "../reactions";
 import type { PrepChecked, PrepQView } from "../types";
 
-const HOW = ["One question at a time. Tap your answer to check it.", "The why comes after each answer. Questions you miss come back first next time."];
+const HOW = ["One question at a time. Choose your answer, then press **Check**.", "The why comes after each answer. Questions you miss come back first next time."];
 const ROMAN = ["I", "II", "III", "IV", "V", "VI"];
 
 /** The question body: passage, statements, two lists, then the stem. */
-export function QuestionBody({ q }: { q: PrepQView }) {
+export function QuestionBody({ q, bare }: { q: PrepQView; /** Leave the stem out (the player draws it as the question). */ bare?: boolean }) {
   const c = useTheme();
   return (
     <View style={{ gap: space[4] }}>
@@ -29,7 +32,7 @@ export function QuestionBody({ q }: { q: PrepQView }) {
           <Rich text={q.passage} v="reading" />
         </Story>
       ) : null}
-      <Rich text={q.stem} v="h3" />
+      {bare ? null : <Rich text={q.stem} v="h3" />}
       {q.statements?.length ? (
         <View style={{ gap: space[2] }}>
           {q.statements.map((s, k) => (
@@ -43,11 +46,11 @@ export function QuestionBody({ q }: { q: PrepQView }) {
         </View>
       ) : null}
       {q.lists ? (
-        <View style={{ flexDirection: "row", gap: space[3], borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.hairline, paddingVertical: space[3] }}>
+        <View style={{ flexDirection: "row", gap: space[3], backgroundColor: c.card, borderRadius: layout.radius, padding: space[4] }}>
           {(["left", "right"] as const).map((side) => (
             <View key={side} style={{ flex: 1, gap: space[2] }}>
-              <T v="caption" tone="muted">
-                {side === "left" ? "LIST I" : "LIST II"}
+              <T v="label" tone="muted">
+                {side === "left" ? "List I" : "List II"}
               </T>
               {q.lists![side].map((x, k) => (
                 <T key={k} v="small">
@@ -65,12 +68,9 @@ export function QuestionBody({ q }: { q: PrepQView }) {
 /** One Exam Prep set: a question per screen, checked on the server (prep.check). */
 export function PrepSetScreen() {
   const p = useLocalSearchParams<{ subject?: string; topic?: string; set?: string; list?: string }>();
-  const c = useTheme();
   const mv = useMove();
   const react = useReactions();
   const [i, setI] = React.useState(0);
-  const [pick, setPick] = React.useState<number | null>(null);
-  const [res, setRes] = React.useState<PrepChecked | null>(null);
   const [marks, setMarks] = React.useState<("ok" | "miss" | null)[]>([]);
   const [missed, setMissed] = React.useState<{ q: PrepQView; r: PrepChecked }[]>([]);
   const started = React.useRef(0);
@@ -104,7 +104,7 @@ export function PrepSetScreen() {
   if (!set.questions.length) {
     return (
       <GameFrame testID="prep-set" title={set.title}>
-        <EmptyState mood={p.list === "wrong" ? "clear" : "empty"} title={p.list === "wrong" ? "Nothing to practise again" : p.list === "saved" ? "No saved questions" : "No questions here yet"} body={p.list ? "Questions show up here as you answer and save them." : "Try another topic."} />
+        <QuietEmpty title={p.list === "wrong" ? "Nothing to practise again" : p.list === "saved" ? "No saved questions" : "No questions here yet"} body={p.list ? "Questions show up here as you answer and save them." : "Try another topic."} />
       </GameFrame>
     );
   }
@@ -114,49 +114,72 @@ export function PrepSetScreen() {
       <GameFrame testID="prep-set" title={set.title} thumb={<EndThumb again={again} againLabel={p.list ? "Another set" : nextSet ? "Next set" : "Back to the topics"} extra={p.list || !nextSet ? undefined : { label: "Topics", onPress: () => router.back() }} />}>
         <EndPanel kicker="Set done" score={`${right}`} scoreOf={`of ${set.questions.length}`} right={right} total={set.questions.length} line={right === set.questions.length ? "Every one right." : "The ones you missed come back first next time."}>
           {missed.length ? (
-            <Section title="Look again">
-              <RowList>
-                {missed.map(({ q: m, r }) => (
-                  <View key={m.id} style={{ paddingVertical: space[3], gap: space[1] }}>
-                    <Rich text={m.stem} v="small" tone="muted" />
-                    <T v="bodyStrong">{m.options[r.answer]}</T>
-                    <Rich text={r.explanation} v="small" />
-                  </View>
-                ))}
-              </RowList>
-            </Section>
+            <View style={{ gap: space[2] }}>
+              <Label>Look again</Label>
+              {missed.map(({ q: m, r }) => (
+                <Stone key={m.id} style={{ gap: space[1] }}>
+                  <Rich text={m.stem} v="small" tone="muted" />
+                  <T v="bodyStrong">{m.options[r.answer]}</T>
+                  <Rich text={r.explanation} v="small" />
+                </Stone>
+              ))}
+            </View>
           ) : null}
         </EndPanel>
       </GameFrame>
     );
   }
 
-  const isSaved = savedIds.includes(q.id);
+  return (
+    <PrepQuestion
+      key={set.id}
+      set={set}
+      q={q}
+      i={i}
+      marks={marks}
+      saved={savedIds.includes(q.id)}
+      onSave={(want) => setSaved(want ? [...savedIds, q.id] : savedIds.filter((x) => x !== q.id))}
+      onChecked={(r) => {
+        setMarks((m) => [...m, r.correct ? "ok" : "miss"]);
+        if (!r.correct) setMissed((x) => [...x, { q, r }]);
+        react.answer(r.correct);
+      }}
+      onNext={() => setI(i + 1)}
+      error={mv.error}
+      run={mv.run}
+      started={started}
+    />
+  );
+}
+
+/** One question of a set, in the shared player: choose, Check (the server grades it), the verdict, then the why. */
+function PrepQuestion({ set, q, i, marks, saved, onSave, onChecked, onNext, error, run, started }: { set: PrepSet; q: PrepQView; i: number; marks: ("ok" | "miss" | null)[]; saved: boolean; onSave: (want: boolean) => void; onChecked: (r: PrepChecked) => void; onNext: () => void; error: string | null; run: <T>(fn: () => Promise<T>) => Promise<T | null>; started: React.RefObject<number> }) {
+  const c = useTheme();
+  const last = i + 1 >= set.questions.length;
   const toggleSave = async () => {
-    const want = !isSaved;
-    setSaved(want ? [...savedIds, q.id] : savedIds.filter((x) => x !== q.id));
+    const want = !saved;
+    onSave(want);
     haptic.select();
     const r = await play<{ ok: boolean }>("prep", "save", { id: q.id, saved: want }).catch(() => ({ ok: false }));
-    if (!r.ok) setSaved(savedIds);
+    if (!r.ok) onSave(!want);
   };
-  const choose = async (j: number) => {
-    if (res || mv.pending) return;
-    setPick(j);
-    const r = await mv.run(() => play<PrepChecked>("prep", "check", { id: q.id, choice: j, ms: Date.now() - started.current }));
-    if (!r) {
-      setPick(null);
-      return;
-    }
-    setRes(r);
-    setMarks((m) => [...m, r.correct ? "ok" : "miss"]);
-    if (!r.correct) setMissed((x) => [...x, { q, r }]);
-    react.answer(r.correct);
-  };
-  const next = () => {
-    setI(i + 1);
-    setPick(null);
-    setRes(null);
-  };
+  const player = useStepPlay({
+    step: stepFromPick(q.id, q.stem, q.options),
+    resetKey: q.id,
+    seed: i,
+    retry: false,
+    nextLabel: last ? "Finish the set" : "Next question",
+    onNext,
+    check: async (ids) => {
+      const j = Number(ids[0]);
+      const r = await run(() => play<PrepChecked>("prep", "check", { id: q.id, choice: j, ms: Date.now() - started.current }));
+      if (!r) return null;
+      onChecked(r);
+      const options: StepKey["options"] = {};
+      q.options.forEach((_, k) => (options[String(k)] = { grade: k === r.answer ? "best" : "poor" }));
+      return { options, explanation: { whyCorrect: r.explanation } };
+    },
+  });
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={i} total={set.questions.length} marks={marks} />
@@ -164,25 +187,20 @@ export function PrepSetScreen() {
         left={`Question ${i + 1} of ${set.questions.length}`}
         right={
           set.canSave ? (
-            <Pressable accessibilityRole="button" accessibilityLabel={isSaved ? "Saved. Tap to unsave" : "Save this question"} accessibilityState={{ selected: isSaved }} onPress={() => void toggleSave()} hitSlop={10} testID="prep-save">
-              <Bookmark size={20} color={c.ink} fill={isSaved ? c.ink : "transparent"} />
-            </Pressable>
+            <Press accessibilityRole="button" accessibilityLabel={saved ? "Saved. Tap to unsave" : "Save this question"} accessibilityState={{ selected: saved }} onPress={() => void toggleSave()} hitSlop={12} scale={0.85} squish testID="prep-save">
+              <Bookmark size={20} color={c.onField} fill={saved ? c.onField : "transparent"} />
+            </Press>
           ) : undefined
         }
       />
     </View>
   );
   return (
-    <GameFrame testID="prep-set" title={set.title} howTo={HOW} score={`${marks.filter((m) => m === "ok").length}`} hud={hud} confirmLeave={i > 0} thumb={res ? <Button label={i + 1 >= set.questions.length ? "Finish the set" : "Next question"} onPress={next} testID="prep-next" /> : undefined}>
+    <GameFrame testID="prep-set" title={set.title} howTo={HOW} score={`${marks.filter((m) => m === "ok").length}`} hud={hud} confirmLeave={i > 0} thumb={player.thumb} over={player.over}>
       <Swap k={q.id} style={{ gap: space[4] }}>
-        <QuestionBody q={q} />
-        <View style={{ gap: space[3] }}>
-          {q.options.map((o, j) => (
-            <AnswerRow key={j} index={j} text={o} testID={`prep-option-${j}`} disabled={!!res || mv.pending} state={!res ? (pick === j ? "picked" : "idle") : j === res.answer ? "right" : j === pick ? "wrong" : "dim"} onPress={() => void choose(j)} />
-          ))}
-        </View>
-        <MoveError text={mv.error} />
-        {res ? <Verdict right={res.correct} why={res.explanation} seed={i} /> : null}
+        <QuestionBody q={q} bare />
+        {player.body}
+        <MoveError text={error} />
       </Swap>
     </GameFrame>
   );

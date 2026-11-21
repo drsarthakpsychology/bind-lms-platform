@@ -1,7 +1,8 @@
 import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 
-import { EmptyState } from "@/ds";
+import { QuietEmpty } from "@/ds";
+import { accentFor, AccentProvider } from "../accents";
 import { GameFrame } from "../frame";
 import { BlitzGame } from "./blitz";
 import { ComorbidGame } from "./comorbid";
@@ -28,10 +29,15 @@ export const GAMES: Record<string, React.ComponentType> = {
 export function GameRoute() {
   const { id = "" } = useLocalSearchParams<{ id: string }>();
   const G = GAMES[String(id)];
-  if (G) return <G />;
+  if (G)
+    return (
+      <AccentProvider value={accentFor(String(id))}>
+        <G />
+      </AccentProvider>
+    );
   return (
     <GameFrame title="Game">
-      <EmptyState mood="missing" title="No game by that name" body="Go back to Practise and pick one from the list." />
+      <QuietEmpty title="No game by that name" body="Go back to Practise and pick one from the list." />
     </GameFrame>
   );
 }

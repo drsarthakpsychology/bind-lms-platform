@@ -9,7 +9,7 @@ import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { play, saveCase, useMove, useTool } from "../api";
-import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
+import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudBar, HudLine, HudWord, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
 import { Story, Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import { ESC_PENALTY_S, ESC_STAGE, TEAM_LIMITS, type EscDoor, type EscResult, type EscRoomCard, type EscTeamView, type RaceRow, type TeamJoin, type TeamListItem } from "../types";
@@ -161,7 +161,7 @@ export function EscapeGame() {
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={Math.min(st.stage, v.doors - 1)} total={v.doors} marks={v.stages.map((_, k) => (k < st.stage ? "ok" : null))} />
-      <HudLine left={`Door ${Math.min(st.stage + (opened ? 0 : 1), v.doors)} of ${v.doors}${v.door ? ` · ${ESC_STAGE[v.door.stage]}` : ""}`} right={<T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20 }}>{mmss(elapsed)}</T>} />
+      <HudLine left={`Door ${Math.min(st.stage + (opened ? 0 : 1), v.doors)} of ${v.doors}${v.door ? ` · ${ESC_STAGE[v.door.stage]}` : ""}`} right={<HudWord accessibilityRole="timer">{mmss(elapsed)}</HudWord>} />
     </View>
   );
   return (
@@ -419,7 +419,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={Math.min(st.stage, room.doors - 1)} total={room.doors} marks={room.stages.map((_, k) => (k < st.stage ? "ok" : null))} />
-      <HudLine left={`Door ${Math.min(stage + 1, room.doors)} of ${room.doors}${room.door ? ` · ${ESC_STAGE[room.door.stage]}` : ""}`} right={<T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20 }} accessibilityRole="timer">{mmss(ms)}</T>} />
+      <HudLine left={`Door ${Math.min(stage + 1, room.doors)} of ${room.doors}${room.door ? ` · ${ESC_STAGE[room.door.stage]}` : ""}`} right={<HudWord accessibilityRole="timer">{mmss(ms)}</HudWord>} />
     </View>
   );
   return (

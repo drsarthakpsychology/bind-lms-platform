@@ -1,21 +1,23 @@
 import { router } from "expo-router";
-import { ExternalLink, Lock, Trophy } from "lucide-react-native";
+import { ArrowRight, BookOpenCheck, ExternalLink, FileText, Flame as FlameIcon, ListChecks, Lock, Sparkles, Timer, Trophy } from "lucide-react-native";
 import * as React from "react";
 import { openLink } from "@/lib/open";
-import { Pressable, View } from "react-native";
+import { View } from "react-native";
 
-import { EmptyState, Hero, IconDot, LoadError, Row, RowList, Screen, Section, Skeleton, StillTrying, T } from "@/ds";
+import { FieldCard, IconDot, Label, Pebbles, QuietEmpty, Row, RowList, Screen, Skeleton, StillTrying, Stone, T } from "@/ds";
+import { Enter, Press, ProgressRing, RollingNumber } from "@/motion";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { recentPractise, recentPrep } from "@/lib/recent";
 import { go } from "@/api/prefetch";
 import { hrefFor } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
-import { space, useTheme } from "@/theme";
+import { fonts, space, useTheme } from "@/theme";
+import { accentFor, AccentProvider } from "./accents";
 import { useRead } from "./api";
 import { type Icon } from "./catalog";
-import type { PractiseHubData, PractiseRow, PrepHome, PrepSubject } from "./contract";
-import { Stagger } from "./fx";
+import type { PractiseHubData, PractiseRow, PrepHome, XpShop } from "./contract";
+import { Emblem, loadLine } from "./frame";
 import { EntryIcon } from "./icons";
 
 /** The server's row id to the app screen and its icon. */
@@ -83,6 +85,7 @@ export function pickRows(rows: PractiseRow[], opened: string[], skip: Set<string
     .map((x) => x.r);
 }
 
+/** A plain list of rows (the boards). */
 export function PractiseRows({ rows, testPrefix = "practise" }: { rows: PractiseRow[]; testPrefix?: string }) {
   const c = useTheme();
   return (
@@ -90,7 +93,7 @@ export function PractiseRows({ rows, testPrefix = "practise" }: { rows: Practise
       {rows.map((r) => {
         const own = APP[r.id];
         const trailing = r.locked ? <Lock size={16} color={c.muted} /> : r.play === "web" ? <ExternalLink size={16} color={c.muted} /> : r.trailing ? (
-          <T v="caption" tone="link">
+          <T v="caption" tone="muted">
             {r.trailing}
           </T>
         ) : undefined;
@@ -100,168 +103,369 @@ export function PractiseRows({ rows, testPrefix = "practise" }: { rows: Practise
   );
 }
 
-function SeeAll({ onPress, testID, label = "See all" }: { onPress: () => void; testID: string; label?: string }) {
+/* ------------------------------------------------------------- the ladder */
+
+export type LevelId = "basics" | "apply" | "cases" | "decisions" | "advanced";
+
+/** The five levels, in order: what the student does at each. One path, not a list of tool names. */
+export const LEVELS: { id: LevelId; name: string; line: string }[] = [
+  { id: "basics", name: "Basics", line: "Terms, criteria and fast facts." },
+  { id: "apply", name: "Apply", line: "Name the finding. Tell look-alikes apart." },
+  { id: "cases", name: "Cases", line: "Read a whole patient and reason it through." },
+  { id: "decisions", name: "Decisions", line: "Choose what to do next, and see what follows." },
+  { id: "advanced", name: "Advanced", line: "Perform: out loud, in writing, under uncertainty." },
+];
+
+/** Which level each tool and game sits on (by the server's row id). Anything new the server sends lands in Advanced. */
+const LEVEL_OF: Record<string, LevelId> = {
+  terms: "basics",
+  blitz: "basics",
+  sort: "basics",
+  "mse-lab": "apply",
+  duel: "apply",
+  rx: "apply",
+  detective: "apply",
+  comorbid: "apply",
+  daily: "cases",
+  "two-minute": "cases",
+  formulation: "cases",
+  escape: "cases",
+  landmark: "cases",
+  wwyd: "decisions",
+  ward: "decisions",
+  ethics: "decisions",
+  "out-of-depth": "decisions",
+  osce: "advanced",
+  judgment: "advanced",
+  mse: "advanced",
+  "weak-spots": "advanced",
+};
+export const levelOf = (id: string): LevelId => LEVEL_OF[id] ?? "advanced";
+
+/** The hub's rows by level, in the server's order inside each. The daily case leads the screen, so it is left out. */
+export function byLevel(s: PractiseHubData): Record<LevelId, PractiseRow[]> {
+  const out: Record<LevelId, PractiseRow[]> = { basics: [], apply: [], cases: [], decisions: [], advanced: [] };
+  for (const r of [...s.cases, ...s.games]) if (r.id !== "daily") out[levelOf(r.id)].push(r);
+  for (const k of Object.keys(out) as LevelId[]) out[k].sort((a, b) => Number(a.locked) - Number(b.locked));
+  return out;
+}
+
+/** The words for a tile's state, or null. */
+function stateWord(r: PractiseRow): string | null {
+  if (r.locked) return "Opens soon";
+  if (r.trailing === "In progress") return "Half way";
+  return r.trailing;
+}
+
+/**
+ * One tool or game on the hub: a stone with its emblem in its own colour, its
+ * name and one line. It grows into the screen it opens and settles back when
+ * you return.
+ */
+export function ToolTile({ row, i = 0, testPrefix = "practise" }: { row: PractiseRow; i?: number; testPrefix?: string }) {
+  const c = useTheme();
+  const own = APP[row.id];
+  const word = stateWord(row);
+  const native = row.play === "native" && !row.locked;
+  const body = (
+    <View style={{ gap: space[3], minHeight: 132, opacity: row.locked ? 0.55 : 1 }}>
+      <View style={{ flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between" }}>
+        <Emblem icon={own?.icon ?? "target"} size={44} i={i} />
+        {row.locked ? <Lock size={16} color={c.muted} /> : row.play === "web" ? <ExternalLink size={16} color={c.muted} /> : null}
+      </View>
+      <View style={{ gap: 2 }}>
+        <T v="bodyStrong" numberOfLines={2}>
+          {row.title}
+        </T>
+        {word ? (
+          <T v="caption" style={{ color: row.locked ? c.muted : c.link, fontFamily: fonts.bold }}>
+            {word}
+          </T>
+        ) : row.meta ? (
+          <T v="small" tone="muted" numberOfLines={2}>
+            {row.meta}
+          </T>
+        ) : null}
+      </View>
+    </View>
+  );
+  const label = [row.title, word ?? row.meta, row.play === "web" && !row.locked ? "Opens on the website" : null].filter(Boolean).join(". ");
   return (
-    <Pressable onPress={onPress} accessibilityRole="link" testID={testID} hitSlop={12} style={{ minHeight: 44, justifyContent: "center", paddingLeft: space[2] }}>
-      <T v="small" tone="link">
-        {label}
-      </T>
-    </Pressable>
+    <AccentProvider value={accentFor(row.id)}>
+      {native ? (
+        <Stone grow={() => openRow(row)} accessibilityLabel={label} testID={`${testPrefix}-${row.id}`} style={{ flex: 1 }}>
+          {body}
+        </Stone>
+      ) : (
+        <Stone onPress={() => openRow(row)} accessibilityLabel={label} testID={`${testPrefix}-${row.id}`} style={{ flex: 1 }}>
+          {body}
+        </Stone>
+      )}
+    </AccentProvider>
   );
 }
 
-const pctRight = (s: PrepSubject) => (s.stats.answered ? s.stats.right / s.stats.answered : null);
-
-/** Exam Prep on the hub: the subject you were on first, then your weakest, then ones not started. */
-function PrepRows({ home, fallback }: { home: PrepHome | undefined; fallback: PractiseRow[] }) {
-  const opened = recentPrep.use();
-  if (!home || !home.subjects.length) return <PractiseRows rows={fallback.slice(0, PER_GROUP)} />;
-  const last = home.resume?.subject ?? opened[0] ?? null;
-  const left = home.subjects.filter((s) => !(s.stats.total && s.stats.answered >= s.stats.total));
-  const order = [...left].sort((a, b) => {
-    if (a.id === last) return -1;
-    if (b.id === last) return 1;
-    const pa = pctRight(a);
-    const pb = pctRight(b);
-    if (pa !== null && pb !== null) return pa - pb;
-    return pa !== null ? -1 : pb !== null ? 1 : 0;
-  });
-  const resume = home.resume ? hrefFor(home.resume.target) ?? `/prep/set?subject=${encodeURIComponent(home.resume.subject)}&topic=${encodeURIComponent(home.resume.topic)}&set=${home.resume.set}` : null;
+/** Tiles two to a row, each pair the same height. */
+export function TileGrid({ rows, testPrefix }: { rows: PractiseRow[]; testPrefix?: string }) {
+  const pairs: PractiseRow[][] = [];
+  for (let i = 0; i < rows.length; i += 2) pairs.push(rows.slice(i, i + 2));
   return (
-    <RowList>
-      {order.slice(0, PER_GROUP).map((s) => {
-        const carry = home.resume && s.id === home.resume.subject && resume;
-        const p = pctRight(s);
-        const meta = carry ? `Carry on: ${home.resume!.topicTitle}` : p !== null ? `${Math.round(p * 100)}% right so far` : "Not started";
-        return (
-          <Row
-            key={s.id}
-            testID={`hub-prep-${s.id}`}
-            title={s.title}
-            meta={meta}
-            icon={<IconDot render={(col) => <EntryIcon icon="list" size={18} color={col} />} />}
-            onPress={() => {
-              recentPrep.add(s.id);
-              go(carry && resume ? resume : `/prep/${encodeURIComponent(s.id)}`);
-            }}
-          />
-        );
-      })}
-    </RowList>
+    <View style={{ gap: space[3] }}>
+      {pairs.map((p, k) => (
+        <View key={p[0]!.id} style={{ flexDirection: "row", gap: space[3], alignItems: "stretch" }}>
+          {p.map((r, j) => (
+            <ToolTile key={r.id} row={r} i={k * 2 + j} testPrefix={testPrefix} />
+          ))}
+          {p.length === 1 ? <View style={{ flex: 1 }} /> : null}
+        </View>
+      ))}
+    </View>
+  );
+}
+
+/** A level's heading: its number in an ink disc, its name and what you do there. */
+function LevelHead({ n, name, line }: { n: number; name: string; line: string }) {
+  const c = useTheme();
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }} accessible accessibilityRole="header" accessibilityLabel={`Level ${n}, ${name}. ${line}`}>
+      <View style={{ width: 32, height: 32, borderRadius: 16, backgroundColor: c.ink, alignItems: "center", justifyContent: "center" }}>
+        <T v="small" num style={{ color: c.bg, fontFamily: fonts.bold }}>
+          {n}
+        </T>
+      </View>
+      <View style={{ flex: 1, minWidth: 0 }}>
+        <T v="h2">{name}</T>
+        <T v="small" tone="muted">
+          {line}
+        </T>
+      </View>
+    </View>
+  );
+}
+
+/** Streak, XP and the board: three numbers on one stone, each a door. */
+function Numbers({ shop, rank }: { shop: XpShop | undefined; rank: string | null }) {
+  const c = useTheme();
+  if (!shop) return null;
+  const cell = (testID: string, label: string, a11y: string, onPress: () => void, top: React.ReactNode, icon: React.ReactNode) => (
+    <Press testID={testID} accessibilityRole="button" accessibilityLabel={a11y} onPress={onPress} scale={0.96} style={{ flex: 1 }} innerStyle={{ gap: 2, paddingVertical: space[1] }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+        {icon}
+        {top}
+      </View>
+      <T v="caption" tone="muted">
+        {label}
+      </T>
+    </Press>
+  );
+  return (
+    <Stone testID="hub-numbers">
+      <View style={{ flexDirection: "row", gap: space[3] }}>
+        {cell("hub-streak", shop.streak.count === 1 ? "day in a row" : "days in a row", `${shop.streak.count} days in a row. Open the XP shop`, () => go("/shop"), <RollingNumber value={shop.streak.count} v="h2" />, <FlameIcon size={18} color={shop.streak.alive ? c.areas.practise.deep : c.muted} />)}
+        {cell("hub-xp", "XP to spend", `${shop.balance} XP to spend. Open the XP shop`, () => go("/shop"), <RollingNumber value={shop.balance} v="h2" />, <Sparkles size={18} color={c.areas.me.deep} />)}
+        {cell(
+          "hub-board",
+          "This week's board",
+          "This week's board",
+          () => go("/game/leaderboard?board=league"),
+          <T v="h2" num>
+            {rank ?? "Open"}
+          </T>,
+          <Trophy size={18} color={c.areas.learn.deep} />,
+        )}
+      </View>
+    </Stone>
+  );
+}
+
+/** Exam prep on the hub: one stone that carries on where you stopped, and three quick doors. */
+function PrepBlock({ home, row }: { home: PrepHome | undefined; row: PractiseRow | undefined }) {
+  const c = useTheme();
+  if (!row || row.locked) return null;
+  const total = home?.subjects.reduce((n, x) => n + x.stats.total, 0) ?? 0;
+  const answered = home?.subjects.reduce((n, x) => n + x.stats.answered, 0) ?? 0;
+  const resume = home?.resume ? (hrefFor(home.resume.target) ?? `/prep/set?subject=${encodeURIComponent(home.resume.subject)}&topic=${encodeURIComponent(home.resume.topic)}&set=${home.resume.set}`) : null;
+  const pct = total ? Math.round((answered / total) * 100) : 0;
+  return (
+    <View style={{ gap: space[3] }}>
+      <Label>Exam prep</Label>
+      <Stone
+        testID="hub-all-prep"
+        accessibilityLabel={home?.resume ? `Carry on: ${home.resume.topicTitle}, ${home.resume.subjectTitle}` : "Question bank. Questions by subject and topic"}
+        grow={() => {
+          if (home?.resume) recentPrep.add(home.resume.subject);
+          router.push(resume ?? "/prep");
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+          <ProgressRing pct={pct} size={52} stroke={6} color={c.dark ? c.lime : c.brand} track={c.hairline} label={`${pct} percent of the question bank answered`}>
+            <ListChecks size={18} color={c.ink} />
+          </ProgressRing>
+          <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+            <T v="h2" numberOfLines={2}>
+              {home?.resume ? home.resume.topicTitle : "Question bank"}
+            </T>
+            <T v="small" tone="muted" numberOfLines={2}>
+              {home?.resume ? `Carry on · ${home.resume.subjectTitle} · set ${home.resume.set} of ${home.resume.sets}` : total ? `${answered} of ${total} answered` : "Questions by subject and topic"}
+            </T>
+          </View>
+          <ArrowRight size={20} color={c.ink} />
+        </View>
+      </Stone>
+      <Pebbles
+        items={[
+          { label: "Subjects", icon: BookOpenCheck, onPress: () => go("/prep"), testID: "hub-prep-subjects" },
+          { label: "Mock tests", icon: Timer, onPress: () => go("/prep/mock"), testID: "hub-prep-mock" },
+          { label: "Long answers", icon: FileText, onPress: () => go("/prep/long"), testID: "hub-prep-long" },
+        ]}
+      />
+    </View>
+  );
+}
+
+function HubSkeleton({ failed }: { failed: boolean }) {
+  return (
+    <View style={{ gap: space[5] }} testID="practise-loading" accessibilityRole="progressbar" accessibilityLabel="Loading Practise">
+      <Skeleton h={76} r={26} />
+      <Skeleton w="40%" h={24} />
+      {[0, 1].map((k) => (
+        <View key={k} style={{ flexDirection: "row", gap: space[3] }}>
+          <Skeleton h={164} r={26} style={{ flex: 1 }} />
+          <Skeleton h={164} r={26} style={{ flex: 1 }} />
+        </View>
+      ))}
+      <StillTrying failed={failed} />
+    </View>
   );
 }
 
 /**
- * Practise: one thing for today, what you left half way (two at most), then
- * four short groups (Cases, Games, Exam Prep, Boards) of up to four rows
- * picked by what is half done or new to you. Every group's full list is
- * behind See all.
+ * Practise: one hub. Today's patient sits on the field (the one lime thing).
+ * On the layer: your streak, XP and board; what you left half way; then one
+ * path of five levels (Basics, Apply, Cases, Decisions, Advanced) with every
+ * live tool and game on its level; then exam prep and the boards.
  */
 export function PractiseHub() {
   const q = useRead<PractiseHubData>("/practise");
   const prep = useRead<PrepHome>("/prep");
-  const opened = recentPractise.use();
+  const shop = useRead<XpShop>("/leaderboards/shop");
   const s = q.data;
   const daily = s?.cases.find((r) => r.id === "daily" && !r.locked);
   const solved = daily?.trailing === "Done today";
   const resume = s?.resume ? hrefFor(s.resume.target) : null;
-  const hero = !s ? null : daily ? (
-    <Hero context="Today" title={solved ? "Today's patient is solved" : "Today's patient"} meta={solved ? "A new one comes at midnight." : "Name the diagnosis in as few clues as you can."} action={{ label: solved ? "Play a practice case" : "Open today's case", onPress: () => router.push(solved ? "/case/daily?mode=practice" : "/case/daily"), testID: "hub-daily" }} />
+  const field = !s ? null : daily ? (
+    <FieldCard live={!solved} title={solved ? "Today's patient is solved" : "Today's patient"} meta={solved ? "A new one comes at midnight." : "Name the diagnosis in as few clues as you can."} action={{ label: solved ? "Practice case" : "Open", onPress: () => router.push(solved ? "/case/daily?mode=practice" : "/case/daily"), testID: "hub-daily" }} />
   ) : s.resume && resume ? (
-    <Hero context="Carry on" title={s.resume.title} meta="Pick up where you left off." action={{ label: "Carry on", onPress: () => router.push(resume), testID: "hub-carry-on" }} />
+    <FieldCard title={s.resume.title} meta="Pick up where you left off." action={{ label: "Carry on", onPress: () => router.push(resume), testID: "hub-carry-on" }} />
   ) : null;
 
-  // Pick up again: the last tool (when it is not already the hero) and what is half done, two at most.
+  // Pick up again: the last tool (when it is not already on the field) and what is half done, two at most.
   const all = s ? [...s.cases, ...s.games] : [];
   const lastRow = s?.resume ? all.find((r) => r.title === s.resume!.title) : undefined;
-  const pick: { key: string; title: string; meta: string; open: () => void; icon?: Icon }[] = [];
-  if (daily && s?.resume && resume) pick.push({ key: lastRow?.id ?? "resume", title: s.resume.title, meta: "Where you left off", open: () => router.push(resume), icon: lastRow ? APP[lastRow.id]?.icon : undefined });
+  const pick: PractiseRow[] = [];
+  if (daily && lastRow && !lastRow.locked) pick.push(lastRow);
   for (const r of all) {
     if (pick.length >= 2) break;
-    if (r.id === "daily" || r.locked || r.trailing !== "In progress" || pick.some((p) => p.key === r.id)) continue;
-    pick.push({ key: r.id, title: r.title, meta: "Half way", open: () => openRow(r), icon: APP[r.id]?.icon });
+    if (r.id === "daily" || r.locked || r.trailing !== "In progress" || pick.some((p) => p.id === r.id)) continue;
+    pick.push(r);
   }
-  const shown = new Set(["daily", ...pick.map((p) => p.key)]);
-  const cases = s ? pickRows(s.cases, opened, shown) : [];
-  const games = s ? pickRows(s.games, opened, shown) : [];
+  const levels = s ? byLevel(s) : null;
+  const league = s?.boards.find((b) => b.id === "league");
+  const empty = s && !s.cases.length && !s.games.length && !s.prep.length;
+  let n = 0;
   return (
-    <Screen tab area="practise" top={<TabTop />} title="Practise" testID="practise" onRefresh={() => void Promise.all([q.refetch(), prep.refetch()])} refreshing={q.isRefetching}>
-      {(q.isError && q.data === undefined) ? (
-        <LoadError error={q.error} what="Practise" onRetry={() => void q.refetch()} />
-      ) : q.isLoading || !s ? (
-        <View style={{ gap: space[3] }} testID="practise-loading">
-          <Skeleton w="40%" h={14} />
-          <Skeleton w="80%" h={34} />
-          <Skeleton h={52} r={12} />
-          <StillTrying failed={q.failureCount > 0} />
-        </View>
+    <Screen tab area="practise" top={<TabTop />} title="Practise" testID="practise" gap={space[6]} field={field} onRefresh={() => void Promise.all([q.refetch(), prep.refetch(), shop.refetch()])} refreshing={q.isRefetching}>
+      {q.isError && q.data === undefined ? (
+        <QuietEmpty testID="load-error" title="Practise didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
+      ) : q.isLoading || !s || !levels ? (
+        <HubSkeleton failed={q.failureCount > 0} />
+      ) : empty ? (
+        <QuietEmpty title="Practise opens soon" body="Your cases and games show up here once they open." />
       ) : (
-        <Stagger gap={space[6]}>
-          {hero}
+        <>
+          <Enter i={n++}>
+            <Numbers shop={shop.data} rank={league?.trailing && /^#?\d+/.test(league.trailing) ? league.trailing : null} />
+          </Enter>
           {pick.length ? (
-            <Section title="Pick up again">
-              <RowList>
-                {pick.map((p) => (
-                  <Row key={p.key} testID={`hub-pick-${p.key}`} title={p.title} meta={p.meta} icon={p.icon ? <IconDot render={(col) => <EntryIcon icon={p.icon!} size={18} color={col} />} /> : undefined} onPress={p.open} />
-                ))}
-              </RowList>
-            </Section>
+            <Enter i={n++} style={{ gap: space[3] }}>
+              <Label>Pick up again</Label>
+              {pick.map((r) => (
+                <AccentProvider key={r.id} value={accentFor(r.id)}>
+                  <Stone grow={() => openRow(r)} testID={`hub-pick-${r.id}`} accessibilityLabel={`${r.title}. ${r.trailing === "In progress" ? "Half way" : "Where you left off"}`}>
+                    <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+                      <Emblem icon={APP[r.id]?.icon ?? "target"} size={52} />
+                      <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+                        <T v="h2" numberOfLines={2}>
+                          {r.title}
+                        </T>
+                        <T v="small" tone="muted">
+                          {r.trailing === "In progress" ? "Half way" : "Where you left off"}
+                        </T>
+                      </View>
+                      <ArrowRight size={20} color="transparent" />
+                    </View>
+                  </Stone>
+                </AccentProvider>
+              ))}
+            </Enter>
           ) : null}
-          {cases.length ? (
-            <Section title="Cases" action={<SeeAll testID="hub-all-cases" onPress={() => router.push("/practise/cases")} />}>
-              <PractiseRows rows={cases} />
-            </Section>
-          ) : null}
-          {games.length ? (
-            <Section title="Games" action={<SeeAll testID="hub-all-games" onPress={() => router.push("/practise/games")} />}>
-              <PractiseRows rows={games} />
-            </Section>
-          ) : null}
-          {s.prep.length ? (
-            <Section title="Exam Prep" action={<SeeAll testID="hub-all-prep" onPress={() => router.push("/prep")} />}>
-              <PrepRows home={prep.data} fallback={s.prep} />
-            </Section>
-          ) : null}
+          {LEVELS.map((l, k) =>
+            levels[l.id].length ? (
+              <Enter key={l.id} i={n++} style={{ gap: space[4] }} testID={`hub-level-${l.id}`}>
+                <LevelHead n={k + 1} name={l.name} line={l.line} />
+                <TileGrid rows={levels[l.id]} />
+              </Enter>
+            ) : null,
+          )}
+          <PrepBlock home={prep.data} row={s.prep[0]} />
           {s.boards.length ? (
-            <Section title="Boards" action={s.boards.length > PER_GROUP ? <SeeAll testID="hub-all-boards" onPress={() => router.push("/practise/boards")} /> : undefined}>
-              <PractiseRows rows={s.boards.slice(0, PER_GROUP)} />
-            </Section>
+            <View style={{ gap: space[2] }}>
+              <Label>Boards</Label>
+              <PractiseRows rows={s.boards} />
+            </View>
           ) : null}
-          {!s.cases.length && !s.games.length && !s.prep.length ? <EmptyState mood="soon" title="Practise opens soon" body="Your cases and games show up here once they open." /> : null}
-        </Stagger>
+        </>
       )}
     </Screen>
   );
 }
 
-const GROUPS = { cases: "Cases", games: "Games", boards: "Boards" } as const;
+const GROUPS: Record<string, string> = { cases: "Cases", games: "Games", boards: "Boards" };
 
-/** See all: one group's full list, in the server's order. Cases end with every case in one list. */
+/**
+ * One group on its own page: a level of the path (/practise/basics ...), or
+ * the older lists the website links to (/practise/cases, /practise/games,
+ * /practise/boards). Same tiles as the hub, so it is the same place.
+ */
 export function PractiseGroup({ group }: { group: string }) {
   const q = useRead<PractiseHubData>("/practise");
   const s = q.data;
-  const key = (group in GROUPS ? group : "cases") as keyof typeof GROUPS;
-  const rows = s ? s[key] : [];
+  const level = LEVELS.find((l) => l.id === group && !(group in GROUPS));
+  const key = level ? level.id : group in GROUPS ? group : "cases";
+  const title = level ? level.name : GROUPS[key]!;
+  const rows = !s ? [] : key === "boards" ? s.boards : key === "games" ? s.games : key === "cases" && !level ? s.cases : byLevel(s)[key as LevelId];
   return (
-    <Screen area="practise" testID={`practise-all-${key}`} title={GROUPS[key]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {(q.isError && q.data === undefined) ? (
-        <LoadError error={q.error} what={GROUPS[key]} onRetry={() => void q.refetch()} />
+    <Screen area="practise" testID={`practise-all-${key}`} title={title} lead={level?.line} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      {q.isError && q.data === undefined ? (
+        <QuietEmpty testID="load-error" title={`${title} didn't load`} body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : !s ? (
-        <View style={{ gap: space[3] }}>
-          <Skeleton h={52} r={12} />
-          <Skeleton h={52} r={12} />
-          <Skeleton h={52} r={12} />
-          <StillTrying failed={q.failureCount > 0} />
-        </View>
-      ) : (
-        <Stagger gap={space[6]}>
-          <PractiseRows rows={rows} testPrefix="all" />
-          {key === "cases" ? (
-            <RowList>
-              <Row testID="hub-library" title="Every case in one list" meta="What you have done and what is new" onPress={() => router.push("/case/library")} />
-            </RowList>
+        <HubSkeleton failed={q.failureCount > 0} />
+      ) : key === "boards" ? (
+        <PractiseRows rows={rows} testPrefix="all" />
+      ) : rows.length ? (
+        <>
+          <TileGrid rows={rows} testPrefix="all" />
+          {key === "cases" && !level ? (
+            <Stone quiet onPress={() => router.push("/case/library")} testID="hub-library" accessibilityLabel="Every case in one list. What you have done and what is new">
+              <T v="bodyStrong">Every case in one list</T>
+              <T v="small" tone="muted">
+                What you have done and what is new
+              </T>
+            </Stone>
           ) : null}
-        </Stagger>
+        </>
+      ) : (
+        <QuietEmpty title="Nothing here yet" body="New practice shows up here once it opens." action={{ label: "Back to Practise", onPress: () => router.replace("/practise") }} />
       )}
     </Screen>
   );

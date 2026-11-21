@@ -5,7 +5,7 @@ import { AppState, Pressable, View } from "react-native";
 
 import { Button, EmptyState, Field, ProgressLine, Row, RowList, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Swap } from "@/motion";
+import { Press, Swap } from "@/motion";
 import { Rich } from "@/study/rich";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { noteAnswers, saveCase, sendRecord, useTool } from "../api";
@@ -14,7 +14,10 @@ import { formatDomainKey } from "../tools/mse";
 import { API_TOOL, arrange, buildDefs, countsRight, grade, HISTORY_TOOL, PROGRESS_TOOL, recordsFor, type Def } from "../tools/engine";
 import { Feel, Flip, Rise, Stagger } from "../fx";
 import { caseTool } from "../catalog";
-import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, StepStrip, Verdict } from "../frame";
+import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, HudWord, StepStrip, Verdict } from "../frame";
+import { keyFromReveal, stepFromPick } from "../player/adapt";
+import { useStepPlay } from "../player/step";
+import type { Step } from "../player/types";
 import { markWord, Story, Tag, Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import type { ToolId, ToolReveal, ToolStep } from "../types";
@@ -32,6 +35,10 @@ const HOW: Record<ToolId, string[]> = {
   "weak-spots": ["Questions picked from what you miss most.", "One at a time; the why comes after each."],
   "mse-trainer": ["Level 1: describe what you see and hear, with no labels.", "Level 2: pick the words for each domain.", "Level 4: the full MSE of one case in ten minutes, scored per domain.", "The small things: moments novices miss. Say what it means, then reveal the read."],
 };
+
+/** A stand-in while the open step is not a "pick one" (the player then draws nothing). */
+const NO_READ: ToolStep = { n: 0, kind: "read", title: "", body: "" };
+const NO_STEP: Step = { id: "none", kind: "single", prompt: "", options: [], hints: [] };
 
 /** Milliseconds since `t` (an event-time read, never during render). */
 const since = (t: number) => Date.now() - t;
@@ -114,6 +121,73 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
   const graded = def.steps.filter((k) => k.pub.kind !== "read" && !k.selfCheck).length;
   const pct = scores.length ? Math.round((scores.reduce((a, b) => a + b, 0) / scores.length) * 100) : 100;
 
+  const step: ToolStep = key?.pub ?? NO_READ;
+
+  const finish = () => {
+    const ptool = PROGRESS_TOOL[tool];
+    if (ptool) saveCase(ptool, def.id, null);
+    if (def.id === "small-things") saveCase("mse-small", "walk", null);
+    for (const r of recordsFor(tool, def, answers.current, records, Date.now())) sendRecord(r.kind, r.body);
+    setDone(true);
+  };
+  /** Count one answer: the score, the mark on the strip, the answer history. Once per step. */
+  const count = (a: unknown, r: ToolReveal) => {
+    answers.current.push({ step: at, answer: a, ms: since(shownAt.current) });
+    const right = countsRight(r);
+    if (!r.selfCheck) {
+      setScores((s) => [...s, r.score]);
+      react.answer(r.score >= 0.75);
+    } else haptic.select();
+    setMarks((m) => [...m, r.selfCheck ? null : r.score >= 0.999 ? "ok" : r.score > 0 ? null : "miss"]);
+    noteAnswers(HISTORY_TOOL[tool], [{ item: key?.item ?? def.id, correct: right }]);
+  };
+  const answer = (a: unknown) => {
+    if (reveal || !key) return;
+    if (step.kind === "read") {
+      answers.current.push({ step: at, answer: a, ms: since(shownAt.current) });
+      next();
+      return;
+    }
+    const r = grade(key, a);
+    setPicked(a);
+    setReveal(r);
+    count(a, r);
+  };
+  const next = () => {
+    setReveal(null);
+    setPicked(null);
+    first.current = null;
+    if (at + 1 >= total) finish();
+    else {
+      // The small things walk keeps its place, as the website's (saveCaseProgress("mse-small", "walk", { at })).
+      const walk = def.steps[at + 1]?.raw?.walk;
+      if (def.id === "small-things" && typeof walk === "string") saveCase("mse-small", "walk", { at: walk });
+      setAt(at + 1);
+    }
+  };
+  const nextLabel = at + 1 < total ? (step.kind === "moment" ? "Next observation" : "Next") : "Finish the case";
+  // "Pick one" steps play in the shared player: choose, Check, the verdict rises, then every option's reason.
+  const isPick = step.kind === "pick";
+  const first = React.useRef<number | null>(null);
+  const player = useStepPlay({
+    step: isPick ? stepFromPick(`${def.id}-${at}`, step.ask, step.options) : NO_STEP,
+    resetKey: `${def.id}-${at}`,
+    seed: at,
+    nextLabel,
+    win: at + 1 >= total,
+    onNext: next,
+    check: (ids) => {
+      if (!key) return null;
+      const j = Number(ids[0]);
+      const r = grade(key, j);
+      // The first pick is the one that counts, whatever a second try brings.
+      if (first.current === null) {
+        first.current = j;
+        count(j, r);
+      }
+      return keyFromReveal(isPick ? step.options : [], r, j, tool === "ethics" ? "The law" : "More");
+    },
+  });
   if (done || !key) {
     return (
       <GameFrame testID="tool-end" title={def.title} thumb={browse ? <EndThumb again={browse} againLabel="Choose another case" extra={{ label: "Do this one again", onPress: again }} /> : <EndThumb again={again} againLabel="Do it again" />}>
@@ -125,44 +199,6 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
       </GameFrame>
     );
   }
-  const step = key.pub;
-
-  const finish = () => {
-    const ptool = PROGRESS_TOOL[tool];
-    if (ptool) saveCase(ptool, def.id, null);
-    if (def.id === "small-things") saveCase("mse-small", "walk", null);
-    for (const r of recordsFor(tool, def, answers.current, records, Date.now())) sendRecord(r.kind, r.body);
-    setDone(true);
-  };
-  const answer = (a: unknown) => {
-    if (reveal) return;
-    const r = grade(key, a);
-    answers.current.push({ step: at, answer: a, ms: since(shownAt.current) });
-    if (step.kind === "read") {
-      next();
-      return;
-    }
-    setPicked(a);
-    setReveal(r);
-    const right = countsRight(r);
-    if (!r.selfCheck) {
-      setScores((s) => [...s, r.score]);
-      react.answer(r.score >= 0.75);
-    } else haptic.select();
-    setMarks((m) => [...m, r.selfCheck ? null : r.score >= 0.999 ? "ok" : r.score > 0 ? null : "miss"]);
-    noteAnswers(HISTORY_TOOL[tool], [{ item: key.item ?? def.id, correct: right }]);
-  };
-  const next = () => {
-    setReveal(null);
-    setPicked(null);
-    if (at + 1 >= total) finish();
-    else {
-      // The small things walk keeps its place, as the website's (saveCaseProgress("mse-small", "walk", { at })).
-      const walk = def.steps[at + 1]?.raw?.walk;
-      if (def.id === "small-things" && typeof walk === "string") saveCase("mse-small", "walk", { at: walk });
-      setAt(at + 1);
-    }
-  };
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={at} total={total} marks={marks} />
@@ -170,26 +206,39 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
         left={total > 1 ? `${title} · step ${at + 1} of ${total}` : title}
         right={
           browse ? (
-            <Pressable onPress={browse} accessibilityRole="link" hitSlop={12} style={{ minHeight: 32, justifyContent: "center" }} testID="tool-all-cases">
-              <T v="small" tone="link">
-                All cases
-              </T>
-            </Pressable>
+            <Press onPress={browse} accessibilityRole="link" accessibilityLabel="All cases" hitSlop={12} scale={0.94} innerStyle={{ minHeight: 32, justifyContent: "center" }} testID="tool-all-cases">
+              <HudWord>All cases</HudWord>
+            </Press>
           ) : undefined
         }
       />
     </View>
   );
+  const intro = def.intro ? (
+    <Story kicker={def.setting ?? "The case"}>
+      <Rich text={def.intro} v="reading" />
+    </Story>
+  ) : null;
   return (
-    <GameFrame testID={`tool-run-${tool}`} title={def.title} howTo={howTo} hud={hud} confirmLeave={at > 0 || marks.length > 0} thumb={reveal ? <Button label={at + 1 < total ? (step.kind === "moment" ? "Next observation" : "Next") : "Finish the case"} onPress={next} testID="tool-next" /> : undefined}>
-      {at === 0 ? (
-        <Story kicker={def.setting ?? undefined}>
-          <Rich text={def.intro} v="reading" />
-        </Story>
-      ) : null}
+    <GameFrame
+      testID={`tool-run-${tool}`}
+      title={def.title}
+      howTo={howTo}
+      hud={hud}
+      confirmLeave={at > 0 || marks.length > 0}
+      over={isPick ? player.over : undefined}
+      thumb={isPick ? player.thumb : reveal ? <Button label={nextLabel} onPress={next} testID="tool-next" /> : undefined}
+    >
+      {at === 0 || isPick ? intro : null}
       <Swap k={at} dir={1} style={{ gap: space[4] }}>
-        <StepView step={step} reveal={reveal} picked={picked} disabled={false} onAnswer={answer} />
-        {reveal ? <RevealBand step={step} reveal={reveal} seed={at} /> : null}
+        {isPick ? (
+          player.body
+        ) : (
+          <>
+            <StepView step={step} reveal={reveal} picked={picked} disabled={false} onAnswer={answer} />
+            {reveal ? <RevealBand step={step} reveal={reveal} seed={at} /> : null}
+          </>
+        )}
       </Swap>
     </GameFrame>
   );
