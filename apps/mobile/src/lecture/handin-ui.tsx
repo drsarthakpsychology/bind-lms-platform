@@ -1,15 +1,16 @@
 import { RecordingPresets, requestRecordingPermissionsAsync, setAudioModeAsync, useAudioPlayer, useAudioPlayerStatus, useAudioRecorder, useAudioRecorderState } from "expo-audio";
 import { File } from "expo-file-system";
-import { Circle, FileText, Mic, Pause, Play, Square, X } from "lucide-react-native";
+import { Check, Circle, FileText, Mic, Pause, Play, Square, Upload, X } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
 
 import type { Assignment, Submission } from "@/api/contract";
 import { reasonOf } from "@/api/errors";
-import { Button, Field, ProgressLine, Row, RowList, T } from "@/ds";
+import { Button, Field, ProgressLine, Stone, T } from "@/ds";
+import { Press, StaggerList } from "@/motion";
 import { haptic } from "@/lib/haptics";
 import { clock } from "@/lecture/player";
-import { layout, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { checkFile, handInFiles, handInRecording, mimeTypesFor, type Picked } from "./handin";
 import { PixelLoader, useSlow } from "@/moments/parts";
 
@@ -96,26 +97,40 @@ export function FileHandIn({ a, onDone }: { a: Assignment; onDone: (s: Submissio
   return (
     <View style={{ gap: space[3] }} testID="handin-files">
       {files.length ? (
-        <RowList>
+        <StaggerList style={{ gap: space[2] }}>
           {files.map((f, i) => (
-            <Row
-              key={`${f.uri}${i}`}
-              title={f.name}
-              meta={f.size ? `${(f.size / 1_000_000).toFixed(1)} MB` : undefined}
-              icon={<FileText size={20} color={c.muted} />}
-              trailing={
-                <Pressable accessibilityRole="button" accessibilityLabel={`Remove ${f.name}`} onPress={() => setFiles((fs) => fs.filter((_, j) => j !== i))} hitSlop={8} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}>
+            <Stone key={`${f.uri}${i}`} pad={space[3]}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+                <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: c.bg, alignItems: "center", justifyContent: "center" }}>{progress !== null && progress >= 100 ? <Check size={18} color={c.ink} strokeWidth={3} /> : <FileText size={18} color={c.ink} />}</View>
+                <View style={{ flex: 1, minWidth: 0 }}>
+                  <T v="bodyStrong" numberOfLines={2}>
+                    {f.name}
+                  </T>
+                  {f.size ? (
+                    <T v="small" tone="muted" num>
+                      {(f.size / 1_000_000).toFixed(1)} MB
+                    </T>
+                  ) : null}
+                </View>
+                <Pressable accessibilityRole="button" accessibilityLabel={`Remove ${f.name}`} disabled={progress !== null} onPress={() => setFiles((fs) => fs.filter((_, j) => j !== i))} hitSlop={8} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}>
                   <X size={20} color={c.muted} />
                 </Pressable>
-              }
-            />
+              </View>
+            </Stone>
           ))}
-        </RowList>
+        </StaggerList>
       ) : null}
-      {room > 0 ? <Button kind="quiet" label={files.length ? "Add another file" : "Choose a file"} onPress={() => void pick()} disabled={progress !== null} testID="handin-pick" /> : null}
-      <T v="small" tone="muted">
-        {a.acceptedFormats.length ? a.acceptedFormats.map((x) => x.toUpperCase()).join(", ") : "Any file"} · up to {a.maxFiles} file{a.maxFiles === 1 ? "" : "s"}, {a.maxFileMb} MB each
-      </T>
+      {room > 0 ? (
+        <Press testID="handin-pick" accessibilityRole="button" accessibilityLabel={files.length ? "Add another file" : "Choose a file"} disabled={progress !== null} onPress={() => void pick()} scale={0.98} innerStyle={{ borderRadius: 22, borderWidth: 1.5, borderStyle: "dashed", borderColor: c.fieldLine, paddingVertical: files.length ? space[3] : space[5], paddingHorizontal: space[4], alignItems: "center", gap: space[2] }}>
+          <View style={{ width: 44, height: 44, borderRadius: 22, backgroundColor: c.card, alignItems: "center", justifyContent: "center" }}>
+            <Upload size={20} color={c.ink} />
+          </View>
+          <T v="bodyStrong">{files.length ? "Add another file" : "Choose a file"}</T>
+          <T v="small" tone="muted" center>
+            {a.acceptedFormats.length ? a.acceptedFormats.map((x) => x.toUpperCase()).join(", ") : "Any file"} · up to {a.maxFiles} file{a.maxFiles === 1 ? "" : "s"}, {a.maxFileMb} MB each
+          </T>
+        </Press>
+      ) : null}
       <Field label="A note for your teacher (optional)" value={note} onChangeText={setNote} area maxLength={2000} />
       {progress !== null ? <ProgressLine value={progress} label={`Sending: ${progress}%`} /> : null}
       {error ? (
@@ -123,7 +138,7 @@ export function FileHandIn({ a, onDone }: { a: Assignment; onDone: (s: Submissio
           {error}
         </T>
       ) : null}
-      {inFooter ? null : <Button kind="quiet" label="Hand in" busy={progress !== null} disabled={!files.length} onPress={() => void send()} testID="handin-send" />}
+      {inFooter ? null : <Button label="Hand in" busy={progress !== null} disabled={!files.length} onPress={() => void send()} testID="handin-send" />}
     </View>
   );
 }
@@ -188,19 +203,21 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
   const inFooter = useFooterAction(uri && !rec.isRecording ? { label: "Hand in the recording", busy, onPress: () => void send(), testID: "record-send" } : null);
   return (
     <View style={{ gap: space[4] }} testID="handin-recording">
-      <View style={{ alignItems: "center", gap: space[3], paddingVertical: space[3] }}>
-        <T style={{ fontFamily: "PixDigits", fontSize: 32, lineHeight: 40 }} num maxFontSizeMultiplier={1.2} accessibilityLabel={`${secs} seconds recorded`}>
+      <View style={{ alignItems: "center", gap: space[3], paddingVertical: space[5], backgroundColor: c.card, borderRadius: layout.radiusLg }}>
+        <T style={{ fontFamily: fonts.big, fontSize: 46, lineHeight: 50, letterSpacing: -1 }} num maxFontSizeMultiplier={1.2} accessibilityLabel={`${secs} seconds recorded`}>
           {clock(rec.isRecording ? secs : uri ? status.duration : 0)}
         </T>
-        <Pressable
+        <Press
           accessibilityRole="button"
           accessibilityLabel={rec.isRecording ? "Stop recording" : uri ? "Record again" : "Start recording"}
           onPress={() => void (rec.isRecording ? stop() : start())}
-          style={({ pressed }) => ({ width: 76, height: 76, borderRadius: 38, alignItems: "center", justifyContent: "center", backgroundColor: rec.isRecording ? c.danger : c.ink, transform: [{ scale: pressed ? 0.96 : 1 }] })}
+          squish
+          scale={0.92}
+          innerStyle={{ width: 76, height: 76, borderRadius: 38, alignItems: "center", justifyContent: "center", backgroundColor: rec.isRecording ? c.danger : c.ink }}
           testID="record-toggle"
         >
           {rec.isRecording ? <Square size={26} color="#ffffff" fill="#ffffff" /> : uri ? <Circle size={26} color={c.bg} fill={c.danger} /> : <Mic size={28} color={c.bg} />}
-        </Pressable>
+        </Press>
         <T v="small" tone="muted" center>
           {rec.isRecording ? "Recording. Tap to stop." : uri ? "Listen back, record again, or hand it in." : "Tap to start. Find a quiet place first."}
         </T>
@@ -214,7 +231,7 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
         </T>
       ) : null}
       {slow ? <PixelLoader label="Sending your recording" /> : null}
-      {inFooter ? null : <Button kind="quiet" label="Hand in the recording" disabled={!uri || rec.isRecording} busy={busy} onPress={() => void send()} testID="record-send" />}
+      {inFooter ? null : <Button label="Hand in the recording" disabled={!uri || rec.isRecording} busy={busy} onPress={() => void send()} testID="record-send" />}
     </View>
   );
 }
