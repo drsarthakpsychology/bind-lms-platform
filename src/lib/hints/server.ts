@@ -163,6 +163,34 @@ async function playedTodaysCase(userId: string, day: string, ledger: { source: s
 }
 
 /**
+ * Did the student finish any practice game today? The points ledger alone is
+ * not enough: a lost game, a practice-mode case, or a game played after the
+ * day's points cap finishes without a ledger row, and the quest never ticked.
+ * So this also looks at each game's own saved results. Each lookup fails
+ * quietly (a missing table just does not count).
+ */
+async function finishedGameToday(userId: string, day: string, ledger: { source: string }[]): Promise<boolean> {
+  if (ledger.some((r) => isGameSource(r.source))) return true;
+  const since = istMidnightUtc(day).toISOString();
+  const any = async (run: () => PromiseLike<{ data: unknown[] | null; error: unknown }>): Promise<boolean> => {
+    try {
+      const { data, error } = await run();
+      return !error && (data?.length ?? 0) > 0;
+    } catch {
+      return false;
+    }
+  };
+  const checks = await Promise.all([
+    any(() => db().from("daily_case_results").select("id").eq("user_id", userId).neq("status", "playing").gte("updated_at", since).limit(1)),
+    any(() => db().from("games2_results").select("id").eq("user_id", userId).gte("created_at", since).limit(1)),
+    any(() => db().from("blitz_results").select("id").eq("user_id", userId).not("finished_at", "is", null).gte("created_at", since).limit(1)),
+    any(() => db().from("sort_results").select("id").eq("user_id", userId).gte("created_at", since).limit(1)),
+    any(() => db().from("learn_events").select("id").eq("user_id", userId).eq("type", "game").neq("kind", "placement").gte("created_at", since).limit(1)),
+  ]);
+  return checks.some(Boolean);
+}
+
+/**
  * Today's quests with quiet progress, and pay what was earned: 5 XP per quest
  * and, for all three, 10 XP more plus 2 spare hints. Every payout has a
  * unique ref, so loading this twice never pays twice. Also pays the spare
@@ -178,7 +206,7 @@ export async function loadQuests(userId: string, now = new Date()): Promise<Ques
     noteToday: s ? Object.values(s.notesRead).includes(day) : false,
     pointsToday: s && s.daily.day === day ? s.daily.xp : 0,
     caseToday: ids.includes("case") ? await playedTodaysCase(userId, day, ledger.rows) : false,
-    gameToday: ledger.rows.some((r) => isGameSource(r.source)),
+    gameToday: ids.includes("game") ? await finishedGameToday(userId, day, ledger.rows) : false,
   });
   const done = allDone(quests);
   let paid = false;
