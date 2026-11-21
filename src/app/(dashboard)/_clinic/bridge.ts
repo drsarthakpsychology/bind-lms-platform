@@ -49,6 +49,8 @@ export async function loadMyLeave() { return pass(A.clinicMyLeave()); }
 export async function requestLeave(body: ClinicLeaveBody) { return pass(A.clinicRequestLeave(body)); }
 export async function requestEarly(body: ClinicEarlyLeaveBody) { return pass(A.clinicRequestEarlyLeave(body)); }
 export async function cancelLeave(id: string) { return pass(A.clinicCancelLeave(id)); }
+export async function loadCalendarLink() { return pass(A.clinicCalendarLink()); }
+export async function resetCalendarLink() { return pass(A.clinicCalendarReset()); }
 export async function loadMyOpd() { return pass(A.clinicMyOpd()); }
 export async function chooseBatch(body: ClinicBatchBody) { return pass(A.clinicChooseBatch(body)); }
 export async function sendCaseLog(body: ClinicCaseLogBody) { return pass(A.clinicSubmitCaseLog(body)); }

@@ -16,6 +16,7 @@ import type { ApiErrorCode } from "@/lib/app-api/contract";
 import { ApiFail, MESSAGE } from "@/lib/app-api/respond";
 import { rateLimitWrite } from "@/lib/rate-limit";
 import * as admin from "./admin";
+import * as calendar from "./calendar";
 import { clinicDb } from "./db";
 import * as s from "./schemas";
 import * as student from "./student";
@@ -74,6 +75,12 @@ export async function clinicRequestEarlyLeave(input: unknown) {
 }
 export async function clinicCancelLeave(leaveId: string) {
   return run("self", (p) => student.cancelLeave(clinicDb(), p.id, id(leaveId)), "clinic");
+}
+export async function clinicCalendarLink() {
+  return run("self", (p) => calendar.getCalendarLink(clinicDb(), p.id), "clinic");
+}
+export async function clinicCalendarReset() {
+  return run("self", (p) => calendar.resetCalendarLink(clinicDb(), p.id), "clinic");
 }
 export async function clinicMyOpd(cohortId?: string | null) {
   return run("self", (p) => student.getMyOpd(clinicDb(), p.id, cohort(cohortId), Date.now()));

@@ -13,6 +13,7 @@ export type {
   ClinicDay,
   ClinicToday,
   ClinicWeek,
+  ClinicCalendarLink,
   ClinicScanBody,
   ClinicScanResult,
   ClinicAttendanceSummary,

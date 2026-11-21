@@ -4,8 +4,9 @@ import Link from "next/link";
 import { PageFrame } from "@/components/ds";
 import { quietButton } from "@/components/ds/parts";
 import { addDays, dayShort } from "@/components/clinic/format";
+import { CalendarLinkPanel } from "@/components/clinic/calendar-link";
 import { DayBlock } from "@/components/clinic/sessions";
-import { loadToday, loadWeek } from "../_clinic/bridge";
+import { loadCalendarLink, loadToday, loadWeek, resetCalendarLink } from "../_clinic/bridge";
 import { ClinicNotReady } from "../_clinic/not-ready";
 
 export const metadata: Metadata = { title: "Schedule" };
@@ -43,6 +44,7 @@ export default async function SchedulePage({ searchParams }: { searchParams: Pro
           My OPD days
         </Link>
       </nav>
+      {w.cohortId ? <CalendarLinkPanel actions={{ load: loadCalendarLink, reset: resetCalendarLink }} /> : null}
       {w.days.map((d) => (
         <DayBlock key={d.date} day={d} today={todayDate} />
       ))}

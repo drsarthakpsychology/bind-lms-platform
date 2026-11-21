@@ -1379,6 +1379,15 @@ export type ClinicToday = {
 /** GET /clinic/week?start=YYYY-MM-DD (start defaults to this Monday; 7 days). */
 export type ClinicWeek = { v: 1; from: string; to: string; cohortId: string | null; days: ClinicDay[] };
 
+/**
+ * GET /clinic/calendar (POST /clinic/calendar/reset makes a new one): my
+ * private calendar link. `webcal` opens Apple Calendar's subscribe screen,
+ * `google` opens Google Calendar's "add this calendar" page, `https` is the
+ * same link to copy. The calendar updates on its own when sessions move or
+ * are cancelled.
+ */
+export type ClinicCalendarLink = { v: 1; https: string; webcal: string; google: string };
+
 /** POST /clinic/scan. Send `token` (from the QR) or `code` (6 characters). */
 export type ClinicScanBody = { token?: string; code?: string; direction?: ClinicDirection };
 export type ClinicScanResult = { sessionId: string; title: string; direction: ClinicDirection; at: string; late: boolean; minutes: number | null };
