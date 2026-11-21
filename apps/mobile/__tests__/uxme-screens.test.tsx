@@ -1,4 +1,4 @@
-import { fireEvent, screen } from "@testing-library/react-native";
+import { fireEvent, screen, waitFor } from "@testing-library/react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 
@@ -34,10 +34,11 @@ describe("Me", () => {
     expect(screen.getByText("Account")).toBeTruthy();
     // The clinic links stay (their screens belong to the clinic area).
     for (const id of ["me-scan", "me-schedule", "me-leave", "me-opd", "me-attendance"]) expect(screen.getByTestId(id)).toBeTruthy();
+    // Tiles grow into the screen they open, so the open lands a moment after the tap.
     await fireEvent.press(screen.getByTestId("me-shop"));
-    expect(router.push).toHaveBeenLastCalledWith("/shop");
+    await waitFor(() => expect(router.push).toHaveBeenLastCalledWith("/shop"));
     await fireEvent.press(screen.getByTestId("me-wall"));
-    expect(router.push).toHaveBeenLastCalledWith("/wall");
+    await waitFor(() => expect(router.push).toHaveBeenLastCalledWith("/wall"));
   });
 });
 

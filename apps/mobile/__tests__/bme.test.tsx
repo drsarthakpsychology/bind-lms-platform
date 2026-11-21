@@ -75,7 +75,10 @@ describe("Settings", () => {
     await render(<SettingsScreen />);
     await fireEvent.press(await screen.findByTestId("settings-number"));
     fireEvent.changeText(await screen.findByTestId("profile-number"), "98");
+    await waitFor(() => expect(screen.getByTestId("profile-save").props.accessibilityState).toMatchObject({ disabled: false }));
     await fireEvent.press(screen.getByTestId("profile-save"));
+    // eslint-disable-next-line no-console
+    if (!screen.queryByText("Enter the full number, 10 digits.")) console.log("DBG", JSON.stringify(screen.getByTestId("profile-save").props.accessibilityState), JSON.stringify(screen.getByTestId("profile-number").props.value));
     expect(await screen.findByText("Enter the full number, 10 digits.")).toBeTruthy();
     fireEvent.changeText(screen.getByTestId("profile-number"), "9812345678");
     await fireEvent.press(screen.getByTestId("profile-save"));
@@ -113,7 +116,7 @@ describe("Certificates", () => {
   it("an earned certificate opens its page; an empty list says how to earn one", async () => {
     await render(<CertificatesScreen />);
     await fireEvent.press(await screen.findByTestId("cert-VIBHA-C2-0123-M1"));
-    expect(router.push).toHaveBeenLastCalledWith("/certificate/VIBHA-C2-0123-M1");
+    await waitFor(() => expect(router.push).toHaveBeenLastCalledWith("/certificate/VIBHA-C2-0123-M1"));
   });
 
   it("nothing earned yet", async () => {
@@ -142,7 +145,7 @@ describe("Leaderboard and help", () => {
     await render(<BoardScreen />);
     expect(await screen.findByTestId("board-you")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("board-shop"));
-    expect(router.push).toHaveBeenLastCalledWith("/shop");
+    await waitFor(() => expect(router.push).toHaveBeenLastCalledWith("/shop"));
   });
 
   it("a question opens its answer", async () => {
