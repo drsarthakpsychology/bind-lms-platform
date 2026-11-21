@@ -9,12 +9,13 @@ import type { WallFeed, WallPostItem, WallReactionKey, WallReplyItem } from "@/a
 import { messageOf } from "@/api/errors";
 import { mapWallKeys, useWall, wallApi } from "@/api/map-wall";
 import { queueWrite } from "@/api/queued";
-import { Button, EmptyState, Field, IconButton, Loaded, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Field, IconButton, Jyo, QuietEmpty, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
-import { Press, RollingNumber, StaggerList, Stamp, presets } from "@/motion";
+import { Enter, Press, RollingNumber, StaggerList, Stamp, presets } from "@/motion";
+import { Load } from "@/screens/me/parts";
 import { when } from "@/screens/notifications/list";
-import { layout, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 
 /**
  * The class wall (the website's /wall): posts from your batch, newest first
@@ -60,18 +61,18 @@ function ReactionChip({ k, count, mine, onPress }: { k: (typeof REACTIONS)[numbe
       accessibilityState={{ selected: mine }}
       accessibilityLabel={`${k.label}, ${count}${mine ? ". You reacted" : ""}`}
       hitSlop={4}
-      innerStyle={{ minHeight: layout.target - 4, minWidth: 44, flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: space[3], borderRadius: 999, borderWidth: 1.5, borderColor: mine ? c.link : c.cardLine, backgroundColor: mine ? c.tint : "transparent" }}
+      innerStyle={{ minHeight: layout.target - 4, minWidth: 44, flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: space[3], borderRadius: 999, backgroundColor: mine ? c.areas.learn.wash : c.bg }}
     >
       <View style={{ width: 16, height: 16, alignItems: "center", justifyContent: "center" }}>
         <Stamp fire={pop}>
-          <k.Icon size={16} color={mine ? c.link : c.muted} fill={mine && k.key === "heart" ? c.link : "none"} />
+          <k.Icon size={16} color={mine ? c.areas.learn.deep : c.muted} fill={mine && k.key === "heart" ? c.areas.learn.deep : "none"} />
         </Stamp>
       </View>
       {/* The name says what the icon means (the triangle is Worry, not Report). */}
-      <T v="small" tone={mine ? "link" : "muted"}>
+      <T v="small" style={{ color: mine ? c.areas.learn.deep : c.muted }}>
         {k.label}
       </T>
-      {count > 0 ? <RollingNumber value={count} v="small" tone={mine ? "link" : "ink"} /> : null}
+      {count > 0 ? <RollingNumber value={count} v="small" style={{ color: mine ? c.areas.learn.deep : c.ink }} /> : null}
     </Press>
   );
 }
@@ -91,14 +92,14 @@ function Byline({ x, pinned }: { x: WallReplyItem; pinned?: boolean }) {
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], flexWrap: "wrap" }}>
       {pinned ? (
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: c.primary, borderRadius: 999, paddingHorizontal: space[2], paddingVertical: 2 }}>
-          <Pin size={12} color={c.onPrimary} />
-          <T v="caption" style={{ color: c.onPrimary }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: c.ink, borderRadius: 999, paddingHorizontal: space[2], paddingVertical: 2 }}>
+          <Pin size={12} color={c.bg} />
+          <T v="caption" style={{ color: c.bg }}>
             Case of the week
           </T>
         </View>
       ) : null}
-      <T v="small" tone={x.isFaculty ? "link" : "ink"} style={{ fontWeight: "600" }}>
+      <T v="small" tone={x.isFaculty ? "link" : "ink"} style={{ fontFamily: fonts.bold }}>
         {who(x)}
       </T>
       <T v="small" tone="muted">
@@ -116,7 +117,7 @@ function PostView({ p, onReact, onReply, onMore }: { p: WallPostItem; onReact: (
   const [busy, setBusy] = React.useState(false);
   const n = p.replies.length;
   return (
-    <View testID={`post-${p.id}`} style={{ paddingVertical: space[4], gap: space[3], borderTopWidth: 1, borderColor: c.hairline }}>
+    <View testID={`post-${p.id}`} style={{ padding: space[4], gap: space[3], borderRadius: layout.radiusLg, backgroundColor: c.card }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], marginVertical: -space[2] }}>
         <View style={{ flex: 1 }}>
           <Byline x={p} pinned={p.isPinned} />
@@ -134,10 +135,10 @@ function PostView({ p, onReact, onReply, onMore }: { p: WallPostItem; onReact: (
         </T>
       </Press>
       {open ? (
-        <Animated.View entering={presets.pop(0)} style={{ gap: space[3], paddingLeft: space[4], borderLeftWidth: 2, borderColor: c.hairline }}>
+        <Animated.View entering={presets.pop(0)} style={{ gap: space[3] }}>
           <StaggerList>
             {p.replies.map((r) => (
-              <View key={r.id} testID={`wall-reply-${r.id}`} style={{ gap: space[2], paddingVertical: space[2] }}>
+              <View key={r.id} testID={`wall-reply-${r.id}`} style={{ gap: space[2], padding: space[3], marginBottom: space[2], marginLeft: space[4], borderRadius: layout.radius, borderTopLeftRadius: 6, backgroundColor: c.bg }}>
                 <Byline x={r} />
                 <T v="body">{r.content}</T>
                 <Reactions item={r} onReact={(k) => onReact({ replyId: r.id }, k)} />
@@ -242,13 +243,15 @@ export function WallBody({ feed }: { feed: WallFeed }) {
   return (
     <>
       {feed.posts.length ? (
-        <View>
-          {feed.posts.map((p) => (
-            <PostView key={p.id} p={p} onReact={(t, k) => void react(t, k)} onReply={reply} onMore={setMore} />
+        <View style={{ gap: space[3] }}>
+          {feed.posts.map((p, i) => (
+            <Enter key={p.id} i={i}>
+              <PostView p={p} onReact={(t, k) => void react(t, k)} onReply={reply} onMore={setMore} />
+            </Enter>
           ))}
         </View>
       ) : (
-        <EmptyState title="Nothing on the wall yet" body="Start the conversation. You can post without your name." testID="wall-empty" />
+        <QuietEmpty title="Nothing on the wall yet" body="Start the conversation. You can post without your name." art={<Jyo pose="resting" size={56} />} testID="wall-empty" />
       )}
       <Sheet open={more !== null} onClose={() => setMore(null)} title="This post" testID="wall-more">
         <View style={{ gap: space[3] }}>
@@ -267,11 +270,11 @@ export function WallScreen() {
   const q = useWall();
   const [compose, setCompose] = React.useState(false);
   return (
-    <Screen testID="wall" lead="Posts from your batch. You can post without your name." onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data ? <Button label="Write a post" icon={<Plus size={20} color={c.onPrimary} />} onPress={() => setCompose(true)} testID="wall-write" /> : undefined}>
-      <Stack.Screen options={{ title: "Class wall" }} />
-      <Loaded q={q} what="the wall" skeleton={<RowsSkeleton rows={5} />}>
+    <Screen testID="wall" title="Class wall" lead="Posts from your batch. You can post without your name." onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data ? <Button label="Write a post" icon={<Plus size={20} color={c.onLime} />} onPress={() => setCompose(true)} testID="wall-write" /> : undefined}>
+      <Stack.Screen options={{ title: "" }} />
+      <Load q={q} what="the wall" skeleton={<RowsSkeleton rows={5} />}>
         {(feed) => <WallBody feed={feed} />}
-      </Loaded>
+      </Load>
       <Composer open={compose} onClose={() => setCompose(false)} onSent={() => void qc.invalidateQueries({ queryKey: mapWallKeys.wall })} />
     </Screen>
   );

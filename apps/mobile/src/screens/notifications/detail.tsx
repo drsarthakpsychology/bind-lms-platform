@@ -1,16 +1,16 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { openLink } from "@/lib/open";
 import { View } from "react-native";
 
 import type { MessageBlock, MessageSpan } from "@/api/contract";
 import { keys, useNotification } from "@/api/queries";
-import { Button, Loaded, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, RowsSkeleton, Screen, T } from "@/ds";
+import { Load } from "@/screens/me/parts";
 import { openTarget } from "@/nav/targets";
 import { space, fonts } from "@/theme";
 import { when } from "./list";
-import { FromRow } from "@/motion";
 
 function Spans({ spans }: { spans: MessageSpan[] }) {
   return (
@@ -71,6 +71,11 @@ export function MessageBody({ blocks }: { blocks: MessageBlock[] }) {
   );
 }
 
+/**
+ * One message. The title and who sent it sit on the field (the title glides
+ * out of the row that opened it); the words are on the layer, still, in the
+ * reading size; the one thing to do next is the button at the bottom.
+ */
 export function NotificationScreen() {
   const { id = "" } = useLocalSearchParams<{ id: string }>();
   const qc = useQueryClient();
@@ -81,27 +86,15 @@ export function NotificationScreen() {
     void qc.invalidateQueries({ queryKey: keys.notifications });
     void qc.invalidateQueries({ queryKey: keys.me });
   }, [q.data, qc]);
+  const n = q.data;
+  const link = n?.links.find((l) => l.target);
+  const action = n ? (link?.target ? <Button label={link.label} onPress={() => openTarget(link.target!)} testID="notification-action" /> : n.target.screen !== "notification" ? <Button label="Open" onPress={() => openTarget(n.target)} testID="notification-action" /> : undefined) : undefined;
   return (
-    <Screen testID="notification">
-      <Loaded q={q} what="this message" skeleton={<RowsSkeleton rows={3} />}>
-        {(n) => {
-          const link = n.links.find((l) => l.target);
-          return (
-            <>
-              <View style={{ gap: space[2] }}>
-                <FromRow title={n.title}>
-                  <T v="h1">{n.title}</T>
-                </FromRow>
-                <T v="small" tone="muted">
-                  {[n.from, when(n.createdAt)].filter(Boolean).join(" · ")}
-                </T>
-              </View>
-              <MessageBody blocks={n.content.length ? n.content : [{ t: "p", spans: [{ text: n.body }] }]} />
-              {link?.target ? <Button label={link.label} onPress={() => openTarget(link.target!)} testID="notification-action" /> : n.target.screen !== "notification" ? <Button label="Open" onPress={() => openTarget(n.target)} testID="notification-action" /> : null}
-            </>
-          );
-        }}
-      </Loaded>
+    <Screen testID="notification" title={n?.title} lead={n ? [n.from, when(n.createdAt)].filter(Boolean).join(" · ") : undefined} footer={action}>
+      <Stack.Screen options={{ title: "" }} />
+      <Load q={q} what="this message" skeleton={<RowsSkeleton rows={3} />}>
+        {(d) => <MessageBody blocks={d.content.length ? d.content : [{ t: "p", spans: [{ text: d.body }] }]} />}
+      </Load>
     </Screen>
   );
 }

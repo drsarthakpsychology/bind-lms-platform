@@ -23,23 +23,31 @@ beforeEach(() => {
 });
 
 describe("Me", () => {
-  it("shows three numbers, the next certificate and the XP shop", async () => {
+  it("shows who you are, the ring with three numbers, the next certificate and the shelf", async () => {
     await render(<MeScreen />);
     expect(await screen.findByTestId("me-summary")).toBeTruthy();
-    expect(await screen.findByText("Next certificate: Module 2: Mood disorders")).toBeTruthy();
+    expect(screen.getByTestId("me-name").props.children).toBe("Ananya Mehta");
+    expect(await screen.findByLabelText("Next certificate: Module 2: Mood disorders. 1 of 4 sections read")).toBeTruthy();
+    expect(await screen.findByTestId("me-level")).toBeTruthy();
     expect(screen.queryByTestId("me-journey")).toBeNull();
     expect(screen.queryByTestId("me-badges")).toBeNull();
-    expect(screen.getByText("Account and help")).toBeTruthy();
+    expect(screen.getByText("Account")).toBeTruthy();
+    // The clinic links stay (their screens belong to the clinic area).
+    for (const id of ["me-scan", "me-schedule", "me-leave", "me-opd", "me-attendance"]) expect(screen.getByTestId(id)).toBeTruthy();
     await fireEvent.press(screen.getByTestId("me-shop"));
     expect(router.push).toHaveBeenLastCalledWith("/shop");
+    await fireEvent.press(screen.getByTestId("me-wall"));
+    expect(router.push).toHaveBeenLastCalledWith("/wall");
   });
 });
 
 describe("Progress", () => {
-  it("has Overview, Topics, Map, Journey and Badges in one screen", async () => {
+  it("is one screen: level, numbers, courses, two weeks, topics, the map and badges", async () => {
     await render(<ProgressScreen />);
     expect(await screen.findByText("Keen Observer")).toBeTruthy();
-    for (const t of ["Overview", "Topics", "Map", "Journey", "Badges"]) expect(screen.getByText(t)).toBeTruthy();
+    for (const t of ["Your courses", "Last two weeks", "Needs work", "Strongest", "Badges"]) expect(screen.getByText(t)).toBeTruthy();
+    expect(screen.getByTestId("progress-map")).toBeTruthy();
+    expect(screen.getByTestId("progress-streak")).toBeTruthy();
     expect(screen.queryByText("all your time here")).toBeNull();
   });
 

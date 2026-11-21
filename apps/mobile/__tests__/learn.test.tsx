@@ -163,7 +163,7 @@ describe("Learn screens", () => {
   it("My journey shows the level and the six numbers", async () => {
     await render(<JourneyScreen />);
     expect(await screen.findByText("Keen Observer")).toBeTruthy();
-    expect(screen.getByText("1240 points · #3 on the leaderboard")).toBeTruthy();
+    expect(screen.getByText("1,240 points · number 3 in your batch")).toBeTruthy();
     expect(screen.getByTestId("journey-practice")).toBeTruthy();
     expect(screen.getByLabelText("Day streak: 6")).toBeTruthy();
   });
