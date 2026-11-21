@@ -55,7 +55,7 @@ export function CasebookScreen({ start }: { start?: "browse" | "saved" }) {
   const done = Object.keys(best).length;
   return (
     <Page testID="casebook" home="/practise" title="Casebook" lead={done ? `${done} of ${CASEBOOK.length} tried. Read, reason, decide.` : "Short clinical cases. Read, reason, decide."} area="practise">
-      <TabRow scroll={false} tabs={[{ id: "browse", name: "All cases" }, { id: "saved", name: saved.length ? `Saved (${saved.length})` : "Saved" }]} value={tab} onChange={setTab} />
+      <TabRow<"browse" | "saved"> scroll={false} tabs={[{ id: "browse", name: "All cases" }, { id: "saved", name: saved.length ? `Saved (${saved.length})` : "Saved" }]} value={tab} onChange={setTab} />
       {tab === "browse" ? <Chips scroll label="Kind of case" value={filter} onChange={setFilter} options={[{ id: "all" as Filter, name: "All" }, ...formats.map((f) => ({ id: f as Filter, name: FORMAT_LABEL[f] }))]} /> : null}
       {list.length ? (
         <StaggerList key={`${tab}-${filter}`} style={{ gap: space[3] }}>

@@ -140,8 +140,7 @@ export function Pavlov({ onDone, onClose }: RunnerProps) {
 
 /* --------------------------------------------------------- design the study */
 
-type Opt<K extends keyof DesignChoices> = { key: K; ask: string; options: { id: NonNullable<DesignChoices[K]>; label: string }[] };
-const DESIGN: [Opt<"sample">, Opt<"size">, Opt<"control">, Opt<"assign">, Opt<"blind">, Opt<"measure">] = [
+const DESIGN: { key: keyof DesignChoices; ask: string; options: { id: string; label: string }[] }[] = [
   { key: "sample", ask: "Who takes part?", options: [{ id: "volunteers", label: "Students who sign up because they like the idea" }, { id: "extreme", label: "The most anxious students from this week's screening" }, { id: "random", label: "A random sample of students from five colleges" }] },
   { key: "size", ask: "How many?", options: [{ id: "tiny", label: "10 students in total" }, { id: "medium", label: "20 students per group" }, { id: "large", label: "150 students per group" }] },
   { key: "control", ask: "Compared with what?", options: [{ id: "none", label: "No comparison: measure before and after the app" }, { id: "waitlist", label: "A group that gets nothing for now (waiting list)" }, { id: "active", label: "A group that gets a look-alike app with relaxing sounds" }] },
