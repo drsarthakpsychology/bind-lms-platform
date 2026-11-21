@@ -1,16 +1,18 @@
 import { router, Stack, useLocalSearchParams } from "expo-router";
-import { ArrowRight, Search, TriangleAlert } from "lucide-react-native";
+import { BookOpen, Dumbbell, NotebookText, Pill, Pin } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, TextInput, View } from "react-native";
+import { Pressable, View } from "react-native";
 
 import type { RefEntry, RefIndexItem, RefKind } from "@/api/adapt-learn";
 import { useTerm, useTerms } from "@/api/learn";
-import { Button, Chips, EmptyState, Loaded, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, Skeleton, T, Tint, useProgressive } from "@/ds";
-import { Enter, Press, Reveal } from "@/motion";
-import { ReadingSize } from "@/lib/reading";
-import { Rich } from "@/study/rich";
-import { layout, space, type as scale, useTheme } from "@/theme";
 import { go } from "@/api/prefetch";
+import { Button, Chips, Label, Loaded, LoadError, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Sheet, Skeleton, Stone, T, useProgressive } from "@/ds";
+import { Block, Bullets, FactStrip, LinkCard, LookupScreen, PairTable, PinButton, SearchField, type Fact } from "@/library/kit";
+import { pinnedRefs, recentRefs } from "@/library/pins";
+import { ReadingSize } from "@/lib/reading";
+import { Enter, Reveal } from "@/motion";
+import { Rich } from "@/study/rich";
+import { layout, space, useTheme } from "@/theme";
 
 /**
  * Quick reference: the website's A to Z of disorders, medicines and terms
@@ -55,63 +57,96 @@ export function exactRef(items: RefIndexItem[], word: string): RefIndexItem | nu
   return items.find((r) => norm(r.label) === w || r.aliases.some((a) => norm(a) === w)) ?? null;
 }
 
-function SearchBox({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+
+/** A small square with the kind's first letter, so a mixed list reads at a glance (the kind is also written in the row). */
+function KindMark({ kind }: { kind: RefKind }) {
   const c = useTheme();
+  const a = kind === "disorder" ? c.areas.learn : kind === "medicine" ? c.areas.library : c.areas.me;
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.primary, borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card, paddingHorizontal: space[4] }}>
-      <Search size={18} color={c.muted} />
-      <TextInput
-        testID="reference-search"
-        value={value}
-        onChangeText={onChange}
-        placeholder="Search a disorder, medicine or word"
-        placeholderTextColor={c.muted}
-        accessibilityLabel="Search the Quick reference"
-        autoCorrect={false}
-        autoCapitalize="none"
-        returnKeyType="search"
-        maxFontSizeMultiplier={1.4}
-        style={[scale.body, { flex: 1, color: c.ink, minHeight: layout.target }, { outlineStyle: "none" } as object]}
-      />
+    <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ width: 36, height: 36, borderRadius: 12, backgroundColor: a.wash, alignItems: "center", justifyContent: "center" }}>
+      <T v="label" style={{ color: a.deep }}>
+        {kind === "disorder" ? "D" : kind === "medicine" ? "M" : "W"}
+      </T>
     </View>
   );
 }
 
 export function ReferenceScreen() {
+  const c = useTheme();
   const params = useLocalSearchParams<{ q?: string }>();
   const [q, setQ] = React.useState(typeof params.q === "string" ? params.q : "");
   const [kind, setKind] = React.useState<RefKind | "all">("all");
   const query = useTerms();
+  const pinned = pinnedRefs.use();
+  const recent = recentRefs.use();
+  const n = query.data?.items.length;
+  const open = (r: RefIndexItem) => go(`/reference/${encodeURIComponent(r.slug)}`);
+  const row = (r: RefIndexItem, prefix = "ref", showKind = true) => (
+    <Row
+      key={r.slug}
+      testID={`${prefix}-${r.slug}`}
+      icon={<KindMark kind={r.kind} />}
+      title={r.label}
+      meta={showKind ? `${KIND_WORD[r.kind]} · ${r.summary}` : r.summary}
+      trailing={pinned.includes(r.slug) ? <Pin size={16} color={c.muted} fill={c.muted} accessibilityLabel="Pinned" /> : undefined}
+      chevron={false}
+      onPress={() => open(r)}
+    />
+  );
   return (
-    <Screen testID="reference" gap={space[5]} onRefresh={() => void query.refetch()} refreshing={query.isRefetching}>
-      <Stack.Screen options={{ title: "Quick reference" }} />
-      <SearchBox value={q} onChange={setQ} />
-      <Chips
-        scroll
-        label="Show"
-        options={[
-          { id: "all", name: "All" },
-          { id: "disorder", name: "Disorders" },
-          { id: "medicine", name: "Medicines" },
-          { id: "term", name: "Terms" },
-        ]}
-        value={kind}
-        onChange={setKind}
-      />
+    <Screen area="library" testID="reference" title="Quick reference" lead={n ? `${n} cards, A to Z` : "Disorders, medicines and words"} gap={space[5]} onRefresh={() => void query.refetch()} refreshing={query.isRefetching}>
+      <View style={{ gap: space[3] }}>
+        <SearchField testID="reference-search" value={q} onChange={setQ} placeholder="Search a disorder, medicine or word" label="Search the Quick reference" />
+        <Chips
+          scroll
+          label="Show"
+          options={[
+            { id: "all", name: "All" },
+            { id: "disorder", name: "Disorders" },
+            { id: "medicine", name: "Medicines" },
+            { id: "term", name: "Words" },
+          ]}
+          value={kind}
+          onChange={setKind}
+        />
+      </View>
       <Loaded q={query} soon="/study/reference" what="the Quick reference" skeleton={<RowsSkeleton rows={8} />}>
         {(d) => {
           const rows = searchRefs(d.items, q, kind);
-          if (!rows.length) return <EmptyState mood="missing" title="Nothing by that name" body="Try a shorter word, or the everyday word for it." testID="reference-empty" />;
+          if (!d.items.length) return <QuietEmpty title="The Quick reference opens soon" body="Disorder cards, medicines and words show up here." testID="reference-none" />;
+          if (!rows.length) return <QuietEmpty title="Nothing by that name" body="Try a shorter word, or the everyday word for it." action={{ label: "Clear the search", onPress: () => setQ("") }} testID="reference-empty" />;
           // Searching: one plain list, best match first. Browsing: grouped by letter.
           if (q.trim())
             return (
-              <RowList still>
-                {rows.slice(0, 60).map((r) => (
-                  <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={`${KIND_WORD[r.kind]} · ${r.summary}`} onPress={() => go(`/reference/${encodeURIComponent(r.slug)}`)} />
-                ))}
-              </RowList>
+              <View style={{ gap: space[2] }}>
+                <Label>{`${rows.length} ${rows.length === 1 ? "match" : "matches"}`}</Label>
+                <RowList bare still>
+                  {rows.slice(0, 60).map((r) => row(r))}
+                </RowList>
+              </View>
             );
-          return <AToZ key={kind} rows={rows} kind={kind} />;
+          const byId = (ids: string[]) => ids.map((id) => d.items.find((r) => r.slug === id)).filter((r): r is RefIndexItem => !!r && (kind === "all" || r.kind === kind));
+          const pins = byId(pinned);
+          const recents = byId(recent)
+            .filter((r) => !pinned.includes(r.slug))
+            .slice(0, 3);
+          return (
+            <>
+              {pins.length ? (
+                <Enter i={0} style={{ gap: space[2] }}>
+                  <Label>Pinned</Label>
+                  <RowList bare>{pins.map((r) => row(r, "pinned"))}</RowList>
+                </Enter>
+              ) : null}
+              {recents.length ? (
+                <Enter i={1} style={{ gap: space[2] }}>
+                  <Label>Recently opened</Label>
+                  <RowList bare>{recents.map((r) => row(r, "recent"))}</RowList>
+                </Enter>
+              ) : null}
+              <AToZ key={kind} rows={rows} row={(r) => row(r, "ref", kind === "all")} />
+            </>
+          );
         }}
       </Loaded>
     </Screen>
@@ -119,7 +154,7 @@ export function ReferenceScreen() {
 }
 
 /** Browsing: every entry by letter, drawn a part at a time (the full list is long). */
-function AToZ({ rows, kind }: { rows: RefIndexItem[]; kind: string }) {
+function AToZ({ rows, row }: { rows: RefIndexItem[]; row: (r: RefIndexItem) => React.ReactNode }) {
   const sorted = React.useMemo(() => [...rows].sort((a, b) => a.label.localeCompare(b.label)), [rows]);
   const shown = useProgressive(sorted.length);
   const letters: { letter: string; items: RefIndexItem[] }[] = [];
@@ -132,13 +167,12 @@ function AToZ({ rows, kind }: { rows: RefIndexItem[]; kind: string }) {
   return (
     <>
       {letters.map((g) => (
-        <Section key={g.letter} title={g.letter} quiet>
-          <RowList>
-            {g.items.map((r) => (
-              <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={kind === "all" ? `${KIND_WORD[r.kind]} · ${r.summary}` : r.summary} onPress={() => go(`/reference/${encodeURIComponent(r.slug)}`)} />
-            ))}
+        <View key={g.letter} style={{ gap: space[1] }}>
+          <Label>{g.letter}</Label>
+          <RowList bare still={sorted.length > 40}>
+            {g.items.map((r) => row(r))}
           </RowList>
-        </Section>
+        </View>
       ))}
     </>
   );
@@ -146,132 +180,133 @@ function AToZ({ rows, kind }: { rows: RefIndexItem[]; kind: string }) {
 
 /* --------------------------------------------------------------- entry */
 
-function Points({ items }: { items: string[] }) {
+/**
+ * Slots a disorder card is laid out for but the server does not send yet
+ * (see docs/CONNECT-bnotes.md). Pass any of them and the card shows it in its
+ * place: the facts join the strip at the top, the rest get their own block.
+ */
+export type CardExtra = {
+  threshold?: string;
+  onset?: string;
+  settings?: string;
+  impairment?: string;
+  presentations?: { name: string; when: string }[];
+  /** The lesson that teaches it. */
+  lesson?: { title: string; href: string };
+  /** Practice made for this card. */
+  practice?: { title: string; meta?: string; href: string }[];
+};
+
+const TREATMENT_NOTE = "For learning. Real treatment is decided by the treating clinician.";
+
+function Sayings({ items }: { items: string[] }) {
   const c = useTheme();
   return (
-    <View style={{ gap: space[2] }}>
-      {items.map((x, i) => (
-        <View key={i} style={{ flexDirection: "row", gap: space[3] }}>
-          <View style={{ width: 6, height: 6, marginTop: 10, borderRadius: 1, backgroundColor: c.ink }} />
-          <Rich text={x} style={{ flex: 1 }} />
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
+      {items.map((x) => (
+        <View key={x} style={{ maxWidth: "100%", paddingVertical: space[2], paddingHorizontal: space[3], borderRadius: layout.radius, backgroundColor: c.card }}>
+          <T v="small">\u201c{x}\u201d</T>
         </View>
       ))}
     </View>
   );
 }
 
-function Block({ title, children, alert }: { title: string; children: React.ReactNode; alert?: boolean }) {
+export function EntryBody({ e, labelOf, onOpen, extra }: { e: RefEntry; labelOf: (slug: string) => string | null; onOpen: (path: string) => void; extra?: CardExtra }) {
   const c = useTheme();
-  return (
-    <Section title={title} action={alert ? <TriangleAlert size={18} color={c.link} /> : undefined}>
-      {children}
-    </Section>
-  );
-}
-
-function Pills({ items, onPress }: { items: { key: string; label: string }[]; onPress?: (key: string) => void }) {
-  const c = useTheme();
-  return (
-    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
-      {items.map((x) =>
-        onPress ? (
-          <Press key={x.key} onPress={() => onPress(x.key)} accessibilityRole="link" style={{ maxWidth: "100%" }} innerStyle={{ minHeight: layout.target, justifyContent: "center", paddingHorizontal: space[4], paddingVertical: space[2], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card }}>
-            <T v="small">{x.label}</T>
-          </Press>
-        ) : (
-          <View key={x.key} style={{ maxWidth: "100%", paddingVertical: space[2], paddingHorizontal: space[3], borderRadius: layout.radius, backgroundColor: c.tint }}>
-            <T v="small">“{x.label}”</T>
-          </View>
-        ),
-      )}
-    </View>
-  );
-}
-
-export function EntryBody({ e, labelOf, onOpen }: { e: RefEntry; labelOf: (slug: string) => string | null; onOpen: (path: string) => void }) {
-  const c = useTheme();
-  const sub = e.kind === "disorder" ? [e.chapter, ...e.aka].filter(Boolean).join(" · ") : e.kind === "medicine" ? e.cls : (e.area ?? "");
   const lead = e.kind === "disorder" ? e.core : e.kind === "medicine" ? (e.plain ?? e.cls) : e.means;
+  const rich = (t: string) => <Rich text={t} />;
   return (
     <>
-      <Enter i={0} style={{ gap: space[2] }}>
-        <T v="caption" tone="muted">
-          {KIND_WORD[e.kind].toUpperCase()}
-        </T>
-        <T v="h1">{e.label}</T>
-        {sub ? (
-          <T v="small" tone="muted">
-            {sub}
-          </T>
-        ) : null}
-      </Enter>
-      <Enter i={1}>
-        <Tint>
-          <Rich text={lead} v="reading" />
-        </Tint>
+      <Enter i={0}>
+        <Stone pad={space[5]} testID="ref-lead">
+          <Rich text={lead} v="h3" />
+        </Stone>
       </Enter>
       {e.kind === "disorder" ? (
         <>
-          {e.duration ? (
-            <T v="bodyStrong">
-              How long: <T>{e.duration}</T>
-            </T>
-          ) : null}
+          <FactStrip
+            facts={[
+              extra?.threshold ? { label: "Threshold", value: extra.threshold } : null,
+              e.duration ? { label: "Duration", value: e.duration } : null,
+              extra?.onset ? { label: "Age of onset", value: extra.onset } : null,
+              extra?.settings ? { label: "Settings", value: extra.settings } : null,
+              extra?.impairment ? { label: "Impairment", value: extra.impairment } : null,
+            ] satisfies (Fact | null)[]}
+          />
           {e.features.length ? (
             <Block title="Core features">
-              <Points items={e.features} />
+              <Bullets items={e.features} render={rich} />
+            </Block>
+          ) : null}
+          {extra?.presentations?.length ? (
+            <Block title="Presentation types" testID="ref-presentations">
+              <PairTable rows={extra.presentations.map((p) => ({ label: p.name, value: p.when }))} />
             </Block>
           ) : null}
           {e.criteria.length ? (
             <Block title="Key criteria">
-              <Points items={e.criteria} />
+              <Bullets items={e.criteria} render={rich} />
             </Block>
           ) : null}
           {e.lookAlikes.length ? (
-            <Block title="Look-alikes" alert>
-              <RowList>
-                {e.lookAlikes.map((l) => (
-                  <Row key={l.name} title={l.name} meta={`How to tell: ${l.tell}`} onPress={l.slug ? () => onOpen(`/reference/${encodeURIComponent(l.slug!)}`) : undefined} chevron={!!l.slug} />
-                ))}
-              </RowList>
+            <Block title="Look-alikes" note="How to tell each one apart.">
+              <PairTable testID="ref-lookalikes" rows={e.lookAlikes.map((l) => ({ label: l.name, value: l.tell, testID: l.slug ? `ref-like-${l.slug}` : undefined, onPress: l.slug ? () => onOpen(`/reference/${encodeURIComponent(l.slug!)}`) : undefined }))} />
             </Block>
           ) : null}
           {e.firstLine.length ? (
-            <Block title="First-line treatment">
-              <Points items={e.firstLine} />
-              <T v="caption" tone="muted" style={{ marginTop: space[3] }}>
-                For learning. Real treatment is decided by the treating clinician.
-              </T>
+            <Block title="First-line treatment" note={TREATMENT_NOTE}>
+              <Bullets items={e.firstLine} render={rich} />
             </Block>
           ) : null}
-          {e.noteId ? <Button label="Read the full summary in Notes" icon={<ArrowRight size={20} color={c.onPrimary} />} onPress={() => onOpen(`/notes/${encodeURIComponent(e.noteId!)}`)} testID="ref-note" /> : null}
+          <View style={{ gap: space[2] }}>
+            <Label>Go deeper</Label>
+            <LinkCard
+              testID="ref-links"
+              items={[
+                extra?.lesson ? { testID: "ref-lesson", title: extra.lesson.title, meta: "The lesson that teaches this", icon: <BookOpen size={20} color={c.ink} />, onPress: () => onOpen(extra.lesson!.href) } : null,
+                e.noteId ? { testID: "ref-note", title: "Read the one-page note", meta: "The full summary for this topic", icon: <NotebookText size={20} color={c.ink} />, onPress: () => onOpen(`/notes/${encodeURIComponent(e.noteId!)}`) } : null,
+              ]}
+            />
+          </View>
+          <View style={{ gap: space[2] }}>
+            <Label>Practise this</Label>
+            <LinkCard
+              items={[
+                ...(extra?.practice ?? []).map((p) => ({ title: p.title, meta: p.meta, icon: <Dumbbell size={20} color={c.ink} />, onPress: () => onOpen(p.href) })),
+                { testID: "ref-practise-detective", title: "Clinic detective", meta: "Name the disorder from clues", icon: <Dumbbell size={20} color={c.ink} />, onPress: () => onOpen("/case/detective") },
+                { testID: "ref-practise-sort", title: "Criteria sort", meta: "Sort criteria into look-alike disorders", icon: <Dumbbell size={20} color={c.ink} />, onPress: () => onOpen("/game/sort") },
+              ]}
+            />
+          </View>
         </>
       ) : e.kind === "medicine" ? (
         <>
+          {e.uses.length ? (
+            <Block title="Main uses">
+              <Bullets items={e.uses} render={rich} />
+            </Block>
+          ) : null}
+          {e.sideEffects.length ? (
+            <Block title="Key side effects">
+              <Bullets items={e.sideEffects} render={rich} />
+            </Block>
+          ) : null}
+          {e.monitoring.length ? (
+            <Block title="Monitoring">
+              <Bullets items={e.monitoring} render={rich} />
+            </Block>
+          ) : null}
           {e.mechanism ? (
             <Block title="How it works">
               <Rich text={e.mechanism} v="reading" />
             </Block>
           ) : null}
-          {e.uses.length ? (
-            <Block title="Main uses">
-              <Points items={e.uses} />
-            </Block>
-          ) : null}
-          {e.sideEffects.length ? (
-            <Block title="Key side effects">
-              <Points items={e.sideEffects} />
-            </Block>
-          ) : null}
-          {e.monitoring.length ? (
-            <Block title="Monitoring">
-              <Points items={e.monitoring} />
-            </Block>
-          ) : null}
           <T v="caption" tone="muted">
-            For learning, not a prescription. Doses, interactions and the full sources are on the medicine page.
+            For learning, not a prescription. Doses, interactions and cautions are on the medicine page.
           </T>
-          <Button label="Open the full medicine page" icon={<ArrowRight size={20} color={c.onPrimary} />} onPress={() => onOpen(`/medicine/${encodeURIComponent(e.medId)}`)} testID="ref-medicine" />
+          <Button label="Open the medicine page" icon={<Pill size={20} color={c.onPrimary} />} onPress={() => onOpen(`/medicine/${encodeURIComponent(e.medId)}`)} testID="ref-medicine" />
+          <LinkCard items={[{ testID: "ref-practise-rx", title: "Rx Detective", meta: "Medicines, receptors and risky mixes", icon: <Dumbbell size={20} color={c.ink} />, onPress: () => onOpen("/game/rx") }]} />
         </>
       ) : (
         <>
@@ -286,7 +321,7 @@ export function EntryBody({ e, labelOf, onOpen }: { e: RefEntry; labelOf: (slug:
             </Block>
           ) : null}
           {e.mixup ? (
-            <Block title="Often mixed up with" alert>
+            <Block title="Often mixed up with">
               <Rich text={e.mixup} v="reading" />
             </Block>
           ) : null}
@@ -297,14 +332,18 @@ export function EntryBody({ e, labelOf, onOpen }: { e: RefEntry; labelOf: (slug:
           ) : null}
           {e.sayings.length ? (
             <Block title="Patients may say">
-              <Pills items={e.sayings.map((s) => ({ key: s, label: s }))} />
+              <Sayings items={e.sayings} />
             </Block>
           ) : null}
           {e.related.length ? (
             <Block title="Related">
-              <Pills items={e.related.map((s) => ({ key: s, label: labelOf(s) ?? s.replace(/-/g, " ") }))} onPress={(s) => onOpen(`/reference/${encodeURIComponent(s)}`)} />
+              <PairTable rows={e.related.map((s) => ({ label: labelOf(s) ?? s.replace(/-/g, " "), value: "", testID: `ref-related-${s}`, onPress: () => onOpen(`/reference/${encodeURIComponent(s)}`) }))} />
             </Block>
           ) : null}
+          <View style={{ gap: space[2] }}>
+            <Label>Practise this</Label>
+            <LinkCard items={[{ testID: "ref-practise-say", title: "Say it clinically", meta: "Everyday words into case-sheet words", icon: <Dumbbell size={20} color={c.ink} />, onPress: () => onOpen("/case/say-it") }]} />
+          </View>
         </>
       )}
     </>
@@ -313,24 +352,31 @@ export function EntryBody({ e, labelOf, onOpen }: { e: RefEntry; labelOf: (slug:
 
 export function ReferenceEntryScreen() {
   const { slug = "" } = useLocalSearchParams<{ slug: string }>();
-  const q = useTerm(String(slug));
+  const id = String(slug);
+  const q = useTerm(id);
   const index = useTerms();
   const labelOf = React.useCallback((s: string) => index.data?.items.find((r) => r.slug === s)?.label ?? null, [index.data]);
+  const e = q.data;
+  const found = !!e;
+  React.useEffect(() => {
+    if (found) recentRefs.add(id);
+  }, [found, id]);
+  const sub = e ? (e.kind === "disorder" ? [e.chapter, ...e.aka].filter(Boolean).join(" · ") : e.kind === "medicine" ? e.cls : (e.area ?? "")) : "";
   return (
-    <Screen testID="reference-entry" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <LookupScreen testID="reference-entry" tag={e ? KIND_WORD[e.kind] : undefined} title={e?.label} sub={sub || undefined} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} pin={e ? <PinButton list={pinnedRefs} id={id} name={e.label} /> : undefined}>
       <Stack.Screen options={{ title: "" }} />
       <Loaded q={q} what="this entry" skeleton={<RowsSkeleton rows={5} />}>
-        {(e) =>
-          e ? (
+        {(entry) =>
+          entry ? (
             <ReadingSize>
-              <EntryBody e={e} labelOf={labelOf} onOpen={(p) => router.push(p)} />
+              <EntryBody e={entry} labelOf={labelOf} onOpen={(p) => router.push(p)} />
             </ReadingSize>
           ) : (
-            <EmptyState mood="missing" title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(String(slug).replace(/-/g, " "))}`) }} />
+            <QuietEmpty title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(id.replace(/-/g, " "))}`) }} testID="reference-missing" />
           )
         }
       </Loaded>
-    </Screen>
+    </LookupScreen>
   );
 }
 
