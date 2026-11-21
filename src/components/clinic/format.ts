@@ -149,3 +149,33 @@ export function askLine(r: Pick<ClinicLeaveRequest, "kind" | "cost" | "leaveAt">
   if (r.kind === "missed") return "Missed OPD day";
   return r.cost === 1 ? "1 session" : `${r.cost} sessions`;
 }
+
+/** A scan refusal as the screen shows it: a short title, the reason, and whether trying the same press again can help. */
+export type ScanFailure = { title: string; body: string };
+
+const SCAN_TITLE: Record<string, string> = {
+  not_a_code: "That code did not work",
+  code_expired: "That code has changed",
+  wrong_cohort: "Not your session",
+  not_open_yet: "Not open yet",
+  closed: "Marking is closed",
+  cancelled: "Session cancelled",
+  ticket_expired: "That took too long",
+  out_before_in: "Mark IN first",
+};
+
+/** Plain words for every way a scan step can be refused (the server's reason and message, never guessed from the text). */
+export function scanFailure(r: { error: string; code?: string; reason?: string }): ScanFailure {
+  if (r.reason && SCAN_TITLE[r.reason]) return { title: SCAN_TITLE[r.reason]!, body: r.error };
+  if (r.code === "rate_limited") return { title: "Too many tries", body: "Wait a minute, then scan again." };
+  if (r.code === "unauthenticated") return { title: "Sign in again", body: "You were signed out. Sign in, then scan again." };
+  if (r.code === "unavailable") return { title: "Not switched on yet", body: "Attendance is not switched on yet. Ask the admin to mark you." };
+  return { title: "That did not work", body: r.error || "Scan the code again." };
+}
+
+/** Where the student stands in the session, in one line. */
+export function scanStateLine(s: { state: "none" | "in" | "out"; inAt: string | null; outAt: string | null }): string {
+  if (s.state === "none") return "You have not marked IN yet.";
+  if (s.state === "in") return `You are IN since ${instantClock(s.inAt)}.`;
+  return `You marked IN at ${instantClock(s.inAt)} and OUT at ${instantClock(s.outAt)}. Nothing more to do.`;
+}

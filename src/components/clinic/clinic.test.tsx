@@ -3,8 +3,8 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import jsQR from "@/vendor/jsqr/jsqr";
-import type { ClinicMySession, ClinicScanResult } from "@/lib/clinic/types";
-import { addDays, cleanCode, clock, dayShort, duration, instantClock, scanText, timeRange } from "./format";
+import type { ClinicMySession, ClinicScanConfirm, ClinicScanIdentify } from "@/lib/clinic/types";
+import { addDays, cleanCode, clock, dayShort, duration, instantClock, scanFailure, scanText, timeRange } from "./format";
 import { leaveable, overLimitLine } from "./leave-panel";
 import { needsLog } from "./opd-panel";
 import { qrPath } from "./qr";
@@ -158,34 +158,173 @@ describe("OPD", () => {
   });
 });
 
-describe("scan screen", () => {
-  it("sends a typed code and shows IN with the time", async () => {
-    const r: ClinicScanResult = { sessionId: "s1", title: "Saturday class", direction: "in", at: "2026-11-21T04:32:00Z", late: true, minutes: null };
-    const scan = vi.fn().mockResolvedValue({ ok: true, data: r });
-    render(<ScanPanel scan={scan} />);
+describe("scan screen: scan, choose, confirm, result", () => {
+  const found = (over: Partial<ClinicScanIdentify> = {}): ClinicScanIdentify => ({
+    ticket: "t1.ticket",
+    ticketExpiresAt: "2026-11-21T04:34:00Z",
+    now: "2026-11-21T04:32:00Z",
+    session: { id: "s1", title: "Saturday class", kind: "class", date: "2026-11-21", start: "10:00", end: "13:00", place: "Room 2" },
+    state: "none",
+    inAt: null,
+    outAt: null,
+    in: { allowed: true, reason: null },
+    out: { allowed: false, reason: "Mark IN first." },
+    ...over,
+  });
+  const marked = (over: Partial<ClinicScanConfirm> = {}): ClinicScanConfirm => ({ sessionId: "s1", title: "Saturday class", direction: "in", at: "2026-11-21T04:32:00Z", already: false, message: "Marked IN at 10:02 am.", late: false, minutes: null, ...over });
+  const afterIn = { state: "in" as const, inAt: "2026-11-21T04:32:00Z", in: { allowed: false, reason: "You are already IN since 10:02 am." }, out: { allowed: true, reason: null } };
+
+  /** Type the code and wait for the two choices. */
+  async function toChoices(identify: ReturnType<typeof vi.fn>, confirm: ReturnType<typeof vi.fn>, timeoutMs?: number) {
+    render(<ScanPanel identify={identify} confirm={confirm} timeoutMs={timeoutMs} />);
     fireEvent.change(screen.getByLabelText("Code under the QR"), { target: { value: "ab2xy9" } });
-    fireEvent.click(screen.getByRole("button", { name: "Send" }));
-    await waitFor(() => expect(screen.getByText(/You are in at 10:02 am/)).toBeInTheDocument());
-    expect(scan).toHaveBeenCalledWith({ code: "AB2XY9" });
+    fireEvent.click(screen.getByRole("button", { name: "Check the code" }));
+    await waitFor(() => expect(screen.getByRole("button", { name: "Mark IN" })).toBeInTheDocument());
+  }
+
+  it("a code only looks the session up: name, time, my state, and two choices with nothing chosen or sent", async () => {
+    const identify = vi.fn().mockResolvedValue({ ok: true, data: found() });
+    const confirm = vi.fn();
+    await toChoices(identify, confirm);
+    expect(identify).toHaveBeenCalledWith({ code: "AB2XY9" });
+    expect(screen.getByRole("heading", { name: "Saturday class" })).toBeInTheDocument();
+    expect(screen.getByText("Sat 21 Nov, 10 am to 1 pm, Room 2")).toBeInTheDocument();
+    expect(screen.getByText("You have not marked IN yet.")).toBeInTheDocument();
+    const inBtn = screen.getByRole("button", { name: "Mark IN" });
+    const outBtn = screen.getByRole("button", { name: "Mark OUT" });
+    expect(inBtn).toBeEnabled();
+    expect(outBtn).toBeDisabled();
+    expect(outBtn).toHaveAccessibleDescription("Mark IN first.");
+    // IN comes before OUT, and neither is pressed or selected.
+    expect(inBtn.compareDocumentPosition(outBtn) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(document.querySelector("[aria-pressed='true'], [aria-checked='true'], input[type=radio]:checked")).toBeNull();
+    fireEvent.click(outBtn);
+    expect(screen.queryByText(/You are marking/)).not.toBeInTheDocument();
+    expect(confirm).not.toHaveBeenCalled();
+  });
+
+  it("choosing shows what will be marked; Cancel goes back; nothing is sent before Confirm", async () => {
+    const confirm = vi.fn();
+    await toChoices(vi.fn().mockResolvedValue({ ok: true, data: found() }), confirm);
+    fireEvent.click(screen.getByRole("button", { name: "Mark IN" }));
+    expect(screen.getByRole("heading", { name: "You are marking IN for Saturday class" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Mark OUT" })).not.toBeInTheDocument();
+    expect(confirm).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
+    expect(screen.getByRole("button", { name: "Mark IN" })).toBeEnabled();
+    expect(confirm).not.toHaveBeenCalled();
+  });
+
+  it("Confirm locks, shows progress, sends once, then says what was recorded and when", async () => {
+    let answer: (v: unknown) => void = () => undefined;
+    const confirm = vi.fn(() => new Promise((r) => (answer = r)));
+    await toChoices(vi.fn().mockResolvedValue({ ok: true, data: found() }), confirm);
+    fireEvent.click(screen.getByRole("button", { name: "Mark IN" }));
+    const go = screen.getByRole("button", { name: "Confirm IN" });
+    fireEvent.click(go);
+    fireEvent.click(go);
+    const busy = await screen.findByRole("button", { name: "Sending" });
+    expect(busy).toBeDisabled();
+    expect(busy).toHaveAttribute("aria-busy", "true");
+    expect(screen.getByRole("button", { name: "Cancel" })).toBeDisabled();
+    fireEvent.click(busy);
+    expect(confirm).toHaveBeenCalledTimes(1);
+    expect(confirm).toHaveBeenCalledWith({ ticket: "t1.ticket", direction: "in", attemptId: expect.stringMatching(/^[A-Za-z0-9_-]{8,64}$/) });
+    answer({ ok: true, data: marked({ late: true }) });
+    await waitFor(() => expect(screen.getByRole("heading", { name: "Marked IN at 10:02 am" })).toBeInTheDocument());
+    expect(screen.getByText("Saturday class")).toBeInTheDocument();
     expect(screen.getByText("Marked late.")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Done" })).toHaveAttribute("href", "/attendance");
+  });
+
+  it("already in: Mark IN is off with the reason, and OUT is sent as out", async () => {
+    const confirm = vi.fn().mockResolvedValue({ ok: true, data: marked({ direction: "out", at: "2026-11-21T07:30:00Z", minutes: 178 }) });
+    await toChoices(vi.fn().mockResolvedValue({ ok: true, data: found(afterIn) }), confirm);
+    expect(screen.getByText("You are IN since 10:02 am.")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Mark IN" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Mark IN" })).toHaveAccessibleDescription("You are already IN since 10:02 am.");
+    fireEvent.click(screen.getByRole("button", { name: "Mark OUT" }));
+    fireEvent.click(screen.getByRole("button", { name: "Confirm OUT" }));
+    await waitFor(() => expect(screen.getByRole("heading", { name: "Marked OUT at 1 pm" })).toBeInTheDocument());
+    expect(confirm).toHaveBeenCalledWith(expect.objectContaining({ direction: "out" }));
+    expect(screen.getByText("Present for 2 h 58 min.")).toBeInTheDocument();
+  });
+
+  it("a mark that was already there is shown as it is", async () => {
+    const confirm = vi.fn().mockResolvedValue({ ok: true, data: marked({ already: true }) });
+    await toChoices(vi.fn().mockResolvedValue({ ok: true, data: found() }), confirm);
+    fireEvent.click(screen.getByRole("button", { name: "Mark IN" }));
+    fireEvent.click(screen.getByRole("button", { name: "Confirm IN" }));
+    await waitFor(() => expect(screen.getByRole("heading", { name: "Already marked IN at 10:02 am" })).toBeInTheDocument());
+    expect(screen.getByText("Nothing was changed.")).toBeInTheDocument();
+  });
+
+  it("no internet: says it did not go through, and Try again sends the same press again", async () => {
+    const confirm = vi.fn().mockRejectedValueOnce(new Error("Failed to fetch")).mockResolvedValueOnce({ ok: true, data: marked() });
+    await toChoices(vi.fn().mockResolvedValue({ ok: true, data: found() }), confirm);
+    fireEvent.click(screen.getByRole("button", { name: "Mark IN" }));
+    fireEvent.click(screen.getByRole("button", { name: "Confirm IN" }));
+    await waitFor(() => expect(screen.getByRole("heading", { name: "Not marked yet" })).toBeInTheDocument());
+    expect(screen.getByRole("alert")).toHaveTextContent("Your IN for Saturday class did not go through.");
+    expect(screen.getByRole("alert")).toHaveTextContent("It will not be sent later on its own.");
+    fireEvent.click(screen.getByRole("button", { name: "Try again" }));
+    await waitFor(() => expect(screen.getByRole("heading", { name: "Marked IN at 10:02 am" })).toBeInTheDocument());
+    expect(confirm).toHaveBeenCalledTimes(2);
+    expect(confirm.mock.calls[1]![0]).toEqual(confirm.mock.calls[0]![0]);
+  });
+
+  it("a slow network is not left spinning", async () => {
+    const confirm = vi.fn(() => new Promise(() => undefined));
+    await toChoices(vi.fn().mockResolvedValue({ ok: true, data: found() }), confirm, 30);
+    fireEvent.click(screen.getByRole("button", { name: "Mark IN" }));
+    fireEvent.click(screen.getByRole("button", { name: "Confirm IN" }));
+    await waitFor(() => expect(screen.getByRole("heading", { name: "Not marked yet" })).toBeInTheDocument());
+    expect(screen.getByRole("button", { name: "Scan again" })).toBeInTheDocument();
+  });
+
+  it("after the ticket's 2 minutes nothing is sent: scan again", async () => {
+    const confirm = vi.fn();
+    await toChoices(vi.fn().mockResolvedValue({ ok: true, data: found() }), confirm);
+    fireEvent.click(screen.getByRole("button", { name: "Mark IN" }));
+    const real = Date.now();
+    const spy = vi.spyOn(Date, "now").mockReturnValue(real + 121_000);
+    fireEvent.click(screen.getByRole("button", { name: "Confirm IN" }));
+    spy.mockRestore();
+    expect(screen.getByRole("heading", { name: "That took too long" })).toBeInTheDocument();
+    expect(confirm).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: "Scan again" }));
+    expect(screen.getByLabelText("Code under the QR")).toBeInTheDocument();
+  });
+
+  it("every refusal has its own words", async () => {
+    const cases: [string, string, string][] = [
+      ["code_expired", "That code has changed. Scan the one on the screen now.", "That code has changed"],
+      ["wrong_cohort", "This code is for another group's session.", "Not your session"],
+      ["not_open_yet", "Saturday class is not open yet. Marking opens at 9:30 am. Scan again then.", "Not open yet"],
+      ["closed", "Marking for Saturday class closed at 2 pm. Ask the admin to mark you.", "Marking is closed"],
+      ["cancelled", "Saturday class was cancelled. There is nothing to mark.", "Session cancelled"],
+    ];
+    for (const [reason, error, title] of cases) {
+      const identify = vi.fn().mockResolvedValue({ ok: false, code: "conflict", error, reason });
+      const view = render(<ScanPanel identify={identify} confirm={vi.fn()} />);
+      fireEvent.change(screen.getByLabelText("Code under the QR"), { target: { value: "AB2XY9" } });
+      fireEvent.click(screen.getByRole("button", { name: "Check the code" }));
+      await waitFor(() => expect(screen.getByRole("heading", { name: title })).toBeInTheDocument());
+      expect(screen.getByRole("alert")).toHaveTextContent(error);
+      expect(screen.getByRole("button", { name: "Scan again" })).toBeInTheDocument();
+      view.unmount();
+    }
+    expect(scanFailure({ error: "x", code: "bad_request", reason: "ticket_expired" }).title).toBe("That took too long");
+    expect(scanFailure({ error: "x", code: "bad_request", reason: "out_before_in" }).title).toBe("Mark IN first");
+    expect(scanFailure({ error: "x", code: "rate_limited" }).title).toBe("Too many tries");
   });
 
   it("refuses a code with the wrong letters before asking the server", () => {
-    const scan = vi.fn();
-    render(<ScanPanel scan={scan} />);
+    const identify = vi.fn();
+    render(<ScanPanel identify={identify} confirm={vi.fn()} />);
     fireEvent.change(screen.getByLabelText("Code under the QR"), { target: { value: "AB0" } });
-    fireEvent.click(screen.getByRole("button", { name: "Send" }));
+    fireEvent.click(screen.getByRole("button", { name: "Check the code" }));
     expect(screen.getByRole("alert")).toHaveTextContent("The code has 6 letters and numbers.");
-    expect(scan).not.toHaveBeenCalled();
-  });
-
-  it("shows the server's reason when a scan is not counted, and sends the chosen direction", async () => {
-    const scan = vi.fn().mockResolvedValue({ ok: false, error: "That code is too old. Scan the one on the screen now." });
-    render(<ScanPanel scan={scan} />);
-    fireEvent.click(screen.getByRole("button", { name: "Out" }));
-    fireEvent.change(screen.getByLabelText("Code under the QR"), { target: { value: "AB2XY9" } });
-    fireEvent.click(screen.getByRole("button", { name: "Send" }));
-    await waitFor(() => expect(screen.getByText("Not counted")).toBeInTheDocument());
-    expect(scan).toHaveBeenCalledWith({ code: "AB2XY9", direction: "out" });
+    expect(identify).not.toHaveBeenCalled();
   });
 });
