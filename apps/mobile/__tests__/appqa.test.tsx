@@ -247,6 +247,9 @@ describe("reaction stickers", () => {
   it("leaving one game screen never cancels the next screen's end sticker", async () => {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { ReactionLayer, reactions } = require("@/ds/reactions") as typeof import("@/ds/reactions");
+    // Funny stickers are off by default now; this test is about the stickers themselves.
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    (require("@/lib/settings") as typeof import("@/lib/settings")).updateSettings({ reactions: true });
     jest.useFakeTimers();
     const first = await render(<ReactionLayer />);
     await act(async () => {
