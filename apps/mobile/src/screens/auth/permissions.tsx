@@ -1,3 +1,4 @@
+import { useSegments } from "expo-router";
 import { Bell, Camera } from "lucide-react-native";
 import * as React from "react";
 import { BackHandler, Platform, View } from "react-native";
@@ -6,15 +7,17 @@ import type { Me } from "@/api/contract";
 import { api } from "@/auth";
 import { Button, T } from "@/ds";
 import { introSeen, markIntroSeen, permissions, type PermKind, type PermState } from "@/lib/permissions";
+import { Enter, Swap } from "@/motion";
 import { groupFor } from "@/nav/targets";
 import { enablePush } from "@/push";
 import { Gate } from "@/screens/auth/gates";
-import { Swap } from "@/motion";
+import { LecturesOnlyGate, outsideLectures } from "@/screens/auth/scope";
+import { markTourSeen, TabTour, tourSeen } from "@/screens/auth/tour";
 import { space, useTheme } from "@/theme";
 
-const STEPS: Record<PermKind, { icon: typeof Bell; title: string; line: string }> = {
-  notifications: { icon: Bell, title: "Get class and leave updates", line: "We let you know when a class changes or your leave is answered." },
-  camera: { icon: Camera, title: "Scan in for attendance", line: "The camera is used only to scan the attendance code at your session." },
+const STEPS: Record<PermKind, { icon: typeof Bell; title: string; line: string; points: [string, string] }> = {
+  notifications: { icon: Bell, title: "Get class and leave updates", line: "We let you know when a class changes or your leave is answered.", points: ["Only about your own classes, leave and doubts", "Turn it off any time in Me, then Settings"] },
+  camera: { icon: Camera, title: "Scan in for attendance", line: "The camera is used only to scan the attendance code at your session.", points: ["Nothing is recorded or saved", "No camera? You can always type the code"] },
 };
 
 /** Which permissions to ask for on this account: only those the phone can still ask. Camera only for students (the clinic scanner). */
@@ -26,20 +29,63 @@ export function introSteps(me: Me | null, states: Record<PermKind, PermState>): 
   return out;
 }
 
+/** The browser build (screenshots, development) shows the tour only when the address asks for it: ?tour=1. */
+function webAsks(name: "tour" | "perms"): boolean {
+  try {
+    return typeof window !== "undefined" && new URLSearchParams(window.location.search).get(name) === "1";
+  } catch {
+    return false;
+  }
+}
+
 /**
- * The first-run step after sign-in: one calm screen per permission, a
- * line on why, Allow (the phone's own question) or Not now. Shown once on
- * this phone; Settings > Permissions has them afterwards.
+ * Everything that happens once after the first sign-in, in order:
+ *   1. students: the tab tour, with Jyo saying hello (src/screens/auth/tour.tsx)
+ *   2. one calm screen per permission, a line on why, Allow (the phone's
+ *      own question) or Not now
+ * Each is shown once on this phone; Settings > Permissions has the switches
+ * afterwards. Also holds the "lectures only" screen for a lectures-only
+ * account that opened a link to something outside its lectures.
  */
 export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | null }) {
+  const [tour, setTour] = React.useState<"unknown" | "show" | "done">("unknown");
   const [steps, setSteps] = React.useState<PermKind[] | null>(null);
   const [i, setI] = React.useState(0);
   const [busy, setBusy] = React.useState(false);
   const checked = React.useRef(false);
+  const toured = React.useRef(false);
+  const group = groupFor(me);
+  const top = useSegments()[0] as string | undefined;
 
+  // 1. The tour: students only, once.
   React.useEffect(() => {
-    if (!active || checked.current || Platform.OS === "web") return;
+    if (!active || toured.current) return;
+    toured.current = true;
+    if (group !== "(student)") return setTour("done");
+    if (Platform.OS === "web") return setTour(webAsks("tour") ? "show" : "done");
+    let live = true;
+    void tourSeen()
+      .then((seen) => {
+        if (!live) return;
+        // Remembered as soon as it appears: closing the app half way never brings it back.
+        if (!seen) markTourSeen();
+        setTour(seen ? "done" : "show");
+      })
+      .catch(() => live && setTour("done"));
+    return () => {
+      live = false;
+    };
+  }, [active, group]);
+
+  // 2. The permissions, once the tour is out of the way.
+  React.useEffect(() => {
+    if (!active || tour !== "done" || checked.current) return;
     checked.current = true;
+    if (Platform.OS === "web") {
+      // The browser build cannot ask; ?perms=1 shows both steps for screenshots.
+      if (webAsks("perms")) setSteps(groupFor(me) === "(student)" ? ["notifications", "camera"] : ["notifications"]);
+      return;
+    }
     let live = true;
     void (async () => {
       if (await introSeen()) return;
@@ -52,9 +98,9 @@ export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | 
     return () => {
       live = false;
     };
-  }, [active, me]);
+  }, [active, me, tour]);
 
-  const kind = steps?.[i];
+  const kind = tour === "done" ? steps?.[i] : undefined;
   const next = React.useCallback(() => {
     setBusy(false);
     setI((n) => n + 1);
@@ -69,8 +115,11 @@ export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | 
     return () => sub.remove();
   }, [kind, next]);
 
-  if (!active || !kind) return null;
+  if (!active) return null;
+  if (tour === "show") return <TabTour name={typeof me?.name === "string" ? me.name.split(" ")[0] : undefined} onDone={() => setTour("done")} />;
+  if (!kind) return outsideLectures(group, top) ? <LecturesOnlyGate /> : null;
   const step = STEPS[kind];
+  const total = steps?.length ?? 1;
   const allow = async () => {
     setBusy(true);
     try {
@@ -89,6 +138,9 @@ export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | 
   return (
     <Gate
       testID="first-run-permissions"
+      titleKey={kind}
+      title={step.title}
+      lead={total > 1 ? `${i + 1} of ${total}` : "One quick question"}
       footer={
         <>
           <Button label="Allow" busy={busy} onPress={() => void allow()} testID={`perm-allow-${kind}`} />
@@ -96,26 +148,36 @@ export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | 
         </>
       }
     >
-      <Swap k={kind}>
-        <StepBody icon={step.icon} title={step.title} line={step.line} testID={`perm-step-${kind}`} />
+      <Swap k={kind} dir={1}>
+        <StepBody icon={step.icon} line={step.line} points={step.points} testID={`perm-step-${kind}`} />
       </Swap>
     </Gate>
   );
 }
 
-function StepBody({ icon: Icon, title, line, testID }: { icon: typeof Bell; title: string; line: string; testID: string }) {
+function StepBody({ icon: Icon, line, points, testID }: { icon: typeof Bell; line: string; points: readonly string[]; testID: string }) {
   const c = useTheme();
+  const a = c.areas.learn;
   return (
-    <View testID={testID} accessibilityLiveRegion="polite" style={{ alignItems: "center", gap: space[4] }}>
-      <View style={{ width: 96, height: 96, borderRadius: 48, backgroundColor: c.tint, alignItems: "center", justifyContent: "center" }}>
-        <Icon size={40} color={c.ink} />
+    <View testID={testID} accessibilityLiveRegion="polite" style={{ gap: space[5] }}>
+      <Enter i={0} kind="pop">
+        <View style={{ width: 88, height: 88, borderRadius: 44, backgroundColor: a.wash, alignItems: "center", justifyContent: "center" }}>
+          <Icon size={38} color={a.deep} strokeWidth={2} />
+        </View>
+      </Enter>
+      <Enter i={1}>
+        <T v="reading">{line}</T>
+      </Enter>
+      <View style={{ gap: space[3] }}>
+        {points.map((p, n) => (
+          <Enter key={p} i={n + 2} style={{ flexDirection: "row", alignItems: "flex-start", gap: space[3] }}>
+            <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: a.deep, marginTop: 7 }} />
+            <T v="small" tone="muted" style={{ flex: 1 }}>
+              {p}
+            </T>
+          </Enter>
+        ))}
       </View>
-      <T v="h1" center>
-        {title}
-      </T>
-      <T center tone="muted">
-        {line}
-      </T>
     </View>
   );
 }
