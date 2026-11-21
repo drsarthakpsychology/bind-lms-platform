@@ -6,14 +6,14 @@ import { View } from "react-native";
 
 import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
-import { Chips, Label, LoadError, QuietEmpty, Row, RowList, RowsSkeleton, Screen, StillTrying, T, TabRow, useProgressive } from "@/ds";
+import { Chips, Label, QuietEmpty, Row, RowList, RowsSkeleton, Screen, StillTrying, T, TabRow, useProgressive } from "@/ds";
 import { recentMedicines } from "@/lib/recent";
 import { Enter, Swap } from "@/motion";
 import { SoonState } from "@/practise/soon";
 import type { MedicineList } from "@/practise/types";
 import type { MedicinePage } from "@/practise/contract";
 import { layout, space, useTheme } from "@/theme";
-import { LinkCard, SearchField } from "./kit";
+import { LinkCard, QuietError, SearchField } from "./kit";
 import { ClassMark } from "./marks";
 import { searchMeds } from "./meds";
 import { MECHANISM_GROUPS } from "./mock";
@@ -82,7 +82,7 @@ export function LibraryScreen() {
         soon ? (
           <SoonState web="/library" />
         ) : (
-          <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
+          <QuietError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
         )
       ) : !q.data ? (
         <View style={{ gap: space[3] }}>

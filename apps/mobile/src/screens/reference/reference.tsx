@@ -6,8 +6,8 @@ import { Pressable, View } from "react-native";
 import type { RefEntry, RefIndexItem, RefKind } from "@/api/adapt-learn";
 import { useTerm, useTerms } from "@/api/learn";
 import { go } from "@/api/prefetch";
-import { Button, Chips, Label, Loaded, LoadError, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Sheet, Skeleton, Stone, T, useProgressive } from "@/ds";
-import { Block, Bullets, FactStrip, LinkCard, LookupScreen, PairTable, PinButton, SearchField, type Fact } from "@/library/kit";
+import { Button, Chips, Label, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Sheet, Skeleton, Stone, T, useProgressive } from "@/ds";
+import { Block, Bullets, FactStrip, LinkCard, Loads, LookupScreen, QuietError, PairTable, PinButton, SearchField, type Fact } from "@/library/kit";
 import { pinnedRefs, recentRefs } from "@/library/pins";
 import { ReadingSize } from "@/lib/reading";
 import { Enter, Reveal } from "@/motion";
@@ -110,7 +110,7 @@ export function ReferenceScreen() {
           onChange={setKind}
         />
       </View>
-      <Loaded q={query} soon="/study/reference" what="the Quick reference" skeleton={<RowsSkeleton rows={8} />}>
+      <Loads q={query} soon="/study/reference" what="the Quick reference" skeleton={<RowsSkeleton rows={8} />}>
         {(d) => {
           const rows = searchRefs(d.items, q, kind);
           if (!d.items.length) return <QuietEmpty title="The Quick reference opens soon" body="Disorder cards, medicines and words show up here." testID="reference-none" />;
@@ -131,7 +131,7 @@ export function ReferenceScreen() {
             .filter((r) => !pinned.includes(r.slug))
             .slice(0, 3);
           return (
-            <>
+            <View style={{ gap: space[5] }}>
               {pins.length ? (
                 <Enter i={0} style={{ gap: space[2] }}>
                   <Label>Pinned</Label>
@@ -145,10 +145,10 @@ export function ReferenceScreen() {
                 </Enter>
               ) : null}
               <AToZ key={kind} rows={rows} row={(r) => row(r, "ref", kind === "all")} />
-            </>
+            </View>
           );
         }}
-      </Loaded>
+      </Loads>
     </Screen>
   );
 }
@@ -365,17 +365,19 @@ export function ReferenceEntryScreen() {
   return (
     <LookupScreen testID="reference-entry" tag={e ? KIND_WORD[e.kind] : undefined} title={e?.label} sub={sub || undefined} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} pin={e ? <PinButton list={pinnedRefs} id={id} name={e.label} /> : undefined}>
       <Stack.Screen options={{ title: "" }} />
-      <Loaded q={q} what="this entry" skeleton={<RowsSkeleton rows={5} />}>
+      <Loads q={q} what="this entry" skeleton={<RowsSkeleton rows={5} />} missing={<QuietEmpty title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(id.replace(/-/g, " "))}`) }} testID="reference-missing" />}>
         {(entry) =>
           entry ? (
             <ReadingSize>
-              <EntryBody e={entry} labelOf={labelOf} onOpen={(p) => router.push(p)} />
+              <View style={{ gap: space[6] }}>
+                <EntryBody e={entry} labelOf={labelOf} onOpen={(p) => router.push(p)} />
+              </View>
             </ReadingSize>
           ) : (
             <QuietEmpty title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(id.replace(/-/g, " "))}`) }} testID="reference-missing" />
           )
         }
-      </Loaded>
+      </Loads>
     </LookupScreen>
   );
 }
@@ -397,7 +399,7 @@ export function TermSheet({ word, onClose }: { word: string | null; onClose: () 
   return (
     <Sheet open={word !== null} onClose={onClose} title={hit?.label ?? word ?? ""} testID="term-sheet">
       {(index.isError && index.data === undefined) || (entry.isError && entry.data === undefined) ? (
-        <LoadError what="this word" error={index.isError ? index.error : entry.error} onRetry={() => void (index.isError ? index.refetch() : entry.refetch())} />
+        <QuietError what="this word" error={index.isError ? index.error : entry.error} onRetry={() => void (index.isError ? index.refetch() : entry.refetch())} />
       ) : !index.data || (hit && !entry.data) ? (
         <View style={{ gap: space[3] }}>
           <Skeleton w="90%" h={18} />

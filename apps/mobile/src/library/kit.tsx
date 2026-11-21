@@ -7,8 +7,11 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { haptic } from "@/lib/haptics";
 import type { Recent } from "@/lib/recent";
-import { layerShadow, OfflineLine, T, toast } from "@/ds";
-import { Press, presets, useFromRow, useGrowIn, useMotionTier } from "@/motion";
+import type { UseQueryResult } from "@tanstack/react-query";
+
+import { ApiFailure, isClosed, reasonOf } from "@/api/errors";
+import { ComingSoon, layerShadow, OfflineLine, QuietEmpty, RowsSkeleton, StillTrying, T, toast, WaitingForInternet } from "@/ds";
+import { LoadSwap, Press, presets, useFromRow, useGrowIn, useMotionTier } from "@/motion";
 import { layout, space, type as scale, useLightStatusBar, useTheme } from "@/theme";
 
 /**
@@ -25,6 +28,8 @@ import { layout, space, type as scale, useLightStatusBar, useTheme } from "@/the
  *   JumpChips      one row of section names that scroll the page
  *   LinkCard       "Go deeper" and "Practise this" rows on one stone
  *   PinButton      pin or unpin, in the header
+ *   QuietError     "could not load" on a quiet stone, never a sticker (errors get no mascot)
+ *   Loads          the kit's Loaded, with QuietError and an optional "not found" state
  */
 
 /* ---------------------------------------------------------------- shell */
@@ -350,5 +355,44 @@ export function PinButton({ list, id, name }: { list: Recent; id: string; name: 
     >
       <Pin size={19} color={on ? c.onLime : c.onField} fill={on ? c.onLime : "transparent"} strokeWidth={2} />
     </Press>
+  );
+}
+
+/* --------------------------------------------------------------- loading */
+
+/** "Could not load": a quiet stone with one Try again. No sticker and no companion on an error. */
+export function QuietError({ what = "this", error, onRetry, testID = "load-error" }: { what?: string; error?: unknown; onRetry: () => void; testID?: string }) {
+  return <QuietEmpty testID={testID} title={`Could not load ${what}`} body={reasonOf(error)} action={{ label: "Try again", onPress: onRetry }} />;
+}
+
+/**
+ * The kit's `Loaded` for look-up pages: a skeleton that becomes the content,
+ * waiting offline, "coming soon" for a route the server does not have yet,
+ * `missing` for a page that is not there (404), and QuietError otherwise.
+ */
+export function Loads<D>({ q, skeleton, what, soon, missing, children }: { q: UseQueryResult<D>; skeleton?: React.ReactNode; what?: string; soon?: string; /** Shown when the server answers "not found" (and `soon` is not set). */ missing?: React.ReactNode; children: (data: D) => React.ReactNode }) {
+  const waiting = q.data === undefined && !q.isError && q.fetchStatus === "paused";
+  let body: React.ReactNode = null;
+  const notFound = q.error instanceof ApiFailure && q.error.code === "not_found";
+  if (q.data !== undefined) body = children(q.data);
+  else if (waiting) body = <WaitingForInternet onRetry={() => void q.refetch()} />;
+  else if (q.isError) {
+    if (isClosed(q.error)) body = <QuietEmpty title="Not open for your account" body="This part of VIBHA is not switched on for you yet." testID="closed" />;
+    else if (notFound && soon) body = <ComingSoon web={soon} />;
+    else if (notFound && missing) body = missing;
+    else body = <QuietError what={what} error={q.error} onRetry={() => void q.refetch()} />;
+  }
+  return (
+    <LoadSwap
+      ready={q.data !== undefined || q.isError || waiting}
+      skeleton={
+        <View style={{ gap: space[3] }}>
+          {skeleton ?? <RowsSkeleton />}
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
+      }
+    >
+      {body}
+    </LoadSwap>
   );
 }

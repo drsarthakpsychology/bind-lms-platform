@@ -8,8 +8,8 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 import { bulletText } from "@/api/adapt-learn";
 import type { RevisionNote, RevisionNoteList, RevisionNoteSummary } from "@/api/contract";
 import { learnKeys, useNote, useNotes, useTerms } from "@/api/learn";
-import { Chips, IconDot, Jyo, Label, Loaded, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Stone, T } from "@/ds";
-import { Block, Bullets, JumpChips, LinkCard, LookupScreen, PinButton, SearchField, useJump, type Jump } from "@/library/kit";
+import { Chips, IconDot, Jyo, Label, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Stone, T } from "@/ds";
+import { Block, Bullets, JumpChips, LinkCard, Loads, LookupScreen, PinButton, SearchField, useJump, type Jump } from "@/library/kit";
 import { pinnedNotes, recentNotes } from "@/library/pins";
 import { OnceHint } from "@/lib/once";
 import { ReadingSize } from "@/lib/reading";
@@ -157,9 +157,13 @@ export function NotesScreen() {
   const n = q.data?.notes.length;
   return (
     <Screen area="library" testID="notes" title="Revision notes" lead={n ? `${n} one-page summaries` : "One page per topic"} gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Loaded q={q} soon="/study/notes" what="your notes" skeleton={<RowsSkeleton rows={6} />}>
-        {(d) => <NotesBody d={d} />}
-      </Loaded>
+      <Loads q={q} soon="/study/notes" what="your notes" skeleton={<RowsSkeleton rows={6} />}>
+        {(d) => (
+          <View style={{ gap: space[5] }}>
+            <NotesBody d={d} />
+          </View>
+        )}
+      </Loads>
     </Screen>
   );
 }
@@ -380,13 +384,15 @@ export function NoteScreen() {
             onChange={(v) => updateSettings({ readAs: v })}
           />
         ) : null}
-        <Loaded q={q} what="this note" skeleton={<RowsSkeleton rows={6} />}>
+        <Loads q={q} what="this note" skeleton={<RowsSkeleton rows={6} />} missing={<QuietEmpty title="This note is not here" body="It may have moved. Search the notes for it." action={{ label: "See all notes", onPress: () => router.replace("/notes") }} testID="note-missing" />}>
           {(note) => (
             <ReadingSize>
-              <NoteBody n={note} view={view} neighbours={neighbours} jump={jump} />
+              <View style={{ gap: space[6] }}>
+                <NoteBody n={note} view={view} neighbours={neighbours} jump={jump} />
+              </View>
             </ReadingSize>
           )}
-        </Loaded>
+        </Loads>
       </LookupScreen>
       <TermSheet word={word} onClose={closeWord} />
     </TermPress.Provider>

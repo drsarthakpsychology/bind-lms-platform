@@ -4,12 +4,12 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { ApiFailure } from "@/api/errors";
-import { Button, Label, LoadError, QuietEmpty, Row, RowList, RowsSkeleton, Sheet, StillTrying, T } from "@/ds";
+import { Button, Label, QuietEmpty, Row, RowList, RowsSkeleton, Sheet, StillTrying, T } from "@/ds";
 import { recentMedicines } from "@/lib/recent";
 import { openTarget } from "@/nav/targets";
 import type { MedicinePage, MedSection } from "@/practise/contract";
 import { fonts, layout, space, useTheme } from "@/theme";
-import { Block, Bullets, FactStrip, JumpChips, LinkCard, LookupScreen, PairTable, PinButton, useJump } from "./kit";
+import { Block, Bullets, FactStrip, JumpChips, LinkCard, LookupScreen, PairTable, PinButton, QuietError, useJump } from "./kit";
 import { useMedicineList, useMedicinePage } from "./list";
 import { ClassMark } from "./marks";
 import { MedicineDiagrams } from "./med-diagrams";
@@ -56,7 +56,7 @@ export function MedicineScreen() {
     const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
     return (
       <LookupScreen testID="medicine-missing">
-        {soon ? <QuietEmpty title="Not in the library yet" body="This medicine page arrives in the app soon." action={{ label: "See all medicines", onPress: () => router.replace("/medicines") }} /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}
+        {soon ? <QuietEmpty title="Not in the library yet" body="This medicine page arrives in the app soon." action={{ label: "See all medicines", onPress: () => router.replace("/medicines") }} /> : <QuietError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}
       </LookupScreen>
     );
   }
