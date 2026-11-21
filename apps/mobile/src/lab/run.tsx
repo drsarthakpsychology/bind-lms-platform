@@ -14,6 +14,8 @@ export type Step = {
   context?: string;
   /** A small word over the context ("Ward round", "Headline"). */
   contextLabel?: string;
+  /** A still picture over the question (a scatter plot). */
+  art?: React.ReactNode;
   prompt: string;
   options: string[];
   answer: number;
@@ -34,7 +36,7 @@ export type RunResult = { id: string; picked: number; right: boolean };
  * the end a short summary with what to look at again. `calm` is for cases and
  * anything clinical: no sparks, ever.
  */
-export function QuestionRun({ steps, title, calm, home, onDone, doneLabel = "Done", takeaway, testID = "run", rightTitle = "Yes, that fits", wrongTitle = "Not quite" }: { steps: Step[]; title: string; calm?: boolean; home?: string; onDone?: (r: RunResult[]) => void; doneLabel?: string; takeaway?: string; testID?: string; rightTitle?: string; wrongTitle?: string }) {
+export function QuestionRun({ steps, title, calm, home, onClose, onDone, doneLabel = "Done", takeaway, testID = "run", summary = true, rightTitle = "Yes, that fits", wrongTitle = "Not quite" }: { steps: Step[]; title: string; calm?: boolean; home?: string; /** Close goes here instead of back (a run inside another screen). */ onClose?: () => void; onDone?: (r: RunResult[]) => void; doneLabel?: string; takeaway?: string; testID?: string; /** False when the caller shows its own ending (`onDone` moves on). */ summary?: boolean; rightTitle?: string; wrongTitle?: string }) {
   const [i, setI] = React.useState(0);
   const [picked, setPicked] = React.useState<number | null>(null);
   const [checked, setChecked] = React.useState(false);
@@ -43,9 +45,10 @@ export function QuestionRun({ steps, title, calm, home, onDone, doneLabel = "Don
   const [round, setRound] = React.useState(0);
   const step = steps[i];
   const finished = i >= steps.length;
-  const close = () => leave(home);
+  const close = onClose ?? (() => leave(home));
 
   if (finished || !step) {
+    if (!summary) return <PlayShell testID={testID} title={title} onClose={close} />;
     return (
       <Summary
         title={title}
@@ -113,6 +116,7 @@ export function QuestionRun({ steps, title, calm, home, onDone, doneLabel = "Don
             </Stone>
           </View>
         ) : null}
+        {step.art}
         <T v="h2" accessibilityRole="header">
           {step.prompt}
         </T>

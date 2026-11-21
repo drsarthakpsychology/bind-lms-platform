@@ -137,10 +137,10 @@ export function EntryCard({ title, meta, icon, href, area = "practise", tall, te
 }
 
 /** A small quiet tag ("Foundation", "6 min"). Words, never colour alone. */
-export function Tag({ children, onField }: { children: string; onField?: boolean }) {
+export function Tag({ children, onField, onLayer }: { children: string; onField?: boolean; /** Sits straight on the layer, not on a stone. */ onLayer?: boolean }) {
   const c = useTheme();
   return (
-    <View style={{ alignSelf: "flex-start", paddingHorizontal: space[2] + 2, paddingVertical: 3, borderRadius: 999, backgroundColor: onField ? c.fieldTint : c.bg }}>
+    <View style={{ alignSelf: "flex-start", paddingHorizontal: space[2] + 2, paddingVertical: 3, borderRadius: 999, backgroundColor: onField ? c.fieldTint : onLayer ? c.card : c.bg }}>
       <T v="caption" tone={onField ? "onField" : "muted"}>
         {children}
       </T>
