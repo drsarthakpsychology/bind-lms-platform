@@ -64,7 +64,7 @@ export function AdminCohortScreen() {
   const [tab, setTab] = React.useState<(typeof TABS)[number]["id"]>("members");
   const { canWrite } = useAdminRole();
   return (
-    <Screen testID="admin-cohort" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={canWrite && q.data?.people.length ? <Button label="Message this cohort" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose({ cohort: String(id) })} testID="cohort-message" /> : undefined}>
+    <Screen title={q.data?.name ?? "Cohort"} testID="admin-cohort" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={canWrite && q.data?.people.length ? <Button label="Message this cohort" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose({ cohort: String(id) })} testID="cohort-message" /> : undefined}>
       <Loaded q={q} soon what="this cohort" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => (
           <>

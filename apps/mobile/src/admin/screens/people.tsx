@@ -361,7 +361,7 @@ export function AdminPersonScreen() {
   const [link, setLink] = React.useState<LoginLinkResult | null>(null);
   const icon = { size: 18, color: c.ink };
   return (
-    <Screen testID="admin-person" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen title={q.data?.name ?? "Person"} testID="admin-person" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Loaded q={q} soon what="this person" skeleton={<RowsSkeleton rows={6} />}>
         {(p) => (
           <>

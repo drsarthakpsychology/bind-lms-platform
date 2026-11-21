@@ -106,7 +106,7 @@ export function AdminThreadScreen() {
     if (r) setText("");
   };
   return (
-    <Screen testID="admin-thread" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data ? <Locked><Button label="Send reply" busy={busy === "reply"} onPress={() => void send()} testID="thread-send" /></Locked> : undefined}>
+    <Screen title="Message" testID="admin-thread" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data ? <Locked><Button label="Send reply" busy={busy === "reply"} onPress={() => void send()} testID="thread-send" /></Locked> : undefined}>
       <Loaded q={q} soon what="this message" skeleton={<RowsSkeleton rows={4} />}>
         {(t) => (
           <>

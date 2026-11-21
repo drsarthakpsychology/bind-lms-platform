@@ -105,7 +105,7 @@ export function AdminComposeScreen() {
   const whom = to === "everyone" ? "every student" : (cohortOptions.find((x) => x.id === cohort)?.name ?? "this cohort");
 
   return (
-    <Screen testID="compose" gap={space[5]} footer={<Button label={reach ? `Send to ${plural(reach, "student")}` : "Send"} busy={busy === "message"} onPress={check} testID="compose-send" />}>
+    <Screen title="New message" testID="compose" gap={space[5]} footer={<Button label={reach ? `Send to ${plural(reach, "student")}` : "Send"} busy={busy === "message"} onPress={check} testID="compose-send" />}>
       <View style={{ gap: space[2] }}>
         <T v="small">To</T>
         <Chips

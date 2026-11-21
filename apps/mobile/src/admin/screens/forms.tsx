@@ -61,7 +61,7 @@ export function AdminFormScreen() {
     <Button label={emailed ? `Email these ${shownCount}` : `Email all ${total}`} onPress={() => setEmailTo(emailed ? (q.data?.respondents.map((r) => r.id) ?? []) : "all")} testID="form-email-all" />
   );
   return (
-    <Screen testID="admin-form" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={footer}>
+    <Screen title={q.data?.title ?? "Form"} testID="admin-form" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={footer}>
       <Loaded q={q} soon what="this form" skeleton={<RowsSkeleton rows={5} />}>
         {(f) => {
           const all = f.respondents.length > 0 && f.respondents.every((r) => picked.has(r.id));

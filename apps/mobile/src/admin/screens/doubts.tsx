@@ -98,7 +98,7 @@ export function AdminDoubtScreen() {
     if (r) setText("");
   };
   return (
-    <Screen testID="admin-doubt" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data && q.data.status !== "hidden" ? <Locked><Button label="Post answer" busy={busy === "answer-doubt"} onPress={() => void answer()} testID="doubt-answer" /></Locked> : undefined}>
+    <Screen title="Doubt" testID="admin-doubt" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data && q.data.status !== "hidden" ? <Locked><Button label="Post answer" busy={busy === "answer-doubt"} onPress={() => void answer()} testID="doubt-answer" /></Locked> : undefined}>
       <Loaded q={q} soon what="this doubt" skeleton={<RowsSkeleton rows={4} />}>
         {(d) => {
           const st = doubtState({ status: d.status, replies: d.replies.length });
