@@ -8,7 +8,7 @@ import { messageOf } from "@/api/errors";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Button, Field, Row, RowList, RowsSkeleton, T } from "@/ds";
-import { EmptyState, Screen } from "../ui";
+import { EmptyState, Screen, Locked } from "../ui";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useAdminDoubt, useAdminDoubts, useRefreshAdmin } from "../api";
 import { ago, type Tone } from "../format";
@@ -98,7 +98,7 @@ export function AdminDoubtScreen() {
     if (r) setText("");
   };
   return (
-    <Screen testID="admin-doubt" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={canWrite && q.data && q.data.status !== "hidden" ? <Button label="Post answer" busy={busy === "answer-doubt"} onPress={() => void answer()} testID="doubt-answer" /> : undefined}>
+    <Screen testID="admin-doubt" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data && q.data.status !== "hidden" ? <Locked><Button label="Post answer" busy={busy === "answer-doubt"} onPress={() => void answer()} testID="doubt-answer" /></Locked> : undefined}>
       <Loaded q={q} soon what="this doubt" skeleton={<RowsSkeleton rows={4} />}>
         {(d) => {
           const st = doubtState({ status: d.status, replies: d.replies.length });
@@ -130,8 +130,7 @@ export function AdminDoubtScreen() {
                   </View>
                 ))}
               </View>
-              {canWrite ? (
-                <>
+              <Locked><>
                   {d.status !== "hidden" ? (
                     <View style={{ gap: space[2] }}>
                       <Field label="Answer as the VIBHA team" value={text} onChangeText={setText} area error={error} maxLength={4000} testID="doubt-text" />
@@ -142,10 +141,7 @@ export function AdminDoubtScreen() {
                   ) : null}
                   <Button kind={d.status === "hidden" ? "quiet" : "danger"} label={d.status === "hidden" ? "Show it to students again" : "Hide from students"} busy={busy === "hide-doubt"} onPress={() => (d.status === "hidden" ? void run("hide-doubt", () => adminCalls.hideDoubt(d.id, false), { done: "Shown again" }) : setHiding(true))} testID="doubt-hide" />
                   <ConfirmSheet open={hiding} onClose={() => setHiding(false)} title="Hide this doubt?" body="Students stop seeing it and its answers. You can show it again from here." confirm="Hide from students" danger busy={busy === "hide-doubt"} onConfirm={() => void run("hide-doubt", () => adminCalls.hideDoubt(d.id, true), { done: "Hidden from students" }).then(() => setHiding(false))} testID="confirm-hide" />
-                </>
-              ) : (
-                <Notice testID="view-only-note">{VIEW_ONLY_LINE}</Notice>
-              )}
+                </></Locked>
             </>
           );
         }}

@@ -8,7 +8,7 @@ import { DateField } from "@/admin/date-field";
 import { ConfirmSheet, Notice, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, RowsSkeleton, Section, Sheet, T } from "@/ds";
-import { Screen } from "@/admin/ui";
+import { Screen, Locked } from "@/admin/ui";
 import { Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useCohortId, useOpdAdmin } from "../api";
@@ -65,7 +65,7 @@ function SettingsBlock({ s, canWrite, cohortId }: { s: OpdSettings; canWrite: bo
             </View>
           ))}
         </View>
-        {canWrite && dirty ? <Button kind="quiet" label="Save settings" busy={!!busy} onPress={() => void run("clinic", () => adminClinicCalls.saveOpdSettings(cohortId, d), { done: "Settings saved. Generate again to use them." })} testID="opd-save" /> : null}
+        {dirty ? <Locked><Button kind="quiet" label="Save settings" busy={!!busy} onPress={() => void run("clinic", () => adminClinicCalls.saveOpdSettings(cohortId, d), { done: "Settings saved. Generate again to use them." })} testID="opd-save" /></Locked> : null}
       </View>
     </Section>
   );
@@ -162,11 +162,9 @@ function Calendar({ plan, canWrite }: { plan: OpdPlan; canWrite: boolean }) {
           </T>
         ) : null}
       </View>
-      {canWrite ? (
-        <T v="small" tone="muted">
+      <Locked><T v="small" tone="muted">
           Tap a name to move that student. Past days and the next two stay as they are.
-        </T>
-      ) : null}
+        </T></Locked>
       {moving ? <MoveSeatSheet seat={moving.seat} from={moving.from} plan={plan} onClose={() => setMoving(null)} /> : null}
     </Section>
   );
@@ -199,8 +197,7 @@ function Body({ d }: { d: OpdAdmin }) {
             <T v="small">No batch yet, so not in the plan: {p.noBatch.map((x) => x.name).join(", ")}. Set it under Allowances.</T>
           </Notice>
         ) : null}
-        {canWrite ? (
-          <View style={{ gap: space[2] }}>
+        <Locked><View style={{ gap: space[2] }}>
             <Button kind={p.status === "draft" ? "quiet" : "primary"} label={p.status === "none" ? "Generate a draft" : "Generate again"} icon={<Sparkles size={20} color={p.status === "draft" ? c.ink : c.onPrimary} />} busy={busy === "clinic"} onPress={() => void run("clinic", () => adminClinicCalls.generate(cohortId), { done: "Draft ready. Check it, then publish." })} testID="opd-generate" />
             {p.status !== "none" ? (
               <T v="small" tone="muted">
@@ -209,8 +206,7 @@ function Body({ d }: { d: OpdAdmin }) {
             ) : null}
             {p.status === "draft" ? <Button label="Publish" onPress={() => setPublish(true)} testID="opd-publish" /> : null}
             {p.status === "draft" ? <Button kind="text" label="Throw away the draft" busy={busy === "discard"} onPress={() => void run("clinic", () => adminClinicCalls.discard(cohortId), { done: "Draft thrown away", tag: "discard" })} testID="opd-discard" /> : null}
-          </View>
-        ) : null}
+          </View></Locked>
         <Pressable accessibilityRole="link" onPress={() => go("/admin/clinic/allowances")} style={{ minHeight: 44, justifyContent: "center" }} testID="opd-quotas">
           <T v="small" tone="link">
             Cases for each student and paid extras

@@ -6,7 +6,7 @@ import * as React from "react";
 import { Share, View } from "react-native";
 
 import { Button, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
-import { Screen } from "../ui";
+import { Screen, Locked } from "../ui";
 import { space, useTheme, fonts } from "@/theme";
 import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
 import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
@@ -110,12 +110,10 @@ function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
             {ACCOUNT_NEXT[r.account]}
           </T>
         ) : null}
-        {canWrite ? (
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
+        <Locked><View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
             <SmallButton label="Send login link" testID="access-link" busy={busy === "login-link"} onPress={() => void run("login-link", () => adminCalls.loginLink(r.id)).then((x) => x && setLink(x))} />
             {locked ? <SmallButton label="Unlock" testID="access-unlock" busy={busy === "unlock"} onPress={() => void run("unlock", () => adminCalls.unlock(r.id), { done: `${r.name} can sign in again` })} /> : <SmallButton label="Lock" danger testID="access-lock" onPress={() => setLockOpen(true)} />}
-          </View>
-        ) : null}
+          </View></Locked>
         <T v="small" tone="muted">
           Lock means they cannot sign in until unlocked. A new login link replaces older ones.
         </T>
@@ -125,7 +123,7 @@ function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
           Students can change phone twice a month. After that the app asks them to message you.
         </T>
         {phone ? <Row title={phone.name} meta={`${phone.changesUsed} of ${phone.limit} changes used this month${phone.nextChangeAt ? ` · next free ${day(phone.nextChangeAt, true)}` : ""}`} testID="access-phone-now" /> : <Quiet>Not signed in to the app yet.</Quiet>}
-        {canWrite ? <SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /> : null}
+        <Locked><SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /></Locked>
       </Block>
       <StudentSections name={r.name} />
       <ConfirmSheet open={lockOpen} onClose={() => setLockOpen(false)} title={`Lock ${r.name}?`} body="They are signed out and cannot sign in until you unlock them." confirm="Lock account" danger busy={busy === "lock"} reason={{ label: "Reason (only admins see it)" }} onConfirm={(reason) => void run("lock", () => adminCalls.lock(r.id, reason || undefined), { done: `${r.name} is locked` }).then(() => setLockOpen(false))} testID="confirm-lock" />
@@ -260,7 +258,7 @@ export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentR
           ))}
         </Tags>
       </View>
-      <Notice testID="next-step" action={canWrite && next.action ? <SmallButton label={next.label} busy={!!busy} onPress={doNext} testID="next-step-do" /> : undefined}>
+      <Notice testID="next-step" action={next.action ? <Locked><SmallButton label={next.label} busy={!!busy} onPress={doNext} testID="next-step-do" /></Locked> : undefined}>
         <T v="small">
           <T v="small" style={{ fontFamily: fonts.bold }}>
             Next: {next.label}.

@@ -3,7 +3,7 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { Button, Row, RowList, RowsSkeleton } from "@/ds";
-import { EmptyState, Screen } from "../ui";
+import { EmptyState, Screen, Locked } from "../ui";
 import { space } from "@/theme";
 import { useActivity, useBehind, useCohorts, useRefreshAdmin } from "../api";
 import { ago, day, pct } from "../format";
@@ -88,14 +88,14 @@ function Behind() {
                         <View style={{ flex: 1 }}>
                           <Meter tone="warn" pct={pct(r.done, r.available)} label={`${r.done}/${r.available}`} />
                         </View>
-                        {canWrite ? <SmallButton label="Nudge" testID={`nudge-${r.id}`} onPress={() => openCompose({ to: [r.id], title: "Checking in" })} /> : null}
+                        <Locked><SmallButton label="Nudge" testID={`nudge-${r.id}`} onPress={() => openCompose({ to: [r.id], title: "Checking in" })} /></Locked>
                       </View>
                     }
                     onPress={() => openStudent(r.id, "activity")}
                   />
                 ))}
               </RowList>
-              {canWrite ? <Button kind="quiet" label={`Nudge all ${d.items.length}`} onPress={() => openCompose({ to: d.items.map((r) => r.id), title: "Checking in" })} testID="nudge-all" /> : null}
+              <Locked><Button kind="quiet" label={`Nudge all ${d.items.length}`} onPress={() => openCompose({ to: d.items.map((r) => r.id), title: "Checking in" })} testID="nudge-all" /></Locked>
             </>
           ) : (
             <EmptyState mood="clear" title="Nobody is behind" body="Everyone is keeping up with their cohort." />

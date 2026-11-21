@@ -7,7 +7,7 @@ import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { Figures, FilterChips, OptionRow, Quiet } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Sheet, T } from "@/ds";
-import { Screen } from "@/admin/ui";
+import { Screen, Locked } from "@/admin/ui";
 import { StaggerList } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useSessionDetail } from "../api";
@@ -158,11 +158,9 @@ export function SessionBody({ d }: { d: AdminSessionDetail }) {
       ) : (
         <Quiet>No one here.</Quiet>
       )}
-      {canWrite ? (
-        <T v="small" tone="muted">
+      <Locked><T v="small" tone="muted">
           Tap a name to mark it by hand.
-        </T>
-      ) : null}
+        </T></Locked>
       <MarkSheet row={mark} sessionId={s.id} onClose={() => setMark(null)} />
     </View>
   );

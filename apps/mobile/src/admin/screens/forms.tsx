@@ -4,7 +4,7 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { Button, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
-import { EmptyState, Screen } from "../ui";
+import { EmptyState, Screen, Locked } from "../ui";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useForm, useForms, useRefreshAdmin } from "../api";
 import type { FormResponse } from "../extra";
@@ -90,21 +90,17 @@ export function AdminFormScreen() {
                 ]}
                 testID="form-show"
               />
-              {f.waiting && canWrite ? (
-                <Notice testID="form-waiting" action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingForm(f.id), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} />}>
+              {f.waiting ? <Locked><Notice testID="form-waiting" action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingForm(f.id), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} />}>
                   {`${plural(f.waiting, "email")} from this form waiting for today's allowance.`}
-                </Notice>
-              ) : null}
+                </Notice></Locked> : null}
               {f.respondents.length ? (
                 <View style={{ gap: space[1] }}>
-                  {canWrite ? (
-                    <View style={{ flexDirection: "row", alignItems: "center", marginLeft: -space[2] }}>
+                  <Locked><View style={{ flexDirection: "row", alignItems: "center", marginLeft: -space[2] }}>
                       <Check on={all} onPress={() => setPicked(all ? new Set() : new Set(f.respondents.map((r) => r.id)))} label="Select everyone" testID="form-all" />
                       <T v="small" tone="muted">
                         Everyone who answered
                       </T>
-                    </View>
-                  ) : null}
+                    </View></Locked>
                   <View style={{ borderTopWidth: 1, borderColor: c.hairline }}>
                     {f.respondents.map((r) => {
                       const line = <Row testID={`resp-${r.id}`} title={r.name} meta={[r.when ?? ago(r.at), r.answers[0]?.a].filter(Boolean).join(" · ")} trailing={r.emailed ? <Status tone="ok">Emailed</Status> : r.emailWaiting ? <Status tone="warn">Waiting</Status> : undefined} onPress={() => setReading(r)} />;
@@ -150,8 +146,7 @@ export function AdminFormScreen() {
                         <T>{a.a}</T>
                       </View>
                     ))}
-                    {canWrite ? (
-                      <Button
+                    <Locked><Button
                         kind="quiet"
                         label={`Email ${reading.name.split(" ")[0]}`}
                         onPress={() => {
@@ -160,8 +155,7 @@ export function AdminFormScreen() {
                           setEmailTo([who]);
                         }}
                         testID="response-email"
-                      />
-                    ) : null}
+                      /></Locked>
                     {reading.studentId ? (
                       <Button
                         kind="text"

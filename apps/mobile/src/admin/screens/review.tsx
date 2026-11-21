@@ -5,7 +5,7 @@ import { FileText, Mic } from "lucide-react-native";
 import { View } from "react-native";
 
 import { Button, Chips, Field, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
-import { EmptyState, Screen } from "../ui";
+import { EmptyState, Screen, Locked } from "../ui";
 import { messageOf } from "@/api/errors";
 import { toast } from "@/ds/toast";
 import { space, useTheme } from "@/theme";
@@ -124,16 +124,12 @@ function SignOffSheet({ x, onClose }: { x: SignOff | null; onClose: () => void }
             ...(x.competency ? [{ label: "Skill", value: x.competency }] : []),
           ]}
         />
-        {canWrite ? (
-          <>
+        <Locked><>
             <T v="small" tone="muted">Check the contact hours, then sign or reject.</T>
             <Button label="Sign" busy={busy === "sign-off"} onPress={() => void decide("signed")} testID="signoff-sign" />
             <Button kind="danger" full label="Reject" onPress={() => setRejecting(true)} testID="signoff-reject" />
             <ConfirmSheet open={rejecting} onClose={() => setRejecting(false)} title="Reject this entry?" body={`${x.studentName} will see it was not signed.`} confirm="Reject" danger busy={busy === "sign-off"} onConfirm={() => void decide("rejected")} testID="confirm-signoff-reject" />
-          </>
-        ) : (
-          <Notice>{VIEW_ONLY_LINE}</Notice>
-        )}
+          </></Locked>
       </View>
     </Sheet>
   );
