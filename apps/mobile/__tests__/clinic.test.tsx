@@ -41,6 +41,16 @@ async function signInAs(email: string) {
   await session.choosePin("2580");
 }
 
+/** Spies made by a test, undone one by one (jest.restoreAllMocks would also undo the set-up file's stand-ins). */
+const spies: jest.SpyInstance[] = [];
+const spy = ((...a: Parameters<typeof jest.spyOn>) => {
+  const sp = (jest.spyOn as (...x: unknown[]) => jest.SpyInstance)(...a);
+  spies.push(sp);
+  return sp;
+}) as typeof jest.spyOn;
+const restoreSpies = () => spies.splice(0).forEach((x) => x.mockRestore());
+afterEach(restoreSpies);
+
 const fail = async (p: Promise<unknown>) => {
   try {
     await p;
@@ -137,13 +147,25 @@ describe("clinic words and numbers", () => {
     expect(L.scanBody("")).toBeNull();
   });
 
-  it("turns every scan refusal into plain words", () => {
-    expect(L.scanError(new ApiFailure("bad_request", "That code is too old.", 400)).title).toBe("That code has changed");
-    expect(L.scanError(new ApiFailure("bad_request", "You have already scanned in and out.", 400)).title).toBe("Already scanned");
+  it("turns every scan refusal into plain words, from the server's reason", () => {
+    const why = (reason: string, msg = "The server's own line.") => L.scanError(new ApiFailure("bad_request", msg, 400, { reason }));
+    expect(why("code_expired").title).toBe("That code has changed");
+    expect(why("not_a_code").title).toBe("That code did not work");
+    expect(why("wrong_cohort").title).toBe("Not your session");
+    expect(why("not_open_yet").title).toBe("Not open yet");
+    expect(why("closed").title).toBe("Marking is closed");
+    expect(why("cancelled").title).toBe("Session cancelled");
+    expect(why("ticket_expired").title).toBe("That took too long");
+    expect(why("out_before_in").title).toBe("Mark IN first");
+    expect(why("closed", "Marking for Class closed at 2:00 pm. Ask the admin to mark you.").body).toBe("Marking for Class closed at 2:00 pm. Ask the admin to mark you.");
     expect(L.scanError(new ApiFailure("forbidden", "x", 403)).title).toBe("Not your session");
-    expect(L.scanError(new ApiFailure("conflict", "Not open.", 409)).title).toBe("Scanning is closed");
+    expect(L.scanError(new ApiFailure("rate_limited", "x", 429)).title).toBe("Too many tries");
     expect(L.scanError(new ApiFailure("network", "")).title).toBe("No internet");
-    for (const t of ["That code has changed", "Not your session", "Scanning is closed"]) expect(t).not.toMatch(/[–—]/);
+    expect(L.isUnsent(new ApiFailure("network", ""))).toBe(true);
+    expect(L.isUnsent(new ApiFailure("bad_request", "x", 400))).toBe(false);
+    expect(L.newAttemptId()).toMatch(/^[A-Za-z0-9_-]{8,64}$/);
+    expect(L.newAttemptId()).not.toBe(L.newAttemptId());
+    expect(L.scanStateLine({ state: "none", inAt: null, outAt: null })).toBe("You have not marked IN yet.");
   });
 
   it("counts down by the server's clock", () => {
@@ -203,29 +225,58 @@ describe("student clinic calls (mock server, server shapes)", () => {
     await signInAs("ananya@example.com");
   });
 
-  it("scans in with the QR, refuses a quick second scan, and refuses someone else's session", async () => {
+  it("identify saves nothing and says which of IN and OUT makes sense; confirm saves once", async () => {
     const c = classToday();
-    const r = await clinicCalls.scan({ token: clinicMock.qrFor(c.id) });
-    expect(r.direction).toBe("in");
-    expect(r.session.id).toBe(c.id);
-    const again = await fail(clinicCalls.scan({ token: clinicMock.qrFor(c.id) }));
-    expect(again.code).toBe("bad_request");
-    expect(L.scanError(again).title).toBe("Already scanned");
-    const other = await fail(clinicCalls.scan({ token: clinicMock.qrFor(cohortOne().id) }));
+    const step = await clinicCalls.identify({ token: clinicMock.qrFor(c.id) });
+    expect(step.session.id).toBe(c.id);
+    expect(step).toMatchObject({ state: "none", in: { allowed: true, reason: null }, out: { allowed: false, reason: "Mark IN first." } });
+    expect(step.ticketMs).toBe(120_000);
+    // Looking is not marking.
+    expect((await clinicCalls.identify({ token: clinicMock.qrFor(c.id) })).state).toBe("none");
+
+    const out = await fail(clinicCalls.confirmMark({ ticket: step.ticket, direction: "out", attemptId: "attempt-0001" }));
+    expect(out.details.reason).toBe("out_before_in");
+    expect(L.scanError(out).title).toBe("Mark IN first");
+
+    const first = await clinicCalls.confirmMark({ ticket: step.ticket, direction: "in", attemptId: "attempt-0002" });
+    expect(first).toMatchObject({ direction: "in", already: false });
+    // The same press again (a retry): the same answer. Another press: "already", the first time kept.
+    const retry = await clinicCalls.confirmMark({ ticket: step.ticket, direction: "in", attemptId: "attempt-0002" });
+    expect(retry).toMatchObject({ already: false, at: first.at });
+    const again = await clinicCalls.confirmMark({ ticket: step.ticket, direction: "in", attemptId: "attempt-0003" });
+    expect(again).toMatchObject({ already: true, at: first.at });
+    expect(again.message).toMatch(/^Already marked IN at .+\. Nothing was changed\.$/);
+
+    const now = await clinicCalls.identify({ code: clinicMock.codeFor(c.id) });
+    expect(now).toMatchObject({ state: "in", in: { allowed: false }, out: { allowed: true } });
+    expect(now.in.reason).toMatch(/^You are already IN since /);
+    const left = await clinicCalls.confirmMark({ ticket: now.ticket, direction: "out", attemptId: "attempt-0004" });
+    expect(left).toMatchObject({ direction: "out", already: false });
+    expect((await clinicCalls.identify({ code: clinicMock.codeFor(c.id) })).state).toBe("out");
+  });
+
+  it("refuses someone else's session, an old QR, a wrong typed code and a ticket that ran out", async () => {
+    const c = classToday();
+    const other = await fail(clinicCalls.identify({ token: clinicMock.qrFor(cohortOne().id) }));
     expect(other.code).toBe("forbidden");
     expect(L.scanError(other).title).toBe("Not your session");
     // A typed code is matched to my own open sessions only.
-    const typed = await fail(clinicCalls.scan({ code: clinicMock.codeFor(cohortOne().id) }));
-    expect(typed.code).toBe("bad_request");
-  });
+    expect((await fail(clinicCalls.identify({ code: clinicMock.codeFor(cohortOne().id) }))).details.reason).toBe("not_a_code");
+    const forged = clinicMock.qrFor(c.id).replace(/:(\d+):[A-Za-z0-9_-]{22}$/, (_m, w) => `:${Number(w) - 5}:${"A".repeat(22)}`);
+    expect(L.scanError(await fail(clinicCalls.identify({ token: forged }))).title).toBe("That code did not work");
+    expect((await fail(clinicCalls.identify({ code: "ZZZZZZ" }))).code).toBe("bad_request");
 
-  it("refuses an old QR and a wrong typed code", async () => {
-    const c = classToday();
-    const old = clinicMock.qrFor(c.id).replace(/:(\d+):[A-Za-z0-9_-]{22}$/, (_m, w) => `:${Number(w) - 5}:${"A".repeat(22)}`);
-    const e = await fail(clinicCalls.scan({ token: old }));
-    expect(L.scanError(e).title).toBe("That code has changed");
-    const typed = await fail(clinicCalls.scan({ code: "ZZZZZZ" }));
-    expect(typed.code).toBe("bad_request");
+    const old = clinicMock.qrFor(c.id);
+    const step = await clinicCalls.identify({ token: old });
+    const clock = spy(Date, "now").mockReturnValue(Date.now() + 121_000);
+    try {
+      expect(L.scanError(await fail(clinicCalls.identify({ token: old }))).title).toBe("That code has changed");
+      const late = await fail(clinicCalls.confirmMark({ ticket: step.ticket, direction: "in", attemptId: "attempt-0001" }));
+      expect(late.details.reason).toBe("ticket_expired");
+      expect(L.scanError(late)).toEqual({ title: "That took too long", body: "That took too long. Scan the code again." });
+    } finally {
+      clock.mockRestore();
+    }
   });
 
   it("asks for leave, marks it over the limit when none are left, and cancels it", async () => {
@@ -311,15 +362,141 @@ describe("student clinic screens", () => {
     expect(screen.getByTestId("today-scan")).toBeTruthy();
   });
 
-  it("Scan: typing the code checks in with IN, the time and a success buzz", async () => {
-    (haptic.success as unknown as jest.Mock | undefined)?.mockClear?.();
+  /** Type the code and wait for the two choices. */
+  async function toChoices() {
     await render(<ScanScreen />);
-    expect(screen.getByTestId("camera-view")).toBeTruthy();
+    await wf(() => expect(screen.getByTestId("camera-view")).toBeTruthy());
     await fireEvent.changeText(screen.getByTestId("scan-code"), clinicMock.codeFor(classToday().id).toLowerCase());
     await fireEvent.press(screen.getByTestId("scan-send"));
+    await wf(() => expect(screen.getByTestId("scan-choose")).toBeTruthy());
+  }
+  const disabled = (id: string) => screen.getByTestId(id).props.accessibilityState?.disabled === true;
+
+  it("Scan: a code only shows the session and two choices; nothing is chosen, sent or buzzed", async () => {
+    const confirm = spy(clinicCalls, "confirmMark");
+    const h = { ok: spy(haptic, "success"), bad: spy(haptic, "warn"), pick: spy(haptic, "select") };
+    await toChoices();
+    expect(screen.getByTestId("scan-session").props.children).toBe(classToday().title);
+    expect(screen.getByTestId("scan-when")).toBeTruthy();
+    expect(screen.getByTestId("scan-state").props.children).toBe("You have not marked IN yet.");
+    expect(screen.getByLabelText("Mark IN")).toBeTruthy();
+    expect(screen.getByLabelText("Mark OUT")).toBeTruthy();
+    expect(disabled("scan-choose-in")).toBe(false);
+    expect(disabled("scan-choose-out")).toBe(true);
+    expect(screen.getByTestId("scan-why-out").props.children).toBe("Mark IN first.");
+    expect(screen.getByTestId("scan-choose-out").props.accessibilityHint).toBe("Mark IN first.");
+    expect(screen.queryByTestId("scan-why-in")).toBeNull();
+    // The one that is off does nothing.
+    await fireEvent.press(screen.getByTestId("scan-choose-out"));
+    expect(screen.queryByTestId("scan-confirm-view")).toBeNull();
+    expect(confirm).not.toHaveBeenCalled();
+    for (const m of Object.values(h)) expect(m).not.toHaveBeenCalled();
+    restoreSpies();
+  });
+
+  it("Scan: Mark IN asks first, Cancel goes back, Confirm sends once and shows what was recorded", async () => {
+    const confirm = spy(clinicCalls, "confirmMark");
+    const ok = spy(haptic, "success");
+    await toChoices();
+    await fireEvent.press(screen.getByTestId("scan-choose-in"));
+    await wf(() => expect(screen.getByTestId("scan-confirm-title")).toBeTruthy());
+    expect(screen.getByText(`You are marking IN for ${classToday().title}`)).toBeTruthy();
+    expect(confirm).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByTestId("scan-back"));
+    await wf(() => expect(screen.getByTestId("scan-choose-in")).toBeTruthy());
+    expect(confirm).not.toHaveBeenCalled();
+
+    await fireEvent.press(screen.getByTestId("scan-choose-in"));
+    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
+    expect(screen.getByLabelText("Confirm IN")).toBeTruthy();
+    const go = screen.getByTestId("scan-confirm");
+    await fireEvent.press(go);
+    // A second tap, if the button is still there (the next test holds the answer back to press it mid-send).
+    const still = screen.queryByTestId("scan-confirm");
+    if (still) await fireEvent.press(still);
     await wf(() => expect(screen.getByTestId("scan-direction")).toBeTruthy());
+    expect(confirm).toHaveBeenCalledTimes(1);
+    expect(confirm.mock.calls[0]![0]).toMatchObject({ direction: "in", attemptId: expect.stringMatching(/^[A-Za-z0-9_-]{8,64}$/) });
     expect(screen.getByTestId("scan-direction").props.children).toBe("IN");
-    expect(screen.getByTestId("scan-time")).toBeTruthy();
+    expect(String([screen.getByTestId("scan-done-title").props.children].flat().join(""))).toMatch(/^Marked IN at /);
+    expect(ok).toHaveBeenCalledTimes(1);
+    restoreSpies();
+  });
+
+  it("Scan: while it sends, Confirm is locked and shows progress", async () => {
+    let answer: (v: Awaited<ReturnType<typeof clinicCalls.confirmMark>>) => void = () => undefined;
+    const confirm = spy(clinicCalls, "confirmMark").mockImplementation(() => new Promise((r) => (answer = r)));
+    await toChoices();
+    await fireEvent.press(screen.getByTestId("scan-choose-in"));
+    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("scan-confirm"));
+    await wf(() => expect(screen.getByLabelText("Sending")).toBeTruthy());
+    expect(screen.getByTestId("scan-confirm").props.accessibilityState).toMatchObject({ disabled: true, busy: true });
+    expect(disabled("scan-back")).toBe(true);
+    await fireEvent.press(screen.getByTestId("scan-confirm"));
+    expect(confirm).toHaveBeenCalledTimes(1);
+    await act(async () => {
+      answer({ direction: "in", at: new Date().toISOString(), session: { id: classToday().id, title: classToday().title }, late: false, minutes: null, already: true, message: "" });
+    });
+    await wf(() => expect(screen.getByTestId("scan-already")).toBeTruthy());
+    expect(String([screen.getByTestId("scan-done-title").props.children].flat().join(""))).toMatch(/^Already marked IN at /);
+    restoreSpies();
+  });
+
+  it("Scan: already in, so Mark IN is off with the reason and OUT is what gets sent", async () => {
+    const c = classToday();
+    const step = await clinicCalls.identify({ code: clinicMock.codeFor(c.id) });
+    await clinicCalls.confirmMark({ ticket: step.ticket, direction: "in", attemptId: "attempt-0001" });
+    const confirm = spy(clinicCalls, "confirmMark");
+    await toChoices();
+    expect(disabled("scan-choose-in")).toBe(true);
+    expect(String(screen.getByTestId("scan-why-in").props.children)).toMatch(/^You are already IN since /);
+    expect(disabled("scan-choose-out")).toBe(false);
+    await fireEvent.press(screen.getByTestId("scan-choose-out"));
+    await wf(() => expect(screen.getByText(`You are marking OUT for ${c.title}`)).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("scan-confirm"));
+    await wf(() => expect(screen.getByTestId("scan-direction")).toBeTruthy());
+    expect(screen.getByTestId("scan-direction").props.children).toBe("OUT");
+    expect(confirm.mock.calls[0]![0]).toMatchObject({ direction: "out" });
+    restoreSpies();
+  });
+
+  it("Scan: no internet says it did not go through, keeps nothing for later, and Try again sends the same press", async () => {
+    const real = clinicCalls.confirmMark;
+    const confirm = spy(clinicCalls, "confirmMark").mockRejectedValueOnce(new ApiFailure("network", "No internet."));
+    const warn = spy(haptic, "warn");
+    await toChoices();
+    await fireEvent.press(screen.getByTestId("scan-choose-in"));
+    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("scan-confirm"));
+    await wf(() => expect(screen.getByTestId("scan-unsent")).toBeTruthy());
+    expect(screen.getByText("Not marked yet")).toBeTruthy();
+    expect(String([screen.getByTestId("scan-unsent-body").props.children].flat().join(""))).toContain("did not go through");
+    expect(warn).toHaveBeenCalledTimes(1);
+    // Nothing reached the server, and nothing waits in a queue.
+    expect((await clinicCalls.identify({ code: clinicMock.codeFor(classToday().id) })).state).toBe("none");
+    confirm.mockImplementation(real);
+    await fireEvent.press(screen.getByTestId("scan-send-again"));
+    await wf(() => expect(screen.getByTestId("scan-direction")).toBeTruthy());
+    expect(confirm).toHaveBeenCalledTimes(2);
+    expect(confirm.mock.calls[1]![0]).toEqual(confirm.mock.calls[0]![0]);
+    restoreSpies();
+  });
+
+  it("Scan: after the ticket's 2 minutes nothing is sent, the screen asks to scan again", async () => {
+    const confirm = spy(clinicCalls, "confirmMark");
+    await toChoices();
+    await fireEvent.press(screen.getByTestId("scan-choose-in"));
+    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
+    const clock = spy(Date, "now").mockReturnValue(Date.now() + 121_000);
+    await fireEvent.press(screen.getByTestId("scan-confirm"));
+    clock.mockRestore();
+    await wf(() => expect(screen.getByTestId("scan-error-title")).toBeTruthy());
+    expect(screen.getByText("That took too long")).toBeTruthy();
+    expect(confirm).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByTestId("scan-retry"));
+    await wf(() => expect(screen.getByTestId("scan-code")).toBeTruthy());
+    restoreSpies();
   });
 
   it("Scan: the camera reading someone else's code says so plainly", async () => {
@@ -332,6 +509,19 @@ describe("student clinic screens", () => {
     expect(screen.getByText("Not your session")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("scan-retry"));
     await wf(() => expect(screen.getByTestId("scan-code")).toBeTruthy());
+  });
+
+  it("Scan: the camera reading my code never marks on its own", async () => {
+    const confirm = spy(clinicCalls, "confirmMark");
+    await render(<ScanScreen />);
+    const g = globalThis as unknown as { __camera?: { onBarcodeScanned?: (r: { data: string }) => void } };
+    await act(async () => {
+      g.__camera?.onBarcodeScanned?.({ data: clinicMock.qrFor(classToday().id) });
+    });
+    await wf(() => expect(screen.getByTestId("scan-choose")).toBeTruthy());
+    expect(confirm).not.toHaveBeenCalled();
+    expect((await clinicCalls.identify({ code: clinicMock.codeFor(classToday().id) })).state).toBe("none");
+    restoreSpies();
   });
 
   it("Schedule shows the week with my OPD days", async () => {

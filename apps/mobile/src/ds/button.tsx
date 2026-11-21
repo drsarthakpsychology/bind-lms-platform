@@ -9,6 +9,7 @@ import { layout, space, useTheme } from "@/theme";
 import { T } from "./text";
 
 const SHADOW = 3;
+const TALL = 56;
 const ease = curves.standard;
 
 type ButtonProps = {
@@ -22,6 +23,8 @@ type ButtonProps = {
   busy?: boolean;
   /** Needs the server (Post, Hand in, Send): greyed out while the phone is offline. */
   needsServer?: boolean;
+  /** A 56px target for a step that must not be missed or mis-tapped (primary and quiet). */
+  tall?: boolean;
   /** Fills the width (default for primary and quiet). */
   full?: boolean;
   testID?: string;
@@ -35,7 +38,7 @@ type ButtonProps = {
  * its shadow over 120ms. No haptic: the result of the action
  * gives one when it matters (saved, wrong, done).
  */
-export function Button({ label, onPress, kind = "primary", icon, disabled, busy, needsServer, full, testID, accessibilityHint, style }: ButtonProps) {
+export function Button({ label, onPress, kind = "primary", icon, disabled, busy, needsServer, tall, full, testID, accessibilityHint, style }: ButtonProps) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const down = useSharedValue(0);
@@ -84,7 +87,7 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
   if (kind === "quiet") {
     return (
       <Pressable {...a11y} testID={testID} onPress={press} onPressIn={pressIn} onPressOut={pressOut} disabled={blocked} style={[{ alignSelf: full === false ? "flex-start" : "stretch", opacity: blocked ? 0.5 : 1 }, style]}>
-        <Animated.View style={[{ minHeight: layout.target, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, faded]}>
+        <Animated.View style={[{ minHeight: tall ? TALL : layout.target, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, faded]}>
           <T v="button" center style={{ flexShrink: 1 }}>
             {label}
           </T>
@@ -100,7 +103,7 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
       <View pointerEvents="none" style={{ position: "absolute", left: SHADOW, top: SHADOW, right: 0, bottom: 0, borderRadius: layout.radius, backgroundColor: blocked ? "transparent" : c.shadow }} />
       <Animated.View
         style={[
-          { minHeight: layout.primary, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 2, borderColor: blocked ? c.cardLine : c.dark ? c.onPrimary : c.line, backgroundColor: blocked ? c.tint : c.primary, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] },
+          { minHeight: tall ? TALL : layout.primary, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 2, borderColor: blocked ? c.cardLine : c.dark ? c.onPrimary : c.line, backgroundColor: blocked ? c.tint : c.primary, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] },
           blocked ? null : moved,
         ]}
       >
