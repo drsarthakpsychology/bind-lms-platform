@@ -72,9 +72,7 @@ function Board({ how, round, total, marks, score, opp, left, reveal, waiting, bu
         left={`Round ${round.n + 1} of ${total} · You : ${opp}`}
         right={
           <Bump value={`${score.you}:${score.opp}`}>
-            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20, color: c.ink }} testID="duel-score">
-              {`${score.you} : ${score.opp}`}
-            </T>
+            <HudWord testID="duel-score">{`${score.you} : ${score.opp}`}</HudWord>
           </Bump>
         }
       />

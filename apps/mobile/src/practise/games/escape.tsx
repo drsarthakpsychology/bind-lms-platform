@@ -4,7 +4,7 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, EmptyState, RowList, Section, T } from "@/ds";
+import { Button, QuietEmpty, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
@@ -131,8 +131,8 @@ export function EscapeGame() {
             <RowList>
               {v.opened.map((o, k) => (
                 <View key={k} style={{ paddingVertical: space[3], gap: 2 }}>
-                  <T v="caption" tone="muted">
-                    {ESC_STAGE[o.stage].toUpperCase()}
+                  <T v="label" tone="muted">
+                    {ESC_STAGE[o.stage]}
                   </T>
                   <T v="small">{o.why}</T>
                 </View>
@@ -231,7 +231,7 @@ function Door({ door, disabled, onSubmit }: { door: EscDoor; disabled: boolean; 
           Put them in order, first at the top.
         </T>
         {order.map((pos, k) => (
-          <View key={pos} style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.row, paddingLeft: space[4], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card }}>
+          <View key={pos} style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.row, paddingLeft: space[4], borderRadius: layout.radius, backgroundColor: c.card }}>
             <T v="score" style={{ width: 18 }} num>
               {k + 1}
             </T>
@@ -255,13 +255,13 @@ function Door({ door, disabled, onSubmit }: { door: EscDoor; disabled: boolean; 
   return (
     <View style={{ gap: space[4], alignItems: "center" }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[5] }}>
-        <Pressable accessibilityRole="button" accessibilityLabel="Less" onPress={() => step(-1)} style={{ width: 56, height: 56, borderRadius: 28, borderWidth: 1.5, borderColor: c.cardLine, alignItems: "center", justifyContent: "center" }} testID="escape-minus">
+        <Pressable accessibilityRole="button" accessibilityLabel="Less" onPress={() => step(-1)} style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: c.card, alignItems: "center", justifyContent: "center" }} testID="escape-minus">
           <Minus size={22} color={c.ink} />
         </Pressable>
-        <T style={{ fontFamily: fonts.pixelDigits, fontSize: 44, lineHeight: 52, minWidth: 96, textAlign: "center", color: c.ink }} num accessibilityLiveRegion="polite">
+        <T style={{ fontFamily: fonts.big, fontSize: 44, lineHeight: 52, minWidth: 96, textAlign: "center", color: c.ink }} num accessibilityLiveRegion="polite">
           {num}
         </T>
-        <Pressable accessibilityRole="button" accessibilityLabel="More" onPress={() => step(1)} style={{ width: 56, height: 56, borderRadius: 28, borderWidth: 1.5, borderColor: c.cardLine, alignItems: "center", justifyContent: "center" }} testID="escape-plus">
+        <Pressable accessibilityRole="button" accessibilityLabel="More" onPress={() => step(1)} style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: c.card, alignItems: "center", justifyContent: "center" }} testID="escape-plus">
           <Plus size={22} color={c.ink} />
         </Pressable>
       </View>
@@ -286,7 +286,7 @@ function RaceBoard({ rows }: { rows: RaceRow[] }) {
       <View style={{ gap: 0 }} testID="escape-race">
         {rows.map((r, i) => (
           <View key={r.id} accessible accessibilityLabel={`${i + 1}. ${r.name}${r.me ? ", your team" : ""}: ${r.done ? `out in ${mmss(r.ms)}` : `door ${r.stage + 1}`}`} style={{ minHeight: 44, flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[2], borderRadius: 8, backgroundColor: r.me ? c.successBg : "transparent" }}>
-            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20, width: 24, color: i < 3 ? c.link : c.muted }} num>
+            <T style={{ fontFamily: fonts.big, fontSize: 16, lineHeight: 20, width: 24, color: i < 3 ? c.link : c.muted }} num>
               {String(i + 1)}
             </T>
             <T v="bodyStrong" style={{ flex: 1 }} numberOfLines={1}>
@@ -350,7 +350,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
   if (missing && !view) {
     return (
       <GameFrame title="Escape Room" testID="escape-team-missing">
-        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
+        <QuietEmpty title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
       </GameFrame>
     );
   }

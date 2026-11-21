@@ -157,10 +157,10 @@ export function ComorbidGame() {
                 onPress={() => setSel(on ? null : h.uid)}
                 testID={`co-card-${h.uid}`}
                 style={{ width: 148, transform: [{ translateY: on ? -8 : 0 }] }}
-                innerStyle={{ minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: on ? 2.5 : 1.5, borderColor: on ? c.accent : c.cardLine, backgroundColor: h.kind === "rule" ? c.alertBg : h.kind === "clear" ? c.successBg : c.card }}
+                innerStyle={{ minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radiusLg, borderWidth: on ? 2.5 : 0, borderColor: c.ink, backgroundColor: h.kind === "rule" ? c.missBg : h.kind === "clear" ? c.areas.home.wash : c.card }}
               >
-                <T v="caption" tone="muted">
-                  {KIND_LABEL[h.kind].toUpperCase()}
+                <T v="label" tone="muted">
+                  {KIND_LABEL[h.kind]}
                 </T>
                 <T v="bodyStrong">{h.label}</T>
                 <T v="small" tone="muted">
@@ -205,7 +205,7 @@ function Built({ items, blocked, empty }: { items: { id: string; label: string }
       ) : null}
       {items.length ? (
         items.map((i) => (
-          <View key={i.id} style={{ paddingHorizontal: space[3], minHeight: 32, justifyContent: "center", borderRadius: 16, borderWidth: 1.5, borderColor: c.cardLine }}>
+          <View key={i.id} style={{ paddingHorizontal: space[3], minHeight: 32, justifyContent: "center", borderRadius: 16, backgroundColor: c.card }}>
             <T v="small">{i.label}</T>
           </View>
         ))

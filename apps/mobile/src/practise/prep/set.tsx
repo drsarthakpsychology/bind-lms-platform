@@ -166,12 +166,13 @@ function PrepQuestion({ set, q, i, marks, saved, onSave, onChecked, onNext, erro
   const player = useStepPlay({
     step: stepFromPick(q.id, q.stem, q.options),
     resetKey: q.id,
+    ids: { option: "prep-option", next: "prep-next" },
     seed: i,
     retry: false,
     nextLabel: last ? "Finish the set" : "Next question",
     onNext,
-    check: async (ids) => {
-      const j = Number(ids[0]);
+    check: async (chosen) => {
+      const j = Number(chosen[0]);
       const r = await run(() => play<PrepChecked>("prep", "check", { id: q.id, choice: j, ms: Date.now() - started.current }));
       if (!r) return null;
       onChecked(r);

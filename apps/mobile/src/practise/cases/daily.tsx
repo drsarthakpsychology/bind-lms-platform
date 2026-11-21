@@ -4,7 +4,7 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
-import { Button, Row, RowList, Section, T } from "@/ds";
+import { Button, Label, Row, RowList, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { motion, space, useTheme } from "@/theme";
 import { play, useLoad, useMove } from "../api";
@@ -67,11 +67,11 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
   const hud = <HudLine left={v.setting} right={`Clue ${v.cluesOpen} of 6`} />;
   const body = (
     <>
-      <Section title="Clues">
+      <Story kicker="The patient">
         <View style={{ gap: space[3] }}>
           {v.clues.map((cl, k) => (
             <Animated.View key={k} entering={reduce || k < first.view.clues.length ? undefined : FadeInDown.duration(motion.state)} style={{ flexDirection: "row", gap: space[3] }}>
-              <T v="score" style={{ width: 20 }} num>
+              <T v="bodyStrong" tone="muted" style={{ width: 20 }} num>
                 {k + 1}
               </T>
               <T v="reading" style={{ flex: 1 }}>
@@ -80,14 +80,16 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
             </Animated.View>
           ))}
         </View>
-      </Section>
+      </Story>
       {v.guesses.length ? (
-        <Section title="Your guesses" quiet>
-          <View style={{ gap: space[3] }}>
+        <View style={{ gap: space[2] }}>
+          <Label>Your guesses</Label>
+          <View style={{ gap: space[2] }}>
             {v.guesses.map((g, k) => (
-              <View key={k} style={{ gap: 2 }}>
-                <T v="bodyStrong" tone={g.ok ? "ink" : "danger"}>
-                  {g.ok ? "✓" : "✗"} {g.name}
+              <View key={k} style={{ gap: 2, borderRadius: 18, padding: space[3], backgroundColor: g.ok ? c.lime : c.missBg }}>
+                <T v="bodyStrong" style={{ color: g.ok ? c.onLime : c.ink }}>
+                  {g.ok ? "Right: " : "Not this: "}
+                  {g.name}
                 </T>
                 {g.reason ? (
                   <T v="small" tone="muted">
@@ -97,15 +99,16 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
               </View>
             ))}
           </View>
-        </Section>
+        </View>
       ) : null}
-      <Section title="Tests you can order" quiet>
+      <View style={{ gap: space[2] }}>
+        <Label>Tests you can order</Label>
         <RowList>
           {v.investigations.map((x) => (
             <Row key={x.i} testID={`daily-inv-${x.i}`} icon={<FlaskConical size={18} color={c.muted} />} title={`${KIND[x.kind] ?? x.kind}: ${x.label}`} meta={x.result ?? (over ? undefined : "Costs one clue point")} onPress={x.ordered || over ? undefined : () => void act({ t: "inv", i: x.i })} chevron={false} trailing={x.ordered || over ? undefined : "Order"} />
           ))}
         </RowList>
-      </Section>
+      </View>
       {v.hints.chapter || v.hints.pointer ? (
         <Story kicker="Hint">
           {v.hints.chapter ? <T>Chapter: {v.hints.chapter}</T> : null}
@@ -124,20 +127,20 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
             {v.grid}
           </T>
           <T v="reading">{r.overview}</T>
-          <Section title="Why not the look-alikes">
-            <RowList>
-              {r.lookAlikes.map((l, k) => (
-                <View key={k} style={{ paddingVertical: space[3], gap: 2 }}>
-                  <T v="bodyStrong">{l.name}</T>
-                  <T v="small" tone="muted">
-                    {l.whyNot}
-                  </T>
-                </View>
-              ))}
-            </RowList>
-          </Section>
+          <View style={{ gap: space[2] }}>
+            <Label>Why not the look-alikes</Label>
+            {r.lookAlikes.map((l, k) => (
+              <Stone key={k} style={{ gap: 2 }}>
+                <T v="bodyStrong">{l.name}</T>
+                <T v="small" tone="muted">
+                  {l.whyNot}
+                </T>
+              </Stone>
+            ))}
+          </View>
           {rest ? (
-            <Section title="What you did not open">
+            <View style={{ gap: space[2] }}>
+              <Label>What you did not open</Label>
               {rest.clues.map((cl) => (
                 <T key={cl.n} v="small">
                   {cl.n}. {cl.text}
@@ -148,7 +151,7 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
                   {t.label}: {t.result}
                 </T>
               ))}
-            </Section>
+            </View>
           ) : v.unopened ? (
             <Button kind="text" label={`See the ${v.unopened} things you did not open`} onPress={() => void showRest()} testID="daily-rest" />
           ) : null}

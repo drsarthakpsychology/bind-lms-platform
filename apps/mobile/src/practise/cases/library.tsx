@@ -2,7 +2,7 @@ import { router } from "expo-router";
 import * as React from "react";
 import { useQueries } from "@tanstack/react-query";
 
-import { Chips, EmptyState, Row, RowList, RowsSkeleton, Screen, Section } from "@/ds";
+import { Chips, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Section } from "@/ds";
 import { useTheme } from "@/theme";
 import { api } from "@/auth";
 import { CASE_TOOLS } from "../catalog";
@@ -72,7 +72,7 @@ export function CaseLibrary() {
             );
           })
         : null}
-      {!loading && !shown.length ? <EmptyState mood="empty" title={filter === "done" ? "Nothing done yet" : "Nothing here"} body={filter === "started" ? "Cases you leave half way show up here." : "Try another filter."} /> : null}
+      {!loading && !shown.length ? <QuietEmpty title={filter === "done" ? "Nothing done yet" : "Nothing here"} body={filter === "started" ? "Cases you leave half way show up here." : "Try another filter."} /> : null}
     </Screen>
   );
 }

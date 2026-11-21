@@ -1,9 +1,11 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { BookOpen, Bookmark, RotateCcw, Sparkles } from "lucide-react-native";
+import { BookOpen, Bookmark, RotateCcw, Sparkles, Timer } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Hero, LoadError, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, StillTrying } from "@/ds";
+import { FieldCard, Label, Pebbles, ProgressLine, QuietEmpty, Row, RowList, RowsSkeleton, Screen, StillTrying, Stone, T, type Pebble } from "@/ds";
+import { Enter, ProgressRing, StaggerList } from "@/motion";
+import { loadLine } from "../frame";
 import { recentPrep } from "@/lib/recent";
 import { hrefFor } from "@/nav/targets";
 import { space, useTheme } from "@/theme";
@@ -21,45 +23,81 @@ function statLine(s: PrepStats): string | undefined {
 }
 const bar = (s: PrepStats) => (s.answered ? <View style={{ marginTop: space[2] }}><ProgressLine value={(s.answered / Math.max(1, s.total)) * 100} height={3} /></View> : undefined);
 
-/** Exam Prep (GET /prep): where you were, subjects, then smart practice, saved and wrong. */
+/** Exam Prep (GET /prep): where you stopped on the field; quick doors; then every subject with how far you are. */
 export function PrepHome() {
   const c = useTheme();
   const q = useRead<Home>("/prep");
   const d = q.data;
   const resume = d?.resume ? hrefFor(d.resume.target) ?? `/prep/set?subject=${enc(d.resume.subject)}&topic=${enc(d.resume.topic)}&set=${d.resume.set}` : null;
+  const doors: Pebble[] = d
+    ? [
+        { label: "Smart set", icon: Sparkles, onPress: () => router.push("/prep/set?list=smart"), testID: "prep-smart", live: !d.resume },
+        ...(d.wrong ? [{ label: "Try again", icon: RotateCcw, onPress: () => router.push("/prep/set?list=wrong"), testID: "prep-wrong" }] : []),
+        { label: "Mock tests", icon: Timer, onPress: () => router.push("/prep/mock"), testID: "prep-more-mock" },
+        { label: "Long answers", icon: BookOpen, onPress: () => router.push("/prep/long"), testID: "prep-long" },
+      ].slice(0, 4)
+    : [];
   return (
-    <Screen testID="prep" title="Exam Prep" lead="Questions by subject and topic, one at a time. Nothing here counts towards your marks." onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {(q.isError && q.data === undefined) ? (
-        <LoadError error={q.error} what="Exam Prep" onRetry={() => void q.refetch()} />
+    <Screen
+      testID="prep"
+      area="practise"
+      title="Exam prep"
+      lead="Questions by subject and topic, one at a time. Nothing here counts towards your marks."
+      field={d?.resume && resume ? <FieldCard title={`Carry on: ${d.resume.topicTitle}`} meta={`${d.resume.subjectTitle} · set ${d.resume.set} of ${d.resume.sets}`} action={{ label: "Carry on", onPress: () => router.push(resume), testID: "prep-resume" }} /> : undefined}
+      gap={space[6]}
+      onRefresh={() => void q.refetch()}
+      refreshing={q.isRefetching}
+    >
+      {q.isError && q.data === undefined ? (
+        <QuietEmpty testID="load-error" title="Exam prep didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>
           <RowsSkeleton rows={5} />
           <StillTrying failed={q.failureCount > 0} />
         </View>
       ) : (
-        <Stagger gap={space[6]}>
-          {d.resume && resume ? <Hero context={`Carry on · ${d.resume.subjectTitle}`} title={d.resume.topicTitle} meta={`Set ${d.resume.set} of ${d.resume.sets}`} action={{ label: "Carry on", onPress: () => router.push(resume), testID: "prep-resume" }} /> : null}
-          <Section title="Subjects">
-            <RowList>
-              {d.subjects.map((s) => (
-                <Row key={s.id} testID={`prep-${s.id}`} title={s.title} meta={statLine(s.stats)} below={bar(s.stats)} trailing={s.stats.total && s.stats.answered >= s.stats.total ? <Tag tag="done" /> : undefined} onPress={() => { recentPrep.add(s.id); router.push(`/prep/${enc(s.id)}`); }} />
-              ))}
-            </RowList>
-          </Section>
-          <Section title="More practice">
-            <RowList>
-              <Row testID="prep-smart" title="Smart practice" meta="A set picked from what you need most" icon={<Sparkles size={20} color={c.muted} />} onPress={() => router.push("/prep/set?list=smart")} />
-              {d.wrong ? <Row testID="prep-wrong" title="Practise again" meta="Questions you got wrong" icon={<RotateCcw size={20} color={c.muted} />} onPress={() => router.push("/prep/set?list=wrong")} /> : null}
-              {d.canSave && d.saved ? <Row testID="prep-saved" title="Saved questions" meta="The ones you bookmarked" icon={<Bookmark size={20} color={c.muted} />} onPress={() => router.push("/prep/set?list=saved")} /> : null}
-              <Row testID="prep-long" title="Long answers" meta="Exam questions with a model answer" icon={<BookOpen size={20} color={c.muted} />} onPress={() => router.push("/prep/long")} />
-              {d.more
-                .filter((r) => r.id !== "long")
-                .map((r) => (
-                  <Row key={r.id} testID={`prep-more-${r.id}`} title={r.title} meta={r.meta ?? undefined} onPress={() => (r.id === "mock" ? router.push("/prep/mock") : openRow(r))} />
-                ))}
-            </RowList>
-          </Section>
-        </Stagger>
+        <>
+          <Enter i={0}>
+            <Pebbles items={doors} />
+          </Enter>
+          <Enter i={1} style={{ gap: space[2] }}>
+            <Label>Subjects</Label>
+            <StaggerList style={{ gap: space[2] }}>
+              {d.subjects.map((s) => {
+                const pct = s.stats.total ? Math.round((s.stats.answered / s.stats.total) * 100) : 0;
+                const done = !!s.stats.total && s.stats.answered >= s.stats.total;
+                return (
+                  <Stone key={s.id} testID={`prep-${s.id}`} accessibilityLabel={`${s.title}. ${statLine(s.stats) ?? "Not started"}`} grow={() => { recentPrep.add(s.id); router.push(`/prep/${enc(s.id)}`); }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+                      <ProgressRing pct={pct} size={44} stroke={5} color={c.dark ? c.lime : c.brand} track={c.hairline} label={`${pct} percent answered`}>
+                        {done ? <Tag tag="done" /> : null}
+                      </ProgressRing>
+                      <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+                        <T v="bodyStrong">{s.title}</T>
+                        <T v="small" tone="muted">
+                          {statLine(s.stats) ?? (s.stats.total ? `${s.stats.total} questions` : "Not started")}
+                        </T>
+                      </View>
+                    </View>
+                  </Stone>
+                );
+              })}
+            </StaggerList>
+          </Enter>
+          {(d.canSave && d.saved) || d.more.some((r) => r.id !== "long" && r.id !== "mock") ? (
+            <Enter i={2} style={{ gap: space[2] }}>
+              <Label>More</Label>
+              <RowList>
+                {d.canSave && d.saved ? <Row testID="prep-saved" title="Saved questions" meta="The ones you bookmarked" icon={<Bookmark size={20} color={c.muted} />} onPress={() => router.push("/prep/set?list=saved")} /> : null}
+                {d.more
+                  .filter((r) => r.id !== "long" && r.id !== "mock")
+                  .map((r) => (
+                    <Row key={r.id} testID={`prep-more-${r.id}`} title={r.title} meta={r.meta ?? undefined} onPress={() => openRow(r)} />
+                  ))}
+              </RowList>
+            </Enter>
+          ) : null}
+        </>
       )}
     </Screen>
   );
@@ -71,9 +109,9 @@ export function PrepSubject() {
   const q = useRead<PrepSubjectDetail>(`/prep/subjects/${enc(subject)}`);
   const d = q.data;
   return (
-    <Screen testID="prep-subject" title={d?.title ?? " "} lead={d ? statLine(d.stats) : undefined}>
+    <Screen testID="prep-subject" area="practise" title={d?.title ?? " "} lead={d ? statLine(d.stats) : undefined}>
       {(q.isError && q.data === undefined) ? (
-        <LoadError error={q.error} what="this subject" onRetry={() => void q.refetch()} />
+        <QuietEmpty testID="load-error" title="That didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>
           <RowsSkeleton rows={6} />

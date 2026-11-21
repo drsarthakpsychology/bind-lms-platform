@@ -414,6 +414,15 @@ export function PractiseHub() {
               <Enter key={l.id} i={n++} style={{ gap: space[4] }} testID={`hub-level-${l.id}`}>
                 <LevelHead n={k + 1} name={l.name} line={l.line} />
                 <TileGrid rows={levels[l.id]} />
+                {l.id === "cases" && config.apiMode === "mock" ? (
+                  // The full case player on its design sample: shown only in mock builds until the rich cases are connected.
+                  <Stone quiet grow={() => router.push("/case/full")} testID="hub-full-case" accessibilityLabel="Full case player. A sample case in the new format">
+                    <T v="bodyStrong">Full case player</T>
+                    <T v="small" tone="muted">
+                      A sample case in the new format: context, hints, graded options.
+                    </T>
+                  </Stone>
+                ) : null}
               </Enter>
             ) : null,
           )}

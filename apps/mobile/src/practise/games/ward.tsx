@@ -2,7 +2,7 @@ import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, ProgressLine, RowList, Section, T } from "@/ds";
+import { Button, ProgressLine, QuietEmpty, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { space, useTheme } from "@/theme";
@@ -142,8 +142,8 @@ export function WardGame() {
             <RowList>
               {e.log.map((l, k) => (
                 <View key={k} style={{ paddingVertical: space[3], gap: 2 }}>
-                  <T v="caption" tone="muted">
-                    {`SESSION ${l.chapter + 1} · ${WARD_KIND[l.kind].toUpperCase()} · ${WARD_QUALITY[l.q].toUpperCase()}`}
+                  <T v="label" tone="muted">
+                    {`Session ${l.chapter + 1} · ${WARD_KIND[l.kind]} · ${WARD_QUALITY[l.q]}`}
                   </T>
                   <T v="bodyStrong">{l.text}</T>
                   {l.best ? (
@@ -195,8 +195,8 @@ export function WardGame() {
         {reveal ? (
           <View style={{ gap: space[4] }}>
             <View style={{ gap: space[1] }}>
-              <T v="caption" tone="muted">
-                {`YOUR CALL · ${WARD_KIND[reveal.kind].toUpperCase()}`}
+              <T v="label" tone="muted">
+                {`Your call · ${WARD_KIND[reveal.kind]}`}
               </T>
               <T v="bodyStrong">{reveal.text}</T>
             </View>
@@ -205,8 +205,8 @@ export function WardGame() {
           </View>
         ) : s.decision ? (
           <View style={{ gap: space[3] }}>
-            <T v="caption" tone="muted">
-              {WARD_KIND[s.decision.kind].toUpperCase()}
+            <T v="label" tone="muted">
+              {WARD_KIND[s.decision.kind]}
             </T>
             <T v="h3">{s.decision.prompt}</T>
             {s.decision.options.map((o, j) => (
@@ -266,7 +266,7 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
   if (missing && !view) {
     return (
       <GameFrame title="Ward Week" testID="ward-team-missing">
-        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
+        <QuietEmpty title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
       </GameFrame>
     );
   }
@@ -323,8 +323,8 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
         {pending ? (
           <View style={{ gap: space[4] }}>
             <View style={{ gap: space[1] }}>
-              <T v="caption" tone="muted">
-                {`THE TEAM'S CALL · ${WARD_KIND[pending.kind].toUpperCase()}`}
+              <T v="label" tone="muted">
+                {`The team's call · ${WARD_KIND[pending.kind]}`}
               </T>
               <T v="bodyStrong">{pending.text}</T>
               <T v="small" tone="link">
@@ -336,8 +336,8 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
           </View>
         ) : scene.decision ? (
           <View style={{ gap: space[3] }}>
-            <T v="caption" tone="muted">
-              {WARD_KIND[scene.decision.kind].toUpperCase()}
+            <T v="label" tone="muted">
+              {WARD_KIND[scene.decision.kind]}
             </T>
             <T v="h3">{scene.decision.prompt}</T>
             {scene.decision.options.map((o, j) => (

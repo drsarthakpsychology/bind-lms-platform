@@ -20,7 +20,7 @@ import { MseGame, segments } from "@/practise/games/mse";
 import { RxGame } from "@/practise/games/rx";
 import { SortGame } from "@/practise/games/sort";
 import { WardGame } from "@/practise/games/ward";
-import { PractiseGroup, PractiseHub } from "@/practise/hub";
+import { levelOf, PractiseGroup, PractiseHub } from "@/practise/hub";
 import { PrepHome } from "@/practise/prep";
 import { LongScreen } from "@/practise/prep/long";
 import { PrepSetScreen } from "@/practise/prep/set";
@@ -70,19 +70,37 @@ describe("answers never reach the phone before the student answers", () => {
 });
 
 describe("Practise hub", () => {
-  it("leads with today's case, then short groups of at most four rows with See all", async () => {
+  it("one hub: today's patient on the field, what is half way, then five levels with every live tool", async () => {
     await render(<PractiseHub />);
     await waitFor(() => expect(screen.getByText("Today's patient")).toBeTruthy());
-    for (const t of ["Pick up again", "Cases", "Games", "Exam Prep", "Boards", "League"]) expect(screen.getAllByText(t).length).toBeGreaterThan(0);
+    expect(screen.getByTestId("hub-daily")).toBeTruthy();
     expect(screen.getByTestId("hub-pick-wwyd")).toBeTruthy();
+    for (const t of ["Basics", "Apply", "Cases", "Decisions", "Advanced", "Exam prep", "Boards", "League"]) expect(screen.getAllByText(t).length).toBeGreaterThan(0);
+    // Every live case and game is on the path, once, on its level.
+    for (const id of ["blitz", "sort", "terms", "mse-lab", "duel", "rx", "detective", "two-minute", "formulation", "escape", "ward", "ethics", "osce", "judgment"]) expect(screen.getAllByTestId(`practise-${id}`).length).toBe(1);
+    expect(screen.queryByTestId("practise-daily")).toBeNull();
     expect(screen.queryByText("120+ new cases")).toBeNull();
-    expect(screen.getAllByTestId(/^practise-/).filter((e) => /^practise-(detective|two-minute|terms|judgment|mse|formulation|osce|landmark|ethics|out-of-depth|weak-spots|consulting-room)$/.test(String(e.props.testID))).length).toBeLessThanOrEqual(4);
-    expect(screen.getByTestId("hub-all-cases")).toBeTruthy();
+    expect(screen.getByTestId("hub-all-prep")).toBeTruthy();
+    expect(screen.getByTestId("hub-prep-mock")).toBeTruthy();
+  });
+  it("puts each tool on its level", () => {
+    expect(levelOf("terms")).toBe("basics");
+    expect(levelOf("duel")).toBe("apply");
+    expect(levelOf("daily")).toBe("cases");
+    expect(levelOf("ward")).toBe("decisions");
+    expect(levelOf("osce")).toBe("advanced");
+    expect(levelOf("something-new")).toBe("advanced");
   });
   it("See all lists the whole group", async () => {
     await render(<PractiseGroup group="games" />);
     await waitFor(() => expect(screen.getByText("Comorbid")).toBeTruthy());
     for (const t of ["Blitz", "Criteria sort", "MSE Lab", "Ward Week", "Rx Detective", "Differential duel", "Team Escape Room"]) expect(screen.getByText(t)).toBeTruthy();
+  });
+  it("a level has its own page", async () => {
+    await render(<PractiseGroup group="decisions" />);
+    await waitFor(() => expect(screen.getByText("Ward Week")).toBeTruthy());
+    expect(screen.getByText("What would you do?")).toBeTruthy();
+    expect(screen.queryByText("Blitz")).toBeNull();
   });
 });
 
@@ -253,10 +271,14 @@ describe("Case tools", () => {
     await waitFor(() => expect(screen.getAllByLabelText("Done").length).toBeGreaterThan(0));
     await fireEvent.press(screen.getAllByTestId(/^tool-item-/)[0]!);
     await press("tool-option-0");
+    await press("player-check");
     await waitFor(() => expect(screen.getByTestId("verdict")).toBeTruthy());
     while (screen.queryByTestId("tool-next")) {
       await press("tool-next");
-      if (screen.queryByTestId("tool-option-0")) await press("tool-option-0");
+      if (screen.queryByTestId("player-check")) {
+        await press("tool-option-0");
+        await press("player-check");
+      }
     }
     await waitFor(() => expect(screen.getByText(/case done/i)).toBeTruthy());
   });
@@ -292,6 +314,7 @@ describe("Case tools", () => {
   it("Say it clinically: a round of phrases", async () => {
     await render(<ToolCaseScreen tool="say-it" />);
     await press("tool-option-0");
+    await press("player-check");
     await waitFor(() => expect(screen.getByTestId("verdict")).toBeTruthy());
   });
 });
@@ -301,6 +324,7 @@ describe("Exam Prep", () => {
     await render(<PrepHome />);
     await waitFor(() => expect(screen.getByTestId("prep-statistics")).toBeTruthy());
     expect(screen.getByTestId("prep-long")).toBeTruthy();
+    expect(screen.getByTestId("prep-more-mock")).toBeTruthy();
   });
   it("one question per screen, checked on the server, to the end", async () => {
     params.mockReturnValue({ subject: "statistics", topic: "descriptives", set: "1" });
@@ -308,6 +332,7 @@ describe("Exam Prep", () => {
     for (let k = 0; k < 10; k++) {
       if (screen.queryByTestId("game-over")) break;
       await press("prep-option-1");
+      await press("player-check");
       await press("prep-next");
     }
     await waitFor(() => expect(screen.getByText(/set done/i)).toBeTruthy());

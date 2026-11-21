@@ -4,7 +4,7 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
-import { Button, LoadError, Row, RowList, RowsSkeleton, Screen, Section, StillTrying, T } from "@/ds";
+import { Button, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Section, StillTrying, T } from "@/ds";
 import type { Block } from "@/api/contract";
 import { Blocks } from "@/study/blocks";
 import { haptic } from "@/lib/haptics";
@@ -13,7 +13,7 @@ import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { useRead } from "../api";
 import type { PrepLong } from "../contract";
 import { Bump, Stagger } from "../fx";
-import { GameFrame } from "../frame";
+import { GameFrame, loadLine } from "../frame";
 type LongItem = { id: string; subject: string; topic: string; marks: number; difficulty: number; question: string; plan: string[]; blocks: Block[]; keyPoints: string[]; pitfalls?: string[] };
 
 const LEVEL = ["", "Easy", "Medium", "Hard", "Very hard"];
@@ -41,7 +41,7 @@ export function LongScreen() {
   return (
     <Screen testID="prep-long" title={title} lead={d?.level === "home" || !d ? "Write your answer first, on paper or in your head. Then see the model answer." : undefined}>
       {(q.isError && q.data === undefined) ? (
-        <LoadError error={q.error} onRetry={() => void q.refetch()} />
+        <QuietEmpty testID="load-error" title="That didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>
           <RowsSkeleton rows={5} />
@@ -134,7 +134,7 @@ function LongQuestion({ q, subject, topic }: { q: LongQ; subject: string; topic:
               );
             })}
             <Bump value={ticked.length}>
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 20, lineHeight: 26, color: c.link }} accessibilityLiveRegion="polite">
+              <T style={{ fontFamily: fonts.big, fontSize: 20, lineHeight: 26, color: c.link }} accessibilityLiveRegion="polite">
                 {`${ticked.length} of ${item.keyPoints.length} covered`}
               </T>
             </Bump>

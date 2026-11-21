@@ -5,7 +5,8 @@ import { Pressable, View } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import { useMe } from "@/api/queries";
-import { Button, EmptyState, LoadError, RowsSkeleton, Screen, Section, Sheet, StillTrying, T } from "@/ds";
+import { Button, QuietEmpty, RowsSkeleton, Screen, Section, Sheet, StillTrying, T } from "@/ds";
+import { loadLine } from "./frame";
 import { haptic } from "@/lib/haptics";
 import { Burst, Confetti, presets, RollingNumber, Stamp } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
@@ -68,7 +69,7 @@ export function ShopScreen() {
   const d = q.data;
   const first = (me.data?.name ?? "You").split(" ")[0] ?? "You";
 
-  if (q.isError && q.data === undefined) return <Screen title="XP shop"><LoadError error={q.error} what="the shop" onRetry={() => void q.refetch()} /></Screen>;
+  if (q.isError && q.data === undefined) return <Screen title="XP shop"><QuietEmpty testID="load-error" title="That didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} /></Screen>;
   if (!d) {
     return (
       <Screen title="XP shop">
@@ -134,13 +135,13 @@ export function ShopScreen() {
   return (
     <Screen testID="shop" title="XP shop" lead={d.note} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Confetti fire={big} />
-      <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: space[4], borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[4], backgroundColor: c.card }}>
+      <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: space[4], borderRadius: layout.radiusLg, padding: space[4], backgroundColor: c.card }}>
         <View>
-          <T v="caption" tone="muted">
-            YOUR XP
+          <T v="label" tone="muted">
+            Your XP
           </T>
           <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[1] }}>
-            <RollingNumber value={bal} style={{ fontFamily: fonts.pixelDigits, fontSize: 48, lineHeight: 56, color: c.ink }} testID="shop-balance" />
+            <RollingNumber value={bal} style={{ fontFamily: fonts.big, fontSize: 48, lineHeight: 56, color: c.ink }} testID="shop-balance" />
             <View>
               <Burst fire={fire} reach={40} />
             </View>
@@ -151,12 +152,12 @@ export function ShopScreen() {
             <Flame size={18} color={d.streak.alive ? c.danger : c.muted} />
             <T v="bodyStrong" num>{d.streak.count > 0 ? `${d.streak.count} day${d.streak.count === 1 ? "" : "s"}` : "Start today"}</T>
           </View>
-          <T v="caption" tone="muted">
-            {d.streak.alive || d.streak.count <= 0 ? "STREAK" : "STREAK LOST"}
+          <T v="label" tone="muted">
+            {d.streak.alive || d.streak.count <= 0 ? "Streak" : "Streak lost"}
           </T>
         </View>
       </View>
-      {!d.ready ? <EmptyState mood="soon" title="The shop opens soon" body="You can look around; buying switches on shortly." /> : null}
+      {!d.ready ? <QuietEmpty title="The shop opens soon" body="You can look around; buying switches on shortly." /> : null}
       {error && !pending ? (
         <T v="small" tone="danger" accessibilityLiveRegion="polite">
           {error}
@@ -170,7 +171,7 @@ export function ShopScreen() {
             const off = !d.ready || !it.ready;
             const done = bought.has(it.id);
             return (
-              <View key={it.id} style={{ flexDirection: "row", gap: space[3], alignItems: "center", borderWidth: 1.5, borderColor: c.cardLine, borderRadius: layout.radius, padding: space[4] }} testID={`shop-item-${it.id}`}>
+              <View key={it.id} style={{ flexDirection: "row", gap: space[3], alignItems: "center", borderRadius: layout.radiusLg, padding: space[4], backgroundColor: c.card }} testID={`shop-item-${it.id}`}>
                 <Icon size={24} color={c.ink} />
                 <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
                   <T v="bodyStrong">{it.label}</T>
@@ -180,10 +181,10 @@ export function ShopScreen() {
                 </View>
                 {done && last === it.id ? (
                   <Stamp fire={fire} rotate={-4}>
-                    <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: space[2], paddingVertical: 4, borderRadius: 8, borderWidth: 2, borderColor: c.ink, backgroundColor: c.primary }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: space[2], paddingVertical: 4, borderRadius: 999, backgroundColor: c.lime }}>
                       <Check size={14} color={c.onPrimary} strokeWidth={3} />
-                      <T v="caption" style={{ color: c.onPrimary }}>
-                        BOUGHT
+                      <T v="label" style={{ color: c.onPrimary }}>
+                        Bought
                       </T>
                     </View>
                   </Stamp>
@@ -205,7 +206,7 @@ export function ShopScreen() {
             const mine = has(l);
             const on = wearing[l.kind] === l.id;
             return (
-              <Animated.View key={l.id} layout={reduce ? undefined : presets.layout()} style={{ gap: space[3], borderWidth: on ? 2 : 1.5, borderColor: on ? c.ink : c.cardLine, borderRadius: layout.radius, padding: space[4], backgroundColor: on ? c.card : "transparent" }} testID={`shop-look-${l.id}`}>
+              <Animated.View key={l.id} layout={reduce ? undefined : presets.layout()} style={{ gap: space[3], borderWidth: on ? 2 : 0, borderColor: c.ink, borderRadius: layout.radiusLg, padding: space[4], backgroundColor: c.card }} testID={`shop-look-${l.id}`}>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: space[3] }}>
                   <LookName name={first} frame={l.kind === "frame" ? l.id : wearing.frame} title={l.kind === "title" ? l.id : wearing.title} />
                   {mine ? (
@@ -219,12 +220,12 @@ export function ShopScreen() {
                     {l.label}
                   </T>
                   {on ? (
-                    <T v="caption" tone="link">
-                      WEARING
+                    <T v="label" tone="link">
+                      Wearing
                     </T>
                   ) : mine ? (
-                    <T v="caption" tone="muted">
-                      YOURS
+                    <T v="label" tone="muted">
+                      Yours
                     </T>
                   ) : null}
                 </View>
@@ -262,8 +263,8 @@ export function ShopScreen() {
 function PriceButton({ cost, onPress, disabled, label, testID }: { cost: number; onPress: () => void; disabled?: boolean; label?: string; testID?: string }) {
   const c = useTheme();
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={label ?? `Buy for ${cost} XP`} accessibilityState={{ disabled: !!disabled }} disabled={disabled} onPress={onPress} testID={testID} style={({ pressed }) => ({ minHeight: layout.target, minWidth: 88, paddingHorizontal: space[3], alignItems: "center", justifyContent: "center", borderRadius: 24, borderWidth: 2, borderColor: disabled ? c.cardLine : c.ink, backgroundColor: disabled ? "transparent" : c.primary, opacity: disabled ? 0.6 : 1, transform: [{ scale: pressed ? 0.94 : 1 }] })}>
-      <T style={{ fontFamily: label ? fonts.semibold : fonts.pixelDigits, fontSize: label ? 13 : 16, lineHeight: 20, color: disabled ? c.muted : c.onPrimary }}>{label ?? `${cost} XP`}</T>
+    <Pressable accessibilityRole="button" accessibilityLabel={label ?? `Buy for ${cost} XP`} accessibilityState={{ disabled: !!disabled }} disabled={disabled} onPress={onPress} testID={testID} style={({ pressed }) => ({ minHeight: layout.target, minWidth: 88, paddingHorizontal: space[3], alignItems: "center", justifyContent: "center", borderRadius: 24, backgroundColor: disabled ? c.card : c.ink, opacity: disabled ? 0.6 : 1, transform: [{ scale: pressed ? 0.94 : 1 }] })}>
+      <T style={{ fontFamily: fonts.bold, fontSize: label ? 13 : 16, lineHeight: 20, color: disabled ? c.muted : c.bg }}>{label ?? `${cost} XP`}</T>
     </Pressable>
   );
 }

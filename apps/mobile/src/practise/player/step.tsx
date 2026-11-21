@@ -29,7 +29,7 @@ const RIGHT = ["Yes, that fits", "That's it", "Spot on", "Exactly"];
  * hears `onDone` once, when the step is settled. Returns the three pieces the
  * shell needs: the body for the layer, the pinned button, and the sheet.
  */
-export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", retry = true, win, kicker, seed = 0, resetKey }: { step: Step; /** Grade the pick. Null means it did not go through (no connection): nothing is counted. */ check: (picked: string[]) => Promise<StepKey | null> | StepKey | null; onDone?: (r: StepResult) => void; onNext: () => void; nextLabel?: string; /** Allow one more try after a wrong pick (never when fewer than four options are left). */ retry?: boolean; /** Sparks on the verdict when right: only for a real win (the last step of a case). */ win?: boolean; kicker?: string; seed?: number; /** A new value starts the step afresh (the next question in the same screen). */ resetKey?: string | number }) {
+export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", retry = true, win, kicker, seed = 0, resetKey, ids: tid = {} }: { step: Step; /** Grade the pick. Null means it did not go through (no connection): nothing is counted. */ check: (picked: string[]) => Promise<StepKey | null> | StepKey | null; onDone?: (r: StepResult) => void; onNext: () => void; nextLabel?: string; /** Allow one more try after a wrong pick (never when fewer than four options are left). */ retry?: boolean; /** Sparks on the verdict when right: only for a real win (the last step of a case). */ win?: boolean; kicker?: string; seed?: number; /** A new value starts the step afresh (the next question in the same screen). */ resetKey?: string | number; /** testIDs the screen has always used: options are `${option}-0`..., the next button `next`. */ ids?: { option?: string; next?: string } }) {
   const [picked, setPicked] = React.useState<string[]>([]);
   const [tried, setTried] = React.useState<string[]>([]);
   const [hints, setHints] = React.useState(0);
@@ -53,7 +53,7 @@ export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", r
     setBusy(false);
   }
   const multi = step.kind === "multi";
-  const ids = step.options.map((o) => o.id);
+  const optIds = step.options.map((o) => o.id);
 
   const pick = (id: string) => {
     if (key || busy) return;
@@ -62,7 +62,7 @@ export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", r
 
   const settle = (k: StepKey, mine: string[], n: number, outcome: StepResult["outcome"]) => {
     setKey(k);
-    onDone?.({ picked: mine, key: k, score: scoreStep(k, mine, ids, hints, n), firstRight: outcome === "right" && n === 1, tries: n, hints, outcome });
+    onDone?.({ picked: mine, key: k, score: scoreStep(k, mine, optIds, hints, n), firstRight: outcome === "right" && n === 1, tries: n, hints, outcome });
   };
 
   const runCheck = async () => {
@@ -87,7 +87,7 @@ export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", r
     } else if (!multi && mine?.grade === "acceptable") {
       setSheet({ tone: "partial", title: "Acceptable, not best", why: mine.consequence || mine.feedback || e.whyCorrect || null, final: true });
       settle(k, picked, n, "partial");
-    } else if (retry && n < 2 && ids.length - tried.length >= 4) {
+    } else if (retry && n < 2 && optIds.length - tried.length >= 4) {
       setHeld(k);
       setSheet({ tone: "wrong", title: "Not quite", why: step.hints.length > hints ? "Have one more go. The hint beside the question may help." : "Read the case once more, then have one more go.", final: false });
     } else {
@@ -112,7 +112,7 @@ export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", r
   const body = (
     <View style={{ gap: space[4] }}>
       <QuestionHead prompt={step.prompt} hints={step.hints} used={hints} onHint={() => setHints((h) => Math.min(step.hints.length, h + 1))} locked={!!key} kicker={kicker ?? (multi ? "Tick all that fit" : undefined)} />
-      <Options options={step.options} picked={picked} onPick={pick} answerKey={key} tried={tried} disabled={busy} />
+      <Options options={step.options} picked={picked} onPick={pick} answerKey={key} tried={tried} disabled={busy} testPrefix={tid.option} />
       {tried.length && !key ? (
         <T v="small" tone="muted" accessibilityLiveRegion="polite">
           One more try. The dimmed answer is out.
@@ -121,7 +121,7 @@ export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", r
       {key ? <Feedback answerKey={key} /> : null}
     </View>
   );
-  const thumb = key ? open ? null : <Button label={nextLabel} onPress={onNext} testID="player-next" /> : <Button label={multi ? "Check my ticks" : "Check"} disabled={!picked.length} busy={busy} onPress={() => void runCheck()} testID="player-check" />;
+  const thumb = key ? open ? null : <Button label={nextLabel} onPress={onNext} testID={tid.next ?? "player-next"} /> : <Button label={multi ? "Check my ticks" : "Check"} disabled={!picked.length} busy={busy} onPress={() => void runCheck()} testID="player-check" />;
   const over = sheet ? (
     <VerdictSheet
       open={open}
@@ -129,7 +129,7 @@ export function useStepPlay({ step, check, onDone, onNext, nextLabel = "Next", r
       title={sheet.title}
       why={sheet.why}
       win={win && sheet.tone === "right"}
-      action={sheet.final ? { label: nextLabel, onPress: onNext, testID: "player-next" } : { label: "Try it again", onPress: tryAgain, testID: "player-retry" }}
+      action={sheet.final ? { label: nextLabel, onPress: onNext, testID: tid.next ?? "player-next" } : { label: "Try it again", onPress: tryAgain, testID: "player-retry" }}
       secondary={sheet.final ? { label: "See why, option by option", onPress: () => setOpen(false), testID: "player-why" } : { label: "Show the answer", onPress: showAnswer, testID: "player-reveal" }}
     />
   ) : null;

@@ -3,7 +3,7 @@ import { Check } from "lucide-react-native";
 import * as React from "react";
 import { AppState, Pressable, View } from "react-native";
 
-import { Button, EmptyState, Field, ProgressLine, Row, RowList, T } from "@/ds";
+import { Button, Field, ProgressLine, QuietEmpty, Row, RowList, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Press, Swap } from "@/motion";
 import { Rich } from "@/study/rich";
@@ -95,7 +95,7 @@ function ToolPicker({ tool, title, line, howTo, list, recycleLine, onPick }: { t
           </RowList>
         </Stagger>
       ) : (
-        <EmptyState mood="empty" title={tool === "weak-spots" ? "No weak spots yet" : "Nothing here yet"} body={tool === "weak-spots" ? "Do a practice interview first. Your drill is made from what you miss there." : "New cases are on their way."} testID="tool-empty" />
+        <QuietEmpty title={tool === "weak-spots" ? "No weak spots yet" : "Nothing here yet"} body={tool === "weak-spots" ? "Do a practice interview first. Your drill is made from what you miss there." : "New cases are on their way."} testID="tool-empty" />
       )}
     </GameFrame>
   );
@@ -172,13 +172,14 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
   const player = useStepPlay({
     step: isPick ? stepFromPick(`${def.id}-${at}`, step.ask, step.options) : NO_STEP,
     resetKey: `${def.id}-${at}`,
+    ids: { option: "tool-option", next: "tool-next" },
     seed: at,
     nextLabel,
     win: at + 1 >= total,
     onNext: next,
-    check: (ids) => {
+    check: (chosen) => {
       if (!key) return null;
-      const j = Number(ids[0]);
+      const j = Number(chosen[0]);
       const r = grade(key, j);
       // The first pick is the one that counts, whatever a second try brings.
       if (first.current === null) {
@@ -332,18 +333,18 @@ function StepView({ step, reveal, picked, disabled, onAnswer }: { step: ToolStep
     case "moment":
       return (
         <View style={{ gap: space[3] }}>
-          <T v="caption" tone="muted">
-            {step.skill.toUpperCase()}
+          <T v="label" tone="muted">
+            {step.skill}
           </T>
           <Flip
             flipped={!!reveal}
             front={
-              <View style={{ borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[5], backgroundColor: c.card }}>
+              <View style={{ borderRadius: layout.radiusLg, padding: space[5], backgroundColor: c.card }}>
                 <T v="h3">{`\u201c${step.moment}\u201d`}</T>
               </View>
             }
             back={
-              <View style={{ borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[5], backgroundColor: c.tint }}>
+              <View style={{ borderRadius: layout.radiusLg, padding: space[5], backgroundColor: c.lime }}>
                 <T v="h3">{`\u201c${step.moment}\u201d`}</T>
               </View>
             }
@@ -382,7 +383,7 @@ function Ticks({ step, reveal, disabled, onAnswer }: { step: Extract<ToolStep, {
       {step.kind === "checklist" ? (
         <View style={{ gap: space[2] }}>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 32, lineHeight: 40, color: c.ink }} num accessibilityLabel={`${left} seconds left`}>
+            <T style={{ fontFamily: fonts.big, fontSize: 32, lineHeight: 40, color: c.ink }} num accessibilityLabel={`${left} seconds left`}>
               {`${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`}
             </T>
             {!reveal ? <Button kind="quiet" full={false} label={running ? "Pause" : left < total ? "Carry on" : "Start the clock"} onPress={() => setRunning((r) => !r)} testID="tool-clock" /> : null}
@@ -418,14 +419,14 @@ function Scale({ step, reveal, picked, disabled, onAnswer }: { step: Extract<Too
   return (
     <View style={{ gap: space[4] }}>
       <View style={{ gap: space[1] }}>
-        <T v="caption" tone="muted">
-          IF YOU WERE THINKING
+        <T v="label" tone="muted">
+          If you were thinking
         </T>
         <T v="h3">{step.hypothesis}</T>
       </View>
       <View style={{ gap: space[1] }}>
-        <T v="caption" tone="muted">
-          AND THEN YOU LEARN
+        <T v="label" tone="muted">
+          And then you learn
         </T>
         <T v="reading">{step.fact}</T>
       </View>
@@ -446,11 +447,11 @@ function Scale({ step, reveal, picked, disabled, onAnswer }: { step: Extract<Too
                 onAnswer(j);
               }}
               testID={`tool-scale-${j}`}
-              style={({ pressed }) => ({ flex: 1, minHeight: 88, paddingVertical: space[2], paddingHorizontal: 2, alignItems: "center", justifyContent: "center", gap: space[1], borderRadius: layout.radius, borderWidth: right || mine ? 2 : 1.5, borderColor: right ? (c.dark ? c.primary : c.ink) : mine && reveal ? c.danger : c.cardLine, backgroundColor: right ? c.successBg : mine && reveal ? c.alertBg : pressed ? c.tint : "transparent" })}
+              style={({ pressed }) => ({ flex: 1, minHeight: 88, paddingVertical: space[2], paddingHorizontal: 2, alignItems: "center", justifyContent: "center", gap: space[1], borderRadius: layout.radius, backgroundColor: right ? c.lime : mine && reveal ? c.missBg : mine ? c.ink : pressed ? c.tint : "transparent" })}
             >
-              <T maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 22, color: c.ink }}>{["-2", "-1", "0", "+1", "+2"][j]}</T>
+              <T maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.bold, fontSize: 18, lineHeight: 22, color: mine && !reveal ? c.bg : right ? c.onLime : c.ink }}>{["-2", "-1", "0", "+1", "+2"][j]}</T>
               {/* Five boxes share one row: the words stop growing at 1.2x so "likely" never breaks mid-word. */}
-              <T v="caption" center maxFontSizeMultiplier={1.2}>
+              <T v="caption" center maxFontSizeMultiplier={1.2} style={{ color: mine && !reveal ? c.bg : right ? c.onLime : c.ink }}>
                 {l}
               </T>
             </Pressable>
@@ -501,7 +502,7 @@ function Buckets({ step, reveal, disabled, onAnswer }: { step: Extract<ToolStep,
                       setAt(after >= 0 ? after : next.findIndex((x) => x === null));
                     }}
                     testID={`tool-bucket-${i}-${k}`}
-                    style={({ pressed }) => ({ minHeight: 40, paddingHorizontal: space[3], justifyContent: "center", borderRadius: 20, borderWidth: 1.5, borderColor: put[i] === k ? c.ink : c.cardLine, backgroundColor: put[i] === k ? c.ink : pressed ? c.tint : "transparent" })}
+                    style={({ pressed }) => ({ minHeight: 40, paddingHorizontal: space[3], justifyContent: "center", borderRadius: 20, backgroundColor: put[i] === k ? c.ink : pressed ? c.tint : c.card })}
                   >
                     <T v="small" style={{ color: put[i] === k ? c.bg : c.ink }}>
                       {b}
@@ -532,7 +533,7 @@ function Write({ step, reveal, onAnswer }: { step: Extract<ToolStep, { kind: "wr
   const clock = step.seconds ? (
     <View style={{ gap: space[2] }}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <T style={{ fontFamily: fonts.pixelDigits, fontSize: 32, lineHeight: 40, color: left === 0 ? c.danger : c.ink }} num accessibilityLabel={`${left} seconds left`}>
+        <T style={{ fontFamily: fonts.big, fontSize: 32, lineHeight: 40, color: left === 0 ? c.danger : c.ink }} num accessibilityLabel={`${left} seconds left`}>
           {`${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`}
         </T>
         {!reveal && !running && left === step.seconds ? <Button kind="quiet" full={false} label="Start the clock" onPress={() => setRunning(true)} testID="tool-clock" /> : null}
@@ -586,9 +587,9 @@ function Rate({ step, reveal, picked, onAnswer }: { step: Extract<ToolStep, { ki
                   onAnswer(i + 1);
                 }}
                 testID={`tool-rate-${i + 1}`}
-                style={({ pressed }) => ({ minHeight: 64, alignItems: "center", justifyContent: "center", borderRadius: layout.radius, borderWidth: on ? 2 : 1.5, borderColor: on ? c.ink : c.cardLine, backgroundColor: on ? c.primary : pressed ? c.tint : "transparent", transform: [{ scale: pressed ? 0.96 : 1 }] })}
+                style={({ pressed }) => ({ minHeight: 64, alignItems: "center", justifyContent: "center", borderRadius: layout.radius, backgroundColor: on ? c.lime : pressed ? c.tint : c.card, transform: [{ scale: pressed ? 0.96 : 1 }] })}
               >
-                <T style={{ fontFamily: fonts.pixelDigits, fontSize: 22, lineHeight: 28, color: on ? c.onPrimary : c.ink }}>{String(i + 1)}</T>
+                <T style={{ fontFamily: fonts.big, fontSize: 22, lineHeight: 28, color: on ? c.onLime : c.ink }}>{String(i + 1)}</T>
               </Pressable>
             </Feel>
           );
@@ -630,7 +631,7 @@ function FullMse({ step, reveal, onAnswer }: { step: Extract<ToolStep, { kind: "
     <View style={{ gap: space[3] }}>
       <View style={{ gap: space[2] }}>
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-          <T style={{ fontFamily: fonts.pixelDigits, fontSize: 32, lineHeight: 40, color: urgent ? c.danger : c.ink }} num accessibilityRole="timer" accessibilityLabel={`${Math.floor(left / 60)} minutes ${left % 60} seconds left`}>
+          <T style={{ fontFamily: fonts.big, fontSize: 32, lineHeight: 40, color: urgent ? c.danger : c.ink }} num accessibilityRole="timer" accessibilityLabel={`${Math.floor(left / 60)} minutes ${left % 60} seconds left`}>
             {`${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`}
           </T>
           <T v="small" tone="muted" num>{`${filled} of ${step.domains.length} domains`}</T>
@@ -668,8 +669,8 @@ function Lights({ reveal, seed }: { reveal: ToolReveal; seed: number }) {
                 <T v="bodyStrong" style={{ flex: 1 }}>
                   {r.domain}
                 </T>
-                <T v="caption" style={{ color: r.light === "green" ? c.successFg : r.light === "amber" ? c.link : c.danger }}>
-                  {LIGHT_WORD[r.light].toUpperCase()}
+                <T v="label" style={{ color: r.light === "green" ? c.successFg : r.light === "amber" ? c.link : c.danger }}>
+                  {LIGHT_WORD[r.light]}
                 </T>
               </View>
               <T v="small">{`You: ${r.you.length ? r.you.join(", ") : "(none)"}`}</T>
@@ -700,8 +701,8 @@ function ObserveLine({ o }: { o: { labels: string[]; observations: number; words
 function DiffWords({ diff }: { diff: { missing: string[]; present: string[] } }) {
   const c = useTheme();
   const chip = (w: string, got: boolean) => (
-    <View key={`${got}-${w}`} style={{ minHeight: 28, paddingHorizontal: space[2], borderRadius: 14, justifyContent: "center", borderWidth: 1.5, borderColor: got ? c.ink : c.cardLine, backgroundColor: got ? c.successBg : "transparent" }}>
-      <T v="small" style={{ color: got ? c.successFg : c.muted }}>
+    <View key={`${got}-${w}`} style={{ minHeight: 28, paddingHorizontal: space[2], borderRadius: 14, justifyContent: "center", backgroundColor: got ? c.lime : c.card }}>
+      <T v="small" style={{ color: got ? c.onLime : c.muted }}>
         {w}
       </T>
     </View>
@@ -709,14 +710,14 @@ function DiffWords({ diff }: { diff: { missing: string[]; present: string[] } })
   return (
     <View style={{ gap: space[3] }} testID="tool-diff">
       <View style={{ gap: space[1] }}>
-        <T v="caption" tone="muted">
-          WORDS YOU GOT
+        <T v="label" tone="muted">
+          Words you got
         </T>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[1] }}>{diff.present.length ? diff.present.map((w) => chip(w, true)) : <T v="small" tone="muted">(none yet)</T>}</View>
       </View>
       <View style={{ gap: space[1] }}>
-        <T v="caption" tone="muted">
-          WORDS YOU MISSED
+        <T v="label" tone="muted">
+          Words you missed
         </T>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[1] }}>{diff.missing.length ? diff.missing.map((w) => chip(w, false)) : <T v="small" tone="muted">(none, excellent)</T>}</View>
       </View>
