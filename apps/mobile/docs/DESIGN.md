@@ -33,7 +33,7 @@ outlines around cards, no gradients.
 | Raised | `c.raised` | `#ffffff` | `#2a2e3b` | A thing above stone: a sheet, a menu |
 | Lime | `c.lime` (same as `c.primary`), text `c.onLime` | `#cdf24b` | `#cdf24b` | The one live action, progress, the current tab |
 | Ink | `c.ink`, text on it `tone="onInk"` | `#12131a` | `#f2f3f7` | Text, the picked option, the result button |
-| Muted, faint | `c.muted`, `c.faint` | `#565864`, `#666874` | `#aeb2c0`, `#8f93a3` | Second and third level text |
+| Muted, faint | `c.muted`, `c.faint` | `#565864`, `#5e606c` | `#aeb2c0`, `#9ea2b2` | Second and third level text |
 | Wrong pick | `c.missBg` | `#ffd9c9` | `#5c2a1a` | A wrong answer. Warm, never red alarm |
 | Link | `c.link` | blue | soft blue | Text links only |
 | Danger | `c.danger`, `c.alertBg`, `c.alertFg` | | | Delete, sign out, real errors |
@@ -110,7 +110,7 @@ Import from `@/ds` and `@/motion`.
 | `RollingNumber` | Digits roll to the value | `<RollingNumber value={18} />` |
 | `Stat` | A number with its label | `<Stat value="86%" label="Attendance" />` |
 | `QuietEmpty` | Empty state on the layer; may hold Jyo | `<QuietEmpty title="Nothing due today" body="..." art={<Jyo pose="resting" size={56} />} />` |
-| `EmptyState`, `LoadError` | The older plain ones, still fine | `<LoadError what="your notes" onRetry={refetch} />` |
+| `EmptyState`, `LoadError` | The older ones (they show a sticker when "Funny reactions" is on). Keep `LoadError` for failed loads; use `QuietEmpty` for new empty screens | `<LoadError what="your notes" onRetry={refetch} />` |
 | `Loaded`, `Skeleton`, `LoadSwap` | Loading that becomes content | `<Loaded q={q} skeleton={<RowsSkeleton />}>{(d) => ...}</Loaded>` |
 | `Sheet` | Bottom sheet you can drag down | `<Sheet open={o} onClose={close} title="Filters">...</Sheet>` |
 | `toast` | One short line above the tab bar | `toast.show("Saved")` |

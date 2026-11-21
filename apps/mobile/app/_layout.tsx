@@ -291,7 +291,10 @@ function Shell() {
             <Stack.Screen name="prep/mock/index" options={{ title: "" }} />
             <Stack.Screen name="prep/mock/[spec]" options={{ headerShown: false, ...m.play, gestureEnabled: false }} />
             <Stack.Screen name="prep/mock/result/[id]" options={{ title: "" }} />
-            <Stack.Screen name="medicines" options={{ title: "" }} />
+            {/* Opened from the Notes hub's shelves: the shelf grows into the screen. */}
+            <Stack.Screen name="medicines" options={({ route }) => ({ title: "", ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="notes/index" options={({ route }) => ({ title: "", ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="reference/index" options={({ route }) => ({ title: "", ...growOr(route.key ?? route.name, m.push, reduce) })} />
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
             <Stack.Screen name="kit" options={{ title: "Kit" }} />
             <Stack.Screen name="medicine/compare" options={{ title: "Compare" }} />

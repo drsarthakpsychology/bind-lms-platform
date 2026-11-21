@@ -2,7 +2,7 @@ import { CalendarOff, NotebookText, Pill, QrCode, X } from "lucide-react-native"
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, ChoicePebbles, EmptyState, ProgressLine, toast, FieldCard, FieldProgress, Flood, HintBubble, HintText, HoldButton, Jyo, Label, OptionList, Pebbles, QuietEmpty, ResultSheet, RoundButton, Row, RowList, Screen, Stone, T, type JyoPose } from "@/ds";
+import { Button, ChoicePebbles, ProgressLine, toast, FieldCard, FieldProgress, Flood, HintBubble, HintText, HoldButton, Jyo, Label, OptionList, Pebbles, QuietEmpty, ResultSheet, RoundButton, Row, RowList, Screen, Stone, T, type JyoPose } from "@/ds";
 import { ProgressRing } from "@/motion";
 import { space, useTheme } from "@/theme";
 
@@ -136,7 +136,6 @@ export function KitScreen({ start }: { start?: string }) {
               </View>
             ))}
           </View>
-          <EmptyState title="No doubts yet" body="EmptyState is the older, plain one. It still works everywhere." action={{ label: "Ask a doubt", onPress: noop }} />
           <QuietEmpty art={<Jyo pose="resting" size={56} still />} title="Nothing due today" body="An empty screen is one of the few places Jyo may sit." />
         </View>
       </Screen>
