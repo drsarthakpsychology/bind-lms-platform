@@ -880,3 +880,6 @@ export function clinicRoute(method: string, fullPath: string, rawBody: unknown, 
   }
   return fail(404, "not_found", "That could not be found.");
 }
+
+/** Browser screenshots (web mock build only): the page can read today's code to walk through the scan. */
+if (typeof document !== "undefined") (globalThis as { __clinicMock?: typeof clinicMock }).__clinicMock = clinicMock;

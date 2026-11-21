@@ -1,18 +1,19 @@
 import { useQueryClient } from "@tanstack/react-query";
+import { Stack } from "expo-router";
 import { Check as CheckIcon } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
-import { Button, Field, RowsSkeleton, Screen, Section, Sheet, Stat, T, toast } from "@/ds";
+import { Button, Field, FieldCard, Label, QuietEmpty, Screen, Sheet, Skeleton, Stone, T, toast } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { StaggerList } from "@/motion";
+import { ProgressRing, RollingNumber } from "@/motion";
 import { AreaProvider, layout, space, useTheme } from "@/theme";
 import { clinicCalls, clinicKeys, useLeave } from "../api";
 import { ClinicLoaded } from "../loaded";
 import type { ClinicSession, LeavePage, LeaveRequest } from "../contract";
 import { canLeaveEarly, dateLabel, minutesOf, parseClock, rangeLabel, relDay, requestTitle, sessionTitle, timeLabel, todayIST } from "../logic";
-import { LeaveWord } from "../parts";
+import { LeavePill, StoneList } from "../ui";
 
 /** A whole-row tick: the row is the target (56px), the box shows the state. */
 export function PickRow({ on, onPress, title, meta, radio, testID }: { on: boolean; onPress: () => void; title: string; meta?: string; radio?: boolean; testID?: string }) {
@@ -27,17 +28,19 @@ export function PickRow({ on, onPress, title, meta, radio, testID }: { on: boole
         haptic.select();
         onPress();
       }}
-      style={({ pressed }) => ({ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[3], paddingVertical: space[2], paddingHorizontal: space[2], marginHorizontal: -space[2], borderRadius: 10, backgroundColor: on ? c.selected : pressed ? c.tint : "transparent" })}
+      style={({ pressed }) => ({ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[3], paddingVertical: space[2], paddingHorizontal: space[4], marginBottom: space[2], borderRadius: layout.radius, backgroundColor: on ? c.ink : pressed ? c.tint : c.card })}
     >
       {radio ? (
-        <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: on ? 7 : 1.5, borderColor: on ? c.link : c.fieldLine }} />
+        <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: on ? 7 : 1.5, borderColor: on ? c.lime : c.fieldLine }} />
       ) : (
-        <View style={{ width: 22, height: 22, borderRadius: 5, borderWidth: 1.5, borderColor: on ? c.link : c.fieldLine, backgroundColor: on ? c.link : "transparent", alignItems: "center", justifyContent: "center" }}>{on ? <CheckIcon size={15} strokeWidth={3} color={c.bg} /> : null}</View>
+        <View style={{ width: 22, height: 22, borderRadius: 5, borderWidth: 1.5, borderColor: on ? c.lime : c.fieldLine, backgroundColor: on ? c.lime : "transparent", alignItems: "center", justifyContent: "center" }}>{on ? <CheckIcon size={15} strokeWidth={3} color={c.onLime} /> : null}</View>
       )}
       <View style={{ flex: 1, minWidth: 0 }}>
-        <T v="bodyStrong">{title}</T>
+        <T v="bodyStrong" style={on ? { color: c.bg } : undefined}>
+          {title}
+        </T>
         {meta ? (
-          <T v="small" tone="muted" num>
+          <T v="small" tone={on ? undefined : "muted"} num style={on ? { color: c.bg, opacity: 0.8 } : undefined}>
             {meta}
           </T>
         ) : null}
@@ -169,12 +172,12 @@ function RequestRow({ r, onCancel, today }: { r: LeaveRequest; onCancel: () => v
   const c = useTheme();
   const what = requestTitle(r);
   return (
-    <View testID={`req-${r.id}`} style={{ paddingVertical: space[3], gap: space[1], borderTopWidth: 1, borderColor: c.hairline }}>
+    <View testID={`req-${r.id}`} style={{ paddingVertical: space[3], paddingHorizontal: space[4], gap: space[1] }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
         <T v="bodyStrong" style={{ flex: 1 }}>
           {what}
         </T>
-        <LeaveWord s={r.status} testID={`req-${r.id}-status`} />
+        <LeavePill s={r.status} testID={`req-${r.id}-status`} />
       </View>
       {r.sessions.map((s) => (
         <T key={s.id} v="small" tone="muted" num>
@@ -189,9 +192,12 @@ function RequestRow({ r, onCancel, today }: { r: LeaveRequest; onCancel: () => v
         </T>
       ) : null}
       {r.adminNote ? (
-        <T v="small" tone="muted">
-          Admin: {r.adminNote}
-        </T>
+        <View style={{ marginTop: space[1], backgroundColor: c.bg, borderRadius: 14, borderTopLeftRadius: 4, paddingVertical: space[2], paddingHorizontal: space[3] }}>
+          <T v="caption" tone="muted">
+            From the admin
+          </T>
+          <T v="small">{r.adminNote}</T>
+        </View>
       ) : null}
       {r.status === "pending" ? (
         <View style={{ alignItems: "flex-start" }}>
@@ -202,10 +208,26 @@ function RequestRow({ r, onCancel, today }: { r: LeaveRequest; onCancel: () => v
   );
 }
 
-/** Leaves left, ask for leave or to leave early, and my requests with their status. */
+function LeaveSkeleton() {
+  return (
+    <View style={{ gap: space[4] }}>
+      <Skeleton h={128} r={26} />
+      <Skeleton h={52} r={26} />
+      <Skeleton h={160} r={26} />
+    </View>
+  );
+}
+
+/**
+ * Leave: how many are left drawn as a ring, ask for leave (sessions) or to
+ * leave one session early, and my requests with where each one stands.
+ * Asking opens a sheet; sending says so and the list updates. No companion:
+ * leave decisions are never decorated.
+ */
 export function LeaveScreen() {
   const q = useLeave();
   const qc = useQueryClient();
+  const c = useTheme();
   const [sheet, setSheet] = React.useState<"ask" | "early" | null>(null);
   const today = todayIST();
   const refresh = () => void qc.invalidateQueries({ queryKey: clinicKeys.all });
@@ -224,42 +246,54 @@ export function LeaveScreen() {
       toast.show(messageOf(e));
     }
   };
+  const p0 = q.data;
+  const field = p0 ? <FieldCard title={p0.pending ? `${p0.pending} ${p0.pending === 1 ? "request is" : "requests are"} waiting` : "Nothing waiting"} meta={p0.pending ? "You get a notification when the admin decides." : "Ask below when you need a day off."} live={p0.pending > 0} /> : null;
   return (
     <AreaProvider area="home">
-      <Screen area="home" testID="clinic-leave" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-        <ClinicLoaded q={q} what="your leave" skeleton={<RowsSkeleton rows={4} />}>
+      <Stack.Screen options={{ title: "" }} />
+      <Screen area="home" title="Leave" field={field} testID="clinic-leave" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+        <ClinicLoaded q={q} what="your leave" skeleton={<LeaveSkeleton />}>
           {(p) => (
-            <View style={{ gap: layout.section }}>
-              <View style={{ gap: space[2] }}>
-                <View style={{ flexDirection: "row", gap: space[6], flexWrap: "wrap" }}>
-                  <Stat value={String(p.left)} label="Leaves left" />
-                  <Stat value={String(p.used)} label="Used" />
-                  {p.pending ? <Stat value={String(p.pending)} label="Waiting" /> : null}
-                  <Stat value={String(p.allowance)} label="In all" />
+            <View style={{ gap: space[5] }}>
+              <Stone pad={space[5]}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: space[5] }}>
+                  <ProgressRing pct={p.allowance ? Math.max(0, Math.min(100, Math.round((p.left / p.allowance) * 100))) : 0} size={96} stroke={9} color={p.left > 0 ? (c.dark ? c.lime : c.brand) : c.danger} track={c.dark ? c.fieldTint : c.hairline} label={`${p.left} of ${p.allowance} leaves left`}>
+                    <RollingNumber v="h1" value={Math.max(0, p.left)} />
+                  </ProgressRing>
+                  <View style={{ flex: 1, minWidth: 0, gap: space[1] }}>
+                    <T v="h3">Leaves left</T>
+                    <T v="small" tone="muted" num>
+                      {p.used} used of {p.allowance}
+                      {p.pending ? `, ${p.pending} waiting` : ""}
+                    </T>
+                    {p.left <= 0 ? (
+                      <T v="small" tone="alert" testID="leave-left-line">
+                        No leaves left. You can still ask; the admin decides.
+                      </T>
+                    ) : (
+                      <T v="small" tone="muted">
+                        Each session you miss uses one. Leaving early uses none.
+                      </T>
+                    )}
+                  </View>
                 </View>
-                {p.left <= 0 ? (
-                  <T v="small" tone="alert" testID="leave-left-line">
-                    No leaves left. You can still ask; the admin decides.
-                  </T>
-                ) : null}
-              </View>
-              <View style={{ gap: space[2] }}>
+              </Stone>
+              <View style={{ gap: space[3] }}>
                 <Button label="Ask for leave" onPress={() => setSheet("ask")} testID="leave-ask" />
                 <Button kind="quiet" label="Leave early" onPress={() => setSheet("early")} testID="leave-early" />
               </View>
-              <Section title="My requests">
+              <View style={{ gap: space[2] }}>
+                <Label>My requests</Label>
                 {p.requests.length ? (
-                  <StaggerList>
+                  <StoneList>
                     {p.requests.map((r) => (
                       <RequestRow key={r.id} r={r} today={today} onCancel={() => void cancel(r.id)} />
                     ))}
-                  </StaggerList>
+                  </StoneList>
                 ) : (
-                  <T v="small" tone="muted">
-                    No requests yet.
-                  </T>
+                  <QuietEmpty title="No requests yet" body="What you ask for shows here, with the admin's answer." />
                 )}
-              </Section>
+              </View>
               <AskSheet open={sheet === "ask"} onClose={() => setSheet(null)} page={p} onDone={done} />
               <EarlySheet open={sheet === "early"} onClose={() => setSheet(null)} page={p} onDone={done} />
             </View>

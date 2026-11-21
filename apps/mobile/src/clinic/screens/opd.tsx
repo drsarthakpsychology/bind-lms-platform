@@ -1,59 +1,55 @@
 import { useQueryClient } from "@tanstack/react-query";
+import { Stack } from "expo-router";
 import { Minus, Moon, Plus, Sun } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, View } from "react-native";
+import { View } from "react-native";
 
 import { ConfirmSheet } from "@/admin/kit";
 import { messageOf } from "@/api/errors";
-import { Button, Field, IconButton, RowsSkeleton, Screen, Section, Sheet, T, toast } from "@/ds";
+import { Button, Field, FieldCard, IconButton, Label, pebbleShape, QuietEmpty, Screen, Sheet, Skeleton, Stone, T, toast } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Burst, ProgressRing, RollingNumber, useCelebrate } from "@/motion";
-import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
+import { Burst, Press, ProgressRing, RollingNumber, useCelebrate } from "@/motion";
+import { AreaProvider, space, useTheme } from "@/theme";
 import { clinicCalls, clinicKeys, opdQuery, useOpd } from "../api";
 import { ClinicLoaded } from "../loaded";
 import type { Batch, OpdPage, OpdVisit } from "../contract";
 import { BATCH_NAME, casesLine, pct, rangeLabel, relDay, todayIST, visitsNeeded } from "../logic";
-import { VisitWord } from "../parts";
+import { Line, StoneList, VisitPill } from "../ui";
 
-/** Morning or Evening, chosen once. */
+/** Morning or Evening, chosen once: two soft pebbles that squish under the thumb. */
 function BatchChoice({ onPick }: { onPick: (b: Batch) => void }) {
   const c = useTheme();
-  const a = useAccent();
-  const card = (b: Batch, Icon: typeof Sun, when: string) => (
-    <Pressable
+  const card = (b: Batch, Icon: typeof Sun, when: string, i: number) => (
+    <Press
       key={b}
       testID={`batch-${b}`}
       accessibilityRole="button"
       accessibilityLabel={`${BATCH_NAME[b]} batch, ${when}`}
-      onPress={() => {
-        haptic.select();
-        onPick(b);
-      }}
-      style={({ pressed }) => ({ flex: 1, minHeight: 120, borderRadius: 16, padding: space[4], gap: space[2], backgroundColor: pressed ? a.deep : a.wash, borderWidth: 1, borderColor: c.hairline })}
+      feel="select"
+      onPress={() => onPick(b)}
+      scale={0.95}
+      squish
+      style={{ flex: 1 }}
+      innerStyle={[{ minHeight: 140, padding: space[4], gap: space[1], justifyContent: "flex-end", backgroundColor: c.card }, pebbleShape(i)]}
     >
-      {({ pressed }) => (
-        <>
-          <Icon size={24} color={pressed ? a.onDeep : a.deep} />
-          <T v="h3" style={pressed ? { color: a.onDeep } : undefined}>
-            {BATCH_NAME[b]}
-          </T>
-          <T v="small" tone={pressed ? undefined : "muted"} style={pressed ? { color: a.onDeep } : undefined}>
-            {when}
-          </T>
-        </>
-      )}
-    </Pressable>
+      <Icon size={26} color={c.ink} strokeWidth={1.9} />
+      <T v="h2">{BATCH_NAME[b]}</T>
+      <T v="small" tone="muted">
+        {when}
+      </T>
+    </Press>
   );
   return (
-    <Section title="Pick your OPD batch">
-      <T v="small" tone="muted">
+    <View style={{ gap: space[2] }}>
+      <Label>Pick your OPD batch</Label>
+      <T v="small" tone="muted" style={{ paddingHorizontal: space[1] }}>
         You choose once. After that, only the admin can change it.
       </T>
       <View style={{ flexDirection: "row", gap: space[3] }}>
-        {card("morning", Sun, "OPD visits in the morning")}
-        {card("evening", Moon, "OPD visits in the evening")}
+        {card("morning", Sun, "OPD visits in the morning", 0)}
+        {card("evening", Moon, "OPD visits in the evening", 1)}
       </View>
-    </Section>
+    </View>
   );
 }
 
@@ -113,11 +109,10 @@ function LogSheet({ visit, onClose, onDone }: { visit: OpdVisit | null; onClose:
 }
 
 function VisitRow({ v, onLog }: { v: OpdVisit; onLog: () => void }) {
-  const c = useTheme();
   const today = todayIST();
   const canLog = v.status === "to_log" || v.status === "today";
   return (
-    <View testID={`visit-${v.id}`} style={{ minHeight: layout.row, paddingVertical: space[3], flexDirection: "row", alignItems: "center", gap: space[3], borderTopWidth: 1, borderColor: c.hairline }}>
+    <Line testID={`visit-${v.id}`}>
       <View style={{ flex: 1, minWidth: 0 }}>
         <T v="bodyStrong">{relDay(v.date, today)}</T>
         <T v="small" tone="muted" num>
@@ -130,7 +125,17 @@ function VisitRow({ v, onLog }: { v: OpdVisit; onLog: () => void }) {
           </T>
         ) : null}
       </View>
-      {canLog ? <Button kind={v.status === "to_log" ? "primary" : "quiet"} full={false} label="Log cases" onPress={onLog} testID={`visit-${v.id}-log`} /> : <VisitWord s={v.status} />}
+      {canLog ? <Button small kind={v.status === "to_log" ? "primary" : "quiet"} full={false} label="Log cases" onPress={onLog} testID={`visit-${v.id}-log`} /> : <VisitPill s={v.status} />}
+    </Line>
+  );
+}
+
+function OpdSkeleton() {
+  return (
+    <View style={{ gap: space[4] }}>
+      <Skeleton h={136} r={26} />
+      <Skeleton h={18} w="40%" />
+      <Skeleton h={170} r={26} />
     </View>
   );
 }
@@ -139,12 +144,15 @@ function VisitRow({ v, onLog }: { v: OpdVisit; onLog: () => void }) {
 export function OpdScreen() {
   const q = useOpd();
   const qc = useQueryClient();
-  const a = useAccent();
   const [logging, setLogging] = React.useState<OpdVisit | null>(null);
   const [batch, setBatch] = React.useState<Batch | null>(null);
   const [busy, setBusy] = React.useState(false);
   const [fire, setFire] = React.useState(0);
   const celebrate = useCelebrate();
+  const c = useTheme();
+  const next = q.data?.visits.find((v) => v.status === "today" || v.status === "upcoming");
+  const due = q.data?.visits.filter((v) => v.status === "to_log").length ?? 0;
+  const field = q.data ? (due ? <FieldCard title={due === 1 ? "1 visit to log" : `${due} visits to log`} meta="Log your cases below, the same day if you can." live /> : next ? <FieldCard title={`Next OPD: ${relDay(next.date, todayIST())}`} meta={`${BATCH_NAME[next.batch]}, ${rangeLabel(next.start, next.end)}`} /> : null) : null;
   const refresh = () => void qc.invalidateQueries({ queryKey: clinicKeys.all });
   const saveBatch = async (b: Batch) => {
     setBusy(true);
@@ -163,78 +171,78 @@ export function OpdScreen() {
   };
   return (
     <AreaProvider area="home">
-      <Screen area="home" testID="clinic-opd" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-        <ClinicLoaded q={q} what="your OPD cases" skeleton={<RowsSkeleton rows={4} />}>
+      <Stack.Screen options={{ title: "" }} />
+      <Screen area="home" title="OPD cases" field={field} testID="clinic-opd" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+        <ClinicLoaded q={q} what="your OPD cases" skeleton={<OpdSkeleton />}>
           {(p: OpdPage) => {
             const needed = visitsNeeded(p.total, p.done, p.casesPerVisit);
             const toLog = p.visits.filter((v) => v.status === "to_log");
             const coming = p.visits.filter((v) => v.status === "upcoming" || v.status === "today");
             const past = p.visits.filter((v) => !["upcoming", "today", "to_log"].includes(v.status)).reverse();
             return (
-              <View style={{ gap: layout.section }}>
-                <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }} testID="opd-cases">
-                  <View style={{ alignItems: "center", justifyContent: "center" }}>
-                    <ProgressRing pct={pct(p.done, p.total) ?? 0} size={88} stroke={8} color={a.deep} track={a.wash} label={casesLine(p.done, p.total)}>
-                      <T v="h2" num>
-                        {p.done}
+              <View style={{ gap: space[5] }}>
+                <Stone pad={space[5]} testID="opd-cases">
+                  <View style={{ flexDirection: "row", alignItems: "center", gap: space[5] }}>
+                    <View style={{ alignItems: "center", justifyContent: "center" }}>
+                      <ProgressRing pct={pct(p.done, p.total) ?? 0} size={104} stroke={9} color={c.dark ? c.lime : c.brand} track={c.dark ? c.fieldTint : c.hairline} label={casesLine(p.done, p.total)}>
+                        <RollingNumber v="h1" value={p.done} />
+                      </ProgressRing>
+                      <Burst fire={fire} reach={64} />
+                    </View>
+                    <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+                      <T v="h3" num testID="opd-cases-line">
+                        {casesLine(p.done, p.total)}
                       </T>
-                    </ProgressRing>
-                    <Burst fire={fire} reach={56} />
-                  </View>
-                  <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
-                    <T v="h3" num testID="opd-cases-line">
-                      {casesLine(p.done, p.total)}
-                    </T>
-                    {p.extras ? (
+                      {p.extras ? (
+                        <T v="small" tone="muted" num>
+                          Includes {p.extras} extra {p.extras === 1 ? "case" : "cases"}
+                        </T>
+                      ) : null}
                       <T v="small" tone="muted" num>
-                        Includes {p.extras} extra {p.extras === 1 ? "case" : "cases"}
+                        {p.done >= p.total ? "All your cases are done." : `About ${needed} more ${needed === 1 ? "visit" : "visits"} at ${p.casesPerVisit} a visit`}
                       </T>
-                    ) : null}
-                    <T v="small" tone="muted" num>
-                      {p.done >= p.total ? "All your cases are done." : `About ${needed} more ${needed === 1 ? "visit" : "visits"} at ${p.casesPerVisit} a visit`}
-                    </T>
-                    {p.batch ? (
-                      <T v="small" tone="muted" testID="opd-batch">
-                        {BATCH_NAME[p.batch]} batch{p.batchLocked ? ". Ask the admin to change it." : ""}
-                      </T>
-                    ) : null}
+                      {p.batch ? (
+                        <T v="small" tone="muted" testID="opd-batch">
+                          {BATCH_NAME[p.batch]} batch{p.batchLocked ? ". Ask the admin to change it." : ""}
+                        </T>
+                      ) : null}
+                    </View>
                   </View>
-                </View>
+                </Stone>
                 {!p.batch ? <BatchChoice onPick={setBatch} /> : null}
                 {toLog.length ? (
-                  <Section title="Log your cases">
-                    <View>
+                  <View style={{ gap: space[2] }}>
+                    <Label>Log your cases</Label>
+                    <StoneList>
                       {toLog.map((v) => (
                         <VisitRow key={v.id} v={v} onLog={() => setLogging(v)} />
                       ))}
-                    </View>
-                  </Section>
+                    </StoneList>
+                  </View>
                 ) : null}
-                <Section title="My OPD days">
+                <View style={{ gap: space[2] }}>
+                  <Label>My OPD days</Label>
                   {!p.visits.length ? (
-                    <T v="small" tone="muted">
-                      Your OPD days show here once the admin publishes the timetable.
-                    </T>
+                    <QuietEmpty title="No OPD days yet" body="Your OPD days show here once the admin publishes the timetable." />
                   ) : coming.length ? (
-                    <View>
+                    <StoneList>
                       {coming.map((v) => (
                         <VisitRow key={v.id} v={v} onLog={() => setLogging(v)} />
                       ))}
-                    </View>
+                    </StoneList>
                   ) : (
-                    <T v="small" tone="muted">
-                      No more OPD days for now.
-                    </T>
+                    <QuietEmpty title="No more OPD days for now" body="New days show here when the admin adds them." />
                   )}
-                </Section>
+                </View>
                 {past.length ? (
-                  <Section title="Done">
-                    <View>
+                  <View style={{ gap: space[2] }}>
+                    <Label>Done</Label>
+                    <StoneList>
                       {past.map((v) => (
                         <VisitRow key={v.id} v={v} onLog={() => setLogging(v)} />
                       ))}
-                    </View>
-                  </Section>
+                    </StoneList>
+                  </View>
                 ) : null}
                 <LogSheet
                   visit={logging}
