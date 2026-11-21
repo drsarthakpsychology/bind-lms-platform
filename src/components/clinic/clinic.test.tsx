@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import type * as React from "react";
 import { describe, expect, it, vi } from "vitest";
 
 import jsQR from "@/vendor/jsqr/jsqr";
@@ -175,8 +176,9 @@ describe("scan screen: scan, choose, confirm, result", () => {
   const afterIn = { state: "in" as const, inAt: "2026-11-21T04:32:00Z", in: { allowed: false, reason: "You are already IN since 10:02 am." }, out: { allowed: true, reason: null } };
 
   /** Type the code and wait for the two choices. */
-  async function toChoices(identify: ReturnType<typeof vi.fn>, confirm: ReturnType<typeof vi.fn>, timeoutMs?: number) {
-    render(<ScanPanel identify={identify} confirm={confirm} timeoutMs={timeoutMs} />);
+  type PanelProps = React.ComponentProps<typeof ScanPanel>;
+  async function toChoices(identify: unknown, confirm: unknown, timeoutMs?: number) {
+    render(<ScanPanel identify={identify as PanelProps["identify"]} confirm={confirm as PanelProps["confirm"]} timeoutMs={timeoutMs} />);
     fireEvent.change(screen.getByLabelText("Code under the QR"), { target: { value: "ab2xy9" } });
     fireEvent.click(screen.getByRole("button", { name: "Check the code" }));
     await waitFor(() => expect(screen.getByRole("button", { name: "Mark IN" })).toBeInTheDocument());
