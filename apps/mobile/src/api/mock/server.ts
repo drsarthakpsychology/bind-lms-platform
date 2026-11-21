@@ -23,6 +23,7 @@ import type { RawRequest, RawResponse, Transport } from "../client";
 import type * as C from "../contract";
 import type * as X from "../extra";
 import * as fx from "./fixtures";
+import { searchDocs } from "@/lib/search-engine";
 import { learnRoute, noteMarkedRead, resetLearnMock } from "./learn-fixtures";
 import { mapWallRoute, resetMapWallMock } from "./map-wall-fixtures";
 import { publicHome } from "./public-home";
@@ -220,6 +221,18 @@ async function route(req: RawRequest): Promise<RawResponse> {
   }
   if (is("GET", "/courses")) return ok<C.CourseList>({ courses: [fx.courseSummary(isNew)] });
   if ((m = is("GET", "/courses/:id"))) return m[0] === "course-1" ? ok(fx.courseDetail(isNew)) : notFound();
+  if (is("GET", "/search")) {
+    // A small stand-in for the server search: openable lectures and files, and one Quick Reference word.
+    const q = String(query.q ?? "").trim().toLowerCase().slice(0, 80);
+    const weeks = fx.courseDetail(isNew).weeks;
+    const results = [
+      ...weeks.flatMap((w) => w.lessons.filter((l) => l.openable).map((l) => ({ id: `lecture:${l.id}`, type: "lecture" as const, title: l.title, meta: `Lecture ${l.number} · Week ${w.num}`, href: `/courses/course-1/lessons/${l.id}`, app: `/lecture/${l.id}` }))),
+      ...weeks.flatMap((w) => w.materials.map((x) => ({ id: `file:${x.id}`, type: "file" as const, title: x.title, meta: x.meta, href: `/courses/course-1/materials/${x.id}`, app: `/material/${x.id}` }))),
+      ...(kind === "lecture" ? [] : [{ id: "glossary:anhedonia", type: "glossary" as const, title: "Anhedonia", meta: "Word · Loss of pleasure", href: "/study/reference/anhedonia", app: "/reference/anhedonia" }]),
+    ];
+    const found = new Set(q.length >= 2 ? searchDocs(results, q).map((h) => h.doc.id) : []);
+    return ok({ v: 1, q, results: results.filter((r) => found.has(r.id)), types: kind === "lecture" ? ["lecture", "file"] : ["lecture", "module", "section", "note", "medicine", "glossary", "case", "file"] });
+  }
   if ((m = is("GET", "/lectures/:id"))) {
     const l = lecture(m[0]!);
     return l ? ok(l) : notFound();

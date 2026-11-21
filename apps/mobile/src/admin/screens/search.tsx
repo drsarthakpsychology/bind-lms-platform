@@ -5,6 +5,7 @@ import { Pressable, ScrollView, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { EmptyState, Row, RowList, RowsSkeleton, Section, T } from "@/ds";
+import { scoreDoc } from "@/lib/search-engine";
 import { layout, space, type as scale, useTheme } from "@/theme";
 import { useCohorts, usePeople, useStudents } from "../api";
 import type { AdminStudentRow } from "../contract";
@@ -14,11 +15,12 @@ import { Status } from "../kit";
 import { openStudent } from "../nav";
 import { stageTone } from "./people";
 
-/** Every word typed appears somewhere in the text (any order, any case). */
+/** Every word typed appears somewhere in the text (any order, any case), or is a letter or two off ("Aditee"). */
 export function adminMatch(text: string, q: string): boolean {
   const words = q.toLowerCase().split(/\s+/).filter(Boolean);
   const t = text.toLowerCase();
-  return words.length > 0 && words.every((w) => t.includes(w));
+  if (!words.length) return false;
+  return words.every((w) => t.includes(w)) || scoreDoc({ id: "", type: "", title: text }, q) > 0;
 }
 
 /** Students, people and cohorts that match, at most 8 each. People who are already students show once, as students. */
