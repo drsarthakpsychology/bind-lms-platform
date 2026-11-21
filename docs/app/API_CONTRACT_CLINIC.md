@@ -27,7 +27,9 @@ Status: **built** = route file exists with tests.
 |---|---|---|---|---|
 | GET | `/clinic/today` | `?cohort=` | `ClinicToday` | built |
 | GET | `/clinic/week` | `?start=YYYY-MM-DD&cohort=` (start defaults to this Monday) | `ClinicWeek` | built |
-| POST | `/clinic/scan` | `ClinicScanBody` (`token` or `code`, optional `direction`) | `ClinicScanResult` | built |
+| POST | `/clinic/scan/identify` | `ClinicScanIdentifyBody` (`token` or `code`) | `ClinicScanIdentify` (session, my state, which of IN and OUT is allowed, a 2 minute `ticket`). Saves nothing | built |
+| POST | `/clinic/scan/confirm` | `ClinicScanConfirmBody` (`ticket`, `direction`, `attemptId`) | `ClinicScanConfirm` | built |
+| POST | `/clinic/scan` | `ClinicScanBody` (`token` or `code`, optional `direction`). One step, for app versions before the two step screens | `ClinicScanResult` | built |
 | GET | `/clinic/attendance` | `?cohort=` | `ClinicMyAttendance` | built |
 | GET | `/clinic/leave` | `?cohort=` | `ClinicMyLeave` | built |
 | POST | `/clinic/leave` | `ClinicLeaveBody` | `ClinicLeaveRequest` | built |
@@ -37,7 +39,9 @@ Status: **built** = route file exists with tests.
 | PUT | `/clinic/opd/batch` | `ClinicBatchBody` (first choice only; after that 409 `conflict`) | `ClinicMyOpd` | built |
 | POST | `/clinic/opd/logs` | `ClinicCaseLogBody` (assigned day, today or past; can be corrected) | `ClinicVisit` | built |
 
-Scan errors: 400 `bad_request` (code or token wrong, too old, already scanned that way, out before in), 403 `forbidden` (not in this session's cohort), 409 `conflict` (session not open), 429 `rate_limited`.
+Marking in two steps (current app and website): identify checks the code while it is live and answers a ticket for this student and this session, good for 2 minutes, so the QR can rotate while the student reads the screen. Confirm always carries `direction` (never guessed) and an `attemptId` made once per Confirm press and sent again on a retry: the same press saves once. OUT needs an IN. A mark that is already there is answered with `already: true` and its first time, never moved. Refusals carry `error.details.reason`: `not_a_code`, `code_expired`, `wrong_cohort` (403), `not_open_yet` (409), `closed` (409), `cancelled` (409), `ticket_expired`, `out_before_in`.
+
+One step scan errors: 400 `bad_request` (code or token wrong, too old, already scanned that way, out before in), 403 `forbidden` (not in this session's cohort), 409 `conflict` (session not open), 429 `rate_limited`.
 
 ## Admin routes
 

@@ -88,6 +88,21 @@ export type ScanResult = {
   minutes: number | null;
 };
 
+/** What a scanned code turned out to be: the session, where I stand in it, and which of IN and OUT I can mark now. */
+export type ScanStep = {
+  ticket: string;
+  /** How long the ticket lasts from the moment the server answered. */
+  ticketMs: number;
+  session: { id: string; title: string; date: string; start: string; end: string; place: string | null };
+  state: "none" | "in" | "out";
+  inAt: string | null;
+  outAt: string | null;
+  in: { allowed: boolean; reason: string | null };
+  out: { allowed: boolean; reason: string | null };
+};
+/** A mark as recorded. `already`: it was there before this press; nothing changed. */
+export type MarkResult = ScanResult & { already: boolean; message: string };
+
 export type LeaveStatus = "pending" | "approved" | "rejected" | "cancelled";
 export type LeaveRequest = {
   id: string;

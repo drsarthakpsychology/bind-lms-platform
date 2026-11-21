@@ -126,6 +126,35 @@ export function scanResult(v: unknown): C.ScanResult {
   return { direction: r.direction === "out" ? "out" : "in", at: str(r.at), session: { id: str(r.sessionId), title: str(r.title, "Session") }, late: bool(r.late), minutes: numOr(r.minutes) };
 }
 
+const choice = (v: unknown, fallback: boolean): { allowed: boolean; reason: string | null } => {
+  const r = obj(v);
+  const reason = typeof r.reason === "string" && r.reason ? r.reason : null;
+  return { allowed: typeof r.allowed === "boolean" ? r.allowed : fallback, reason };
+};
+
+/** A choice the server did not clearly allow stays off: a broken answer never opens a button. */
+export function scanStep(v: unknown): C.ScanStep {
+  const r = obj(v);
+  const s = obj(r.session);
+  const state = oneOf(r.state, ["none", "in", "out"] as const, "none");
+  const ms = Date.parse(str(r.ticketExpiresAt)) - Date.parse(str(r.now));
+  return {
+    ticket: str(r.ticket),
+    ticketMs: Number.isFinite(ms) ? Math.max(0, Math.min(ms, 10 * 60_000)) : 0,
+    session: { id: str(s.id), title: str(s.title, "Session"), date: str(s.date), start: str(s.start).slice(0, 5), end: str(s.end).slice(0, 5), place: typeof s.place === "string" && s.place ? s.place : null },
+    state,
+    inAt: typeof r.inAt === "string" ? r.inAt : null,
+    outAt: typeof r.outAt === "string" ? r.outAt : null,
+    in: choice(r.in, false),
+    out: choice(r.out, false),
+  };
+}
+
+export function markResult(v: unknown): C.MarkResult {
+  const r = obj(v);
+  return { ...scanResult(v), already: bool(r.already), message: str(r.message) };
+}
+
 export function leave(v: unknown): C.LeaveRequest {
   const r = obj(v);
   return {

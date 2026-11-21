@@ -28,6 +28,15 @@ export const scanSchema = z
   })
   .refine((b) => Boolean(b.token) !== Boolean(b.code), { message: "token or code", path: ["token"] });
 
+const scanCode = z
+  .string()
+  .trim()
+  .max(12)
+  .refine((s) => [...s.toUpperCase().replace(/[\s-]/g, "")].every((c) => CODE_ALPHABET.includes(c)), "code");
+export const scanIdentifySchema = z.object({ token: z.string().trim().min(10).max(200).optional(), code: scanCode.optional() }).refine((b) => Boolean(b.token) !== Boolean(b.code), { message: "token or code", path: ["token"] });
+/** `direction` is required: the server never guesses it. `attemptId` is one Confirm press. */
+export const scanConfirmSchema = z.object({ ticket: z.string().trim().min(20).max(200), direction: z.enum(["in", "out"]), attemptId: z.string().regex(/^[A-Za-z0-9_-]{8,64}$/) });
+
 export const leaveSchema = z.object({ sessionIds: z.array(uuid).min(1).max(60), reason: text(500).min(2), cohortId: uuid.optional() });
 export const earlyLeaveSchema = z.object({ sessionId: uuid, leaveAt: time, reason: text(500).min(2), cohortId: uuid.optional() });
 export const batchSchema = z.object({ batch, cohortId: uuid.optional() });

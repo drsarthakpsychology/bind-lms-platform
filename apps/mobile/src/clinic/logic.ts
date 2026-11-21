@@ -188,34 +188,57 @@ export function scanBody(raw: string, typed = false): { token?: string; code?: s
   return t.length <= 8 && isCode(c) ? { code: c } : null;
 }
 
+const SCAN_TITLE: Record<string, string> = {
+  not_a_code: "That code did not work",
+  code_expired: "That code has changed",
+  wrong_cohort: "Not your session",
+  not_open_yet: "Not open yet",
+  closed: "Marking is closed",
+  cancelled: "Session cancelled",
+  ticket_expired: "That took too long",
+  out_before_in: "Mark IN first",
+};
+
+/** The phone could not reach the server (no internet, or too slow): nothing was saved. */
+export const isUnsent = (e: unknown): boolean => e instanceof ApiFailure && e.code === "network";
+
 /**
- * Plain words for every scan refusal. The server answers 400 for a wrong,
- * old or repeated code (its message says which), 403 for someone else's
- * session, 409 when the session is not open, 429 for too many tries.
+ * Plain words for every scan refusal. The server says why in
+ * `details.reason` and in its message; nothing is guessed from the text.
  */
 export function scanError(e: unknown): { title: string; body: string } {
   const code = e instanceof ApiFailure ? (e.code as string) : "";
   const msg = e instanceof ApiFailure ? e.message : "";
-  if (code === "bad_request") {
-    if (/already/i.test(msg)) return { title: "Already scanned", body: msg };
-    if (/before|scan in first|not in yet/i.test(msg)) return { title: "Scan in first", body: msg };
-    if (/old|expired|changed|too late/i.test(msg)) return { title: "That code has changed", body: "The code changes every 30 seconds. Scan the one on the screen now." };
-    return { title: "That code did not work", body: msg || "Scan the code on the admin's screen, or type the 6 letters under it." };
-  }
+  const reason = e instanceof ApiFailure && typeof e.details.reason === "string" ? e.details.reason : "";
+  if (reason && SCAN_TITLE[reason]) return { title: SCAN_TITLE[reason]!, body: msg || "Scan the code again." };
   switch (code) {
     case "forbidden":
       return { title: "Not your session", body: "This code is for a session you are not in. Check you are in the right room." };
     case "conflict":
-      return { title: "Scanning is closed", body: msg || "This session is not open for scanning now. It opens 30 minutes before the start." };
+      return { title: "Marking is closed", body: msg || "This session is not open for marking now." };
     case "rate_limited":
       return { title: "Too many tries", body: "Wait a minute, then scan again." };
     case "network":
-      return { title: "No internet", body: "Connect and scan again. The code changes every 30 seconds." };
+      return { title: "No internet", body: "Nothing was marked. Connect and scan again." };
     case "unavailable":
       return { title: "Not set up yet", body: "Attendance is not switched on yet. Ask the admin to mark you." };
     default:
-      return { title: "That did not work", body: msg || "Try again, or type the 6 letters under the code." };
+      return { title: "That did not work", body: msg || "Scan the code again, or type the 6 letters under it." };
   }
+}
+
+/** Where I stand in the session, in one line. */
+export function scanStateLine(s: { state: "none" | "in" | "out"; inAt: string | null; outAt: string | null }): string {
+  if (s.state === "none") return "You have not marked IN yet.";
+  if (s.state === "in") return `You are IN since ${clockOf(s.inAt ?? "")}.`;
+  return `You marked IN at ${clockOf(s.inAt ?? "")} and OUT at ${clockOf(s.outAt ?? "")}. Nothing more to do.`;
+}
+
+/** A new id for one Confirm press (sent again unchanged on Try again). */
+export function newAttemptId(): string {
+  let out = "";
+  for (let i = 0; i < 24; i++) out += "abcdefghijklmnopqrstuvwxyz0123456789"[Math.floor(Math.random() * 36)];
+  return `${Date.now().toString(36)}-${out}`;
 }
 
 /** Seconds left in the code's window, by the server's clock (`skew` = server minus phone). */

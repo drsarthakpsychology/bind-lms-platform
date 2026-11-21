@@ -27,6 +27,8 @@ import type {
   ClinicPublishBody,
   ClinicQuotaBody,
   ClinicScanBody,
+  ClinicScanConfirmBody,
+  ClinicScanIdentifyBody,
   ClinicSessionBody,
   ClinicSessionPatch,
   ClinicSlotBody,
@@ -37,13 +39,15 @@ const NOT_ON = "Not switched on yet.";
 async function pass<T>(p: Promise<A.ClinicActionResult<T>>): Promise<Res<T>> {
   const r = await p;
   if (r.ok) return { ok: true, data: r.data };
-  return { ok: false, code: r.code, error: r.code === "unavailable" ? NOT_ON : r.error };
+  return { ok: false, code: r.code, error: r.code === "unavailable" ? NOT_ON : r.error, ...(r.reason ? { reason: r.reason } : {}) };
 }
 
 /* student */
 export async function loadToday() { return pass(A.clinicToday()); }
 export async function loadWeek(start?: string) { return pass(A.clinicWeek(start ?? null)); }
 export async function scan(body: ClinicScanBody) { return pass(A.clinicScan(body)); }
+export async function scanIdentify(body: ClinicScanIdentifyBody) { return pass(A.clinicScanIdentify(body)); }
+export async function scanConfirm(body: ClinicScanConfirmBody) { return pass(A.clinicScanConfirm(body)); }
 export async function loadMyAttendance() { return pass(A.clinicMyAttendance()); }
 export async function loadMyLeave() { return pass(A.clinicMyLeave()); }
 export async function requestLeave(body: ClinicLeaveBody) { return pass(A.clinicRequestLeave(body)); }
