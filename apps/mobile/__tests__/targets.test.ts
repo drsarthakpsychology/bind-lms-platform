@@ -46,6 +46,7 @@ describe("server targets for Prep, medicines and the clinic open the exact scree
     expect(practice("/prep/mock/paper-1")).toBe("/prep/mock/paper-1");
     expect(practice("/prep/mock/result/r1")).toBe("/prep/mock/result/r1");
     expect(practice("/prep/long")).toBe("/prep/long");
+    expect(practice("/prep/interview")).toBe("/prep/interview");
     expect(practice("/prep/statistics/long/anova/q3")).toBe("/prep/long?subject=statistics&topic=anova&id=q3");
   });
   it("medicines and the case library", () => {

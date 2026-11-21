@@ -40,7 +40,11 @@ export type AdminAction =
   | "award-all"
   | "support-key"
   /** Schedule, attendance, leave and OPD (src/clinic). */
-  | "clinic";
+  | "clinic"
+  /** A student's section switches and Full or Lectures only. */
+  | "access"
+  /** Close a class wall report. */
+  | "wall-report";
 
 export function roleOf(me: Pick<Me, "role"> | null | undefined): AdminRole | null {
   if (me?.role === "admin") return "super";

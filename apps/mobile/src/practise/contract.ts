@@ -297,6 +297,8 @@ export type PrepSet = {
 };
 
 /** GET /prep/mock : timed papers. Start with POST /play/prep/mockStart, hand in with POST /play/prep/mockSubmit. */
+/** GET /prep/interview: a five-question panel; the rubric comes from POST /play/prep/interviewReveal after answering. */
+export type PrepInterview = { v: 1; questions: { id: string; category: string; question: string; followUp: string | null }[]; saving: boolean };
 export type PrepMocks = { v: 1; specs: { id: string; title: string; minutes: number; questions: number; [k: string]: unknown }[]; history: Record<string, unknown>[] };
 
 /** GET /prep/mock/result/:id : one of the student's own saved mocks. `result` is the website's MockResultView (score, sections, subjects, every question with its answer and why), null when it was never handed in. */

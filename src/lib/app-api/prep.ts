@@ -1,15 +1,18 @@
 import "server-only";
-import { KEY, bankTopics, learnHrefForTopic } from "@/lib/prep/bank";
+import { INTERVIEWS, KEY, bankTopics, learnHrefForTopic } from "@/lib/prep/bank";
+import { CATEGORY_LABEL, pickPanel } from "@/lib/prep/interview";
+import { makeRng } from "@/lib/learn/model/picker";
+import { currentGoal } from "@/app/(dashboard)/prep/viewer";
 import { EXAM_TRACKS_ENABLED, SUBJECT_TITLE, isSubject } from "@/lib/prep/catalog";
-import { loadHome, loadList, loadSmart, loadSubject, loadTopicSet } from "@/lib/prep/path";
-import { loadMockHistory } from "@/lib/prep/server";
+import { loadHome, loadList, loadSmart, loadSubject, loadTopicSet, requestSeed } from "@/lib/prep/path";
+import { loadInterviewHistory, loadMockHistory } from "@/lib/prep/server";
 import { toView } from "@/lib/prep/view";
 import { longCount, longSubjects, longTopic, longTopicsFor } from "@/lib/prep/long-server";
 import { EXAM_SPECS, PRACTICE_SPECS } from "@/content/prep/specs";
 import type { Subject } from "@/lib/prep/types";
 import type { Profile } from "@/lib/auth/session";
 import { toAppTarget } from "./target";
-import type { PractiseRow, PrepHome, PrepLong, PrepMocks, PrepQuestion, PrepSet, PrepStats, PrepSubjectDetail } from "./contract-practise-admin";
+import type { PractiseRow, PrepHome, PrepInterview, PrepLong, PrepMocks, PrepQuestion, PrepSet, PrepStats, PrepSubjectDetail } from "./contract-practise-admin";
 
 /**
  * Exam Prep for the app, from the website's own loaders (src/lib/prep/path.ts:
@@ -27,7 +30,7 @@ const questions = (ids: readonly string[]): PrepQuestion[] => ids.flatMap((id) =
   return q ? [toView(q) as unknown as PrepQuestion] : [];
 });
 
-const row = (id: string, title: string, meta: string, href: string): PractiseRow => ({ id, title, meta, kind: "prep", target: toAppTarget(href), trailing: null, locked: false, play: id === "interview" ? "web" : "native" });
+const row = (id: string, title: string, meta: string, href: string): PractiseRow => ({ id, title, meta, kind: "prep", target: toAppTarget(href), trailing: null, locked: false, play: "native" });
 
 export async function prepHome(p: Profile): Promise<PrepHome> {
   const home = await loadHome(p.id);
@@ -118,4 +121,11 @@ export function prepLong(level: PrepLong["level"], subject?: string, topic?: str
   if (i < 0) return null;
   const next = t.items[i + 1];
   return { v: 1, level, data: { item: t.items[i], next: next ? { id: next.id, question: next.question } : null } };
+}
+
+/** GET /prep/interview: the website's /prep/interview panel (pickPanel over the questions this student has not had). */
+export async function prepInterview(p: Profile): Promise<PrepInterview> {
+  const [goal, history] = await Promise.all([currentGoal(p.id), loadInterviewHistory(p.id).catch(() => ({ sessions: 0, seen: new Set<string>() }))]);
+  const panel = pickPanel(INTERVIEWS, goal, makeRng(requestSeed(p.id)), history.seen);
+  return { v: 1, questions: panel.map((q) => ({ id: q.id, category: CATEGORY_LABEL[q.category], question: q.question, followUp: q.followUps[0] ?? null })), saving: isLearner(p) };
 }

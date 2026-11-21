@@ -3,7 +3,7 @@ import type { Notice, Phase } from "@/auth/session";
 import { groupFor, homeHref } from "./targets";
 
 /** Screens a visitor may see without signing in. */
-export const PUBLIC = new Set(["(visitor)", "setup", "verify", "forgot-password"]);
+export const PUBLIC = new Set(["(visitor)", "setup", "verify", "forgot-password", "free"]);
 /** Screens only admins open. */
 export const ADMIN_ONLY = new Set(["(admin)", "student", "compose"]);
 

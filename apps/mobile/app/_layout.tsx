@@ -264,6 +264,9 @@ function Shell() {
             <Stack.Screen name="certificates" options={{ title: "Certificates" }} />
             <Stack.Screen name="certificate/[id]" options={{ title: "" }} />
             <Stack.Screen name="verify/[certificateId]" options={{ title: "Verify a certificate" }} />
+            <Stack.Screen name="free/index" options={{ title: "" }} />
+            <Stack.Screen name="free/calm" options={{ title: "" }} />
+            <Stack.Screen name="free/[id]" options={{ title: "" }} />
             <Stack.Screen name="search" options={{ headerShown: false, ...fadeMotion }} />
             <Stack.Screen name="game/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="game/leaderboard" options={{ title: "" }} />
@@ -275,6 +278,7 @@ function Shell() {
             <Stack.Screen name="prep/[subject]" options={{ title: "" }} />
             <Stack.Screen name="prep/set" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="prep/long" options={{ title: "" }} />
+            <Stack.Screen name="prep/interview" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="prep/mock/index" options={{ title: "" }} />
             <Stack.Screen name="prep/mock/[spec]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="prep/mock/result/[id]" options={{ title: "" }} />

@@ -1,13 +1,12 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { config } from "@/lib/config";
 import { openLink } from "@/lib/open";
 import { Bell, CheckCircle2, Circle, Mail, MessageSquare, Reply } from "lucide-react-native";
 import * as React from "react";
 import { Share, View } from "react-native";
 
-import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
 import { space, useTheme } from "@/theme";
-import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
+import { adminCalls, useAdminAction, useStudentAccess, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
 import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
 import type { LoginLinkResult } from "../extra";
 import { ACCOUNT_NEXT, accountLabel, accountTone, ago, day, FLAG_LABEL, minutes, nextStep, pct, whatsapp } from "../format";
@@ -24,6 +23,58 @@ const TABS = [
   { id: "messages" as const, name: "Messages" },
 ];
 type Tab = (typeof TABS)[number]["id"];
+
+/**
+ * Full or Lectures only, and the sections switched off for this student, as
+ * the website's Access tab (setScopeFor, setFeatureFor). A switch moves at
+ * once and goes back if the server says no.
+ */
+export function AccessSwitches({ id, name, canWrite }: { id: string; name: string; canWrite: boolean }) {
+  const q = useStudentAccess(id);
+  const { run } = useAdminAction();
+  const [want, setWant] = React.useState<Record<string, boolean>>({});
+  const flip = (key: string, off: boolean, label: string) => {
+    setWant((w) => ({ ...w, [key]: off }));
+    void run("access", () => (key === "scope" ? adminCalls.setScope(id, off ? "lectures_only" : "full") : adminCalls.setSection(id, key, off)), { done: key === "scope" ? (off ? `${name} now sees lectures only` : `${name} has full access`) : `${label} ${off ? "switched off" : "back on"} for ${name}` }).then((x) => {
+      if (!x)
+        setWant((w) => {
+          const rest = { ...w };
+          delete rest[key];
+          return rest;
+        });
+    });
+  };
+  return (
+    <Block title="Sections">
+      <Loaded q={q} what="the section switches" skeleton={<RowsSkeleton rows={3} />}>
+        {(d) => {
+          if (!d.ready) return <Quiet>Section switches need the new database step first.</Quiet>;
+          const lecturesOnly = want.scope ?? d.scope === "lectures_only";
+          const row = (s: (typeof d.sections)[number]) => {
+            const off = want[s.key] ?? s.off;
+            return <SwitchRow key={s.key} title={s.label} value={!off} disabled={!canWrite} onChange={(on) => flip(s.key, !on, s.label)} testID={`section-${s.key}`} />;
+          };
+          return (
+            <View style={{ gap: space[4] }}>
+              <RowList>
+                <SwitchRow title="Lectures only" meta="Lectures, doubts and certificates. Study and Practise are hidden." value={lecturesOnly} disabled={!canWrite} onChange={(v) => flip("scope", v, "Lectures only")} testID="section-scope" />
+              </RowList>
+              <RowList>{d.sections.filter((s) => s.group === "Sections").map(row)}</RowList>
+              {d.sections.some((s) => s.group === "Practice tools") ? (
+                <>
+                  <T v="caption" tone="muted">
+                    Practice tools
+                  </T>
+                  <RowList>{d.sections.filter((s) => s.group === "Practice tools").map(row)}</RowList>
+                </>
+              ) : null}
+            </View>
+          );
+        }}
+      </Loaded>
+    </Block>
+  );
+}
 
 /** The login link sheet: the link was emailed; it can also go by WhatsApp. */
 export function LinkSheet({ link, name, mobile, onClose, title = "Login link sent" }: { link: LoginLinkResult | null; name: string; mobile: string | null; onClose: () => void; title?: string }) {
@@ -123,9 +174,7 @@ function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
         {phone ? <Row title={phone.name} meta={`${phone.changesUsed} of ${phone.limit} changes used this month${phone.nextChangeAt ? ` · next free ${day(phone.nextChangeAt, true)}` : ""}`} testID="access-phone-now" /> : <Quiet>Not signed in to the app yet.</Quiet>}
         {canWrite ? <SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /> : null}
       </Block>
-      <Block title="Switch sections off">
-        <Row title="Section switches" meta="On the website: hide Notes, Games or a practice tool for this student" onPress={() => void openLink(`${config.site}/admin/students/${r.id}?tab=access`)} />
-      </Block>
+      <AccessSwitches id={r.id} name={r.name} canWrite={canWrite} />
       <ConfirmSheet open={lockOpen} onClose={() => setLockOpen(false)} title={`Lock ${r.name}?`} body="They are signed out and cannot sign in until you unlock them." confirm="Lock account" danger busy={busy === "lock"} reason={{ label: "Reason (only admins see it)" }} onConfirm={(reason) => void run("lock", () => adminCalls.lock(r.id, reason || undefined), { done: `${r.name} is locked` }).then(() => setLockOpen(false))} testID="confirm-lock" />
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>

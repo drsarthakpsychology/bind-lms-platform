@@ -246,11 +246,29 @@ function scoreMock(spec: (typeof MOCK_SPECS)[number], ids: string[], answers: Re
   };
 }
 
+/** Mock interview: two questions, the rubric only after answering, as the server. */
+export const INTERVIEW_QS = [
+  { id: "iv-why", category: "Motivation", question: "Why do you want to train in clinical psychology?", followUp: "What would you do if you did not get a seat this year?", modelAnswer: "Name a real moment that drew you in, what you did about it, and what you want to learn next.", mustCover: ["A real moment or experience", "What you did about it", "What you want to learn"], redFlags: ["Saying you want to fix people"] },
+  { id: "iv-ethics", category: "Ethics", question: "A client tells you they plan to hurt someone. What do you do?", followUp: null, modelAnswer: "Keep them safe and talking, tell your supervisor at once, and follow the duty to warn.", mustCover: ["Safety first", "Tell your supervisor", "Duty to warn"], redFlags: ["Promising to keep it secret"] },
+];
+const interview = {
+  interviewReveal(id: string) {
+    const q = INTERVIEW_QS.find((x) => x.id === id);
+    return q ? { modelAnswer: q.modelAnswer, mustCover: q.mustCover, redFlags: q.redFlags } : { error: "That question is gone." };
+  },
+  interviewFeedback(input: { id?: string; answer?: string }) {
+    return String(input?.answer ?? "").split(/\s+/).length < 8 ? { error: "Write or say a little more first, then ask for feedback." } : { text: "Clear and kind. Add what you would tell your supervisor." };
+  },
+  interviewSave(input: { items?: { covered?: string[] }[] }) {
+    return { saved: true, score: input?.items?.length ? 60 : 0 };
+  },
+};
+
 export const CASES: Record<string, Record<string, (...args: never[]) => unknown>> = {
   daily: { move: daily.move, rest: daily.rest, next: daily.next },
   detective: { deal: detective.deal, clue: detective.clue, clues: detective.clues, guess: detective.guess },
   cases: { progress: cases.progress, mark: cases.mark },
-  prep: { check: prep.check, reveal: prep.reveal, save: prep.save, mockStart: prep.mockStart, mockSubmit: prep.mockSubmit },
+  prep: { check: prep.check, reveal: prep.reveal, save: prep.save, mockStart: prep.mockStart, mockSubmit: prep.mockSubmit, ...interview },
 };
 export function resetCases() {
   dailyRows.clear();

@@ -14,6 +14,8 @@ import { openRow } from "../hub";
 import { Tag } from "../parts";
 
 const enc = encodeURIComponent;
+/** Rows Exam Prep draws itself, with the student's own counts; the server's copies would show them twice. */
+const OWN_ROWS = new Set(["smart", "saved", "wrong", "long"]);
 /** "Answered 40 · 72% right", or nothing before the first answer. */
 function statLine(s: PrepStats): string | undefined {
   if (!s.answered) return undefined;
@@ -53,9 +55,10 @@ export function PrepHome() {
               {d.canSave && d.saved ? <Row testID="prep-saved" title="Saved questions" meta="The ones you bookmarked" icon={<Bookmark size={20} color={c.muted} />} onPress={() => router.push("/prep/set?list=saved")} /> : null}
               <Row testID="prep-long" title="Long answers" meta="Exam questions with a model answer" icon={<BookOpen size={20} color={c.muted} />} onPress={() => router.push("/prep/long")} />
               {d.more
-                .filter((r) => r.id !== "long")
+                // Drawn above already (the server sends them in this list too).
+                .filter((r) => !OWN_ROWS.has(r.id))
                 .map((r) => (
-                  <Row key={r.id} testID={`prep-more-${r.id}`} title={r.title} meta={r.meta ?? undefined} onPress={() => (r.id === "mock" ? router.push("/prep/mock") : openRow(r))} />
+                  <Row key={r.id} testID={`prep-more-${r.id}`} title={r.title} meta={r.meta ?? undefined} onPress={() => (r.id === "mock" ? router.push("/prep/mock") : r.id === "interview" ? router.push("/prep/interview") : openRow(r))} />
                 ))}
             </RowList>
           </Section>

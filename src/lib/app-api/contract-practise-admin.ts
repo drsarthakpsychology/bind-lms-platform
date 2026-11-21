@@ -331,6 +331,8 @@ export type PrepMocks = { v: 1; specs: { id: string; title: string; minutes: num
 export type PrepMockResult = { v: 1; id: string; specId: string; title: string; result: Record<string, unknown> | null };
 
 /** GET /prep/long, /prep/long/:subject, /prep/long/:subject/:topic, /prep/long/:subject/:topic/:id : long answers (written answers, read and compared). */
+/** GET /prep/interview: a five-question panel (the website's pickPanel). The rubric and model answer come only after answering (POST /play/prep/interviewReveal). */
+export type PrepInterview = { v: 1; questions: { id: string; category: string; question: string; followUp: string | null }[]; saving: boolean };
 export type PrepLong = { v: 1; level: "home" | "subject" | "topic" | "question"; data: Record<string, unknown> };
 
 // ===========================================================================
@@ -409,6 +411,10 @@ export type AdminStudent = AdminStudentRow & {
 
 /** POST /admin/students/:id/lock, /unlock */
 export type LockBody = { reason?: string };
+/** GET and PUT /admin/students/:id/access: Full or Lectures only, and the sections switched off for this student (the website's Access tab). */
+export type AdminStudentAccess = { v: 1; scope: "full" | "lectures_only"; ready: boolean; canWrite: boolean; sections: { key: string; label: string; group: "Sections" | "Practice tools"; off: boolean }[] };
+/** GET /admin/wall-reports: open reports on the class wall, oldest first. POST /admin/wall-reports/:id/resolve closes one (the post stays). */
+export type AdminWallReports = { v: 1; items: { id: string; kind: "post" | "reply"; content: string; reason: string; createdAt: string }[] };
 export type LockResult = { blocked: boolean };
 /** POST /admin/students/:id/login-link : emails a fresh login link (the website's sendLoginLink). */
 export type LoginLinkResult = { sent: true };

@@ -127,6 +127,7 @@ export function practiseRoute(method: string, path: string, body: unknown, kind:
         if (seg[1] === "lists" && seg.length === 3) return ok(R.prepList(d(2)));
         if (seg[1] === "long") return ok(R.prepLong(seg[2] && d(2), seg[3] && d(3), seg[4] && d(4)));
         if (seg[1] === "mock" && seg.length === 2) return ok(R.prepMocks());
+        if (seg[1] === "interview" && seg.length === 2) return ok(R.prepInterview());
         if (seg[1] === "mock" && seg[2] === "result" && seg.length === 4) return ok(R.prepMockResult(d(3)));
       }
       if (method === "GET" && seg[0] === "leaderboards" && seg[1] === "shop") return ok(R.shop());

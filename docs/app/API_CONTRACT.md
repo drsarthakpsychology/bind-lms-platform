@@ -319,6 +319,9 @@ Each `kind`, its arguments, and the type of `data` (defined in the named file; t
 | `prep.save` | `{ id, saved }` | `{ ok }` | same |
 | `prep.mockStart` | `specId` | `MockPaperView` | same |
 | `prep.mockSubmit` | the website's submit input | `MockResultView` (`src/lib/prep/results.ts`) | same |
+| `prep.interviewReveal` | `qid` | `{ modelAnswer, mustCover, redFlags }` or `{ error }` | same |
+| `prep.interviewFeedback` | `{ id, answer }` | `{ text }` or `{ error }` (AI; short answers and too many asks get a plain line) | same |
+| `prep.interviewSave` | `{ items: [{ id, answer, covered, flags, feedback }] }` | `{ saved, score }` | same |
 | `cases.progress` | `tool` | `ProgressSnapshot` (`src/lib/cases/progress-server.ts`): Done and New per case | `/practice`, `learn` |
 | `cases.mark` | `tool, item, state` | `{ ok }` | same |
 

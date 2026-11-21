@@ -57,8 +57,8 @@ vi.mock("@/lib/standing/board", () => ({ loadMyBoard: h.overall }));
 vi.mock("@/lib/cohorts/access", () => ({ loadMyCohorts: h.cohorts }));
 vi.mock("@/app/(dashboard)/leaderboard/actions", () => ({ saveAlias: h.saveAlias, buyItem: vi.fn(), wearLook: vi.fn() }));
 vi.mock("@/app/(dashboard)/games/comorbid/actions", () => ({ finishComorbid: vi.fn() }));
-vi.mock("@/lib/prep/path", () => ({ loadHome: h.home, loadTopicSet: h.topicSet, loadSubject: vi.fn(), loadSmart: vi.fn(), loadList: vi.fn() }));
-vi.mock("@/lib/prep/server", () => ({ loadMockHistory: async () => [] }));
+vi.mock("@/lib/prep/path", () => ({ loadHome: h.home, loadTopicSet: h.topicSet, loadSubject: vi.fn(), loadSmart: vi.fn(), loadList: vi.fn(), requestSeed: () => 7 }));
+vi.mock("@/lib/prep/server", () => ({ loadMockHistory: async () => [], loadInterviewHistory: async () => ({ sessions: 0, seen: new Set<string>() }) }));
 
 import { clearDeviceCache } from "@/lib/app-api/devices";
 import { SCENARIOS } from "@/lib/learn/scenarios";
@@ -74,6 +74,7 @@ import { GET as prepHome } from "../prep/route";
 import { GET as prepTopic } from "../prep/subjects/[subject]/topics/[topic]/route";
 import { GET as prepMock } from "../prep/mock/route";
 import { GET as longHome } from "../prep/long/route";
+import { GET as prepInterview } from "../prep/interview/route";
 
 const getTool = (t: string) => tool(appReq(`/practise/tools/${t}`), params({ tool: t }));
 
@@ -208,5 +209,16 @@ describe("leaderboards and Exam Prep", () => {
     expect(m.data.specs.length).toBeGreaterThan(0);
     expect(m.data.specs[0]).not.toHaveProperty("source");
     expect((await read(await longHome(appReq("/prep/long"), noParams))).data.level).toBe("home");
+  });
+
+  it("mock interview: a panel without the rubric, played in the app", async () => {
+    const r = await read(await prepInterview(appReq("/prep/interview"), noParams));
+    expect(r.status).toBe(200);
+    expect(r.data.questions.length).toBeGreaterThan(0);
+    expect(r.data.questions[0]).toEqual({ id: expect.any(String), category: expect.any(String), question: expect.any(String), followUp: expect.anything() });
+    expect(JSON.stringify(r.data)).not.toMatch(/modelAnswer|mustCover|redFlags/);
+    h.home.mockResolvedValue({ resume: null, subjects: [], saved: 0, wrong: 0, canSave: true });
+    const home = await read(await prepHome(appReq("/prep"), noParams));
+    expect(home.data.more.find((x: { id: string }) => x.id === "interview")).toMatchObject({ play: "native" });
   });
 });

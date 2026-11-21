@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { go } from "@/api/prefetch";
 import { openLink } from "@/lib/open";
 import { router } from "expo-router";
-import { Award, Bell, BellRing, CalendarClock, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
+import { Award, Bell, BellRing, CalendarClock, BookOpen, CircleHelp, ClipboardList, FileCheck, Flag, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -13,7 +13,7 @@ import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
-import { adminCalls, useAdminDoubts, usePushPrefs, useSubmissions } from "../api";
+import { adminCalls, useAdminDoubts, usePushPrefs, useSubmissions, useWallReports } from "../api";
 import type { AdminPushPrefs } from "../extra";
 import { Avatar, ConfirmSheet, Loaded } from "../kit";
 import { AdminTop } from "../nav";
@@ -29,6 +29,7 @@ export function AdminMoreScreen() {
   const { roleLabel } = useAdminRole();
   const waiting = useAdminDoubts("");
   const toGrade = useSubmissions("pending");
+  const reports = useWallReports();
   const [out, setOut] = React.useState(false);
   const icon = { size: 20, color: c.muted };
   const n = (x: number | undefined) => (x ? String(x) : undefined);
@@ -65,6 +66,7 @@ export function AdminMoreScreen() {
         <RowList>
           <Row title="Doubts and concerns" icon={<MessageCircleQuestion {...icon} />} trailing={n(waiting.data?.items.filter(isWaiting).length)} onPress={() => router.push("/admin/doubts")} testID="more-doubts" />
           <Row title="Review" meta="Hand-ins and sign-offs" icon={<FileCheck {...icon} />} trailing={n(toGrade.data?.pending)} onPress={() => router.push("/admin/review")} testID="more-review" />
+          <Row title="Wall reports" meta="Posts students flagged on the class wall" icon={<Flag {...icon} />} trailing={n(reports.data?.items.length)} onPress={() => router.push("/admin/wall-reports")} testID="more-wall-reports" />
           <Row title="Content" meta="On the website: courses and lectures" icon={<BookOpen {...icon} />} onPress={web("/admin/courses")} />
         </RowList>
       </Section>

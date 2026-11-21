@@ -170,7 +170,9 @@ export function todoHref(web: string): { app: string } | { web: string } {
   if (path === "/admin/submissions") return { app: "/admin/review" };
   if (path === "/admin/activity") return { app: `/admin/activity${q.get("view") ? `?view=${q.get("view")}` : ""}` };
   if (path === "/admin/students/logins") return { app: "/admin/students?flag=login" };
-  if (path === "/admin/students") return { app: "/admin/students" };
+  // "Welcome new students" opens the list with Needs attention on, as the website's ?filter=attention.
+  if (path === "/admin/students") return { app: params.filter === "attention" ? "/admin/students?attention=1" : "/admin/students" };
+  if (path === "/admin/wall-reports") return { app: "/admin/wall-reports" };
   if (path === "/admin/doubts") return { app: "/admin/doubts" };
   if (path.startsWith("/admin/credentials")) return { app: "/admin/certificates" };
   if (path === "/admin/forms") return { app: "/admin/forms" };
@@ -744,5 +746,33 @@ export function drawingFrom(v: unknown): Drawing {
     ops,
     images: Object.fromEntries(Object.entries(images).map(([k, u]) => [k, strOr(u)])),
     problems: arr(r.problems).map((p) => str(p)).filter(Boolean),
+  };
+}
+
+/* ------------------------------------------------- access and wall reports */
+
+/** A student's access, every field filled so an older or odd answer never throws. */
+export function accessFrom(v: unknown): A.AdminStudentAccess {
+  const r = obj(v);
+  return {
+    v: 1,
+    scope: r.scope === "lectures_only" ? "lectures_only" : "full",
+    ready: r.ready !== false,
+    canWrite: r.canWrite === true,
+    sections: arr(r.sections).map((x) => {
+      const s = obj(x);
+      return { key: str(s.key), label: str(s.label) || str(s.key), group: s.group === "Practice tools" ? ("Practice tools" as const) : ("Sections" as const), off: s.off === true };
+    }).filter((s) => s.key),
+  };
+}
+
+/** Open wall reports. */
+export function wallReportsFrom(v: unknown): A.AdminWallReports {
+  return {
+    v: 1,
+    items: arr(obj(v).items).map((x) => {
+      const r = obj(x);
+      return { id: str(r.id), kind: r.kind === "reply" ? ("reply" as const) : ("post" as const), content: str(r.content), reason: str(r.reason) || "No reason given", createdAt: str(r.createdAt) };
+    }).filter((r) => r.id),
   };
 }

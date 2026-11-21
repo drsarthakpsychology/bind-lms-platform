@@ -63,7 +63,7 @@ export function nativeFor(web: string | undefined): string | null {
     if (b === "long") return "/prep/long";
     // Off on the website too (it sends these back to /prep).
     if (b === "diagnostic" || b === "goal") return "/prep";
-    if (b === "interview") return null;
+    if (b === "interview") return "/prep/interview";
     if (b === "practice") return c ? `/prep/${enc(c)}` : "/prep";
     if (c === "long") return `/prep/long?subject=${enc(b)}${d ? `&topic=${enc(d)}` : ""}${d && e ? `&id=${enc(e)}` : ""}`;
     if (c) return `/prep/set?subject=${enc(b)}&topic=${enc(c)}${q.get("set") ? `&set=${enc(q.get("set")!)}` : ""}`;
@@ -217,6 +217,8 @@ export function pathFromLink(input: string): string {
   if (own) return own;
   if (p === "/" || p === "/dashboard") return "/";
   if (p === "/login") return "/sign-in";
+  if (p === "/free" || p === "/free/help") return "/free";
+  if ((m = /^\/free\/tests\/([^/]+)$/.exec(p))) return `/free/${m[1]}`;
   if (p === "/waitlist") return "/request";
   if (p === "/courses") return "/lectures";
   if ((m = /^\/courses\/([^/]+)\/lessons\/([^/]+)$/.exec(p))) return `/lecture/${m[2]}${q}`;

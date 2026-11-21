@@ -74,7 +74,7 @@ export const PLAY: Record<string, PlayGame> = {
   },
   prep: {
     gate: { path: "/prep", flag: "learn" },
-    actions: { check: a(prep.checkAnswer, 1), reveal: a(prep.revealAnswer, 1, false), save: a(prep.toggleSaved, 1), mockStart: a(prep.startMock, 1), mockSubmit: a(prep.submitMock, 1) },
+    actions: { check: a(prep.checkAnswer, 1), reveal: a(prep.revealAnswer, 1, false), save: a(prep.toggleSaved, 1), mockStart: a(prep.startMock, 1), mockSubmit: a(prep.submitMock, 1), interviewReveal: a(prep.revealInterview, 1, false), interviewFeedback: a(prep.interviewFeedback, 1), interviewSave: a(prep.saveInterviewSession, 1) },
   },
   cases: { gate: { path: "/practice", flag: "learn" }, actions: { progress: a(cases.loadMyProgress, 1, false), mark: a(cases.saveMyProgress, 3) } },
   comorbid: { gate: { path: "/games/comorbid", flag: "learn" }, actions: { state: a(comorbidState, 1, false), finish: a(comorbid.finishComorbid, 1) } },

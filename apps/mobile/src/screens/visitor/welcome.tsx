@@ -111,6 +111,10 @@ export function WelcomeScreen() {
           {JUMPS.map((j) => (
             <Row key={j.id} testID={`welcome-jump-${j.id}`} title={j.name} onPress={() => jump(j.id)} />
           ))}
+          <Row testID="welcome-free" title="Free self-checks" meta="Low mood, worry, wellbeing and more, scored on your phone" onPress={() => {
+            closeJump();
+            router.push("/free");
+          }} />
         </RowList>
       </Sheet>
       <Dock onHeight={setDockH} />

@@ -10,7 +10,7 @@ import { haptic } from "@/lib/haptics";
 import type * as A from "./contract";
 import type * as X from "./extra";
 import { guarded, useAdminRole, type AdminAction } from "./role";
-import { anyoneResultFrom, arr, badgesFrom, behindFrom, certListFrom, certTypesFrom, cohortFrom, cohortsFrom, drawingFrom, emailReportFrom, enquiriesFrom, formFrom, formsFrom, inboxFrom, issueResultFrom, newKeyFrom, num, obj, peopleFrom, personPageFrom, previewFrom, pushPrefsFrom, safeActivity, safeDoubt, safeDoubts, safeHome, safeMessages, safeStudent, safeStudentList, signOffsFrom, studentMessagesFrom, studioFrom, studioSettingsFrom, submissionsFrom, systemFrom } from "./safe";
+import { accessFrom, anyoneResultFrom, arr, badgesFrom, behindFrom, certListFrom, certTypesFrom, cohortFrom, cohortsFrom, drawingFrom, emailReportFrom, enquiriesFrom, formFrom, formsFrom, inboxFrom, issueResultFrom, newKeyFrom, num, obj, peopleFrom, personPageFrom, previewFrom, pushPrefsFrom, safeActivity, safeDoubt, safeDoubts, safeHome, safeMessages, safeStudent, safeStudentList, signOffsFrom, studentMessagesFrom, studioFrom, studioSettingsFrom, submissionsFrom, systemFrom, wallReportsFrom } from "./safe";
 
 /** Admin server data. Every key starts with "admin" so one call refreshes it all after an action. */
 const k = keys.admin;
@@ -53,6 +53,10 @@ export const useStudentCredentials = (id: string) => useQuery({ queryKey: k("stu
 export const useStudentMessages = (id: string) => useQuery({ queryKey: k("student-msgs", id), queryFn: async () => studentMessagesFrom(await get(`/admin/students/${enc(id)}/messages`)), enabled: id.length > 0 });
 export const useStudentDoubts = (id: string) => useQuery({ queryKey: k("student-doubts", id), queryFn: async () => safeDoubts(await getAll("/admin/doubts", { student: id, limit: 100 })), enabled: id.length > 0 });
 
+/** One student's Full or Lectures only, and the sections switched off for them. */
+export const useStudentAccess = (id: string) => useQuery({ queryKey: k("access", id), queryFn: async () => accessFrom(await get(`/admin/students/${enc(id)}/access`)), enabled: id.length > 0 });
+/** Open reports on the class wall. */
+export const useWallReports = () => useQuery({ queryKey: k("wall-reports"), queryFn: async () => wallReportsFrom(await get("/admin/wall-reports")) });
 export const useActivity = () => useQuery(adminQo.activity());
 export const useBehind = (cohort: string) => useQuery({ queryKey: k("behind3", cohort), queryFn: async () => behindFrom(safeActivity(await get("/admin/activity", { view: "behind" })), cohort), placeholderData: (prev) => prev });
 
@@ -112,6 +116,9 @@ export const adminCalls = {
     const r = obj(await api.post<unknown>(`/admin/students/${enc(id)}/login-link`, {}));
     return { sent: r.sent !== false, emailed: r.emailed !== false, url: (r.url as string | null) ?? null, expiresAt: (r.expiresAt as string | null) ?? null };
   },
+  setSection: async (userId: string, feature: string, off: boolean) => accessFrom(await api.put<unknown>(`/admin/students/${enc(userId)}/access`, { feature, off })),
+  setScope: async (userId: string, scope: "full" | "lectures_only") => accessFrom(await api.put<unknown>(`/admin/students/${enc(userId)}/access`, { scope })),
+  resolveWallReport: (id: string) => api.post<{ resolved: boolean }>(`/admin/wall-reports/${enc(id)}/resolve`, {}),
   allowPhoneChange: (userId: string) => api.post<C.AllowDeviceChangeResult>("/admin/devices/allow-change", { userId } satisfies C.AllowDeviceChangeBody),
   send: async (body: A.AdminSendBody): Promise<A.AdminSendResult> => {
     const r = obj(await api.post<unknown>("/admin/messages", body));

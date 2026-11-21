@@ -146,10 +146,27 @@ type AdminState = {
   types: X.CertType[];
   keys: X.SupportKeyView[];
   legacyKey: boolean;
+  /** Sections switched off, by student id. */
+  blocks: Map<string, Set<string>>;
+  wallReports: A.AdminWallReports["items"];
 };
+
+const MOCK_SECTIONS: { key: string; label: string; group: "Sections" | "Practice tools" }[] = [
+  { key: "notes", label: "Study", group: "Sections" },
+  { key: "games", label: "Games", group: "Sections" },
+  { key: "medicines", label: "Medicines", group: "Sections" },
+  { key: "doubts", label: "Doubts", group: "Sections" },
+  { key: "wall", label: "Wall", group: "Sections" },
+  { key: "tool:ethics", label: "Ethics, law & referral", group: "Practice tools" },
+];
 
 function fresh(): AdminState {
   return {
+    blocks: new Map([["u1", new Set(["games"])]]),
+    wallReports: [
+      { id: "wr1", kind: "post", content: "Does anyone have the answers to the module test?", reason: "Asking for test answers", createdAt: ago(60 * 5) },
+      { id: "wr2", kind: "reply", content: "(reply removed)", reason: "No reason given", createdAt: ago(60 * 2) },
+    ],
     students: seedStudents(),
     doubts: seedDoubts(),
     inbox: seedInbox(),
@@ -346,6 +363,25 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
   if ((m = is("GET", "/admin/students/:id"))) {
     const r = s.students.find((x) => x.id === m![0]);
     return r ? ok<A.AdminStudentProfile>({ ...r, row: r, phone: r.presence === "never" ? null : { name: "Pixel 7", platform: "android", changesUsed: s.allowed.has(r.id) ? 0 : 1, limit: 2, nextChangeAt: null }, lectures: { done: r.lecturesDone, total: r.lecturesAvailable }, detail: detailFor(r) as unknown as Record<string, unknown>, recent: [], canWrite: role === "admin" }) : notFound();
+  }
+  if ((m = is("GET", "/admin/students/:id/access")) || (m = is("PUT", "/admin/students/:id/access"))) {
+    const r = s.students.find((x) => x.id === m![0]);
+    if (!r) return notFound();
+    const off = s.blocks.get(r.id) ?? new Set<string>();
+    if (req.method === "PUT") {
+      if (body.scope === "full" || body.scope === "lectures_only") r.lecturesOnly = body.scope === "lectures_only";
+      else if (typeof body.feature === "string" && MOCK_SECTIONS.some((x) => x.key === body.feature)) {
+        if (body.off) off.add(body.feature);
+        else off.delete(body.feature);
+        s.blocks.set(r.id, off);
+      } else return fail(400, "bad_request", "Unknown section.");
+    }
+    return ok<A.AdminStudentAccess>({ v: 1, scope: r.lecturesOnly ? "lectures_only" : "full", ready: true, canWrite: role === "admin", sections: MOCK_SECTIONS.map((x) => ({ ...x, off: off.has(x.key) })) });
+  }
+  if (is("GET", "/admin/wall-reports")) return ok<A.AdminWallReports>({ v: 1, items: empty ? [] : s.wallReports });
+  if ((m = is("POST", "/admin/wall-reports/:id/resolve"))) {
+    s.wallReports = s.wallReports.filter((x) => x.id !== m![0]);
+    return ok({ resolved: true });
   }
   if ((m = is("GET", "/admin/students/:id/credentials"))) return ok({ items: s.certs.filter((c) => c.recipientId === m![0]) });
   if ((m = is("GET", "/admin/students/:id/messages"))) {

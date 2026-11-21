@@ -6,7 +6,7 @@
  */
 import type { AppTarget } from "@/api/contract";
 import type * as C from "../contract";
-import { caseState, mockHistory, MOCK_SPECS, prepData } from "./cases";
+import { caseState, INTERVIEW_QS, mockHistory, MOCK_SPECS, prepData } from "./cases";
 import { escapeRooms, escapeSaved, teamsOf, wardCampaigns, wardSaved } from "./games";
 import { PlayError } from "./kit";
 import tools from "./tools.json";
@@ -129,8 +129,11 @@ export function prepHome(): C.PrepHome {
     saved: saved.size,
     wrong,
     canSave: true,
-    more: [row("mock", "Mock tests", "Timed papers with marking", "prep", { screen: "practice", tool: "mock", web: "/prep/mock" })],
+    more: [row("smart", "Smart practice", "From your weak topics and missed questions", "prep", { screen: "practice", tool: "smart", web: "/prep/smart" }), row("mock", "Mock tests", "Timed papers with marking", "prep", { screen: "practice", tool: "mock", web: "/prep/mock" }), row("interview", "Mock interview", "Practise for the panel", "prep", { screen: "practice", tool: "interview", web: "/prep/interview" }), row("saved", "Saved and wrong", "Questions to look at again", "prep", { screen: "practice", tool: "saved", web: "/prep/saved" }), row("long", "Long answers", "Written answers", "prep", { screen: "practice", tool: "long", web: "/prep/long" })],
   };
+}
+export function prepInterview(): C.PrepInterview {
+  return { v: 1, questions: INTERVIEW_QS.map(({ id, category, question, followUp }) => ({ id, category, question, followUp })), saving: true };
 }
 export function prepMocks(): C.PrepMocks {
   return { v: 1, specs: MOCK_SPECS as unknown as C.PrepMocks["specs"], history: mockHistory.map(({ result: _r, ...h }) => h) as unknown as C.PrepMocks["history"] };

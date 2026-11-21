@@ -86,6 +86,10 @@ export type AdminStudent = AdminStudentRow & {
 
 /** POST /admin/students/:id/lock, /unlock */
 export type LockBody = { reason?: string };
+/** GET and PUT /admin/students/:id/access: Full or Lectures only, and the sections switched off for this student (the website's Access tab). */
+export type AdminStudentAccess = { v: 1; scope: "full" | "lectures_only"; ready: boolean; canWrite: boolean; sections: { key: string; label: string; group: "Sections" | "Practice tools"; off: boolean }[] };
+/** GET /admin/wall-reports: open reports on the class wall, oldest first. POST /admin/wall-reports/:id/resolve closes one (the post stays). */
+export type AdminWallReports = { v: 1; items: { id: string; kind: "post" | "reply"; content: string; reason: string; createdAt: string }[] };
 export type LockResult = { blocked: boolean };
 /** POST /admin/students/:id/login-link : emails a fresh login link (the website's sendLoginLink). */
 export type LoginLinkResult = { sent: true };

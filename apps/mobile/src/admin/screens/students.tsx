@@ -123,17 +123,17 @@ function FiltersSheet({ open, onClose, value, onChange, cohorts, shown }: { open
 export function AdminStudentsScreen() {
   const c = useTheme();
   const qc = useQueryClient();
-  const params = useLocalSearchParams<{ flag?: string; account?: string; cohort?: string }>();
+  const params = useLocalSearchParams<{ flag?: string; account?: string; cohort?: string; attention?: string }>();
   const q = useStudents({ flag: params.flag });
   const { role, canWrite } = useAdminRole();
-  const [f, setF] = React.useState<StudentFilters>({ ...NO_FILTERS, account: params.account ?? "", cohort: params.cohort ?? "" });
+  const [f, setF] = React.useState<StudentFilters>({ ...NO_FILTERS, account: params.account ?? "", cohort: params.cohort ?? "", attention: params.attention === "1" });
   const [flag, setFlag] = React.useState<AttentionFlag | undefined>(params.flag as AttentionFlag | undefined);
   // A new address (Home's "Login needs a hand") resets the filters.
   const [seen, setSeen] = React.useState(`${params.flag}|${params.account}|${params.cohort}`);
   const key = `${params.flag}|${params.account}|${params.cohort}`;
   if (key !== seen) {
     setSeen(key);
-    setF({ ...NO_FILTERS, account: params.account ?? "", cohort: params.cohort ?? "" });
+    setF({ ...NO_FILTERS, account: params.account ?? "", cohort: params.cohort ?? "", attention: params.attention === "1" });
     setFlag(params.flag as AttentionFlag | undefined);
   }
   const [sheet, setSheet] = React.useState(false);
