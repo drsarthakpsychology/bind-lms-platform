@@ -1393,6 +1393,59 @@ export type ClinicWeek = { v: 1; from: string; to: string; cohortId: string | nu
 export type ClinicScanBody = { token?: string; code?: string; direction?: ClinicDirection };
 export type ClinicScanResult = { sessionId: string; title: string; direction: ClinicDirection; at: string; late: boolean; minutes: number | null };
 
+/**
+ * Marking attendance in two steps (the screens ask before anything is saved):
+ *   1. POST /clinic/scan/identify { token | code }: which session this is and
+ *      where the student stands in it. Saves nothing. Answers a `ticket` that
+ *      is good for about 2 minutes, for this student and this session only,
+ *      so the changing QR can rotate while the student reads the screen.
+ *   2. POST /clinic/scan/confirm { ticket, direction, attemptId }: saves IN
+ *      or OUT. `direction` is always sent. `attemptId` is made once per
+ *      Confirm press and sent again on a retry, so a double tap or a retry
+ *      never saves twice. A mark that is already there is answered with
+ *      `already: true` and its first time; it is never moved.
+ * A refusal carries `error.details.reason` (ClinicScanReason).
+ */
+export type ClinicScanReason =
+  | "not_a_code" // not one of our codes, or the wrong 6 characters
+  | "code_expired" // an older code: scan the one on the screen now
+  | "wrong_cohort" // the session is for another group
+  | "not_open_yet" // more than 30 minutes before the start
+  | "closed" // more than 60 minutes after the end
+  | "cancelled"
+  | "ticket_expired" // too long between scan and Confirm: scan again
+  | "out_before_in";
+export type ClinicScanIdentifyBody = { token?: string; code?: string };
+/** One of the two buttons: `reason` says in one line why it is off. */
+export type ClinicScanChoice = { allowed: boolean; reason: string | null };
+export type ClinicScanIdentify = {
+  ticket: string;
+  ticketExpiresAt: string;
+  /** The server's clock when it answered (to count the ticket down without trusting the phone's clock). */
+  now: string;
+  session: { id: string; title: string; kind: ClinicKind; date: string; start: string; end: string; place: string | null };
+  /** none: not marked yet. in: marked IN, not OUT. out: marked IN and OUT. */
+  state: "none" | "in" | "out";
+  inAt: string | null;
+  outAt: string | null;
+  in: ClinicScanChoice;
+  out: ClinicScanChoice;
+};
+export type ClinicScanConfirmBody = { ticket: string; direction: ClinicDirection; attemptId: string };
+export type ClinicScanConfirm = {
+  sessionId: string;
+  title: string;
+  direction: ClinicDirection;
+  /** When the mark was recorded (the first time, when `already`). */
+  at: string;
+  /** This mark was already there; nothing changed. */
+  already: boolean;
+  /** One plain line: "Marked IN at 9:02 am." or "Already marked IN at 9:02 am. Nothing was changed." */
+  message: string;
+  late: boolean;
+  minutes: number | null;
+};
+
 /** GET /clinic/attendance */
 export type ClinicAttendanceSummary = {
   required: number;

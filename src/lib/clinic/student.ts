@@ -105,6 +105,9 @@ export async function getMyAttendance(db: Db, userId: string, cohort: string | n
 
 /* -------------------------------------------------------------- scan */
 
+/** One step scan (app versions before the two step screens; see ./scan-flow.ts for the current way). */
+const QUICK_REPEAT_MS = 120_000;
+
 async function secretOf(db: Db, sessionId: string): Promise<SecretRow | null> {
   return must(await db.from("clinic_session_secrets").select("*").eq("session_id", sessionId).maybeSingle(), null as SecretRow | null);
 }
@@ -151,6 +154,8 @@ export async function scan(db: Db, userId: string, body: ClinicScanBody, now: nu
   const existing = must(await db.from("clinic_attendance").select("*").eq("session_id", s.id).eq("user_id", userId).maybeSingle(), null as AttendanceRow | null);
   const d = decideScan({ session: s, now, memberOf, existing, direction: body.direction });
   if (!d.ok) throw new ApiFail(d.code, d.message);
+  // Older app versions send no direction. A second scan right after IN is a repeat, not a goodbye: it never marks OUT.
+  if (!body.direction && d.direction === "out" && existing?.in_at && now - Date.parse(existing.in_at) < QUICK_REPEAT_MS) throw new ApiFail("bad_request", "You already scanned in. Scan again when you leave.");
 
   const at = new Date(now).toISOString();
   const patch: Partial<AttendanceRow> & { updated_at: string } = d.direction === "in" ? { in_at: at, in_method: method, updated_at: at } : { out_at: at, out_method: method, updated_at: at };
