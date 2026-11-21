@@ -5,7 +5,7 @@ import { Platform, StyleSheet, View } from "react-native";
 
 import { Button, T } from "@/ds";
 import { openPhoneSettings, usePermission, type PermState } from "@/lib/permissions";
-import { fixed, space, useTheme } from "@/theme";
+import { fixed, layout, space, useTheme } from "@/theme";
 
 /** Four corner marks over the camera: where to hold the code. */
 function Corners() {
@@ -67,7 +67,7 @@ export function CodeScanner({ onRead, paused, size }: { onRead: (text: string) =
     },
     [onRead, paused],
   );
-  const box = { width: size, height: size, borderRadius: 20, overflow: "hidden" as const, backgroundColor: fixed.ink, alignSelf: "center" as const };
+  const box = { width: size, height: size, borderRadius: layout.radiusLg, overflow: "hidden" as const, backgroundColor: fixed.ink, alignSelf: "center" as const };
   if (Platform.OS === "web") {
     return (
       <View testID="scanner-frame" style={[box, { alignItems: "center", justifyContent: "center" }]} accessibilityLabel="Camera">
@@ -81,7 +81,7 @@ export function CodeScanner({ onRead, paused, size }: { onRead: (text: string) =
   if (copy) {
     const Icon = copy.action === "allow" ? Camera : CameraOff;
     return (
-      <View testID={copy.testID} accessibilityLiveRegion="polite" style={[box, { backgroundColor: c.tint, alignItems: "center", justifyContent: "center", padding: space[5], gap: space[3] }]}>
+      <View testID={copy.testID} accessibilityLiveRegion="polite" style={[box, { backgroundColor: c.card, alignItems: "center", justifyContent: "center", padding: space[5], gap: space[3] }]}>
         <Icon size={32} color={c.ink} />
         <T center v="bodyStrong">
           {copy.title}
@@ -89,7 +89,7 @@ export function CodeScanner({ onRead, paused, size }: { onRead: (text: string) =
         <T center v="small" tone="muted">
           {copy.body}
         </T>
-        {copy.action === "allow" ? <Button kind="quiet" label="Allow camera" onPress={() => void perm.ask()} testID="scanner-allow" /> : null}
+        {copy.action === "allow" ? <Button label="Allow camera" onPress={() => void perm.ask()} testID="scanner-allow" /> : null}
         {copy.action === "settings" ? <Button kind="quiet" label="Open settings" onPress={openPhoneSettings} testID="scanner-settings" /> : null}
         {copy.action === "retry" ? (
           <Button

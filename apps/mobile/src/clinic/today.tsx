@@ -1,22 +1,24 @@
-import { ClipboardPen, Hospital, Megaphone, QrCode } from "lucide-react-native";
+import { ChevronRight, ClipboardPen, Hospital, Megaphone, QrCode } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { go } from "@/api/prefetch";
-import { Button, Section, T } from "@/ds";
+import { Button, IconDot, Label, Stone, T } from "@/ds";
 import { Enter } from "@/motion";
-import { space, useAccent, useTheme } from "@/theme";
+import { space, useTheme } from "@/theme";
 import { useClinicToday } from "./api";
 import type { ClinicToday } from "./contract";
 import { opdLine } from "./logic";
-import { Band, openLink, SessionLine, SessionList } from "./parts";
+import { openLink } from "./parts";
+import { SessionLine2, StoneList } from "./ui";
 
-/** A small text link in a section heading ("Week"), 44px tall. */
+/** A small text link in a group heading ("Week"), 44px tall. */
 export function HeadLink({ label, onPress, testID }: { label: string; onPress: () => void; testID?: string }) {
   return (
     <Pressable
       testID={testID}
       accessibilityRole="link"
+      accessibilityLabel={label}
       onPress={() => {
         onPress();
       }}
@@ -30,79 +32,76 @@ export function HeadLink({ label, onPress, testID }: { label: string; onPress: (
   );
 }
 
-/** Today's schedule as Home shows it. Exported for tests and the web screenshots. */
+/**
+ * Today's clinic day as the Today screen shows it, on the layer: my OPD day,
+ * the admin's note, today's sessions in one stone (the start time leads),
+ * case logs that are waiting, and a quiet way to the scanner. Every part
+ * opens something. No companion here. Exported for tests and screenshots.
+ */
 export function TodayBlockView({ d }: { d: ClinicToday }) {
   const c = useTheme();
-  const a = useAccent();
   const scannable = d.sessions.some((s) => s.mine && (s.mine.state === "open" || s.mine.state === "in"));
   const empty = !d.sessions.length && !d.opd;
   return (
-    <Section title="Your day" action={<HeadLink label="Week" onPress={() => go("/clinic/schedule")} testID="today-week" />}>
+    <View style={{ gap: space[1] }}>
+      <Label action={<HeadLink label="Week" onPress={() => go("/clinic/schedule")} testID="today-week" />}>Your day</Label>
       <View testID="clinic-today" style={{ gap: space[3] }}>
         {d.opd ? (
-          <Band testID="today-opd">
-            <View style={{ flexDirection: "row", gap: space[2], alignItems: "center" }}>
-              <Hospital size={18} color={a.on ? a.deep : c.ink} />
-              <T v="bodyStrong" style={{ flex: 1 }}>
-                {opdLine(d.opd)}
-              </T>
+          <Stone testID="today-opd" onPress={() => go("/clinic/opd")} accessibilityLabel={`${opdLine(d.opd)}${d.opd.place ? `, ${d.opd.place}` : ""}. Opens OPD cases`}>
+            <View style={{ flexDirection: "row", gap: space[3], alignItems: "center" }}>
+              <IconDot icon={Hospital} />
+              <View style={{ flex: 1, minWidth: 0 }}>
+                <T v="bodyStrong">{opdLine(d.opd)}</T>
+                {d.opd.place ? (
+                  <T v="small" tone="muted">
+                    {d.opd.place}
+                  </T>
+                ) : null}
+              </View>
+              <ChevronRight size={18} color={c.muted} />
             </View>
-            {d.opd.place ? (
-              <T v="small" tone="muted">
-                {d.opd.place}
-              </T>
-            ) : null}
-          </Band>
+          </Stone>
         ) : null}
         {d.note ? (
-          <Band tone="plain" testID="today-note">
-            <View style={{ flexDirection: "row", gap: space[2], alignItems: "flex-start" }}>
-              <Megaphone size={18} color={c.muted} style={{ marginTop: 3 }} />
-              <View style={{ flex: 1 }}>
-                <T v="caption" tone="muted">
-                  From the admin
-                </T>
-                <T>{d.note}</T>
-              </View>
+          <View testID="today-note" style={{ flexDirection: "row", gap: space[3], alignItems: "flex-start", backgroundColor: c.card, borderRadius: 18, borderTopLeftRadius: 6, paddingVertical: space[3], paddingHorizontal: space[4] }}>
+            <Megaphone size={18} color={c.muted} style={{ marginTop: 3 }} />
+            <View style={{ flex: 1, minWidth: 0 }}>
+              <T v="caption" tone="muted">
+                From the admin
+              </T>
+              <T>{d.note}</T>
             </View>
-          </Band>
+          </View>
         ) : null}
         {d.sessions.length ? (
-          <SessionList>
+          <StoneList>
             {d.sessions.map((s) => (
-              <SessionLine key={s.id} s={s} testID={`today-s-${s.id}`} onPress={s.link && s.status !== "cancelled" ? () => openLink(s.link!) : () => go("/clinic/schedule")} />
+              <SessionLine2 key={s.id} s={s} testID={`today-s-${s.id}`} onPress={s.link && s.status !== "cancelled" ? () => openLink(s.link!) : () => go("/clinic/schedule")} />
             ))}
-          </SessionList>
+          </StoneList>
         ) : empty ? (
-          <T v="small" tone="muted" testID="today-empty">
-            Nothing on your timetable today.
-          </T>
+          <Stone quiet onPress={() => go("/clinic/schedule")} accessibilityLabel="Nothing on your timetable today. Opens the week">
+            <T v="small" tone="muted" testID="today-empty">
+              Nothing on your timetable today.
+            </T>
+          </Stone>
         ) : null}
         {d.logsDue ? (
-          <Pressable
-            testID="today-to-log"
-            accessibilityRole="button"
-            onPress={() => {
-              go("/clinic/opd");
-            }}
-          >
-            {({ pressed }) => (
-              <View style={{ opacity: pressed ? 0.7 : 1 }}>
-                <Band tone="warn">
-                  <View style={{ flexDirection: "row", gap: space[2], alignItems: "center", minHeight: 28 }}>
-                    <ClipboardPen size={18} color={c.warnFg} />
-                    <T v="bodyStrong" style={{ flex: 1, color: c.warnFg }}>
-                      {d.logsDue === 1 ? "Log your cases for your last OPD visit" : `Log your cases for ${d.logsDue} OPD visits`}
-                    </T>
-                  </View>
-                </Band>
+          <Stone testID="today-to-log" onPress={() => go("/clinic/opd")} style={{ borderRadius: 26 }} accessibilityLabel={d.logsDue === 1 ? "Log your cases for your last OPD visit" : `Log your cases for ${d.logsDue} OPD visits`}>
+            <View style={{ flexDirection: "row", gap: space[3], alignItems: "center" }}>
+              <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: c.warnBg, alignItems: "center", justifyContent: "center" }}>
+                <ClipboardPen size={18} color={c.warnFg} />
               </View>
-            )}
-          </Pressable>
+              <T v="bodyStrong" style={{ flex: 1 }}>
+                {d.logsDue === 1 ? "Log your cases for your last OPD visit" : `Log your cases for ${d.logsDue} OPD visits`}
+              </T>
+              <ChevronRight size={18} color={c.muted} />
+            </View>
+          </Stone>
         ) : null}
         {scannable || d.opd ? <Button kind="quiet" label="Scan attendance" icon={<QrCode size={20} color={c.ink} />} onPress={() => go("/clinic/scan")} testID="today-scan" /> : null}
       </View>
-    </Section>
+    </View>
   );
 }
 

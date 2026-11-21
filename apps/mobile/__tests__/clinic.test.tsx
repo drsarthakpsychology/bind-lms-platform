@@ -1,4 +1,6 @@
 import { act, fireEvent, screen, waitFor } from "@testing-library/react-native";
+import { AccessibilityInfo } from "react-native";
+import * as Reanimated from "react-native-reanimated";
 import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 
@@ -372,6 +374,9 @@ describe("student clinic screens", () => {
   }
   const disabled = (id: string) => screen.getByTestId(id).props.accessibilityState?.disabled === true;
 
+  /** One tap confirms when a screen reader is on (and under Reduce Motion): the tests use that, except the one about holding. */
+  const readerOn = () => spy(AccessibilityInfo, "isScreenReaderEnabled").mockResolvedValue(true);
+
   it("Scan: a code only shows the session and two choices; nothing is chosen, sent or buzzed", async () => {
     const confirm = spy(clinicCalls, "confirmMark");
     const h = { ok: spy(haptic, "success"), bad: spy(haptic, "warn"), pick: spy(haptic, "select") };
@@ -386,29 +391,33 @@ describe("student clinic screens", () => {
     expect(screen.getByTestId("scan-why-out").props.children).toBe("Mark IN first.");
     expect(screen.getByTestId("scan-choose-out").props.accessibilityHint).toBe("Mark IN first.");
     expect(screen.queryByTestId("scan-why-in")).toBeNull();
+    // Nothing is picked yet, so there is nothing to confirm.
+    expect(disabled("scan-confirm")).toBe(true);
+    expect(screen.getByTestId("scan-choose-in").props.accessibilityState.selected).toBe(false);
     // The one that is off does nothing.
     await fireEvent.press(screen.getByTestId("scan-choose-out"));
-    expect(screen.queryByTestId("scan-confirm-view")).toBeNull();
+    expect(screen.queryByTestId("scan-confirm-title")).toBeNull();
     expect(confirm).not.toHaveBeenCalled();
     for (const m of Object.values(h)) expect(m).not.toHaveBeenCalled();
     restoreSpies();
   });
 
-  it("Scan: Mark IN asks first, Cancel goes back, Confirm sends once and shows what was recorded", async () => {
+  it("Scan: picking IN saves nothing, picking it again lets go, the confirm sends once and shows what was recorded", async () => {
+    readerOn();
     const confirm = spy(clinicCalls, "confirmMark");
     const ok = spy(haptic, "success");
     await toChoices();
     await fireEvent.press(screen.getByTestId("scan-choose-in"));
     await wf(() => expect(screen.getByTestId("scan-confirm-title")).toBeTruthy());
     expect(screen.getByText(`You are marking IN for ${classToday().title}`)).toBeTruthy();
+    expect(screen.getByTestId("scan-choose-in").props.accessibilityState.selected).toBe(true);
     expect(confirm).not.toHaveBeenCalled();
-    await fireEvent.press(screen.getByTestId("scan-back"));
-    await wf(() => expect(screen.getByTestId("scan-choose-in")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("scan-choose-in"));
+    await wf(() => expect(screen.queryByTestId("scan-confirm-title")).toBeNull());
     expect(confirm).not.toHaveBeenCalled();
 
     await fireEvent.press(screen.getByTestId("scan-choose-in"));
-    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
-    expect(screen.getByLabelText("Confirm IN")).toBeTruthy();
+    await wf(() => expect(screen.getByLabelText("Confirm IN")).toBeTruthy());
     const go = screen.getByTestId("scan-confirm");
     await fireEvent.press(go);
     // A second tap, if the button is still there (the next test holds the answer back to press it mid-send).
@@ -419,31 +428,60 @@ describe("student clinic screens", () => {
     expect(confirm.mock.calls[0]![0]).toMatchObject({ direction: "in", attemptId: expect.stringMatching(/^[A-Za-z0-9_-]{8,64}$/) });
     expect(screen.getByTestId("scan-direction").props.children).toBe("IN");
     expect(String([screen.getByTestId("scan-done-title").props.children].flat().join(""))).toMatch(/^Marked IN at /);
+    expect(screen.getByTestId("scan-close")).toBeTruthy();
     expect(ok).toHaveBeenCalledTimes(1);
     restoreSpies();
   });
 
-  it("Scan: while it sends, Confirm is locked and shows progress", async () => {
-    let answer: (v: Awaited<ReturnType<typeof clinicCalls.confirmMark>>) => void = () => undefined;
-    const confirm = spy(clinicCalls, "confirmMark").mockImplementation(() => new Promise((r) => (answer = r)));
+  it("Scan: without Reduce Motion or a screen reader a tap does nothing; holding for a second sends, letting go early does not", async () => {
+    // The test set-up runs with Reduce Motion on (taps confirm); turn it off here to hold.
+    spy(Reanimated, "useReducedMotion").mockReturnValue(false);
+    const confirm = spy(clinicCalls, "confirmMark");
     await toChoices();
     await fireEvent.press(screen.getByTestId("scan-choose-in"));
-    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
+    await wf(() => expect(screen.getByLabelText("Hold to mark IN")).toBeTruthy());
+    const hold = screen.getByTestId("scan-confirm");
+    await fireEvent.press(hold);
+    expect(confirm).not.toHaveBeenCalled();
+    const touch = { nativeEvent: { locationX: 40, pageX: 60, pageY: 500 } };
+    await fireEvent(hold, "pressIn", touch);
+    await new Promise((r) => setTimeout(r, 300));
+    await fireEvent(hold, "pressOut", touch);
+    await new Promise((r) => setTimeout(r, 900));
+    expect(confirm).not.toHaveBeenCalled();
+    await fireEvent(hold, "pressIn", touch);
+    await wf(() => expect(screen.getByTestId("scan-direction")).toBeTruthy());
+    expect(confirm).toHaveBeenCalledTimes(1);
+    restoreSpies();
+  });
+
+  it("Scan: while it sends, the confirm is locked and shows progress", async () => {
+    readerOn();
+    let answer: (v: Awaited<ReturnType<typeof clinicCalls.confirmMark>>) => void = () => undefined;
+    const confirm = spy(clinicCalls, "confirmMark").mockImplementation(() => new Promise((r) => (answer = r)));
+    const ok = spy(haptic, "success");
+    await toChoices();
+    await fireEvent.press(screen.getByTestId("scan-choose-in"));
+    await wf(() => expect(screen.getByLabelText("Confirm IN")).toBeTruthy());
     await fireEvent.press(screen.getByTestId("scan-confirm"));
     await wf(() => expect(screen.getByLabelText("Sending")).toBeTruthy());
     expect(screen.getByTestId("scan-confirm").props.accessibilityState).toMatchObject({ disabled: true, busy: true });
-    expect(disabled("scan-back")).toBe(true);
+    expect(disabled("scan-cancel")).toBe(true);
+    expect(disabled("scan-choose-in")).toBe(true);
     await fireEvent.press(screen.getByTestId("scan-confirm"));
     expect(confirm).toHaveBeenCalledTimes(1);
     await act(async () => {
       answer({ direction: "in", at: new Date().toISOString(), session: { id: classToday().id, title: classToday().title }, late: false, minutes: null, already: true, message: "" });
     });
+    // A repeat: "Already marked IN at ...", nothing changed, and no success buzz.
     await wf(() => expect(screen.getByTestId("scan-already")).toBeTruthy());
     expect(String([screen.getByTestId("scan-done-title").props.children].flat().join(""))).toMatch(/^Already marked IN at /);
+    expect(ok).not.toHaveBeenCalled();
     restoreSpies();
   });
 
   it("Scan: already in, so Mark IN is off with the reason and OUT is what gets sent", async () => {
+    readerOn();
     const c = classToday();
     const step = await clinicCalls.identify({ code: clinicMock.codeFor(c.id) });
     await clinicCalls.confirmMark({ ticket: step.ticket, direction: "in", attemptId: "attempt-0001" });
@@ -462,12 +500,13 @@ describe("student clinic screens", () => {
   });
 
   it("Scan: no internet says it did not go through, keeps nothing for later, and Try again sends the same press", async () => {
+    readerOn();
     const real = clinicCalls.confirmMark;
     const confirm = spy(clinicCalls, "confirmMark").mockRejectedValueOnce(new ApiFailure("network", "No internet."));
     const warn = spy(haptic, "warn");
     await toChoices();
     await fireEvent.press(screen.getByTestId("scan-choose-in"));
-    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
+    await wf(() => expect(screen.getByLabelText("Confirm IN")).toBeTruthy());
     await fireEvent.press(screen.getByTestId("scan-confirm"));
     await wf(() => expect(screen.getByTestId("scan-unsent")).toBeTruthy());
     expect(screen.getByText("Not marked yet")).toBeTruthy();
@@ -484,10 +523,11 @@ describe("student clinic screens", () => {
   });
 
   it("Scan: after the ticket's 2 minutes nothing is sent, the screen asks to scan again", async () => {
+    readerOn();
     const confirm = spy(clinicCalls, "confirmMark");
     await toChoices();
     await fireEvent.press(screen.getByTestId("scan-choose-in"));
-    await wf(() => expect(screen.getByTestId("scan-confirm")).toBeTruthy());
+    await wf(() => expect(screen.getByLabelText("Confirm IN")).toBeTruthy());
     const clock = spy(Date, "now").mockReturnValue(Date.now() + 121_000);
     await fireEvent.press(screen.getByTestId("scan-confirm"));
     clock.mockRestore();
