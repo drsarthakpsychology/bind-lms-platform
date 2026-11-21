@@ -3,7 +3,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, LoadError, ProgressLine, Row, RowList, Screen, SwitchRow, T } from "@/ds";
+import { Button, Chips, Field, ProgressLine, Row, RowList, SwitchRow, T } from "@/ds";
+import { EmptyState, LoadError, Screen } from "../ui";
 import { haptic } from "@/lib/haptics";
 import { layout, space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useCertDrawing, useCohorts, useStudents, useStudioOptions } from "../api";

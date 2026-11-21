@@ -5,7 +5,8 @@ import * as React from "react";
 import { Image, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
-import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Chips, Field, Row, RowList, RowsSkeleton, Sheet, SwitchRow, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { Enter } from "@/motion";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";

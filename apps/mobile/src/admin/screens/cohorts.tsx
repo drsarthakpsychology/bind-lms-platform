@@ -3,7 +3,8 @@ import { PenLine } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, Row, RowList, RowsSkeleton, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { space, useTheme } from "@/theme";
 import { useCohort, useCohorts, useRefreshAdmin } from "../api";
 import type { CohortStatus } from "../extra";

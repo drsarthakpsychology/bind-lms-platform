@@ -1,3 +1,7 @@
+import type { UseQueryResult } from "@tanstack/react-query";
+import { Loaded as AdminLoaded } from "@/admin/kit";
+import { EmptyState } from "@/admin/ui";
+import { notSetUp } from "../loaded";
 import { Minus, Plus } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
@@ -119,5 +123,15 @@ export function LineRow({ label, meta, children, testID }: { label: string; meta
       </View>
       {children}
     </View>
+  );
+}
+
+/** Loading to content for the admin clinic screens: the plain admin states, and a calm line while the clinic is not set up. */
+export function ClinicLoaded<D>({ q, skeleton, what, children }: { q: UseQueryResult<D>; skeleton?: React.ReactNode; what?: string; admin?: boolean; children: (data: D) => React.ReactNode }) {
+  if (q.data === undefined && q.isError && notSetUp(q.error)) return <EmptyState title="Not switched on yet" body="Schedule, attendance, leave and OPD start working here once the clinic is set up." testID="clinic-off" />;
+  return (
+    <AdminLoaded q={q} skeleton={skeleton} what={what} soon>
+      {children}
+    </AdminLoaded>
   );
 }

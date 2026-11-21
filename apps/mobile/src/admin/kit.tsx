@@ -14,7 +14,8 @@ import type { UseQueryResult } from "@tanstack/react-query";
 
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
-import { Button, Field, Loaded as DsLoaded, Sheet, TabRow, T } from "@/ds";
+import { Button, Field, Sheet, TabRow, T } from "@/ds";
+import { PlainLoaded as DsLoaded } from "./ui";
 import { Swap, usePressScale } from "@/motion";
 import { haptic } from "@/lib/haptics";
 import { layout, space, type as scale, useTheme, type Palette } from "@/theme";

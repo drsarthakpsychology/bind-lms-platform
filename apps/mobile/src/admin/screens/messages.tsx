@@ -4,7 +4,8 @@ import { PenLine } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, Field, Row, RowList, RowsSkeleton, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useInbox, useInboxThread, useRefreshAdmin } from "../api";
 import type { InboxItem } from "../extra";
@@ -66,7 +67,7 @@ export function AdminMessagesScreen() {
   const { refresh, refreshing } = useRefreshAdmin();
   const unread = inbox.data?.unread ?? 0;
   return (
-    <Screen tab top={<AdminTop />} title="Messages" testID="admin-messages" gap={space[5]} onRefresh={refresh} refreshing={refreshing} footer={canWrite ? <Button label="New message" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose()} testID="messages-new" /> : undefined}>
+    <Screen title="Announcements" testID="admin-messages" gap={space[5]} onRefresh={refresh} refreshing={refreshing} footer={canWrite ? <Button label="New message" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose()} testID="messages-new" /> : undefined}>
       <ScrollTabs
         tabs={[
           { id: "inbox" as const, name: unread ? `Inbox ${unread}` : "Inbox" },

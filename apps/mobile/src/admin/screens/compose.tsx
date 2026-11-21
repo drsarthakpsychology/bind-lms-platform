@@ -3,7 +3,8 @@ import { X } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, Row, RowList, Screen, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Chips, Field, Row, RowList, Sheet, SwitchRow, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useCohorts, useStudents } from "../api";
 import type { AdminSendBody } from "../contract";

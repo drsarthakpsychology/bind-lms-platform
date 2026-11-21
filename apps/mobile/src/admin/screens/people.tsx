@@ -4,7 +4,8 @@ import { Mail, MessageCircle, Phone } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Chips, Field, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { messageOf } from "@/api/errors";
 import { toast } from "@/ds/toast";
 import { space, useTheme } from "@/theme";

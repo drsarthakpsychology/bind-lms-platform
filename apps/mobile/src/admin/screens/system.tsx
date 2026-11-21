@@ -3,7 +3,8 @@ import { openLink } from "@/lib/open";
 import * as React from "react";
 import { Share, View } from "react-native";
 
-import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Field, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { space, useTheme } from "@/theme";

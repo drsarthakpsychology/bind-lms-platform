@@ -1,11 +1,12 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { useLocalSearchParams } from "expo-router";
-import { ChevronRight, KeyRound, ListFilter, Lock, MessageSquare, Share2, Unlock, X } from "lucide-react-native";
+import { router, useLocalSearchParams } from "expo-router";
+import { ChevronRight, KeyRound, ListFilter, Lock, MessageSquare, Share2, SlidersHorizontal, Unlock, UserPlus, X } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, Share, View } from "react-native";
 import Animated from "react-native-reanimated";
 
-import { Button, Chips, EmptyState, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Chips, RowsSkeleton, Sheet, SwitchRow, T } from "@/ds";
+import { BarAction, EmptyState, Locked, Screen } from "../ui";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { usePressScale } from "@/motion";
@@ -198,20 +199,21 @@ export function AdminStudentsScreen() {
   const icon = { size: 18, color: c.ink };
   const bar = picked.size ? (
     <ActionBar count={picked.size} onClear={stopSelecting} testID="action-bar">
-      {canWrite ? (
-        <>
+      <Locked row>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
           <SmallButton label="Send login link" icon={<KeyRound {...icon} />} busy={busy === "links"} onPress={() => void bulk("links")} testID="bulk-links" />
-          <SmallButton label="Lock" icon={<Lock {...icon} />} onPress={() => setConfirmLock(true)} testID="bulk-lock" />
-          <SmallButton label="Unlock" icon={<Unlock {...icon} />} busy={busy === "unlock"} onPress={() => void bulk("unlock")} testID="bulk-unlock" />
+          <SmallButton label="Pause" icon={<Lock {...icon} />} onPress={() => setConfirmLock(true)} testID="bulk-lock" />
+          <SmallButton label="Resume" icon={<Unlock {...icon} />} busy={busy === "unlock"} onPress={() => void bulk("unlock")} testID="bulk-unlock" />
+          <SmallButton label="Access" icon={<SlidersHorizontal {...icon} />} onPress={() => router.push(`/admin/access?ids=${pickedRows.map((r) => r.id).join(",")}`)} testID="bulk-access" />
           <SmallButton label="Message" icon={<MessageSquare {...icon} />} onPress={() => openCompose({ to: pickedRows.map((r) => r.id) })} testID="bulk-message" />
-        </>
-      ) : null}
+        </View>
+      </Locked>
       <SmallButton label="Share list" icon={<Share2 {...icon} />} onPress={share} testID="bulk-share" />
     </ActionBar>
   ) : undefined;
 
   return (
-    <Screen tab top={<AdminTop />} title="Students" testID="admin-students" gap={space[4]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={bar}>
+    <Screen tab title="People" lead={q.data ? `${shown.length} of ${rows.length} students` : undefined} right={<><BarAction label="Access for many students" icon={SlidersHorizontal} onPress={() => router.push("/admin/access")} testID="students-access" /><BarAction label="Add a student" icon={UserPlus} onPress={() => router.push("/admin/students/new")} testID="students-add" /></>} testID="admin-students" gap={space[4]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={bar}>
       <View style={{ flexDirection: "row", gap: space[2], alignItems: "center" }}>
         <SearchBox value={f.search} onChange={(search) => setF((x) => ({ ...x, search }))} placeholder="Name, email, roll, mobile" label="Search students" testID="students-search" />
         <Pressable

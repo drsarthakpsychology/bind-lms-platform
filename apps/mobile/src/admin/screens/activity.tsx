@@ -2,7 +2,8 @@ import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen } from "@/ds";
+import { Button, Row, RowList, RowsSkeleton } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { space } from "@/theme";
 import { useActivity, useBehind, useCohorts, useRefreshAdmin } from "../api";
 import { ago, day, pct } from "../format";
@@ -193,7 +194,7 @@ export function AdminActivityScreen() {
   }
   const { refresh, refreshing } = useRefreshAdmin();
   return (
-    <Screen tab top={<AdminTop />} title="Activity" testID="admin-activity" gap={space[5]} onRefresh={refresh} refreshing={refreshing}>
+    <Screen title="Activity" testID="admin-activity" gap={space[5]} onRefresh={refresh} refreshing={refreshing}>
       <ScrollTabs tabs={VIEWS} value={view} onChange={setView} />
       <TabSwap tabs={VIEWS} value={view} gap={space[5]}>
         {view === "live" ? <Live /> : view === "behind" ? <Behind /> : view === "students" ? <Students /> : <Cohorts />}

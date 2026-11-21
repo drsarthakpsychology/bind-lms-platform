@@ -217,8 +217,8 @@ const LECTURE: Shot[] = [{ file: "(lecture)/lo/home" }, { file: "(lecture)/lo/le
 const ADMIN: Shot[] = [
   { file: "(admin)/(tabs)/admin/home" },
   { file: "(admin)/(tabs)/admin/students" },
-  { file: "(admin)/(tabs)/admin/activity" },
-  { file: "(admin)/(tabs)/admin/messages" },
+  { file: "(admin)/admin/activity" },
+  { file: "(admin)/admin/messages" },
   { file: "(admin)/(tabs)/admin/more" },
   { file: "(admin)/admin/alerts" },
   { file: "(admin)/admin/certificates/anyone" },
