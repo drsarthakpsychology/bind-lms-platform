@@ -366,7 +366,6 @@ export function AdminPersonScreen() {
         {(p) => (
           <>
             <View style={{ gap: space[2] }}>
-              <T v="h1">{p.name}</T>
               <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: space[3], rowGap: space[1] }}>
                 <Status tone={stageTone(p.stage)}>{STAGE_LABEL[p.stage]}</Status>
                 {p.paid ? <Tag>Paid</Tag> : null}

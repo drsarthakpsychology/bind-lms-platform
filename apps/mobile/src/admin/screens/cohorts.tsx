@@ -69,7 +69,6 @@ export function AdminCohortScreen() {
         {(d) => (
           <>
             <View style={{ gap: space[2] }}>
-              <T v="h1">{d.name}</T>
               <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: space[3], rowGap: space[1] }}>
                 <Status tone={COHORT_STATUS[d.status].tone}>{COHORT_STATUS[d.status].label}</Status>
                 <T v="small" tone="muted">

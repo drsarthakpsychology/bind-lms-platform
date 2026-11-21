@@ -68,7 +68,6 @@ export function AdminFormScreen() {
           return (
             <>
               <View style={{ gap: space[2] }}>
-                <T v="h1">{f.title}</T>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
                   <Status tone={f.open ? "ok" : "quiet"}>{f.open ? "Open" : "Closed"}</Status>
                   <T v="small" tone="muted">

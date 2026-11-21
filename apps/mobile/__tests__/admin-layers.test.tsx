@@ -55,14 +55,14 @@ describe("as the Super Admin", () => {
   it("More groups every admin place and opens the new ones", async () => {
     await render(<AdminMoreScreen />);
     for (const id of ["more-switches", "more-access", "more-test-mode", "more-wall", "more-failed", "more-insights", "more-leaderboards"]) expect(screen.getByTestId(id)).toBeTruthy();
-    fireEvent.press(screen.getByTestId("more-switches"));
+    await fireEvent.press(screen.getByTestId("more-switches"));
     expect(router.push).toHaveBeenCalledWith("/admin/switches");
   });
 
   it("Teaching is a reviewer view: no Continue, opens class results", async () => {
     await render(<TeachingScreen />);
     expect(screen.queryByText("Continue")).toBeNull();
-    fireEvent.press(screen.getByTestId("teach-m02"));
+    await fireEvent.press(screen.getByTestId("teach-m02"));
     expect(router.push).toHaveBeenCalledWith("/admin/teaching/m02");
   });
 
@@ -70,7 +70,7 @@ describe("as the Super Admin", () => {
     params.mockReturnValue({ module: "m02" });
     await render(<TeachingModuleScreen />);
     expect(screen.getByText("Class results by section")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("teach-m02.c1"));
+    await fireEvent.press(screen.getByTestId("teach-m02.c1"));
     expect(router.push).toHaveBeenCalledWith("/admin/teaching/section/m02.c1");
   });
 
@@ -78,11 +78,11 @@ describe("as the Super Admin", () => {
     params.mockReturnValue({ id: "m02.c1" });
     await render(<AnswerKeyScreen />);
     expect(screen.getAllByText("Correct answer").length).toBe(3);
-    fireEvent.press(screen.getByTestId("key-m02.c1.q1-flag"));
-    fireEvent.press(screen.getByTestId("flag-save"));
+    await fireEvent.press(screen.getByTestId("key-m02.c1.q1-flag"));
+    await fireEvent.press(screen.getByTestId("flag-save"));
     expect(screen.getByText("Write one line about what is wrong.")).toBeTruthy();
-    fireEvent.changeText(screen.getByTestId("flag-note"), "Two options could both fit");
-    fireEvent.press(screen.getByTestId("flag-save"));
+    await fireEvent.changeText(screen.getByTestId("flag-note"), "Two options could both fit");
+    await fireEvent.press(screen.getByTestId("flag-save"));
     expect(screen.getByText("Two options could both fit")).toBeTruthy();
   });
 
@@ -94,9 +94,9 @@ describe("as the Super Admin", () => {
 
   it("What is live: hiding a feature asks first", async () => {
     await render(<SwitchesScreen />);
-    fireEvent.press(screen.getByTestId("feature-games"));
-    fireEvent.press(screen.getByTestId("feature-state-off"));
-    fireEvent.press(screen.getByTestId("feature-save"));
+    await fireEvent.press(screen.getByTestId("feature-games"));
+    await fireEvent.press(screen.getByTestId("feature-state-off"));
+    await fireEvent.press(screen.getByTestId("feature-save"));
     expect(screen.getByText("Hide Games?")).toBeTruthy();
   });
 
@@ -107,16 +107,16 @@ describe("as the Super Admin", () => {
 
   it("Add a student checks the fields before sending", async () => {
     await render(<AddStudentScreen />);
-    fireEvent.press(screen.getByTestId("add-student-go"));
+    await fireEvent.press(screen.getByTestId("add-student-go"));
     expect(screen.getByText("Write the student's name.")).toBeTruthy();
     expect(screen.getByText("Write a full email address.")).toBeTruthy();
   });
 
   it("Access for many says what will happen and asks before applying", async () => {
     await render(<BulkAccessScreen />);
-    fireEvent.press(screen.getByTestId("bulk-section-practice"));
+    await fireEvent.press(screen.getByTestId("bulk-section-practice"));
     expect(screen.getByText(/Closed: Practice and games/)).toBeTruthy();
-    fireEvent.press(screen.getByTestId("bulk-apply"));
+    await fireEvent.press(screen.getByTestId("bulk-apply"));
     expect(screen.getByTestId("bulk-confirm")).toBeTruthy();
   });
 
@@ -128,7 +128,7 @@ describe("as the Super Admin", () => {
     await render(<InsightsScreen />);
     expect(screen.getByText("Hardest topics")).toBeTruthy();
     await render(<AdminLeaderboardScreen />);
-    fireEvent.press(screen.getByTestId("board-u1"));
+    await fireEvent.press(screen.getByTestId("board-u1"));
     expect(router.push).toHaveBeenCalledWith("/student/u1");
   });
 });
@@ -156,7 +156,7 @@ describe("as a view-only admin", () => {
 
   it("What is live: the sheet shows the state locked and has no Save", async () => {
     await render(<SwitchesScreen />);
-    fireEvent.press(screen.getByTestId("feature-games"));
+    await fireEvent.press(screen.getByTestId("feature-games"));
     expect(screen.queryByTestId("feature-save")).toBeNull();
     expect(screen.getAllByTestId("locked").length).toBeGreaterThan(0);
   });
