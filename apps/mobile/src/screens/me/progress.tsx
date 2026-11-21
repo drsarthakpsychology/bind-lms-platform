@@ -1,25 +1,32 @@
 import { router, Stack } from "expo-router";
-import { Map as MapIcon } from "lucide-react-native";
+import { ArrowRight, Map as MapIcon } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
-import Animated, { useAnimatedStyle } from "react-native-reanimated";
 
 import type { Achievements, BadgeProgress, Credential, Progress, TopicScore } from "@/api/contract";
 import { useJourney } from "@/api/learn";
+import { go } from "@/api/prefetch";
 import { useAchievements, useMe, useProgress } from "@/api/queries";
-import { EmptyState, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, Sheet, Stat, T } from "@/ds";
+import { Button, FieldCard, Label, ProgressLine, Row, Screen, Sheet, Stone, T } from "@/ds";
+import { Enter, ProgressRing } from "@/motion";
 import { openTarget } from "@/nav/targets";
-import { useFill } from "@/motion";
-import { space, useTheme } from "@/theme";
+import { layout, space, useTheme } from "@/theme";
 import { Badge, issued } from "./certificates";
-import { JourneyBody } from "./journey";
+import { JourneyStats, LevelStone } from "./journey";
+import { Group, HubSkeleton, IconPatch, Load, QuietNote, Rise, StatStone } from "./parts";
 
-/** One day's bar: grows up from the baseline, each a little after the one before. */
-function DayBar({ h, i, color }: { h: number; i: number; color: string }) {
-  const fill = useFill(100, 150 + i * 30);
-  const grow = useAnimatedStyle(() => ({ transform: [{ scaleY: fill.value }] }));
-  return <Animated.View style={[{ height: h, borderRadius: 2, backgroundColor: color, transformOrigin: "bottom" }, grow]} />;
-}
+/**
+ * Progress: the one place for "how am I doing" (docs/DESIGN.md, "Hub or
+ * dashboard with numbers"). One scroll, top to bottom:
+ *   field   the streak, as the one pill
+ *   1. Your level, on a ring (opens the leaderboard)
+ *   2. Your numbers, as small stones
+ *   3. Your courses, each with a line that fills
+ *   4. The last two weeks, as bars you can tap
+ *   5. Topics: what needs work, what is strongest, and the full map
+ *   6. Badges, and what is still to earn
+ * My journey and Badges used to be screens of their own; their links open here.
+ */
 
 function hours(sec: number): string {
   const h = Math.floor(sec / 3600);
@@ -33,7 +40,7 @@ function dayName(day: string, today: boolean): string {
   return Number.isFinite(t) ? new Date(t).toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" }) : day;
 }
 
-/** Fourteen thin bars: points per day, oldest first, with a light average line. Tap a bar for that day's points. */
+/** Fourteen bars: points per day, oldest first, with a light average line. Tap a bar for that day's points. */
 function Days({ days }: { days: Progress["days"] }) {
   const c = useTheme();
   const max = Math.max(1, ...days.map((d) => d.xp));
@@ -41,24 +48,24 @@ function Days({ days }: { days: Progress["days"] }) {
   const avg = days.length ? total / days.length : 0;
   const [pick, setPick] = React.useState(days.length - 1);
   const shown = days[Math.min(pick, days.length - 1)];
-  const H = 72;
+  const H = 84;
   return (
-    <View style={{ gap: space[2] }}>
+    <View style={{ gap: space[3] }}>
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", gap: space[3] }}>
-        <T v="small" testID="days-value" accessibilityLiveRegion="polite" style={{ flexShrink: 1 }}>
+        <T v="bodyStrong" num testID="days-value" accessibilityLiveRegion="polite" style={{ flexShrink: 1 }}>
           {shown ? `${dayName(shown.day, pick === days.length - 1)}: ${shown.xp} points` : ""}
         </T>
         {avg > 0 ? (
-          <T v="caption" tone="muted">
-            {`Dashed: about ${Math.round(avg)} a day`}
+          <T v="caption" tone="muted" num>
+            {`About ${Math.round(avg)} a day`}
           </T>
         ) : null}
       </View>
       <View accessibilityLabel={`Points in the last 14 days: ${total}, about ${Math.round(avg)} a day`} style={{ height: H }}>
-        <View style={{ flexDirection: "row", alignItems: "flex-end", height: H, gap: 4 }}>
+        <View style={{ flexDirection: "row", alignItems: "flex-end", height: H, gap: 5 }}>
           {days.map((d, i) => (
             <Pressable key={d.day} testID={`day-${i}`} accessibilityRole="button" accessibilityState={{ selected: i === pick }} accessibilityLabel={`${dayName(d.day, i === days.length - 1)}: ${d.xp} points`} onPress={() => setPick(i)} style={{ flex: 1, height: H, justifyContent: "flex-end" }} hitSlop={{ top: 12, bottom: 12 }}>
-              <DayBar i={i} h={Math.max(3, (d.xp / max) * H)} color={i === pick ? (c.dark ? c.primary : c.ink) : c.cardLine} />
+              <Rise i={i} h={Math.max(6, (d.xp / max) * H)} radius={5} color={i === pick ? (c.dark ? c.lime : c.ink) : c.cardLine} />
             </Pressable>
           ))}
         </View>
@@ -76,64 +83,63 @@ function Days({ days }: { days: Progress["days"] }) {
   );
 }
 
-function Topics({ items }: { items: TopicScore[] }) {
-  return (
-    <RowList>
-      {items.map((t) => (
-        <Row key={t.id} title={t.title} trailing={`${Math.round(t.p * 100)}%`} onPress={() => openTarget(t.studyTarget ?? t.practiceTarget)} />
-      ))}
-    </RowList>
-  );
+/** One topic: a small ring with how often you get it right, and where a tap takes you. */
+function TopicRow({ t }: { t: TopicScore }) {
+  const pct = Math.round(t.p * 100);
+  return <Row title={t.title} meta={`Right about ${pct} times in 100`} icon={<ProgressRing pct={pct} size={30} stroke={4} delay={200} />} onPress={() => openTarget(t.studyTarget ?? t.practiceTarget)} accessibilityLabel={`${t.title}. Right about ${pct} times in 100. Open it`} />;
 }
 
-/** Overview: numbers in one row, each course's line, the last two weeks. */
-export function ProgressOverview({ p }: { p: Progress }) {
+/** The numbers when there is no journey to show (a lectures account): from Progress alone. */
+function BasicStats({ p }: { p: Progress }) {
   const lect = p.lectures.reduce((a, l) => ({ done: a.done + l.completed, total: a.total + l.total }), { done: 0, total: 0 });
   return (
-    <>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[6], rowGap: space[4] }}>
-        <Stat value={`${lect.done}/${lect.total}`} label="Lectures" />
-        {p.study ? <Stat value={`${p.study.modulesDone}/${p.study.modulesTotal}`} label="Modules" /> : null}
-        {p.study ? p.study.streak > 0 ? <Stat value={String(p.study.streak)} label="Day streak" /> : <Stat value="Start today" label="Day streak" /> : null}
-        {p.study && p.study.seconds > 0 ? <Stat value={hours(p.study.seconds)} label="Studied" /> : null}
-      </View>
-      {p.lectures.map((l) => {
-        const pct = l.total ? Math.round((l.completed / l.total) * 100) : 0;
-        return (
-          <View key={l.courseId} style={{ gap: space[2] }}>
-            <T v="small" tone="muted">
-              {l.title} · {pct}%
-            </T>
-            <ProgressLine value={pct} label={`${l.title}: ${pct}%`} />
-          </View>
-        );
-      })}
-      {p.days.length ? (
-        <Section title="Last two weeks" quiet>
-          <Days days={p.days} />
-        </Section>
-      ) : null}
-    </>
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[3] }}>
+      <StatStone value={`${lect.done}/${lect.total}`} label="Lectures" />
+      {p.study ? <StatStone value={`${p.study.modulesDone}/${p.study.modulesTotal}`} label="Modules" /> : null}
+      {p.study && p.study.seconds > 0 ? <StatStone value={hours(p.study.seconds)} label="Studied" /> : null}
+    </View>
   );
 }
 
-/** Topics: what needs work and what is strongest. */
-export function ProgressTopics({ p }: { p: Progress }) {
-  if (p.strengths?.hasData)
-    return (
-      <>
-        <Section title="Needs work" quiet>
-          <Topics items={p.strengths.weakest} />
-        </Section>
-        <Section title="Strongest" quiet>
-          <Topics items={p.strengths.strongest} />
-        </Section>
-      </>
-    );
-  return <EmptyState title="Your topics show up soon" body="Answer a few practice questions and we will show where you are strong and what needs work." />;
+function Courses({ p }: { p: Progress }) {
+  return (
+    <Stone>
+      <View style={{ gap: space[4] }}>
+        {p.lectures.map((l) => {
+          const pct = l.total ? Math.round((l.completed / l.total) * 100) : 0;
+          return (
+            <View key={l.courseId} style={{ gap: space[2] }}>
+              <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: space[3] }}>
+                <T v="bodyStrong" style={{ flex: 1 }}>
+                  {l.title}
+                </T>
+                <T v="small" tone="muted" num>
+                  {l.completed} of {l.total}
+                </T>
+              </View>
+              <ProgressLine value={pct} height={8} label={`${l.title}: ${l.completed} of ${l.total} lectures`} />
+            </View>
+          );
+        })}
+        {p.study ? (
+          <View style={{ gap: space[2] }}>
+            <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: space[3] }}>
+              <T v="bodyStrong" style={{ flex: 1 }}>
+                Reading
+              </T>
+              <T v="small" tone="muted" num>
+                {p.study.sectionsDone} of {p.study.sectionsTotal} sections
+              </T>
+            </View>
+            <ProgressLine value={p.study.sectionsTotal ? (p.study.sectionsDone / p.study.sectionsTotal) * 100 : 0} height={8} label={`Reading: ${p.study.sectionsDone} of ${p.study.sectionsTotal} sections`} />
+          </View>
+        ) : null}
+      </View>
+    </Stone>
+  );
 }
 
-/** Badges earned as a quiet grid, then the badges still to earn. */
+/** Badges earned as a grid on one stone, then the badges still to earn. */
 function BadgesPart({ a }: { a: Achievements }) {
   const [badge, setBadge] = React.useState<Credential | BadgeProgress | null>(null);
   const close = React.useCallback(() => setBadge(null), []);
@@ -142,24 +148,22 @@ function BadgesPart({ a }: { a: Achievements }) {
   return (
     <>
       {badges.length ? (
-        <View style={{ flexDirection: "row", flexWrap: "wrap" }} testID="progress-badges">
-          {badges.map((b, i) => (
-            <Badge key={b.credentialId} b={b} i={i} onPress={() => setBadge(b)} />
-          ))}
-        </View>
+        <Stone pad={space[2]}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }} testID="progress-badges">
+            {badges.map((b, i) => (
+              <Badge key={b.credentialId} b={b} i={i} onPress={() => setBadge(b)} />
+            ))}
+          </View>
+        </Stone>
       ) : (
-        <T tone="muted" testID="badges-empty">
-          Badges come from studying, practising and finishing lectures.
-        </T>
+        <QuietNote testID="badges-empty" title="No badges yet" body="Badges come from studying, practising and finishing lectures." />
       )}
       {toEarn.length ? (
-        <Section title="Still to earn" quiet>
-          <RowList>
-            {toEarn.map((p) => (
-              <Row key={p.id} title={p.title} meta={p.description ?? undefined} trailing={p.progress} onPress={() => setBadge(p)} chevron={false} />
-            ))}
-          </RowList>
-        </Section>
+        <Group title="Still to earn">
+          {toEarn.map((p) => (
+            <Row key={p.id} title={p.title} meta={p.description ?? undefined} trailing={p.progress} onPress={() => setBadge(p)} chevron={false} />
+          ))}
+        </Group>
       ) : null}
       <Sheet open={!!badge} onClose={close} title={badge?.title}>
         <View style={{ gap: space[3] }}>
@@ -173,54 +177,121 @@ function BadgesPart({ a }: { a: Achievements }) {
   );
 }
 
-/**
- * Progress: one screen for how you are doing, in sections. Overview, Topics,
- * Map, Journey (level and numbers) and Badges. My journey and Badges used to
- * be screens of their own; their links open here.
- */
+function streakTitle(days: number): string {
+  return days > 0 ? `${days} day${days === 1 ? "" : "s"} in a row` : "No streak yet";
+}
+
 export function ProgressScreen() {
   const c = useTheme();
   const me = useMe().data;
   const q = useProgress();
-  // Lecture-only accounts have no journey (can.journey false): the section would only say "not open".
+  // Lecture-only accounts have no journey (can.journey false).
   const showJourney = !me?.access?.blocks?.includes("journey") && me?.access?.can?.journey !== false;
   const showBadges = me?.access?.can?.achievements !== false;
+  const showBoard = !me?.access?.lecturesOnly && me?.access?.can?.leaderboard !== false;
   const j = useJourney();
   const a = useAchievements();
+  const study = q.data?.study;
   return (
-    <Screen testID="progress" onRefresh={() => void Promise.all([q.refetch(), showJourney ? j.refetch() : null, showBadges ? a.refetch() : null])} refreshing={q.isRefetching}>
-      <Stack.Screen options={{ title: "Progress" }} />
-      <Section title="Overview">
-        <Loaded q={q} what="your progress" skeleton={<RowsSkeleton rows={4} />}>
-          {(p) => <ProgressOverview p={p} />}
-        </Loaded>
-      </Section>
-      {q.data?.study ? (
-        <>
-          <Section title="Topics">
-            <ProgressTopics p={q.data} />
-          </Section>
-          <Section title="Map">
-            <RowList>
-              <Row testID="progress-map" icon={<MapIcon size={20} color={c.ink} />} title="Your full map" meta="Every topic and how well you know it" onPress={() => router.push("/map")} />
-            </RowList>
-          </Section>
-        </>
-      ) : null}
-      {showJourney ? (
-        <Section title="Journey">
-          <Loaded q={j} soon="/journey" what="your journey" skeleton={<RowsSkeleton rows={3} />}>
-            {(d) => <JourneyBody j={d} />}
-          </Loaded>
-        </Section>
-      ) : null}
-      {showBadges ? (
-        <Section title="Badges">
-          <Loaded q={a} what="your badges" skeleton={<RowsSkeleton rows={2} />}>
-            {(d) => <BadgesPart a={d} />}
-          </Loaded>
-        </Section>
-      ) : null}
+    <Screen
+      testID="progress"
+      title="Progress"
+      lead="How you are doing, in one place."
+      gap={space[5]}
+      onRefresh={() => void Promise.all([q.refetch(), showJourney ? j.refetch() : null, showBadges ? a.refetch() : null])}
+      refreshing={q.isRefetching}
+      field={study ? <FieldCard testID="progress-streak" live={study.streak > 0} title={streakTitle(study.streak)} meta={study.streak > 0 ? `Your best so far is ${Math.max(study.bestStreak, study.streak)}` : "Study or practise today to start one"} /> : undefined}
+    >
+      <Stack.Screen options={{ title: "" }} />
+      <Load q={q} what="your progress" skeleton={<HubSkeleton />}>
+        {(p) => (
+          <View style={{ gap: space[5] }}>
+            <View style={{ gap: space[3] }}>
+              {showJourney && j.data ? (
+                <>
+                  <Enter i={0}>
+                    <LevelStone j={j.data} onPress={showBoard ? () => router.push("/game/leaderboard") : undefined} />
+                  </Enter>
+                  <Enter i={1}>
+                    <JourneyStats stats={j.data.stats} />
+                  </Enter>
+                </>
+              ) : (
+                <Enter i={0}>
+                  <BasicStats p={p} />
+                </Enter>
+              )}
+            </View>
+
+            {p.lectures.length ? (
+              <Enter i={2} style={{ gap: space[2] }}>
+                <Label>Your courses</Label>
+                <Courses p={p} />
+              </Enter>
+            ) : null}
+
+            {p.days.length ? (
+              <Enter i={3} style={{ gap: space[2] }}>
+                <Label>Last two weeks</Label>
+                <Stone>
+                  <Days days={p.days} />
+                </Stone>
+              </Enter>
+            ) : null}
+
+            {p.study ? (
+              <View style={{ gap: space[3] }}>
+                {p.strengths?.hasData ? (
+                  <>
+                    <Group title="Needs work">
+                      {p.strengths.weakest.map((t) => (
+                        <TopicRow key={t.id} t={t} />
+                      ))}
+                    </Group>
+                    <Group title="Strongest">
+                      {p.strengths.strongest.map((t) => (
+                        <TopicRow key={t.id} t={t} />
+                      ))}
+                    </Group>
+                  </>
+                ) : (
+                  <>
+                    <Label>Topics</Label>
+                    <QuietNote testID="topics-empty" title="Your topics show up soon" body="Answer a few practice questions and we will show where you are strong and what needs work." action={{ label: "Practise now", onPress: () => go("/practise") }} />
+                  </>
+                )}
+                <Stone grow={() => router.push("/map")} testID="progress-map" accessibilityLabel="Your full map. Every topic and how well you know it">
+                  <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+                    <IconPatch icon={MapIcon} area="learn" />
+                    <View style={{ flex: 1, minWidth: 0 }}>
+                      <T v="bodyStrong">Your full map</T>
+                      <T v="small" tone="muted">
+                        Every topic and how well you know it
+                      </T>
+                    </View>
+                    <ArrowRight size={20} color={c.muted} />
+                  </View>
+                </Stone>
+              </View>
+            ) : null}
+
+            {showBadges ? (
+              <View style={{ gap: space[3] }}>
+                <Label action={<Button kind="text" small full={false} label="Certificates" onPress={() => go("/certificates")} testID="progress-certificates" />}>Badges</Label>
+                <Load q={a} what="your badges" skeleton={<View style={{ height: 120, borderRadius: layout.radiusLg, backgroundColor: c.skeleton }} />}>
+                  {(d) => <BadgesPart a={d} />}
+                </Load>
+              </View>
+            ) : null}
+
+            {showJourney && j.data ? (
+              <T v="caption" tone="muted" style={{ paddingHorizontal: space[1] }}>
+                Your numbers are private to you and your faculty.
+              </T>
+            ) : null}
+          </View>
+        )}
+      </Load>
     </Screen>
   );
 }
