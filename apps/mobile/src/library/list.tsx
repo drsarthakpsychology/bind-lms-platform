@@ -9,7 +9,6 @@ import { api } from "@/auth";
 import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, StillTrying, T, useProgressive } from "@/ds";
 import { recentMedicines } from "@/lib/recent";
 import { SoonState } from "@/practise/soon";
-import { TabTop } from "@/nav/top";
 import type { MedicineList } from "@/practise/types";
 import type { MedicinePage } from "@/practise/contract";
 import { layout, space, type as scale, useTheme } from "@/theme";
@@ -21,7 +20,7 @@ export const libraryKeys = { list: ["library", "medicines"] as const, med: (id: 
 export const useMedicineList = () => useQuery({ queryKey: libraryKeys.list, queryFn: () => api.get<MedicineList>("/library/medicines"), staleTime: 60 * 60_000 });
 export const useMedicinePage = (id: string) => useQuery({ queryKey: libraryKeys.med(id), queryFn: () => api.get<MedicinePage>(`/library/medicines/${encodeURIComponent(id)}`), staleTime: 60 * 60_000, enabled: !!id });
 
-/** Search, one row of group chips, then every medicine. Nothing is hidden or cut. */
+/** Search, one row of group chips, then every medicine. Nothing is hidden or cut. Opens from the Notes tab (route /medicines). */
 export function LibraryScreen() {
   const c = useTheme();
   const q = useMedicineList();
@@ -38,7 +37,7 @@ export function LibraryScreen() {
   const recent = filtering || !q.data ? [] : recentIds.map((id) => q.data!.rows.find((r) => r.id === id)).filter((r): r is NonNullable<typeof r> => !!r).slice(0, 3);
   const row = (m: (typeof rows)[number], prefix = "med") => <Row key={m.id} testID={`${prefix}-${m.id}`} icon={<ClassMark group={m.group} spine />} title={m.name} meta={`${m.cls}${m.dose ? ` · usual ${m.dose}` : ""}${m.brands.length ? ` · ${m.brands.slice(0, 2).join(", ")}` : ""}`} onPress={() => router.push(`/medicine/${encodeURIComponent(m.id)}`)} />;
   return (
-    <Screen tab area="library" top={<TabTop />} title="Medicines" testID="library" gap={space[4]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen area="library" title="Medicines" testID="library" gap={space[4]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.primary, borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card, paddingLeft: space[4] }}>
         <Search size={18} color={c.muted} />
         <TextInput testID="library-search" value={text} onChangeText={setText} placeholder="Name, brand, group or condition" placeholderTextColor={c.muted} accessibilityLabel="Search medicines by name, brand, group or use" autoCorrect={false} autoCapitalize="none" returnKeyType="search" maxFontSizeMultiplier={1.4} style={[scale.body, { flex: 1, color: c.ink, minHeight: layout.target }, { outlineStyle: "none" } as object]} />

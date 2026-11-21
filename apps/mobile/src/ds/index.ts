@@ -9,6 +9,12 @@
  *   Hero      the one thing to do on this screen (one per screen)
  *   Button    primary (the one hard shadow), quiet, text, danger
  *   Stat, ProgressLine, Skeleton, EmptyState, Sheet, Toast, Field
+ *
+ * The Layers look (docs/DESIGN.md), in ./layers and ./jyo:
+ *   Screen (field + layer), FieldCard, Label, Pebbles, OptionList,
+ *   ResultSheet, HoldButton, ChoicePebbles, Flood, HintBubble, FieldProgress,
+ *   QuietEmpty, RoundButton, Jyo
+ * (`Sheet` is the bottom sheet you can drag; `ResultSheet` is the answer rising.)
  */
 export * from "./text";
 export * from "./button";
@@ -22,3 +28,5 @@ export * from "./slider";
 export * from "./quiz";
 export * from "./progressive";
 export * from "./meme";
+export * from "./layers";
+export * from "./jyo";

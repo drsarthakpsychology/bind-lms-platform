@@ -97,15 +97,16 @@ export function useAccent(): Swatch & { on: boolean } {
 }
 
 /**
- * For a screen with a fixed dark top (the lecture player): light status bar
- * icons while it is in front, back to the theme's when it leaves.
+ * For a screen with a dark top (the blue field, the lecture player): light
+ * status bar icons while it is in front, back to the theme's when it leaves.
  */
-export function useLightStatusBar() {
+export function useLightStatusBar(on = true) {
   const c = useTheme();
   useFocusEffect(
     React.useCallback(() => {
+      if (!on) return;
       setStatusBarStyle("light");
       return () => setStatusBarStyle(c.dark ? "light" : "dark");
-    }, [c.dark]),
+    }, [c.dark, on]),
   );
 }

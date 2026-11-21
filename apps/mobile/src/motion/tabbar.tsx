@@ -1,14 +1,14 @@
 import type { BottomTabBarProps, BottomTabNavigationOptions } from "expo-router/build/layouts/Tabs";
 import * as React from "react";
-import { Animated as RNAnimated, Easing as RNEasing, Pressable, View, type LayoutChangeEvent } from "react-native";
-import Animated, { interpolate, interpolateColor, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import { Platform, Pressable, View, type LayoutChangeEvent, type ViewStyle } from "react-native";
+import Animated, { interpolate, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
 import { reportTabBar } from "@/ds/bottom-chrome";
 import { T } from "@/ds/text";
 import { KeyboardState, useKeyboard } from "@/lib/keyboard";
 import { fonts, useTheme, type Area } from "@/theme";
-import { dur, shift, springs } from "./tokens";
+import { springs } from "./tokens";
 
 export type TabIcon = React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>;
 
@@ -18,9 +18,11 @@ export function tabSwitchCount(): number {
   return switches;
 }
 
-const PILL_W = 60;
-const PILL_H = 32;
-const BAR_H = 64;
+const PILL_H = 42;
+const BAR_H = 56;
+/** Icons of the tabs you are not on: soft white on the dark pill, both themes. */
+const BAR_FG = "rgba(255,255,255,0.72)";
+const barShadow: ViewStyle = Platform.OS === "web" ? ({ boxShadow: "0 14px 26px -12px rgba(0,0,0,0.6)" } as ViewStyle) : Platform.OS === "android" ? { elevation: 8 } : { shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 12, shadowOffset: { width: 0, height: 8 } };
 
 /**
  * The bar follows the keyboard (UI thread, frame by frame, through the app's
@@ -47,25 +49,11 @@ function useKeyboardBar(barH: number) {
   return { up, style };
 }
 
-function TabItem({ label, Icon, focused, onPress, onLongPress, a11y, area }: { label: string; Icon?: TabIcon; focused: boolean; onPress: () => void; onLongPress: () => void; a11y?: string; area?: Area }) {
+function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: string; Icon?: TabIcon; focused: boolean; onPress: () => void; onLongPress: () => void; a11y?: string }) {
   const c = useTheme();
   const reduce = useReducedMotion();
-  const pop = useSharedValue(1);
   const press = useSharedValue(0);
-  const first = React.useRef(true);
-  React.useEffect(() => {
-    // Pop the icon when this tab becomes the current one (not on first mount).
-    if (first.current) {
-      first.current = false;
-      return;
-    }
-    if (focused && !reduce) pop.set(withSequence(withTiming(0.82, { duration: 90 }), withSpring(1, springs.bouncy)));
-  }, [focused, reduce, pop]);
-  const iconStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: pop.value * (1 - press.value * 0.08) }, { translateY: -press.value }],
-  }));
-  // The current tab wears its area's deep colour (4.5:1 or more on the wash pill, both themes).
-  const color = focused ? (area ? c.areas[area].deep : c.link) : c.muted;
+  const iconStyle = useAnimatedStyle(() => ({ transform: [{ scale: 1 - press.value * 0.08 }] }));
   return (
     <Pressable
       accessibilityRole="tab"
@@ -79,90 +67,45 @@ function TabItem({ label, Icon, focused, onPress, onLongPress, a11y, area }: { l
       onPressOut={() => {
         press.set(reduce ? 0 : withSpring(0, springs.press));
       }}
-      style={{ flex: 1, height: BAR_H, alignItems: "center", justifyContent: "center", gap: 2 }}
+      hitSlop={{ top: 10, bottom: 10 }}
+      style={{ flexGrow: focused ? 0 : 1, flexShrink: 0, minWidth: PILL_H, height: PILL_H, alignItems: "center", justifyContent: "center" }}
     >
-      <Animated.View style={[{ height: PILL_H, alignItems: "center", justifyContent: "center" }, iconStyle]}>{Icon ? <Icon size={24} color={color} strokeWidth={focused ? 2.4 : 2} /> : null}</Animated.View>
-      <T
-        allowFontScaling={false}
-        numberOfLines={1}
-        style={{
-          fontFamily: focused ? fonts.bold : fonts.semibold,
-          fontSize: 12,
-          lineHeight: 16,
-          color,
-        }}
-      >
-        {label}
-      </T>
+      {/* The current tab is the lime pill and the only one that shows its name; the others are icons (their names are still read aloud). */}
+      <Animated.View testID={focused ? "tab-current" : undefined} style={[{ height: PILL_H, borderRadius: PILL_H / 2, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingLeft: focused ? 12 : 0, paddingRight: focused ? 15 : 0, backgroundColor: focused ? c.lime : "transparent" }, iconStyle]}>
+        {Icon ? <Icon size={20} color={focused ? c.onLime : BAR_FG} strokeWidth={focused ? 2.3 : 2} /> : null}
+        {focused ? (
+          <T allowFontScaling={false} numberOfLines={1} style={{ fontFamily: fonts.bold, fontSize: 13, lineHeight: 17, color: c.onLime }}>
+            {label}
+          </T>
+        ) : null}
+      </Animated.View>
     </Pressable>
   );
 }
 
 /**
- * The bottom tab bar with motion: a soft pill sits behind the current tab's
- * icon and springs to the tab you press, stretching a little as it travels
- * (it reads as one thing moving, never two indicators crossing). The icon
- * pops on arrival and presses sink slightly. No haptic: switching tabs is
- * navigation. With Reduce Motion the pill jumps and nothing pops.
+ * The bottom tab bar: a dark pill floating over the layer, an icon for each
+ * tab, and the current tab as a lime pill with its name. Tabs switch at once
+ * (they are peers, used all day: no slide, no travelling indicator). Presses
+ * sink slightly. No haptic: switching tabs is navigation.
  *
- * Pass as `tabBar` to Expo Router's <Tabs>; give each screen
- * `options.tabBarIcon` as a plain icon component via `tabIcons`.
+ * Pass as `tabBar` to Expo Router's <Tabs>; give each screen its icon via `icons`.
  */
-export function MotionTabBar({ state, descriptors, emitter, navigateToTab, insets, icons, areas }: BottomTabBarProps & { icons: Record<string, TabIcon>; /** Each tab's area: the pill washes into that colour as it travels. */ areas?: Record<string, Area | undefined> }) {
+export function MotionTabBar({ state, descriptors, emitter, navigateToTab, insets, icons }: BottomTabBarProps & { icons: Record<string, TabIcon>; /** Kept for older callers; the bar no longer wears area colours. */ areas?: Record<string, Area | undefined> }) {
   const c = useTheme();
-  const reduce = useReducedMotion();
   const kb = useKeyboardBar(BAR_H + insets.bottom);
   // Tell the toast how tall the bar is (nothing while it is behind the keyboard).
   React.useEffect(() => {
     if (kb.up) reportTabBar(0);
   }, [kb.up]);
   React.useEffect(() => () => reportTabBar(0), []);
-  const n = state.routes.length;
-  const itemW = useSharedValue(0);
-  const x = useSharedValue(state.index);
-  React.useEffect(() => {
-    x.set(reduce ? state.index : withSpring(state.index, springs.snappy));
-  }, [state.index, reduce, x]);
   React.useEffect(() => {
     switches += 1;
   }, [state.index]);
-  // One colour per tab (its area's wash, or the plain pill), blended on the UI thread as the pill travels.
-  const washes = state.routes.map((r) => {
-    const a = areas?.[r.name];
-    return a ? c.areas[a].wash : c.pill;
-  });
-  const steps = washes.map((_, i) => i);
-  const tinted = washes.length > 1 && washes.some((w) => w !== c.pill);
-  const pill = useAnimatedStyle(() => {
-    const w = itemW.value;
-    const target = Math.round(x.value);
-    // Stretch while travelling: up to 1.6x wide halfway between tabs.
-    const travel = Math.min(1, Math.abs(x.value - target) * 2);
-    return {
-      opacity: w > 0 ? 1 : 0,
-      backgroundColor: tinted ? interpolateColor(x.value, steps, washes) : washes[0] ?? "transparent",
-      transform: [{ translateX: x.value * w + (w - PILL_W) / 2 }, { scaleX: 1 + travel * 0.6 }, { scaleY: 1 - travel * 0.12 }],
-    };
-  });
   if (kb.up) return null;
   return (
-    <Animated.View onLayout={(e: LayoutChangeEvent) => reportTabBar(Math.round(e.nativeEvent.layout.height))} style={[{ backgroundColor: c.card, borderTopWidth: 1, borderColor: c.hairline, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }, kb.style]}>
-      <View accessibilityRole="tablist" style={{ flexDirection: "row", height: BAR_H }} onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}>
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            {
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: PILL_W,
-              height: PILL_H,
-              marginTop: (BAR_H - PILL_H - 18) / 2,
-              borderRadius: PILL_H / 2,
-            },
-            pill,
-          ]}
-        />
+    <Animated.View onLayout={(e: LayoutChangeEvent) => reportTabBar(Math.round(e.nativeEvent.layout.height))} style={[{ backgroundColor: c.bg, paddingBottom: Math.max(insets.bottom, 10), paddingTop: 6, paddingLeft: insets.left, paddingRight: insets.right, alignItems: "center" }, kb.style]}>
+      <View accessibilityRole="tablist" testID="tab-bar" style={[{ flexDirection: "row", alignItems: "center", gap: 2, height: BAR_H, width: "100%", maxWidth: 340, paddingHorizontal: 7, borderRadius: BAR_H / 2, backgroundColor: c.dark ? "#2a2e3b" : "#12131a" }, barShadow]}>
         {state.routes.map((route, index) => {
           const focused = index === state.index;
           const options = descriptors[route.key]?.options as BottomTabNavigationOptions | undefined;
@@ -174,7 +117,6 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
               Icon={icons[route.name]}
               focused={focused}
               a11y={options?.tabBarAccessibilityLabel}
-              area={areas?.[route.name]}
               onPress={() => {
                 const event = emitter.emit({
                   type: "tabPress",
@@ -193,26 +135,9 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
 }
 
 /**
- * Tab screens switch with Material's "fade through": the old tab fades out in
- * the first third, the new one fades in and lifts 8px into place after it, so
- * two pages of text never show at once (220ms, native driver). Low-end
- * Android: the fade alone (no lift). Off with Reduce Motion.
+ * Tabs switch at once: they are peers, pressed dozens of times a session, so
+ * nothing slides or fades between them (docs/DESIGN.md, motion rule 2).
  */
-export function tabSceneOptions(reduce: boolean, low = false): Pick<BottomTabNavigationOptions, "animation" | "sceneStyleInterpolator" | "transitionSpec"> {
-  if (reduce) return { animation: "none" };
-  return {
-    animation: "shift",
-    transitionSpec: {
-      animation: "timing",
-      config: { duration: dur.tabOut + dur.tabIn, easing: RNEasing.bezier(0.2, 0, 0, 1) },
-    },
-    sceneStyleInterpolator: ({ current }: { current: { progress: RNAnimated.Value } }) => ({
-      sceneStyle: low
-        ? { opacity: current.progress.interpolate({ inputRange: [-1, -0.5, 0, 0.5, 1], outputRange: [0, 0, 1, 0, 0] }) }
-        : {
-            opacity: current.progress.interpolate({ inputRange: [-1, -0.5, 0, 0.5, 1], outputRange: [0, 0, 1, 0, 0] }),
-            transform: [{ translateY: current.progress.interpolate({ inputRange: [-1, 0, 1], outputRange: [shift.tab, 0, shift.tab] }) }],
-          },
-    }),
-  };
+export function tabSceneOptions(_reduce?: boolean, _low?: boolean): Pick<BottomTabNavigationOptions, "animation"> {
+  return { animation: "none" };
 }

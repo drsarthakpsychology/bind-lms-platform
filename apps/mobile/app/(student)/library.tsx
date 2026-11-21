@@ -1,1 +1,1 @@
-export { LibraryScreen as default } from "@/library/list";
+export { NotesHubScreen as default } from "@/screens/notes/hub";

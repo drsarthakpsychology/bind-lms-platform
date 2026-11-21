@@ -6,7 +6,7 @@ import Animated, { useReducedMotion } from "react-native-reanimated";
 import type { Block, BoxKind, ListItem } from "@/api/contract";
 import { T } from "@/ds/text";
 import { presets } from "@/motion";
-import { layout, space, useTheme } from "@/theme";
+import { layout, space, useTheme, fonts } from "@/theme";
 import { Rich } from "./rich";
 import { WidgetView, type WidgetContext } from "./widgets";
 
@@ -61,7 +61,7 @@ function Table({ head, rows }: { head: string[]; rows: string[][] }) {
         <View style={{ flexDirection: "row", borderBottomWidth: 1.5, borderColor: c.ink }}>
           {head.map((h, i) => (
             <View key={i} style={{ width: col, paddingVertical: space[2], paddingRight: space[3] }}>
-              <Rich text={h} v="small" style={{ fontFamily: "Archivo-700" }} />
+              <Rich text={h} v="small" style={{ fontFamily: fonts.bold }} />
             </View>
           ))}
         </View>

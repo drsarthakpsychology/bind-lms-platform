@@ -121,7 +121,7 @@ export function SearchScreen() {
   const shortcuts = [
     { id: "lectures", name: "Lectures", href: "/lectures", show: can?.lectures !== false },
     { id: "notes", name: "Notes", href: "/notes", show: studyOpen },
-    { id: "medicines", name: "Medicines", href: "/library", show: medsOpen },
+    { id: "medicines", name: "Medicines", href: "/medicines", show: medsOpen },
     { id: "reference", name: "Quick reference", href: "/reference", show: studyOpen },
   ].filter((x) => x.show);
   const open = (href: string) => {

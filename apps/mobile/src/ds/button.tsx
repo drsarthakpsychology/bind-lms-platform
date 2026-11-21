@@ -1,21 +1,22 @@
 import * as React from "react";
-import { ActivityIndicator, Pressable, View, type StyleProp, type ViewStyle } from "react-native";
+import { ActivityIndicator, Pressable, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
 
 import { useOffline } from "@/api/online";
 import { crumb } from "@/lib/breadcrumb";
 import { curves, dur } from "@/motion";
-import { layout, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { T } from "./text";
 
-const SHADOW = 3;
 const ease = curves.standard;
 
 type ButtonProps = {
   label: string;
   onPress?: () => void;
-  /** primary: lime with the hard shadow (one per screen). quiet: an outline. text: words only. danger: red words. */
-  kind?: "primary" | "quiet" | "text" | "danger";
+  /** primary: the lime pill (one per screen). quiet: a stone pill. ink: the dark pill on a result. text: words only. danger: red words. */
+  kind?: "primary" | "quiet" | "ink" | "text" | "danger";
+  /** A 40px pill for a row or the field ("Scan in"). */
+  small?: boolean;
   icon?: React.ReactNode;
   disabled?: boolean;
   /** Shows a small spinner in place of the icon and blocks presses. */
@@ -30,19 +31,18 @@ type ButtonProps = {
 };
 
 /**
- * Buttons. The primary one is the only lime thing on a screen besides
- * progress, and the only thing with a hard shadow: on press it moves 3px into
- * its shadow over 120ms. No haptic: the result of the action
- * gives one when it matters (saved, wrong, done).
+ * Buttons are pills. The primary one is lime: the one live thing on a screen.
+ * On press a button sinks to 0.97 over 120ms. No haptic: the result of the
+ * action gives one when it matters (saved, wrong, done).
  */
-export function Button({ label, onPress, kind = "primary", icon, disabled, busy, needsServer, full, testID, accessibilityHint, style }: ButtonProps) {
+export function Button({ label, onPress, kind = "primary", small, icon, disabled, busy, needsServer, full, testID, accessibilityHint, style }: ButtonProps) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const down = useSharedValue(0);
   const offline = useOffline();
   const blocked = disabled || busy || (!!needsServer && offline);
   const hint = needsServer && offline ? "Needs the internet" : accessibilityHint;
-  const moved = useAnimatedStyle(() => ({ transform: [{ translateX: down.value * SHADOW }, { translateY: down.value * SHADOW }] }));
+  const sunk = useAnimatedStyle(() => ({ transform: [{ scale: 1 - down.value * 0.03 }] }));
   const faded = useAnimatedStyle(() => ({ opacity: 1 - down.value * 0.35, transform: [{ scale: 1 - down.value * 0.03 }] }));
   const pressIn = () => {
     down.value = reduce ? 1 : withTiming(1, { duration: dur.press, easing: ease });
@@ -81,30 +81,13 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
     );
   }
 
-  if (kind === "quiet") {
-    return (
-      <Pressable {...a11y} testID={testID} onPress={press} onPressIn={pressIn} onPressOut={pressOut} disabled={blocked} style={[{ alignSelf: full === false ? "flex-start" : "stretch", opacity: blocked ? 0.5 : 1 }, style]}>
-        <Animated.View style={[{ minHeight: layout.target, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, faded]}>
-          <T v="button" center style={{ flexShrink: 1 }}>
-            {label}
-          </T>
-          {busy ? <ActivityIndicator size="small" color={c.muted} /> : icon}
-        </Animated.View>
-      </Pressable>
-    );
-  }
-
+  // Pills. primary: lime, the one live thing. quiet: stone. ink: your choice, confirmed (the button on a result).
+  const fill = blocked ? c.card : kind === "primary" ? c.primary : kind === "ink" ? c.ink : c.card;
+  const tone = blocked ? "muted" : kind === "primary" ? "onPrimary" : kind === "ink" ? "onInk" : "ink";
   return (
-    <Pressable {...a11y} testID={testID} onPress={press} onPressIn={pressIn} onPressOut={pressOut} disabled={blocked} style={[{ alignSelf: full === false ? "flex-start" : "stretch", paddingRight: SHADOW, paddingBottom: SHADOW }, style]}>
-      {/* the hard shadow: a solid block 3px down and right */}
-      <View pointerEvents="none" style={{ position: "absolute", left: SHADOW, top: SHADOW, right: 0, bottom: 0, borderRadius: layout.radius, backgroundColor: blocked ? "transparent" : c.shadow }} />
-      <Animated.View
-        style={[
-          { minHeight: layout.primary, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 2, borderColor: blocked ? c.cardLine : c.dark ? c.onPrimary : c.line, backgroundColor: blocked ? c.tint : c.primary, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] },
-          blocked ? null : moved,
-        ]}
-      >
-        <T v="button" tone={blocked ? "muted" : "onPrimary"} center style={{ flexShrink: 1 }}>
+    <Pressable {...a11y} testID={testID} onPress={press} onPressIn={pressIn} onPressOut={pressOut} disabled={blocked} hitSlop={small ? 6 : 0} style={[{ alignSelf: full === false || small ? "flex-start" : "stretch", opacity: blocked && kind !== "primary" ? 0.6 : 1 }, style]}>
+      <Animated.View style={[{ minHeight: small ? 40 : kind === "primary" || kind === "ink" ? layout.primary : layout.target, paddingHorizontal: small ? space[4] : space[5], paddingVertical: small ? space[2] : space[3], borderRadius: 999, backgroundColor: fill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, sunk]}>
+        <T v={small ? "small" : "button"} tone={tone} center style={[{ flexShrink: 1 }, small ? { fontFamily: fonts.bold } : null]}>
           {label}
         </T>
         {busy ? <ActivityIndicator size="small" color={c.muted} /> : icon}

@@ -1,7 +1,10 @@
 /**
- * Design tokens, ported from the website's v2 system
- * (docs/design/DESIGN_SYSTEM_2026_11.md and src/app/globals.css).
- * Everything visual in the app reads from here.
+ * Design tokens for the "Layers" look (docs/DESIGN.md). A deep blue field is
+ * the place you are in (`field`); a soft white layer rises over it and holds
+ * what you do now (`bg`); stone surfaces rest on the layer (`card`); lime is
+ * the one live thing on screen (`primary`); ink is your current choice.
+ * Everything visual in the app reads from here. The older names (`bg`, `card`,
+ * `primary`, `link`...) still work and now carry the new colours.
  */
 import { dur } from "@/motion/tokens";
 
@@ -19,7 +22,12 @@ export const layout = {
   target: 48,
   /** The primary button. */
   primary: 52,
-  radius: 12,
+  /** Small things on a layer: fields, options, chips, tints. */
+  radius: 18,
+  /** Stone cards and sheets. */
+  radiusLg: 26,
+  /** The top corners of a layer where it rises over the field. */
+  radiusLayer: 30,
   /** Reading text never runs wider than this. */
   readingWidth: 620,
 } as const;
@@ -42,15 +50,22 @@ export const motion = {
   easeOut: [0.16, 1, 0.3, 1] as const,
 } as const;
 
-/** Font files bundled with the app (static cuts of the website's Archivo). */
+/**
+ * Font files bundled with the app. Figtree is for everything read and tapped.
+ * Bricolage Grotesque is for greetings, titles and questions. Archivo stays
+ * for the VIBHA wordmark. Both new families are OFL (assets/fonts/*-OFL.txt).
+ */
 export const fonts = {
-  body: "Archivo-420",
-  medium: "Archivo-500",
-  semibold: "Archivo-600",
-  h3: "Archivo-650",
-  bold: "Archivo-700",
-  h1: "Archivo-750",
-  display: "Archivo-800",
+  body: "Figtree-400",
+  medium: "Figtree-500",
+  semibold: "Figtree-600",
+  h3: "Figtree-700",
+  bold: "Figtree-700",
+  /** Greetings, titles, questions: Bricolage Grotesque. */
+  h1: "Bricolage-600",
+  display: "Bricolage-600",
+  /** The big IN and OUT words. */
+  big: "Bricolage-700",
   wordmark: "Archivo-Wordmark",
   /** Pixel accents: letters and digits. Scores and timers only. */
   pixel: "Silkscreen",
@@ -62,17 +77,19 @@ export const fonts = {
 
 /** Type scale (phone column of the web table). size / line height, weight, tracking. */
 export const type = {
-  display: { fontFamily: fonts.display, fontSize: 34, lineHeight: 38, letterSpacing: -0.68 },
-  h1: { fontFamily: fonts.h1, fontSize: 28, lineHeight: 34, letterSpacing: -0.42 },
-  h2: { fontFamily: fonts.bold, fontSize: 22, lineHeight: 28, letterSpacing: -0.22 },
-  h3: { fontFamily: fonts.h3, fontSize: 18, lineHeight: 24 },
-  body: { fontFamily: fonts.body, fontSize: 16, lineHeight: 25 },
-  bodyStrong: { fontFamily: fonts.semibold, fontSize: 16, lineHeight: 25 },
-  reading: { fontFamily: fonts.body, fontSize: 17, lineHeight: 28 },
+  display: { fontFamily: fonts.display, fontSize: 32, lineHeight: 35, letterSpacing: -0.64 },
+  h1: { fontFamily: fonts.h1, fontSize: 27, lineHeight: 31, letterSpacing: -0.54 },
+  h2: { fontFamily: fonts.h1, fontSize: 21, lineHeight: 25, letterSpacing: -0.21 },
+  h3: { fontFamily: fonts.h3, fontSize: 17, lineHeight: 23 },
+  body: { fontFamily: fonts.body, fontSize: 16, lineHeight: 24 },
+  bodyStrong: { fontFamily: fonts.semibold, fontSize: 16, lineHeight: 24 },
+  reading: { fontFamily: fonts.body, fontSize: 17, lineHeight: 27 },
   small: { fontFamily: fonts.medium, fontSize: 14, lineHeight: 20 },
   caption: { fontFamily: fonts.semibold, fontSize: 12, lineHeight: 16, letterSpacing: 0.24 },
   button: { fontFamily: fonts.bold, fontSize: 16, lineHeight: 22 },
   score: { fontFamily: fonts.pixelDigits, fontSize: 20, lineHeight: 28 },
+  /** A small quiet heading over a group on a layer ("Keep going", "Quick"). */
+  label: { fontFamily: fonts.bold, fontSize: 13, lineHeight: 18 },
 } as const;
 export type TypeName = keyof typeof type;
 
@@ -115,6 +132,22 @@ export type Swatch = { wash: string; deep: string; onDeep: string };
 
 export type Palette = {
   dark: boolean;
+  /** The blue field behind everything: the place you are in. Never a surface for long text. */
+  field: string;
+  /** Text and icons on the field. */
+  onField: string;
+  onFieldMuted: string;
+  /** A soft see-through patch on the field (the "now" pill, round buttons, a progress track). */
+  fieldTint: string;
+  /** The soft white layer that rises over the field (same as `bg`). */
+  layer: string;
+  /** Stone: a surface resting on a layer (same as `card`). */
+  stone: string;
+  /** Lime, the one live thing (same as `primary`). */
+  lime: string;
+  onLime: string;
+  /** A wrong pick: warm, never alarming. */
+  missBg: string;
   /** Area accents (one family per screen; see `Area`). */
   areas: Record<Area, Swatch>;
   /** App canvas. */
@@ -181,42 +214,51 @@ export type Palette = {
 
 export const light: Palette = {
   dark: false,
+  field: "#1d44d8",
+  onField: "#ffffff",
+  onFieldMuted: "rgba(255,255,255,0.8)",
+  fieldTint: "rgba(255,255,255,0.14)",
+  layer: "#fbfaf6",
+  stone: "#efede6",
+  lime: "#cdf24b",
+  onLime: "#12131a",
+  missBg: "#ffd9c9",
   // Contrast, deep on wash / on bg: lime 6.1 / 6.2, blue 6.3 / 6.7, peach 5.2 / 5.5, mint 5.3 / 5.8, lilac 6.1 / 6.7.
   areas: {
-    home: { wash: "#eefac4", deep: "#4a6400", onDeep: "#ffffff" },
-    learn: { wash: "#e8edff", deep: "#1d44d8", onDeep: "#ffffff" },
-    practise: { wash: "#ffe9dc", deep: "#a8431a", onDeep: "#ffffff" },
-    library: { wash: "#d9f1f4", deep: "#0b6b70", onDeep: "#ffffff" },
-    me: { wash: "#eee7ff", deep: "#6430d0", onDeep: "#ffffff" },
+    home: { wash: "#e9f3bd", deep: "#4a6400", onDeep: "#ffffff" },
+    learn: { wash: "#e3e8fb", deep: "#1d44d8", onDeep: "#ffffff" },
+    practise: { wash: "#fbe3d6", deep: "#a8431a", onDeep: "#ffffff" },
+    library: { wash: "#d8eeea", deep: "#0b6b70", onDeep: "#ffffff" },
+    me: { wash: "#e9e2fa", deep: "#6430d0", onDeep: "#ffffff" },
   },
-  bg: "#f5f5f5",
-  card: "#ffffff",
-  ink: "#111111",
-  muted: "#4d4d4d",
+  bg: "#fbfaf6",
+  card: "#efede6",
+  ink: "#12131a",
+  muted: "#565864",
   primary: "#cdf24b",
   onPrimary: "#111111",
   brand: "#1d44d8",
   onBrand: "#ffffff",
   link: "#1d44d8",
-  hairline: "rgba(17,17,17,0.12)",
-  tint: "rgba(17,17,17,0.05)",
-  cardLine: "rgba(17,17,17,0.22)",
-  line: "#111111",
-  shadow: "#111111",
+  hairline: "rgba(18,19,26,0.11)",
+  tint: "rgba(18,19,26,0.05)",
+  cardLine: "rgba(18,19,26,0.22)",
+  line: "#12131a",
+  shadow: "#12131a",
   danger: "#c4271b",
   alertBg: "#fdecea",
   alertFg: "#b42318",
-  successBg: "#eefac4",
-  successFg: "#111111",
-  band: "#111111",
+  successBg: "#eaf6b8",
+  successFg: "#12131a",
+  band: "#12131a",
   onBand: "#ffffff",
-  scrim: "rgba(17,17,17,0.45)",
-  skeleton: "rgba(17,17,17,0.08)",
+  scrim: "rgba(8,12,40,0.5)",
+  skeleton: "rgba(18,19,26,0.08)",
   raised: "#ffffff",
-  faint: "#6b6b6b",
+  faint: "#666874",
   accent: "#1d44d8",
   onAccent: "#ffffff",
-  fieldLine: "rgba(17,17,17,0.5)",
+  fieldLine: "rgba(18,19,26,0.5)",
   selected: "rgba(29,68,216,0.07)",
   pill: "rgba(29,68,216,0.10)",
   switchOn: "#1d44d8",
@@ -234,6 +276,15 @@ export const light: Palette = {
 
 export const dark: Palette = {
   dark: true,
+  field: "#17257a",
+  onField: "#ffffff",
+  onFieldMuted: "rgba(255,255,255,0.78)",
+  fieldTint: "rgba(255,255,255,0.12)",
+  layer: "#13151d",
+  stone: "#21242f",
+  lime: "#cdf24b",
+  onLime: "#12131a",
+  missBg: "#5c2a1a",
   // Contrast, deep on wash / on card: lime 11.7 / 13, blue 7.5 / 8.6, peach 8.9 / 9.9, mint 9.1 / 10, lilac 8.2 / 9.
   areas: {
     home: { wash: "#212a0b", deep: "#cdf24b", onDeep: "#111111" },
@@ -242,36 +293,36 @@ export const dark: Palette = {
     library: { wash: "#0c2927", deep: "#6fd8cc", onDeep: "#111111" },
     me: { wash: "#231a3e", deep: "#c4abff", onDeep: "#111111" },
   },
-  bg: "#0d0d0d",
-  card: "#181818",
-  ink: "#ffffff",
-  muted: "#b5b5b5",
+  bg: "#13151d",
+  card: "#21242f",
+  ink: "#f2f3f7",
+  muted: "#aeb2c0",
   primary: "#cdf24b",
   onPrimary: "#111111",
   brand: "#1d44d8",
   onBrand: "#ffffff",
-  link: "#cdf24b",
-  hairline: "rgba(255,255,255,0.14)",
-  tint: "rgba(255,255,255,0.06)",
-  cardLine: "rgba(255,255,255,0.24)",
-  line: "#ffffff",
+  link: "#b9c6ff",
+  hairline: "rgba(242,243,247,0.13)",
+  tint: "rgba(242,243,247,0.06)",
+  cardLine: "rgba(242,243,247,0.26)",
+  line: "#f2f3f7",
   shadow: "#000000",
   danger: "#ff6b5e",
   alertBg: "#3b1513",
   alertFg: "#ff9a90",
   successBg: "#27300d",
   successFg: "#cdf24b",
-  band: "#ffffff",
-  onBand: "#111111",
-  scrim: "rgba(0,0,0,0.6)",
-  skeleton: "rgba(255,255,255,0.1)",
-  raised: "#222222",
-  faint: "#8f8f8f",
-  accent: "#8fa6ff",
-  onAccent: "#0d0d0d",
-  fieldLine: "rgba(255,255,255,0.42)",
-  selected: "rgba(205,242,75,0.08)",
-  pill: "rgba(205,242,75,0.16)",
+  band: "#f2f3f7",
+  onBand: "#12131a",
+  scrim: "rgba(4,6,20,0.66)",
+  skeleton: "rgba(242,243,247,0.1)",
+  raised: "#2a2e3b",
+  faint: "#8f93a3",
+  accent: "#b9c6ff",
+  onAccent: "#12131a",
+  fieldLine: "rgba(242,243,247,0.42)",
+  selected: "rgba(185,198,255,0.10)",
+  pill: "rgba(185,198,255,0.16)",
   switchOn: "#cdf24b",
   switchThumb: "#111111",
   shimmer: "rgba(255,255,255,0.07)",

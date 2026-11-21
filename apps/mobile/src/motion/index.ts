@@ -12,6 +12,7 @@
  *   tabbar     MotionTabBar, tabSceneOptions
  *   stack      useStackMotion, routeMotion   push, sheet, overlay, play per route
  *   continuity useFromRow, continuity     list row title glides into its page
+ *   grow       growFrom, growOr, useGrowIn, GrowIn   a tapped card grows into the next screen
  *   refresh    useRefresh                   pull to refresh
  *   wins       useNewWins                   celebrate each win once
  *   swap       Swap                         keyed content swaps with no blank frame
@@ -44,3 +45,4 @@ export * from "./tier";
 export * from "./sprite";
 export * from "./celebrate";
 export * from "./continuity";
+export * from "./grow";

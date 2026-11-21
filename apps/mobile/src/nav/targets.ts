@@ -72,10 +72,10 @@ export function nativeFor(web: string | undefined): string | null {
   if (a === "tools" && b === "psychopharm") {
     if (c === "compare") return "/medicine/compare";
     if (c && c !== "learn") return `/medicine/${enc(c)}`;
-    return "/library";
+    return "/medicines";
   }
   if (a === "practice") {
-    if (b === "medicines") return c ? `/medicine/${enc(c)}` : "/library";
+    if (b === "medicines") return c ? `/medicine/${enc(c)}` : "/medicines";
     if (b === "library") return "/case/library";
     if (b === "leaderboard") return "/game/leaderboard";
     return null;
@@ -140,7 +140,7 @@ export function hrefFor(t: AppTarget): string | null {
     case "practice":
       if (!t.tool) return "/practise";
       if (t.tool === "prep") return "/prep";
-      if (t.tool === "medicines") return "/library";
+      if (t.tool === "medicines") return "/medicines";
       if (t.tool.startsWith("case-") || CASE_TOOLS.has(t.tool)) return `/case/${encodeURIComponent(WEB_TOOL[t.tool] ?? t.tool)}`;
       if (WEB_TOOL[t.tool]) return `/case/${WEB_TOOL[t.tool]}`;
       return "/practise";
@@ -227,7 +227,7 @@ export function pathFromLink(input: string): string {
   if ((m = /^\/verify\/([^/]+)$/.exec(p))) return `/verify/${m[1]}`;
   if (p === "/achievements") return "/certificates";
   if (p === "/practise" || p === "/practice") return "/practise";
-  if (p === "/practice/medicines") return "/library";
+  if (p === "/practice/medicines") return "/medicines";
   if ((m = /^\/practice\/medicines\/([^/]+)$/.exec(p))) return `/medicine/${m[1]}`;
   if (p === "/practice/prep" || p === "/exam-prep") return "/prep";
   if (p === "/games/leaderboard" || p === "/practice/leaderboard") return "/game/leaderboard";

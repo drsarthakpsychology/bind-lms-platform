@@ -22,7 +22,9 @@ import { CrashBoundary, CrashScreen, describe, installCrashHandlers } from "@/li
 import { applyDevSession, applyMockFromUrl } from "@/lib/dev";
 import { holdPortrait } from "@/lib/orientation";
 import { loadSettings, settingsStore } from "@/lib/settings";
-import { useStackMotion } from "@/motion";
+import { useReducedMotion } from "react-native-reanimated";
+
+import { growOr, useStackMotion } from "@/motion";
 import { guardTarget } from "@/nav/guard";
 import { usePushRouting } from "@/push";
 import { LockScreen, OtherDeviceScreen, PausedScreen, SetPinScreen, UpdateScreen } from "@/screens/auth/gates";
@@ -50,6 +52,12 @@ function useBoot(): boolean {
     PixDigits: require("../assets/fonts/PixDigits.ttf"),
     "Kalam-Regular": require("../assets/fonts/Kalam-Regular.ttf"),
     "Kalam-Bold": require("../assets/fonts/Kalam-Bold.ttf"),
+    "Bricolage-600": require("../assets/fonts/Bricolage-600.ttf"),
+    "Bricolage-700": require("../assets/fonts/Bricolage-700.ttf"),
+    "Figtree-400": require("../assets/fonts/Figtree-400.ttf"),
+    "Figtree-500": require("../assets/fonts/Figtree-500.ttf"),
+    "Figtree-600": require("../assets/fonts/Figtree-600.ttf"),
+    "Figtree-700": require("../assets/fonts/Figtree-700.ttf"),
   });
   const phase = useSession((s) => s.phase);
   const settingsReady = settingsStore.use((s) => s.loaded);
@@ -163,6 +171,7 @@ function useOpening(phase: string, top: string | undefined): boolean {
 function Shell() {
   const c = useTheme();
   const m = useStackMotion();
+  const reduce = !!useReducedMotion();
   const ready = useBoot();
   useGuard(ready);
   usePushRouting();
@@ -219,9 +228,10 @@ function Shell() {
     ) : null;
 
   const header = {
-    headerStyle: { backgroundColor: c.bg },
-    headerTintColor: c.ink,
-    headerTitleStyle: { fontFamily: fonts.h3, fontSize: 18, color: c.ink },
+    // The header is part of the blue field; the layer rises under it.
+    headerStyle: { backgroundColor: c.field },
+    headerTintColor: c.onField,
+    headerTitleStyle: { fontFamily: fonts.h3, fontSize: 18, color: c.onField },
     headerShadowVisible: false,
     headerBackButtonDisplayMode: "minimal" as const,
     headerTitleAlign: "left" as const,
@@ -245,8 +255,8 @@ function Shell() {
             <Stack.Screen name="setup" options={{ headerShown: false }} />
             <Stack.Screen name="forgot-password" options={{ title: "" }} />
             <Stack.Screen name="lectures" options={{ title: "Lectures" }} />
-            <Stack.Screen name="course/[courseId]" options={{ title: "" }} />
-            <Stack.Screen name="lecture/[lessonId]" options={{ headerShown: false }} />
+            <Stack.Screen name="course/[courseId]" options={({ route }) => ({ title: "", ...growOr(route.key, m.push, reduce) })} />
+            <Stack.Screen name="lecture/[lessonId]" options={({ route }) => ({ headerShown: false, ...growOr(route.key, m.push, reduce) })} />
             <Stack.Screen name="material/[id]" options={{ title: "" }} />
             <Stack.Screen name="notifications" options={{ title: "Notifications" }} />
             <Stack.Screen name="notification/[id]" options={{ title: "" }} />
@@ -281,7 +291,9 @@ function Shell() {
             <Stack.Screen name="prep/mock/index" options={{ title: "" }} />
             <Stack.Screen name="prep/mock/[spec]" options={{ headerShown: false, ...m.play, gestureEnabled: false }} />
             <Stack.Screen name="prep/mock/result/[id]" options={{ title: "" }} />
+            <Stack.Screen name="medicines" options={{ title: "" }} />
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
+            <Stack.Screen name="kit" options={{ title: "Kit" }} />
             <Stack.Screen name="medicine/compare" options={{ title: "Compare" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />
             <Stack.Screen name="clinic/schedule" options={{ title: "Schedule" }} />

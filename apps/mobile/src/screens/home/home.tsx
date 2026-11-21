@@ -1,27 +1,32 @@
 import { router } from "expo-router";
-import { ArrowRight, BookOpen, Check, ChevronRight, Circle, Dumbbell, Flame, Play, Stethoscope } from "lucide-react-native";
+import { ArrowRight, BookOpen, CalendarOff, Check, ChevronRight, Circle, Dumbbell, Flame, NotebookText, Pill, Play, QrCode, Stethoscope } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 import { useReducedMotion } from "react-native-reanimated";
 
 import { outbox } from "@/api/outbox";
 import { TodayBlock } from "@/clinic/today";
-import { useHome, type HomeData } from "@/api/queries";
+import { go } from "@/api/prefetch";
+import { useHome, useMe, type HomeData } from "@/api/queries";
+import { useClinicToday } from "@/clinic/api";
+import { opdLine, sessionMeta, sessionTitle } from "@/clinic/logic";
 import type { QuestCard } from "@/api/contract";
-import { EmptyState, Hero, IconDot, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, StillTrying, T } from "@/ds";
+import { FieldCard, IconDot, Jyo, Label, LoadError, Pebbles, QuietEmpty, Row, RowList, Screen, Sheet, Skeleton, StillTrying, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Enter, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
+import { Enter, growFrom, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useAccent, useTheme } from "@/theme";
 
 /**
- * Home. One purpose: carry on. Top to bottom:
- *   1. a quiet greeting with the date
- *   2. Continue, the only hero (large title, thin progress line, one button)
- *   3. Today: one line (goal ring and streak); the quests open in a sheet
- *   4. Up next: at most three rows
- * Mirrors the website's v2 Home (src/app/(dashboard)/dashboard/home-v2.tsx).
+ * Today, the reference screen for the Layers look (docs/DESIGN.md).
+ * On the field: the greeting, the date, and the one "now" pill.
+ * On the layer, top to bottom:
+ *   1. Keep going: the one thing to pick up (it grows into the screen it opens)
+ *   2. Quick: four pebbles (Scan, Medicines, Notes, Leave)
+ *   3. Your day: the clinic's sessions for today
+ *   4. Today: the goal ring and streak; the quests open in a sheet
+ *   5. After that: what comes next
  */
 
 const UP_ICON = { lecture: Play, study: BookOpen, weak: Dumbbell, daily: Stethoscope } as const;
@@ -109,7 +114,7 @@ function Today({ goal, quests, fresh }: { goal: NonNullable<HomeData["goal"]>; q
   );
   const close = React.useCallback(() => setOpen(false), []);
   return (
-    <View style={{ borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.hairline }}>
+    <View style={{ backgroundColor: c.card, borderRadius: layout.radiusLg, paddingHorizontal: space[4], overflow: "hidden" }}>
       {quests ? (
         <Pressable
           testID="home-today"
@@ -119,12 +124,12 @@ function Today({ goal, quests, fresh }: { goal: NonNullable<HomeData["goal"]>; q
             setOpen(true);
           }}
           style={({ pressed }) => ({
-            minHeight: layout.row,
-            paddingVertical: space[2],
+            minHeight: 64,
+            paddingVertical: space[3],
             flexDirection: "row",
             alignItems: "center",
             gap: space[3],
-            backgroundColor: pressed ? c.tint : "transparent",
+            opacity: pressed ? 0.7 : 1,
           })}
         >
           {line}
@@ -134,8 +139,8 @@ function Today({ goal, quests, fresh }: { goal: NonNullable<HomeData["goal"]>; q
         <View
           testID="home-today"
           style={{
-            minHeight: layout.row,
-            paddingVertical: space[2],
+            minHeight: 64,
+            paddingVertical: space[3],
             flexDirection: "row",
             alignItems: "center",
             gap: space[3],
@@ -221,88 +226,174 @@ export function streakLine(days: number, fresh = false): string {
   return fresh ? "Your first points come from the first lecture" : "";
 }
 
+/** "Morning", "Afternoon" or "Evening", by the phone's clock. */
+export function dayPart(now = new Date()): string {
+  const h = now.getHours();
+  return h < 12 ? "Morning" : h < 17 ? "Afternoon" : "Evening";
+}
+
+/** On the blue field: the greeting, the date, and what is on now or next at the clinic. */
+function TodayField({ data }: { data: HomeData | undefined }) {
+  const me = useMe();
+  const first = (me.data?.name ?? "").trim().split(/\s+/)[0];
+  const hello = first ? `${dayPart()}, ${first}` : data && !data.welcomeBack ? "Welcome to VIBHA" : `Good ${dayPart().toLowerCase()}`;
+  return (
+    <View style={{ gap: space[4] }}>
+      <View style={{ gap: 2 }}>
+        <T v="display" tone="onField" accessibilityRole="header" testID="home-greeting">
+          {hello}
+        </T>
+        {data ? (
+          <T v="small" tone="onFieldMuted" num>
+            {data.dateLine}
+          </T>
+        ) : null}
+      </View>
+      <NowCard />
+    </View>
+  );
+}
+
+/**
+ * The one "now" pill: a session that is open for scanning (with Scan in or
+ * Scan out), else the next session today, else today's OPD line. Nothing when
+ * the day is empty. The scan itself lives in the clinic screens.
+ */
+function NowCard() {
+  const q = useClinicToday();
+  const d = q.data;
+  if (!d) return null;
+  const live = d.sessions.find((s) => s.status !== "cancelled" && s.mine && (s.mine.state === "open" || s.mine.state === "in"));
+  if (live) {
+    const out = live.mine?.state === "in";
+    return <FieldCard testID="home-now" live title={out ? `You are in: ${sessionTitle(live)}` : `${sessionTitle(live)} is open`} meta={sessionMeta(live)} action={{ label: out ? "Scan out" : "Scan in", onPress: () => go("/clinic/scan"), testID: "home-scan" }} />;
+  }
+  const next = d.sessions.find((s) => s.status !== "cancelled" && s.mine?.state === "upcoming");
+  if (next) return <FieldCard testID="home-now" title={`Next: ${sessionTitle(next)}`} meta={sessionMeta(next)} onPress={() => go("/clinic/schedule")} />;
+  if (d.opd) return <FieldCard testID="home-now" title={opdLine(d.opd)} meta={d.opd.place ?? undefined} onPress={() => go("/clinic/schedule")} />;
+  return null;
+}
+
+/**
+ * "Keep going": the one thing to pick up, on a stone card with a ring showing
+ * how far along it is and the lime play button. Tapping it grows the card
+ * into the screen it opens.
+ */
+function KeepGoing({ data }: { data: HomeData }) {
+  const c = useTheme();
+  const ref = React.useRef<View>(null);
+  const { step, allDone, progress, welcomeBack } = data;
+  if (!allDone && !step) return null;
+  const title = allDone ? "Nothing left to do today" : step?.title || "Carry on";
+  const meta = allDone ? "Revise a weak topic or try a case." : [!welcomeBack && step?.kind === "lecture" ? "Start your first lecture" : step?.eyebrow, step?.meta].filter(Boolean).join(" · ");
+  const pct = !allDone && progress ? progress.pct : allDone ? 100 : 0;
+  const open = () => growFrom(ref, () => (step && !allDone ? openTarget(step.target) : router.push("/practise")));
+  return (
+    <View style={{ gap: space[2] }}>
+      <Label>{allDone ? "All caught up" : "Keep going"}</Label>
+      <Stone ref={ref} testID="home-continue" accessibilityLabel={`${allDone ? "Practise" : step?.cta || "Open"}: ${title}${meta ? `. ${meta}` : ""}`} onPress={open}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+          <ProgressRing pct={pct} size={58} stroke={5} delay={200} color={c.dark ? c.lime : c.brand} track={c.hairline} label={progress?.label}>
+            <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>{allDone ? <ArrowRight size={18} color={c.onLime} strokeWidth={2.6} /> : <Play size={15} color={c.onLime} fill={c.onLime} />}</View>
+          </ProgressRing>
+          <View style={{ flex: 1, minWidth: 0, gap: 3 }}>
+            <T v="h2">{title}</T>
+            {meta ? (
+              <T v="small" tone="muted">
+                {meta}
+              </T>
+            ) : null}
+          </View>
+        </View>
+      </Stone>
+      <SaveLine />
+    </View>
+  );
+}
+
 export function HomeView({ data }: { data: HomeData }) {
   const c = useTheme();
-  const { step, allDone, progress, goal, upNext, welcomeBack } = data;
-  // The server may send no step (nothing open yet): then there is no hero, only the empty state below.
-  const hero = allDone
-    ? {
-        context: "All caught up",
-        title: "Nothing left to do today.",
-        meta: "Revise a weak topic or try a case while you wait for the next lecture.",
-        cta: "Practise",
-      }
-    : step
-      ? {
-          context: !welcomeBack && step.kind === "lecture" ? "Start your first lecture" : step.eyebrow,
-          title: step.title || "Carry on",
-          meta: step.meta ?? undefined,
-          cta: step.cta || "Open",
-        }
-      : null;
+  const { goal, upNext, welcomeBack } = data;
+  const next = upNext[0];
+  const NextIcon = next ? (UP_ICON[next.kind as keyof typeof UP_ICON] ?? Play) : Play;
   return (
     <>
       <Enter i={0}>
-        <T v="small" tone="muted" accessibilityRole="header" testID="home-greeting">
-          {welcomeBack ? "Welcome back" : "Welcome to VIBHA"} ·{" "}
-          <T v="small" tone="muted" num>
-            {data.dateLine}
-          </T>
-        </T>
+        <KeepGoing data={data} />
       </Enter>
-      {hero ? (
-        <Enter i={1}>
-          <Hero
-            context={hero.context}
-            title={hero.title}
-            meta={hero.meta}
-            progress={!allDone && progress && progress.pct > 0 ? progress.pct : undefined}
-            progressLabel={progress?.label}
-            action={{
-              label: hero.cta,
-              onPress: () => (step ? openTarget(step.target) : router.push("/practise")),
-              icon: <ArrowRight size={20} color={c.onPrimary} />,
-              testID: "home-continue",
-            }}
-            below={<SaveLine />}
+      <Enter i={1}>
+        <View style={{ gap: space[2] }}>
+          <Label>Quick</Label>
+          <Pebbles
+            items={[
+              { label: "Scan", icon: QrCode, live: true, onPress: () => go("/clinic/scan"), testID: "quick-scan" },
+              { label: "Medicines", icon: Pill, onPress: () => go("/medicines"), testID: "quick-medicines" },
+              { label: "Notes", icon: NotebookText, onPress: () => router.push("/library"), testID: "quick-notes" },
+              { label: "Leave", icon: CalendarOff, onPress: () => go("/clinic/leave"), testID: "quick-leave" },
+            ]}
           />
-        </Enter>
-      ) : null}
+        </View>
+      </Enter>
       <TodayBlock />
       {goal ? (
         <Enter i={3}>
-          <Section title="Today">
+          <View style={{ gap: space[2] }}>
+            <Label>Today</Label>
             <Today goal={goal} quests={data.quests} fresh={!welcomeBack && goal.points <= 0} />
-          </Section>
+          </View>
         </Enter>
       ) : null}
-      {upNext.length ? (
+      {next ? (
         <Enter i={4}>
-          <Section title="Up next">
-            <RowList>
-              {upNext.slice(0, 3).map((r, i) => {
-                const Icon = UP_ICON[r.kind as keyof typeof UP_ICON] ?? Play;
-                return <Row key={i} testID={`up-next-${i}`} title={r.title} meta={r.meta ?? undefined} icon={<IconDot icon={Icon} />} onPress={() => openTarget(r.target)} />;
-              })}
-            </RowList>
-          </Section>
+          <View style={{ gap: space[2] }}>
+            <Label>After that</Label>
+            <Stone quiet testID="up-next-0" accessibilityLabel={`${next.title}${next.meta ? `. ${next.meta}` : ""}`} onPress={() => openTarget(next.target)}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+                <IconDot icon={NextIcon} />
+                <View style={{ flex: 1, minWidth: 0 }}>
+                  <T v="bodyStrong">{next.title}</T>
+                  {next.meta ? (
+                    <T v="small" tone="muted">
+                      {next.meta}
+                    </T>
+                  ) : null}
+                </View>
+                <ArrowRight size={18} color={c.muted} />
+              </View>
+            </Stone>
+            {upNext.length > 1 ? (
+              <RowList bare>
+                {upNext.slice(1, 3).map((r, i) => {
+                  const Icon = UP_ICON[r.kind as keyof typeof UP_ICON] ?? Play;
+                  return <Row key={i} testID={`up-next-${i + 1}`} title={r.title} meta={r.meta ?? undefined} icon={<IconDot icon={Icon} />} onPress={() => openTarget(r.target)} />;
+                })}
+              </RowList>
+            ) : null}
+          </View>
         </Enter>
       ) : null}
     </>
   );
 }
 
+/**
+ * Today (the student's first screen). On the blue field: the greeting and
+ * what is on now at the clinic, with Scan in. On the layer: the one thing to
+ * pick up, four quick actions, the day's sessions, today's goal, what comes
+ * after. Jyo shows only when there is nothing at all to do.
+ */
 export function HomeScreen() {
   const q = useHome();
+  const empty = !!q.data && !q.data.step && !q.data.upNext.length && !q.data.allDone;
   return (
-    <Screen tab area="home" top={<TabTop />} testID="home" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen tab area="home" top={<TabTop />} testID="home" field={<TodayField data={q.data} />} gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {q.data ? <HomeView data={q.data} /> : q.isError ? <LoadError what="your home screen" error={q.error} onRetry={() => void q.refetch()} /> : (
         <>
           <HomeSkeleton />
           <StillTrying failed={q.failureCount > 0} />
         </>
       )}
-      {q.data && !q.data.step && !q.data.upNext.length ? <EmptyState title="Nothing here yet" body="Your first lecture appears here as soon as it opens." /> : null}
+      {empty ? <QuietEmpty testID="home-empty" art={<Jyo pose="resting" size={64} />} title="Nothing here yet" body="Your first lecture appears here as soon as it opens." /> : null}
     </Screen>
   );
 }
