@@ -56,6 +56,13 @@ async function enablePushInner(): Promise<PushStatus> {
   if (Platform.OS === "android") {
     // eslint-disable-next-line import/namespace -- re-exported with export *
     await Notifications.setNotificationChannelAsync("default", { name: "Messages and reminders", importance: Notifications.AndroidImportance.DEFAULT, lightColor: "#1d44d8" }).catch(() => undefined);
+    // The server names these channels on each push (src/lib/app-api/push.ts); without them Android files the push under "Other".
+    // eslint-disable-next-line import/namespace -- re-exported with export *
+    await Notifications.setNotificationChannelAsync("messages", { name: "Messages from the school", importance: Notifications.AndroidImportance.DEFAULT, lightColor: "#1d44d8" }).catch(() => undefined);
+    // eslint-disable-next-line import/namespace -- re-exported with export *
+    await Notifications.setNotificationChannelAsync("achievements", { name: "Badges and certificates", importance: Notifications.AndroidImportance.DEFAULT, lightColor: "#1d44d8" }).catch(() => undefined);
+    // eslint-disable-next-line import/namespace -- re-exported with export *
+    await Notifications.setNotificationChannelAsync("reminders", { name: "Clinic reminders", importance: Notifications.AndroidImportance.HIGH, lightColor: "#1d44d8" }).catch(() => undefined);
   }
   let p = await Notifications.getPermissionsAsync();
   if (!p.granted && p.canAskAgain) p = await Notifications.requestPermissionsAsync();

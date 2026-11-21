@@ -274,7 +274,8 @@ async function route(req: RawRequest): Promise<RawResponse> {
   }
   if (is("GET", "/notifications/preferences")) return ok(state.prefs);
   if (is("PUT", "/notifications/preferences")) {
-    state.prefs = { ...state.prefs, ...(body as Partial<C.NotificationPrefs>) };
+    const patch = body as Partial<Omit<C.NotificationPrefs, "reminders">> & { reminders?: Partial<C.ReminderPrefs> };
+    state.prefs = { ...state.prefs, ...patch, reminders: { ...(state.prefs.reminders ?? fx.prefs.reminders!), ...patch.reminders } };
     return ok(state.prefs);
   }
   if ((m = is("GET", "/notifications/:id"))) {

@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import * as React from "react";
 import { View } from "react-native";
 
-import type { DeletionRequestResult, NotificationPrefs, Settings } from "@/api/contract";
+import type { DeletionRequestResult, NotificationPrefs, ReminderPrefs, Settings } from "@/api/contract";
 import { messageOf } from "@/api/errors";
 import { keys, useSettings } from "@/api/queries";
 import { api, session } from "@/auth";
@@ -23,6 +23,21 @@ const TIMES = [
   { id: "19:00", name: "7 pm" },
   { id: "21:00", name: "9 pm" },
 ];
+const REMINDERS_ON: ReminderPrefs = {
+  opdDay: true,
+  sessionSoon: true,
+  scanOut: true,
+  caseLog: true,
+  leaveLow: true,
+};
+const REMINDER_ROWS: { key: keyof ReminderPrefs; title: string; meta: string }[] = [
+  { key: "opdDay", title: "OPD day", meta: "In the morning of your OPD day" },
+  { key: "sessionSoon", title: "Before a class or OPD", meta: "30 minutes before it starts" },
+  { key: "scanOut", title: "Forgot to scan out", meta: "Just after a session ends" },
+  { key: "caseLog", title: "Log your cases", meta: "The evening after OPD" },
+  { key: "leaveLow", title: "Leaves running out", meta: "When only 1 leave is left" },
+];
+
 const THEMES = [
   { id: "system" as const, name: "Match phone" },
   { id: "light" as const, name: "Light" },
@@ -31,9 +46,19 @@ const THEMES = [
 
 function Notifications({ prefs }: { prefs: NotificationPrefs }) {
   const qc = useQueryClient();
-  const save = async (patch: Partial<NotificationPrefs>) => {
+  const reminders = { ...REMINDERS_ON, ...prefs.reminders };
+  const save = async (patch: Partial<Omit<NotificationPrefs, "reminders">> & { reminders?: Partial<ReminderPrefs> }) => {
     const prev = qc.getQueryData<Settings>(keys.settings);
-    if (prev) qc.setQueryData<Settings>(keys.settings, { ...prev, notifications: { ...prev.notifications, ...patch } });
+    const next = (n: NotificationPrefs): NotificationPrefs => ({
+      ...n,
+      ...patch,
+      reminders: { ...REMINDERS_ON, ...n.reminders, ...patch.reminders },
+    });
+    if (prev)
+      qc.setQueryData<Settings>(keys.settings, {
+        ...prev,
+        notifications: next(prev.notifications),
+      });
     try {
       if (patch.push === true) {
         const s = await enablePush();
@@ -48,28 +73,48 @@ function Notifications({ prefs }: { prefs: NotificationPrefs }) {
     }
   };
   return (
-    <Section title="Notifications" quiet>
-      <RowList>
-        <SwitchRow testID="pref-push" title="Notifications on this phone" value={prefs.push} onChange={(v) => void save({ push: v })} />
-        <SwitchRow title="Messages from the school" value={prefs.messages} disabled={!prefs.push} onChange={(v) => void save({ messages: v })} />
-        <SwitchRow title="Answers to my doubts" value={prefs.doubtReplies} disabled={!prefs.push} onChange={(v) => void save({ doubtReplies: v })} />
-        <SwitchRow title="Badges and certificates" value={prefs.achievements} disabled={!prefs.push} onChange={(v) => void save({ achievements: v })} />
-        <SwitchRow testID="pref-reminder" title="A daily study reminder" meta="Made on this phone; nothing is sent to us." value={prefs.studyReminder} onChange={(v) => void save({ studyReminder: v })} />
-      </RowList>
-      {prefs.studyReminder ? (
-        <View style={{ gap: space[2] }}>
+    <>
+      <Section title="Notifications" quiet>
+        <RowList>
+          <SwitchRow testID="pref-push" title="Notifications on this phone" value={prefs.push} onChange={(v) => void save({ push: v })} />
+          <SwitchRow title="Messages from the school" value={prefs.messages} disabled={!prefs.push} onChange={(v) => void save({ messages: v })} />
+          <SwitchRow title="Answers to my doubts" value={prefs.doubtReplies} disabled={!prefs.push} onChange={(v) => void save({ doubtReplies: v })} />
+          <SwitchRow title="Badges and certificates" value={prefs.achievements} disabled={!prefs.push} onChange={(v) => void save({ achievements: v })} />
+          <SwitchRow
+            testID="pref-reminder"
+            title="A daily study reminder"
+            meta="Made on this phone; nothing is sent to us."
+            value={prefs.studyReminder}
+            onChange={(v) => void save({ studyReminder: v })}
+          />
+        </RowList>
+        {prefs.studyReminder ? (
+          <View style={{ gap: space[2] }}>
+            <T v="small" tone="muted">
+              Remind me at
+            </T>
+            <Chips
+              label="Remind me at"
+              options={TIMES.some((t) => t.id === prefs.studyReminderTime) ? TIMES : [...TIMES, { id: prefs.studyReminderTime, name: prefs.studyReminderTime }]}
+              value={prefs.studyReminderTime}
+              onChange={(t) => void save({ studyReminderTime: t })}
+            />
+          </View>
+        ) : null}
+        {!prefs.synced ? (
           <T v="small" tone="muted">
-            Remind me at
+            These choices are kept on this phone for now.
           </T>
-          <Chips label="Remind me at" options={TIMES.some((t) => t.id === prefs.studyReminderTime) ? TIMES : [...TIMES, { id: prefs.studyReminderTime, name: prefs.studyReminderTime }]} value={prefs.studyReminderTime} onChange={(t) => void save({ studyReminderTime: t })} />
-        </View>
-      ) : null}
-      {!prefs.synced ? (
-        <T v="small" tone="muted">
-          These choices are kept on this phone for now.
-        </T>
-      ) : null}
-    </Section>
+        ) : null}
+      </Section>
+      <Section title="Reminders" quiet>
+        <RowList>
+          {REMINDER_ROWS.map((r) => (
+            <SwitchRow key={r.key} testID={`pref-rem-${r.key}`} title={r.title} meta={r.meta} value={reminders[r.key]} onChange={(v) => void save({ reminders: { [r.key]: v } })} />
+          ))}
+        </RowList>
+      </Section>
+    </>
   );
 }
 
@@ -80,7 +125,9 @@ function DeleteAccount() {
   const send = async () => {
     setBusy(true);
     try {
-      await api.post<DeletionRequestResult>("/me/deletion-request", { reason: reason.trim() || undefined });
+      await api.post<DeletionRequestResult>("/me/deletion-request", {
+        reason: reason.trim() || undefined,
+      });
       haptic.success();
       setOpen(false);
       toast.show("Request sent. We will write to you within 7 days.");
@@ -138,7 +185,13 @@ export function SettingsScreen() {
               <RowList>
                 <TextSizeRow />
                 <SwitchRow testID="pref-haptics" title="Vibration on taps" value={haptics} onChange={(v) => updateSettings({ haptics: v })} />
-                <SwitchRow testID="pref-reactions" title="Funny reactions" meta="A meme and a cheeky line after some answers. This phone only." value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
+                <SwitchRow
+                  testID="pref-reactions"
+                  title="Funny reactions"
+                  meta="A meme and a cheeky line after some answers. This phone only."
+                  value={reactions}
+                  onChange={(v) => updateSettings({ reactions: v })}
+                />
               </RowList>
             </Section>
             <Section title="This phone" quiet>

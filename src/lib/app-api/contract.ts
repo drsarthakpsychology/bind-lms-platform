@@ -1042,6 +1042,22 @@ export type NotificationPrefs = {
   studyReminderTime: string;
   /** False until the app database step is run: preferences are then kept on the phone only. */
   synced: boolean;
+  /** Clinic reminders, each on or off (missing from older servers: all on). */
+  reminders?: ReminderPrefs;
+};
+
+/** Smart reminders a student can turn off one by one (Settings, app and website). */
+export type ReminderPrefs = {
+  /** Morning of an OPD day: "OPD today, evening 5 to 8". */
+  opdDay: boolean;
+  /** 30 minutes before a session they must attend. */
+  sessionSoon: boolean;
+  /** Scanned in but not out, shortly after the session ends. */
+  scanOut: boolean;
+  /** The evening after an OPD visit with no case log. */
+  caseLog: boolean;
+  /** When leaves left drop to 1. */
+  leaveLow: boolean;
 };
 
 /** The `data` object of every push the server sends. */

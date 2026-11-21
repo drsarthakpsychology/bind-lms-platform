@@ -20,6 +20,7 @@ class Query implements PromiseLike<Result> {
   private op: "select" | "insert" | "update" | "upsert" | "delete" = "select";
   private payload: Row | Row[] | null = null;
   private conflict: string[] = [];
+  private ignoreDup = false;
   private one: "single" | "maybe" | null = null;
   private max: number | null = null;
   private skip = 0;
@@ -50,8 +51,9 @@ class Query implements PromiseLike<Result> {
     this.payload = payload;
     return this;
   }
-  upsert(payload: Row | Row[], opts: { onConflict?: string } = {}) {
+  upsert(payload: Row | Row[], opts: { onConflict?: string; ignoreDuplicates?: boolean } = {}) {
     this.op = "upsert";
+    this.ignoreDup = Boolean(opts.ignoreDuplicates);
     this.payload = payload;
     this.conflict = (opts.onConflict ?? "id").split(",").map((s) => s.trim());
     return this;
@@ -137,6 +139,7 @@ class Query implements PromiseLike<Result> {
     } else if (this.op === "upsert") {
       for (const p of Array.isArray(this.payload) ? this.payload : [this.payload!]) {
         const hit = rows.find((r) => this.conflict.every((c) => r[c] === p[c]));
+        if (hit && this.ignoreDup) continue; // on conflict do nothing: not returned
         if (hit) {
           Object.assign(hit, p);
           out.push(hit);

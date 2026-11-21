@@ -111,11 +111,29 @@ describe("notifications", () => {
 
 describe("preferences", () => {
   it("default, saved, and refused when malformed", async () => {
-    expect((await read(await getPrefs(appReq("/notifications/preferences"), noParams))).data).toEqual({ push: true, messages: true, doubtReplies: true, achievements: true, studyReminder: false, studyReminderTime: "19:00", synced: true });
+    expect((await read(await getPrefs(appReq("/notifications/preferences"), noParams))).data).toEqual({ push: true, messages: true, doubtReplies: true, achievements: true, studyReminder: false, studyReminderTime: "19:00", synced: true, reminders: { opdDay: true, sessionSoon: true, scanOut: true, caseLog: true, leaveLow: true } });
     const r = await read(await putPrefs(appReq("/notifications/preferences", { method: "PUT", body: { doubtReplies: false, studyReminderTime: "07:30" } }), noParams));
     expect(r.data).toMatchObject({ doubtReplies: false, studyReminderTime: "07:30", synced: true });
     expect(G.db.tables.app_notification_prefs[0]).toMatchObject({ user_id: STUDENT_ID, doubt_replies: false, study_reminder_time: "07:30" });
     expect((await read(await putPrefs(appReq("/notifications/preferences", { method: "PUT", body: { studyReminderTime: "25:00" } }), noParams))).status).toBe(400);
+  });
+
+  it("reminder switches save in their own table and come back with the rest", async () => {
+    G.db.tables.app_reminder_prefs = [];
+    const r = await read(await putPrefs(appReq("/notifications/preferences", { method: "PUT", body: { reminders: { scanOut: false } } }), noParams));
+    expect(r.data).toMatchObject({ reminders: { opdDay: true, scanOut: false }, synced: true });
+    expect(G.db.tables.app_reminder_prefs[0]).toMatchObject({ user_id: STUDENT_ID, scan_out: false, opd_day: true });
+    expect((await read(await getPrefs(appReq("/notifications/preferences"), noParams))).data).toMatchObject({ reminders: { scanOut: false } });
+    expect((await read(await putPrefs(appReq("/notifications/preferences", { method: "PUT", body: { reminders: { nope: true } } }), noParams))).status).toBe(400);
+  });
+
+  it("reminder pushes skip only the master switch, not the message switch", () => {
+    const rows = [{ id: "n1", user_id: STUDENT_ID, title: "OPD today", body: "x" }];
+    const targets = [{ userId: STUDENT_ID, token: TOKEN }];
+    const off = { push: true, messages: false, doubtReplies: true, achievements: true };
+    expect(buildMessages(rows, "reminders", targets, new Map([[STUDENT_ID, off]]))).toHaveLength(1);
+    expect(buildMessages(rows, "reminders", targets, new Map([[STUDENT_ID, off]]))[0]!.channelId).toBe("reminders");
+    expect(buildMessages(rows, "reminders", targets, new Map([[STUDENT_ID, { ...off, push: false }]]))).toHaveLength(0);
   });
 
   it("before the database step they stay on the phone (synced false)", async () => {

@@ -16,6 +16,8 @@ import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 import { uiV2Role } from "@/lib/ui/v2-server";
 import { LEGAL } from "@/lib/legal-constants";
 import { SettingsV2 } from "./settings-v2";
+import { ReminderSwitches } from "@/components/settings/reminder-switches";
+import { loadReminderPrefs } from "@/lib/reminders/prefs";
 
 /**
  * /settings: grouped progressive account screen (T41).
@@ -41,6 +43,7 @@ export default async function SettingsPage() {
 
   const { email, role } = session.profile;
   const roleLabel = ROLE_LABEL[role] ?? role;
+  const reminders = role === "student" ? (await loadReminderPrefs(session.profile.id)).prefs : null;
 
   if (await uiV2Role(role)) {
     return (
@@ -50,6 +53,7 @@ export default async function SettingsPage() {
         rollNumber={session.profile.roll_number ?? null}
         student={role === "student"}
         whatsappHref={`https://wa.me/${LEGAL.phone.replace(/[^\d]/g, "")}`}
+        reminders={reminders}
       />
     );
   }
@@ -86,6 +90,14 @@ export default async function SettingsPage() {
             <ColourBlindToggle />
           </div>
         </MobileSection>
+
+        {reminders ? (
+          <MobileSection title="Reminders">
+            <div className="rounded-lg border-2 border-foreground bg-card px-4 hard-shadow-xs">
+              <ReminderSwitches initial={reminders} />
+            </div>
+          </MobileSection>
+        ) : null}
 
         <MobileSection title="Notifications">
           <MobileListItem
