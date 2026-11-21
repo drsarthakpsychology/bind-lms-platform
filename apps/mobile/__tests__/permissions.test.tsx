@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { act, fireEvent, screen, waitFor } from "@testing-library/react-native";
 import { Camera } from "expo-camera";
 import * as Notifications from "expo-notifications";
+import { router, useSegments } from "expo-router";
 import * as React from "react";
 import { AppState, Linking } from "react-native";
 
@@ -10,6 +11,8 @@ import { api } from "@/auth";
 import { CodeScanner, scannerCopy } from "@/clinic/scanner";
 import { resetIntroForTests, stateLabel, stateOf } from "@/lib/permissions";
 import { FirstRunPermissions, introSteps } from "@/screens/auth/permissions";
+import { markTourSeen, resetTourForTests, TOUR_TABS } from "@/screens/auth/tour";
+import { outsideLectures } from "@/screens/auth/scope";
 import { PermissionsSection, rowAction } from "@/screens/me/permissions";
 import { render } from "./utils";
 
@@ -39,6 +42,9 @@ beforeEach(async () => {
   notif.requestPermissionsAsync.mockResolvedValue(YES);
   await AsyncStorage.clear();
   resetIntroForTests();
+  // The tab tour comes before the permission steps; most tests here start after it.
+  resetTourForTests();
+  markTourSeen();
 });
 afterEach(() => {
   openSettings.mockRestore();
@@ -119,6 +125,86 @@ describe("the scanner", () => {
   });
 });
 
+describe("the first-run tab tour", () => {
+  const fresh = async () => {
+    await AsyncStorage.clear();
+    resetTourForTests();
+  };
+
+  it("students see it once, before any permission question: hello, five tabs, Start", async () => {
+    await fresh();
+    const view = await render(<FirstRunPermissions active me={{ ...student, name: "Ananya Mehta" } as Me} />);
+    expect(await screen.findByTestId("tab-tour")).toBeTruthy();
+    expect(screen.getByText("Hello, Ananya")).toBeTruthy();
+    expect(screen.getByTestId("jyo")).toBeTruthy();
+    expect(screen.queryByTestId("first-run-permissions")).toBeNull();
+    for (const t of TOUR_TABS) {
+      await fireEvent.press(screen.getByTestId("tour-next"));
+      expect(screen.getByTestId(`tour-page-${t.id}`)).toBeTruthy();
+      expect(screen.getByText(t.name)).toBeTruthy();
+    }
+    // The last page has no Skip, and Start closes the tour; the permission steps follow.
+    expect(screen.queryByTestId("tour-skip")).toBeNull();
+    await fireEvent.press(screen.getByTestId("tour-next"));
+    await waitFor(() => expect(screen.queryByTestId("tab-tour")).toBeNull());
+    expect(await screen.findByTestId("perm-step-notifications")).toBeTruthy();
+    await view.unmount();
+
+    // Next time (even after a restart): never again.
+    resetTourForTests();
+    resetIntroForTests();
+    await render(<FirstRunPermissions active me={student} />);
+    await act(async () => undefined);
+    expect(screen.queryByTestId("tab-tour")).toBeNull();
+  });
+
+  it("can be skipped from the first page, and a tab in the small bar jumps to its page", async () => {
+    await fresh();
+    await render(<FirstRunPermissions active me={student} />);
+    await fireEvent.press(await screen.findByTestId("tour-tab-notes"));
+    expect(screen.getByTestId("tour-page-notes")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("tour-skip"));
+    await waitFor(() => expect(screen.queryByTestId("tab-tour")).toBeNull());
+  });
+
+  it("is not shown to admins or before the app is open", async () => {
+    await fresh();
+    const v = await render(<FirstRunPermissions active={false} me={student} />);
+    await act(async () => undefined);
+    expect(screen.queryByTestId("tab-tour")).toBeNull();
+    await v.unmount();
+    await render(<FirstRunPermissions active me={admin} />);
+    expect(await screen.findByTestId("perm-step-notifications")).toBeTruthy();
+    expect(screen.queryByTestId("tab-tour")).toBeNull();
+  });
+});
+
+describe("lectures-only accounts", () => {
+  it("are stopped only on the parts outside their lectures", () => {
+    expect(outsideLectures("(lecture)", "study")).toBe(true);
+    expect(outsideLectures("(lecture)", "clinic")).toBe(true);
+    expect(outsideLectures("(lecture)", "(lecture)")).toBe(false);
+    expect(outsideLectures("(lecture)", "lecture")).toBe(false);
+    expect(outsideLectures("(lecture)", "settings")).toBe(false);
+    expect(outsideLectures("(student)", "study")).toBe(false);
+    expect(outsideLectures("(lecture)", undefined)).toBe(false);
+  });
+
+  it("see a plain page with a way back to their lectures", async () => {
+    (useSegments as jest.Mock).mockReturnValue(["study", "m02"]);
+    // Nothing left to ask: the permission steps do not come first.
+    notif.getPermissionsAsync.mockResolvedValue(YES);
+    try {
+      await render(<FirstRunPermissions active me={{ role: "student", scope: "lectures_only", access: { lecturesOnly: true } } as unknown as Me} />);
+      expect(await screen.findByTestId("lectures-only")).toBeTruthy();
+      await fireEvent.press(screen.getByTestId("lectures-only-back"));
+      expect(router.replace).toHaveBeenCalledWith("/lo/lectures");
+    } finally {
+      (useSegments as jest.Mock).mockReturnValue([]);
+    }
+  });
+});
+
 describe("first run", () => {
   it("asks only what the phone can still ask; camera only for students", () => {
     expect(introSteps(student, { notifications: "ask", camera: "ask" })).toEqual(["notifications", "camera"]);
@@ -142,6 +228,7 @@ describe("first run", () => {
 
     // Next time (even after a restart): never again.
     resetIntroForTests();
+    resetTourForTests();
     await render(<FirstRunPermissions active me={student} />);
     await act(async () => undefined);
     expect(screen.queryByTestId("first-run-permissions")).toBeNull();

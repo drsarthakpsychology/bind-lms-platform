@@ -9,7 +9,7 @@ import { ApiFailure } from "@/api/errors";
 import { session } from "@/auth";
 import { handoff } from "@/auth/handoff";
 import { PinPad } from "@/auth/PinPad";
-import { pausedBody } from "@/screens/auth/gates";
+import { OtherDeviceScreen, pausedBody, PausedScreen, UpdateScreen } from "@/screens/auth/gates";
 import { signInProblem, SignInScreen } from "@/screens/auth/sign-in";
 import { WelcomeScreen } from "@/screens/visitor/welcome";
 import { adaptHome, BUNDLED } from "@/visitor/home-data";
@@ -92,6 +92,7 @@ describe("Welcome", () => {
   it("switches the week between weekday and weekend", async () => {
     await render(<WelcomeScreen />);
     expect(screen.getByText(WEEK.weekday.steps[0])).toBeTruthy();
+    expect(screen.getByTestId("week-weekday").props.accessibilityState.selected).toBe(true);
     await fireEvent.press(screen.getByTestId("week-weekend"));
     expect(screen.getByText(WEEK.weekend.steps[0])).toBeTruthy();
   });
@@ -194,6 +195,56 @@ describe("Sign in", () => {
     expect(signInProblem(new ApiFailure("invalid_credentials", "x", 401))).toMatch(/do not match/);
     expect(signInProblem(new ApiFailure("network", "x"))).toMatch(/No internet/);
     expect(signInProblem(new ApiFailure("rate_limited", "x", 429))).toMatch(/Too many tries/);
+  });
+});
+
+describe("Welcome in the Layers look", () => {
+  it("has Jyo saying hello once, and the story layer", async () => {
+    await render(<WelcomeScreen />);
+    expect(screen.getAllByTestId("jyo")).toHaveLength(1);
+    expect(screen.getByText(HERO.bubble)).toBeTruthy();
+    expect(screen.getByTestId("welcome-story")).toBeTruthy();
+  });
+
+  it("ends with a way to request an invitation, and call and WhatsApp", async () => {
+    await render(<WelcomeScreen />);
+    await fireEvent.press(screen.getByTestId("welcome-closing-request"));
+    expect(router.push).toHaveBeenCalledWith("/request");
+    expect(screen.getByTestId("welcome-call")).toBeTruthy();
+    expect(screen.getByTestId("welcome-whatsapp")).toBeTruthy();
+  });
+});
+
+describe("An account whose access has ended", () => {
+  it("gets its own page on Sign in, with a way to the school and to another account", async () => {
+    await React.act(async () => void session.store.set({ notice: "account_expired" }));
+    try {
+      await render(<SignInScreen />);
+      expect(screen.getByText("Your access has ended")).toBeTruthy();
+      expect(screen.getByTestId("ended-whatsapp")).toBeTruthy();
+      expect(screen.queryByTestId("sign-in-email")).toBeNull();
+      await fireEvent.press(screen.getByTestId("ended-other"));
+      expect(screen.getByTestId("sign-in-email")).toBeTruthy();
+    } finally {
+      await React.act(async () => session.clearNotice());
+    }
+  });
+});
+
+describe("The gates", () => {
+  it("say what happened and give a way on", async () => {
+    const view = await render(<OtherDeviceScreen onContinue={jest.fn()} />);
+    expect(screen.getByText("Opened on another phone")).toBeTruthy();
+    expect(screen.getByTestId("other-device-continue")).toBeTruthy();
+    await view.unmount();
+    const v2 = await render(<UpdateScreen storeUrl="https://example.com/app" />);
+    expect(screen.getByText("Time for an update")).toBeTruthy();
+    expect(screen.getByTestId("update-button")).toBeTruthy();
+    await v2.unmount();
+    await render(<PausedScreen message="The fee for this month is due" />);
+    expect(screen.getByText("Your account is paused")).toBeTruthy();
+    expect(screen.getByText(/fee for this month is due\. Message us/)).toBeTruthy();
+    for (const id of ["paused-whatsapp", "paused-retry", "paused-sign-out"]) expect(screen.getByTestId(id)).toBeTruthy();
   });
 });
 

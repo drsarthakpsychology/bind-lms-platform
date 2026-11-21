@@ -1,53 +1,51 @@
 import { MessageCircle } from "lucide-react-native";
 import * as React from "react";
-import { Text, View } from "react-native";
-import Animated, { useReducedMotion } from "react-native-reanimated";
+import { View } from "react-native";
 
-import { Button, Screen, Section, T } from "@/ds";
+import { Button, Label, Screen, Stone, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { openLink } from "@/lib/open";
-import { presets } from "@/motion";
-import { fonts, space, useTheme } from "@/theme";
-import { Icon, Star } from "@/visitor/Art";
+import { Enter } from "@/motion";
+import { space, useTheme } from "@/theme";
 
-const STEPS = ["Message us on WhatsApp.", "We send a new setup link to your email.", "Open the link on this phone and choose a new password here in the app."] as const;
+const STEPS = ["Message us on WhatsApp.", "We send a new setup link to your email.", "Open the link and choose a new password. Then sign in here."] as const;
 
 /** Forgot password: the school sends a fresh setup link over WhatsApp, as on the website. */
 export function ForgotPasswordScreen() {
   const c = useTheme();
-  const reduce = useReducedMotion();
-  const enter = (i: number) => (reduce ? undefined : presets.rise(80 + i * 70));
   return (
     <Screen
       testID="forgot"
-      footer={<Button label="Message us on WhatsApp" icon={<MessageCircle size={20} color={c.onPrimary} />} onPress={() => void openLink(`${BRAND.whatsapp}?text=${encodeURIComponent("Hi, I forgot my VIBHA password. Please send me a new setup link.")}`)} testID="forgot-whatsapp" />}
+      title="Forgot your password?"
+      lead="We will send you a fresh link. It takes three steps."
+      gap={space[5]}
+      footer={<Button label="Message us on WhatsApp" icon={<MessageCircle size={20} color={c.onPrimary} strokeWidth={2} />} onPress={() => void openLink(`${BRAND.whatsapp}?text=${encodeURIComponent("Hi, I forgot my VIBHA password. Please send me a new setup link.")}`)} testID="forgot-whatsapp" />}
     >
-      <Animated.View entering={enter(0)} style={{ gap: space[4] }}>
-        <View style={{ width: 72, height: 72, alignItems: "center", justifyContent: "center" }}>
-          <Star size={72} fill="#cdf24b" style={{ position: "absolute" }} />
-          <Icon name="chat" size={34} fill="#ffffff" />
-        </View>
-        <T v="h1">Forgot your password?</T>
-      </Animated.View>
-      <View style={{ gap: space[4] }}>
-        {STEPS.map((s, i) => (
-          <Animated.View key={s} entering={enter(i + 1)} style={{ flexDirection: "row", gap: space[4], alignItems: "flex-start" }}>
-            <View style={{ width: 32, height: 32, borderRadius: 16, backgroundColor: c.dark ? "#cdf24b" : "#111111", alignItems: "center", justifyContent: "center" }}>
-              <Text allowFontScaling={false} style={{ fontFamily: fonts.pixelDigits, fontSize: 15, color: c.dark ? "#111111" : "#cdf24b" }}>
-                {i + 1}
-              </Text>
-            </View>
-            <T v="reading" style={{ flex: 1, paddingTop: 2 }}>
-              {s}
-            </T>
-          </Animated.View>
-        ))}
+      <View style={{ gap: space[3] }}>
+        <Label>How it works</Label>
+        <Stone>
+          <View style={{ gap: space[4] }}>
+            {STEPS.map((s, i) => (
+              <Enter key={s} i={i} style={{ flexDirection: "row", gap: space[3], alignItems: "flex-start" }}>
+                <View style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: c.ink, alignItems: "center", justifyContent: "center" }}>
+                  <T v="small" tone="onInk" num maxFontSizeMultiplier={1.2}>
+                    {i + 1}
+                  </T>
+                </View>
+                <T style={{ flex: 1, paddingTop: 3 }}>{s}</T>
+              </Enter>
+            ))}
+          </View>
+        </Stone>
       </View>
-      <Animated.View entering={enter(4)}>
-        <Section title="Forgot only your PIN?">
-          <T tone="muted">Tap Forgot PIN on the lock screen. You will sign in with your password and choose a new PIN.</T>
-        </Section>
-      </Animated.View>
+      <Enter i={4}>
+        <Stone quiet>
+          <T v="bodyStrong">Forgot only your PIN?</T>
+          <T v="small" tone="muted" style={{ marginTop: space[1] }}>
+            Tap Forgot PIN on the lock screen. You will sign in with your password and choose a new PIN.
+          </T>
+        </Stone>
+      </Enter>
     </Screen>
   );
 }

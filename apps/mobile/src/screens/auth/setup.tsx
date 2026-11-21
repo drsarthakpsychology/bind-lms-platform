@@ -8,10 +8,10 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 import type { SetupCheckResult, SetupCompleteResult } from "@/api/contract";
 import { ApiFailure, messageOf, reasonOf } from "@/api/errors";
 import { api, session } from "@/auth";
-import { EmptyState, Screen, Skeleton, T } from "@/ds";
+import { Button, QuietEmpty, Screen, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { springs } from "@/motion";
-import { space, useTheme } from "@/theme";
+import { layout, space, useTheme } from "@/theme";
 import { AuthField, SubmitButton } from "@/visitor/form";
 
 const REASON: Record<string, string> = {
@@ -28,6 +28,7 @@ export function SetupScreen({ token }: { token: string }) {
   const [error, setError] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
   const [done, setDone] = React.useState(false);
+  const c = useTheme();
 
   const submit = async () => {
     if (password.length < 12) return setError("Use at least 12 characters.");
@@ -51,29 +52,32 @@ export function SetupScreen({ token }: { token: string }) {
   if (!token || check.isError || (check.data && !check.data.valid)) {
     const reason = !token ? "unknown" : (check.data?.reason ?? "unknown");
     return (
-      <Screen safeTop testID="setup-invalid">
-        <EmptyState mood="error" title="This link cannot be used" body={check.isError ? `Could not check the link. ${reasonOf(check.error)}` : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
+      <Screen safeTop testID="setup-invalid" title="This link cannot be used" gap={space[4]}>
+        <QuietEmpty testID="setup-invalid-note" title="Ask for a new link" body={check.isError ? `Could not check the link. ${reasonOf(check.error)}` : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
+        {check.isError ? <Button kind="text" full label="Try again" onPress={() => void check.refetch()} testID="setup-retry" /> : null}
       </Screen>
     );
   }
   if (!check.data) {
     return (
-      <Screen safeTop testID="setup-loading">
-        <Skeleton w="70%" h={34} />
-        <Skeleton h={52} r={12} />
-        <Skeleton h={52} r={12} />
+      <Screen safeTop testID="setup-loading" title="Choose your password" lead="Checking your link" gap={space[5]}>
+        <Skeleton h={56} r={layout.radius} />
+        <Skeleton h={56} r={layout.radius} />
+        <Skeleton h={56} r={28} />
       </Screen>
     );
   }
   return (
-    <Screen safeTop testID="setup" title="Choose your password" lead={check.data.email ? `For ${check.data.email}` : undefined} gap={space[5]}>
+    <Screen safeTop testID="setup" title="Choose your password" lead={check.data.email ? `For ${check.data.email}` : "One step, then you are in."} gap={space[5]}>
       <AuthField label="New password" icon={Lock} value={password} onChangeText={setPassword} secret autoComplete="new-password" textContentType="newPassword" autoCapitalize="none" testID="setup-password" />
       <Strength length={password.length} />
       <AuthField label="Type it again" icon={Lock} value={again} onChangeText={setAgain} secret autoComplete="new-password" textContentType="newPassword" autoCapitalize="none" returnKeyType="go" onSubmitEditing={() => void submit()} error={again.length >= password.length && again.length > 0 && again !== password ? "The two passwords do not match." : null} testID="setup-again" />
       {error ? (
-        <T v="small" tone="danger" accessibilityLiveRegion="polite" testID="setup-error">
-          {error}
-        </T>
+        <View style={{ backgroundColor: c.alertBg, borderRadius: layout.radius, padding: space[4] }}>
+          <T v="small" tone="alert" accessibilityLiveRegion="polite" testID="setup-error">
+            {error}
+          </T>
+        </View>
       ) : null}
       <SubmitButton label="Save and sign in" busyLabel="Saving" doneLabel="Saved" state={busy ? "busy" : done ? "done" : "idle"} onPress={() => void submit()} testID="setup-submit" />
     </Screen>
@@ -85,10 +89,10 @@ function Strength({ length }: { length: number }) {
   const c = useTheme();
   const steps = [3, 6, 9, 12];
   return (
-    <View accessible accessibilityLabel={length >= 12 ? "Long enough" : `${12 - length} more characters needed`} style={{ gap: space[2], marginTop: -space[2] }}>
+    <View accessible accessibilityLabel={length >= 12 ? "Long enough" : `${12 - length} more characters needed`} style={{ gap: space[2], marginTop: -space[2], paddingHorizontal: space[1] }}>
       <View style={{ flexDirection: "row", gap: 6 }}>
         {steps.map((n) => (
-          <Bar key={n} on={length >= n} full={length >= 12} track={c.tint} />
+          <Bar key={n} on={length >= n} color={length >= 12 ? c.ok : c.link} track={c.card} />
         ))}
       </View>
       <T v="small" tone="muted">
@@ -98,7 +102,7 @@ function Strength({ length }: { length: number }) {
   );
 }
 
-function Bar({ on, full, track }: { on: boolean; full: boolean; track: string }) {
+function Bar({ on, color, track }: { on: boolean; color: string; track: string }) {
   const reduce = useReducedMotion();
   const v = useSharedValue(on ? 1 : 0);
   React.useEffect(() => {
@@ -107,7 +111,7 @@ function Bar({ on, full, track }: { on: boolean; full: boolean; track: string })
   const anim = useAnimatedStyle(() => ({ transform: [{ scaleX: v.value }] }));
   return (
     <View style={{ flex: 1, height: 6, borderRadius: 3, backgroundColor: track, overflow: "hidden" }}>
-      <Animated.View style={[{ flex: 1, borderRadius: 3, backgroundColor: full ? "#cdf24b" : "#1d44d8", transformOrigin: "left" }, anim]} />
+      <Animated.View style={[{ flex: 1, borderRadius: 3, backgroundColor: color, transformOrigin: "left" }, anim]} />
     </View>
   );
 }

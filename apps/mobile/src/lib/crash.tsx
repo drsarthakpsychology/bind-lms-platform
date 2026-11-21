@@ -3,6 +3,7 @@ import { Platform, Pressable, ScrollView, Text, View, useColorScheme } from "rea
 
 import * as SplashScreen from "expo-splash-screen";
 
+import { dark as darkPalette, light as lightPalette } from "@/theme/tokens";
 import { crumb, describeCrumb } from "./breadcrumb";
 import { createStore } from "./store";
 
@@ -113,34 +114,40 @@ export function CrashScreen({ crash, onRetry }: { crash: Crash; onRetry: () => v
   React.useEffect(() => {
     void SplashScreen.hideAsync().catch(() => undefined);
   }, []);
-  const c = dark ? { bg: "#0d0d0d", ink: "#ffffff", muted: "#a3a3a3", card: "#1a1a1a", line: "#333333", primary: "#cdf24b", onPrimary: "#0d0d0d" } : { bg: "#f5f5f5", ink: "#111111", muted: "#525252", card: "#ffffff", line: "#d4d4d4", primary: "#cdf24b", onPrimary: "#0d0d0d" };
+  // Outside the theme (it may be what broke): the Layers palette, read straight from the tokens.
+  const c = dark ? darkPalette : lightPalette;
   const mono = Platform.select({ ios: "Menlo", android: "monospace", default: "monospace" });
   return (
-    <View testID="crash-screen" accessibilityViewIsModal style={{ flex: 1, backgroundColor: c.bg, paddingHorizontal: 24, paddingTop: 72, paddingBottom: 32 }}>
-      <View style={{ flex: 1, justifyContent: "center", gap: 12, width: "100%", maxWidth: 420, alignSelf: "center" }}>
-        <Text accessibilityRole="header" style={{ fontSize: 28, lineHeight: 34, fontWeight: "700", color: c.ink }}>
+    <View testID="crash-screen" accessibilityViewIsModal style={{ flex: 1, backgroundColor: c.field }}>
+      <View style={{ paddingHorizontal: 20, paddingTop: 72, paddingBottom: 24 + 28, gap: 6, width: "100%", maxWidth: 460, alignSelf: "center" }}>
+        <Text accessibilityRole="header" style={{ fontSize: 30, lineHeight: 35, fontWeight: "700", letterSpacing: -0.5, color: c.onField }}>
           Something went wrong
         </Text>
-        <Text style={{ fontSize: 16, lineHeight: 24, color: c.muted }}>The app ran into a problem on this screen. Your work is saved. Try again, and if it keeps happening, send us a screenshot of this page.</Text>
-        {where ? (
-          <Text testID="crash-where" style={{ fontSize: 14, lineHeight: 20, color: c.muted }}>
-            {`It happened on: ${where}`}
-          </Text>
-        ) : null}
-        <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen((o) => !o)} testID="crash-details-toggle" style={{ paddingVertical: 8 }}>
-          <Text style={{ fontSize: 14, color: c.muted, textDecorationLine: "underline" }}>{open ? "Hide details" : "Show details"}</Text>
-        </Pressable>
-        {open ? (
-          <ScrollView style={{ maxHeight: 220, borderWidth: 1, borderColor: c.line, borderRadius: 12, backgroundColor: c.card }} contentContainerStyle={{ padding: 12 }}>
-            <Text selectable testID="crash-details" style={{ fontFamily: mono, fontSize: 12, lineHeight: 17, color: c.ink }}>
-              {`${crash.message}\n(${crash.where})${where ? `\nScreen: ${where}` : ""}${crash.detail ? `\n\n${crash.detail}` : ""}`}
-            </Text>
-          </ScrollView>
-        ) : null}
+        <Text style={{ fontSize: 14, lineHeight: 20, fontWeight: "500", color: c.onFieldMuted }}>Your work is saved.</Text>
       </View>
-      <Pressable accessibilityRole="button" onPress={onRetry} testID="crash-retry" style={({ pressed }) => ({ minHeight: 56, borderRadius: 16, alignItems: "center", justifyContent: "center", backgroundColor: c.primary, opacity: pressed ? 0.85 : 1, width: "100%", maxWidth: 420, alignSelf: "center" })}>
-        <Text style={{ fontSize: 17, fontWeight: "700", color: c.onPrimary }}>Try again</Text>
-      </Pressable>
+      <View style={{ flex: 1, marginTop: -28, backgroundColor: c.bg, borderTopLeftRadius: 30, borderTopRightRadius: 30, paddingHorizontal: 20, paddingTop: 24, paddingBottom: 32 }}>
+        <View style={{ flex: 1, gap: 12, width: "100%", maxWidth: 420, alignSelf: "center" }}>
+          <Text style={{ fontSize: 17, lineHeight: 28, color: c.ink }}>The app ran into a problem on this screen. Try again, and if it keeps happening, send us a screenshot of this page.</Text>
+          {where ? (
+            <Text testID="crash-where" style={{ fontSize: 14, lineHeight: 20, color: c.muted }}>
+              {`It happened on: ${where}`}
+            </Text>
+          ) : null}
+          <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen((o) => !o)} testID="crash-details-toggle" hitSlop={6} style={{ minHeight: 48, justifyContent: "center", alignSelf: "flex-start" }}>
+            <Text style={{ fontSize: 14, fontWeight: "700", color: c.link }}>{open ? "Hide details" : "Show details"}</Text>
+          </Pressable>
+          {open ? (
+            <ScrollView style={{ maxHeight: 220, borderRadius: 18, backgroundColor: c.card }} contentContainerStyle={{ padding: 16 }}>
+              <Text selectable testID="crash-details" style={{ fontFamily: mono, fontSize: 12, lineHeight: 17, color: c.ink }}>
+                {`${crash.message}\n(${crash.where})${where ? `\nScreen: ${where}` : ""}${crash.detail ? `\n\n${crash.detail}` : ""}`}
+              </Text>
+            </ScrollView>
+          ) : null}
+        </View>
+        <Pressable accessibilityRole="button" onPress={onRetry} testID="crash-retry" style={({ pressed }) => ({ minHeight: 56, borderRadius: 28, alignItems: "center", justifyContent: "center", backgroundColor: c.lime, opacity: pressed ? 0.85 : 1, width: "100%", maxWidth: 420, alignSelf: "center" })}>
+          <Text style={{ fontSize: 17, fontWeight: "700", color: c.onLime }}>Try again</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }

@@ -23,8 +23,8 @@ export default function VisitorStack() {
         options={{
           headerShown: true,
           title: "",
-          headerStyle: { backgroundColor: c.bg },
-          headerTintColor: c.ink,
+          headerStyle: { backgroundColor: c.field },
+          headerTintColor: c.onField,
           headerShadowVisible: false,
           headerBackButtonDisplayMode: "minimal",
         }}
