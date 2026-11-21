@@ -155,7 +155,7 @@ export function DesignStudy({ onDone, onClose }: RunnerProps) {
   const open = openThreats(d);
   const hasControl = d.control === "waitlist" || d.control === "active";
   const set = (key: keyof DesignChoices, id: string) => setD((old) => ({ ...old, [key]: id, ...(key === "control" && id === "none" ? { assign: null } : null) }) as DesignChoices);
-  const finish = () => onDone({ headline: `Your design closes ${score.closed} of ${score.of} ways a study can fool you.`, lines: THREATS.map((t) => ({ label: t.name, value: open.has(t.id) ? `Still open. ${t.fix}` : "Closed" })), bars: [{ label: "Closed", pct: score.percent }], barsLabel: "Threats closed" });
+  const finish = () => onDone({ headline: `Your design closes ${score.closed} of ${score.of} ways a study can fool you.`, lines: THREATS.map((t) => ({ label: t.name, value: open.has(t.id) ? "Still open" : "Closed" })), notes: THREATS.filter((t) => open.has(t.id)).map((t) => `${t.name}: ${t.fix}`), bars: [{ label: "Closed", pct: score.percent }], barsLabel: "Threats closed" });
   return (
     <PlayShell testID="lab-run" title="Design the study" done={score.closed} total={score.of} onClose={onClose} footer={<Button label="Run my study" testID="lab-submit" disabled={!designComplete(d)} onPress={finish} />}>
       <Stone>

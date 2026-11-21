@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View } from "react-native";
+import { useWindowDimensions, View } from "react-native";
 import Animated, { cancelAnimation, Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming, type SharedValue } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -53,6 +53,7 @@ export function BreathingScreen() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = !!useReducedMotion();
+  const { height } = useWindowDimensions();
   useLightStatusBar(true);
   const [pattern, setPattern] = React.useState<PatternId>("box");
   const [minutes, setMinutes] = React.useState<"1" | "2" | "3" | "5">("2");
@@ -106,13 +107,13 @@ export function BreathingScreen() {
       <OwnHeader />
       <View testID="calm-breathing" style={{ flex: 1, paddingTop: insets.top }}>
         <BackBar home="/calm" />
-        <View style={{ flex: 1, minHeight: 300, alignItems: "center", justifyContent: "center", gap: space[3], paddingBottom: space[5] }}>
-          <BreathPebble p={p} live={state === "running"} word={word} count={state === "running" ? now.left : null} />
+        <View style={{ flex: 1, minHeight: 260, alignItems: "center", justifyContent: "center", gap: space[3], paddingBottom: space[5] }}>
+          <BreathPebble p={p} live={state === "running"} word={word} count={state === "running" ? now.left : null} size={Math.max(150, Math.min(232, Math.round(height * 0.27)))} />
           <T v="small" tone="onFieldMuted" center style={{ paddingHorizontal: layout.gutter }}>
             {state === "running" ? `${clock(total - now.elapsed)} left` : state === "done" ? "Notice how your body feels now." : PATTERNS[pattern].note}
           </T>
         </View>
-        <Layer style={{ flex: 0, marginTop: 0, paddingBottom: insets.bottom + space[4], gap: space[4] }}>
+        <Layer style={{ flexGrow: 0, flexShrink: 0, flexBasis: "auto", marginTop: 0, paddingBottom: insets.bottom + space[4], gap: space[4] }}>
           {state === "running" ? (
             <Button kind="quiet" label="Stop" testID="breath-stop" onPress={() => setState("ready")} />
           ) : (

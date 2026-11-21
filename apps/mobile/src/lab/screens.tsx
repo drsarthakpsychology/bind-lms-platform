@@ -206,6 +206,18 @@ export function ExperimentScreen() {
                     </View>
                   ))}
                 </View>
+                {mine.notes?.length ? (
+                  <View style={{ gap: space[2] }}>
+                    <T v="label" tone="muted">
+                      Next time
+                    </T>
+                    {mine.notes.map((n) => (
+                      <T key={n} v="small">
+                        {n}
+                      </T>
+                    ))}
+                  </View>
+                ) : null}
                 <T v="caption" tone="muted">
                   One run on one day. Kept on this phone.
                 </T>

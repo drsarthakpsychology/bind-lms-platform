@@ -1,7 +1,7 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowRight, Check, Hand, Phone, Shuffle, StretchVertical, Wind } from "lucide-react-native";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { Linking, useWindowDimensions, View } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -155,6 +155,7 @@ export function MusclesScreen() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = !!useReducedMotion();
+  const { height } = useWindowDimensions();
   useLightStatusBar(true);
   const per = TENSE_SECS + RELEASE_SECS;
   const total = MUSCLE_GROUPS.length * per;
@@ -190,13 +191,13 @@ export function MusclesScreen() {
       <OwnHeader />
       <View testID="calm-muscles" style={{ flex: 1, paddingTop: insets.top }}>
         <BackBar home="/calm" />
-        <View style={{ flex: 1, minHeight: 280, alignItems: "center", justifyContent: "center", gap: space[2], paddingBottom: space[5] }}>
-          <BreathPebble p={p} live={state === "running" && tense} word={state === "running" ? (tense ? "Tense" : "Release") : state === "done" ? "Well done" : "Ready"} count={state === "running" ? left : null} size={208} />
+        <View style={{ flex: 1, minHeight: 260, alignItems: "center", justifyContent: "center", gap: space[2], paddingBottom: space[5] }}>
+          <BreathPebble p={p} live={state === "running" && tense} word={state === "running" ? (tense ? "Tense" : "Release") : state === "done" ? "Well done" : "Ready"} count={state === "running" ? left : null} size={Math.max(150, Math.min(208, Math.round(height * 0.25)))} />
           <T v="small" tone="onFieldMuted" num>
             {state === "running" ? `${g + 1} of ${MUSCLE_GROUPS.length}` : state === "done" ? "Let your whole body rest for a moment." : "Sit or lie down somewhere comfortable."}
           </T>
         </View>
-        <Layer style={{ flex: 0, marginTop: 0, paddingBottom: insets.bottom + space[4], gap: space[4] }}>
+        <Layer style={{ flexGrow: 0, flexShrink: 0, flexBasis: "auto", marginTop: 0, paddingBottom: insets.bottom + space[4], gap: space[4] }}>
           {state === "running" ? (
             <>
               <View accessibilityLiveRegion="polite" style={{ gap: space[1], minHeight: 84 }}>

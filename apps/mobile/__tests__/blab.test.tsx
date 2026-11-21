@@ -1,6 +1,7 @@
 import { act, fireEvent, screen, waitFor } from "@testing-library/react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
+import { Text } from "react-native";
 
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
@@ -23,6 +24,18 @@ import { fixedDocs, mergeServer, SearchScreen } from "@/search/screen";
 import { SelfCheckHomeScreen, SelfCheckRunScreen } from "@/selfcheck/screens";
 import { INSTRUMENTS, PHQ9, scoreInstrument } from "@/selfcheck/tests";
 import { render } from "./utils";
+
+/** Shows a render error as text, so a test can say what broke. */
+class Catch extends React.Component<{ children: React.ReactNode }, { e: string | null }> {
+  state = { e: null as string | null };
+  static getDerivedStateFromError(e: Error) {
+    return { e: String(e?.stack ?? e).slice(0, 700) };
+  }
+  render() {
+    return this.state.e ? <Text testID="render-error">{this.state.e}</Text> : this.props.children;
+  }
+}
+const errorText = () => (screen.queryByTestId("render-error")?.props.children as string | undefined) ?? "";
 
 beforeAll(async () => {
   await session.boot();
@@ -283,8 +296,13 @@ describe("Psychology Lab", () => {
   it("every runner draws its first screen", async () => {
     for (const e of EXPERIMENTS) {
       const R = RUNNERS[e.id]!;
-      const view = await render(<R onDone={() => undefined} onClose={() => undefined} />);
-      expect(screen.getAllByTestId("lab-run").length).toBeGreaterThan(0);
+      const view = await render(
+        <Catch>
+          <R onDone={() => undefined} onClose={() => undefined} />
+        </Catch>,
+      );
+      expect(`${e.id} ${errorText()}`).toBe(`${e.id} `);
+      expect(screen.queryAllByTestId("lab-run").length).toBeGreaterThan(0);
       view.unmount();
     }
   });
@@ -293,11 +311,12 @@ describe("Psychology Lab", () => {
 describe("Entry cards", () => {
   it("each opens its screen", async () => {
     await render(
-      <>
+      <Catch>
         <PractiseExtras />
         <WellbeingExtras />
-      </>,
+      </Catch>,
     );
+    expect(errorText()).toBe("");
     const want: Record<string, string> = { "entry-casebook": "/casebook", "entry-lab": "/lab", "entry-ethics": "/ethics", "entry-interview": "/interview", "entry-calm": "/calm", "entry-selfcheck": "/selfcheck" };
     for (const [id, href] of Object.entries(want)) {
       await fireEvent.press(screen.getByTestId(id));

@@ -11,7 +11,7 @@ import { cowanK, curveRegions, digitSequence, illusionBias, mean, parseRecall, r
 import { PlayShell } from "./shell";
 
 /** What a finished experiment hands back: the student's own numbers, in words. */
-export type LabResult = { headline: string; lines: { label: string; value: string }[]; bars?: { label: string; pct: number }[]; barsLabel?: string };
+export type LabResult = { headline: string; lines: { label: string; value: string }[]; /** Plain sentences under the numbers (what to change next time). */ notes?: string[]; bars?: { label: string; pct: number }[]; barsLabel?: string };
 export type RunnerProps = { onDone: (r: LabResult) => void; onClose: () => void };
 
 /** The white card a stimulus sits on, so its colours read the same in light and dark. */
