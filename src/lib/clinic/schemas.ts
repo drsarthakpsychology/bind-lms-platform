@@ -32,6 +32,10 @@ export const leaveSchema = z.object({ sessionIds: z.array(uuid).min(1).max(60), 
 export const earlyLeaveSchema = z.object({ sessionId: uuid, leaveAt: time, reason: text(500).min(2), cohortId: uuid.optional() });
 export const batchSchema = z.object({ batch, cohortId: uuid.optional() });
 export const caseLogSchema = z.object({ assignmentId: uuid, cases: z.number().int().min(0).max(50), absent: z.boolean().optional(), note: text(200).optional() });
+const part = z.string().max(2000).optional();
+/** Each part is trimmed and cut to 600 on the server (after phone numbers come out). */
+export const reflectionSchema = z.object({ assignmentId: uuid, saw: part, learned: part, ask: part });
+export const replySchema = z.object({ reply: text(1000).min(1) });
 
 export const slotSchema = z.object({
   cohortIds: z.array(uuid).min(1).max(20),

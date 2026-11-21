@@ -26,6 +26,8 @@ import type {
   ClinicOpdSettings,
   ClinicPublishBody,
   ClinicQuotaBody,
+  ClinicReflectionBody,
+  ClinicReflectionReplyBody,
   ClinicScanBody,
   ClinicSessionBody,
   ClinicSessionPatch,
@@ -52,6 +54,8 @@ export async function cancelLeave(id: string) { return pass(A.clinicCancelLeave(
 export async function loadMyOpd() { return pass(A.clinicMyOpd()); }
 export async function chooseBatch(body: ClinicBatchBody) { return pass(A.clinicChooseBatch(body)); }
 export async function sendCaseLog(body: ClinicCaseLogBody) { return pass(A.clinicSubmitCaseLog(body)); }
+export async function loadMyReflections() { return pass(A.clinicMyReflections()); }
+export async function saveReflection(body: ClinicReflectionBody) { return pass(A.clinicSaveReflection(body)); }
 
 /* admin */
 export async function loadOverview(cohort?: string) { return pass(A.clinicAdminOverview(cohort ?? null)); }
@@ -84,3 +88,5 @@ export async function discardPlan(cohortId: string) { return pass(A.clinicDiscar
 export async function remindLogs(cohortId: string) { return pass(A.clinicRemind({ cohortId })); }
 export async function loadTrackers(cohort?: string) { return pass(A.clinicTrackers(cohort ?? null)); }
 export async function loadStudentDetail(userId: string, cohort?: string) { return pass(A.clinicStudentDetail(userId, cohort ?? null)); }
+export async function loadReflections(cohort?: string, user?: string, date?: string) { return pass(A.clinicReflections(cohort ?? null, user ?? null, date ?? null)); }
+export async function replyReflection(id: string, body: ClinicReflectionReplyBody) { return pass(A.clinicReplyReflection(id, body)); }

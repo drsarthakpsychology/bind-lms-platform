@@ -65,6 +65,13 @@ export type {
   ClinicTrackers,
   ClinicStudentDetail,
   ClinicRemindResult,
+  ClinicReflection,
+  ClinicMyReflections,
+  ClinicReflectionBody,
+  ClinicReflectionSaved,
+  ClinicAdminReflection,
+  ClinicAdminReflections,
+  ClinicReflectionReplyBody,
 } from "@/lib/app-api/contract";
 
 import type { ClinicBatch, ClinicKind, ClinicSeats } from "@/lib/app-api/contract";
@@ -171,6 +178,24 @@ export type AssignmentRow = {
 };
 
 export type CaseLogRow = { id: string; assignment_id: string; user_id: string; cohort_id: string; date: string; cases: number; absent: boolean; note: string | null };
+
+/** supabase/migrations_pending/2026_11_17_reflections.sql */
+export type ReflectionRow = {
+  id: string;
+  assignment_id: string;
+  user_id: string;
+  cohort_id: string;
+  date: string;
+  batch: ClinicBatch;
+  saw: string | null;
+  learned: string | null;
+  ask: string | null;
+  reply: string | null;
+  replied_by: string | null;
+  replied_at: string | null;
+  created_at: string;
+  updated_at: string;
+};
 
 export const DEFAULT_OPD_SETTINGS = (cohortId: string): OpdSettingsRow => ({
   cohort_id: cohortId,

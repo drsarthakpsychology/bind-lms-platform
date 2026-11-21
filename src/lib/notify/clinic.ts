@@ -13,7 +13,7 @@ export const CLINIC_LINK = "/clinic";
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
 
-export async function notifyClinic(input: { userIds: readonly string[]; title: string; text: string; sentBy: string | null; link?: string }): Promise<number> {
+export async function notifyClinic(input: { userIds: readonly string[]; title: string; text: string; sentBy: string | null; link?: string; linkText?: string }): Promise<number> {
   const ids = [...new Set(input.userIds)].slice(0, 2000);
   if (!ids.length) return 0;
   const link = input.link ?? CLINIC_LINK;
@@ -26,7 +26,7 @@ export async function notifyClinic(input: { userIds: readonly string[]; title: s
       credential_id: null,
       title: input.title.slice(0, 140),
       body: input.text.slice(0, 500),
-      body_html: `<p>${esc(input.text.slice(0, 1000))}</p><p><a href="${link}">Open your schedule</a></p>`,
+      body_html: `<p>${esc(input.text.slice(0, 1000))}</p><p><a href="${link}">${esc(input.linkText ?? "Open your schedule")}</a></p>`,
       href: `/notifications/${id}`,
       sent_by: input.sentBy,
     };

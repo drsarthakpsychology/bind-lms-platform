@@ -1618,3 +1618,42 @@ export type ClinicStudentDetail = {
 };
 /** POST /clinic/admin/opd/remind: a notice to everyone with a case log due. */
 export type ClinicRemindResult = { notified: number };
+
+/* --------------------------- reflections -------------------------- */
+
+/** A student's short reflection on one OPD visit, and the supervisor's reply. */
+export type ClinicReflection = {
+  id: string;
+  assignmentId: string;
+  date: string;
+  batch: ClinicBatch;
+  /** What I saw. */
+  saw: string | null;
+  /** What I learned. */
+  learned: string | null;
+  /** What I want to ask. */
+  ask: string | null;
+  at: string;
+  reply: { text: string; at: string; by: string | null } | null;
+};
+/** GET /clinic/reflections: my reflections, newest day first. */
+export type ClinicMyReflections = { v: 1; cohortId: string | null; reflections: ClinicReflection[] };
+/** PUT /clinic/reflections: write or change the reflection for an OPD day with a case count sent. */
+export type ClinicReflectionBody = { assignmentId: string; saw?: string; learned?: string; ask?: string };
+/** `removed`: phone numbers or emails taken out before saving. */
+export type ClinicReflectionSaved = { reflection: ClinicReflection; removed: number };
+
+export type ClinicAdminReflection = ClinicReflection & { userId: string; name: string | null; roll: string | null };
+/** GET /clinic/admin/reflections?cohort=&user=&date= */
+export type ClinicAdminReflections = {
+  v: 1;
+  cohortId: string;
+  canWrite: boolean;
+  /** Everyone who wrote at least one, with how many wait for a reply. */
+  people: { userId: string; name: string | null; roll: string | null; count: number; waiting: number }[];
+  /** Days with reflections, newest first. */
+  days: { date: string; count: number; waiting: number }[];
+  reflections: ClinicAdminReflection[];
+};
+/** POST /clinic/admin/reflections/:id/reply */
+export type ClinicReflectionReplyBody = { reply: string };

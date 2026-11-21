@@ -18,6 +18,7 @@ import { rateLimitWrite } from "@/lib/rate-limit";
 import * as admin from "./admin";
 import { clinicDb } from "./db";
 import * as s from "./schemas";
+import * as reflections from "./reflections";
 import * as student from "./student";
 
 export type ClinicActionResult<T> = { ok: true; data: T } | { ok: false; code: ApiErrorCode; error: string; fields?: string[] };
@@ -90,6 +91,13 @@ export async function clinicChooseBatch(input: unknown) {
 }
 export async function clinicSubmitCaseLog(input: unknown) {
   return run("self", (p) => student.submitCaseLog(clinicDb(), p.id, parse(s.caseLogSchema, input), Date.now()), "clinic");
+}
+
+export async function clinicMyReflections(cohortId?: string | null) {
+  return run("self", (p) => reflections.getMyReflections(clinicDb(), p.id, cohort(cohortId)));
+}
+export async function clinicSaveReflection(input: unknown) {
+  return run("self", (p) => reflections.saveReflection(clinicDb(), p.id, parse(s.reflectionSchema, input), Date.now()), "clinic");
 }
 
 /* ------------------------------------------------------------ admin */
@@ -186,4 +194,12 @@ export async function clinicTrackers(cohortId?: string | null) {
 }
 export async function clinicStudentDetail(userId: string, cohortId?: string | null) {
   return run("admin", () => admin.studentDetail(clinicDb(), id(userId), cohort(cohortId), Date.now()));
+}
+export async function clinicReflections(cohortId?: string | null, userId?: string | null, date?: string | null) {
+  return run("admin", (p) =>
+    reflections.listReflections(clinicDb(), cohort(cohortId), { user: typeof userId === "string" ? s.idOrNull(userId) : null, date: typeof date === "string" && date ? date : null }, isSuperAdmin(p)),
+  );
+}
+export async function clinicReplyReflection(reflectionId: string, input: unknown) {
+  return run("super", (p) => reflections.replyReflection(clinicDb(), id(reflectionId), parse(s.replySchema, input), p.id, Date.now()), "clinic-admin");
 }
