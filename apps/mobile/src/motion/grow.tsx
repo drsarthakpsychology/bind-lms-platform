@@ -14,7 +14,7 @@ import { curves } from "./tokens";
  * One animated view (the screen's root), transform, opacity and corner radius
  * only, on the UI thread.
  *
- *   const ref = React.useRef<View>(null);
+ *   const ref = useCardRef();
  *   <Card ref... onPress={() => growFrom(ref, () => router.push("/lecture/l5"))} />
  *
  * The route must use `growOr(route.key, m.push)` for its stack animation (see
@@ -27,6 +27,14 @@ import { curves } from "./tokens";
  * the side as usual.
  */
 type Rect = { x: number; y: number; w: number; h: number };
+/** Anything that can say where it is on screen (a View). */
+export type Measurable = { measureInWindow?: (cb: (x: number, y: number, w: number, h: number) => void) => void };
+/** The ref to put on the card that grows (`Stone ref={ref}`), then pass to `growFrom`. */
+export type CardRef = React.ComponentRef<typeof View>;
+export function useCardRef() {
+  return React.useRef<CardRef>(null);
+}
+
 let mark: { rect: Rect; at: number } | null = null;
 const WINDOW = 600;
 
@@ -35,7 +43,7 @@ function pending(): Rect | null {
 }
 
 /** Notes where the pressed card is, then runs `open` (a `router.push`). Falls back to a plain open if it cannot be measured. */
-export function growFrom(ref: React.RefObject<View | null>, open: () => void): void {
+export function growFrom(ref: React.RefObject<Measurable | null>, open: () => void): void {
   const node = ref.current;
   if (!node || typeof node.measureInWindow !== "function") {
     open();
@@ -66,7 +74,7 @@ export function growOr(routeKey: string, normal: StackMotion, reduce = false): S
 }
 
 /** The animated style for the root of a screen that may have grown out of a card. Plain (no style) otherwise. */
-export function useGrowIn(): StyleProp<ViewStyle> {
+export function useGrowIn(): StyleProp<ViewStyle> | null {
   const reduce = useReducedMotion();
   const { low } = useMotionTier();
   // Read once, on the first render of the screen that opens.
@@ -82,7 +90,7 @@ export function useGrowIn(): StyleProp<ViewStyle> {
   }, [on, p]);
   const win = Dimensions.get("window");
   const style = useAnimatedStyle(() => {
-    if (!from) return {};
+    if (!from) return { opacity: 1 };
     const s = Math.max(0.3, Math.min(1, from.w / win.width));
     const dx = from.x + from.w / 2 - win.width / 2;
     const dy = from.y + from.h / 2 - win.height / 2;
@@ -94,7 +102,7 @@ export function useGrowIn(): StyleProp<ViewStyle> {
       transform: [{ translateX: dx * k }, { translateY: dy * k }, { scale: s + (1 - s) * p.value }],
     };
   });
-  return on ? style : null;
+  return on ? (style as unknown as StyleProp<ViewStyle>) : null;
 }
 
 /** For a screen that does not use `Screen` from the kit: wrap its root in this. */

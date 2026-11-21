@@ -13,7 +13,7 @@ import { opdLine, sessionMeta, sessionTitle } from "@/clinic/logic";
 import type { QuestCard } from "@/api/contract";
 import { FieldCard, IconDot, Jyo, Label, LoadError, Pebbles, QuietEmpty, Row, RowList, Screen, Sheet, Skeleton, StillTrying, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Enter, growFrom, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
+import { Enter, growFrom, useCardRef, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useAccent, useTheme } from "@/theme";
@@ -281,7 +281,7 @@ function NowCard() {
  */
 function KeepGoing({ data }: { data: HomeData }) {
   const c = useTheme();
-  const ref = React.useRef<View>(null);
+  const ref = useCardRef();
   const { step, allDone, progress, welcomeBack } = data;
   if (!allDone && !step) return null;
   const title = allDone ? "Nothing left to do today" : step?.title || "Carry on";

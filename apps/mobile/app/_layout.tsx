@@ -255,8 +255,8 @@ function Shell() {
             <Stack.Screen name="setup" options={{ headerShown: false }} />
             <Stack.Screen name="forgot-password" options={{ title: "" }} />
             <Stack.Screen name="lectures" options={{ title: "Lectures" }} />
-            <Stack.Screen name="course/[courseId]" options={({ route }) => ({ title: "", ...growOr(route.key, m.push, reduce) })} />
-            <Stack.Screen name="lecture/[lessonId]" options={({ route }) => ({ headerShown: false, ...growOr(route.key, m.push, reduce) })} />
+            <Stack.Screen name="course/[courseId]" options={({ route }) => ({ title: "", ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="lecture/[lessonId]" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
             <Stack.Screen name="material/[id]" options={{ title: "" }} />
             <Stack.Screen name="notifications" options={{ title: "Notifications" }} />
             <Stack.Screen name="notification/[id]" options={{ title: "" }} />

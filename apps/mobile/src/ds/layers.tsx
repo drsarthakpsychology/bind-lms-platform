@@ -126,7 +126,7 @@ export function Label({ children, action }: { children: string; /** A text link 
 }
 
 /** A stone surface resting on the layer: 26px corners, no outline, no shadow. Pressable when `onPress` is given. `ref` is for `growFrom`. */
-export const Stone = React.forwardRef<View, { children?: React.ReactNode; onPress?: () => void; accessibilityLabel?: string; /** An outline instead of a fill, for the quieter second thing. */ quiet?: boolean; pad?: number; style?: StyleProp<ViewStyle>; testID?: string }>(function Stone({ children, onPress, accessibilityLabel, quiet, pad = space[4], style, testID }, ref) {
+export const Stone = React.forwardRef<React.ComponentRef<typeof View>, { children?: React.ReactNode; onPress?: () => void; accessibilityLabel?: string; /** An outline instead of a fill, for the quieter second thing. */ quiet?: boolean; pad?: number; style?: StyleProp<ViewStyle>; testID?: string }>(function Stone({ children, onPress, accessibilityLabel, quiet, pad = space[4], style, testID }, ref) {
   const c = useTheme();
   const face: ViewStyle = { borderRadius: quiet ? 22 : layout.radiusLg, padding: pad, backgroundColor: quiet ? "transparent" : c.card, borderWidth: quiet ? 1.5 : 0, borderColor: c.card };
   if (!onPress)
