@@ -80,7 +80,13 @@ one lock (`gate.sh`) because the machine has about 7 GB shared.
 - The remaining broad allows (`Bash`, `Edit`, `WebFetch`, ...) were already
   there; nothing was widened.
 - Plugins already enabled were left as they were; no MCP servers or plugins
-  were added.
+  were added. Two of them (42crunch-api-security-testing, data-engineering) are
+  switched on in settings but not installed, so Claude prints a warning; they
+  do nothing until installed.
+- Allow rules from this file only apply once the folder is trusted. Until
+  someone opens Claude Code interactively in the main checkout and accepts the
+  trust question, headless runs print "Ignoring 11 permissions.allow entries".
+  Deny and ask rules apply either way.
 
 ## Hooks: removed, and why
 
@@ -102,6 +108,31 @@ one lock (`gate.sh`) because the machine has about 7 GB shared.
 No hooks are configured now. If one is wanted later, keep it a small local
 script that reads stdin JSON, never evals it, makes no network calls, checks
 `stop_hook_active` on Stop events, and exits 0 on anything unexpected.
+
+## What was tested (22 Nov 2026, Claude Code 2.1.330)
+
+- All agent, rule and skill frontmatter parses as YAML; names match files.
+- `.claude/settings.json` is valid JSON and passes the published settings
+  schema (the old file failed it: the tool name `Task` is now `Agent`).
+- A fresh headless session listed all five agents and picked the right one for
+  five sample tasks, and repeated the hard rules.
+- Deny rules, checked with the project rules file hidden so only settings
+  decide: Read `.env` blocked, `.env.example` allowed, `npm run build` blocked,
+  `echo` allowed. `git push` needed approval.
+- Two auditors started in parallel in one message, each on the model passed
+  on the call, and both returned the report block unchanged.
+- An auditor with no model passed ran on its file default (sonnet) while the
+  main session ran on haiku.
+- An auditor asked to edit a file reported `STATUS: blocked` and changed
+  nothing (git status clean).
+- `gate.sh` takes the lock and runs; bad input exits 2. `new-worktree.sh` made
+  and linked a worktree, which was then removed.
+- The removed `keep-going.sh`, fed a finished helper's stop event, exited 2
+  with "You are not finished ... NEXT TASK: T208": the hijack is real.
+
+Not tested end to end: a full builder, then verifier, then merge round; the
+clinical-checker and visual-qa agents on real content (their definitions load
+and were routed to correctly).
 
 ## Optional, not switched on
 

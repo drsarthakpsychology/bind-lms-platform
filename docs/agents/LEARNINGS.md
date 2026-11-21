@@ -16,6 +16,8 @@ Format: `YYYY-MM-DD | seen in | lesson | proposed home`
 - 2026-11-22 | orchestr audit | Turbopack fails in worktrees because packages are symlinked; use `next dev --webpack` | already in CLAUDE.md
 - 2026-11-22 | orchestr audit | A Stop or SubagentStop hook that keeps sessions going can hijack helpers and stop them returning their report | docs/agents/README.md (hooks section)
 
+- 2026-11-22 | orchestr tests | Headless sessions ignore project allow rules until the folder is trusted interactively once | docs/agents/README.md
+
 ## Promoted
 
 - 2026-11-22 | heavy-check lock, SQL-to-pending, video rule, react-dom/server rule, owner text rules, design precedence | moved from the session scratchpad into CLAUDE.md, `.claude/rules/`, `scripts/agents/gate.sh`
