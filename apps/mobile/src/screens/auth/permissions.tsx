@@ -5,7 +5,7 @@ import { BackHandler, Platform, View } from "react-native";
 
 import type { Me } from "@/api/contract";
 import { api } from "@/auth";
-import { Button, T } from "@/ds";
+import { Button, T, toast } from "@/ds";
 import { introSeen, markIntroSeen, permissions, type PermKind, type PermState } from "@/lib/permissions";
 import { Enter, Swap } from "@/motion";
 import { groupFor } from "@/nav/targets";
@@ -127,6 +127,8 @@ export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | 
         // Asks, then gives this phone's push address to the server.
         const s = await enablePush();
         if (s === "granted") await api.put("/notifications/preferences", { push: true }).catch(() => undefined);
+        // Allowed on the phone, but this version of the app cannot receive them yet: say so, never pretend.
+        else if (s === "unavailable") toast.show("Notifications do not work in this version of the app yet. An update will turn them on.", 6000);
       } else {
         await permissions.request("camera");
       }
