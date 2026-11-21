@@ -6,6 +6,16 @@ tokens live in `src/theme/tokens.ts`. See every part in its real states at the
 route `/kit` (file `src/screens/kit.tsx`). The finished reference screen is
 Today (`src/screens/home/home.tsx`). Motion numbers are in `docs/MOTION.md`.
 
+**Who owns what.** The kit (`src/ds`), the theme (`src/theme`), the motion
+kit (`src/motion`), the tab bar and `app/_layout.tsx` have one owner (the
+foundation builder). Area builders do not edit them: if a part is missing or
+wrong, write it up as a "Kit wish" in your report. Kit names and props only
+grow; nothing is renamed or removed.
+
+**Scope.** Build only features that are live on the website. Uploading
+courses and lectures is not built in the app (the upload recipe is for
+student hand-ins and photos only).
+
 This phase is design only. Do not change the API client, server routes, the
 website or the database. Where a screen needs data the app does not have yet,
 see "Mock data" and "To connect" at the end.
