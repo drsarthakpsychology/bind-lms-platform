@@ -1,19 +1,28 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { useLocalSearchParams } from "expo-router";
-import { ThumbsUp } from "lucide-react-native";
+import { Stack, useLocalSearchParams } from "expo-router";
+import { ArrowUp, Check, ThumbsUp } from "lucide-react-native";
 import * as React from "react";
-import { View } from "react-native";
+import { TextInput, View } from "react-native";
 
 import type { DoubtActionResult, DoubtReply, DoubtThread } from "@/api/contract";
 import { messageOf } from "@/api/errors";
+import { useOffline } from "@/api/online";
 import { keys, useDoubt } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, Field, Loaded, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, Flame, Jyo, Label, QuietEmpty, Screen, Skeleton, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
-import { FromRow, Press, RollingNumber, Stamp } from "@/motion";
+import { Enter, FromRow, Press, RollingNumber, Stamp } from "@/motion";
+import { Fetched, Pill } from "@/screens/learn/parts";
 import { when } from "@/screens/notifications/list";
-import { layout, space, useTheme } from "@/theme";
+import { layout, space, type, useTheme } from "@/theme";
+
+/**
+ * One doubt as a conversation (the chat recipe of docs/DESIGN.md): the
+ * question on top, each answer a stone bubble (yours on the right in the
+ * Learn wash, others on the left), the solution marked in words, and the
+ * answer box pinned low with a round lime send.
+ */
 
 function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; onThread: (t: DoubtThread) => void }) {
   const c = useTheme();
@@ -38,20 +47,22 @@ function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; on
     }
   };
   return (
-    <View testID={`reply-${r.id}`} style={{ paddingVertical: space[4], gap: space[2], borderTopWidth: 1, borderColor: c.hairline }}>
-      <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2], flexWrap: "wrap" }}>
-        <T v="bodyStrong">{r.mine ? "You" : r.author}</T>
-        <T v="small" tone="muted">
+    <Enter kind="rise" testID={`reply-${r.id}`} style={{ alignSelf: r.mine ? "flex-end" : "flex-start", maxWidth: "92%", gap: space[1] }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], flexWrap: "wrap", paddingHorizontal: space[1], justifyContent: r.mine ? "flex-end" : "flex-start" }}>
+        <T v="caption">{r.mine ? "You" : r.author}</T>
+        <T v="caption" tone="muted">
           {when(r.createdAt)}
         </T>
         {r.isSolution ? (
-          <T v="small" tone="link">
-            · Solution
-          </T>
+          <Pill tone="ink" icon={<Check size={12} color={c.bg} strokeWidth={3} />}>
+            Solution
+          </Pill>
         ) : null}
       </View>
-      <T v="reading">{r.body}</T>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+      <View style={[{ backgroundColor: r.mine ? c.areas.learn.wash : c.card, borderRadius: layout.radius, paddingVertical: space[3], paddingHorizontal: space[4] }, r.mine ? { borderBottomRightRadius: 6 } : { borderBottomLeftRadius: 6 }]}>
+        <T v="reading">{r.body}</T>
+      </View>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: space[3], justifyContent: r.mine ? "flex-end" : "flex-start" }}>
         <Press
           feel="none"
           scale={0.92}
@@ -62,7 +73,7 @@ function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; on
             if (!r.youVoted) setPop((n) => n + 1);
             void vote();
           }}
-          innerStyle={{ minHeight: layout.target, minWidth: layout.target, flexDirection: "row", alignItems: "center", gap: space[2] }}
+          innerStyle={{ minHeight: 44, minWidth: 44, flexDirection: "row", alignItems: "center", gap: space[2], paddingHorizontal: space[1] }}
         >
           <View style={{ width: 18, height: 18, alignItems: "center", justifyContent: "center" }}>
             <Stamp fire={pop}>
@@ -70,17 +81,44 @@ function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; on
             </Stamp>
           </View>
           <RollingNumber value={r.votes} v="small" tone={r.youVoted ? "link" : "muted"} />
+          <T v="small" tone={r.youVoted ? "link" : "muted"}>
+            {r.youVoted ? "Helped" : "This helped"}
+          </T>
         </Press>
-        {thread.mine && !r.mine ? <Button kind="text" label={r.isSolution ? "Unmark solution" : "Mark as solution"} onPress={() => void solve()} /> : null}
+        {thread.mine && !r.mine ? <Button kind="text" label={r.isSolution ? "Unmark solution" : "Mark as solution"} onPress={() => void solve()} testID={`reply-solve-${r.id}`} /> : null}
       </View>
+    </Enter>
+  );
+}
+
+/** The answer box, pinned low: a stone field that grows to four lines and a round lime send. */
+function Compose({ value, onChange, busy, onSend }: { value: string; onChange: (s: string) => void; busy: boolean; onSend: () => void }) {
+  const c = useTheme();
+  const offline = useOffline();
+  const can = !!value.trim() && !busy && !offline;
+  return (
+    <View style={{ gap: space[1] }}>
+      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[2] }}>
+        <View style={{ flex: 1, minHeight: 48, maxHeight: 132, borderRadius: 24, backgroundColor: c.card, paddingHorizontal: space[4], justifyContent: "center" }}>
+          <TextInput testID="reply-text" accessibilityLabel="Your answer" value={value} onChangeText={onChange} multiline maxLength={10000} placeholder="Write an answer" placeholderTextColor={c.faint} selectionColor={c.accent} cursorColor={c.link} keyboardAppearance={c.dark ? "dark" : "light"} maxFontSizeMultiplier={1.4} style={[type.body, { color: c.ink, paddingVertical: space[3] }, { outlineStyle: "none" } as object]} />
+        </View>
+        <Press testID="reply-send" accessibilityRole="button" accessibilityLabel={offline ? "Post answer. Waiting for the internet" : "Post answer"} accessibilityState={{ disabled: !can, busy }} disabled={!can} onPress={onSend} squish scale={0.9} innerStyle={{ width: 48, height: 48, borderRadius: 24, backgroundColor: c.lime, alignItems: "center", justifyContent: "center", opacity: can || busy ? 1 : 0.45 }}>
+          {busy ? <Flame size={22} /> : <ArrowUp size={22} color={c.onLime} strokeWidth={2.6} />}
+        </Press>
+      </View>
+      {offline ? (
+        <T v="caption" tone="muted" style={{ paddingHorizontal: space[2] }}>
+          You are offline. Your answer posts when you are back online.
+        </T>
+      ) : null}
     </View>
   );
 }
 
-/** One doubt: the question as the title, answers under hairlines, the answer box last. */
 export function DoubtScreen() {
   const { id = "" } = useLocalSearchParams<{ id: string }>();
   const qc = useQueryClient();
+  const c = useTheme();
   const q = useDoubt(String(id));
   const [text, setText] = React.useState("");
   const [busy, setBusy] = React.useState(false);
@@ -104,34 +142,47 @@ export function DoubtScreen() {
     }
   };
   return (
-    <Screen testID="doubt" gap={space[5]}>
-      <Loaded q={q} what="this doubt" skeleton={<RowsSkeleton rows={4} />}>
+    <Screen plain testID="doubt" gap={space[5]} footer={q.data ? <Compose value={text} onChange={setText} busy={busy} onSend={() => void send()} /> : undefined}>
+      <Stack.Screen options={{ title: "Doubt" }} />
+      <Fetched
+        q={q}
+        what="this doubt"
+        skeleton={
+          <View style={{ gap: space[3] }}>
+            <Skeleton w="90%" h={28} />
+            <Skeleton w="50%" h={14} />
+            <Skeleton h={90} r={layout.radius} />
+            <Skeleton w="80%" h={70} r={layout.radius} />
+          </View>
+        }
+      >
         {(d) => (
           <>
             <View style={{ gap: space[2] }}>
               <FromRow title={d.title}>
-                <T v="h1">{d.title}</T>
+                <T v="h1" accessibilityRole="header">
+                  {d.title}
+                </T>
               </FromRow>
-              <T v="small" tone="muted">
-                {[d.topic, d.mine ? "You" : d.author, when(d.createdAt), d.status === "solved" ? "Solved" : null].filter(Boolean).join(" · ")}
-              </T>
+              <View style={{ flexDirection: "row", alignItems: "center", flexWrap: "wrap", gap: space[2] }}>
+                {d.status === "solved" ? (
+                  <Pill tone="ink" icon={<Check size={12} color={c.bg} strokeWidth={3} />}>
+                    Solved
+                  </Pill>
+                ) : null}
+                <T v="small" tone="muted">
+                  {[d.topic, d.mine ? "You" : d.author, when(d.createdAt)].filter(Boolean).join(" · ")}
+                </T>
+              </View>
+              {d.body ? <T v="reading">{d.body}</T> : null}
             </View>
-            {d.body ? <T v="reading">{d.body}</T> : null}
-            <View>
-              <T v="h3" style={{ paddingBottom: space[2] }}>
-                {d.replies.length ? `${d.replies.length} answer${d.replies.length === 1 ? "" : "s"}` : "No answers yet"}
-              </T>
-              {d.replies.map((r) => (
-                <Reply key={r.id} r={r} thread={d} onThread={setThread} />
-              ))}
-            </View>
-            <View style={{ gap: space[3] }}>
-              <Field label="Your answer" value={text} onChangeText={setText} area maxLength={10000} testID="reply-text" />
-              <Button kind="quiet" label="Post answer" busy={busy} needsServer disabled={!text.trim()} onPress={() => void send()} testID="reply-send" />
+            <View style={{ gap: space[4] }}>
+              <Label>{d.replies.length ? `${d.replies.length} answer${d.replies.length === 1 ? "" : "s"}` : "Answers"}</Label>
+              {d.replies.length ? d.replies.map((r) => <Reply key={r.id} r={r} thread={d} onThread={setThread} />) : <QuietEmpty testID="doubt-empty" art={<Jyo pose="resting" size={56} />} title="No answers yet" body="Be the first to answer, or check back soon. The team reads every doubt." />}
             </View>
           </>
         )}
-      </Loaded>
+      </Fetched>
     </Screen>
   );
 }

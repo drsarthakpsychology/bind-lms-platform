@@ -53,3 +53,10 @@ export function Rich({ text, ...props }: { text: string } & Omit<TProps, "childr
     </T>
   );
 }
+
+/** The words only, with the bold, italic and term marks taken out (for a part that takes plain text, and for screen readers). */
+export function plainText(raw: string): string {
+  return parseInline(raw ?? "")
+    .map((p) => p.text)
+    .join("");
+}

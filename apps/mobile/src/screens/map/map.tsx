@@ -5,10 +5,11 @@ import { View } from "react-native";
 
 import type { MapStateKey, MapTopic, StudyMap } from "@/api/contract";
 import { useStudyMap } from "@/api/map-wall";
-import { Button, EmptyState, Hero, Loaded, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T, Tint } from "@/ds";
+import { Button, Label, QuietEmpty, Screen, Sheet, Stone, T } from "@/ds";
+import { Fetched, Group, Pill, Tile, TilesSkeleton } from "@/screens/learn/parts";
 import { openTarget } from "@/nav/targets";
-import { Enter, presets } from "@/motion";
-import { layout, space, useTheme, type Palette } from "@/theme";
+import { Enter, presets, StaggerList } from "@/motion";
+import { space, useTheme, type Palette } from "@/theme";
 import Animated from "react-native-reanimated";
 
 /**
@@ -57,7 +58,7 @@ export function topicState(t: MapTopic): MapStateKey {
 
 function TopicRow({ t, label, onOpen }: { t: MapTopic; label: (s: MapStateKey) => string; onOpen: () => void }) {
   const state = topicState(t);
-  return <Row testID={`map-topic-${t.id}`} title={t.title} meta={label(state)} icon={<Square state={state} size={20} />} onPress={onOpen} accessibilityLabel={`${t.title}, ${label(state)}. Open its skills`} />;
+  return <Tile testID={`map-topic-${t.id}`} title={t.title} meta={label(state)} lead={<Square state={state} size={26} />} onPress={onOpen} accessibilityLabel={`${t.title}, ${label(state)}. Open its skills`} />;
 }
 
 /**
@@ -72,7 +73,7 @@ export function MapSummary({ m }: { m: StudyMap }) {
   if (!parts.length) return null;
   return (
     <View testID="map-summary" accessible accessibilityLabel={`Your skills: ${parts.map((p) => `${p.label} ${p.n}`).join(", ")}`} style={{ gap: space[2] }}>
-      <View style={{ flexDirection: "row", height: 12, borderRadius: 6, overflow: "hidden", gap: 2, backgroundColor: c.bg }}>
+      <View style={{ flexDirection: "row", height: 12, borderRadius: 6, overflow: "hidden", gap: 2 }}>
         {parts.map((p) => {
           const look = stateLook(c, p.k);
           return <View key={p.k} style={{ flex: p.n, backgroundColor: look.bg, borderWidth: p.k === "new" || p.k === "decaying" ? 1 : 0, borderColor: look.border }} />;
@@ -99,13 +100,13 @@ function TopicSheet({ t, m, onClose }: { t: MapTopic | null; m: StudyMap; onClos
     <Sheet open={t !== null} onClose={onClose} title={t?.title} testID="map-topic-sheet">
       {t ? (
         <View style={{ gap: space[4] }}>
-          <RowList bare>
+          <View style={{ gap: space[2] }}>
             {t.cells
               .filter((cell) => cell.hasItems)
               .map((cell) => (
-                <Row key={cell.skill} icon={<Square state={cell.state} size={22} />} title={cell.label} meta={label(cell.state)} trailing={cell.p !== null ? `${Math.round(cell.p * 100)}%` : undefined} />
+                <Tile key={cell.skill} lead={<Square state={cell.state} size={24} />} title={cell.label} meta={label(cell.state)} trailing={cell.p !== null ? `${Math.round(cell.p * 100)}%` : undefined} />
               ))}
-          </RowList>
+          </View>
           <Button
             label="Practise this topic"
             icon={<Zap size={20} color={c.onPrimary} />}
@@ -136,73 +137,79 @@ export function MapBody({ m }: { m: StudyMap }) {
   const c = useTheme();
   const [open, setOpen] = React.useState<MapTopic | null>(null);
   const label = (s: MapStateKey) => m.states.find((x) => x.key === s)?.label ?? s;
+  const practise = (topic?: string | null) => router.push(topic ? { pathname: "/map/practice", params: { topic } } : "/map/practice");
   return (
     <>
       {!m.learner ? (
-        <Tint>
+        <Stone quiet>
           <T v="small">Staff accounts have no map of their own. This is how a student sees it.</T>
-        </Tint>
+        </Stone>
       ) : null}
       <Enter i={0}>
-        <Hero
-          context="Picked for you"
-          title="Mixed practice"
-          meta={m.due ? `${m.due === 1 ? "A review is" : "Reviews are"} due. They are mixed into this round.` : "A short round from everything you have learned."}
-          action={{ label: "Start", icon: <Shuffle size={20} color={c.onPrimary} />, onPress: () => router.push("/map/practice"), testID: "map-practise" }}
-        />
+        <Group>
+          <Label>Picked for you</Label>
+          <Stone testID="map-practise" accessibilityLabel="Start mixed practice" onPress={() => practise()}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+              <View style={{ width: 52, height: 52, borderRadius: 26, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>
+                <Shuffle size={22} color={c.onLime} />
+              </View>
+              <View style={{ flex: 1, minWidth: 0, gap: 3 }}>
+                <T v="h2">Mixed practice</T>
+                <T v="small" tone="muted">
+                  {m.due ? `${m.due === 1 ? "A review is" : "Reviews are"} due. They are mixed into this round.` : "A short round from everything you have learned."}
+                </T>
+              </View>
+            </View>
+          </Stone>
+        </Group>
       </Enter>
 
-      <Section title="Fix it">
-        {m.weak.length ? (
-          <RowList>
-            {m.weak.map((w) => (
-              <Row
-                key={w.skill}
-                testID={`map-weak-${w.skill}`}
-                icon={<Square state={w.state} size={22} />}
-                title={w.label}
-                meta={label(w.state)}
-                onPress={() => router.push({ pathname: "/map/practice", params: { topic: w.topic } })}
-                accessibilityLabel={`${w.label}, ${label(w.state)}. Quick quiz`}
-              />
-            ))}
-          </RowList>
-        ) : (
-          <EmptyState title="Nothing to fix yet" body="Answer a few practice questions and your weak spots show up here." testID="map-weak-empty" />
-        )}
-      </Section>
+      <Enter i={1}>
+        <Group>
+          <Label>Fix it</Label>
+          {m.weak.length ? (
+            <StaggerList style={{ gap: space[2] }}>
+              {m.weak.map((w) => (
+                <Tile key={w.skill} testID={`map-weak-${w.skill}`} lead={<Square state={w.state} size={26} />} title={w.label} meta={label(w.state)} trailing={<Pill>Quick quiz</Pill>} plain onPress={() => practise(w.topic)} accessibilityLabel={`${w.label}, ${label(w.state)}. Quick quiz`} />
+              ))}
+            </StaggerList>
+          ) : (
+            <QuietEmpty testID="map-weak-empty" title="Nothing to fix yet" body="Answer a few practice questions and your weak spots show up here." />
+          )}
+        </Group>
+      </Enter>
 
       {m.mixUps.length ? (
-        <Section title="Mix-ups">
-          <RowList>
-            {m.mixUps.map((x) => (
-              <Row
-                key={`${x.a}|${x.b}`}
-                icon={<Repeat2 size={20} color={c.muted} />}
-                title={`${x.a} and ${x.b}`}
-                meta={x.topicTitle ? `You mix these up. Practise ${x.topicTitle}.` : "You mix these up."}
-                onPress={x.topic ? () => router.push({ pathname: "/map/practice", params: { topic: x.topic! } }) : undefined}
-              />
-            ))}
-          </RowList>
-        </Section>
+        <Enter i={2}>
+          <Group>
+            <Label>Mix-ups</Label>
+            <StaggerList style={{ gap: space[2] }}>
+              {m.mixUps.map((x) => (
+                <Tile key={`${x.a}|${x.b}`} icon={Repeat2} title={`${x.a} and ${x.b}`} meta={x.topicTitle ? `You mix these up. Practise ${x.topicTitle}.` : "You mix these up."} onPress={x.topic ? () => practise(x.topic) : undefined} />
+              ))}
+            </StaggerList>
+          </Group>
+        </Enter>
       ) : null}
 
-      <Section title="Topics">
-        <View style={{ gap: space[3] }}>
+      <Enter i={3}>
+        <Group>
+          <Label>Topics</Label>
           {!m.calibrated ? (
-            <T v="small" tone="muted">
+            <T v="small" tone="muted" style={{ paddingHorizontal: space[1] }}>
               Your chances show after a few more answers.
             </T>
           ) : null}
-          <MapSummary m={m} />
-          <RowList>
+          <Stone>
+            <MapSummary m={m} />
+          </Stone>
+          <StaggerList style={{ gap: space[2] }}>
             {m.topics.map((t) => (
               <TopicRow key={t.id} t={t} label={label} onOpen={() => setOpen(t)} />
             ))}
-          </RowList>
-        </View>
-      </Section>
+          </StaggerList>
+        </Group>
+      </Enter>
       <TopicSheet t={open} m={m} onClose={() => setOpen(null)} />
     </>
   );
@@ -211,11 +218,11 @@ export function MapBody({ m }: { m: StudyMap }) {
 export function MapScreen() {
   const q = useStudyMap();
   return (
-    <Screen testID="map" onRefresh={() => void q.refetch()} refreshing={q.isRefetching} gap={layout.section}>
-      <Stack.Screen options={{ title: "Your map" }} />
-      <Loaded q={q} what="your map" skeleton={<RowsSkeleton rows={6} />}>
+    <Screen testID="map" title="Your map" lead="Every topic and how well you know it" onRefresh={() => void q.refetch()} refreshing={q.isRefetching} gap={space[5]}>
+      <Stack.Screen options={{ title: "" }} />
+      <Fetched q={q} what="your map" skeleton={<TilesSkeleton card rows={5} />}>
         {(m) => <MapBody m={m} />}
-      </Loaded>
+      </Fetched>
     </Screen>
   );
 }
