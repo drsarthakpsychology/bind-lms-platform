@@ -62,6 +62,15 @@ function ChoiceStone({ title, icon, children, testID }: { title: string; icon: R
   );
 }
 
+/** What is wrong with a typed WhatsApp number, or null when it can be sent. */
+export function numberProblem(value: string): string | null {
+  const digits = value.replace(/\D/g, "");
+  if (!digits.length) return "Enter your WhatsApp number.";
+  if (digits.length < 10) return "Enter the full number, 10 digits.";
+  if (digits.length > 13) return "That number is too long.";
+  return null;
+}
+
 /** Change the WhatsApp number the school holds. The name is changed by the school. */
 function EditProfile({ open, onClose, number }: { open: boolean; onClose: () => void; number: string | null }) {
   const qc = useQueryClient();
@@ -76,7 +85,8 @@ function EditProfile({ open, onClose, number }: { open: boolean; onClose: () => 
   }, [open, number]);
   const digits = value.replace(/\D/g, "");
   const save = async () => {
-    if (digits.length < 10) return setError("Enter the full number, 10 digits.");
+    const problem = numberProblem(value);
+    if (problem) return setError(problem);
     setBusy(true);
     setError(null);
     try {

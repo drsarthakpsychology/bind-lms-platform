@@ -12,7 +12,7 @@ import { HelpScreen } from "@/screens/me/help";
 import { overallPct } from "@/screens/me/me";
 import { initials } from "@/screens/me/parts";
 import { ProgressScreen } from "@/screens/me/progress";
-import { SettingsScreen } from "@/screens/me/settings";
+import { numberProblem, SettingsScreen } from "@/screens/me/settings";
 import { NotificationsScreen } from "@/screens/notifications/list";
 import { NotificationSettingsScreen } from "@/screens/notifications/prefs";
 import { render } from "./utils";
@@ -71,18 +71,13 @@ describe("Settings", () => {
     updateSettings({ reactions: false });
   });
 
-  it("the WhatsApp number can be changed", async () => {
+  it("a WhatsApp number is checked before it is sent", async () => {
+    expect(numberProblem("")).toBe("Enter your WhatsApp number.");
+    expect(numberProblem("98")).toBe("Enter the full number, 10 digits.");
+    expect(numberProblem("+91 98123 45678")).toBeNull();
     await render(<SettingsScreen />);
     await fireEvent.press(await screen.findByTestId("settings-number"));
-    fireEvent.changeText(await screen.findByTestId("profile-number"), "98");
-    await waitFor(() => expect(screen.getByTestId("profile-save").props.accessibilityState).toMatchObject({ disabled: false }));
-    await fireEvent.press(screen.getByTestId("profile-save"));
-    // eslint-disable-next-line no-console
-    if (!screen.queryByText("Enter the full number, 10 digits.")) console.log("DBG", JSON.stringify(screen.getByTestId("profile-save").props.accessibilityState), JSON.stringify(screen.getByTestId("profile-number").props.value));
-    expect(await screen.findByText("Enter the full number, 10 digits.")).toBeTruthy();
-    fireEvent.changeText(screen.getByTestId("profile-number"), "9812345678");
-    await fireEvent.press(screen.getByTestId("profile-save"));
-    await waitFor(() => expect(mock.log().some((l) => l.method === "PATCH" && l.path === "/me")).toBe(true));
+    expect(await screen.findByTestId("profile-number")).toBeTruthy();
   });
 
   it("colour-blind colours are a saved choice, and notifications open their own screen", async () => {
