@@ -205,7 +205,7 @@ function Sayings({ items }: { items: string[] }) {
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
       {items.map((x) => (
         <View key={x} style={{ maxWidth: "100%", paddingVertical: space[2], paddingHorizontal: space[3], borderRadius: layout.radius, backgroundColor: c.card }}>
-          <T v="small">\u201c{x}\u201d</T>
+          <T v="small">“{x}”</T>
         </View>
       ))}
     </View>
