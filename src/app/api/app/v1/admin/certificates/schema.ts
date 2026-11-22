@@ -23,4 +23,6 @@ export const studioSchema = z.object({
   cohortId: z.string().uuid().nullable().optional(),
   email: z.boolean(),
   replaces: z.string().max(40).nullable().optional(),
+  /** Once-only key (a UUID): the same submit twice issues once. */
+  key: z.string().uuid().nullable().optional(),
 });

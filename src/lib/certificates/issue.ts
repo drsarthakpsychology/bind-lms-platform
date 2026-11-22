@@ -40,7 +40,33 @@ export type IssueReport = {
   batchId: string | null;
   /** The certificate this one replaced (reissue). */
   replaced?: string | null;
+  /** True when this was a repeat of a submit already done (same key): nothing new was issued. */
+  repeat?: boolean;
+  /** Steps after issuing that did not save (the certificates themselves are valid). */
+  warnings?: string[];
 };
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/** People who already hold a live certificate with this title and kind (one per person). */
+export async function alreadyHolding(admin: SupabaseClient, userIds: string[], title: string, kind: string, except: string | null): Promise<Set<string>> {
+  if (!userIds.length) return new Set();
+  const { data, error } = await admin
+    .from("credentials")
+    .select("user_id, credential_id, title, kind")
+    .eq("type", "certificate")
+    .eq("status", "issued")
+    .is("revoked_at", null)
+    .eq("kind", kind)
+    .ilike("title", title.replace(/[%_\\]/g, (m) => `\\${m}`))
+    .in("user_id", userIds);
+  if (error) {
+    // Columns from the studio step missing: the unique index cannot exist either, so do not block.
+    console.warn("alreadyHolding:", error.message);
+    return new Set();
+  }
+  return new Set((data ?? []).filter((r) => r.credential_id !== except && String(r.title ?? "").trim().toLowerCase() === title.trim().toLowerCase()).map((r) => r.user_id as string));
+}
 
 const fail = (error: string): IssueReport => ({ error, issued: [], skipped: [], delivery: null, batchId: null });
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48);
@@ -61,8 +87,20 @@ async function batchAchievement(admin: SupabaseClient, c: CleanIssue, batchId: s
     })
     .select("id")
     .single();
+  if (ins.error && /duplicate|unique/i.test(ins.error.message)) {
+    // A repeat of the same once-only key after a half-finished first try.
+    const again = await admin.from("achievements").select("id").eq("slug", `studio-${batchId.slice(0, 8)}-${slug(c.title)}`).maybeSingle();
+    if (again.data?.id) return { id: again.data.id as string };
+  }
   if (ins.error || !ins.data) return { error: /relation|does not exist/i.test(ins.error?.message ?? "") ? "Certificates aren't set up in the database yet." : (ins.error?.message ?? "Couldn't save the certificate type.") };
   return { id: ins.data.id as string };
+}
+
+/** One admin log line; a failure is reported in the server log, never thrown. */
+async function audit(admin: SupabaseClient, actor: Actor, row: { action: string; target_type: string; target_id: string; details: Record<string, unknown> }): Promise<boolean> {
+  const { error } = await admin.from("admin_audit_log").insert({ actor_id: actor.id, actor_email: actor.email, ...row });
+  if (error) console.error("admin audit:", row.action, error.message);
+  return !error;
 }
 
 async function inChunks<T, R>(items: T[], size: number, fn: (item: T) => Promise<R>): Promise<R[]> {
@@ -105,9 +143,55 @@ export async function issueCertificates(admin: SupabaseClient, actor: Actor, inp
   });
   if (!targets.length) return { ...fail("None of these students were found."), skipped };
 
-  const batchId = crypto.randomUUID();
+  // A once-only key from the form: the same submit twice (double tap, a retry
+  // after a slow answer) returns what the first one issued.
+  const key = input.key && UUID.test(input.key) ? input.key.toLowerCase() : null;
+  const batchId = key ?? crypto.randomUUID();
+  if (key && ready) {
+    const prior = await admin.from("credentials").select("credential_id, user_id, recipient_name, student_name").eq("batch_id", key);
+    if (prior.error) return fail(prior.error.message);
+    if (prior.data?.length) {
+      return {
+        error: null,
+        issued: prior.data.map((r) => ({ credentialId: r.credential_id as string, userId: r.user_id as string, name: String(r.recipient_name ?? r.student_name ?? "") })),
+        skipped: [],
+        delivery: null,
+        batchId,
+        repeat: true,
+      };
+    }
+  }
+
+  // One live certificate with the same title per person.
+  if (ready) {
+    const holding = await alreadyHolding(admin, targets.map((t) => t.userId), c.title, c.kind, opts.replaces ?? null);
+    for (let i = targets.length - 1; i >= 0; i--) {
+      if (!holding.has(targets[i].userId)) continue;
+      skipped.push({ name: targets[i].name, reason: "Already has this certificate." });
+      targets.splice(i, 1);
+    }
+    if (!targets.length) return { ...fail("Everyone picked already has this certificate."), skipped };
+  }
+  const warnings: string[] = [];
+
+  // A correction: the old one is revoked first (one live certificate per
+  // title), and put back if the new one cannot be saved.
+  if (opts.replaces && replacesRow) {
+    const r = await revokeCertificate(admin, actor, opts.replaces, "Being replaced by a corrected certificate");
+    if (r.error) return fail(`Couldn't replace the old certificate: ${r.error}`);
+  }
+  const undoReplace = async () => {
+    if (!opts.replaces) return;
+    const { error } = await admin.from("credentials").update({ status: "issued", revoked_at: null, revoke_reason: null, revoked_by: null }).eq("credential_id", opts.replaces);
+    if (error) console.error("reissue undo:", error.message);
+    await audit(admin, actor, { action: "certificate.reissue_undone", target_type: "credential", target_id: opts.replaces, details: { reason: "the new certificate could not be saved" } });
+  };
+
   const ach = await batchAchievement(admin, c, batchId);
-  if ("error" in ach) return fail(ach.error);
+  if ("error" in ach) {
+    await undoReplace();
+    return fail(ach.error);
+  }
   const images = await signatureBytes(admin, c.signatories).catch(() => ({}));
   const now = new Date().toISOString();
   const issuedAt = new Date(`${c.issuedOn}T12:00:00+05:30`).toISOString();
@@ -151,7 +235,16 @@ export async function issueCertificates(admin: SupabaseClient, actor: Actor, inp
       const { error } = await admin.from("credentials").insert({ ...base, ...studio });
       if (error) {
         // A one-in-a-billion ID clash: draw a new ID and try again.
-        if (/duplicate|unique/i.test(error.message) && attempt < 2) continue;
+        if (/credential_id/i.test(error.message) && /duplicate|unique/i.test(error.message) && attempt < 2) continue;
+        // The database's own once-only rules (2026_11_22_certificates.sql).
+        if (/one_live_certificate/i.test(error.message)) {
+          skipped.push({ name: r.name, reason: "Already has this certificate." });
+          return null;
+        }
+        if (/one_certificate_per_batch/i.test(error.message)) {
+          skipped.push({ name: r.name, reason: "Already issued in this batch." });
+          return null;
+        }
         skipped.push({ name: r.name, reason: error.message });
         return null;
       }
@@ -175,7 +268,8 @@ export async function issueCertificates(admin: SupabaseClient, actor: Actor, inp
         });
         const pdf = await renderCertificatePdf(layout, images);
         const key = await putCredentialAsset(`certificates/${credentialId}.pdf`, pdf, "application/pdf");
-        await admin.from("credentials").update({ pdf_storage_path: key }).eq("credential_id", credentialId);
+        const saved = await admin.from("credentials").update({ pdf_storage_path: key }).eq("credential_id", credentialId);
+        if (saved.error) console.warn("certificate PDF path not saved:", saved.error.message);
       } catch (e) {
         console.warn("certificate PDF copy skipped:", e instanceof Error ? e.message : e);
       }
@@ -184,10 +278,13 @@ export async function issueCertificates(admin: SupabaseClient, actor: Actor, inp
     return null;
   });
   const issued = done.filter((x): x is IssuedOne => Boolean(x));
-  if (!issued.length) return { error: skipped[0]?.reason ?? "Nothing was issued.", issued, skipped, delivery: null, batchId };
+  if (!issued.length) {
+    await undoReplace();
+    return { error: skipped[0]?.reason ?? "Nothing was issued.", issued, skipped, delivery: null, batchId };
+  }
 
   // Every issue is logged with the admin's ID.
-  await admin.from("admin_audit_log").insert(
+  const logged = await admin.from("admin_audit_log").insert(
     issued.map((i) => ({
       actor_id: actor.id,
       actor_email: actor.email,
@@ -197,6 +294,10 @@ export async function issueCertificates(admin: SupabaseClient, actor: Actor, inp
       details: { user_id: i.userId, kind: c.kind, title: c.title, batch_id: batchId, expires_on: c.expiresOn, cohort_id: c.cohortId ?? null, replaces: opts.replaces ?? null },
     })),
   );
+  if (logged.error) {
+    console.error("certificate audit:", logged.error.message);
+    warnings.push("The issue was not written to the admin log.");
+  }
 
   for (const i of issued) await notifyCertificate(admin, { userId: i.userId, credentialId: i.credentialId, title: c.title, kind: c.kind, sentBy: actor.id, batchId });
 
@@ -209,10 +310,11 @@ export async function issueCertificates(admin: SupabaseClient, actor: Actor, inp
 
   let replaced: string | null = null;
   if (opts.replaces && replacesRow) {
-    const r = await revokeCertificate(admin, actor, opts.replaces, `Replaced by ${issued[0].credentialId}`, issued[0].credentialId);
-    if (!r.error) replaced = opts.replaces;
+    replaced = opts.replaces;
+    const link = await admin.from("credentials").update({ replaced_by: issued[0].credentialId, revoke_reason: `Replaced by ${issued[0].credentialId}` }).eq("credential_id", opts.replaces);
+    if (link.error) warnings.push("The old certificate is revoked, but the link to the new one was not saved.");
   }
-  return { error: null, issued, skipped, delivery, batchId, replaced };
+  return { error: null, issued, skipped, delivery, batchId, replaced, ...(warnings.length ? { warnings } : {}) };
 }
 
 /** Revoke (never delete). The reason is required and the admin's ID is logged. */
@@ -226,16 +328,14 @@ export async function revokeCertificate(admin: SupabaseClient, actor: Actor, cre
   const { error } = await admin.from("credentials").update({ status: "revoked", revoked_at: now, revoke_reason: text, revoked_by: actor.id, updated_at: now }).eq("credential_id", credentialId);
   if (error) return { error: error.message };
   // Columns from the database step: fine if they are not there yet.
-  if (replacedBy) await admin.from("credentials").update({ replaced_by: replacedBy }).eq("credential_id", credentialId);
-  await admin.from("certificate_email_queue").update({ status: "cancelled" }).eq("credential_id", credentialId).eq("status", "queued");
-  await admin.from("admin_audit_log").insert({
-    actor_id: actor.id,
-    actor_email: actor.email,
-    action: "credential.revoked",
-    target_type: "credential",
-    target_id: credentialId,
-    details: { reason: text, replaced_by: replacedBy },
-  });
+  if (replacedBy) {
+    const link = await admin.from("credentials").update({ replaced_by: replacedBy }).eq("credential_id", credentialId);
+    if (link.error) console.warn("replaced_by not saved:", link.error.message);
+  }
+  const cancel = await admin.from("certificate_email_queue").update({ status: "cancelled" }).eq("credential_id", credentialId).eq("status", "queued");
+  // No queue table before the studio step: nothing can be waiting.
+  if (cancel.error && !/relation|does not exist|schema cache/i.test(cancel.error.message)) return { error: `Revoked, but a waiting email could not be cancelled: ${cancel.error.message}` };
+  await audit(admin, actor, { action: "credential.revoked", target_type: "credential", target_id: credentialId, details: { reason: text, replaced_by: replacedBy } });
   return { error: null };
 }
 
@@ -262,13 +362,6 @@ export async function resendCertificate(admin: SupabaseClient, actor: Actor, cre
       actor.id,
     );
   }
-  await admin.from("admin_audit_log").insert({
-    actor_id: actor.id,
-    actor_email: actor.email,
-    action: "certificate.resent",
-    target_type: "credential",
-    target_id: credentialId,
-    details: { notified, emailed: delivery?.emailed.length ?? 0, queued: delivery?.queued.length ?? 0 },
-  });
+  await audit(admin, actor, { action: "certificate.resent", target_type: "credential", target_id: credentialId, details: { notified, emailed: delivery?.emailed.length ?? 0, queued: delivery?.queued.length ?? 0 } });
   return { error: null, notified, delivery };
 }

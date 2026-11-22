@@ -18,7 +18,9 @@ const ONLINE_MS = 5 * 60 * 1000;
 export async function loadLive(now = Date.now()) {
   const admin = createAdminClient();
   const [visits, progress, lessons] = await Promise.all([
-    admin.from("page_visits").select("user_id, path, entered_at, left_at, duration_seconds").gte("entered_at", new Date(now - 6 * 3600000).toISOString()).order("entered_at", { ascending: false }).limit(5000),
+    admin.from("page_visits").select("user_id, path, entered_at, left_at, duration_seconds")// A slice is at most 30 minutes and "online" means seen in the last 5, so
+    // 40 minutes back is enough, and stays far below the 1000-row limit.
+    .gte("entered_at", new Date(now - 40 * 60000).toISOString()).order("entered_at", { ascending: false }).limit(1000),
     admin.from("progress").select("user_id, lesson_id, updated_at").gte("updated_at", new Date(now - WATCHING_MS).toISOString()).limit(2000),
     admin.from("lessons").select("id, title"),
   ]);

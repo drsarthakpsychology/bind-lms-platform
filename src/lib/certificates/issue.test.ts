@@ -236,6 +236,52 @@ describe("before the database step is pasted", () => {
   });
 });
 
+describe("never twice", () => {
+  const key = "7d0f3c1e-2b4a-4c5d-8e9f-0a1b2c3d4e5f";
+
+  it("the same submit twice (same key) issues once and returns the first result", async () => {
+    const db = fakeDb({ profiles: students() });
+    const a = await issueCertificates(as(db), actor, input({ email: false, key }));
+    const b = await issueCertificates(as(db), actor, input({ email: false, key }));
+    expect(a.issued).toHaveLength(3);
+    expect(b.repeat).toBe(true);
+    expect(b.issued.map((i) => i.credentialId).sort()).toEqual(a.issued.map((i) => i.credentialId).sort());
+    expect(db.tables.credentials).toHaveLength(3);
+    expect(db.tables.notifications).toHaveLength(3);
+    expect(a.batchId).toBe(key);
+  });
+
+  it("skips anyone who already holds a live certificate with the same title", async () => {
+    const db = fakeDb({ profiles: students() });
+    await issueCertificates(as(db), actor, input({ email: false, recipients: [{ userId: "u1", name: "Aanya Rao" }] }));
+    const r = await issueCertificates(as(db), actor, input({ email: false, title: "  foundations of clinical psychology " }));
+    expect(r.issued.map((i) => i.userId).sort()).toEqual(["u2", "u3"]);
+    expect(r.skipped).toEqual([{ name: "Aanya Rao", reason: "Already has this certificate." }]);
+    const all = await issueCertificates(as(db), actor, input({ email: false }));
+    expect(all.error).toMatch(/already has/);
+    expect(db.tables.credentials).toHaveLength(3);
+  });
+
+  it("a revoked one does not block issuing again", async () => {
+    const db = fakeDb({ profiles: students() });
+    const first = await issueCertificates(as(db), actor, input({ email: false, recipients: [{ userId: "u1", name: "Aanya Rao" }] }));
+    await revokeCertificate(as(db), actor, first.issued[0].credentialId, "Mistake");
+    const again = await issueCertificates(as(db), actor, input({ email: false, recipients: [{ userId: "u1", name: "Aanya Rao" }] }));
+    expect(again.issued).toHaveLength(1);
+  });
+
+  it("puts the old certificate back when its correction cannot be saved", async () => {
+    const db = fakeDb({ profiles: students() });
+    const first = await issueCertificates(as(db), actor, input({ email: false, recipients: [{ userId: "u1", name: "Aanya Roa" }] }));
+    const oldId = first.issued[0].credentialId;
+    db.missingTables.push("achievements");
+    const r = await issueCertificates(as(db), actor, input({ email: false, recipients: [{ userId: "u1", name: "Aanya Rao" }] }), { replaces: oldId });
+    expect(r.error).toBeTruthy();
+    expect(db.tables.credentials.find((c) => c.credential_id === oldId)).toMatchObject({ status: "issued", revoked_at: null });
+    expect(db.tables.admin_audit_log.some((a) => a.action === "certificate.reissue_undone")).toBe(true);
+  });
+});
+
 describe("revoke, reissue, resend", () => {
   async function one(db: FakeDb) {
     const r = await issueCertificates(as(db), actor, input({ email: false, recipients: [{ userId: "u1", name: "Aanya Roa" }] }));

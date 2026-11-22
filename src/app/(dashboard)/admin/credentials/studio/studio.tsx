@@ -84,6 +84,8 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
   const [picked, setPicked] = React.useState<Array<{ userId: string; name: string }>>(() => (seed?.recipient ? [seed.recipient] : []));
   const [cohortId, setCohortId] = React.useState<string | null>(null);
   const [showing, setShowing] = React.useState(0);
+  // Once-only key: a double tap or a retry after a slow answer issues once.
+  const issueKey = React.useRef<string | null>(null);
   const [alsoEmail, setAlsoEmail] = React.useState(true);
   const [zoomOpen, setZoomOpen] = React.useState(false);
   const [zoom, setZoom] = React.useState(1.5);
@@ -166,6 +168,7 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
       // Kept only when everyone picked is still in that cohort's list.
       cohortId: cohortId && picked.every((p) => byId.get(p.userId)?.cohortIds.includes(cohortId)) ? cohortId : null,
       email: alsoEmail,
+      key: (issueKey.current ??= crypto.randomUUID()),
     };
     let r: IssueReport;
     try {
@@ -175,6 +178,8 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
     }
     setBusy(false);
     setConfirm(false);
+    // A new key for the next, different batch. A failed try keeps its key, so trying again cannot double up.
+    if (!r.error) issueKey.current = null;
     setReport(r);
   }
 
@@ -611,12 +616,14 @@ function Result({ report, onAgain }: { report: IssueReport; onAgain: () => void 
   if (d?.failed.length) rows.push({ label: "Email failed", names: d.failed.map((f) => `${f.name} (${f.reason})`) });
   if (d?.noEmail.length && !d.emailOff) rows.push({ label: "No email on file", names: d.noEmail });
   if (report.skipped.length) rows.push({ label: "Not issued", names: report.skipped.map((s) => `${s.name} (${s.reason})`) });
+  if (report.warnings?.length) rows.push({ label: "Please check", names: report.warnings });
   return (
     <div className="flex max-w-2xl min-w-0 flex-col gap-6" role="status">
       <div>
         <h2 className="type-h2">
-          {n} certificate{n === 1 ? "" : "s"} issued
+          {n} certificate{n === 1 ? "" : "s"} {report.repeat ? "already issued" : "issued"}
         </h2>
+        {report.repeat ? <p className="mt-2 type-small">This was sent twice. Nothing new was issued, here is the first result.</p> : null}
         <p className="mt-2 type-small text-muted-foreground">
           Everyone has a notification in the app.{d?.emailOff ? " Email isn't set up on this site, so no emails went out." : ""}
           {report.replaced ? ` ${report.replaced} is now revoked.` : ""}

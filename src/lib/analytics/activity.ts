@@ -1,7 +1,8 @@
 import "server-only";
 import { cache } from "react";
 import { requestMemo } from "@/lib/app-api/context";
-import { latest, presenceOf, visitEnd } from "@/lib/people/presence";
+import { latest, presenceOf } from "@/lib/people/presence";
+import { pageAll, progressTotals, visitShape, visitTotals } from "@/lib/db/counts";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import { domainMastery, topConfusions } from "@/lib/learn/adaptive";
@@ -78,62 +79,54 @@ export const loadActivity = cache(() => requestMemo("analytics:activity", readAc
 
 async function readActivity() {
   const admin = createAdminClient();
-  const since30 = new Date(Date.now() - 30 * DAY_MS).toISOString();
-  const [{ data: profiles }, { data: visits }, { data: progress }, { data: lessons }, learnRes, { data: sims }] = await Promise.all([
-    admin.from("profiles").select("id, name, email, status, is_test, role").eq("role", "student").limit(5000),
-    admin.from("page_visits").select("user_id, path, entered_at, left_at, duration_seconds").gte("entered_at", since30).limit(200000),
-    admin.from("progress").select("user_id, lesson_id, watched_seconds, is_completed, updated_at").limit(100000),
+  const now = Date.now();
+  const since30 = new Date(now - 30 * DAY_MS).toISOString();
+  const since7 = new Date(now - 7 * DAY_MS).toISOString();
+  // Totals come from the database (never cut at 1000 rows); see lib/db/counts.
+  const [profiles, visitByUser, shape, progByUser, { data: lessons }, learnRes, sims] = await Promise.all([
+    pageAll<{ id: string; name: string | null; email: string | null; status: string | null; is_test: boolean | null; role: string }>(() =>
+      admin.from("profiles").select("id, name, email, status, is_test, role").eq("role", "student").order("id"),
+    ),
+    visitTotals(admin, since30, since7),
+    visitShape(admin, since30),
+    progressTotals(admin),
     admin.from("lessons").select("id, title"),
     admin.from("learn_progress").select("user_id, state"),
-    admin.from("sim_sessions").select("user_id, started_at").gte("started_at", since30).limit(20000),
+    pageAll<{ user_id: string; started_at: string }>(() => admin.from("sim_sessions").select("user_id, started_at").gte("started_at", since30).order("id")),
   ]);
   const learn = new Map<string, LearnState>((learnRes.error ? [] : (learnRes.data ?? [])).map((r) => [r.user_id as string, normalise(r.state)]));
   const lessonTitles = new Map((lessons ?? []).map((l) => [l.id as string, l.title as string]));
   const students = (profiles ?? []).filter((p) => !isHiddenAccount(p));
   const today = istToday();
-  const now = Date.now();
-
-  const byUser = new Map<string, Visit[]>();
-  for (const v of (visits ?? []) as Visit[]) {
-    const list = byUser.get(v.user_id) ?? [];
-    list.push(v);
-    byUser.set(v.user_id, list);
-  }
 
   // Cohort heatmap: weekday (Mon=0) × IST hour → minutes.
-  const heat: number[][] = Array.from({ length: 7 }, () => Array(24).fill(0));
+  const heat = shape.heat.map((row) => row.map((s) => s / 60));
   const pages = new Map<string, number>();
-  for (const v of (visits ?? []) as Visit[]) {
-    const t = new Date(new Date(v.entered_at).getTime() + IST_MS);
-    heat[(t.getUTCDay() + 6) % 7][t.getUTCHours()] += secs(v) / 60;
-    const label = describePath(v.path, lessonTitles).replace(/^Lecture: .*/, "Lectures (watching)");
-    pages.set(label, (pages.get(label) ?? 0) + secs(v) / 60);
+  for (const [path, seconds] of shape.pathSeconds) {
+    const label = describePath(path, lessonTitles).replace(/^Lecture: .*/, "Lectures (watching)");
+    pages.set(label, (pages.get(label) ?? 0) + seconds / 60);
   }
+  const simsByUser = new Map<string, string[]>();
+  for (const x of sims ?? []) simsByUser.set(x.user_id, [...(simsByUser.get(x.user_id) ?? []), x.started_at]);
 
   const rows: StudentActivity[] = students.map((p) => {
-    const vs = byUser.get(p.id as string) ?? [];
-    const min30 = vs.reduce((a, v) => a + secs(v), 0) / 60;
-    const min7 = vs.filter((v) => now - new Date(v.entered_at).getTime() < 7 * DAY_MS).reduce((a, v) => a + secs(v), 0) / 60;
-    const days = new Set(vs.map((v) => istDay(v.entered_at)));
-    const pr = (progress ?? []).filter((x) => x.user_id === p.id);
-    const lastVisit = latest(...vs.map(visitEnd));
-    const lastProg = pr.reduce<string | null>((a, x) => (!a || (x.updated_at as string) > a ? (x.updated_at as string) : a), null);
-    const st = learn.get(p.id as string);
-    const mySims = (sims ?? []).filter((x) => x.user_id === p.id);
+    const v = visitByUser.get(p.id);
+    const pr = progByUser.get(p.id);
+    const st = learn.get(p.id);
+    const mySims = simsByUser.get(p.id) ?? [];
     const practice = mySims.length;
-    const lecturesDone = pr.filter((x) => x.is_completed).length;
     const row: StudentActivity = {
-      id: p.id as string,
-      name: displayName(p.name as string | null, String(p.email ?? "")),
+      id: p.id,
+      name: displayName(p.name, String(p.email ?? "")),
       email: String(p.email ?? ""),
       status: String(p.status ?? "active"),
-      min7: Math.round(min7),
-      min30: Math.round(min30),
-      activeDays30: days.size,
-      lastSeen: latest(lastVisit, lastProg, ...mySims.map((x) => x.started_at as string)),
-      lecturesDone,
-      lecturesStarted: pr.filter((x) => (x.watched_seconds ?? 0) > 0).length,
-      watchMin: Math.round(pr.reduce((a, x) => a + (x.watched_seconds ?? 0), 0) / 60),
+      min7: Math.round((v?.secondsWeek ?? 0) / 60),
+      min30: Math.round((v?.seconds ?? 0) / 60),
+      activeDays30: v?.activeDays ?? 0,
+      lastSeen: latest(v?.lastVisit ?? null, pr?.lastUpdate ?? null, ...mySims),
+      lecturesDone: pr?.lessonsDone ?? 0,
+      lecturesStarted: pr?.lessonsStarted ?? 0,
+      watchMin: Math.round((pr?.watchedSeconds ?? 0) / 60),
       xp: st?.xp ?? 0,
       level: st ? levelFor(st.xp).title : "None",
       streak: st ? liveStreak(st.streak, today) : 0,
@@ -166,7 +159,7 @@ export async function loadStudentDetail(userId: string) {
   const since30 = new Date(Date.now() - 30 * DAY_MS).toISOString();
   const [{ data: profile }, { data: visits }, { data: progress }, { data: lessons }, learnRes, { data: sims }] = await Promise.all([
     admin.from("profiles").select("id, name, email, status, created_at, mobile_number").eq("id", userId).maybeSingle(),
-    admin.from("page_visits").select("user_id, path, entered_at, duration_seconds").eq("user_id", userId).gte("entered_at", since30).order("entered_at", { ascending: false }).limit(5000),
+    pageAll<Visit>(() => admin.from("page_visits").select("user_id, path, entered_at, duration_seconds").eq("user_id", userId).gte("entered_at", since30).order("entered_at", { ascending: false }).order("id")).then((data) => ({ data })),
     admin.from("progress").select("lesson_id, watched_seconds, is_completed, updated_at").eq("user_id", userId),
     admin.from("lessons").select("id, title, week, order_index").order("order_index"),
     admin.from("learn_progress").select("state").eq("user_id", userId).maybeSingle(),
