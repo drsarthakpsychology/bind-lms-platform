@@ -1,12 +1,13 @@
 import { useQueryClient } from "@tanstack/react-query";
+import { Stack } from "expo-router";
 import { Check, Flame, Lightbulb, Sparkles, Wrench } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import { useMe } from "@/api/queries";
-import { Button, QuietEmpty, RowsSkeleton, Screen, Section, Sheet, StillTrying, T } from "@/ds";
-import { loadLine } from "./frame";
+import { Button, HoldButton, Label, RowsSkeleton, Screen, Sheet, StillTrying, Stone, T } from "@/ds";
+import { IconPatch, QuietError, QuietNote } from "@/screens/me/parts";
 import { haptic } from "@/lib/haptics";
 import { Burst, Confetti, presets, RollingNumber, Stamp } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
@@ -69,7 +70,7 @@ export function ShopScreen() {
   const d = q.data;
   const first = (me.data?.name ?? "You").split(" ")[0] ?? "You";
 
-  if (q.isError && q.data === undefined) return <Screen title="XP shop"><QuietEmpty testID="load-error" title="That didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} /></Screen>;
+  if (q.isError && q.data === undefined) return <Screen title="XP shop"><QuietError error={q.error} what="the shop" onRetry={() => void q.refetch()} /></Screen>;
   if (!d) {
     return (
       <Screen title="XP shop">
@@ -133,46 +134,59 @@ export function ShopScreen() {
   const cost = pending ? (pending.kind === "item" ? pending.item.cost : pending.look.cost) : 0;
   const short = cost - bal;
   return (
-    <Screen testID="shop" title="XP shop" lead={d.note} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Confetti fire={big} />
-      <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: space[4], borderRadius: layout.radiusLg, padding: space[4], backgroundColor: c.card }}>
-        <View>
-          <T v="label" tone="muted">
-            Your XP
-          </T>
-          <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[1] }}>
-            <RollingNumber value={bal} style={{ fontFamily: fonts.big, fontSize: 48, lineHeight: 56, color: c.ink }} testID="shop-balance" />
-            <View>
-              <Burst fire={fire} reach={40} />
+    <Screen
+      testID="shop"
+      title="XP shop"
+      lead={d.note}
+      gap={space[5]}
+      onRefresh={() => void q.refetch()}
+      refreshing={q.isRefetching}
+      field={
+        <View accessible accessibilityLabel={`Your XP: ${bal}. ${d.streak.count > 0 ? `${d.streak.count} day streak${d.streak.alive ? "" : ", lost"}` : "No streak yet"}`} style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: space[4], backgroundColor: c.fieldTint, borderRadius: 22, paddingVertical: space[3], paddingHorizontal: space[4] }}>
+          <View>
+            <T v="caption" tone="onFieldMuted">
+              Your XP
+            </T>
+            <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[1] }}>
+              <RollingNumber value={bal} style={{ fontFamily: fonts.big, fontSize: 40, lineHeight: 44, color: c.onField }} format={(n) => n.toLocaleString("en-IN")} testID="shop-balance" />
+              <View>
+                <Burst fire={fire} reach={40} />
+              </View>
             </View>
           </View>
-        </View>
-        <View style={{ alignItems: "flex-end", gap: 2 }}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: space[1] }}>
-            <Flame size={18} color={d.streak.alive ? c.danger : c.muted} />
-            <T v="bodyStrong" num>{d.streak.count > 0 ? `${d.streak.count} day${d.streak.count === 1 ? "" : "s"}` : "Start today"}</T>
+          <View style={{ alignItems: "flex-end", gap: 2, paddingBottom: 4 }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: space[1] }}>
+              <Flame size={18} color={d.streak.alive ? c.lime : c.onFieldMuted} />
+              <T v="bodyStrong" tone="onField" num>
+                {d.streak.count > 0 ? `${d.streak.count} day${d.streak.count === 1 ? "" : "s"}` : "Start today"}
+              </T>
+            </View>
+            <T v="caption" tone="onFieldMuted">
+              {d.streak.alive || d.streak.count <= 0 ? "Streak" : "Streak lost"}
+            </T>
           </View>
-          <T v="label" tone="muted">
-            {d.streak.alive || d.streak.count <= 0 ? "Streak" : "Streak lost"}
-          </T>
         </View>
-      </View>
-      {!d.ready ? <QuietEmpty title="The shop opens soon" body="You can look around; buying switches on shortly." /> : null}
+      }
+    >
+      <Stack.Screen options={{ title: "" }} />
+      <Confetti fire={big} />
+      {!d.ready ? <QuietNote testID="shop-soon" title="The shop opens soon" body="You can look around; buying switches on shortly." /> : null}
       {error && !pending ? (
         <T v="small" tone="danger" accessibilityLiveRegion="polite">
           {error}
         </T>
       ) : null}
 
-      <Section title="Useful things">
+      <View style={{ gap: space[3] }}>
+        <Label>Useful things</Label>
         <Stagger gap={space[3]}>
           {d.items.map((it) => {
             const Icon = ICON[it.id] ?? Sparkles;
             const off = !d.ready || !it.ready;
             const done = bought.has(it.id);
             return (
-              <View key={it.id} style={{ flexDirection: "row", gap: space[3], alignItems: "center", borderRadius: layout.radiusLg, padding: space[4], backgroundColor: c.card }} testID={`shop-item-${it.id}`}>
-                <Icon size={24} color={c.ink} />
+              <View key={it.id} style={{ flexDirection: "row", gap: space[3], alignItems: "center", backgroundColor: c.card, borderRadius: layout.radiusLg, padding: space[4] }} testID={`shop-item-${it.id}`}>
+                <IconPatch icon={Icon} area="home" />
                 <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
                   <T v="bodyStrong">{it.label}</T>
                   <T v="small" tone="muted">
@@ -181,9 +195,9 @@ export function ShopScreen() {
                 </View>
                 {done && last === it.id ? (
                   <Stamp fire={fire} rotate={-4}>
-                    <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: space[2], paddingVertical: 4, borderRadius: 999, backgroundColor: c.lime }}>
-                      <Check size={14} color={c.onPrimary} strokeWidth={3} />
-                      <T v="label" style={{ color: c.onPrimary }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: space[3], paddingVertical: 6, borderRadius: 999, backgroundColor: c.lime }}>
+                      <Check size={14} color={c.onLime} strokeWidth={3} />
+                      <T v="caption" style={{ color: c.onLime }}>
                         Bought
                       </T>
                     </View>
@@ -195,10 +209,11 @@ export function ShopScreen() {
             );
           })}
         </Stagger>
-      </Section>
+      </View>
 
-      <Section title="Name frames and titles">
-        <T v="small" tone="muted">
+      <View style={{ gap: space[3] }}>
+        <Label>Name frames and titles</Label>
+        <T v="small" tone="muted" style={{ paddingHorizontal: space[1] }}>
           How your name shows on the boards.
         </T>
         <View style={{ gap: space[3] }}>
@@ -206,11 +221,11 @@ export function ShopScreen() {
             const mine = has(l);
             const on = wearing[l.kind] === l.id;
             return (
-              <Animated.View key={l.id} layout={reduce ? undefined : presets.layout()} style={{ gap: space[3], borderWidth: on ? 2 : 0, borderColor: c.ink, borderRadius: layout.radiusLg, padding: space[4], backgroundColor: c.card }} testID={`shop-look-${l.id}`}>
+              <Animated.View key={l.id} layout={reduce ? undefined : presets.layout()} style={{ gap: space[3], borderWidth: 1.5, borderColor: on ? c.ink : c.card, borderRadius: layout.radiusLg, padding: space[4], backgroundColor: on ? "transparent" : c.card }} testID={`shop-look-${l.id}`}>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: space[3] }}>
                   <LookName name={first} frame={l.kind === "frame" ? l.id : wearing.frame} title={l.kind === "title" ? l.id : wearing.title} />
                   {mine ? (
-                    <Button kind={on ? "quiet" : "primary"} full={false} label={on ? "Take off" : "Wear"} onPress={() => void wear(l, !on)} testID={`shop-wear-${l.id}`} />
+                    <Button kind={on ? "quiet" : "ink"} small full={false} label={on ? "Take off" : "Wear"} onPress={() => void wear(l, !on)} testID={`shop-wear-${l.id}`} />
                   ) : (
                     <PriceButton cost={l.cost} disabled={!d.ready} onPress={() => { setError(null); setPending({ kind: "look", look: l }); }} testID={`shop-buy-${l.id}`} />
                   )}
@@ -220,11 +235,11 @@ export function ShopScreen() {
                     {l.label}
                   </T>
                   {on ? (
-                    <T v="label" tone="link">
+                    <T v="caption" tone="link">
                       Wearing
                     </T>
                   ) : mine ? (
-                    <T v="label" tone="muted">
+                    <T v="caption" tone="muted">
                       Yours
                     </T>
                   ) : null}
@@ -233,7 +248,7 @@ export function ShopScreen() {
             );
           })}
         </View>
-      </Section>
+      </View>
 
       <Sheet open={!!pending} onClose={() => !busy && setPending(null)} title={pending ? `${pending.kind === "item" ? pending.item.label : pending.look.label}` : undefined} testID="shop-confirm">
         {pending ? (
@@ -250,7 +265,10 @@ export function ShopScreen() {
                 {error}
               </T>
             ) : null}
-            <Button label={`Spend ${cost} XP`} disabled={short > 0} busy={busy} onPress={() => void confirm()} testID="shop-spend" />
+            <HoldButton label={busy ? "Spending" : `Hold to spend ${cost} XP`} tapLabel={`Spend ${cost} XP`} disabled={short > 0 || busy} onConfirm={() => void confirm()} testID="shop-spend" />
+            <T v="caption" tone="muted" center>
+              Press and hold for one second. Letting go early cancels.
+            </T>
             <Button kind="text" label="Not now" onPress={() => setPending(null)} />
           </View>
         ) : null}
@@ -259,12 +277,14 @@ export function ShopScreen() {
   );
 }
 
-/** The price on a pill; it sinks when pressed. */
+/** The price on an ink pill; it sinks when pressed. The one lime thing is the hold to spend. */
 function PriceButton({ cost, onPress, disabled, label, testID }: { cost: number; onPress: () => void; disabled?: boolean; label?: string; testID?: string }) {
   const c = useTheme();
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={label ?? `Buy for ${cost} XP`} accessibilityState={{ disabled: !!disabled }} disabled={disabled} onPress={onPress} testID={testID} style={({ pressed }) => ({ minHeight: layout.target, minWidth: 88, paddingHorizontal: space[3], alignItems: "center", justifyContent: "center", borderRadius: 24, backgroundColor: disabled ? c.card : c.ink, opacity: disabled ? 0.6 : 1, transform: [{ scale: pressed ? 0.94 : 1 }] })}>
-      <T style={{ fontFamily: fonts.bold, fontSize: label ? 13 : 16, lineHeight: 20, color: disabled ? c.muted : c.bg }}>{label ?? `${cost} XP`}</T>
+    <Pressable accessibilityRole="button" accessibilityLabel={label ?? `Buy for ${cost} XP`} accessibilityState={{ disabled: !!disabled }} disabled={disabled} onPress={onPress} testID={testID} style={({ pressed }) => ({ minHeight: layout.target, minWidth: 84, paddingHorizontal: space[3], alignItems: "center", justifyContent: "center", borderRadius: 24, backgroundColor: disabled ? c.tint : c.ink, transform: [{ scale: pressed ? 0.94 : 1 }] })}>
+      <T v="small" num style={{ fontFamily: fonts.bold, color: disabled ? c.muted : c.bg }}>
+        {label ?? `${cost} XP`}
+      </T>
     </Pressable>
   );
 }

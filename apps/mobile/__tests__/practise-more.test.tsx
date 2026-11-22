@@ -166,7 +166,7 @@ describe("XP shop", () => {
     await press("shop-spend");
     await waitFor(() => expect(screen.getByTestId("shop-wear-title-blue")).toBeTruthy());
     expect(posted("/play/league/buy")[0]!.body).toEqual({ args: ["look:title-blue"] });
-    expect(screen.getAllByText("WEARING")).toHaveLength(2);
+    expect(screen.getAllByText("Wearing")).toHaveLength(2);
     await press("shop-wear-title-blue");
     expect(posted("/play/league/wear").at(-1)!.body).toEqual({ args: ["title", null] });
   });

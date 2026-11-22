@@ -1,5 +1,5 @@
 import { router, Stack, useLocalSearchParams } from "expo-router";
-import { Award, Flame, Medal } from "lucide-react-native";
+import { ArrowRight, Award, Flame, Medal } from "lucide-react-native";
 import * as React from "react";
 import { openLink } from "@/lib/open";
 import { Share, View } from "react-native";
@@ -9,10 +9,11 @@ import type { BadgeProgress, CertificatePdfLink, Credential } from "@/api/contra
 import { messageOf } from "@/api/errors";
 import { useAchievements } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, Card, EmptyState, Loaded, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
+import { Button, Jyo, Label, ProgressLine, QuietEmpty, Row, Screen, Sheet, Stone, T } from "@/ds";
 import { toast } from "@/ds/toast";
-import { Confetti, presets, Press, staggerDelay, useNewWins } from "@/motion";
+import { Confetti, Enter, presets, Press, staggerDelay, useNewWins } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
+import { Group, HubSkeleton, IconPatch, Load } from "./parts";
 
 export function issued(iso: string | null): string {
   const t = iso ? Date.parse(iso) : NaN;
@@ -63,10 +64,10 @@ export function Badge({ b, i, onPress }: { b: Credential | BadgeProgress; i: num
             borderRadius: 28,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: earned ? (b.tone === "lime" ? c.primary : c.brand) : c.tint,
+            backgroundColor: earned ? (b.tone === "lime" ? c.lime : c.areas.me.wash) : c.tint,
           }}
         >
-          <Icon size={26} color={earned ? (b.tone === "lime" ? c.onPrimary : c.onBrand) : c.muted} />
+          <Icon size={26} color={earned ? (b.tone === "lime" ? c.onLime : c.areas.me.deep) : c.muted} />
         </View>
         <T v="caption" center tone={earned ? "ink" : "muted"} style={{ paddingHorizontal: space[1] }}>
           {b.title}
@@ -76,7 +77,19 @@ export function Badge({ b, i, onPress }: { b: Credential | BadgeProgress; i: num
   );
 }
 
-/** Certificates as a list with Download and Share; badges as a quiet grid; what is still to earn as rows. */
+/** "2 of 4" gives 50; anything else gives null. */
+export function progressPct(text: string): number | null {
+  const m = /^(\d+)\s*(?:of|\/)\s*(\d+)/.exec(text);
+  return m && Number(m[2]) > 0 ? (Number(m[1]) / Number(m[2])) * 100 : null;
+}
+
+/**
+ * Certificates and badges, in the Layers look. Earned certificates are stones
+ * that grow into the certificate; what is still to earn shows a line that
+ * fills; badges sit in a grid on one stone. A newly earned badge gets
+ * confetti, once per phone (a new certificate has its own full-screen moment,
+ * src/moments).
+ */
 export function CertificatesScreen() {
   const c = useTheme();
   const q = useAchievements();
@@ -84,65 +97,94 @@ export function CertificatesScreen() {
   const badgesOnly = show === "badges";
   const [badge, setBadge] = React.useState<Credential | BadgeProgress | null>(null);
   const close = React.useCallback(() => setBadge(null), []);
-  // A newly earned badge gets confetti, once per phone (a new certificate gets its own full-screen moment, src/moments).
   const won = q.data ? q.data.earned.filter((x) => x.type === "badge").map((x) => x.credentialId) : null;
   const fire = useNewWins("achievements", won);
+  const earnedCerts = q.data?.earned.filter((x) => x.type === "certificate" && x.status !== "draft").length ?? 0;
+  const earnedBadges = q.data?.earned.filter((x) => x.type === "badge").length ?? 0;
+  const lead = q.data ? `${earnedCerts} certificate${earnedCerts === 1 ? "" : "s"} and ${earnedBadges} badge${earnedBadges === 1 ? "" : "s"} earned` : undefined;
   return (
     <View style={{ flex: 1 }}>
-      <Screen testID="certificates" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-        <Stack.Screen options={{ title: badgesOnly ? "Badges" : "Certificates" }} />
-        <Loaded q={q} what="your certificates" skeleton={<RowsSkeleton rows={4} />}>
+      <Screen testID="certificates" title={badgesOnly ? "Badges" : "Certificates"} lead={lead} gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+        <Stack.Screen options={{ title: "" }} />
+        <Load q={q} what="your certificates" skeleton={<HubSkeleton />}>
           {(a) => {
             const certs = a.earned.filter((x) => x.type === "certificate" && x.status !== "draft");
             const badges = a.earned.filter((x) => x.type === "badge");
-            // Badges live in Progress; this screen keeps them only for old ?show=badges links.
-            const toEarn = a.progress.filter((x) => !x.earned && x.type === (badgesOnly ? "badge" : "certificate"));
+            const certsToEarn = a.progress.filter((x) => !x.earned && x.type === "certificate");
+            const badgesToEarn = a.progress.filter((x) => !x.earned && x.type === "badge");
             return (
-              <>
-                {badgesOnly ? (
-                  badges.length ? null : <EmptyState title="No badges yet" body="Badges come from studying, practising and finishing lectures." testID="badges-empty" />
-                ) : certs.length ? (
-                  <Section title="Earned">
-                    {certs.map((x) => (
-                      <Card key={x.credentialId} testID={`cert-${x.credentialId}`} onPress={() => router.push(`/certificate/${encodeURIComponent(x.credentialId)}`)} accessibilityLabel={`${x.title}. Issued ${issued(x.issuedAt)}`}>
-                        <View style={{ flexDirection: "row", gap: space[3], alignItems: "flex-start" }}>
-                          <Award size={24} color={c.link} />
-                          <View style={{ flex: 1, gap: space[1] }}>
-                            <T v="bodyStrong">{x.title}</T>
-                            <T v="small" tone="muted">
-                              {x.status === "revoked" ? "Withdrawn" : `Issued ${issued(x.issuedAt)}`}
-                            </T>
+              <View style={{ gap: space[5] }}>
+                {badgesOnly ? null : certs.length ? (
+                  <View style={{ gap: space[3] }}>
+                    <Label>Earned</Label>
+                    {certs.map((x, i) => (
+                      <Enter key={x.credentialId} i={i}>
+                        <Stone grow={() => router.push(`/certificate/${encodeURIComponent(x.credentialId)}`)} testID={`cert-${x.credentialId}`} accessibilityLabel={`${x.title}. ${x.status === "revoked" ? "Withdrawn" : `Issued ${issued(x.issuedAt)}`}. Open it`}>
+                          <View style={{ flexDirection: "row", gap: space[3], alignItems: "center" }}>
+                            <IconPatch icon={Award} area="me" size={48} />
+                            <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+                              <T v="h3">{x.title}</T>
+                              <T v="small" tone="muted">
+                                {x.status === "revoked" ? "Withdrawn" : `Issued ${issued(x.issuedAt)}`}
+                              </T>
+                            </View>
+                            <ArrowRight size={20} color={c.muted} />
                           </View>
-                        </View>
-                        {x.status === "issued" ? (
-                          <View style={{ flexDirection: "row", gap: space[5] }}>
-                            <Button kind="text" label="Download" onPress={() => void downloadCertificate(x.credentialId)} />
-                          </View>
-                        ) : null}
-                      </Card>
+                        </Stone>
+                      </Enter>
                     ))}
-                  </Section>
+                  </View>
                 ) : (
-                  <EmptyState title="No certificates yet" body="Finish a module and pass its test to earn your first certificate." testID="certs-empty" />
+                  <QuietEmpty testID="certs-empty" title="No certificates yet" body="Finish a module and pass its test to earn your first one." art={<Jyo pose="resting" size={56} />} action={{ label: "Open your modules", onPress: () => router.push("/study") }} />
                 )}
-                {badgesOnly && badges.length ? (
-                  <Section title="Badges">
-                    <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-                      {badges.map((b, i) => (
-                        <Badge key={b.credentialId} b={b} i={i} onPress={() => setBadge(b)} />
-                      ))}
-                    </View>
-                  </Section>
+
+                {!badgesOnly && certsToEarn.length ? (
+                  <View style={{ gap: space[3] }}>
+                    <Label>Next to earn</Label>
+                    {certsToEarn.map((p) => {
+                      const pct = progressPct(p.progress);
+                      return (
+                        <Stone quiet key={p.id} onPress={() => setBadge(p)} testID={`cert-next-${p.id}`} accessibilityLabel={`${p.title}. ${p.progress}`}>
+                          <View style={{ gap: space[3] }}>
+                            <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: space[3] }}>
+                              <T v="bodyStrong" style={{ flex: 1 }}>
+                                {p.title}
+                              </T>
+                              <T v="small" tone="muted" num>
+                                {p.progress}
+                              </T>
+                            </View>
+                            {pct !== null ? <ProgressLine value={pct} height={8} label={`${p.title}: ${p.progress}`} /> : null}
+                          </View>
+                        </Stone>
+                      );
+                    })}
+                  </View>
                 ) : null}
-                {toEarn.length ? (
-                  <Section title="Still to earn">
-                    <RowList>
-                      {toEarn.map((p) => (
-                        <Row key={p.id} title={p.title} meta={p.description ?? undefined} trailing={p.progress} onPress={() => setBadge(p)} chevron={false} />
-                      ))}
-                    </RowList>
-                  </Section>
+
+                <View style={{ gap: space[3] }}>
+                  <Label>Badges</Label>
+                  {badges.length ? (
+                    <Stone pad={space[2]}>
+                      <View style={{ flexDirection: "row", flexWrap: "wrap" }} testID="cert-badges">
+                        {badges.map((b, i) => (
+                          <Badge key={b.credentialId} b={b} i={i} onPress={() => setBadge(b)} />
+                        ))}
+                      </View>
+                    </Stone>
+                  ) : (
+                    <QuietEmpty testID="badges-empty" title="No badges yet" body="Badges come from studying, practising and finishing lectures." />
+                  )}
+                </View>
+
+                {badgesToEarn.length ? (
+                  <Group title="Badges still to earn">
+                    {badgesToEarn.map((p) => (
+                      <Row key={p.id} title={p.title} meta={p.description ?? undefined} trailing={p.progress} onPress={() => setBadge(p)} chevron={false} />
+                    ))}
+                  </Group>
                 ) : null}
+
                 <Sheet open={!!badge} onClose={close} title={badge?.title}>
                   <View style={{ gap: space[3] }}>
                     {badge?.description ? <T tone="muted">{badge.description}</T> : null}
@@ -155,12 +197,13 @@ export function CertificatesScreen() {
                         {badge.progress}
                       </T>
                     ) : null}
+                    <Button kind="quiet" label="Close" onPress={close} />
                   </View>
                 </Sheet>
-              </>
+              </View>
             );
           }}
-        </Loaded>
+        </Load>
       </Screen>
       <Confetti fire={fire} />
     </View>
