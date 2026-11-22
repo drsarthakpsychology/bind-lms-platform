@@ -11,6 +11,7 @@ import { LibraryScreen } from "@/library/list";
 import { MedicineScreen, splitLine } from "@/library/medicine";
 import { MECHANISM_GROUPS } from "@/library/mock";
 import { pinnedMeds } from "@/library/pins";
+import { medicineList } from "@/practise/mock";
 import { NotesScreen, searchNotes } from "@/screens/notes/notes";
 import { EntryBody } from "@/screens/reference/reference";
 import { render } from "./utils";
@@ -49,7 +50,7 @@ describe("revision notes list", () => {
     expect(screen.getByTestId("note-bipolar")).toBeTruthy();
     await fireEvent.changeText(screen.getByTestId("notes-search"), "qqqq");
     expect(await screen.findByTestId("notes-none")).toBeTruthy();
-    fireEvent.press(screen.getByText("Search the Quick reference"));
+    await fireEvent.press(screen.getByText("Search the Quick reference"));
     expect(router.push).toHaveBeenLastCalledWith("/reference?q=qqqq");
   });
 });
@@ -84,13 +85,13 @@ describe("quick reference card", () => {
     );
     for (const label of ["Threshold", "Duration", "Age of onset", "Settings"]) expect(screen.getByText(label)).toBeTruthy();
     expect(screen.getByTestId("ref-presentations")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("ref-lesson"));
+    await fireEvent.press(screen.getByTestId("ref-lesson"));
     expect(onOpen).toHaveBeenLastCalledWith("/study/m09");
-    fireEvent.press(screen.getByText("ADHD or anxiety?"));
+    await fireEvent.press(screen.getByText("ADHD or anxiety?"));
     expect(onOpen).toHaveBeenLastCalledWith("/game/duel");
-    fireEvent.press(screen.getByTestId("ref-like-gad"));
+    await fireEvent.press(screen.getByTestId("ref-like-gad"));
     expect(onOpen).toHaveBeenLastCalledWith("/reference/gad");
-    fireEvent.press(screen.getByTestId("ref-practise-detective"));
+    await fireEvent.press(screen.getByTestId("ref-practise-detective"));
     expect(onOpen).toHaveBeenLastCalledWith("/case/detective");
   });
 
@@ -102,10 +103,9 @@ describe("quick reference card", () => {
         <PairTable rows={[{ label: "Grief", value: "Waves tied to the loss", testID: "row-grief", onPress: open }]} />
       </>,
     );
-    if (!screen.queryByText("2 weeks")) screen.debug();
     expect(screen.getByText("2 weeks")).toBeTruthy();
     expect(screen.queryByText("Onset")).toBeNull();
-    fireEvent.press(screen.getByTestId("row-grief"));
+    await fireEvent.press(screen.getByTestId("row-grief"));
     expect(open).toHaveBeenCalled();
   });
 });
@@ -113,14 +113,11 @@ describe("quick reference card", () => {
 describe("medicines", () => {
   it("browses by class and by how they work, and searches", async () => {
     await render(<LibraryScreen />);
-    await waitFor(() => expect(screen.getByTestId("class-Antidepressants")).toBeTruthy(), { timeout: 4000 }).catch((e) => {
-      screen.debug({ maxLength: 4000 });
-      throw e;
-    });
-    fireEvent.press(screen.getByText("By how they work"));
+    await waitFor(() => expect(screen.getByTestId("class-Antidepressants")).toBeTruthy(), { timeout: 4000 });
+    await fireEvent.press(screen.getByText("By how they work"));
     expect(await screen.findByTestId("how-note")).toBeTruthy();
     expect(screen.getByText(MECHANISM_GROUPS[0]!.tag)).toBeTruthy();
-    fireEvent.press(screen.getByTestId("how-0-escitalopram"));
+    await fireEvent.press(screen.getByTestId("how-0-escitalopram"));
     expect(router.push).toHaveBeenLastCalledWith("/medicine/escitalopram");
     await fireEvent.changeText(screen.getByTestId("library-search"), "zolp");
     expect(await screen.findByTestId("med-zolpidem")).toBeTruthy();
@@ -130,8 +127,7 @@ describe("medicines", () => {
   });
 
   it("every mock mechanism group names medicines the mock library has", async () => {
-    const { medicineList } = require("@/practise/mock");
-    const ids = new Set((medicineList().rows as { id: string }[]).map((r) => r.id));
+    const ids = new Set(medicineList().rows.map((r) => r.id));
     for (const g of MECHANISM_GROUPS) for (const m of g.meds) expect(ids.has(m.id)).toBe(true);
   });
 
@@ -146,11 +142,11 @@ describe("medicines", () => {
     await waitFor(() => expect(screen.getByTestId("med-section-interactions")).toBeTruthy(), { timeout: 4000 });
     expect(screen.getByTestId("med-interactions")).toBeTruthy();
     expect(screen.getByTestId("med-groups")).toBeTruthy();
-    expect(screen.getByText("Usual dose")).toBeTruthy();
+    expect(screen.getByTestId("facts")).toBeTruthy();
     // The dose text changes at once: there is one copy, never an old one fading out.
-    fireEvent.press(screen.getByTestId("med-dose-0"));
+    await fireEvent.press(screen.getByTestId("med-dose-0"));
     expect(screen.getAllByTestId("med-dose-text")).toHaveLength(1);
-    fireEvent.press(screen.getByTestId("med-related-sertraline"));
+    await fireEvent.press(screen.getByTestId("med-related-sertraline"));
     expect(router.push).toHaveBeenLastCalledWith("/medicine/sertraline");
     pinnedMeds.add("escitalopram");
     pinnedMeds.remove("escitalopram");
@@ -159,8 +155,8 @@ describe("medicines", () => {
   it("compare opens empty, lets you choose, and then shows both side by side", async () => {
     await render(<CompareScreen />);
     expect(await screen.findByTestId("compare-empty")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("compare-slot-a"));
-    fireEvent.press(await screen.findByTestId("pick-lithium"));
+    await fireEvent.press(screen.getByTestId("compare-slot-a"));
+    await fireEvent.press(await screen.findByTestId("pick-lithium"));
     expect(setParams).toHaveBeenLastCalledWith({ a: "lithium", b: "" });
   });
 
@@ -169,7 +165,7 @@ describe("medicines", () => {
     await render(<CompareScreen />);
     expect(await screen.findByText("Interactions", {}, { timeout: 4000 })).toBeTruthy();
     expect(screen.getByText("Usual dose")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("compare-open-sertraline"));
+    await fireEvent.press(screen.getByTestId("compare-open-sertraline"));
     expect(router.push).toHaveBeenLastCalledWith("/medicine/sertraline");
   });
 });
