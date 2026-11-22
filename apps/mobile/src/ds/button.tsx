@@ -8,6 +8,7 @@ import { curves, dur } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { T } from "./text";
 
+const TALL = 56;
 const ease = curves.standard;
 
 type ButtonProps = {
@@ -23,6 +24,8 @@ type ButtonProps = {
   busy?: boolean;
   /** Needs the server (Post, Hand in, Send): greyed out while the phone is offline. */
   needsServer?: boolean;
+  /** A 56px target for a step that must not be missed or mis-tapped (primary and quiet). */
+  tall?: boolean;
   /** Fills the width (default for primary and quiet). */
   full?: boolean;
   testID?: string;
@@ -35,7 +38,7 @@ type ButtonProps = {
  * On press a button sinks to 0.97 over 120ms. No haptic: the result of the
  * action gives one when it matters (saved, wrong, done).
  */
-export function Button({ label, onPress, kind = "primary", small, icon, disabled, busy, needsServer, full, testID, accessibilityHint, style }: ButtonProps) {
+export function Button({ label, onPress, kind = "primary", small, icon, disabled, busy, needsServer, tall, full, testID, accessibilityHint, style }: ButtonProps) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const down = useSharedValue(0);
@@ -86,7 +89,7 @@ export function Button({ label, onPress, kind = "primary", small, icon, disabled
   const tone = blocked ? "muted" : kind === "primary" ? "onPrimary" : kind === "ink" ? "onInk" : "ink";
   return (
     <Pressable {...a11y} testID={testID} onPress={press} onPressIn={pressIn} onPressOut={pressOut} disabled={blocked} hitSlop={small ? 6 : 0} style={[{ alignSelf: full === false || small ? "flex-start" : "stretch", opacity: blocked && kind !== "primary" ? 0.6 : 1 }, style]}>
-      <Animated.View style={[{ minHeight: small ? 40 : kind === "primary" || kind === "ink" ? layout.primary : layout.target, paddingHorizontal: small ? space[4] : space[5], paddingVertical: small ? space[2] : space[3], borderRadius: 999, backgroundColor: fill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, sunk]}>
+      <Animated.View style={[{ minHeight: small ? 40 : tall ? TALL : kind === "primary" || kind === "ink" ? layout.primary : layout.target, paddingHorizontal: small ? space[4] : space[5], paddingVertical: small ? space[2] : space[3], borderRadius: 999, backgroundColor: fill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, sunk]}>
         <T v={small ? "small" : "button"} tone={tone} center style={[{ flexShrink: 1 }, small ? { fontFamily: fonts.bold } : null]}>
           {label}
         </T>

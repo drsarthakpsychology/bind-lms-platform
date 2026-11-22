@@ -17,10 +17,11 @@ import { ApiFail, MESSAGE } from "@/lib/app-api/respond";
 import { rateLimitWrite } from "@/lib/rate-limit";
 import * as admin from "./admin";
 import { clinicDb } from "./db";
+import * as scanFlow from "./scan-flow";
 import * as s from "./schemas";
 import * as student from "./student";
 
-export type ClinicActionResult<T> = { ok: true; data: T } | { ok: false; code: ApiErrorCode; error: string; fields?: string[] };
+export type ClinicActionResult<T> = { ok: true; data: T } | { ok: false; code: ApiErrorCode; error: string; fields?: string[]; /** Why a scan step was refused (ClinicScanReason). */ reason?: string };
 
 type Role = "self" | "admin" | "super";
 
@@ -28,10 +29,10 @@ async function run<T>(role: Role, fn: (p: Profile) => Promise<T>, limit?: string
   try {
     const p = role === "super" ? await requireSuperAdminSandbox() : role === "admin" ? await requireAdmin() : await requireSession();
     if (!p) return { ok: false, code: role === "self" ? "unauthenticated" : "forbidden", error: role === "self" ? MESSAGE.unauthenticated : MESSAGE.forbidden };
-    if (limit && !(await rateLimitWrite(`web:${limit}:${p.id}`, limit === "clinic-scan" ? 12 : 60))) throw new ApiFail("rate_limited");
+    if (limit && !(await rateLimitWrite(`web:${limit}:${p.id}`, limit === "clinic-scan" ? 12 : limit === "clinic-scan-confirm" ? 20 : 60))) throw new ApiFail("rate_limited");
     return { ok: true, data: await fn(p) };
   } catch (e) {
-    if (e instanceof ApiFail) return { ok: false, code: e.code, error: e.message, ...(Array.isArray(e.details?.fields) ? { fields: e.details.fields as string[] } : {}) };
+    if (e instanceof ApiFail) return { ok: false, code: e.code, error: e.message, ...(Array.isArray(e.details?.fields) ? { fields: e.details.fields as string[] } : {}), ...(typeof e.details?.reason === "string" ? { reason: e.details.reason } : {}) };
     console.error("clinic action failed:", e instanceof Error ? (e.stack ?? e.message) : e);
     return { ok: false, code: "server_error", error: MESSAGE.server_error };
   }
@@ -59,6 +60,14 @@ export async function clinicWeek(start?: string | null, cohortId?: string | null
 }
 export async function clinicScan(input: unknown) {
   return run("self", (p) => student.scan(clinicDb(), p.id, parse(s.scanSchema, input), Date.now()), "clinic-scan");
+}
+/** Step 1: which session, and where the student stands in it. Saves nothing. */
+export async function clinicScanIdentify(input: unknown) {
+  return run("self", (p) => scanFlow.identify(clinicDb(), p.id, parse(s.scanIdentifySchema, input), Date.now()), "clinic-scan");
+}
+/** Step 2: save IN or OUT, once. */
+export async function clinicScanConfirm(input: unknown) {
+  return run("self", (p) => scanFlow.confirm(clinicDb(), p.id, parse(s.scanConfirmSchema, input), Date.now()), "clinic-scan-confirm");
 }
 export async function clinicMyAttendance(cohortId?: string | null) {
   return run("self", (p) => student.getMyAttendance(clinicDb(), p.id, cohort(cohortId), Date.now()));

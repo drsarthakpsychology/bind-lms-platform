@@ -24,7 +24,7 @@ const C1: W.ClinicCohortRef = { id: "c1", name: "Cohort One" };
 type Student = { id: string; name: string; roll: string; cohortId: string; batch: Batch | null; batchLocked: boolean; leaveAllowance: number; base: number; extras: { count: number; note: string | null; at: string }[]; allowanceLog: { old: number | null; new: number; note: string | null; at: string }[] };
 type Sess = { id: string; date: string; start: string; end: string; kind: SessionKind; title: string; place: string | null; link: string | null; compulsory: boolean; cancelled: boolean; movedFrom: string | null; note: string | null; cohortIds: string[]; oneOff: boolean; slotId: string | null };
 type Slot = { id: string; weekday: Weekday; kind: SessionKind; title: string; start: string; end: string; place: string | null; link: string | null; cohortIds: string[]; compulsory: boolean };
-type Scan = { inAt: string | null; outAt: string | null; manual: boolean; note: string | null };
+type Scan = { inAt: string | null; outAt: string | null; manual: boolean; note: string | null; inAttempt?: string; outAttempt?: string };
 type Log = { cases: number; absent: boolean; note: string | null };
 type Leave = W.ClinicLeaveRequest;
 type Plan = Record<string, Record<Batch, string[]>>;
@@ -413,7 +413,14 @@ function trackerRow(s: State, p: Student): W.ClinicTrackerRow {
 /* -------------------------------------------------------------- routes */
 
 const ok = <T,>(data: T): RawResponse => ({ status: 200, json: { ok: true, data } });
-const fail = (status: number, code: string, message: string): RawResponse => ({ status, json: { ok: false, error: { code, message } } });
+const fail = (status: number, code: string, message: string, reason?: W.ClinicScanReason): RawResponse => ({ status, json: { ok: false, error: { code, message, ...(reason ? { details: { reason } } : {}) } } });
+/** "9:02 am" in India time, as the server words it. */
+const clockAt = (iso: string) => {
+  const d = new Date(Date.parse(iso) + 330 * 60_000);
+  const h = d.getUTCHours();
+  return `${h % 12 === 0 ? 12 : h % 12}:${String(d.getUTCMinutes()).padStart(2, "0")} ${h >= 12 ? "pm" : "am"}`;
+};
+const TICKET_MS = 120_000;
 
 const slotOut = (x: Slot): W.ClinicSlot => ({ id: x.id, cohortIds: x.cohortIds, weekday: weekdayNumber(x.weekday), start: x.start, end: x.end, kind: x.kind, title: x.title, place: x.place, onlineLink: x.link, compulsory: x.compulsory, validFrom: null, validTo: null, active: true });
 
@@ -747,6 +754,76 @@ export function clinicRoute(method: string, fullPath: string, rawBody: unknown, 
     s.scans[key] = { inAt: at, outAt: null, manual: false, note: null };
     return ok<W.ClinicScanResult>({ sessionId: target.id, title, direction: "in", at, late: now() > Date.parse(iso(target.date, target.start)) + s.settings.lateMinutes * 60_000, minutes: null });
   }
+  // Marking in two steps, like the server (src/lib/clinic/scan-flow.ts): identify saves nothing, confirm saves once.
+  if (is("POST", "/clinic/scan/identify")) {
+    const raw = typeof body.token === "string" ? body.token : "";
+    const typed = typeof body.code === "string" ? body.code.toUpperCase().replace(/[\s-]/g, "") : "";
+    const w = windowNow();
+    const mineToMark = (y: Sess) => y.cohortIds.includes(me.cohortId) && (!isOpd(y.kind) || expected(s, y).some((p) => p.id === id));
+    let target: Sess | undefined;
+    if (raw) {
+      const x = /^vibha-att:1:(.+):(\d+):([A-Za-z0-9_-]{22})$/.exec(raw);
+      target = x ? s.sessions.find((y) => y.id === x[1]) : undefined;
+      if (!x || !target) return fail(400, "bad_request", "That is not a VIBHA attendance code. Scan the code on the admin's screen.", "not_a_code");
+      if (token(s, target.id, w) !== x[3] && token(s, target.id, w - 1) !== x[3]) {
+        const old = Number(x[2]) < w && token(s, target.id, Number(x[2])) === x[3];
+        return old ? fail(400, "bad_request", "That code has changed. Scan the one on the screen now.", "code_expired") : fail(400, "bad_request", "That code is not right. Scan the code on the admin's screen.", "not_a_code");
+      }
+    } else if (typed) {
+      const open = s.sessions.filter((y) => isOpen(y) && mineToMark(y));
+      target = open.find((y) => code(s, y.id, w) === typed || code(s, y.id, w - 1) === typed);
+      if (!target) {
+        const old = open.some((y) => [2, 3, 4, 5, 6].some((k) => code(s, y.id, w - k) === typed));
+        return old ? fail(400, "bad_request", "That code has changed. Type the one on the screen now.", "code_expired") : fail(400, "bad_request", "That code is not right. Check the 6 letters and numbers under the picture.", "not_a_code");
+      }
+    } else return fail(400, "bad_request", "Scan the code or type it.", "not_a_code");
+    const title = target.title || "Session";
+    if (!mineToMark(target)) return fail(403, "forbidden", "This code is for another group's session. Check you are in the right room, then scan the code there.", "wrong_cohort");
+    if (target.cancelled) return fail(409, "conflict", `${title} was cancelled. There is nothing to mark.`, "cancelled");
+    if (!isOpen(target)) return target.date > today ? fail(409, "conflict", `${title} is not open yet. Scan again on the day.`, "not_open_yet") : fail(409, "conflict", `Marking for ${title} is closed. Ask the admin to mark you.`, "closed");
+    const prev = s.scans[sk(target.id, id)];
+    const yes = { allowed: true, reason: null };
+    const choices: Pick<W.ClinicScanIdentify, "state" | "in" | "out"> = !prev?.inAt
+      ? { state: "none", in: yes, out: { allowed: false, reason: "Mark IN first." } }
+      : !prev.outAt
+        ? { state: "in", in: { allowed: false, reason: `You are already IN since ${clockAt(prev.inAt)}.` }, out: yes }
+        : { state: "out", in: { allowed: false, reason: `You marked IN at ${clockAt(prev.inAt)}.` }, out: { allowed: false, reason: `You marked OUT at ${clockAt(prev.outAt)}.` } };
+    const exp = now() + TICKET_MS;
+    return ok<W.ClinicScanIdentify>({
+      ticket: `t1.${target.id}.${exp}.${raw ? "q" : "c"}.${id}`,
+      ticketExpiresAt: new Date(exp).toISOString(),
+      now: nowIso(),
+      session: { id: target.id, title, kind: target.kind, date: target.date, start: target.start, end: target.end, place: target.place },
+      inAt: prev?.inAt ?? null,
+      outAt: prev?.outAt ?? null,
+      ...choices,
+    });
+  }
+  if (is("POST", "/clinic/scan/confirm")) {
+    const again = () => fail(400, "bad_request", "That took too long. Scan the code again.", "ticket_expired");
+    const t = /^t1\.(.+)\.(\d+)\.[qc]\.(.+)$/.exec(typeof body.ticket === "string" ? body.ticket : "");
+    const direction = body.direction === "in" || body.direction === "out" ? body.direction : null;
+    const attemptId = typeof body.attemptId === "string" ? body.attemptId : "";
+    if (!direction || attemptId.length < 8) return fail(400, "bad_request", "Something is missing. Scan again.");
+    const target = t ? s.sessions.find((y) => y.id === t[1]) : undefined;
+    if (!t || !target || t[3] !== id || now() > Number(t[2])) return again();
+    const title = target.title || "Session";
+    if (target.cancelled) return fail(409, "conflict", `${title} was cancelled. There is nothing to mark.`, "cancelled");
+    const key = sk(target.id, id);
+    const prev = s.scans[key];
+    const word = direction === "in" ? "IN" : "OUT";
+    const late = (inAt: string) => Date.parse(inAt) > Date.parse(iso(target.date, target.start)) + s.settings.lateMinutes * 60_000;
+    const answer = (sc: Scan, already: boolean) => {
+      const at = (direction === "in" ? sc.inAt : sc.outAt)!;
+      return ok<W.ClinicScanConfirm>({ sessionId: target.id, title, direction, at, already, message: already ? `Already marked ${word} at ${clockAt(at)}. Nothing was changed.` : `Marked ${word} at ${clockAt(at)}.`, late: late(sc.inAt!), minutes: direction === "out" ? Math.round((Date.parse(sc.outAt!) - Date.parse(sc.inAt!)) / 60_000) : null });
+    };
+    if (direction === "out" && !prev?.inAt) return fail(400, "bad_request", `You have not marked IN for ${title}. Mark IN first.`, "out_before_in");
+    if (direction === "in" && prev?.inAt) return answer(prev, prev.inAttempt !== attemptId);
+    if (direction === "out" && prev?.outAt) return answer(prev, prev.outAttempt !== attemptId);
+    const next: Scan = direction === "in" ? { inAt: nowIso(), outAt: null, manual: false, note: null, inAttempt: attemptId } : { ...prev!, outAt: nowIso(), outAttempt: attemptId };
+    s.scans[key] = next;
+    return answer(next, false);
+  }
   if (is("GET", "/clinic/attendance")) {
     const sessions = sortT(mySessions().filter((x) => x.date <= today)).map((x) => mine(s, x, id));
     return ok<W.ClinicMyAttendance>({ v: 1, cohortId: me.cohortId, summary: summary(s, id, me.cohortId), sessions });
@@ -803,3 +880,6 @@ export function clinicRoute(method: string, fullPath: string, rawBody: unknown, 
   }
   return fail(404, "not_found", "That could not be found.");
 }
+
+/** Browser screenshots (web mock build only): the page can read today's code to walk through the scan. */
+if (typeof document !== "undefined") (globalThis as { __clinicMock?: typeof clinicMock }).__clinicMock = clinicMock;

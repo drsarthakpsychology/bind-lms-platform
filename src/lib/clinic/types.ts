@@ -7,6 +7,12 @@ export type {
   ClinicKind,
   ClinicBatch,
   ClinicDirection,
+  ClinicScanReason,
+  ClinicScanIdentifyBody,
+  ClinicScanChoice,
+  ClinicScanIdentify,
+  ClinicScanConfirmBody,
+  ClinicScanConfirm,
   ClinicMyStatus,
   ClinicSession,
   ClinicMySession,
@@ -122,6 +128,9 @@ export type AttendanceRow = {
   out_method: "qr" | "code" | "manual" | null;
   note: string | null;
   marked_by: string | null;
+  /** The Confirm press that made each mark (after supabase/migrations_pending/2026_11_21_attendance_confirm.sql). */
+  in_attempt?: string | null;
+  out_attempt?: string | null;
 };
 
 export type AllowanceRow = { user_id: string; cohort_id: string; allowance: number };

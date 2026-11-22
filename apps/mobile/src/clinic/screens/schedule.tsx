@@ -1,16 +1,18 @@
+import { Stack } from "expo-router";
 import { CalendarCheck, CalendarOff, ChevronLeft, ChevronRight, ClipboardList, Hospital } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { go } from "@/api/prefetch";
-import { IconButton, IconDot, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
+import { IconDot, Label, QuietEmpty, RoundButton, Row, RowList, RowsSkeleton, Screen, Skeleton, Stone, T } from "@/ds";
 import { Swap } from "@/motion";
-import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
+import { AreaProvider, fonts, space, useTheme } from "@/theme";
 import { useClinicWeek } from "../api";
 import { ClinicLoaded } from "../loaded";
-import type { ClinicWeek } from "../contract";
+import type { ClinicSession, ClinicWeek } from "../contract";
 import { addDays, BATCH_NAME, dateLabel, dayShort, mondayOf, rangeLabel, relDay, todayIST, weekdayOf } from "../logic";
-import { Band, openLink, SessionLine, SessionList } from "../parts";
+import { SessionSheet } from "../session-sheet";
+import { SessionLine2, StoneList } from "../ui";
 
 /** "16 to 22 Nov" (or "28 Nov to 4 Dec"). */
 export function weekLabel(from: string, to: string): string {
@@ -21,38 +23,44 @@ export function weekLabel(from: string, to: string): string {
   return m1 === m2 ? `${d1} to ${d2} ${m2}` : `${d1} ${m1} to ${d2} ${m2}`;
 }
 
-/** Seven day buttons; a dot under a day with sessions, a filled one for my OPD day. */
-function DayStrip({ week, day, onPick, today }: { week: ClinicWeek; day: string; onPick: (d: string) => void; today: string }) {
+/**
+ * The week on the blue field: seven day pills (today lime, the picked day
+ * ink), a dot under a day with sessions, a filled one for my OPD day.
+ */
+function DayStrip({ week, day, onPick, today }: { week: ClinicWeek | undefined; day: string; onPick: (d: string) => void; today: string }) {
   const c = useTheme();
-  const a = useAccent();
+  if (!week) return <View style={{ height: 64 }} />;
   return (
-    <View accessibilityRole="tablist" style={{ flexDirection: "row", gap: space[1] }}>
+    <View accessibilityRole="tablist" style={{ flexDirection: "row", gap: 4 }}>
       {week.days.map((d) => {
         const on = d.date === day;
+        const isToday = d.date === today;
         const opd = week.opdDays.some((o) => o.date === d.date);
         const has = d.sessions.some((s) => s.status !== "cancelled");
         const n = Number(d.date.slice(8));
+        const bg = on ? c.raised : isToday ? c.lime : c.fieldTint;
+        const fg = on ? c.ink : isToday ? c.onLime : c.onField;
         return (
           <Pressable
             key={d.date}
             testID={`day-${d.date}`}
             accessibilityRole="tab"
             accessibilityState={{ selected: on }}
-            accessibilityLabel={`${dateLabel(d.date, true)}${d.date === today ? ", today" : ""}${opd ? ", your OPD day" : ""}${has ? "" : ", nothing on"}`}
+            accessibilityLabel={`${dateLabel(d.date, true)}${isToday ? ", today" : ""}${opd ? ", your OPD day" : ""}${has ? "" : ", nothing on"}`}
             onPress={() => {
               onPick(d.date);
             }}
-            style={{ flex: 1, minHeight: 64, borderRadius: 12, alignItems: "center", justifyContent: "center", gap: 2, backgroundColor: on ? a.deep : "transparent", borderWidth: d.date === today && !on ? 1.5 : 0, borderColor: a.deep }}
+            style={{ flex: 1, minHeight: 64, borderRadius: 18, alignItems: "center", justifyContent: "center", gap: 1, backgroundColor: bg }}
           >
-            <T v="caption" style={{ color: on ? a.onDeep : c.muted }}>
+            <T v="caption" style={{ color: fg, opacity: on || isToday ? 1 : 0.8 }} maxFontSizeMultiplier={1.2}>
               {dayShort(weekdayOf(d.date))}
             </T>
-            <T v="bodyStrong" num style={{ color: on ? a.onDeep : c.ink }}>
+            <T num style={{ color: fg, fontFamily: fonts.bold, fontSize: 17, lineHeight: 22 }} maxFontSizeMultiplier={1.2}>
               {n}
             </T>
             <View style={{ height: 6, flexDirection: "row", gap: 3 }}>
-              {opd ? <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: on ? a.onDeep : a.deep }} /> : null}
-              {has && !opd ? <View style={{ width: 6, height: 6, borderRadius: 3, borderWidth: 1.5, borderColor: on ? a.onDeep : c.faint }} /> : null}
+              {opd ? <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: fg }} /> : null}
+              {has && !opd ? <View style={{ width: 6, height: 6, borderRadius: 3, borderWidth: 1.5, borderColor: fg }} /> : null}
             </View>
           </Pressable>
         );
@@ -61,39 +69,45 @@ function DayStrip({ week, day, onPick, today }: { week: ClinicWeek; day: string;
   );
 }
 
-function DayBody({ week, day, today }: { week: ClinicWeek; day: string; today: string }) {
+function DayBody({ week, day, today, onOpen }: { week: ClinicWeek; day: string; today: string; onOpen: (s: ClinicSession) => void }) {
+  const c = useTheme();
   const d = week.days.find((x) => x.date === day);
   const opd = week.opdDays.find((o) => o.date === day);
   return (
     <View style={{ gap: space[3] }}>
-      <T v="h3" testID="day-title">
-        {relDay(day, today) === dateLabel(day) ? dateLabel(day, true) : `${relDay(day, today)}, ${dateLabel(day)}`}
-      </T>
+      <Label>{relDay(day, today) === dateLabel(day) ? dateLabel(day, true) : `${relDay(day, today)}, ${dateLabel(day)}`}</Label>
       {opd ? (
-        <Band testID="day-opd">
-          <T v="bodyStrong">
-            Your OPD day, {opd.batch} {rangeLabel(opd.start, opd.end)}
-          </T>
-        </Band>
+        <Stone testID="day-opd" onPress={() => go("/clinic/opd")} accessibilityLabel={`Your OPD day, ${BATCH_NAME[opd.batch].toLowerCase()} batch, ${rangeLabel(opd.start, opd.end)}. Opens OPD cases`}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+            <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>
+              <Hospital size={18} color={c.onLime} />
+            </View>
+            <View style={{ flex: 1, minWidth: 0 }}>
+              <T v="bodyStrong">Your OPD day</T>
+              <T v="small" tone="muted" num>
+                {BATCH_NAME[opd.batch]} batch, {rangeLabel(opd.start, opd.end)}
+              </T>
+            </View>
+            <ChevronRight size={18} color={c.muted} />
+          </View>
+        </Stone>
       ) : null}
       {d?.note ? (
-        <Band tone="plain">
+        <View style={{ backgroundColor: c.card, borderRadius: 18, borderTopLeftRadius: 6, paddingVertical: space[3], paddingHorizontal: space[4] }}>
           <T v="caption" tone="muted">
             From the admin
           </T>
           <T>{d.note}</T>
-        </Band>
+        </View>
       ) : null}
       {d?.sessions.length ? (
-        <SessionList>
+        <StoneList>
           {d.sessions.map((s) => (
-            <SessionLine key={s.id} s={s} testID={`week-s-${s.id}`} onPress={s.link && s.status !== "cancelled" ? () => openLink(s.link!) : undefined} />
+            <SessionLine2 key={s.id} s={s} testID={`week-s-${s.id}`} onPress={() => onOpen(s)} />
           ))}
-        </SessionList>
-      ) : (
-        <T v="small" tone="muted" testID="day-empty">
-          Nothing on this day.
-        </T>
+        </StoneList>
+      ) : opd ? null : (
+        <QuietEmpty testID="day-empty" title="Nothing on this day" body="Pick another day above, or use the arrows to see another week." />
       )}
     </View>
   );
@@ -101,25 +115,28 @@ function DayBody({ week, day, today }: { week: ClinicWeek; day: string; today: s
 
 function WeekSkeleton() {
   return (
-    <View style={{ gap: space[4] }}>
-      <View style={{ flexDirection: "row", gap: space[1] }}>
-        {Array.from({ length: 7 }, (_, i) => (
-          <Skeleton key={i} h={64} r={12} style={{ flex: 1 }} />
-        ))}
-      </View>
-      <RowsSkeleton rows={3} />
+    <View style={{ gap: space[3] }}>
+      <Skeleton h={18} w="40%" />
+      <Skeleton h={180} r={26} />
+      <RowsSkeleton rows={2} />
     </View>
   );
 }
 
-/** The week: seven days, my sessions on the picked day, my OPD days, and the links to leave, cases and attendance. */
+/**
+ * Schedule. On the field: the week, with arrows, and its seven days. On the
+ * layer: the picked day's sessions in one stone (a tap opens the session),
+ * my OPD days this week, and the ways on to leave, cases and attendance.
+ */
 export function ScheduleScreen() {
   const today = todayIST();
   const [from, setFrom] = React.useState(() => mondayOf(today));
   const [day, setDay] = React.useState(today);
   const [dir, setDir] = React.useState<-1 | 0 | 1>(0);
+  const [open, setOpen] = React.useState<ClinicSession | null>(null);
   const q = useClinicWeek(from);
   const c = useTheme();
+  const thisWeek = from === mondayOf(today);
   const shiftWeek = (weeks: number) => {
     const next = addDays(from, weeks * 7);
     setFrom(next);
@@ -130,61 +147,72 @@ export function ScheduleScreen() {
     setDir(d > day ? 1 : d < day ? -1 : 0);
     setDay(d);
   };
+  const week = q.data;
+  const field = (
+    <View style={{ gap: space[3] }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
+        <RoundButton onField label="Last week" onPress={() => shiftWeek(-1)} testID="week-prev">
+          <ChevronLeft size={20} color={c.onField} />
+        </RoundButton>
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <T v="bodyStrong" tone="onField" num testID="week-label">
+            {weekLabel(from, addDays(from, 6))}
+          </T>
+          {thisWeek ? (
+            <T v="caption" tone="onFieldMuted">
+              This week
+            </T>
+          ) : (
+            <Pressable accessibilityRole="button" accessibilityLabel="Back to this week" onPress={() => shiftWeek(Math.round((Date.parse(mondayOf(today)) - Date.parse(from)) / (7 * 86400_000)))} hitSlop={10} testID="week-now">
+              <T v="caption" tone="onField" style={{ textDecorationLine: "underline" }}>
+                Back to this week
+              </T>
+            </Pressable>
+          )}
+        </View>
+        <RoundButton onField label="Next week" onPress={() => shiftWeek(1)} testID="week-next">
+          <ChevronRight size={20} color={c.onField} />
+        </RoundButton>
+      </View>
+      <DayStrip week={week} day={day} onPick={pick} today={today} />
+    </View>
+  );
   return (
     <AreaProvider area="home">
-      <Screen area="home" testID="clinic-schedule" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
-          <IconButton label="Last week" onPress={() => shiftWeek(-1)} testID="week-prev">
-            <ChevronLeft size={22} color={c.ink} />
-          </IconButton>
-          <View style={{ flex: 1, alignItems: "center" }}>
-            <T v="h3" num testID="week-label">
-              {weekLabel(from, addDays(from, 6))}
-            </T>
-            {from !== mondayOf(today) ? (
-              <Pressable accessibilityRole="button" onPress={() => shiftWeek(Math.round((Date.parse(mondayOf(today)) - Date.parse(from)) / (7 * 86400_000)))} style={{ minHeight: 32, justifyContent: "center" }} testID="week-now">
-                <T v="small" tone="link">
-                  Back to this week
-                </T>
-              </Pressable>
-            ) : (
-              <T v="small" tone="muted">
-                This week
-              </T>
-            )}
-          </View>
-          <IconButton label="Next week" onPress={() => shiftWeek(1)} testID="week-next">
-            <ChevronRight size={22} color={c.ink} />
-          </IconButton>
-        </View>
+      <Stack.Screen options={{ title: "" }} />
+      <Screen area="home" title="Schedule" field={field} testID="clinic-schedule" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your schedule" skeleton={<WeekSkeleton />}>
           {(w) => (
-            <View style={{ gap: layout.section }}>
-              <DayStrip week={w} day={day} onPick={pick} today={today} />
+            <View style={{ gap: space[5] }}>
               <Swap k={day} dir={dir}>
-                <DayBody week={w} day={day} today={today} />
+                <DayBody week={w} day={day} today={today} onOpen={setOpen} />
               </Swap>
-              <Section title="My OPD days this week">
+              <View style={{ gap: space[2] }}>
+                <Label>My OPD days this week</Label>
                 {w.opdDays.length ? (
-                  <RowList>
+                  <RowList bare>
                     {w.opdDays.map((o) => (
                       <Row key={o.date + o.batch} title={relDay(o.date, today)} meta={`${BATCH_NAME[o.batch]}, ${rangeLabel(o.start, o.end)}`} icon={<IconDot icon={Hospital} />} onPress={() => pick(o.date)} chevron={false} testID={`opd-day-${o.date}`} />
                     ))}
                   </RowList>
                 ) : (
-                  <T v="small" tone="muted">
+                  <T v="small" tone="muted" style={{ paddingHorizontal: space[1] }}>
                     No OPD days this week.
                   </T>
                 )}
-              </Section>
+              </View>
+              <SessionSheet s={open} onClose={() => setOpen(null)} today={today} />
             </View>
           )}
         </ClinicLoaded>
-        <RowList>
-          <Row title="Leave" meta="Ask for a day off or to leave early" icon={<IconDot icon={CalendarOff} />} onPress={() => go("/clinic/leave")} testID="go-leave" />
-          <Row title="OPD cases" meta="Your batch, visits and case logs" icon={<IconDot icon={ClipboardList} />} onPress={() => go("/clinic/opd")} testID="go-opd" />
-          <Row title="My attendance" icon={<IconDot icon={CalendarCheck} />} onPress={() => go("/clinic/attendance")} testID="go-attendance" />
-        </RowList>
+        <View style={{ gap: space[2] }}>
+          <Label>More</Label>
+          <RowList bare>
+            <Row title="Leave" meta="Ask for a day off or to leave early" icon={<IconDot icon={CalendarOff} />} onPress={() => go("/clinic/leave")} testID="go-leave" />
+            <Row title="OPD cases" meta="Your batch, visits and case logs" icon={<IconDot icon={ClipboardList} />} onPress={() => go("/clinic/opd")} testID="go-opd" />
+            <Row title="My attendance" meta="Your percent and every session" icon={<IconDot icon={CalendarCheck} />} onPress={() => go("/clinic/attendance")} testID="go-attendance" />
+          </RowList>
+        </View>
       </Screen>
     </AreaProvider>
   );

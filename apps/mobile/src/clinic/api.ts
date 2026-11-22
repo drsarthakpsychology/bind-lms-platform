@@ -57,6 +57,10 @@ export const useMyAttendance = () => useQuery(clinicQo.attendance());
 export const clinicCalls = {
   /** `token` is the whole text the camera read; `code` the 6 characters typed. */
   scan: async (body: W.ClinicScanBody) => S.scanResult(await api.post<unknown>("/clinic/scan", body)),
+  /** Step 1: which session this code is for and where I stand in it. Saves nothing. */
+  identify: async (body: W.ClinicScanIdentifyBody) => S.scanStep(await api.post<unknown>("/clinic/scan/identify", body)),
+  /** Step 2: save IN or OUT. Sent straight to the server, never kept for later; the same `attemptId` again is safe. */
+  confirmMark: async (body: W.ClinicScanConfirmBody) => S.markResult(await api.post<unknown>("/clinic/scan/confirm", body)),
   askLeave: async (body: W.ClinicLeaveBody) => S.leave(await api.post<unknown>("/clinic/leave", body)),
   askEarly: async (body: W.ClinicEarlyLeaveBody) => S.leave(await api.post<unknown>("/clinic/leave/early", body)),
   cancelLeave: (id: string) => api.del<{ cancelled: true }>(`/clinic/leave/${enc(id)}`),
