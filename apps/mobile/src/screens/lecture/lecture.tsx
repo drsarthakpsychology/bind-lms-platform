@@ -1,50 +1,52 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams, useNavigation } from "expo-router";
-import { ArrowLeft, ArrowRight, ChevronLeft, FileText } from "lucide-react-native";
+import { ArrowLeft, ArrowRight, ChevronLeft, FileText, NotebookPen, Play } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg from "react-native-svg";
 
-import type { CompleteLectureResult, LectureDetail, Material, Submission, SubmitResult, UnsubmitResult } from "@/api/contract";
+import type { CompleteLectureResult, LectureDetail, Material } from "@/api/contract";
 import { messageOf } from "@/api/errors";
 import { outbox } from "@/api/outbox";
 import { keys, useLecture } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, StillTrying, T, TabRow, Tint } from "@/ds";
+import { Button, Field, Label, QuietEmpty, Sheet, Skeleton, StillTrying, Stone, T, TabRow } from "@/ds";
+import { layerShadow } from "@/ds/layers";
 import { toast } from "@/ds/toast";
 import { streakMoment } from "@/moments/host";
-import { FileHandIn, HandInSlot, RecordingHandIn, useFooterAction, type FooterAction } from "@/lecture/handin-ui";
+import { AssignmentPart } from "@/lecture/assignment";
+import { HandInSlot, type FooterAction } from "@/lecture/handin-ui";
 import { useFullScreen } from "@/lecture/fullscreen";
-import { ProtectedPlayer, clock } from "@/lecture/player";
+import { ProtectedPlayer, clock, type PlayerControl } from "@/lecture/player";
 import { countWatched } from "@/lecture/watched";
 import { config } from "@/lib/config";
 import { createStore } from "@/lib/store";
 import { haptic } from "@/lib/haptics";
-import { beats, DrawInk, Reveal, Swap, useLoadGate } from "@/motion";
+import { beats, DrawInk, Enter, Press, Reveal, StaggerList, Swap, useLoadGate } from "@/motion";
 import { enablePush, pushStatus } from "@/push";
+import { Group, Pill, Tile } from "@/screens/learn/parts";
 import { fixed, layout, space, useLightStatusBar, useTheme } from "@/theme";
+import { MOCK_NOTES, mockChapters, type LectureChapter, type LectureNote } from "./mock";
 
-type Tab = "about" | "materials" | "assignment";
+type Tab = "about" | "chapters" | "notes" | "materials" | "assignment";
 
 const TICK = { t: "path", d: "M5,12.5 L10,17.5 L19,7" } as const;
 
-/** "Mark as watched" after it worked: the same lime block, settled into its shadow, with a tick that draws itself on. */
+/** "Mark as watched" after it worked: the same lime pill with a tick that draws itself on. */
 function WatchedFace() {
   const c = useTheme();
-  const ink = React.useMemo(() => ({ stroke: c.primary, sw: 3.5, single: true, rough: 0.5 }), [c.primary]);
+  const ink = React.useMemo(() => ({ stroke: c.lime, sw: 3.5, single: true, rough: 0.5 }), [c.lime]);
   return (
-    <View accessible accessibilityRole="text" accessibilityLabel="Watched" accessibilityLiveRegion="polite" testID="lecture-watched" style={{ paddingRight: 3, paddingBottom: 3 }}>
-      <View style={{ minHeight: layout.primary, borderRadius: layout.radius, borderWidth: 2, borderColor: c.dark ? c.onPrimary : c.line, backgroundColor: c.primary, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2], paddingHorizontal: space[5], transform: [{ translateX: 3 }, { translateY: 3 }] }}>
-        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: c.onPrimary, alignItems: "center", justifyContent: "center" }}>
-          <Svg width={15} height={15} viewBox="0 0 24 24">
-            <DrawInk k="lecture-watched-tick" shape={TICK} o={ink} delay={80} duration={240} />
-          </Svg>
-        </View>
-        <T v="button" tone="onPrimary">
-          Watched
-        </T>
+    <View accessible accessibilityRole="text" accessibilityLabel="Watched" accessibilityLiveRegion="polite" testID="lecture-watched" style={{ minHeight: layout.primary, borderRadius: 999, backgroundColor: c.lime, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2], paddingHorizontal: space[5] }}>
+      <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: c.onLime, alignItems: "center", justifyContent: "center" }}>
+        <Svg width={15} height={15} viewBox="0 0 24 24">
+          <DrawInk k="lecture-watched-tick" shape={TICK} o={ink} delay={80} duration={240} />
+        </Svg>
       </View>
+      <T v="button" tone="onPrimary">
+        Watched
+      </T>
     </View>
   );
 }
@@ -55,113 +57,105 @@ function sizeLabel(b: number | null): string {
 }
 
 function MaterialRows({ items, courseId }: { items: Material[]; courseId: string }) {
-  const c = useTheme();
-  if (!items.length) return <T tone="muted">No materials for this lecture.</T>;
+  if (!items.length) return <QuietEmpty title="No materials" body="This lecture has no files to read." />;
   return (
-    <RowList>
+    <StaggerList style={{ gap: space[2] }}>
       {items.map((m) => (
-        <Row
-          key={m.id}
-          title={m.title}
-          meta={[m.format?.toUpperCase(), sizeLabel(m.sizeBytes)].filter(Boolean).join(" · ") || undefined}
-          icon={<FileText size={20} color={c.muted} />}
-          onPress={() => router.push(`/material/${encodeURIComponent(m.id)}${courseId ? `?course=${encodeURIComponent(courseId)}` : ""}`)}
-        />
+        <Tile key={m.id} testID={`lecture-material-${m.id}`} icon={FileText} title={m.title} meta={[m.format?.toUpperCase(), sizeLabel(m.sizeBytes)].filter(Boolean).join(" · ") || undefined} onPress={() => router.push(`/material/${encodeURIComponent(m.id)}${courseId ? `?course=${encodeURIComponent(courseId)}` : ""}`)} />
       ))}
-    </RowList>
+    </StaggerList>
   );
 }
 
-function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
-  const qc = useQueryClient();
-  const a = lecture.assignment;
-  const [text, setText] = React.useState(a?.submission?.text ?? "");
-  const [busy, setBusy] = React.useState(false);
-  const [error, setError] = React.useState<string | null>(null);
-  const [openedAt] = React.useState(() => Date.now());
-  const sub = a?.submission ?? null;
-  const writing = a?.submissionType === "text" && (!sub || sub.editable);
-  const inFooter = useFooterAction(writing ? { label: sub ? "Hand in again" : "Hand in", busy, onPress: () => void submit(), testID: "assignment-submit" } : null);
-  if (!a) return <T tone="muted">No assignment for this lecture.</T>;
-  const closed = !!a.dueAt && !a.allowLate && Date.parse(a.dueAt) < openedAt;
-  const handedIn = (s: Submission) => {
-    toast.show("Handed in");
-    qc.setQueryData<LectureDetail>(keys.lecture(lecture.id), (old) => (old && old.assignment ? { ...old, assignment: { ...old.assignment, submission: s } } : old));
-    void qc.invalidateQueries({ queryKey: keys.lecture(lecture.id) });
-  };
-  const takeBack = async () => {
-    setBusy(true);
-    try {
-      await api.del<UnsubmitResult>(`/assignments/${encodeURIComponent(a.id)}/submission`);
-      qc.setQueryData<LectureDetail>(keys.lecture(lecture.id), (old) => (old && old.assignment ? { ...old, assignment: { ...old.assignment, submission: null } } : old));
-      void qc.invalidateQueries({ queryKey: keys.lecture(lecture.id) });
-    } catch (e) {
-      toast.show(messageOf(e));
-    } finally {
-      setBusy(false);
-    }
-  };
-  async function submit() {
-    if (!a) return;
-    if (text.trim().length < 20) return setError("Write at least a few sentences.");
-    setBusy(true);
-    setError(null);
-    try {
-      await api.post<SubmitResult>(`/assignments/${encodeURIComponent(a.id)}/text`, { text: text.trim() });
-      haptic.success();
-      toast.show("Handed in");
-      void qc.invalidateQueries({ queryKey: keys.lecture(lecture.id) });
-    } catch (e) {
-      haptic.warn();
-      setError(messageOf(e));
-    } finally {
-      setBusy(false);
-    }
-  }
+/** A time you can tap to jump the video there. */
+function TimeChip({ at, on }: { at: number; on?: boolean }) {
+  const c = useTheme();
   return (
-    <View style={{ gap: space[4] }}>
-      <T v="h3">{a.title}</T>
-      {a.dueAt && !Number.isNaN(Date.parse(a.dueAt)) ? (
-        <T v="small" tone="muted">
-          Due {new Date(a.dueAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" })}
-          {a.allowLate ? "" : ". Nothing can be handed in after that."}
-        </T>
-      ) : null}
-      {a.instructions ? <T v="reading">{a.instructions}</T> : null}
-      {sub ? (
-        <Tint>
-          <T v="bodyStrong">{sub.status === "approved" ? `Marked${sub.score !== null ? `: ${sub.score}` : ""}` : sub.status === "returned" ? "Returned with feedback" : "Handed in, waiting for review"}</T>
-          {sub.feedback ? <T tone="muted">{sub.feedback}</T> : null}
-          {sub.files.length ? <T v="small" tone="muted">{sub.files.map((f) => f.name).join(", ")}</T> : null}
-          {sub.hasAudio && !sub.files.length ? <T v="small" tone="muted">A recording</T> : null}
-          {sub.editable ? <Button kind="text" label="Take it back to change it" busy={busy} onPress={() => void takeBack()} testID="assignment-unsubmit" /> : null}
-        </Tint>
-      ) : null}
-      {a.submissionType === "text" && (!sub || sub.editable) ? (
-        <>
-          <Field label="Your answer" value={text} onChangeText={setText} area error={error} maxLength={50000} testID="assignment-text" />
-          {inFooter ? null : <Button kind="quiet" label={sub ? "Hand in again" : "Hand in"} busy={busy} onPress={() => void submit()} testID="assignment-submit" />}
-        </>
-      ) : closed && !sub ? (
-        <T tone="muted">The due date has passed, and this assignment does not take late hand-ins.</T>
-      ) : a.submissionType === "audio" && !sub ? (
-        <RecordingHandIn a={a} onDone={handedIn} />
-      ) : a.submissionType !== "text" && !sub ? (
-        <FileHandIn a={a} onDone={handedIn} />
-      ) : null}
+    <View style={{ minWidth: 52, height: 30, borderRadius: 15, paddingHorizontal: space[2], backgroundColor: on ? c.ink : c.bg, alignItems: "center", justifyContent: "center" }}>
+      <T v="caption" num maxFontSizeMultiplier={1.2} style={{ color: on ? c.bg : c.ink }}>
+        {clock(at)}
+      </T>
     </View>
+  );
+}
+
+/** Which chapter the video is in. */
+export function chapterAt(chapters: LectureChapter[], time: number): number {
+  let i = 0;
+  for (let k = 0; k < chapters.length; k++) if (time >= chapters[k]!.at) i = k;
+  return i;
+}
+
+/** The lecture in parts: tap one and the video jumps there. Sample data for now (./mock). */
+function Chapters({ chapters, current, onSeek }: { chapters: LectureChapter[]; current: number; onSeek: (at: number) => void }) {
+  return (
+    <Group>
+      <Label action={<Pill>Sample</Pill>}>Jump to a part</Label>
+      <StaggerList style={{ gap: space[2] }}>
+        {chapters.map((ch, i) => (
+          <Tile key={ch.at} testID={`chapter-${i}`} title={ch.title} lead={<TimeChip at={ch.at} on={i === current} />} trailing={i === current ? <Pill tone="ink">Playing</Pill> : undefined} plain accessibilityLabel={`${ch.title}, at ${clock(ch.at)}. Jump there`} onPress={() => onSeek(ch.at)} />
+        ))}
+      </StaggerList>
+    </Group>
+  );
+}
+
+/** Your own notes on this lecture, each pinned to the moment it was written. Sample data for now (./mock). */
+function Notes({ notes, onSeek, onWrite }: { notes: LectureNote[]; onSeek: (at: number) => void; onWrite: () => void }) {
+  const c = useTheme();
+  return (
+    <Group>
+      <Label action={<Pill>Sample</Pill>}>My notes on this lecture</Label>
+      <StaggerList style={{ gap: space[2] }}>
+        {notes.map((n) => (
+          <Stone key={n.id} testID={`lecture-note-${n.id}`} pad={space[3] + 2}>
+            <View style={{ gap: space[2] }}>
+              <T v="reading">{n.text}</T>
+              <Press accessibilityRole="button" accessibilityLabel={`Jump to ${clock(n.at)}`} onPress={() => onSeek(n.at)} hitSlop={10} innerStyle={{ flexDirection: "row", alignItems: "center", gap: space[2], alignSelf: "flex-start" }}>
+                <TimeChip at={n.at} />
+                <T v="small" tone="link">
+                  Watch this part
+                </T>
+              </Press>
+            </View>
+          </Stone>
+        ))}
+      </StaggerList>
+      <Button kind="quiet" label="Write a note here" icon={<NotebookPen size={18} color={c.ink} />} onPress={onWrite} testID="lecture-note-add" />
+    </Group>
+  );
+}
+
+/** What comes after this lecture: a stone that grows into it. */
+function UpNext({ next, onOpen }: { next: { id: string; title: string }; onOpen: () => void }) {
+  const c = useTheme();
+  return (
+    <Group>
+      <Label>Up next</Label>
+      <Stone quiet testID="lecture-upnext" accessibilityLabel={`Up next: ${next.title}`} onPress={onOpen}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+          <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: c.card, alignItems: "center", justifyContent: "center" }}>
+            <Play size={16} color={c.ink} fill={c.ink} />
+          </View>
+          <T v="bodyStrong" style={{ flex: 1 }}>
+            {next.title}
+          </T>
+          <ArrowRight size={18} color={c.muted} />
+        </View>
+      </Stone>
+    </Group>
   );
 }
 
 function LectureSkeleton({ failed }: { failed: boolean }) {
   return (
     <View style={{ padding: layout.gutter, gap: space[3] }}>
-      <Skeleton w="40%" h={14} />
-      <Skeleton w="90%" h={26} />
-      <Skeleton w="70%" h={26} />
-      <Skeleton h={48} r={8} style={{ marginTop: space[4] }} />
-      <Skeleton h={14} />
-      <Skeleton w="80%" h={14} />
+      <Skeleton w="90%" h={28} />
+      <Skeleton w="50%" h={14} />
+      <Skeleton h={40} r={20} style={{ marginTop: space[3] }} />
+      <Skeleton h={16} />
+      <Skeleton w="80%" h={16} />
+      <Skeleton h={72} r={22} style={{ marginTop: space[3] }} />
       <StillTrying failed={failed} />
     </View>
   );
@@ -208,6 +202,14 @@ export function LectureScreen() {
   );
   const lastSent = React.useRef(0);
   const last = React.useRef({ t: 0, d: 0 });
+  // Chapters and notes (sample data, ./mock): jump the video, and know which part is playing.
+  const control = React.useRef<PlayerControl | null>(null);
+  const [chapter, setChapter] = React.useState(0);
+  const [notes, setNotes] = React.useState<LectureNote[]>(MOCK_NOTES);
+  const [writing, setWriting] = React.useState(false);
+  const [draft, setDraft] = React.useState("");
+  const chapters = React.useMemo(() => mockChapters(q.data?.durationSeconds ?? null), [q.data?.durationSeconds]);
+  const scroller = React.useRef<React.ComponentRef<typeof ScrollView>>(null);
   // The Assignment tab's hand-in button lives in the pinned footer.
   const [footer] = React.useState(() => createStore<{ action: FooterAction | null; owner: object | null }>({ action: null, owner: null }));
   const handIn = footer.use((x) => x.action);
@@ -233,10 +235,12 @@ export function LectureScreen() {
   const onTime = React.useCallback(
     (t: number, d: number, playing: boolean) => {
       last.current = { t, d };
+      const now = chapterAt(chapters, t);
+      setChapter((was) => (was === now ? was : now));
       if (playing && Math.abs(t - lastSent.current) >= config.progressPingMs / 1000) save(t, d);
       if (!playing && t !== lastSent.current) save(t, d);
     },
-    [save],
+    [save, chapters],
   );
   // Save where they stopped when leaving the screen.
   React.useEffect(
@@ -248,6 +252,23 @@ export function LectureScreen() {
     [save, qc],
   );
 
+  const seek = (at: number) => {
+    haptic.select();
+    if (control.current) {
+      control.current.seek(at);
+      control.current.play();
+      setChapter(chapterAt(chapters, at));
+    } else toast.show("Press play first, then pick a part.");
+  };
+  const saveNote = () => {
+    const text = draft.trim();
+    if (!text) return;
+    setNotes((n) => [...n, { id: `mine-${n.length}`, at: Math.floor(last.current.t), text }]);
+    setDraft("");
+    setWriting(false);
+    haptic.success();
+    toast.show("Note added");
+  };
   const back = () => (router.canGoBack() ? router.back() : router.replace("/"));
   const go = (id: string) => router.replace(`/lecture/${encodeURIComponent(id)}`);
 
@@ -281,25 +302,25 @@ export function LectureScreen() {
   // The skeleton only after 120ms, then at least 380ms (no grey flash).
   const gate = useLoadGate(!!l || q.isError);
   const tabs: { id: Tab; name: string }[] = l
-    ? [{ id: "about", name: "About" }, ...(l.materials.length ? [{ id: "materials" as Tab, name: "Materials" }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
+    ? [{ id: "about", name: "About" }, ...(l.hasVideo ? [{ id: "chapters" as Tab, name: "Chapters" }, { id: "notes" as Tab, name: "My notes" }] : []), ...(l.materials.length ? [{ id: "materials" as Tab, name: `Materials · ${l.materials.length}` }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
     : [];
   const watched = l ? l.progress.completed || done : false;
   const blockedByAssignment = !!l?.requiresAssignment && !l.assignment?.submission;
 
   return (
-    <View testID="lecture" style={{ flex: 1, backgroundColor: c.bg }}>
+    <View testID="lecture" style={{ flex: 1, backgroundColor: fixed.black }}>
       {/* Black band under the status bar, the way back, and the video edge to edge. */}
       <View style={fs.full ? { backgroundColor: fixed.black, flex: 1 } : { backgroundColor: fixed.black, paddingTop: insets.top }}>
-        <View style={{ flexDirection: "row", alignItems: "center", minHeight: layout.target, paddingRight: layout.gutter, display: fs.full ? "none" : "flex" }}>
-          <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={back} hitSlop={4} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="lecture-back">
-            <ChevronLeft size={26} color={fixed.onVideo} />
-          </Pressable>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: 52, paddingLeft: space[3], paddingRight: layout.gutter, display: fs.full ? "none" : "flex" }}>
+          <Press accessibilityRole="button" accessibilityLabel="Back" onPress={back} hitSlop={6} squish scale={0.9} innerStyle={{ width: 40, height: 40, borderRadius: 20, backgroundColor: fixed.videoButtonPressed, alignItems: "center", justifyContent: "center" }} testID="lecture-back">
+            <ChevronLeft size={22} color={fixed.onVideo} />
+          </Press>
           <T v="small" numberOfLines={1} style={{ color: fixed.onVideoMuted, flex: 1 }}>
             {l ? `${l.number ? `Lecture ${l.number} · ` : ""}Week ${l.week}` : " "}
           </T>
         </View>
         {l?.hasVideo ? (
-          <ProtectedPlayer lessonId={lessonId} onTime={onTime} intro={{ number: l.number, week: l.week }} full={fs.full} onFull={fs.toggle} />
+          <ProtectedPlayer lessonId={lessonId} onTime={onTime} intro={{ number: l.number, week: l.week }} full={fs.full} onFull={fs.toggle} control={control} />
         ) : l ? (
           <View style={{ aspectRatio: 16 / 9, alignItems: "center", justifyContent: "center", padding: space[5] }}>
             <T center style={{ color: fixed.onVideo }}>
@@ -311,13 +332,15 @@ export function LectureScreen() {
         )}
       </View>
 
-      {/* Kept mounted (a half-written answer survives), just out of the way in full screen. */}
-      <View style={{ flex: 1, display: fs.full ? "none" : "flex" }}>
+      {/* The layer rises under the video. Kept mounted (a half-written answer survives), just out of the way in full screen. */}
+      <View style={[{ flex: 1, display: fs.full ? "none" : "flex", marginTop: space[2], backgroundColor: c.bg, borderTopLeftRadius: layout.radiusLayer, borderTopRightRadius: layout.radiusLayer, overflow: "hidden" }, layerShadow(c)]}>
       {l && gate.phase === "content" ? (
         <Reveal style={{ flex: 1 }}>
-          <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ padding: layout.gutter, paddingBottom: space[7] * 2, gap: space[5], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
-            <View style={{ gap: space[2] }}>
-              <T v="h2">{l.title}</T>
+          <ScrollView ref={scroller} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} contentContainerStyle={{ padding: layout.gutter, paddingTop: space[5], paddingBottom: space[7], gap: space[4], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
+            <View style={{ gap: space[1] }}>
+              <T v={l.title.length > 34 ? "h2" : "h1"} accessibilityRole="header">
+                {l.title}
+              </T>
               <T v="small" tone="muted" num>
                 {[l.courseTitle, l.durationSeconds ? `${Math.round(l.durationSeconds / 60)} min` : null, watched ? "Watched" : l.progress.watchedSeconds > 0 ? `Stopped at ${clock(l.progress.watchedSeconds)}` : null].filter(Boolean).join(" · ")}
               </T>
@@ -330,8 +353,24 @@ export function LectureScreen() {
                 setTab(t);
               }}
             />
-            <Swap k={tab} dir={dir} testID="lecture-tab-body">
-              {tab === "about" ? l.description ? <T v="reading">{l.description}</T> : <T tone="muted">No notes for this lecture.</T> : null}
+            <Swap k={tab} dir={dir} style={{ gap: space[5] }} testID="lecture-tab-body">
+              {tab === "about" ? (
+                <>
+                  {l.description ? <T v="reading">{l.description}</T> : <T tone="muted">No notes for this lecture.</T>}
+                  {l.assignment && !l.assignment.submission ? (
+                    <Enter i={1}>
+                      <Tile testID="lecture-assignment-card" icon={NotebookPen} title={l.assignment.title} meta={l.requiresAssignment ? "Hand this in to finish the lecture" : "Assignment for this lecture"} trailing={<Pill tone="warm">To do</Pill>} onPress={() => { setDir(1); setTab("assignment"); scroller.current?.scrollTo({ y: 0, animated: true }); }} />
+                    </Enter>
+                  ) : null}
+                  {l.next ? (
+                    <Enter i={2}>
+                      <UpNext next={l.next} onOpen={() => go(l.next!.id)} />
+                    </Enter>
+                  ) : null}
+                </>
+              ) : null}
+              {tab === "chapters" ? <Chapters chapters={chapters} current={chapter} onSeek={seek} /> : null}
+              {tab === "notes" ? <Notes notes={notes} onSeek={seek} onWrite={() => setWriting(true)} /> : null}
               {tab === "materials" ? <MaterialRows items={l.materials} courseId={l.courseId} /> : null}
               {tab === "assignment" ? (
                 <HandInSlot.Provider value={setHandIn}>
@@ -340,15 +379,15 @@ export function LectureScreen() {
               ) : null}
             </Swap>
           </ScrollView>
-          <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2], backgroundColor: c.bg }}>
+          <View style={{ paddingHorizontal: layout.gutter, paddingTop: space[2], paddingBottom: insets.bottom + space[2], gap: space[1], backgroundColor: c.bg }}>
             {tab === "assignment" ? (
               handIn ? <Button label={handIn.label} busy={handIn.busy} disabled={handIn.disabled} onPress={handIn.onPress} testID={handIn.testID} /> : null
-            ) : tab === "about" && (!watched || done) ? (
+            ) : !watched || done ? (
               // The button's face turns into a drawn tick and "Watched" in place (same size, no jump).
               <Swap k={done ? "watched" : "mark"}>
                 {done ? <WatchedFace /> : <Button label={blockedByAssignment ? "Hand in the assignment first" : "Mark as watched"} disabled={blockedByAssignment} busy={busy} onPress={() => void complete(l)} testID="lecture-complete" />}
               </Swap>
-            ) : watched && l.next ? (
+            ) : l.next ? (
               <Button label={`Next: ${l.next.title}`} icon={<ArrowRight size={20} color={c.onPrimary} />} onPress={() => go(l.next!.id)} testID="lecture-next-primary" />
             ) : null}
             <View style={{ flexDirection: "row", justifyContent: "space-between", gap: space[3] }}>
@@ -362,10 +401,19 @@ export function LectureScreen() {
               setAsk(false);
             }}
           />
+          <Sheet open={writing} onClose={() => setWriting(false)} title="A note on this lecture" testID="lecture-note-sheet">
+            <View style={{ gap: space[4] }}>
+              <T v="small" tone="muted" num>
+                Pinned at {clock(Math.floor(last.current.t))}. Sample for now: it stays until you leave this lecture.
+              </T>
+              <Field label="Your note" area value={draft} onChangeText={setDraft} placeholder="What to remember from this part" maxLength={2000} testID="lecture-note-text" />
+              <Button label="Add note" disabled={!draft.trim()} onPress={saveNote} testID="lecture-note-save" />
+            </View>
+          </Sheet>
         </Reveal>
       ) : q.isError ? (
         <View style={{ padding: layout.gutter }}>
-          <LoadError what="this lecture" error={q.error} onRetry={() => void q.refetch()} />
+          <QuietEmpty testID="load-error" title="Could not load this lecture" body={messageOf(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
         </View>
       ) : gate.phase === "skeleton" ? (
         <LectureSkeleton failed={q.failureCount > 0} />

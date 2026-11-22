@@ -9,7 +9,8 @@ import { reasonOf } from "@/api/errors";
 import type { Material } from "@/api/contract";
 import { useMaterial } from "@/api/queries";
 import { session } from "@/auth";
-import { Button, EmptyState, Loaded, RowsSkeleton, Screen, Skeleton, T } from "@/ds";
+import { Button, QuietEmpty, Screen, Skeleton, Stone, T } from "@/ds";
+import { Fetched } from "@/screens/learn/parts";
 import { config } from "@/lib/config";
 import { OnceHint } from "@/lib/once";
 import { openLink } from "@/lib/open";
@@ -119,11 +120,11 @@ function PdfReader({ m }: { m: Material }) {
   }, [doc, pageWidth]);
 
   if (mock) return <MockPages title={m.title} />;
-  if (doc.phase === "error") return <EmptyState mood="error" title="Could not open this file" body={doc.message} />;
+  if (doc.phase === "error") return <QuietEmpty testID="material-error" title="Could not open this file" body={doc.message} />;
   if (doc.phase === "loading") {
     return (
       <View style={{ gap: space[3] }} testID="material-loading">
-        <Skeleton h={Math.round((width - layout.gutter * 2) * 1.3)} r={8} />
+        <Skeleton h={Math.round((width - layout.gutter * 2) * 1.3)} r={layout.radius} />
       </View>
     );
   }
@@ -141,7 +142,7 @@ function PdfReader({ m }: { m: Material }) {
             onPress={() => {
               setZoom((z) => !z);
             }}
-            style={{ width: w, height: h, backgroundColor: c.paper, borderRadius: 6, borderWidth: 1, borderColor: c.hairline, overflow: "hidden" }}
+            style={{ width: w, height: h, backgroundColor: c.paper, borderRadius: layout.radius, overflow: "hidden" }}
           >
             {p ? <Image source={{ uri: p.uri }} style={{ width: "100%", height: "100%", opacity: c.dark ? 0.9 : 1 }} resizeMode="contain" /> : <Skeleton w="100%" h={h} r={0} />}
           </Pressable>
@@ -164,7 +165,7 @@ function MockPages({ title }: { title: string }) {
   return (
     <View style={{ gap: space[3] }} testID="material-pages">
       {[1, 2].map((p) => (
-        <View key={p} accessibilityLabel={`Page ${p} of 2`} style={{ aspectRatio: 1 / 1.3, backgroundColor: c.paper, borderRadius: 6, borderWidth: 1, borderColor: c.hairline, padding: space[5], gap: space[3] }}>
+        <View key={p} accessibilityLabel={`Page ${p} of 2`} style={{ aspectRatio: 1 / 1.3, backgroundColor: c.paper, borderRadius: layout.radius, borderWidth: 1, borderColor: c.hairline, padding: space[5], gap: space[3] }}>
           <T v="h3" style={{ color: c.onPaper }}>
             {p === 1 ? title : "Scoring"}
           </T>
@@ -209,33 +210,44 @@ function MediaView({ m }: { m: Material }) {
 
 /* ------------------------------------------------------------------ screen */
 
-export function MaterialBody({ m, courseId }: { m: Material; courseId?: string | null }) {
+export function MaterialBody({ m, courseId, titled = true }: { m: Material; courseId?: string | null; /** False when the screen already shows the title on the field. */ titled?: boolean }) {
   const view = viewFor(m);
   return (
     <>
-      <View style={{ gap: space[1] }}>
-        <T v="h2">{m.title}</T>
-        <T v="small" tone="muted">
-          {[m.format?.toUpperCase(), m.week ? `Week ${m.week}` : null].filter(Boolean).join(" · ")}
-        </T>
-      </View>
+      {titled ? (
+        <View style={{ gap: space[1] }}>
+          <T v="h2">{m.title}</T>
+          <T v="small" tone="muted">
+            {metaOf(m)}
+          </T>
+        </View>
+      ) : null}
+      {view === "pdf" ? (
+        <OnceHint id="material-pdf" v="small" tone="muted">
+          Tap a page to zoom. Nothing is saved on your phone.
+        </OnceHint>
+      ) : null}
       {view === "pdf" ? <PdfReader m={m} /> : null}
       {view === "image" ? <ImageView m={m} /> : null}
       {view === "media" ? <MediaView m={m} /> : null}
       {view === "link" ? (
-        <View style={{ gap: space[3] }}>
-          <T tone="muted">This material is a page on another website.</T>
-          <Button kind="quiet" label="Open the link" onPress={() => m.url && void openLink(m.url)} />
-        </View>
+        <Stone>
+          <View style={{ gap: space[3] }}>
+            <T v="h3">This material is a page on another website</T>
+            <T v="small" tone="muted">
+              It opens in your browser.
+            </T>
+            <Button label="Open the link" onPress={() => m.url && void openLink(m.url)} testID="material-link" />
+          </View>
+        </Stone>
       ) : null}
-      {view === "other" ? <EmptyState title="Open this one on the website" body="The app shows PDFs, pictures, audio and video. This kind of file opens on the website for now." action={{ label: "Open on the website", onPress: () => void openLink(materialWebUrl(m.id, courseId)) }} /> : null}
-      {view === "pdf" ? (
-        <OnceHint id="material-pdf" v="caption" tone="muted">
-          Tap a page to zoom. Nothing is saved on your phone.
-        </OnceHint>
-      ) : null}
+      {view === "other" ? <QuietEmpty testID="material-other" title="Open this one on the website" body="The app shows PDFs, pictures, audio and video. This kind of file opens on the website for now." action={{ label: "Open on the website", onPress: () => void openLink(materialWebUrl(m.id, courseId)) }} /> : null}
     </>
   );
+}
+
+function metaOf(m: Material): string {
+  return [m.format?.toUpperCase(), m.week ? `Week ${m.week}` : null].filter(Boolean).join(" · ");
 }
 
 export function MaterialScreen() {
@@ -243,11 +255,11 @@ export function MaterialScreen() {
   const q = useMaterial(String(id));
   const courseId = Array.isArray(course) ? course[0] : course;
   return (
-    <Screen testID="material" gap={space[4]}>
+    <Screen testID="material" title={q.data?.title} lead={q.data ? metaOf(q.data) || undefined : undefined} gap={space[4]}>
       <Stack.Screen options={{ title: "" }} />
-      <Loaded q={q} what="this material" skeleton={<RowsSkeleton rows={3} />}>
-        {(m) => <MaterialBody m={m} courseId={courseId || m.courseId} />}
-      </Loaded>
+      <Fetched q={q} what="this material" skeleton={<Skeleton h={420} r={layout.radius} />}>
+        {(m) => <MaterialBody m={m} courseId={courseId || m.courseId} titled={false} />}
+      </Fetched>
     </Screen>
   );
 }

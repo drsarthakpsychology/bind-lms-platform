@@ -1,14 +1,16 @@
-import { ArrowRight, Check } from "lucide-react-native";
+import { Stack } from "expo-router";
+import { ArrowRight, Flame as FlameIcon } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import type { ModuleSummary, StudyHome } from "@/api/contract";
-import { useStudyHome } from "@/api/queries";
-import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
-import { Enter, Stamp } from "@/motion";
 import { go } from "@/api/prefetch";
+import { useStudyHome } from "@/api/queries";
+import { FieldCard, Jyo, Label, QuietEmpty, Screen, Stone, T } from "@/ds";
+import { Enter, ProgressRing, StaggerList } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { streakLine } from "@/screens/home/home";
+import { Fetched, Group, Pill, StateMark, TilesSkeleton } from "@/screens/learn/parts";
 import { space, useTheme } from "@/theme";
 
 export function moduleMeta(m: ModuleSummary): string {
@@ -17,68 +19,105 @@ export function moduleMeta(m: ModuleSummary): string {
   return `${m.when} · About ${Math.round(m.minutes / 5) * 5} min`;
 }
 
+/** One module on a stone: its ring (or a tick when complete), number, title and where it stands. */
+function ModuleCard({ m }: { m: ModuleSummary }) {
+  const c = useTheme();
+  const started = m.status.readDone > 0 || m.status.pct > 0;
+  return (
+    <Stone testID={`module-${m.id}`} quiet={!started && !m.status.complete} pad={space[3] + 2} accessibilityLabel={`Module ${m.num}. ${m.title}. ${moduleMeta(m)}`} onPress={() => go(`/study/${encodeURIComponent(m.id)}`)}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+        {m.status.complete ? (
+          <StateMark state="done" size={44} />
+        ) : (
+          <ProgressRing pct={m.status.pct} size={44} stroke={4} delay={200} color={c.dark ? c.lime : c.brand} track={c.hairline} label={`${m.status.pct}% done`}>
+            <T v="caption" num maxFontSizeMultiplier={1.2}>
+              {m.num}
+            </T>
+          </ProgressRing>
+        )}
+        <View style={{ flex: 1, minWidth: 0, gap: 1 }}>
+          <T v="bodyStrong">{m.title}</T>
+          <T v="small" tone="muted" num>
+            {moduleMeta(m)}
+          </T>
+        </View>
+        {m.status.complete && m.status.best !== null && m.status.total ? <Pill tone="ink">{`${m.status.best}/${m.status.total}`}</Pill> : <ArrowRight size={18} color={c.faint} />}
+      </View>
+    </Stone>
+  );
+}
+
 export function StudyHomeBody({ d }: { d: StudyHome }) {
   const c = useTheme();
   const now = d.modules.filter((m) => !m.status.complete && m.status.readDone > 0);
   const later = d.modules.filter((m) => !m.status.complete && m.status.readDone === 0);
   const done = d.modules.filter((m) => m.status.complete);
-  const shelf = (title: string, items: ModuleSummary[]) =>
+  const streak = streakLine(d.goal.streak);
+  const shelf = (title: string, items: ModuleSummary[], i: number) =>
     items.length ? (
-      <Section title={title}>
-        <RowList>
-          {items.map((m) => (
-            <Row
-              key={m.id}
-              testID={`module-${m.id}`}
-              title={`${m.num}. ${m.title}`}
-              meta={moduleMeta(m)}
-              trailing={m.status.complete ? <Check size={20} color={c.ink} /> : undefined}
-              below={
-                !m.status.complete && m.status.pct > 0 ? (
-                  <View style={{ paddingTop: space[2] }}>
-                    <ProgressLine value={m.status.pct} height={4} label={`${m.status.pct}% of ${m.title}`} />
-                  </View>
-                ) : undefined
-              }
-              onPress={() => go(`/study/${encodeURIComponent(m.id)}`)}
-            />
-          ))}
-        </RowList>
-      </Section>
+      <Enter i={i}>
+        <Group>
+          <Label>{title}</Label>
+          <StaggerList style={{ gap: space[2] }}>
+            {items.map((m) => (
+              <ModuleCard key={m.id} m={m} />
+            ))}
+          </StaggerList>
+        </Group>
+      </Enter>
     ) : null;
-  if (!d.modules.length) return <EmptyState mood="soon" title="Modules open soon" body="Your first module opens here when your course starts." testID="study-empty" />;
+  if (!d.modules.length) return <QuietEmpty testID="study-empty" art={<Jyo pose="resting" size={64} />} title="Modules open soon" body="Your first module opens here when your course starts." />;
+  const test = d.next.kind === "test" || d.next.kind === "retest";
   return (
     <>
       {d.next.kind !== "done" ? (
         <Enter i={0}>
-          <Hero context="Next in Study" title={d.next.label} action={{ label: d.next.kind === "test" || d.next.kind === "retest" ? "Take the test" : "Carry on", onPress: () => openTarget(d.next.target), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "study-continue" }} />
+          <Group>
+            <Label>{test ? "Ready for the test" : "Carry on reading"}</Label>
+            <Stone testID="study-continue" accessibilityLabel={`${test ? "Take the test" : "Carry on"}: ${d.next.label}`} onPress={() => openTarget(d.next.target)}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+                <View style={{ width: 52, height: 52, borderRadius: 26, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>
+                  <ArrowRight size={22} color={c.onLime} strokeWidth={2.6} />
+                </View>
+                <View style={{ flex: 1, minWidth: 0, gap: 3 }}>
+                  <T v="h2">{d.next.label}</T>
+                  <T v="small" tone="muted" num>
+                    {d.goal.points} of {d.goal.goal} points today
+                  </T>
+                </View>
+              </View>
+            </Stone>
+          </Group>
         </Enter>
       ) : (
-        <View style={{ gap: space[2] }}>
-          <Stamp rotate={-2}>
-            <T v="h1">Every module done</T>
-          </Stamp>
-          <T tone="muted">Re-tests appear here when they are due.</T>
-        </View>
+        <QuietEmpty testID="study-all-done" art={<Jyo pose="wellDone" size={64} />} title="Every module done" body="Re-tests appear here when they are due." />
       )}
-      <T v="small" tone="muted" num>
-        {d.goal.points} of {d.goal.goal} points today · {streakLine(d.goal.streak)}
-      </T>
-      {shelf("Reading now", now)}
-      {shelf("Coming up", later)}
-      {shelf("Done", done)}
+      {streak ? (
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], paddingHorizontal: space[1] }}>
+          <FlameIcon size={16} color={c.areas.practise.deep} fill={c.areas.practise.wash} />
+          <T v="small" tone="muted" num>
+            {streak}
+          </T>
+        </View>
+      ) : null}
+      {shelf("Reading now", now, 1)}
+      {shelf("Coming up", later, 2)}
+      {shelf("Done", done, 3)}
     </>
   );
 }
 
-/** Study: one Continue, then the modules on three shelves as rows. */
+/** Modules: the one thing to carry on with, then every module on three shelves. Your map sits on the field. */
 export function StudyHomeScreen() {
   const q = useStudyHome();
+  const d = q.data;
+  const done = d ? d.modules.filter((m) => m.status.complete).length : 0;
   return (
-    <Screen testID="study" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Loaded q={q} what="your modules" skeleton={<RowsSkeleton rows={5} />}>
-        {(d) => <StudyHomeBody d={d} />}
-      </Loaded>
+    <Screen testID="study" title="Modules" lead={d?.modules.length ? `${done} of ${d.modules.length} complete` : undefined} field={d?.modules.length ? <FieldCard testID="study-map" title="Your map" meta="Every topic and how well you know it" onPress={() => go("/map")} /> : undefined} gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Stack.Screen options={{ title: "" }} />
+      <Fetched q={q} what="your modules" skeleton={<TilesSkeleton card rows={4} />}>
+        {(x) => <StudyHomeBody d={x} />}
+      </Fetched>
     </Screen>
   );
 }

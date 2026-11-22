@@ -1,17 +1,19 @@
-import { ArrowRight } from "lucide-react-native";
+import { Stack } from "expo-router";
+import { Play } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import type { CourseSummary } from "@/api/contract";
+import { go } from "@/api/prefetch";
 import { useCourse, useCourses } from "@/api/queries";
-import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
-import { Enter } from "@/motion";
+import { Jyo, Label, ProgressLine, QuietEmpty, Screen, Stone, T } from "@/ds";
+import { Enter, StaggerList } from "@/motion";
 import { useFocusedValue } from "@/nav/focused-value";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
-import { layout, space, useTheme } from "@/theme";
+import { space, useTheme } from "@/theme";
 import { WeekList } from "./course";
-import { go } from "@/api/prefetch";
+import { Fetched, Group, TilesSkeleton } from "./parts";
 
 /** "Lecture 5 · Week 3" */
 export function nextLine(n: NonNullable<CourseSummary["next"]>): string {
@@ -19,83 +21,94 @@ export function nextLine(n: NonNullable<CourseSummary["next"]>): string {
   return `${what} · Week ${n.week}`;
 }
 
-/** A course row's line: it fills when the student comes back to this list (after marking a lecture watched). */
+/** A course card's line: it fills when the student comes back to this list (after marking a lecture watched). */
 function CourseLine({ pct, title }: { pct: number; title: string }) {
   const shown = useFocusedValue(pct);
-  return <ProgressLine value={shown} height={4} label={`${shown}% of ${title}`} />;
+  return <ProgressLine value={shown} height={6} label={`${shown}% of ${title}`} />;
 }
 
-/** One Continue, then every course as a row with a thin progress line. */
-export function LecturesBody({ courses }: { courses: CourseSummary[] }) {
+const NoLectures = () => <QuietEmpty testID="lectures-empty" art={<Jyo pose="resting" size={64} />} title="No lectures yet" body="Your lectures appear here as soon as your cohort starts." />;
+
+/** The lecture to carry on with: a stone that grows into the lecture, with the one lime play. */
+export function ContinueCard({ course, testID = "lectures-continue" }: { course: CourseSummary; testID?: string }) {
   const c = useTheme();
-  if (!courses.length) return <EmptyState title="No lectures yet" body="Your lectures appear here as soon as your cohort starts." />;
+  const n = course.next;
+  if (!n) return null;
+  const word = n.midway ? "Continue watching" : n.kind === "assignment" ? "Open the assignment" : course.started ? "Watch next" : "Start here";
+  return (
+    <Group>
+      <Label>{word}</Label>
+      <Stone testID={testID} accessibilityLabel={`${word}: ${n.title}. ${nextLine(n)}`} grow={() => openTarget(n.target)}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+          <View style={{ width: 52, height: 52, borderRadius: 26, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>
+            <Play size={20} color={c.onLime} fill={c.onLime} />
+          </View>
+          <View style={{ flex: 1, minWidth: 0, gap: 3 }}>
+            <T v="h2">{n.title}</T>
+            <T v="small" tone="muted" num>
+              {[nextLine(n), n.midway ? "You stopped part way" : null].filter(Boolean).join(" · ")}
+            </T>
+          </View>
+        </View>
+      </Stone>
+    </Group>
+  );
+}
+
+/** One Continue, then every course as a card with its progress line. */
+export function LecturesBody({ courses }: { courses: CourseSummary[] }) {
+  if (!courses.length) return <NoLectures />;
   const current = courses.find((x) => x.next) ?? null;
   return (
     <>
       {current?.next ? (
         <Enter i={0}>
-          <Hero
-            context={nextLine(current.next)}
-            title={current.next.title}
-            meta={current.next.midway ? "You stopped part way through" : current.started ? undefined : "Start here"}
-            action={{
-              label: current.next.midway ? "Continue watching" : current.next.kind === "assignment" ? "Open the assignment" : "Start watching",
-              onPress: () => openTarget(current.next!.target),
-              icon: <ArrowRight size={20} color={c.onPrimary} />,
-              testID: "lectures-continue",
-            }}
-          />
+          <ContinueCard course={current} />
         </Enter>
       ) : null}
       <Enter i={1}>
-        <Section title={courses.length > 1 ? "Your courses" : "Your course"}>
-          <RowList>
+        <Group>
+          <Label>{courses.length > 1 ? "Your courses" : "Your course"}</Label>
+          <StaggerList style={{ gap: space[2] }}>
             {courses.map((x) => {
               const pct = x.totalLessons ? Math.round((x.completedCount / x.totalLessons) * 100) : 0;
               return (
-                <Row
-                  key={x.id}
-                  testID={`course-row-${x.id}`}
-                  title={x.title}
-                  meta={`${x.completedCount} of ${x.totalLessons} lectures`}
-                  below={
-                    <View style={{ paddingTop: space[2] }}>
-                      <CourseLine pct={pct} title={x.title} />
+                <Stone key={x.id} testID={`course-row-${x.id}`} accessibilityLabel={`${x.title}. ${x.completedCount} of ${x.totalLessons} lectures watched`} grow={() => go(`/course/${encodeURIComponent(x.id)}`)}>
+                  <View style={{ gap: space[3] }}>
+                    <View style={{ gap: 2 }}>
+                      <T v="h3">{x.title}</T>
+                      <T v="small" tone="muted" num>
+                        {x.completedCount} of {x.totalLessons} lectures watched
+                      </T>
                     </View>
-                  }
-                  onPress={() => go(`/course/${encodeURIComponent(x.id)}`)}
-                />
+                    <CourseLine pct={pct} title={x.title} />
+                  </View>
+                </Stone>
               );
             })}
-          </RowList>
-        </Section>
+          </StaggerList>
+        </Group>
       </Enter>
     </>
   );
 }
 
-function LecturesSkeleton() {
-  return (
-    <View style={{ gap: 32 }}>
-      <View style={{ gap: space[3] }}>
-        <Skeleton w="34%" h={14} />
-        <Skeleton w="88%" h={30} />
-        <Skeleton w="60%" h={30} />
-        <Skeleton h={52} r={12} />
-      </View>
-      <RowsSkeleton rows={2} />
-    </View>
-  );
+function leadOf(courses: CourseSummary[] | undefined): string | undefined {
+  if (!courses?.length) return undefined;
+  const done = courses.reduce((n, x) => n + x.completedCount, 0);
+  const total = courses.reduce((n, x) => n + x.totalLessons, 0);
+  return `${done} of ${total} watched`;
 }
 
 /** The Lectures screen, opened from Learn. */
 export function LecturesScreen() {
   const q = useCourses();
   return (
-    <Screen testID="lectures" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Loaded q={q} what="your lectures" skeleton={<LecturesSkeleton />}>
+    <Screen testID="lectures" title="Lectures" lead={leadOf(q.data?.courses)} gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Stack.Screen options={{ title: "" }} />
+      <Fetched q={q} what="your lectures" skeleton={<TilesSkeleton card rows={2} />}>
         {(d) => <LecturesBody courses={d.courses} />}
-      </Loaded>
+      </Fetched>
     </Screen>
   );
 }
@@ -103,44 +116,37 @@ export function LecturesScreen() {
 /** One course's weeks, loaded on their own. The title shows only when there is more than one course. */
 function CourseWeeks({ summary, titled }: { summary: CourseSummary; titled: boolean }) {
   const q = useCourse(summary.id);
-  const pct = summary.totalLessons ? Math.round((summary.completedCount / summary.totalLessons) * 100) : 0;
   return (
-    <View style={{ gap: layout.section }}>
-      <View style={{ gap: space[2] }}>
-        {titled ? <T v="h2">{summary.title}</T> : null}
-        <T v="small" tone="muted" num>
-          {summary.completedCount} of {summary.totalLessons} lectures watched
-        </T>
-        <ProgressLine value={pct} height={4} label={`${pct}% watched`} />
-      </View>
-      <Loaded q={q} what="your lectures" skeleton={<RowsSkeleton rows={5} />}>
-        {(d) => (d.empty ? <EmptyState title="No lectures yet" body="Lectures appear here week by week." /> : <WeekList course={d} />)}
-      </Loaded>
+    <View style={{ gap: space[5] }}>
+      {titled ? <T v="h2">{summary.title}</T> : null}
+      <Fetched q={q} what="your lectures" skeleton={<TilesSkeleton rows={5} />}>
+        {(d) => (d.empty ? <QuietEmpty title="No lectures yet" body="Lectures appear here week by week." /> : <WeekList course={d} />)}
+      </Fetched>
     </View>
   );
 }
 
 /**
  * The Lectures tab of a lectures-only account: Home already carries the one
- * Continue, so this is the full list, grouped by week (no second hero).
+ * Continue, so this is the full list, grouped by week.
  */
 export function LecturesTab() {
   const q = useCourses();
   return (
-    <Screen tab top={<TabTop />} title="Lectures" testID="lectures-tab" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Loaded q={q} what="your lectures" skeleton={<RowsSkeleton rows={6} />}>
+    <Screen tab top={<TabTop />} title="Lectures" lead={leadOf(q.data?.courses)} testID="lectures-tab" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Fetched q={q} what="your lectures" skeleton={<TilesSkeleton rows={6} />}>
         {(d) =>
           d.courses.length ? (
-            <View style={{ gap: layout.section }}>
+            <View style={{ gap: space[6] }}>
               {d.courses.map((x) => (
                 <CourseWeeks key={x.id} summary={x} titled={d.courses.length > 1} />
               ))}
             </View>
           ) : (
-            <EmptyState title="No lectures yet" body="Your lectures appear here as soon as your cohort starts." />
+            <NoLectures />
           )
         }
-      </Loaded>
+      </Fetched>
     </Screen>
   );
 }

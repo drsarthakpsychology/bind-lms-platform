@@ -1,21 +1,22 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { ArrowRight, RotateCcw, X } from "lucide-react-native";
+import { RotateCcw, X } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, ScrollView, View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
+import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useQueryClient } from "@tanstack/react-query";
 
 import type { MapPractice, MapQuestion } from "@/api/contract";
 import { answerMap, mapWallKeys, useMapRound } from "@/api/map-wall";
-import { Button, EmptyState, LoadError, OptionRow, ProgressLine, Skeleton, StillTrying, T, VerdictBand, type OptionState } from "@/ds";
+import { BlueField, Button, FieldProgress, Layer, OptionList, QuietEmpty, ResultSheet, RoundButton, Skeleton, Stone, StillTrying, T } from "@/ds";
+import { reasonOf } from "@/api/errors";
+import { Pill } from "@/screens/learn/parts";
 import { EndReaction, ReactionLayer, useReactions } from "@/ds/reactions";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { useHardwareBack } from "@/nav/back";
 import { settingsStore } from "@/lib/settings";
-import { Burst, Confetti, RollingNumber, Swap } from "@/motion";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { Confetti, Enter, ProgressRing, RollingNumber, Swap } from "@/motion";
+import { fonts, layout, space, useLightStatusBar, useTheme } from "@/theme";
 
 /**
  * A practice round from your map (the website's /study/map/practice): one
@@ -39,42 +40,23 @@ export function seededOrder(n: number, seed: string): number[] {
 type Pick = number | boolean | null;
 
 function Question({ q, picked, checked, onPick }: { q: MapQuestion; picked: Pick; checked: boolean; onPick: (p: number | boolean) => void }) {
-  const c = useTheme();
   const order = React.useMemo(() => (q.kind === "mcq" ? seededOrder(q.options.length, q.id) : []), [q]);
-  const stateOf = (value: number | boolean): OptionState => (checked ? (value === q.answer ? "right" : picked === value ? "wrong" : "dim") : picked === value ? "picked" : "idle");
+  // The kit's answer list works on positions: map them to and from the question's own values.
+  const values: (number | boolean)[] = q.kind === "mcq" ? order : [true, false];
+  const at = (v: Pick) => (v === null ? null : values.indexOf(v));
+  const pos = at(picked);
   return (
-    <View style={{ gap: space[5] }}>
+    <View style={{ gap: space[4] }}>
       {q.kind === "mcq" && q.vignette ? (
-        <View style={{ borderRadius: layout.radius, borderWidth: 1, borderStyle: "dashed", borderColor: c.cardLine, backgroundColor: c.tint, padding: space[4] }}>
+        <Stone pad={space[3] + 2}>
           <T v="small">{q.vignette}</T>
-        </View>
+        </Stone>
       ) : null}
-      {q.kind === "tf" ? (
-        <T v="caption" tone="link">
-          TRUE OR FALSE?
-        </T>
-      ) : null}
+      {q.kind === "tf" ? <Pill>True or false?</Pill> : null}
       <T v="h2" accessibilityRole="header">
         {q.text}
       </T>
-      <View style={{ gap: space[3] }} accessibilityRole="radiogroup">
-        {q.kind === "mcq"
-          ? order.map((idx, k) => <OptionRow key={idx} index={k} text={q.options[idx]!} testID={`map-option-${k}`} state={stateOf(idx)} disabled={checked} onPress={() => onPick(idx)} />)
-          : [true, false].map((v, k) => <OptionRow key={String(v)} index={k} text={v ? "True" : "False"} testID={`map-option-${k}`} state={stateOf(v)} disabled={checked} onPress={() => onPick(v)} />)}
-      </View>
-    </View>
-  );
-}
-
-function RoundSkeleton({ failed }: { failed: boolean }) {
-  return (
-    <View style={{ gap: space[4] }} testID="map-round-skeleton">
-      <Skeleton w="90%" h={26} />
-      <Skeleton w="60%" h={26} />
-      {[0, 1, 2, 3].map((k) => (
-        <Skeleton key={k} h={56} r={12} />
-      ))}
-      <StillTrying failed={failed} />
+      <OptionList testID="map-option" options={q.kind === "mcq" ? order.map((idx) => q.options[idx]!) : ["True", "False"]} picked={pos !== null && pos >= 0 ? pos : null} checked={checked} answer={values.indexOf(q.answer)} onPick={(k) => onPick(values[k]!)} />
     </View>
   );
 }
@@ -82,19 +64,17 @@ function RoundSkeleton({ failed }: { failed: boolean }) {
 export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; onAgain: () => void; onDone: () => void }) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
-  const reduce = useReducedMotion();
+  useLightStatusBar();
   const readAs = settingsStore.use((s) => s.readAs);
   const qc = useQueryClient();
   const [i, setI] = React.useState(0);
   const [picked, setPicked] = React.useState<Pick>(null);
   const [checked, setChecked] = React.useState(false);
   const [right, setRight] = React.useState(0);
-  const [spark, setSpark] = React.useState(0);
   const startedAt = React.useRef(0);
   const unsaved = React.useRef(0);
   const scroll = React.useRef<React.ComponentRef<typeof ScrollView>>(null);
   const react = useReactions();
-  const [footH, setFootH] = React.useState(0);
   const total = round.questions.length;
   const done = i >= total;
   const q = round.questions[i];
@@ -114,10 +94,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
     setPicked(p);
     setChecked(true);
     react.answer(ok, {}, false);
-    if (ok) {
-      setRight((r) => r + 1);
-      setSpark((n) => n + 1);
-    }
+    if (ok) setRight((r) => r + 1);
     const ms = Math.max(0, Math.min(3_600_000, Date.now() - startedAt.current));
     // The server grades again and updates the map. One quiet retry, then a single line.
     const send = () => answerMap({ item: q.id, choice: p, ms });
@@ -135,82 +112,104 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
     setPicked(null);
     setChecked(false);
     scroll.current?.scrollTo({ y: 0, animated: false });
-    if (i + 1 >= total && right === total) haptic.success();
   };
 
   const allRight = done && total > 0 && right === total;
+  const pct = Math.round((right / Math.max(1, total)) * 100);
+  const ok = !!q && picked === q.answer;
+  const why = q ? (readAs === "clinician" ? q.clinician || q.student : q.student || q.clinician) : null;
 
   return (
-    <View testID="map-round" style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
-      <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", gap: space[2], paddingHorizontal: space[1] }}>
-        <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={onDone} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="map-round-close">
-          <X size={24} color={c.ink} />
-        </Pressable>
-        <View style={{ flex: 1 }}>
-          <ProgressLine value={total ? ((i + (checked ? 1 : 0)) / total) * 100 : 0} height={6} label={round.title} />
+    <View testID="map-round" style={{ flex: 1, backgroundColor: c.field }}>
+      <BlueField style={{ gap: space[4] }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+          <RoundButton onField label="Close" onPress={onDone} testID="map-round-close">
+            <X size={20} color={c.onField} />
+          </RoundButton>
+          <View style={{ flex: 1 }}>{done ? <T v="small" tone="onFieldMuted" numberOfLines={1}>{round.title}</T> : <FieldProgress done={i + (checked ? 1 : 0)} total={Math.max(1, total)} label={`${Math.min(i + 1, total)} of ${total}`} />}</View>
         </View>
-        <T v="small" tone="muted" style={{ paddingRight: space[3] }} numberOfLines={1}>
-          {done ? "Done" : round.topic ? "Fix it" : "Mixed"}
-        </T>
-      </View>
-      <ScrollView ref={scroll} contentContainerStyle={{ padding: layout.gutter, gap: space[5], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
         {done ? (
-          <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.page)} style={{ gap: space[5] }} testID="map-round-done">
-            <T v="small" tone="muted">
-              {round.title}
-            </T>
-            <View style={{ alignSelf: "flex-start" }}>
-              <View style={{ flexDirection: "row", alignItems: "baseline" }} accessible accessibilityLabel={`${right} of ${total} right`}>
-                <RollingNumber value={right} v="h1" style={{ fontFamily: fonts.pixelDigits, fontSize: 56, lineHeight: 64 }} />
-                <T style={{ fontFamily: fonts.pixelDigits, fontSize: 56, lineHeight: 64 }}>/{total}</T>
-              </View>
-              <Burst fire={allRight ? 1 : 0} reach={60} />
-            </View>
-            <VerdictBand right={right / Math.max(1, total) >= 0.7} title={allRight ? "Every one right." : right / Math.max(1, total) >= 0.7 ? "A good round." : "Worth another round."} why={round.saving ? "Your map is updated. The next round adapts to these answers." : "Staff answers are not saved."} />
-          </Animated.View>
-        ) : q ? (
-          <Swap k={q.id} style={{ gap: space[5] }} testID={`map-q-${i}`}>
-            <T v="caption" tone="muted">
-              {q.label}
-            </T>
-            <Question q={q} picked={picked} checked={checked} onPick={(p) => (q.kind === "tf" ? check(p) : setPicked(p))} />
-            {checked ? (
-              <View>
-                <VerdictBand right={picked === q.answer} why={readAs === "clinician" ? q.clinician || q.student : q.student || q.clinician} seed={i} />
-                <View style={{ position: "absolute", top: 14, left: 14 }} pointerEvents="none">
-                  <Burst fire={picked === q.answer ? spark : 0} reach={26} count={8} />
+          <Enter testID="map-round-done">
+            <View style={{ flexDirection: "row", alignItems: "center", gap: space[4], paddingBottom: space[2] }}>
+              <ProgressRing pct={pct} size={84} stroke={8} delay={250} color={c.lime} track={c.fieldTint} label={`${pct}%`}>
+                <T v="bodyStrong" tone="onField" num>
+                  {pct}%
+                </T>
+              </ProgressRing>
+              <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+                <View style={{ flexDirection: "row", alignItems: "baseline" }} accessible accessibilityLabel={`${right} of ${total} right`}>
+                  <RollingNumber value={right} tone="onField" style={{ fontFamily: fonts.big, fontSize: 46, lineHeight: 48, letterSpacing: -1 }} />
+                  <T tone="onFieldMuted" num maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.big, fontSize: 24, lineHeight: 30 }}>
+                    {` of ${total}`}
+                  </T>
                 </View>
+                <T v="h3" tone="onField">
+                  {allRight ? "Every one right" : pct >= 70 ? "A good round" : "Worth another round"}
+                </T>
               </View>
-            ) : null}
-          </Swap>
-        ) : null}
-      </ScrollView>
-      <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2] }}>
-        {done ? (
-          <>
-            <Button label="Another round" icon={<RotateCcw size={20} color={c.onPrimary} />} onPress={onAgain} testID="map-round-again" />
-            <Button kind="text" full label="Back to your map" onPress={onDone} testID="map-round-back" />
-          </>
-        ) : checked ? (
-          <Button label={i + 1 === total ? "See how you did" : "Next"} icon={<ArrowRight size={20} color={c.onPrimary} />} onPress={next} testID="map-next" />
-        ) : q?.kind === "mcq" ? (
-          <Button label={picked === null ? "Pick an answer" : "Check"} disabled={picked === null} onPress={() => check()} testID="map-check" />
+            </View>
+          </Enter>
         ) : (
-          <T v="small" tone="muted" center>
-            Tap True or False.
+          <T v="small" tone="onFieldMuted" numberOfLines={1}>
+            {round.topic ? `Fix it · ${q?.label ?? round.title}` : `Mixed practice · ${q?.label ?? ""}`}
           </T>
         )}
-      </View>
+      </BlueField>
+      <Layer style={{ paddingHorizontal: 0, paddingTop: 0, gap: 0 }}>
+        <ScrollView ref={scroll} showsVerticalScrollIndicator={false} contentContainerStyle={{ padding: layout.gutter, paddingTop: space[5], paddingBottom: checked && !done ? 220 : space[5], gap: space[4], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
+          {done ? (
+            <Stone>
+              <T v="h3">{round.saving ? "Your map is updated" : "Staff answers are not saved"}</T>
+              <T v="small" tone="muted" style={{ paddingTop: space[1] }}>
+                {round.saving ? "The next round adapts to these answers." : "This is how a round looks to a student."}
+              </T>
+            </Stone>
+          ) : q ? (
+            <Swap k={q.id} dir={1} testID={`map-q-${i}`}>
+              <Question q={q} picked={picked} checked={checked} onPick={(p) => (q.kind === "tf" ? check(p) : setPicked(p))} />
+            </Swap>
+          ) : null}
+        </ScrollView>
+        <View style={{ paddingHorizontal: layout.gutter, paddingTop: space[2], paddingBottom: insets.bottom + space[3], gap: space[1], backgroundColor: c.bg }}>
+          {done ? (
+            <>
+              <Button label="Another round" icon={<RotateCcw size={20} color={c.onPrimary} />} onPress={onAgain} testID="map-round-again" />
+              <Button kind="text" full label="Back to your map" onPress={onDone} testID="map-round-back" />
+            </>
+          ) : q?.kind === "mcq" ? (
+            <Button label="Check" disabled={picked === null || checked} onPress={() => check()} testID="map-check" />
+          ) : (
+            <T v="small" tone="muted" center style={{ minHeight: layout.primary, textAlignVertical: "center", paddingTop: space[3] }}>
+              Tap True or False.
+            </T>
+          )}
+        </View>
+        <ResultSheet testID="verdict" open={checked && !done} right={ok} title={ok ? "Yes, that fits" : "Not quite"} why={why} action={{ label: i + 1 === total ? "See how you did" : "Next", onPress: next }} />
+      </Layer>
       {allRight ? <Confetti fire={1} /> : null}
       {done ? <EndReaction right={right} total={total} /> : null}
-      <ReactionLayer above={footH || undefined} />
+      <ReactionLayer />
+    </View>
+  );
+}
+
+/** Waiting for a round, an empty round, or a failed load: the same field and layer, with a way out. */
+function RoundWait({ children, onClose }: { children: React.ReactNode; onClose: () => void }) {
+  const c = useTheme();
+  useLightStatusBar();
+  return (
+    <View testID="map-round-wait" style={{ flex: 1, backgroundColor: c.field }}>
+      <BlueField>
+        <RoundButton onField label="Close" onPress={onClose} testID="map-round-close">
+          <X size={20} color={c.onField} />
+        </RoundButton>
+      </BlueField>
+      <Layer>{children}</Layer>
     </View>
   );
 }
 
 export function MapPracticeScreen() {
-  const c = useTheme();
-  const insets = useSafeAreaInsets();
   const p = useLocalSearchParams<{ topic?: string }>();
   const topic = typeof p.topic === "string" && p.topic ? p.topic : null;
   const [n, setN] = React.useState(0);
@@ -218,14 +217,21 @@ export function MapPracticeScreen() {
   const done = React.useCallback(() => (router.canGoBack() ? router.back() : router.replace("/map")), []);
   if (q.data && q.data.questions.length) return <RoundRunner key={`${q.data.round}:${n}`} round={q.data} onAgain={() => setN((x) => x + 1)} onDone={done} />;
   return (
-    <View testID="map-round-wait" style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top + 72, paddingHorizontal: layout.gutter }}>
+    <RoundWait onClose={done}>
       {q.isError ? (
-        <LoadError what="this round" error={q.error} onRetry={() => void q.refetch()} />
+        <QuietEmpty testID="load-error" title="Could not load this round" body={reasonOf(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : q.data ? (
-        <EmptyState mood="wait" title="No questions for this yet" body="New questions for this topic are on their way. Try mixed practice." action={{ label: "Back to your map", onPress: done }} testID="map-round-empty" />
+        <QuietEmpty testID="map-round-empty" title="No questions for this yet" body="New questions for this topic are on their way. Try mixed practice." action={{ label: "Back to your map", onPress: done }} />
       ) : (
-        <RoundSkeleton failed={q.failureCount > 0} />
+        <View style={{ gap: space[3] }} testID="map-round-skeleton">
+          <Skeleton w="90%" h={26} />
+          <Skeleton w="60%" h={26} />
+          {[0, 1, 2, 3].map((k) => (
+            <Skeleton key={k} h={52} r={layout.radius} />
+          ))}
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
       )}
-    </View>
+    </RoundWait>
   );
 }

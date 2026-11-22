@@ -252,11 +252,16 @@ export type PlayerProps = {
   full?: boolean;
   /** The full-screen button. No button without it. */
   onFull?: () => void;
+  /** Filled with a way to jump to a time (a chapter, a note's time stamp). Null while nothing is playing. */
+  control?: React.RefObject<PlayerControl | null>;
 };
+
+/** What the lecture page may ask of the player from outside. Seeking only: the stream, the watermark and the capture guard stay inside. */
+export type PlayerControl = { seek: (seconds: number) => void; play: () => void };
 
 type Phase = { kind: "loading" } | { kind: "ready"; access: StreamAccess } | { kind: "refused"; message: string } | { kind: "error"; message: string };
 
-export function ProtectedPlayer({ lessonId, onTime, compromised, intro, full = false, onFull }: PlayerProps) {
+export function ProtectedPlayer({ lessonId, onTime, compromised, intro, full = false, onFull, control }: PlayerProps) {
   // Per lecture: Next and Previous replace the lecture in the same player.
   const [playedFor, setPlayedFor] = React.useState<string | null>(null);
   const played = playedFor === lessonId;
@@ -266,6 +271,19 @@ export function ProtectedPlayer({ lessonId, onTime, compromised, intro, full = f
   const [captured, setCaptured] = React.useState(isCaptured());
   const [attempt, setAttempt] = React.useState(0);
   const pbRef = React.useRef<Playback | null>(null);
+  React.useEffect(() => {
+    if (!control) return;
+    control.current = {
+      seek: (t) => {
+        const pb = pbRef.current;
+        if (pb?.ready) pb.seek(Math.max(0, pb.duration > 0 ? Math.min(t, pb.duration - 1) : t));
+      },
+      play: () => pbRef.current?.play(),
+    };
+    return () => {
+      control.current = null;
+    };
+  }, [control]);
   // Where the lecture was when its address ran out, to carry on from there with a new one.
   const carryOn = React.useRef(0);
   const renewed = React.useRef(0);

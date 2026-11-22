@@ -1,5 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router } from "expo-router";
+import { Send } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -7,9 +8,10 @@ import type { AskDoubtBody, AskDoubtResult } from "@/api/contract";
 import { messageOf } from "@/api/errors";
 import { useMe, useStudyHome } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, Chips, Field, Screen, T } from "@/ds";
+import { Button, Chips, Field, Label, Screen, Stone, T } from "@/ds";
+import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
-import { space } from "@/theme";
+import { space, useTheme } from "@/theme";
 
 const KINDS = [
   { id: "doubt" as const, name: "A doubt" },
@@ -50,6 +52,7 @@ export function AskScreen() {
       const b: AskDoubtBody = { title: title.trim(), body: body.trim(), topic: topic.trim() || undefined, markAs: kind };
       const r = await api.post<AskDoubtResult>("/doubts", b);
       haptic.success();
+      toast.show("Posted");
       await qc.invalidateQueries({ queryKey: ["doubts"] });
       router.replace(`/doubt/${encodeURIComponent(r.id)}`);
     } catch (e) {
@@ -59,16 +62,30 @@ export function AskScreen() {
       setBusy(false);
     }
   };
+  const c = useTheme();
+  const ready = title.trim().length >= 8;
   return (
-    <Screen testID="ask" gap={space[5]} footer={<Button label="Post" busy={busy} needsServer onPress={() => void submit()} testID="ask-submit" />}>
-      <Field label="Your question" value={title} onChangeText={setTitle} error={error} maxLength={200} testID="ask-title" />
+    <Screen plain testID="ask" gap={space[5]} footer={<Button label="Post" icon={<Send size={18} color={c.onPrimary} />} busy={busy} needsServer onPress={() => void submit()} testID="ask-submit" />}>
+      {/* The preview: how it will look in the list, updating as you type. */}
+      <Stone quiet={!ready} testID="ask-preview">
+        <View style={{ gap: space[1] }}>
+          <T v="label" tone="muted">
+            {kind === "complaint" ? "Something is wrong" : "Your doubt"}
+            {topic.trim() ? ` · ${topic.trim()}` : ""}
+          </T>
+          <T v="h3" tone={title.trim() ? "ink" : "muted"}>
+            {title.trim() || "Your question shows here as you type"}
+          </T>
+        </View>
+      </Stone>
+      <Field label="Your question" value={title} onChangeText={setTitle} error={error} maxLength={200} returnKeyType="next" placeholder="Ask it in one full sentence" testID="ask-title" />
       <Field label="More detail (optional)" value={body} onChangeText={setBody} area maxLength={4000} testID="ask-body" />
       <View style={{ gap: space[2] }}>
         <Field label="Topic (optional)" value={topic} onChangeText={setTopic} placeholder="For example: Depression" maxLength={120} testID="ask-topic" />
         {topics.length ? <Chips label="Your topics" options={topics} value={topic} onChange={setTopic} /> : null}
       </View>
       <View style={{ gap: space[2] }}>
-        <T v="small">This is</T>
+        <Label>This is</Label>
         <Chips label="This is" options={KINDS} value={kind} onChange={setKind} />
       </View>
     </Screen>

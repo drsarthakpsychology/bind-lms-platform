@@ -8,11 +8,14 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Card as RecallCard, Mcq, SectionContent } from "@/api/contract";
 import { useMarks } from "@/api/learn";
 import { keys, useModule, useSection } from "@/api/queries";
-import { Button, Chips, LoadError, OptionRow, ProgressLine, Row, RowList, Sheet, Skeleton, StillTrying, T, VerdictBand } from "@/ds";
+import { Button, Chips, HintText, Label, OptionList, ProgressLine, QuietEmpty, RoundButton, Sheet, Skeleton, StillTrying, T } from "@/ds";
+import { reasonOf } from "@/api/errors";
+import { Burst, Enter, Press, StaggerList, Swap } from "@/motion";
+import { Pill, StateMark, Tile } from "@/screens/learn/parts";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Blocks, type BlockContext } from "@/study/blocks";
-import { Rich, TermPress } from "@/study/rich";
+import { plainText, Rich, TermPress } from "@/study/rich";
 import { useOnce } from "@/lib/once";
 import { ReadingSize, TextSizeSheet } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
@@ -32,25 +35,36 @@ function RecallCards({ cards }: { cards: RecallCard[] }) {
   const c = useTheme();
   const [open, setOpen] = React.useState<Set<number>>(new Set());
   return (
-    <View style={{ gap: space[3] }}>
+    <View style={{ gap: space[2] }}>
       {cards.map((card, i) => (
-        <Pressable
+        <Press
           key={i}
           accessibilityRole="button"
           accessibilityState={{ expanded: open.has(i) }}
           onPress={() => {
+            if (!open.has(i)) haptic.select();
             setOpen((s) => new Set(s).add(i));
           }}
-          style={{ borderRadius: layout.radius, backgroundColor: c.tint, padding: space[4], gap: space[2], minHeight: layout.row }}
+          scale={0.98}
+          innerStyle={{ borderRadius: 22, backgroundColor: c.card, padding: space[4], gap: space[2], minHeight: layout.row }}
         >
           <Rich text={card.q} v="bodyStrong" />
-          {open.has(i) ? <Rich text={card.a} v="reading" tone="muted" /> : <T v="small" tone="link">Say it aloud, then tap to check</T>}
-        </Pressable>
+          {open.has(i) ? (
+            <Enter>
+              <Rich text={card.a} v="reading" tone="muted" />
+            </Enter>
+          ) : (
+            <T v="small" tone="link">
+              Say it aloud, then tap to check
+            </T>
+          )}
+        </Press>
       ))}
     </View>
   );
 }
 
+/** Self-check questions at the end of a section: tap an answer and it is checked at once, with why. Nothing is sent or scored. */
 function Practice({ items }: { items: Mcq[] }) {
   const [picks, setPicks] = React.useState<Record<number, number>>({});
   return (
@@ -58,12 +72,10 @@ function Practice({ items }: { items: Mcq[] }) {
       {items.map((m, i) => {
         const p = picks[i];
         return (
-          <View key={i} style={{ gap: space[2] }}>
+          <View key={i} style={{ gap: space[3] }}>
             <Rich text={m.q} v="bodyStrong" />
-            {m.options.map((o, j) => (
-              <OptionRow key={j} index={j} text={o} disabled={p !== undefined} state={p === undefined ? "idle" : j === m.answer ? "right" : j === p ? "wrong" : "dim"} onPress={() => setPicks((s) => ({ ...s, [i]: j }))} />
-            ))}
-            {p !== undefined ? <VerdictBand right={p === m.answer} why={m.why} seed={i} /> : null}
+            <OptionList testID={`practice-${i}`} options={m.options.map(plainText)} picked={p ?? null} checked={p !== undefined} answer={m.answer} onPick={(j) => setPicks((s) => ({ ...s, [i]: j }))} />
+            {p !== undefined && m.why ? <HintText testID={`practice-why-${i}`}>{plainText(m.why)}</HintText> : null}
           </View>
         );
       })}
@@ -72,16 +84,23 @@ function Practice({ items }: { items: Mcq[] }) {
 }
 
 export function ReaderBody({ s, view, part, finished }: { s: SectionContent; view: "student" | "clinician"; part: number; finished: boolean }) {
+  const c = useTheme();
   const ctx: BlockContext = { moduleId: s.moduleId, sectionId: s.section.id, view };
   const chunk = s.chunks[part];
   if (finished || !chunk) {
     return (
       <View style={{ gap: layout.section }} testID="reader-end">
-        <View style={{ gap: space[2] }}>
-          <T v="small" tone="muted">
-            {s.section.num} done
-          </T>
-          <T v="h1">{s.section.title}</T>
+        <View style={{ gap: space[3] }}>
+          <View style={{ alignSelf: "flex-start", width: 44, height: 44, borderRadius: 22, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>
+            <Check size={22} color={c.onLime} strokeWidth={3} />
+            <Burst fire={1} reach={34} />
+          </View>
+          <View style={{ gap: space[1] }}>
+            <T v="small" tone="muted" num>
+              Section {s.section.num} read
+            </T>
+            <T v="h1">{s.section.title}</T>
+          </View>
         </View>
         {s.recall.length ? (
           <View style={{ gap: space[3] }}>
@@ -244,12 +263,12 @@ export function ReaderScreen() {
   return (
     <TermPress.Provider value={setWord}>
     <View testID="reader" style={{ flex: 1, backgroundColor: c.bg }}>
-      <View style={{ paddingTop: insets.top, backgroundColor: c.bg, borderBottomWidth: 1, borderColor: c.hairline }}>
-        <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", paddingHorizontal: space[1] }}>
-          <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={back} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="reader-back">
-            <ChevronLeft size={26} color={c.ink} />
-          </Pressable>
-          <T v="small" tone="muted" num style={{ flex: 1 }} testID="reader-place" accessibilityLabel={s ? `Section ${readerPlace(s.section.num, mod.data?.sections)}` : undefined}>
+      <View style={{ paddingTop: insets.top, backgroundColor: c.bg }}>
+        <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", paddingLeft: space[3], paddingRight: space[1], gap: space[1] }}>
+          <RoundButton label="Back" onPress={back} testID="reader-back">
+            <ChevronLeft size={22} color={c.ink} />
+          </RoundButton>
+          <T v="small" tone="muted" num style={{ flex: 1, paddingLeft: space[2] }} testID="reader-place" accessibilityLabel={s ? `Section ${readerPlace(s.section.num, mod.data?.sections)}` : undefined}>
             {s ? readerPlace(s.section.num, mod.data?.sections) : " "}
           </T>
           <BarButton name="Size" label="Text size" named={named} onPress={() => setSizeOpen(true)} testID="reader-size">
@@ -267,15 +286,20 @@ export function ReaderScreen() {
             </BarButton>
           ) : null}
         </View>
-        <ProgressLine value={pct} height={3} label={`Part ${Math.min(part + 1, total)} of ${total}`} />
+        <View style={{ paddingHorizontal: layout.gutter, paddingBottom: space[2] }}>
+          <ProgressLine value={pct} height={4} label={`Part ${Math.min(part + 1, total)} of ${total}`} />
+        </View>
       </View>
       <ScrollView ref={scroll} contentContainerStyle={{ paddingHorizontal: layout.gutter, paddingTop: space[5], paddingBottom: space[7], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
         {s ? (
           <ReadingSize>
-            <ReaderBody s={s} view={view} part={part} finished={finished} />
+            {/* One part swaps for the next; the words themselves never move. */}
+            <Swap k={finished ? "end" : part} dir={1}>
+              <ReaderBody s={s} view={view} part={part} finished={finished} />
+            </Swap>
           </ReadingSize>
         ) : q.isError ? (
-          <LoadError what="this section" error={q.error} onRetry={() => void q.refetch()} />
+          <QuietEmpty testID="load-error" title="Could not load this section" body={reasonOf(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
         ) : (
           <View style={{ gap: space[3] }} testID="reader-skeleton">
             <Skeleton w="30%" h={14} />
@@ -287,13 +311,31 @@ export function ReaderScreen() {
           </View>
         )}
       </ScrollView>
-      {action ? <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3] }}>{action}</View> : null}
+      {action ? (
+        <View style={{ paddingHorizontal: layout.gutter, paddingTop: space[2], paddingBottom: insets.bottom + space[3], gap: space[2], backgroundColor: c.bg }}>
+          {s && !finished && total > 1 ? (
+            <View accessible accessibilityLabel={`Part ${part + 1} of ${total}`} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[3], minHeight: 28 }}>
+              {part > 0 ? (
+                <Press testID="reader-prev" accessibilityRole="button" accessibilityLabel="Previous part" hitSlop={12} onPress={() => { setPart((p) => Math.max(0, p - 1)); toTop(); }} innerStyle={{ paddingHorizontal: space[2] }}>
+                  <T v="small" tone="link">
+                    Back a part
+                  </T>
+                </Press>
+              ) : null}
+              <View style={{ flexDirection: "row", gap: 5 }}>
+                {Array.from({ length: Math.min(total, 12) }, (_, k) => (
+                  <View key={k} style={{ width: k === Math.min(part, 11) ? 18 : 6, height: 6, borderRadius: 3, backgroundColor: k <= part ? c.ink : c.hairline }} />
+                ))}
+              </View>
+            </View>
+          ) : null}
+          {action}
+        </View>
+      ) : null}
       <Sheet open={toc} onClose={closeToc} title={mod.data?.title ?? "Sections"}>
         <View style={{ gap: space[4] }}>
           <View style={{ gap: space[2] }}>
-            <T v="small" tone="muted">
-              Read as a
-            </T>
+            <Label>Read as a</Label>
             <Chips
               label="Read as a"
               options={[
@@ -304,21 +346,22 @@ export function ReaderScreen() {
               onChange={setView}
             />
           </View>
-          <RowList bare>
+          <StaggerList style={{ gap: space[2] }}>
             {(mod.data?.sections ?? []).map((x) => (
-              <Row
+              <Tile
                 key={x.id}
-                title={`${x.num} ${x.title}`}
-                current={x.id === sectionId}
-                trailing={x.doneOn ? <Check size={18} color={c.ink} /> : undefined}
-                chevron={false}
+                title={x.title}
+                accessibilityLabel={`${x.num} ${x.title}${x.doneOn ? ". Read" : ""}`}
+                lead={<StateMark state={x.doneOn ? "done" : "todo"} n={x.isTest ? "T" : x.num} />}
+                trailing={x.id === sectionId ? <Pill tone="ink">Here</Pill> : undefined}
+                plain
                 onPress={() => {
                   setToc(false);
                   if (x.id !== sectionId) router.replace(x.isTest ? `/study/${encodeURIComponent(moduleId)}/test` : `/study/${encodeURIComponent(moduleId)}/${encodeURIComponent(x.id)}`);
                 }}
               />
             ))}
-          </RowList>
+          </StaggerList>
         </View>
       </Sheet>
       <TextSizeSheet open={sizeOpen} onClose={closeSize} />

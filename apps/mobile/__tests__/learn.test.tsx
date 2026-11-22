@@ -98,7 +98,7 @@ describe("Learn screens", () => {
     expect(screen.getByTestId("learn-reference")).toBeTruthy();
     expect(screen.getByTestId("learn-saved")).toBeTruthy();
     expect(screen.getByTestId("learn-map")).toBeTruthy();
-    expect(await screen.findByText("1 to hand in")).toBeTruthy();
+    expect(await screen.findByText("Hand-ins · 1")).toBeTruthy();
   });
 
   it("notes: Carry on goes to the first unread note", async () => {
@@ -154,10 +154,12 @@ describe("Learn screens", () => {
         ]}
       />,
     );
-    expect(screen.getByText("Week 3 · Depression · Due tomorrow")).toBeTruthy();
+    expect(screen.getByText("Week 3 · Depression")).toBeTruthy();
+    expect(screen.getByText("Due tomorrow")).toBeTruthy();
     expect(screen.getByText("90 of 100")).toBeTruthy();
     fireEvent.press(screen.getByTestId("assignment-a"));
-    expect(router.push).toHaveBeenLastCalledWith("/lecture/l5?tab=assignment");
+    // An assignment opens its own page now (the lecture is one tap from there).
+    expect(router.push).toHaveBeenLastCalledWith("/assignment/l5");
   });
 
   it("My journey shows the level and the six numbers", async () => {

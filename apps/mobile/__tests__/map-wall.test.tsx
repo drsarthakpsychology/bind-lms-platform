@@ -79,15 +79,15 @@ describe("Map practice", () => {
     fireEvent.press(screen.getByLabelText(/Hypomania/));
     await pressWhenReady("map-check");
     expect(await screen.findByTestId("verdict")).toBeTruthy();
-    await pressWhenReady("map-next");
+    await pressWhenReady("verdict-next");
     // Q2 is true or false: a tap checks it.
     fireEvent.press(await screen.findByLabelText(/True/));
-    await screen.findByTestId("map-next");
-    await pressWhenReady("map-next");
+    await screen.findByTestId("verdict-next");
+    await pressWhenReady("verdict-next");
     fireEvent.press(await screen.findByLabelText(/Liver enzymes/));
     await pressWhenReady("map-check");
-    await screen.findByTestId("map-next");
-    await pressWhenReady("map-next");
+    await screen.findByTestId("verdict-next");
+    await pressWhenReady("verdict-next");
     expect(await screen.findByTestId("map-round-done")).toBeTruthy();
     expect(screen.getByLabelText("2 of 3 right")).toBeTruthy();
     await waitFor(() => expect(mock.log().filter((l) => l.path === "/study/map/practice/answers")).toHaveLength(3));
