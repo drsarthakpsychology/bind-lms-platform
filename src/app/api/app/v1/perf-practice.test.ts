@@ -27,7 +27,8 @@ const DELAY = 15;
 const STUDENT = token("perf-student", false, STUDENT_ID);
 const ADMIN = token("perf-admin", false, ADMIN_ID);
 
-type Mod = { GET: (req: Request, ctx: { params: Promise<Record<string, string>> }) => Promise<Response> };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Mod = { GET: (req: Request, ctx: any) => Promise<Response> };
 type Case = { name: string; path: string; mod: () => Promise<Mod>; params?: Record<string, string>; admin?: boolean; /** Most JSON bytes allowed (before gzip). */ maxBytes?: number; /** Most round trips one after another (warm). */ maxDepth?: number };
 
 const CASES: Case[] = [

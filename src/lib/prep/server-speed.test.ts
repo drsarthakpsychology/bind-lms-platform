@@ -99,7 +99,8 @@ describe("loadAnswers", () => {
     const book = await loadAnswers("u1");
     expect(book.ready).toBe(true);
     expect(book.map.size).toBe(2500);
-    expect(calls.filter((c) => c.table === "prep_answers")).toHaveLength(4);
+    // The first page, then the next four together: two waits, not three.
+    expect(calls.filter((c) => c.table === "prep_answers")).toHaveLength(5);
   });
 });
 
