@@ -10,6 +10,7 @@ import { CAMPAIGNS_D } from "./campaigns-d";
 import { CAMPAIGNS_E } from "./campaigns-e";
 import { CAMPAIGNS_F } from "./campaigns-f";
 import { tags } from "./kit";
+import { withExtraOptions } from "./extra";
 import { hashString, makeRng, shuffle } from "../common";
 
 const o = (id: string, q: Quality, text: string, why: string, fx: Partial<Vars> = {}, set: string[] = []): WardOption => ({ id, q, text, why, fx, set });
@@ -540,7 +541,7 @@ function spread(c: Campaign): Campaign {
   return c;
 }
 
-export const CAMPAIGNS: Campaign[] = [pune, chennai, london, ...CAMPAIGNS_B, ...CAMPAIGNS_C, ...CAMPAIGNS_D, ...CAMPAIGNS_E, ...CAMPAIGNS_F].map(spread);
+export const CAMPAIGNS: Campaign[] = [pune, chennai, london, ...CAMPAIGNS_B, ...CAMPAIGNS_C, ...CAMPAIGNS_D, ...CAMPAIGNS_E, ...CAMPAIGNS_F].map(withExtraOptions).map(spread);
 
 export function campaignById(id: string): Campaign | undefined {
   return CAMPAIGNS.find((c) => c.id === id);
