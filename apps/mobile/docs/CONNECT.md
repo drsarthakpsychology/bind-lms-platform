@@ -7,36 +7,38 @@ part. It joins the area notes (`CONNECT-badmin.md`, `CONNECT-bauth.md`,
 Updated when the areas were joined (22 Nov 2026).
 
 Sample data always lives in a `mock.ts` (or `mock-data.json`) beside the
-screen and is marked. Admin screens on sample data also show the line "...
-shows sample data. It is not connected to the live site yet." (`MockNote`).
+screen and is marked. The admin side has none left.
 
 ## Admin
 
-Sample data: `src/admin/screens/mock.ts`. To connect a screen: swap
-`useSample(X)` for a query in `src/admin/api.ts`, remove its `MockNote`, and
-delete what it used from `mock.ts`.
+Nothing on the admin side runs on sample data any more (22 Nov 2026). The
+sample file and the "sample data" note are gone. Each screen below reads an
+admin-gated app route that reuses the website's own server code; writes are
+Super Admin only on the server. Client code: `src/admin/live.ts`. Browser
+build answers: `src/admin/mock-live.ts`.
 
-| Screen | File | Data it needs | Website code that has it |
+| Screen | File | Route | Website code it reuses |
 |---|---|---|---|
-| What is live (feature switches) | `src/admin/screens/switches.tsx` `SwitchesScreen` | Every feature switch with its state, a one-line description, its limit, who used it in 7 days. Writes: set state, set limit | `src/app/(dashboard)/admin/flags/page.tsx`, `flag-toggle.tsx`, `src/lib/flags.ts` |
-| Teaching hub | `src/admin/screens/teaching.tsx` `TeachingScreen` | Modules with students, finished count, sections, review date; practice sets with tries, average score, hardest topic; flagged and not reviewed counts | `content/`, `src/lib/study`, `learn_progress`, `answer_history`, `/admin/learning` |
-| Class results for a module | `teaching.tsx` `TeachingModuleScreen` | Per section: finished, average minutes, first-try checkpoint score, the most missed question | `learn_progress`, `answer_history`, `src/lib/insights/load.ts` |
-| Answer key (section or checkpoint) | `teaching.tsx` `AnswerKeyScreen` | Question, options, right option, explanation, first-try share, most picked wrong option. Writes: flag with a note, clear, mark reviewed | `src/lib/study`, `answer_history`; flag and review marks need a new table |
-| Practice set answer key | `teaching.tsx` `PracticeSetScreen` | The same for practice cases, games and mocks | `src/lib/practice/tools.ts`, `content/`, `prep_answers`, `games2_results` |
-| Learning insights | `src/admin/screens/insights.tsx` `InsightsScreen` | Active students per day, minutes per student, sections read, answers, first-try share, hardest topics, where students stop, who has gone quiet | `src/app/(dashboard)/admin/learning/page.tsx`, `loadLearningInsights` in `src/lib/insights/load.ts` |
-| Wall reports | `src/admin/screens/queues.tsx` `WallReportsScreen` | Reported posts with text, author, reporter, reason, time, state. Writes: keep, remove post | `src/app/(dashboard)/admin/wall-reports/page.tsx`, `wall-reports-list.tsx` |
-| Failed emails | `queues.tsx` `FailedEmailsScreen` | Failed sends for 7 days with address, name, subject, reason, tries. Writes: send one again, send all again | `src/app/(dashboard)/admin/emails/page.tsx` (`loadOpenFailures` in `src/lib/email/failed`), `failed-list.tsx`, `retry-actions.ts` |
-| Add a student | `src/admin/screens/access.tsx` `AddStudentScreen` | Cohort list. Write: create one or many students, cohort, access preset, send login link | `src/app/(dashboard)/admin/students/**`, `/admin/roster` |
-| Access for many | `access.tsx` `BulkAccessScreen` | Cohorts with counts. Writes: section switches for a cohort or picked students, full or lectures only, pause and resume | `src/app/(dashboard)/admin/access/access-manager.tsx`, `actions.ts`, `src/lib/access` |
-| Student page, Access tab, section switches | `access.tsx` `StudentSections` | This student's six section switches. Write: open or close one | as above, per student (`access_blocks`) |
-| Student page, Record tab | `access.tsx` `StudentRecord` | Study progress by module, weak areas, attendance totals, cases logged against the target | `learn_progress`, `answer_history`, clinic attendance and OPD logs |
+| Learning tab (every student, and whole class) | `src/admin/screens/learning.tsx` `LearningScreen` | `GET /admin/learning` | `loadRoster`, `learn_progress`, `computeLearningInsights` |
+| One student's learning, and the student page Learning tab | `learning.tsx` `LearnerScreen`, `StudentLearning` | `GET /admin/learning/:id` | as above |
+| Admins | `src/admin/screens/admins.tsx` | `GET /admin/admins`, `POST /admin/admins/:id/role` | profiles roles, admin audit log |
+| Failed emails (Send again, Clear, Clear all) | `src/admin/screens/queues.tsx` `FailedEmailsScreen` | `GET /admin/emails/failed`, `POST .../retry`, `POST .../clear` | `loadOpenFailures`, `retryFailedEmails`; Clear sets `dismissed_at` (2026_11_mail_clear.sql, already live) |
+| Wall reports | `queues.tsx` `WallReportsScreen` | `GET /admin/wall-reports`, `POST /admin/wall-reports/:id/close` | the website's resolve (the post stays) |
+| Features for students (was What is live) | `src/admin/screens/switches.tsx` | `GET /admin/switches`, `POST /admin/switches/:key` | `feature_flags`, as `/admin/flags` |
+| Add students | `src/admin/screens/access.tsx` `AddStudentScreen` | `POST /admin/students/add` | `addPeopleToCohort` |
+| Access for many | `access.tsx` `BulkAccessScreen` | `GET /admin/access`, `POST /admin/access` | `setScopeFor`, `setFeatureFor`, `setAccountStatus` |
+| Student page, Access tab switches | `access.tsx` `StudentSections` | `GET` and `POST /admin/students/:id/access` | as above, per student (`access_blocks`) |
 
-Now real: Leaderboard (`GET /leaderboards/:board`, every student, cohort,
-search, sort, pages) and Test mode (switch, open as test student, reset). The
-board rows carry no student id, so a row does not open the student page; add
-an id to the admin board rows to make that possible.
+Removed on purpose: the Teaching answer keys and class results per section
+(flags and review marks need a table the website does not have), the
+supervision Sign-offs tab (supervision is switched off on the website; the
+code is kept as `SupervisionSignOffs` in `review.tsx`), the Learning insights
+screen (its real numbers are the Learning tab's Whole class view; old links
+land there), attendance and cases on the student Record tab (attendance is
+in Clinic trackers).
 
-Not built on purpose: uploading or editing courses and lectures.
+Still waiting: the leaderboard rows carry no student id, so a row does not
+open the student page. Not built on purpose: uploading or editing courses and lectures.
 
 ## Signing in and first run
 
