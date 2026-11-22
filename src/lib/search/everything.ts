@@ -126,7 +126,7 @@ function buildContent(): Doc[] {
   // Quick Notes: names, headings and the facts strip, so "lithium level" or "Hoover" finds the note.
   for (const n of QUICK_NOTES) {
     const v = quickNoteView(n);
-    out.push(doc({ id: `note:${n.id}`, type: "note", gate: "notes", title: n.title, meta: `Quick Note · ${v.typeLabel}`, keywords: [...(n.aka ?? []), ...(n.keywords ?? []), ...v.sections.map((s) => s.title), ...v.facts.map((f) => f.value)], href: `/study/notes/${e(n.id)}`, app: `/notes/${e(n.id)}`, boost: 2 }));
+    out.push(doc({ id: `note:${n.id}`, type: "note", gate: "notes", title: n.title, meta: `Quick Note · ${v.typeLabel}`, keywords: [...(n.aka ?? []), ...(n.keywords ?? []), ...v.sections.map((s) => s.title), ...v.facts.map((f) => f.value)], href: `/study/notes/${e(n.id)}`, app: "/notes/" + e(n.id), boost: 2 }));
   }
   for (const m of MEDS) {
     out.push(doc({ id: `medicine:${m.id}`, type: "medicine", gate: "medicines", title: m.name, meta: m.cls, keywords: [...m.brands, m.cls, ...m.uses], href: `/practice/medicines/${e(m.id)}`, app: `/medicine/${e(m.id)}`, boost: 1 }));
