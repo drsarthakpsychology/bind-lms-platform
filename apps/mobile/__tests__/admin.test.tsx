@@ -247,7 +247,7 @@ describe("admin screens as a Super Admin", () => {
     params.mockReturnValue({ id: "u6", tab: "access" });
     await render(<AdminStudentScreen />);
     await screen.findByText("Arjun Nair");
-    await fireEvent.press(screen.getByTestId("access-link"));
+    await fireEvent.press(await screen.findByTestId("access-link"));
     expect(await screen.findByTestId("link-sheet")).toBeTruthy();
     expect(screen.getByText(/has it by email/)).toBeTruthy();
     await fireEvent.press(screen.getByTestId("access-phone"));
