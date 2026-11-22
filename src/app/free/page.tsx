@@ -100,7 +100,7 @@ export default function FreeHub() {
               <span className={s.cardMeta}>For students</span>
               <span className={s.cardTitle}>Want to learn how clinicians use these?</span>
               <span className={s.cardText}>
-                VIBHA&apos;s 16-week programme teaches assessment, diagnosis and treatment planning with real patients.
+                VIBHA&apos;s programme teaches assessment, diagnosis and treatment planning with real patients.
               </span>
               <span className={s.cardGo}>See the programme →</span>
             </Link>
