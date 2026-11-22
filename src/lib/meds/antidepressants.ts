@@ -258,7 +258,7 @@ export const ANTIDEPRESSANTS: Med[] = [
     doses: [
       { amount: "150 mg", label: "Start", use: "Depression; smoking cessation", student: "Taken in the morning. For quitting smoking, start 1 to 2 weeks before the quit date.", clinician: "150 mg SR in the morning for 3 to 7 days, then 300 mg (as 150 mg twice, 8 hours apart, last dose before late afternoon).", watch: ["Insomnia", "Dry mouth", "Anxiety"] },
       { amount: "300 mg", label: "Usual dose", use: "Depression; smoking cessation", student: "The usual working dose, split into two doses during the day.", clinician: "300 mg/day is the standard maintenance and cessation dose.", watch: ["Insomnia", "Raised BP", "Tremor"] },
-      { amount: "450 mg", label: "Maximum (depression)", use: "Partial response", student: "The top dose for depression. The risk of a fit rises with each step up, so it is never exceeded.", clinician: "Maximum 450 mg/day; no single dose above 150 to 200 mg (SR). Seizure risk rises steeply with dose.", watch: ["Seizures", "Agitation"] },
+      { amount: "400 mg", label: "Maximum (depression)", use: "Partial response", student: "The top dose of the sustained-release tablets, split into two doses. The risk of a fit rises with each step up, so it is never exceeded.", clinician: "Sustained-release maximum 400 mg/day as 200 mg twice daily, at least 8 hours apart; no single dose above 200 mg. (The once-daily extended-release form goes up to 450 mg.) Seizure risk rises steeply with dose.", watch: ["Seizures", "Agitation"] },
     ],
     defaultDose: 1,
     common: ["Insomnia", "Dry mouth", "Headache", "Anxiety, tremor", "Loss of appetite"],

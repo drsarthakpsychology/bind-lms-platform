@@ -517,7 +517,7 @@ function RevealBody({ v }: { v: Reveal }) {
           ))}
         </dl>
         <DoseBox dose={v.dose} />
-        <Receptor d={{ receptor: v.receptor, title: `${v.name} at ${v.receptor}`, caption: v.line }} />
+        <Receptor d={{ receptor: v.receptor, title: `What happens at ${v.receptor}`, caption: v.line }} />
       </div>
     );
   }

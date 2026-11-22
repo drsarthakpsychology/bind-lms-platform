@@ -356,13 +356,13 @@ export const PART: PrepQuestion[] = [
     stem: "As of November 2026, what is the status of psilocybin (COMP360) for treatment-resistant depression in the USA?",
     options: [
       "Approved in 2025 and now widely prescribed by psychiatrists",
-      "Not yet approved; a rolling application is nearing completion",
+      "Not yet approved; the application is under FDA review",
       "Abandoned after failing all of its phase 3 trials",
       "Approved only as an over-the-counter dietary supplement",
     ],
     answer: 1,
     explanation:
-      "After two positive phase 3 trials, the developer reported in November 2026 that its rolling application to the FDA was nearing completion, with launch hoped for in 2027 if approved; psilocybin is not FDA approved. It was not approved in 2025. It did not fail all phase 3 trials. It is a Schedule I substance, not a supplement; some US states run regulated non-medical psilocybin services, which are separate from FDA approval.",
+      "After two positive phase 3 trials, the developer completed its application to the FDA in November 2026, with launch hoped for in 2027 if approved; psilocybin is not FDA approved. It was not approved in 2025. It did not fail all phase 3 trials. It is a Schedule I substance, not a supplement; some US states run regulated non-medical psilocybin services, which are separate from FDA approval.",
     module: "frontiers",
     ref: "Company quarterly report, November 2026",
   }),

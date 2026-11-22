@@ -149,7 +149,7 @@ Diagnosis needs evidence of childhood symptoms (old school reports, a parent's a
 
 **Regulation in India**: methylphenidate is a controlled psychotropic substance under the NDPS framework; prescriptions should be precise and stocks limited. Lisdexamfetamine and mixed amphetamine salts are not marketed.
 
-**As of Nov 2026**: centanafadine, a once-daily serotonin, noradrenaline and dopamine reuptake inhibitor, received US FDA approval in mid-2026 for ADHD from age 6 and in adults (controlled-substance scheduling pending at approval); it is not available in India. In mid-2024 the FDA asked for labelling on long-term weight and growth effects of stimulants in children under 6. Global stimulant supply shortages in 2022 to 2025 led many services to plan non-stimulant alternatives.
+**As of Nov 2026**: centanafadine, a once-daily serotonin, noradrenaline and dopamine reuptake inhibitor, received US FDA approval in July 2026 for ADHD from age 6 and in adults (controlled-substance scheduling pending at approval); it is not available in India. In mid-2024 the FDA asked for labelling on long-term weight and growth effects of stimulants in children under 6. Global stimulant supply shortages in 2022 to 2025 led many services to plan non-stimulant alternatives.
 :::
 
 :::recall

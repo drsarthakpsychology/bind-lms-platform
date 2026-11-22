@@ -29,7 +29,7 @@ export type Med = {
   tell: string[];
   related: string[];
 };
-export type Mechanism = { plain: string; targets: { target: string; action: string; effect: string }[]; receptor: { name: string; pick: "Full agonist" | "Partial agonist" | "Antagonist" | "Inverse agonist"; note: string }; routes: string[]; site: string };
+export type Mechanism = { plain: string; targets: { target: string; action: string; effect: string }[]; receptor: { name: string; pick: "Full agonist" | "Partial agonist" | "Antagonist" | "Inverse agonist"; note: string; messenger?: string }; routes: string[]; site: string };
 export type MedVisual = { kind: string; data: Record<string, unknown>; half?: { hl: string; meaning: string } };
 export type HalfLife = { hl: string; meaning: string };
 

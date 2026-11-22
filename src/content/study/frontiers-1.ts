@@ -186,7 +186,7 @@ Here is the whole module on one board. Each item gets one of five honest labels.
 | Esketamine nasal spray for treatment-resistant depression | **Approved** (USA, Europe and others) |
 | Ketamine infusions for depression | **Mixed**: evidence of rapid effect, used off-label, not licensed for depression |
 | MDMA-assisted therapy for PTSD | **Not approved**: FDA declined in August 2024; the developer refiled in August 2026 without a new phase 3 trial; no decision yet |
-| Psilocybin for treatment-resistant depression (COMP360) | **Promising, in late trials**: two positive phase 3 trials; US application being filed |
+| Psilocybin for treatment-resistant depression (COMP360) | **Promising, under review**: two positive phase 3 trials; the US application was completed in November 2026 and is under FDA review |
 | Xanomeline-trospium (Cobenfy) for schizophrenia | **Approved** in the USA in September 2024; failed as an add-on trial |
 | Zuranolone for postpartum depression | **Approved** for postpartum depression only, in the USA (2023) and the EU (2025) |
 | GLP-1 medicines and mental health | **Mixed**: no suicide signal found; early trials for alcohol use are promising |
@@ -532,7 +532,7 @@ The phase 3 trials MAPP1 (2021) and MAPP2 (2023) reported large between-group ef
 1. What does "psychedelic-assisted therapy" mean? || A drug given once or a few times under supervision, together with structured psychological support.
 2. What did the FDA decide about MDMA for PTSD in August 2024? || It declined to approve and asked for another phase 3 trial.
 3. Which receptor does psilocybin mainly act on? || The serotonin 2A receptor.
-4. What is the status of COMP360 psilocybin as of November 2026? || Two positive phase 3 trials; a rolling FDA application due to be completed by end-2026; not yet approved.
+4. What is the status of COMP360 psilocybin as of November 2026? || Two positive phase 3 trials; the FDA application was completed in November 2026 and is under review; not yet approved.
 5. What is the legal status of psilocybin and MDMA in India? || Controlled under the NDPS Act; illegal outside licensed research.
 :::
 
@@ -858,7 +858,7 @@ Q: Psilocybin acts mainly on:
 Q: As of November 2026, COMP360 psilocybin is:
 - Approved in the USA
 - Approved in India
-- *Supported by two positive phase 3 trials, with an FDA application being completed
+- *Supported by two positive phase 3 trials, with an FDA application under review
 - Abandoned after failure
 > Promising, not yet approved.
 

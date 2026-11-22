@@ -9,13 +9,17 @@ import type { Mechanism } from "./meds";
 /** The receptor action of a medicine, drawn in the hand-drawn ink (the other pictures are in med-diagrams.tsx). */
 const W = 320;
 
-/** Where the receptor sits between "turned off" and "fully on". */
-export function ReceptorScale({ r }: { r: Mechanism["receptor"] }) {
+/**
+ * Where the receptor sits between "turned off" and "fully on". With `who` the line names
+ * who is acting there: the medicine when it binds the receptor itself, or the body's own
+ * messenger when the medicine does not (then the medicine's name never appears).
+ */
+export function ReceptorScale({ r, who }: { r: Mechanism["receptor"]; who?: string }) {
   const c = useTheme();
   const steps = ["Inverse agonist", "Antagonist", "Partial agonist", "Full agonist"] as const;
   const at = steps.indexOf(r.pick);
   return (
-    <WidgetFrame label="Diagram" title={`At ${r.name}: ${r.pick.toLowerCase()}`} caption={r.note} testID="d-receptor">
+    <WidgetFrame label="Diagram" title={who ? `${who} at ${r.name}: ${r.pick.toLowerCase()}` : `At ${r.name}: ${r.pick.toLowerCase()}`} caption={r.note} testID="d-receptor">
       <SketchSheet name={`receptor-${r.pick}`} w={W} h={120} label={`${r.name}: ${r.pick}. From below normal activity to fully on.`}>
         <L k="rs-axis" x1={24} y1={70} x2={296} y2={70} sw={2} />
         {steps.map((st, i) => {

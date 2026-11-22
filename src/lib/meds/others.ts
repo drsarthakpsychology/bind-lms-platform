@@ -39,7 +39,7 @@ export const STABILISERS: Med[] = [
     cls: "Mood stabiliser and anticonvulsant",
     forms: "Tablets 200, 300, 500 mg (CR, ER)",
     student: "A strong medicine for mania, mixed states and rapid cycling, and for epilepsy. It must be avoided in girls and women who could become pregnant because it can harm a developing baby.",
-    clinician: "Multiple actions: sodium channel, GABA increase, HDAC inhibition. Target level 50 to 125 mcg/mL in mania. Teratogenic (neural tube defects, lower IQ, autism): avoid in women of childbearing potential unless a pregnancy prevention programme is in place. Hepatotoxicity, pancreatitis, thrombocytopenia, hyperammonaemia.",
+    clinician: "Multiple actions: sodium channel, GABA increase, HDAC inhibition. Target level 50 to 125 mcg/mL in mania. Teratogenic (neural tube defects, lower IQ, autism). UK rules (MHRA, from January 2024): not started in anyone, male or female, under 55 unless two specialists independently agree there is no other effective or tolerated treatment; girls and women able to have children follow a pregnancy prevention programme; men are advised to use effective contraception, with their partner, during treatment and for 3 months after stopping. Rules in India may differ; follow the prescriber and local guidance. Hepatotoxicity, pancreatitis, thrombocytopenia, hyperammonaemia.",
     standout: ["Good for mixed states and rapid cycling", "Avoid in girls and women who could become pregnant", "Weight gain and hair loss are common complaints"],
     uses: ["Acute mania and mixed states", "Bipolar maintenance", "Epilepsy", "Migraine prevention"],
     doses: [
@@ -52,8 +52,12 @@ export const STABILISERS: Med[] = [
     serious: ["Birth defects and lower IQ in exposed babies", "Liver failure (rare)", "Pancreatitis", "Low platelets", "High ammonia (confusion)", "Polycystic ovaries"],
     checks: ["Pregnancy status and contraception", "Liver tests and blood count at baseline and in the first 6 months", "Weight"],
     interactions: ["Doubles lamotrigine levels", "Carbamazepine lowers valproate", "Aspirin raises free valproate"],
-    groups: [{ label: "Girls and women of childbearing age", text: "Avoid unless no alternative, with a pregnancy prevention plan." }],
-    tell: ["Use reliable contraception and tell us if you plan pregnancy", "Report tummy pain, vomiting or yellow eyes"],
+    groups: [
+      { label: "Girls and women who could become pregnant", text: "Avoid unless there is no other option, and then only with a pregnancy prevention plan." },
+      { label: "Men", text: "There may be a small risk to children fathered while taking it. UK advice: use effective contraception, with the partner, during treatment and for 3 months after stopping." },
+      { label: "Anyone under 55 starting it", text: "UK rules: two specialists must agree there is no other effective or tolerated treatment first. Rules in India may differ; follow the prescriber." },
+    ],
+    tell: ["Use reliable contraception and tell us if you plan pregnancy", "Men: use contraception during treatment and for 3 months after stopping", "Do not stop it suddenly without advice", "Report tummy pain, vomiting or yellow eyes"],
     related: ["lithium", "carbamazepine", "lamotrigine"],
   },
   {

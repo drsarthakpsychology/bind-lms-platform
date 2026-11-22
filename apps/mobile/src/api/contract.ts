@@ -737,7 +737,8 @@ export type LayersData = { title?: Inline; shape: "pyramid" | "rings" | "stack" 
 export type BrainMapData = { title?: Inline; focus?: string[]; notes?: Record<string, Inline>; caption?: Inline };
 export type JourneyData = { drug: string; target: string; route?: "oral" | "iv" | "nasal" | "depot"; routes?: ("oral" | "iv" | "nasal" | "depot")[]; notes?: Record<string, Inline>; title?: Inline; caption?: Inline };
 export type NeuronData = { title?: Inline; myelinated?: boolean; caption?: Inline };
-export type PathwaysData = { system: "dopamine"; title?: Inline; caption?: Inline };
+/** `start`: the state a medicine page opens on; "partial" (a D2 partial agonist such as aripiprazole) also adds that choice. */
+export type PathwaysData = { system: "dopamine"; title?: Inline; caption?: Inline; start?: "none" | "d2" | "d2-2a" | "partial" };
 export type ReceptorData = { receptor?: string; title?: Inline; caption?: Inline };
 export type ConditioningData = { kind: "classical" | "operant"; title?: Inline; caption?: Inline };
 export type MemoryFlowData = { title?: Inline; caption?: Inline };

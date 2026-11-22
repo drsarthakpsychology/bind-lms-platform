@@ -111,7 +111,7 @@ const RX: RxKey[] = [
   {
     pub: { title: "Name the chain", kind: "chain", name: "Lithium", brands: ["Licab", "Lithosun"], steps: [["Mood stabiliser", "SSRI", "Antipsychotic", "Benzodiazepine"], ["Calms overactive signalling inside the cell", "Blocks serotonin reuptake", "Blocks D2 receptors", "Opens GABA-A channels"], ["Tremor and toxicity when levels rise", "Weight loss", "Tardive dyskinesia", "Dependence"], ["Blood level, kidneys and thyroid", "Liver only", "Blood count only", "Nothing routine"]] },
     correct: ["Mood stabiliser", "Calms overactive signalling inside the cell", "Tremor and toxicity when levels rise", "Blood level, kidneys and thyroid"],
-    reveal: { kind: "chain", name: "Lithium", values: ["Mood stabiliser", "Calms overactive signalling inside the cell", "Tremor and toxicity when levels rise", "Blood level, kidneys and thyroid"], dose: "By blood level: 0.6 to 1.0 mmol/L", receptor: "Inside the cell (GSK-3, inositol)", line: "A narrow safe window: dehydration, ibuprofen and some blood pressure medicines push the level up." },
+    reveal: { kind: "chain", name: "Lithium", values: ["Mood stabiliser", "Calms overactive signalling inside the cell", "Tremor and toxicity when levels rise", "Blood level, kidneys and thyroid"], dose: "By blood level: usually 0.6 to 0.8 mmol/L", receptor: "Inside the cell (GSK-3, inositol)", line: "A narrow safe window: dehydration, ibuprofen and some blood pressure medicines push the level up." },
     page: { id: "lithium", name: "Lithium" },
   },
   {
