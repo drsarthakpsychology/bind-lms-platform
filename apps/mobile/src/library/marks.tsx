@@ -23,10 +23,10 @@ const LOOK: Record<string, { fill: "brand" | "ink" | "primary" | "wash" | "soft"
  * edge. Used in lists, where a small square read as a checkbox (in dark
  * above all). The square stays for inline marks next to a word.
  */
-export function ClassMark({ group, size = 12, spine }: { group: string; size?: number; spine?: boolean }) {
+export function ClassMark({ group, size = 12, spine, onField }: { group: string; size?: number; spine?: boolean; /** On the blue field: a white ring so every look stays visible. */ onField?: boolean }) {
   const c = useTheme();
   const l = LOOK[group] ?? { fill: "none", ring: true };
   const bg = l.fill === "brand" ? c.accent : l.fill === "ink" ? c.ink : l.fill === "primary" ? c.primary : l.fill === "wash" ? c.sk.wash : l.fill === "soft" ? c.sk.soft : "transparent";
   if (spine) return <View accessible={false} importantForAccessibility="no" style={{ width: 6, height: 32, borderRadius: 3, backgroundColor: bg, borderWidth: l.ring ? 1.5 : 0, borderColor: c.dark ? c.muted : c.ink }} />;
-  return <View accessible={false} importantForAccessibility="no" style={{ width: size, height: size, borderRadius: 3, backgroundColor: bg, borderWidth: l.ring ? 1.5 : 0, borderColor: c.ink }} />;
+  return <View accessible={false} importantForAccessibility="no" style={{ width: size, height: size, borderRadius: 3, backgroundColor: bg, borderWidth: onField || l.ring ? 1.5 : 0, borderColor: onField ? c.onField : c.ink }} />;
 }
