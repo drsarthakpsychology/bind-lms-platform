@@ -31,8 +31,11 @@ export type AttendState =
   | "done"
   /** Scanned in, never out: kept as "no scan out", not invented. */
   | "no_out"
+  /** Came, and left early with approved leave: never lowers the percent. */
+  | "left_early"
   /** Required, over, no scan and no approved leave. */
   | "missed"
+  /** Approved leave, or an assigned OPD day missed (counted as a leave): left out of the percent. */
   | "leave"
   | "cancelled";
 
@@ -54,7 +57,7 @@ export type ClinicSession = {
   /** OPD sessions: which batch. */
   batch: Batch | null;
   /** For a student, when it is theirs (a compulsory class or an OPD day they are assigned to): their state. */
-  mine: { state: AttendState; inAt: string | null; outAt: string | null; late: boolean; leaveAt: string | null } | null;
+  mine: { state: AttendState; inAt: string | null; outAt: string | null; late: boolean; leaveAt: string | null; /** On leave because an assigned OPD day was missed. */ missedOpd?: boolean } | null;
 };
 
 /* ------------------------------------------------------------ student */
@@ -149,16 +152,23 @@ export type OpdPage = {
 };
 
 export type MyAttendance = {
-  /** Required sessions attended of those due (leave left out); null before the first. */
+  /** came / counted (sessions on leave are in neither); null before the first. */
   pct: number | null;
+  /** Came on time. */
   present: number;
+  /** Came and left early with approved leave. */
+  leftEarly: number;
+  /** The top number of the percent: sessions that count which the student came to. */
+  came: number;
+  /** The bottom number: required sessions that are over, leave left out. */
+  counted: number;
   late: number;
   missed: number;
   onLeave: number;
   noOut: number;
   total: number;
   minutes: number;
-  rows: { sessionId: string; date: string; title: string; kind: SessionKind; state: AttendState; inAt: string | null; outAt: string | null; late: boolean }[];
+  rows: { sessionId: string; date: string; title: string; kind: SessionKind; state: AttendState; inAt: string | null; outAt: string | null; late: boolean; missedOpd?: boolean }[];
 };
 
 /* -------------------------------------------------------------- admin */
@@ -169,7 +179,7 @@ export type AdminSession = ClinicSession & { counts: SessionCounts };
 
 export type AdminClinicToday = { cohorts: Ref[]; cohortId: string | null; date: string; note: string | null; sessions: AdminSession[]; pendingLeaves: number; logsDue: number; canWrite: boolean };
 
-export type RosterState = "in" | "out" | "missing" | "leave" | "no_out";
+export type RosterState = "in" | "out" | "missing" | "leave" | "no_out" | "left_early";
 export type RosterRow = { studentId: string; name: string; state: RosterState; inAt: string | null; outAt: string | null; late: boolean; manual: boolean; note: string | null; leaveAt: string | null };
 export type AdminSessionDetail = { session: AdminSession; roster: RosterRow[]; /** Scanning is open now. */ open: boolean; lateMinutes: number };
 /** Mark by hand: present (in), left (out), or clear the scans. */
@@ -193,6 +203,7 @@ export type ClinicStudent = {
   extras: number;
   casesDone: number;
   visits: number;
+  /** OPD days missed or logged absent: each is counted as a leave, never an absence. */
   absences: number;
   attendancePct: number | null;
   /** OPD visits over with no case log. */

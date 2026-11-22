@@ -1367,7 +1367,19 @@ export type ClinicMySession = ClinicSession & {
   assigned: boolean;
   /** Scanning is accepted now (30 minutes before start to 60 minutes after end). */
   open: boolean;
-  my: { status: ClinicMyStatus; inAt: string | null; outAt: string | null; late: boolean; minutes: number | null; leaveId: string | null; earlyLeaveAt: string | null };
+  my: {
+    status: ClinicMyStatus;
+    inAt: string | null;
+    outAt: string | null;
+    late: boolean;
+    minutes: number | null;
+    leaveId: string | null;
+    earlyLeaveAt: string | null;
+    /** How it counts (Present, Late, On leave, Absent, Left early (approved)); null when it does not count. */
+    mark?: "present" | "late" | "on_leave" | "absent" | "left_early" | null;
+    /** On leave because the assigned OPD day was missed (counted as one leave). */
+    missedOpd?: boolean;
+  };
 };
 
 export type ClinicDay = { date: string; note: string | null; sessions: ClinicMySession[] };
@@ -1454,9 +1466,21 @@ export type ClinicAttendanceSummary = {
   onLeave: number;
   absent: number;
   noScanOut: number;
-  /** Required sessions attended / (required - onLeave), 0 to 100; null when nothing is due yet. `attended` also counts sessions joined that were not required. */
+  /**
+   * countedPresent / counted, 0 to 100; null when nothing counted yet. Sessions on
+   * approved leave (and missed OPD days counted as a leave) are in neither number.
+   * Approved early leave counts as came. `attended` also counts sessions joined that were not required.
+   */
   percent: number | null;
   minutes: number;
+  /** The bottom number of the percentage: required sessions that are over, leave left out. */
+  counted: number;
+  /** The top number: of those, the ones the student came to (present, late, left early). */
+  countedPresent: number;
+  /** Came on time (not late, not left early). */
+  present: number;
+  /** Came and left early with approved leave. */
+  leftEarly: number;
 };
 export type ClinicMyAttendance = { v: 1; cohortId: string | null; summary: ClinicAttendanceSummary; sessions: ClinicMySession[] };
 
@@ -1593,6 +1617,10 @@ export type ClinicAttendanceRow = {
   manual: boolean;
   note: string | null;
   earlyLeaveAt: string | null;
+  /** How it counts: Present, Late, On leave, Absent, Left early (approved); null when it does not count. */
+  mark?: "present" | "late" | "on_leave" | "absent" | "left_early" | null;
+  /** On leave because the assigned OPD day was missed (counted as one leave). */
+  missedOpd?: boolean;
 };
 /** GET /clinic/admin/sessions/:id/attendance */
 export type ClinicLiveAttendance = {
