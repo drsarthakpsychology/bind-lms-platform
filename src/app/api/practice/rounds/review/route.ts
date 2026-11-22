@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimitWrite } from "@/lib/rate-limit";
 import { reviewCard, type CardRating } from "@/lib/practice/rounds";
 
@@ -22,10 +22,9 @@ const schema = z.object({
 /**
  * POST /api/practice/rounds/review: persist a Rounds card rating.
  * Computes the next FSRS state server-side and upserts the user's
- * card_reviews row (unique card+user). Owner-scoped; RLS enforces it.
+ * card_reviews row (unique card+user). Written with the server key for the signed-in student only.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/practice/rounds", flag: "rounds" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -40,7 +39,8 @@ export async function POST(req: Request) {
 
   const next = reviewCard(parsed.data.current, parsed.data.rating as CardRating);
 
-  const { error } = await supabase
+  // Written by the server only, for the signed-in student (2026_11_22_status.sql).
+  const { error } = await createAdminClient()
     .from("card_reviews")
     .upsert(
       {

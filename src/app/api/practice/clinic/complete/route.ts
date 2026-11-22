@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
 import { istToday, nextDay } from "@/lib/practice/streaks";
 import { rateLimitWrite } from "@/lib/rate-limit";
 
@@ -12,7 +12,6 @@ export const runtime = "nodejs";
  * hub reads), so the daily habit keeps the streak alive.
  */
 export async function POST() {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/practice/two-minute-clinic", flag: "two_minute_clinic" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -22,6 +21,8 @@ export async function POST() {
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
 
   const today = istToday();
+  // Streaks are written by the server only, for the signed-in student (2026_11_22_status.sql).
+  const supabase = createAdminClient();
 
   const { data: existing } = await supabase
     .from("streaks")

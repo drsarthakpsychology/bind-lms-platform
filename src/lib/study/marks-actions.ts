@@ -10,6 +10,7 @@
  * browser copy carries on alone, with nothing shown to the student.
  */
 import { createClient } from "@/lib/supabase/server";
+import { activeUserId } from "@/lib/auth/active";
 import { NOTE_MAX, PUSH_MAX, rowsToMarks, rowsToWrite, type Marks } from "./marks";
 
 export type PullResult = { ok: true; marks: Marks } | { ok: false; off: boolean };
@@ -32,10 +33,8 @@ function tableMissing(error: { code?: string; message?: string } | null): boolea
 
 async function session() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  return { supabase, userId: user?.id ?? null };
+  // Every account rule applies (paused, ended, other device, lectures-only).
+  return { supabase, userId: await activeUserId({ full: true }) };
 }
 
 /** Every bookmark and note this student has saved on the server. */

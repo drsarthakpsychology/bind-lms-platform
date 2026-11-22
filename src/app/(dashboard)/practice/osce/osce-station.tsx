@@ -7,7 +7,9 @@ import { showEndReaction } from "@/components/reactions/store";
 import { moodForScore } from "@/lib/reactions/stickers";
 import { ArrowRight, Mic, Square, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
-import { SEED_OSCE_STATIONS, scoreOsce, type OsceStation } from "@/lib/practice/osce";
+import type { OsceStation } from "@/lib/practice/osce";
+import type { OsceCard } from "@/lib/practice/osce-cards";
+import { loadOsceStation } from "./actions";
 import { createWebStt, webSttSupported } from "@/lib/voice/stt";
 import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { noteAnswer, useHistoryPrefetch, useToolHistory } from "@/lib/history/client";
@@ -23,14 +25,23 @@ type SavedStation = { phase: "active" | "selfassess"; seconds: number; checked: 
 /** The old single-slot snapshot (cleared on sight). */
 const OLD_KEY = "osce:in-flight";
 const PAGE = 20;
-const level = (s: OsceStation) => s.tags?.difficulty ?? 0;
+const level = (s: OsceCard) => s.level;
+/** Ticked items by weight (the shown score; the saved one is worked out on the server). */
+const checklistScore = (list: Array<{ done: boolean; weight?: number }>) => {
+  const total = list.reduce((a, c) => a + (c.weight ?? 1), 0);
+  return total ? list.reduce((a, c) => a + (c.done ? (c.weight ?? 1) : 0), 0) / total : 0;
+};
 /** A moment `ms` from now (only called from event handlers). */
 const inMs = (ms: number) => Date.now() + ms;
 
 const NO_CASES: CaseContext = { student: "", history: [], progress: { owner: null, rows: [] }, now: 0 };
 
-export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
-  const [stationId, setStationId] = React.useState<string>(SEED_OSCE_STATIONS[0].id);
+export function OsceStationView({ cards, cases = NO_CASES }: { cards: OsceCard[]; cases?: CaseContext }) {
+  // Only the open station is in the browser, fetched from the server when it is opened.
+  const [station, setStation] = React.useState<OsceStation | null>(null);
+  const stationId = station?.id ?? "";
+  const [opening, setOpening] = React.useState<string | null>(null);
+  const [openError, setOpenError] = React.useState(false);
   useHistoryPrefetch("osce");
   const history = useToolHistory("osce", cases.history);
   const progress = useCaseProgress("osce", cases.progress);
@@ -88,9 +99,8 @@ export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
   }
 
   // Fresh-case order (src/lib/cases/fresh.ts): half done, new this week, new, done last.
-  const arranged = arrangeCases(SEED_OSCE_STATIONS, (x) => x.id, { history, now: cases.now, student: cases.student, started: progress.started, level });
-  const station = SEED_OSCE_STATIONS.find((x) => x.id === stationId) ?? SEED_OSCE_STATIONS[0];
-  const stationNumber = SEED_OSCE_STATIONS.indexOf(station) + 1;
+  const arranged = arrangeCases(cards, (x) => x.id, { history, now: cases.now, student: cases.student, started: progress.started, level });
+  const stationNumber = cards.find((c) => c.id === stationId)?.number ?? 0;
 
   React.useEffect(() => {
     if (phase !== "active") return;
@@ -105,10 +115,24 @@ export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
     return () => clearTimeout(t);
   }, [phase, deadline]);
 
-  function start(id: string) {
+  /** The full station from the server, or null (shown as a short error on the list). */
+  async function fetchStation(id: string): Promise<OsceStation | null> {
+    setOpening(id);
+    setOpenError(false);
+    let st: OsceStation | null = null;
+    try {
+      st = await loadOsceStation(id);
+    } catch {
+      st = null;
+    }
+    setOpening(null);
+    if (!st) setOpenError(true);
+    return st;
+  }
+
+  function start(st: OsceStation) {
     startHowTo("osce");
-    const st = SEED_OSCE_STATIONS.find((x) => x.id === id) ?? SEED_OSCE_STATIONS[0];
-    setStationId(st.id);
+    setStation(st);
     setSeconds(0);
     setChecked({});
     setDone(false);
@@ -121,12 +145,14 @@ export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
   }
 
   /** Open a station: where it was left if it is half done, else from the start. */
-  function open(id: string) {
+  async function open(id: string) {
+    if (opening) return;
+    const st = await fetchStation(id);
+    if (!st) return;
     const saved = progress.get<SavedStation>(id);
-    const st = SEED_OSCE_STATIONS.find((x) => x.id === id);
-    if (!st || !saved || (saved.phase !== "active" && saved.phase !== "selfassess")) return start(id);
+    if (!saved || (saved.phase !== "active" && saved.phase !== "selfassess")) return start(st);
     startHowTo("osce");
-    setStationId(st.id);
+    setStation(st);
     setSeconds(Math.max(0, Math.floor(saved.seconds) || 0));
     setChecked(saved.checked && typeof saved.checked === "object" ? saved.checked : {});
     setSelfGlobal(Number(saved.selfGlobal) || 0);
@@ -145,24 +171,30 @@ export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
 
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
   const ss = String(seconds % 60).padStart(2, "0");
-  const checklistWithDone = station.checklist.map((c) => ({ ...c, done: !!checked[c.item] }));
-  const frac = scoreOsce(checklistWithDone);
-  // The same 60/40 composite the persistence helper stores (buildOsceAttemptPayload).
-  const normalizedGlobal = station.global_rating.max ? selfGlobal / station.global_rating.max : 0;
+  const checklistWithDone = (station?.checklist ?? []).map((c) => ({ ...c, done: !!checked[c.item] }));
+  const frac = checklistScore(checklistWithDone);
+  // The same 60/40 composite the server stores (scoreStation).
+  const normalizedGlobal = station?.global_rating.max ? selfGlobal / station.global_rating.max : 0;
   const composite = Math.round((frac * 0.6 + normalizedGlobal * 0.4) * 100) / 100;
 
-  if (phase === "choose") {
+  if (phase === "choose" || !station) {
     const next = arranged.list.find((x) => x.mark !== "started") ?? arranged.list[0];
     return (
       <div className="space-y-3">
         {arranged.recycled ? <RecycleNote /> : null}
+        {openError ? (
+          <p role="alert" className="rounded-md border-2 border-border bg-card p-3 text-small">
+            That station did not open. Check your connection and tap it again.
+          </p>
+        ) : null}
         {next ? (
           <button
             type="button"
-            onClick={() => open(next.id)}
+            onClick={() => void open(next.id)}
+            disabled={opening !== null}
             className="flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border-2 border-foreground bg-primary p-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
-            Next station: {next.item.title} <ArrowRight className="size-4" aria-hidden />
+            {opening === next.id ? "Opening..." : `Next station: ${next.item.title}`} <ArrowRight className="size-4" aria-hidden />
           </button>
         ) : null}
         <ul className="space-y-3">
@@ -170,17 +202,19 @@ export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
             <li key={s.id}>
               <button
                 type="button"
-                onClick={() => open(s.id)}
+                onClick={() => void open(s.id)}
+                disabled={opening !== null}
+                aria-busy={opening === s.id}
                 className={`w-full rounded-lg border-2 bg-card p-5 text-left transition-transform active:translate-y-px active:hard-shadow-none ${mark === "done" && !arranged.recycled ? "border-border" : "border-border hard-shadow-sm"}`}
               >
                 <span className="flex items-start justify-between gap-2">
-                  <span className="text-eyebrow text-muted-foreground">Station {SEED_OSCE_STATIONS.indexOf(s) + 1}</span>
+                  <span className="text-eyebrow text-muted-foreground">Station {s.number}</span>
                   <CaseMarkTag mark={mark} />
                 </span>
                 <span className="block text-base font-semibold">{s.title}</span>
                 <span className="mt-1 block text-small text-muted-foreground">{s.task}</span>
                 <span className="mt-2 inline-flex items-center gap-1 text-caption text-muted-foreground">
-                  <Timer className="size-3.5" aria-hidden /> {mark === "started" ? "Carry on" : `${Math.round(s.duration_seconds / 60)} minutes`}
+                  <Timer className="size-3.5" aria-hidden /> {opening === s.id ? "Opening..." : mark === "started" ? "Carry on" : `${Math.round(s.duration_seconds / 60)} minutes`}
                 </span>
               </button>
             </li>

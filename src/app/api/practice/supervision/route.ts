@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient, createClient } from "@/lib/supabase/server";
 import { rateLimitWrite } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -67,12 +67,14 @@ export async function POST(req: Request) {
 
   // If a competency was tagged, record a passport event too (source 'supervision').
   if (competencyId) {
-    await supabase.from("competency_events").insert({
+    // Passport events are written by the server only (2026_11_22_status.sql).
+    const { error: evErr } = await createAdminClient().from("competency_events").insert({
       user_id: user.id,
       competency_id: competencyId,
       source: "supervision",
       evidence: { hours: parsed.data.hours, date: parsed.data.date, activity: parsed.data.activity },
     });
+    if (evErr) console.error("supervision competency event:", evErr.message);
   }
 
   return NextResponse.json({ id: data.id });

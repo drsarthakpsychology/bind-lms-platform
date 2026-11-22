@@ -4,9 +4,7 @@ import * as React from "react";
 import { startHowTo } from "@/components/help/how-to";
 
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
-import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenarios";
-import { ALL_TERMS } from "@/lib/learn/notes";
-import { SAY_IT, type SayIt } from "@/lib/decode/say-it";
+import { SCENARIOS, type Choice, type Scenario } from "@/lib/learn/scenarios";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { haptic } from "@/lib/haptics";
 import { historyFor, noteAnswer, pickRoundFor, useHistoryPrefetch } from "@/lib/history/client";
@@ -16,11 +14,11 @@ import type { CaseContext } from "@/lib/cases/server";
 import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
 import { RecycleNote } from "@/components/cases/case-mark";
 import { cn } from "@/lib/utils";
-import { Chai, ChaiSays } from "./chai";
+import { Chai } from "./chai";
 import { Summary } from "./player";
 import s from "./learn.module.css";
 import { useReaction } from "@/components/reactions/use-reaction";
-import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
+import { HalftoneCorner } from "@/components/reactions/graphics";
 import { moodForScore } from "@/lib/reactions/stickers";
 
 /** The finish sticker: happy for a good round, sad for a poor one. */
@@ -206,151 +204,4 @@ function Options({ beat, picked, onChoose }: { beat: Scenario["beats"][number]; 
   );
 }
 
-/* ============================================================ Say it clinically */
-type Q = { id: string; prompt: string; language?: string; answer: string; options: string[]; why: string; meaning?: string; note?: string; kind: "term" | "words"; level: number };
-
-/** Lay phrase to clinical term cards: the hand-written phrase bank first, then the terms in the Study notes. */
-type Card = { id: string; phrase: string; language?: string; meaning?: string; term: string; wrong: string[]; why: string; note?: string; level: number };
-const NOTE_CARDS: Card[] = ALL_TERMS.map((t) => ({
-  id: `note-${t.noteId}-${t.term}`,
-  phrase: t.lay,
-  term: t.term,
-  wrong: [],
-  why: `${t.topic}: \u201c${t.lay}\u201d is written as ${t.term}.`,
-  level: 2,
-}));
-const SAY_CARDS: Card[] = SAY_IT.map((x: SayIt) => ({ id: x.id, phrase: x.phrase, language: x.language, meaning: x.meaning, term: x.term, wrong: x.wrong, why: x.why, note: x.note, level: x.difficulty }));
-const CARDS: Card[] = [...SAY_CARDS, ...NOTE_CARDS];
-const TERM_NAMES = [...new Set(CARDS.map((c) => c.term))];
-
-/** Cards seen lately on this device, so each round draws ones not yet shown. */
-const SEEN_KEY = "say-it-seen-v2";
-function seenIds(): string[] {
-  try {
-    const v = JSON.parse(localStorage.getItem(SEEN_KEY) ?? "[]");
-    return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
-  } catch {
-    return [];
-  }
-}
-function remember(ids: string[]) {
-  try {
-    const keep = Math.max(0, CARDS.length - 24);
-    localStorage.setItem(SEEN_KEY, JSON.stringify([...seenIds().filter((x) => !ids.includes(x)), ...ids].slice(-keep)));
-  } catch {
-    /* private window: rounds are still random */
-  }
-}
-
-/** Call from event handlers only (reads the answer history). */
-function buildRound(): Q[] {
-  // Answer history (src/lib/history): phrases and wordings not seen yet first, missed ones next.
-  const picked = pickRoundFor("say-it", CARDS, (c) => c.id, 8, roll);
-  remember(picked.map((c) => c.id));
-  const terms = picked
-    .sort((a, b) => a.level - b.level)
-    .map((c) => {
-      const wrong = c.wrong.length >= 3 ? c.wrong.slice(0, 3) : shuffle(TERM_NAMES.filter((x) => x !== c.term)).slice(0, 3);
-      return { id: c.id, prompt: `They say: \u201c${c.phrase}\u201d. You write:`, language: c.language, answer: c.term, options: shuffle([c.term, ...wrong]), why: c.why, meaning: c.meaning, note: c.note, kind: "term" as const, level: c.level };
-    });
-  const words = pickRoundFor("say-it", WORDS, (w) => `words-${w.better}`, 4, roll).map((w) => ({ id: `words-${w.better}`, prompt: "Which is the better way to say it?", answer: w.better, options: shuffle([w.better, w.worse]), why: w.why, kind: "words" as const, level: 1 }));
-  // Phrase cards climb in difficulty; the four wording cards slot in between them.
-  const out: Q[] = [...terms];
-  for (const [k, w] of words.entries()) out.splice(Math.min(out.length, 2 + k * 3), 0, w);
-  return out;
-}
-
-export function TermsGame({ serverState, save }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
-  initLearnStore(serverState, save);
-  const state = useLearnState(serverState ?? EMPTY);
-  const [round, setRound] = React.useState<Q[] | null>(null);
-  useHistoryPrefetch("say-it");
-  const [i, setI] = React.useState(0);
-  const [pick, setPick] = React.useState<string | null>(null);
-  const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
-  const [result, setResult] = React.useState<Payout | null>(null);
-  const reaction = useReaction();
-
-  if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" mood={roundMood(answers)} onAgain={() => { reaction.reset(); setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
-  if (!round) {
-    return (
-      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
-        <Chai mood="happy" size={130} />
-        <h1 className="text-h1">Say it clinically</h1>
-        <button
-          type="button"
-          onClick={() => {
-            startHowTo("say-it-clinically");
-            setRound(buildRound());
-          }}
-          className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
-          Start
-        </button>
-      </div>
-    );
-  }
-  const q = round[i];
-  return (
-    <div className="mx-auto max-w-xl space-y-4">
-      <div className="h-3 overflow-hidden rounded-full border-2 border-foreground">
-        <div className="h-full bg-primary transition-[width]" style={{ width: `${(i / round.length) * 100}%` }} />
-      </div>
-      <p className="text-eyebrow text-link">
-        {q.kind === "words" ? "Words matter" : "Case-sheet language"}
-        {q.language ? <span className="text-muted-foreground"> · {q.language}</span> : null}
-      </p>
-      <div className="relative isolate">
-        <HalftoneCorner className="-top-3 size-24" />
-        <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
-      </div>
-      <div className="grid gap-2.5">
-        {q.options.map((o) => (
-          <button
-            key={o}
-            type="button"
-            disabled={Boolean(pick)}
-            onClick={() => {
-              if (pick) return;
-              setPick(o);
-              haptic(o === q.answer ? "success" : "warning");
-              // A fast double tap must not count the same answer twice.
-              setAnswers((a) => (a.some((x) => x.id === q.id) ? a : [...a, { id: q.id, correct: o === q.answer }]));
-              noteAnswer("say-it", q.id, o === q.answer);
-              reaction.onAnswer(o === q.answer);
-            }}
-            className={cn(
-              "relative rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
-              pick ? (o === q.answer ? "bg-primary text-primary-foreground" : o === pick ? cn("bg-foreground text-background", s.shake) : "bg-card opacity-60") : "bg-card",
-            )}
-          >
-            {pick === o ? <AnswerStamp ok={o === q.answer} /> : null}
-            {o}
-          </button>
-        ))}
-      </div>
-      {pick ? (
-        <div className={s.rise}>
-          <ChaiSays mood={pick === q.answer ? "cheer" : "sad"} size={56}>
-            {q.meaning ? <span className="block font-semibold">{q.meaning}</span> : null}
-            {q.why}
-            {q.note ? <span className="mt-1 block text-sm">Also: {q.note}.</span> : null}
-          </ChaiSays>
-          <button
-            type="button"
-            autoFocus
-            onClick={() => {
-              setPick(null);
-              if (i + 1 < round.length) return setI(i + 1);
-              const { state: done, payout } = finishLesson(state, { lessonId: "terms", kind: "coach", answers, maxCombo: 0 }, istToday(), roll());
-              setLearnState(done);
-              setResult(payout);
-            }}
-            className="mt-3 h-12 w-full rounded-2xl border-2 border-foreground bg-primary font-bold text-primary-foreground"
-          >
-            {i + 1 < round.length ? "Next" : "Finish"}
-          </button>
-        </div>
-      ) : null}
-    </div>
-  );
-}
+// "Say it clinically" lives in ./terms-game.tsx: its bank stays on the server.

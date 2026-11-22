@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimitWrite } from "@/lib/rate-limit";
 import { FORMULATION_CASES } from "@/lib/practice/formulation-cases";
 
@@ -38,7 +38,6 @@ const schema = z.object({
  * formulation_attempts enforces it.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/practice/formulation", flag: "formulation" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -87,7 +86,8 @@ export async function POST(req: Request) {
     }
   }
 
-  const { error } = await supabase.from("formulation_attempts").insert({
+  // Written by the server only, for the signed-in student (2026_11_22_status.sql).
+  const { error } = await admin.from("formulation_attempts").insert({
     user_id: user.id,
     case_id: caseId,
     source_sim_session_id: parsed.data.source_sim_session_id ?? null,
