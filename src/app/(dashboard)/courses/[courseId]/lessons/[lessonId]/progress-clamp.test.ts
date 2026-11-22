@@ -1,18 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { clampProgress, MAX_LECTURE_SECONDS, MAX_PLAYBACK_RATE, SEEK_SLACK_SECONDS } from "./progress-clamp";
+import { clampProgress, FIRST_SAVE_MAX_SECONDS, MAX_LECTURE_SECONDS, MAX_PLAYBACK_RATE, SEEK_SLACK_SECONDS } from "./progress-clamp";
 
 const now = Date.parse("2026-11-03T10:00:00Z");
+// An earlier save with no time stamp: no first-save or wall-time bound applies.
+const started = { watchedSeconds: 0, isCompleted: false, updatedAt: null };
 
 describe("clampProgress", () => {
   it("uses the server duration for completion, not the client's", () => {
     // Client claims a 100 s lecture; the real one is 3600 s.
-    expect(clampProgress({ watchedSeconds: 95, clientDuration: 100, serverDuration: 3600, prev: null, now })).toEqual({ watchedSeconds: 95, isCompleted: false });
-    expect(clampProgress({ watchedSeconds: 3300, clientDuration: 100, serverDuration: 3600, prev: null, now }).isCompleted).toBe(true);
+    expect(clampProgress({ watchedSeconds: 95, clientDuration: 100, serverDuration: 3600, prev: started, now })).toEqual({ watchedSeconds: 95, isCompleted: false });
+    expect(clampProgress({ watchedSeconds: 3300, clientDuration: 100, serverDuration: 3600, prev: started, now }).isCompleted).toBe(true);
   });
 
   it("clamps the position to the lecture length", () => {
-    expect(clampProgress({ watchedSeconds: 1e9, clientDuration: 1e9, serverDuration: 600, prev: null, now }).watchedSeconds).toBe(600);
-    expect(clampProgress({ watchedSeconds: 1e9, clientDuration: 1e9, serverDuration: null, prev: null, now }).watchedSeconds).toBe(MAX_LECTURE_SECONDS);
+    expect(clampProgress({ watchedSeconds: 1e9, clientDuration: 1e9, serverDuration: 600, prev: started, now }).watchedSeconds).toBe(600);
+    expect(clampProgress({ watchedSeconds: 1e9, clientDuration: 1e9, serverDuration: null, prev: started, now }).watchedSeconds).toBe(MAX_LECTURE_SECONDS);
     expect(clampProgress({ watchedSeconds: Number.NaN, clientDuration: -1, serverDuration: null, prev: null, now }).watchedSeconds).toBe(0);
   });
 
@@ -30,5 +32,13 @@ describe("clampProgress", () => {
 
   it("never un-completes a lecture", () => {
     expect(clampProgress({ watchedSeconds: 5, clientDuration: 3600, serverDuration: 3600, prev: { watchedSeconds: 3500, isCompleted: true, updatedAt: null }, now }).isCompleted).toBe(true);
+  });
+
+  it("bounds the very first save, so one post cannot mark a lecture watched", () => {
+    const r = clampProgress({ watchedSeconds: 3600, clientDuration: 3600, serverDuration: 3600, prev: null, now });
+    expect(r.watchedSeconds).toBe(FIRST_SAVE_MAX_SECONDS);
+    expect(r.isCompleted).toBe(false);
+    // A real first save (about 10 seconds in) is untouched.
+    expect(clampProgress({ watchedSeconds: 10, clientDuration: 3600, serverDuration: 3600, prev: null, now }).watchedSeconds).toBe(10);
   });
 });
