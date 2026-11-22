@@ -25,7 +25,7 @@ const VISIT: Record<ClinicVisit["state"], { text: string; tone: "ok" | "warn" | 
   today: { text: "Today", tone: "info" },
   due: { text: "Case count due", tone: "warn" },
   done: { text: "Sent", tone: "ok" },
-  absent: { text: "Absent", tone: "alert" },
+  absent: { text: "Absent, counted as a leave", tone: "alert" },
   missed: { text: "Missed, counted as a leave", tone: "alert" },
   on_leave: { text: "On leave", tone: "quiet" },
 };

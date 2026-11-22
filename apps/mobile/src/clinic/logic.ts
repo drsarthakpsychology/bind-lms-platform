@@ -157,7 +157,7 @@ export function stateWord(s: AttendState, late = false): string {
 
 export const ROSTER_WORD: Record<RosterState, string> = { in: "In", out: "Left", missing: "Not here", leave: "On leave", no_out: "No scan out", left_early: "Left early (approved)" };
 export const LEAVE_WORD: Record<LeaveStatus, string> = { pending: "Waiting", approved: "Approved", rejected: "Not approved", cancelled: "Cancelled" };
-export const VISIT_WORD: Record<OpdVisitStatus, string> = { upcoming: "Coming up", today: "Today", to_log: "Log your cases", logged: "Logged", absent: "Absent", leave: "On leave" };
+export const VISIT_WORD: Record<OpdVisitStatus, string> = { upcoming: "Coming up", today: "Today", to_log: "Log your cases", logged: "Logged", absent: "Missed, counted as a leave", leave: "On leave" };
 
 /* ------------------------------------------------------------ the code */
 
