@@ -77,7 +77,7 @@ describe("Clinic detective: starting picture and guided hints", () => {
       const g = DETECTIVE_GUIDE[c.answer]!;
       const term = (conceptById(c.answer)?.term ?? c.answer).toLowerCase();
       for (const t of [g.picture, g.hints[0], g.hints[1]]) expect(t.toLowerCase().includes(term), `${c.answer}: ${t}`).toBe(false);
-      expect(JSON.stringify(g)).not.toMatch(/[–—]/);
+      expect(JSON.stringify(g)).not.toMatch(/[\u2013\u2014]/);
     }
   });
 

@@ -24,9 +24,9 @@ vi.mock("@/app/(dashboard)/games/ward/actions", () => ({ startWardSolo: vi.fn(),
 vi.mock("@/app/(dashboard)/games/escape/actions", () => ({ startEscapePractice: vi.fn(), resumeEscapePractice: vi.fn(), answerEscapePractice: vi.fn(), createEscapeTeam: vi.fn(), joinEscapeTeam: vi.fn(), escapeView: vi.fn(), startEscapeTeam: vi.fn(), answerEscape: vi.fn() }));
 vi.mock("@/app/(dashboard)/games/comorbid/actions", () => ({ finishComorbid: vi.fn() }));
 vi.mock("@/app/(dashboard)/leaderboard/actions", () => ({ saveAlias: vi.fn(), buyItem: vi.fn(), wearLook: vi.fn() }));
-vi.mock("@/app/(dashboard)/practice/detective/actions", () => ({ dealDetective: vi.fn(), detectiveClue: vi.fn(), detectiveAllClues: vi.fn(), detectiveGuess: vi.fn() }));
+vi.mock("@/app/(dashboard)/practice/detective/actions", () => ({ dealDetective: vi.fn(), detectiveClue: vi.fn(), detectiveAllClues: vi.fn(), detectiveGuess: vi.fn(), detectiveHint: vi.fn() }));
 vi.mock("@/app/(dashboard)/practice/daily/actions", () => ({ dailyRest: vi.fn(), dailyMove: vi.fn(), nextPractice: vi.fn() }));
-vi.mock("@/app/(dashboard)/prep/actions", () => ({ checkAnswer: vi.fn(), revealAnswer: vi.fn(), toggleSaved: vi.fn(), startMock: vi.fn(), submitMock: vi.fn() }));
+vi.mock("@/app/(dashboard)/prep/actions", () => ({ checkAnswer: vi.fn(), revealAnswer: vi.fn(), toggleSaved: vi.fn(), startMock: vi.fn(), submitMock: vi.fn(), revealInterview: vi.fn(), saveInterviewSession: vi.fn(), interviewFeedback: vi.fn() }));
 vi.mock("@/lib/cases/progress-actions", () => ({ loadMyProgress: h.progress, saveMyProgress: vi.fn() }));
 
 import { clearDeviceCache } from "@/lib/app-api/devices";

@@ -5,7 +5,7 @@ import { apply, start } from "./engine";
 import { OPENING_IDS } from "./openings";
 import { buildView, guideOf } from "./view";
 
-const DASH = /[–—]/;
+const DASH = /[\u2013\u2014]/;
 
 describe("every daily case opens with a fair, free starting picture", () => {
   it("each written case has an opening and three hints", () => {

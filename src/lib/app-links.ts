@@ -34,7 +34,6 @@ export const APP_LINK_PATHS = [
   "/tools",
   "/journey",
   "/progress",
-  "/assignments",
   "/wall",
   "/leaderboard",
   "/clinic",

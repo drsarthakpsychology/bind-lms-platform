@@ -162,7 +162,6 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
           { scheme: "https", host: SITE, pathPrefix: "/tools" },
           { scheme: "https", host: SITE, pathPrefix: "/journey" },
           { scheme: "https", host: SITE, pathPrefix: "/progress" },
-          { scheme: "https", host: SITE, pathPrefix: "/assignments" },
           { scheme: "https", host: SITE, pathPrefix: "/wall" },
           { scheme: "https", host: SITE, pathPrefix: "/leaderboard" },
           { scheme: "https", host: SITE, pathPrefix: "/clinic" },

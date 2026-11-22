@@ -15,6 +15,7 @@ import { STATIC_ENTRIES } from "@/lib/search/palette";
 import { BOARDS } from "@/lib/standing/boards";
 import { MAIN_TOOLS, MORE_TOOLS, THINK_TOOLS } from "@/components/practice/practice-hub";
 import { pickContinue } from "@/app/(dashboard)/dashboard/next-step";
+import { APP_LINK_PATHS } from "@/lib/app-links";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
 const APP = path.join(ROOT, "src/app");
@@ -115,9 +116,32 @@ function sourceFiles(dir = SRC, out: string[] = []): string[] {
 }
 // App server routes and their helpers hold API paths for the phone app, not links a person follows.
 const API_DIRS = [path.join("src", "app", "api"), path.join("src", "lib", "app-api")];
+// App Links are address prefixes the phone app claims, not links: checked on their own below.
+const PREFIX_FILES = [path.join("src", "lib", "app-links.ts")];
 const FILES = sourceFiles()
   .map((f) => ({ f: path.relative(ROOT, f), text: fs.readFileSync(f, "utf8") }))
-  .filter(({ f }) => !API_DIRS.some((d) => f.startsWith(d)));
+  .filter(({ f }) => !API_DIRS.some((d) => f.startsWith(d)) && !PREFIX_FILES.includes(f));
+// Search results carry the phone app's own address in an `app:` field: those are app screens, not website pages.
+const APP_FIELD = /\bapp:\s*$/;
+/** The phone app's screens (apps/mobile/app, expo-router: "(group)" folders dropped, index is its folder). */
+const APP_SCREENS: string[][] = (() => {
+  const out: string[][] = [];
+  const walk = (dir: string, segs: string[]) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (e.isDirectory()) walk(path.join(dir, e.name), /^\(.*\)$/.test(e.name) ? segs : [...segs, e.name]);
+      else if (/\.tsx$/.test(e.name) && !/^(_layout|\+)/.test(e.name)) {
+        const base = e.name.replace(/\.tsx$/, "");
+        out.push(base === "index" ? segs : [...segs, base]);
+      }
+    }
+  };
+  walk(path.join(ROOT, "apps/mobile/app"), []);
+  return out;
+})();
+function isAppScreen(p: string): boolean {
+  const parts = p.split(/[?#]/)[0].split("/").filter(Boolean);
+  return APP_SCREENS.some((r) => r.length === parts.length && r.every((s, i) => s.startsWith("[") || s === parts[i]));
+}
 const PLACES = "dashboard|study|courses|practice|prep|games|progress|doubts|achievements|leaderboard|reflect|wall|journey|today|record|passport|tools|notifications|settings|learn|admin";
 
 describe("no link in the source points to a missing page", () => {
@@ -136,10 +160,20 @@ describe("no link in the source points to a missing page", () => {
     for (const { f, text } of FILES) {
       for (const m of text.matchAll(re)) {
         if (m[1].startsWith("/api/")) continue;
+        if (APP_FIELD.test(text.slice(Math.max(0, (m.index ?? 0) - 12), m.index))) {
+          const ap = `${m[1]}x${m[2].replace(/\$\{[^}]+\}/g, "x")}`;
+          if (!isAppScreen(ap)) bad.push(`${f}: app ${m[0]}`);
+          continue;
+        }
         const p = `${m[1]}x${m[2].replace(/\$\{[^}]+\}/g, "x")}`;
         if (!resolves(p)) bad.push(`${f}: ${m[0]}`);
       }
     }
+    expect(bad).toEqual([]);
+  });
+
+  it("every App Link prefix has website pages under it", () => {
+    const bad = APP_LINK_PATHS.filter((p) => !resolves(p) && !ROUTES.some((r) => `/${r.join("/")}`.startsWith(`${p}/`)));
     expect(bad).toEqual([]);
   });
 
