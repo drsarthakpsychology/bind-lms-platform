@@ -270,7 +270,8 @@ describe("clinic: QR attendance", () => {
     at(Date.parse("2026-11-16T09:00:00Z")); // 14:30, everything today is over
     G.db.tables.clinic_attendance!.push({ id: "x", session_id: CLASS, user_id: STUDENT_ID, in_at: "2026-11-16T05:00:00Z", out_at: "2026-11-16T07:30:00Z", in_method: "qr", out_method: "qr", note: null, marked_by: null });
     const r = await get(myAttendance, "/clinic/attendance", T.student);
-    expect(r.data.summary).toMatchObject({ required: 3, attended: 1, absent: 2, percent: 33, minutes: 150 });
+    // The missed assigned OPD day counts as a leave (not an absence) and is left out of the percent.
+    expect(r.data.summary).toMatchObject({ required: 3, attended: 1, absent: 1, onLeave: 1, counted: 2, countedPresent: 1, percent: 50, minutes: 150 });
   });
 });
 
