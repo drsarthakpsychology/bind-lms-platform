@@ -5,10 +5,11 @@ import { ScrollView, Text, View, useWindowDimensions } from "react-native";
 import Animated, { Extrapolation, interpolate, useAnimatedScrollHandler, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, type SharedValue } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { Button, Jyo, Label, LAYER_OVERLAP, layerShadow, Row, RowList, Sheet, Stone, T } from "@/ds";
+import { Button, Label, LAYER_OVERLAP, layerShadow, Row, RowList, Sheet, Stone, T } from "@/ds";
 import { openLink } from "@/lib/open";
 import { MaskLine, Press, springs, Swap, useMotionTier } from "@/motion";
 import { fonts, layout, space, useLightStatusBar, useTheme } from "@/theme";
+import { JyoOnField } from "@/visitor/jyo-field";
 import type { IconName } from "@/visitor/art";
 import { HomeWordsCtx, useHomeWords, useWords } from "@/visitor/home-data";
 import { useIntro, useIntroSpring } from "@/visitor/motion";
@@ -250,7 +251,7 @@ function Hello() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
       <Animated.View style={jyo}>
-        <Jyo pose="hello" size={88} label="Jyo, a small clay lamp, says hello" />
+        <JyoOnField size={80} label="Jyo, a small clay lamp, says hello" />
       </Animated.View>
       <Animated.View style={[{ backgroundColor: c.fieldTint, borderRadius: layout.radius, borderBottomLeftRadius: 6, paddingHorizontal: space[4], paddingVertical: space[3], transformOrigin: "left", flexShrink: 1 }, bubble]}>
         <T v="bodyStrong" tone="onField">

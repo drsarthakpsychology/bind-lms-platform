@@ -3,11 +3,12 @@ import * as React from "react";
 import { BackHandler, View } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 
-import { Button, Jyo, T } from "@/ds";
+import { Button, T } from "@/ds";
 import { prefs } from "@/lib/storage";
 import { Enter, Press, springs, Swap, useMotionTier } from "@/motion";
 import { Gate } from "@/screens/auth/gates";
 import { layout, space, useTheme, type Area } from "@/theme";
+import { JyoOnField } from "@/visitor/jyo-field";
 
 type IconType = React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>;
 
@@ -80,7 +81,7 @@ export function TabTour({ name, onDone }: { /** First name, for the hello. */ na
       titleKey={`p${page}`}
       title={tab ? tab.name : name ? `Hello, ${name}` : "Hello"}
       lead={tab ? `${page} of ${last}` : "I am Jyo, your study lamp."}
-      side={<Jyo pose="hello" size={76} label="Jyo, a small clay lamp, says hello" />}
+      side={<JyoOnField size={68} label="Jyo, a small clay lamp, says hello" />}
       top={page < last ? <Button kind="text" label="Skip" onPress={onDone} testID="tour-skip" accessibilityHint="Closes the tour and opens the app" style={{ alignSelf: "center" }} /> : null}
       footer={
         <>
