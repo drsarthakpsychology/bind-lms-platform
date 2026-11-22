@@ -23,7 +23,7 @@ import { ApiFailure, isClosed, reasonOf } from "@/api/errors";
 import { useMe } from "@/api/queries";
 import { Button, ComingSoon, RowList, RowsSkeleton, Screen as DsScreen, StillTrying, T, WaitingForInternet, type ScreenProps } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { LoadSwap, Press, RollingNumber } from "@/motion";
+import { LoadSwap, Press } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { useAdminRole, VIEW_ONLY_LINE } from "./role";
 import { useTestMode } from "./test-mode";
@@ -222,7 +222,11 @@ export function Tile({ value, label, suffix, onPress, tone = "plain", testID }: 
   const face: ViewStyle = { flex: 1, minHeight: 76, borderRadius: layout.radius, backgroundColor: tone === "warn" && value > 0 ? c.warnBg : c.card, paddingHorizontal: space[3], paddingVertical: space[3], justifyContent: "space-between" };
   const body = (
     <>
-      <RollingNumber v="h2" value={value} suffix={suffix ?? ""} style={tone === "warn" && value > 0 ? { color: c.warnFg } : undefined} />
+      {/* Still: admin numbers do not move (docs/DESIGN.md, motion rule 5). */}
+      <T v="h2" num style={tone === "warn" && value > 0 ? { color: c.warnFg } : undefined}>
+        {value.toLocaleString("en-IN")}
+        {suffix ?? ""}
+      </T>
       <T v="caption" tone="muted" style={tone === "warn" && value > 0 ? { color: c.warnFg } : undefined}>
         {label}
       </T>
@@ -299,7 +303,7 @@ export function Locked({ children, reason = VIEW_ONLY_LINE, row, testID }: { chi
   const { viewOnly } = useAdminRole();
   if (!viewOnly) return <>{children}</>;
   return (
-    <View testID={testID ?? "locked"} style={row ? { flexDirection: "row", alignItems: "center", gap: space[3], flexWrap: "wrap" } : { gap: space[1] }}>
+    <View testID={testID ?? "locked"} style={row ? { width: "100%", flexDirection: "row", alignItems: "center", gap: space[3], flexWrap: "wrap" } : { gap: space[1] }}>
       <View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ opacity: 0.45 }}>
         {children}
       </View>
