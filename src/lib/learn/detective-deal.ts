@@ -10,7 +10,9 @@
  * holds a case id, an answer or a plain case number.
  */
 import { CASES, type Case } from "./detective";
-import { CLUES, ROUNDS, type DealtRound, type Family } from "./detective-rules";
+import { CLUES, HINTS, ROUNDS, type DealtRound, type Family } from "./detective-rules";
+import { DETECTIVE_GUIDE } from "./detective-guide";
+import { conceptById } from "./concepts";
 
 export { CLUES, ROUNDS, type DealtRound, type Family };
 /** The token's payload. */
@@ -51,7 +53,9 @@ export function deal(userId: string, run: string, ordered: readonly string[], ma
     )
       .slice(0, 3)
       .map((x) => x.answer);
-    return { options: shuffle([c.answer, ...others], rng), clue: c.clues[0] };
+    const picture = DETECTIVE_GUIDE[c.answer]?.picture;
+    const options = shuffle([c.answer, ...others], rng);
+    return { options, clue: c.clues[0], ...(picture ? { picture } : {}), names: options.map((o) => conceptById(o)?.term ?? o) };
   });
   return { payload: { u: userId, run, k: picked.map((i, r) => mod(i + mask(run, r), N)) }, rounds };
 }
@@ -67,6 +71,12 @@ export function caseAt(t: DealToken | null, userId: string, round: number, mask:
 /** Clue n (1 to 4) of a case. */
 export function clueOf(c: Case, n: number): string | null {
   return Number.isInteger(n) && n >= 1 && n <= CLUES ? c.clues[n - 1] : null;
+}
+
+/** Guided hint n (1 to 3) of a case. */
+export function hintOf(c: Case, n: number): string | null {
+  const g = DETECTIVE_GUIDE[c.answer];
+  return g && Number.isInteger(n) && n >= 1 && n <= HINTS ? g.hints[n - 1] : null;
 }
 
 /**

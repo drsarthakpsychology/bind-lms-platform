@@ -10,8 +10,8 @@ import type { CaseMark } from "@/lib/cases/fresh";
 import type { ProgressSnapshot } from "@/lib/cases/progress";
 import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
 import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
-import { CLUES, POINTS, ROUNDS, WRONG_PENALTY, type DealtRound, type Family } from "@/lib/learn/detective-rules";
-import { dealDetective, detectiveAllClues, detectiveClue, detectiveGuess } from "@/app/(dashboard)/practice/detective/actions";
+import { CLUES, HINT_COST, HINTS, hintLoss, POINTS, ROUNDS, WRONG_PENALTY, type DealtRound, type Family } from "@/lib/learn/detective-rules";
+import { dealDetective, detectiveAllClues, detectiveClue, detectiveGuess, detectiveHint } from "@/app/(dashboard)/practice/detective/actions";
 import { conceptById } from "@/lib/learn/concepts";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { haptic } from "@/lib/haptics";
@@ -23,9 +23,7 @@ import { useReaction } from "@/components/reactions/use-reaction";
 import { moodForScore } from "@/lib/reactions/stickers";
 import { useExplainView } from "./view-toggle";
 import s from "./learn.module.css";
-import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
-import { askHint } from "@/lib/hints/actions";
-import { clueOpens, hintedPoints } from "@/lib/hints/rules";
+import { clueOpens } from "@/lib/hints/rules";
 
 const EMPTY = emptyState();
 const FAIL = "Connection lost. Try again.";
@@ -36,7 +34,7 @@ function roll() {
 
 type Deal = { token: string; run: string; rounds: DealtRound[]; marks?: CaseMark[]; recycled?: boolean };
 /** A run left half-way: the case and the clue reached (saved progress, src/lib/cases). */
-type SavedRun = { family: Family; game: Deal; r: number; opened: string[]; wrong: string[]; solved: null | { gained: number; correct: boolean; answer: string }; score: number; answers: { id: string; correct: boolean }[]; ruledOut: string[] | null };
+type SavedRun = { family: Family; game: Deal; r: number; opened: string[]; wrong: string[]; solved: null | { gained: number; correct: boolean; answer: string }; score: number; answers: { id: string; correct: boolean }[]; tips?: string[] };
 const RUN = "run";
 
 export function Detective({ serverState, save, progress: serverProgress }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown>; progress?: ProgressSnapshot }) {
@@ -54,13 +52,12 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
   const [result, setResult] = React.useState<Payout | null>(null);
   const reaction = useReaction();
   const [family, setFamily] = React.useState<Family>("mixed");
-  /** This round's hint: the options it ruled out (null = not used). */
-  const [ruledOut, setRuledOut] = React.useState<string[] | null>(null);
+  /** This round's guided hints opened so far (the first is free). */
+  const [tips, setTips] = React.useState<string[]>([]);
   /** After a round ends: every clue, once the student asks to see the others. */
   const [rest, setRest] = React.useState<string[] | null>(null);
   const [error, setError] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
-  const [hints, setHints] = useHintStatus();
   useHistoryPrefetch("detective");
   const progress = useCaseProgress("detective", serverProgress);
   const saved = progress.get<SavedRun>(RUN);
@@ -68,8 +65,8 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
   // Keep the run's place saved while it is open.
   React.useEffect(() => {
     if (!game || result) return;
-    saveCaseProgress("detective", RUN, { family, game, r, opened, wrong, solved, score, answers, ruledOut } satisfies SavedRun);
-  }, [game, result, family, r, opened, wrong, solved, score, answers, ruledOut]);
+    saveCaseProgress("detective", RUN, { family, game, r, opened, wrong, solved, score, answers, tips } satisfies SavedRun);
+  }, [game, result, family, r, opened, wrong, solved, score, answers, tips]);
   /** One server call at a time, so a double tap can't count an answer twice. */
   const inflight = React.useRef(false);
 
@@ -102,7 +99,7 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
     setOpened([d.rounds[0].clue]);
     setWrong([]);
     setSolved(null);
-    setRuledOut(null);
+    setTips([]);
     setRest(null);
     setScore(0);
     setAnswers([]);
@@ -119,7 +116,7 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
     setOpened(s.opened);
     setWrong(Array.isArray(s.wrong) ? s.wrong : []);
     setSolved(s.solved ?? null);
-    setRuledOut(s.ruledOut ?? null);
+    setTips(Array.isArray(s.tips) ? s.tips : []);
     setRest(null);
     setScore(Number(s.score) || 0);
     setAnswers(Array.isArray(s.answers) ? s.answers : []);
@@ -201,15 +198,15 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
     if (!res) return;
     if (!res.ok) return setError(res.error);
     if (res.right && res.answer) {
-      // A hint halves this case's points.
-      const gained = hintedPoints(Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY), ruledOut ? 1 : 0);
+      // The first hint is free; each later one takes 5 points.
+      const gained = Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY - hintLoss(tips.length));
       haptic("success");
       setScore((x) => x + gained);
       setSolved({ gained, correct: true, answer: res.answer });
-      setAnswers((a) => [...a, { id: res.answer!, correct: wrong.length === 0 && !ruledOut }]);
-      noteAnswer("detective", res.answer, wrong.length === 0 && !ruledOut);
+      setAnswers((a) => [...a, { id: res.answer!, correct: wrong.length === 0 && tips.length < 2 }]);
+      noteAnswer("detective", res.answer, wrong.length === 0 && tips.length < 2);
       // Solved after a wrong guess or a hint: right, but only partly.
-      reaction.onAnswer(true, { partial: wrong.length > 0 || Boolean(ruledOut) });
+      reaction.onAnswer(true, { partial: wrong.length > 0 || tips.length >= 2 });
       return;
     }
     haptic("warning");
@@ -227,6 +224,14 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
     reaction.onAnswer(false);
   }
 
+  async function takeHint() {
+    if (solved || tips.length >= HINTS) return;
+    const res = await call(() => detectiveHint(deal.token, r, tips.length + 1));
+    if (!res) return;
+    if (!res.ok) return setError(res.error);
+    setTips((t) => (t.length === tips.length ? [...t, res.hint] : t));
+  }
+
   async function showRest() {
     if (rest) return setRest(null);
     const res = await call(() => detectiveAllClues(deal.token, r));
@@ -241,7 +246,7 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
       setOpened([deal.rounds[r + 1].clue]);
       setWrong([]);
       setSolved(null);
-      setRuledOut(null);
+      setTips([]);
       setRest(null);
       return;
     }
@@ -261,6 +266,13 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
         </span>
         <span className="rounded-full border-2 border-foreground bg-foreground px-3 py-1 font-pix text-sm text-primary">{score} pts</span>
       </div>
+
+      {round.picture ? (
+        <p className={cn("rounded-2xl border-2 border-foreground bg-card p-4 leading-snug", s.rise)}>
+          <span className="block text-eyebrow text-link">The patient</span>
+          {round.picture}
+        </p>
+      ) : null}
 
       <ol className="space-y-2" aria-label="Clues">
         {Array.from({ length: CLUES }, (_, k) => {
@@ -292,29 +304,34 @@ export function Detective({ serverState, save, progress: serverProgress }: { ser
 
       {!solved ? (
         <>
-          <p className="text-eyebrow text-link">Your guess ({hintedPoints(Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY), ruledOut ? 1 : 0)} points now)</p>
-          <HintBar
-            status={hints}
-            onStatus={setHints}
-            used={ruledOut !== null}
-            ask={() => askHint({ game: "detective", run: deal.run, round: r, token: deal.token, options: round.options })}
-            onGive={(g) => setRuledOut(g.remove)}
-          />
+          <p className="text-eyebrow text-link">Your guess ({Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY - hintLoss(tips.length))} points now)</p>
+          {tips.map((t, i) => (
+            <p key={i} role="status" className="rounded-xl border-2 border-foreground bg-status-info-bg px-3 py-2 text-sm text-status-info-fg">
+              <span className="font-bold">Hint {i + 1}. </span>
+              {t}
+            </p>
+          ))}
+          {tips.length < HINTS ? (
+            <button type="button" disabled={busy} onClick={() => void takeHint()} className="flex min-h-11 w-full items-center justify-between gap-3 rounded-2xl border-2 border-dashed border-foreground px-4 py-2 text-left text-sm font-semibold">
+              <span>
+                Hint {tips.length + 1} of {HINTS}
+              </span>
+              <span className="font-normal text-muted-foreground">{HINT_COST[tips.length] ? `minus ${HINT_COST[tips.length]} points` : "free"}</span>
+            </button>
+          ) : null}
           <div className="grid grid-cols-2 gap-2.5">
             {round.options.map((id) => {
               const o = conceptById(id)!;
               const isWrong = wrong.includes(id);
-              const gone = ruledOut?.includes(id) ?? false;
               return (
                 <button
                   key={id}
                   type="button"
-                  disabled={isWrong || gone || busy}
-                  aria-label={gone ? `${o.term} (ruled out)` : undefined}
+                  disabled={isWrong || busy}
                   onClick={() => void guess(id)}
                   className={cn(
                     "min-h-16 min-w-0 rounded-2xl border-2 border-foreground px-3 py-2 text-left text-sm font-semibold leading-tight [overflow-wrap:anywhere] hard-shadow-sm transition-transform active:translate-y-0.5 sm:text-base",
-                    isWrong ? cn("bg-foreground text-background line-through opacity-60", s.shake) : gone ? "border-dashed bg-card text-muted-foreground line-through opacity-60 shadow-none" : "bg-card",
+                    isWrong ? cn("bg-foreground text-background line-through opacity-60", s.shake) : "bg-card",
                   )}
                 >
                   {o.term}

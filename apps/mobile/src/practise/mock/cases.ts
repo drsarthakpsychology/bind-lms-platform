@@ -124,9 +124,16 @@ const detective = {
   },
   clue(token: unknown, round: unknown, n: unknown): { ok: true; clue: string } {
     const c = held<DetRun>(token).cases[Number(round)];
-    const clue = c?.clues[Number(n)];
+    // Numbered from 1, as on the server (src/lib/learn/detective-deal.ts clueOf).
+    const clue = c?.clues[Number(n) - 1];
     if (!clue) throw FAIL();
     return { ok: true, clue };
+  },
+  hint(token: unknown, round: unknown, n: unknown): { ok: true; hint: string } {
+    const c = held<DetRun>(token).cases[Number(round)];
+    const k = Number(n);
+    if (!c || !(k >= 1 && k <= 3)) throw FAIL();
+    return { ok: true, hint: ["Think about which group this belongs to: a medicine or a disorder, and which family.", "Look at the clue that is most specific, and what it usually points to.", "Two of the four options can be ruled out by the first clue alone."][k - 1]! };
   },
   clues(token: unknown, round: unknown): { ok: true; clues: string[] } {
     const c = held<DetRun>(token).cases[Number(round)];
@@ -253,7 +260,7 @@ function scoreMock(spec: (typeof MOCK_SPECS)[number], ids: string[], answers: Re
 
 export const CASES: Record<string, Record<string, (...args: never[]) => unknown>> = {
   daily: { move: daily.move, rest: daily.rest, next: daily.next },
-  detective: { deal: detective.deal, clue: detective.clue, clues: detective.clues, guess: detective.guess },
+  detective: { deal: detective.deal, clue: detective.clue, clues: detective.clues, guess: detective.guess, hint: detective.hint },
   cases: { progress: cases.progress, mark: cases.mark },
   prep: { check: prep.check, reveal: prep.reveal, save: prep.save, mockStart: prep.mockStart, mockSubmit: prep.mockSubmit },
 };

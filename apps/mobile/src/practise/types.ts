@@ -125,7 +125,9 @@ export const ESC_PENALTY_S = 20;
 /** src/lib/learn/detective-rules.ts, src/lib/cases/fresh.ts */
 export type CaseMark = "started" | "week" | "new" | "done";
 export type DetFamily = "drug" | "disorder" | "mixed";
-export type DetRound = { options: string[]; clue: string };
+export type DetRound = { options: string[]; clue: string; /** Newer servers: a free starting picture, and the options as names. */ picture?: string; names?: string[] };
+/** Up to three guided hints: the first free, the next two 5 points each. */
+export const DET_HINT_COST = [0, 5, 5] as const;
 export type DetDeal = { ok: true; token: string; run: string; rounds: DetRound[]; marks: CaseMark[]; recycled: boolean };
 export const DET_POINTS = [40, 30, 20, 10] as const;
 export const DET_WRONG = 5;

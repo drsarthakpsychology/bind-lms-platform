@@ -165,7 +165,7 @@ export const TOOLS: Record<PractiseToolId, ToolDef> = {
     gate: learnGate("/practice/detective"),
     title: "Clinic detective",
     howTo: ["Guess, or open another clue.", "Fewer clues, more points. Wrong guesses cost points."],
-    moves: ["detective.deal", "detective.clue", "detective.clues", "detective.guess", "cases.mark"],
+    moves: ["detective.deal", "detective.clue", "detective.clues", "detective.guess", "detective.hint", "cases.mark"],
     load: async (p) => ({ data: { families: ["mixed", "disorder", "drug"], progress: await progressSnapshot(p.id, "detective") } }),
   },
   "two-minute": {

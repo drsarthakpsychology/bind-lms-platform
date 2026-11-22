@@ -6,11 +6,11 @@ import { Button, T } from "@/ds";
 import { motion, space } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
-import { Tag, AnswerRow } from "../parts";
+import { Story, Tag, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
-import { DET_CLUES, DET_POINTS, DET_WRONG, type DetDeal, type DetFamily } from "../types";
+import { DET_CLUES, DET_HINT_COST, DET_POINTS, DET_WRONG, type DetDeal, type DetFamily } from "../types";
 
-const HOW = ["Name the disorder or the medicine from clues. The first clue is the hardest.", "A right answer on clue one is 40 points, then 30, 20, 10.", "A wrong answer costs 5 points and opens the next clue.", "Cases you have never done come first; New and This week say which."];
+const HOW = ["Each case starts with a patient. Name the disorder or the medicine from clues.", "A right answer on clue one is 40 points, then 30, 20, 10.", "A wrong answer costs 5 points and opens the next clue.", "Up to 3 hints: the first is free, the next two cost 5 points each.", "Cases you have never done come first; New and This week say which."];
 const FAMILIES: { id: DetFamily; name: string; line: string }[] = [
   { id: "mixed", name: "Mixed", line: "Medicines and disorders" },
   { id: "drug", name: "Medicines", line: "Name the medicine" },
@@ -32,6 +32,7 @@ export function DetectiveCase() {
   const [marks, setMarks] = React.useState<("ok" | "miss" | null)[]>([]);
   const [all, setAll] = React.useState<string[] | null>(null);
   const [over, setOver] = React.useState(false);
+  const [tips, setTips] = React.useState<string[]>([]);
 
   const start = async () => {
     mv.reset();
@@ -47,6 +48,7 @@ export function DetectiveCase() {
     setMarks([]);
     setAll(null);
     setOver(false);
+    setTips([]);
   };
   if (!deal) return <StartScreen testID="detective-start" title="Clinic detective" line="Name the disorder or medicine from clues, in as few as you can." howTo={HOW} choiceLabel="Cases" choices={FAMILIES} choice={family} onChoice={setFamily} onPlay={() => void start()} busy={mv.pending} error={mv.error} />;
 
@@ -67,7 +69,7 @@ export function DetectiveCase() {
     if (!res) return;
     react.answer(res.right);
     if (res.right) {
-      setScore((s) => s + DET_POINTS[clues.length - 1]!);
+      setScore((s) => s + Math.max(0, DET_POINTS[clues.length - 1]! - hintLoss));
       setResult(res);
       setMarks((m) => [...m, "ok"]);
       return;
@@ -79,8 +81,16 @@ export function DetectiveCase() {
       setMarks((m) => [...m, "miss"]);
       return;
     }
-    const n = await mv.run(() => play<{ ok: true; clue: string }>("detective", "clue", deal.token, r, clues.length));
+    // Clues are numbered from 1: the next one is one more than those open.
+    const n = await mv.run(() => play<{ ok: true; clue: string }>("detective", "clue", deal.token, r, clues.length + 1));
     if (n) setClues((cl) => [...cl, n.clue]);
+  };
+  const hintLoss = DET_HINT_COST.slice(0, tips.length).reduce<number>((a, b) => a + b, 0);
+  const name = (o: string | null) => (o ? (round.names?.[round.options.indexOf(o)] ?? o) : "");
+  const takeHint = async () => {
+    if (result || tips.length >= 3) return;
+    const res = await mv.run(() => play<{ ok: true; hint: string }>("detective", "hint", deal.token, r, tips.length + 1));
+    if (res) setTips((t) => [...t, res.hint]);
   };
   const showAll = async () => {
     const res = await mv.run(() => play<{ ok: true; clues: string[] }>("detective", "clues", deal.token, r));
@@ -97,12 +107,13 @@ export function DetectiveCase() {
     setWrong([]);
     setResult(null);
     setAll(null);
+    setTips([]);
   };
   const mark = deal.marks[r];
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={r} total={deal.rounds.length} marks={marks} />
-      <HudLine left={`Case ${r + 1} of ${deal.rounds.length} · clue ${clues.length} of ${DET_CLUES}`} right={result ? undefined : `${DET_POINTS[clues.length - 1]} to win`} />
+      <HudLine left={`Case ${r + 1} of ${deal.rounds.length} · clue ${clues.length} of ${DET_CLUES}`} right={result ? undefined : `${Math.max(0, DET_POINTS[clues.length - 1]! - hintLoss)} to win`} />
     </View>
   );
   return (
@@ -114,6 +125,13 @@ export function DetectiveCase() {
             {mark === "new" ? "New case" : "This week"}
           </T>
         </View>
+      ) : null}
+      {round.picture ? (
+        <Story kicker="The patient">
+          <T v="reading" testID="detective-picture">
+            {round.picture}
+          </T>
+        </Story>
       ) : null}
       <View style={{ gap: space[3] }}>
         {(all ?? clues).map((cl, k) => (
@@ -129,11 +147,21 @@ export function DetectiveCase() {
       </View>
       <View style={{ gap: space[3] }}>
         {round.options.map((o, j) => (
-          <AnswerRow key={o} index={j} text={o} testID={`detective-option-${j}`} disabled={!!result || wrong.includes(o) || mv.pending} state={result ? (o === result.answer ? "right" : wrong.includes(o) ? "wrong" : "dim") : wrong.includes(o) ? "wrong" : "idle"} onPress={() => void guess(o)} />
+          <AnswerRow key={o} index={j} text={name(o)} testID={`detective-option-${j}`} disabled={!!result || wrong.includes(o) || mv.pending} state={result ? (o === result.answer ? "right" : wrong.includes(o) ? "wrong" : "dim") : wrong.includes(o) ? "wrong" : "idle"} onPress={() => void guess(o)} />
         ))}
       </View>
+      {tips.length ? (
+        <Story kicker="Hints">
+          <View style={{ gap: space[2] }}>
+            {tips.map((h, k) => (
+              <T key={k} testID={`detective-hint-${k + 1}`}>{`${k + 1}. ${h}`}</T>
+            ))}
+          </View>
+        </Story>
+      ) : null}
+      {!result && tips.length < 3 ? <Button kind="text" label={`Hint ${tips.length + 1} of 3: ${DET_HINT_COST[tips.length] ? `minus ${DET_HINT_COST[tips.length]}` : "free"}`} onPress={() => void takeHint()} disabled={mv.pending} testID="detective-hint" /> : null}
       <MoveError text={mv.error} />
-      {result ? <Verdict right={result.right} title={result.right ? `+${DET_POINTS[clues.length - 1]} on clue ${clues.length}` : `It was ${result.answer}`} why={null} seed={r} /> : null}
+      {result ? <Verdict right={result.right} title={result.right ? `+${Math.max(0, DET_POINTS[clues.length - 1]! - hintLoss)} on clue ${clues.length}` : `It was ${name(result.answer)}`} why={null} seed={r} /> : null}
       {result && !all && clues.length < DET_CLUES ? <Button kind="text" label="Show the other clues" onPress={() => void showAll()} testID="detective-all" /> : null}
     </GameFrame>
   );
