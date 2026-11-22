@@ -12,7 +12,7 @@ export const LIAISON: Scenario[] = [
   ]),
   s("wy-l002", "liaison", "Consent to share", "interview", "ethics-law", 1, "CUS", "Ask consent before sharing", "Client, 25, being referred", [
     b("You want to tell her GP about her depression.", [
-      ["o", "Share it, since the GP is also a doctor and is bound by the same confidentiality rules", "She finds out and feels betrayed. Without risk, sharing needs her consent."],
+      ["h", "Share it, since the GP is also a doctor and is bound by the same confidentiality rules", "She finds out and feels betrayed. Without risk, sharing needs her consent."],
       ["b", "Explain why sharing would help and ask her consent", "She agrees and is glad her GP knows. Consent keeps trust."],
       ["h", "Tell her family instead so they can tell the GP", "You have breached her confidence twice over."],
     ]),
@@ -21,12 +21,12 @@ export const LIAISON: Scenario[] = [
     b("They want him moved to a psychiatric ward.", [
       ["b", "Explain it looks like delirium, suggest looking for causes, and offer advice on managing it on the ward", "They find a chest infection and he recovers. Delirium is a medical problem treated where it is."],
       ["h", "Agree to transfer him at once", "Moving a delirious man to a psychiatric ward delays treatment of the cause."],
-      ["o", "Suggest a sedative and leave the ward, since the team will know what else to do", "Sedation may worsen delirium and hides the cause."],
+      ["h", "Suggest a sedative and leave the ward, since the team will know what else to do", "Sedation may worsen delirium and hides the cause."],
     ]),
   ]),
   s("wy-l004", "liaison", "Self-harm in an emergency room", "suicide", "suicide", 2, "UMS", "Assess self-harm before discharge", "Emergency doctor, overdose patient medically fit", [
     b("The doctor wants to discharge her now.", [
-      ["o", "Agree she can go, since she is medically fit and the bed is needed for others", "She leaves without any risk assessment."],
+      ["h", "Agree she can go, since she is medically fit and the bed is needed for others", "She leaves without any risk assessment."],
       ["b", "Ask for time to assess her risk and plan follow-up before she leaves", "You find ongoing intent and arrange support. Medical fitness is not psychiatric safety."],
       ["h", "Tell the doctor she is attention-seeking", "Labels block care and increase stigma."],
     ]),
@@ -68,7 +68,7 @@ export const LIAISON: Scenario[] = [
   ]),
   s("wy-l010", "liaison", "Police liaison", "schizophrenia", "ethics-law", 3, "UMS", "Work with police in a crisis", "Police bring a man with psychosis", [
     b("They want you to take him so they can leave.", [
-      ["o", "Let them leave at once so that he feels less threatened by the uniforms", "If he becomes violent, staff may not be safe."],
+      ["h", "Let them leave at once so that he feels less threatened by the uniforms", "If he becomes violent, staff may not be safe."],
       ["b", "Ask them to stay until he is assessed and the situation is safe", "He is assessed safely. Joint working protects everyone."],
       ["h", "Refuse to see him", "He is left in the corridor without care. Refusing an assessment abandons a person in crisis."],
     ]),
@@ -90,7 +90,7 @@ export const LIAISON: Scenario[] = [
   s("wy-l013", "liaison", "Liaison in maternity", "depression", "lifespan", 3, "MDS", "Plan perinatal care with obstetrics", "Pregnant woman with bipolar disorder", [
     b("The obstetrician asks for your input.", [
       ["b", "Share a plan for monitoring, delivery and the postpartum period", "She stays well after birth. Planning reduces postpartum relapse."],
-      ["o", "Say nothing until after delivery, since pregnancy is the obstetrician's area", "Postpartum risk is high; plan early."],
+      ["h", "Say nothing until after delivery, since pregnancy is the obstetrician's area", "Postpartum risk is high; plan early."],
       ["h", "Tell them to stop all her medicines", "Sudden stopping risks relapse."],
     ]),
   ]),
@@ -131,7 +131,7 @@ export const LIAISON: Scenario[] = [
   ]),
   s("wy-l019", "liaison", "Liaison in a prison", "schizophrenia", "ethics-law", 4, "MDS", "Arrange treatment for a prisoner", "Prisoner, 30, with psychosis", [
     b("The jail has no psychiatric ward.", [
-      ["o", "Keep him in his cell and visit weekly, since there is nowhere else for him to go", "He worsens in his cell without treatment. He needs proper care, not occasional visits."],
+      ["h", "Keep him in his cell and visit weekly, since there is nowhere else for him to go", "He worsens in his cell without treatment. He needs proper care, not occasional visits."],
       ["b", "Inform the prison medical officer and arrange transfer with the required Board permission", "He is transferred and treated. MHCA requires care for prisoners with mental illness."],
       ["h", "Leave it to the guards", "No one notices him becoming more unwell. Leaving care to guards is neglect."],
     ]),
@@ -166,7 +166,7 @@ export const LIAISON: Scenario[] = [
   ]),
   s("wy-l024", "liaison", "Liaison with a neurologist", "dsm-somatic", "more-disorders", 3, "MDS", "Share care in functional seizures", "Neurologist diagnoses functional seizures", [
     b("The patient feels dismissed.", [
-      ["o", "Tell her it is all psychological and that she can control the seizures if she wants to", "She feels blamed and her seizures continue. Saying she can control them is dismissive and untrue."],
+      ["h", "Tell her it is all psychological and that she can control the seizures if she wants to", "She feels blamed and her seizures continue. Saying she can control them is dismissive and untrue."],
       ["b", "Explain the diagnosis as real and treatable, and start therapy with the neurologist's support", "Seizures reduce. Joint explanation helps acceptance."],
       ["h", "Tell her she is faking", "She feels called a liar and leaves care. Saying she is faking is harmful and wrong."],
     ]),
@@ -181,7 +181,7 @@ export const LIAISON: Scenario[] = [
   s("wy-l026", "liaison", "Liaison with an employer about adjustments", "anxiety", "anxiety", 2, "US", "Suggest reasonable adjustments", "Employee with anxiety", [
     b("She wants to return to work.", [
       ["h", "Tell her to hide her condition", "She struggles without support and goes off sick again. Hiding her condition leaves her alone."],
-      ["o", "Tell the employer every detail of her condition so they can make the best decision", "Her manager now knows private details she never wanted shared. Too much information breaches her privacy."],
+      ["h", "Tell the employer every detail of her condition so they can make the best decision", "Her manager now knows private details she never wanted shared. Too much information breaches her privacy."],
       ["b", "With consent, suggest a phased return and flexible hours", "She returns well and stays at work. Small adjustments made with consent support recovery."],
     ]),
   ]),
@@ -194,7 +194,7 @@ export const LIAISON: Scenario[] = [
   ]),
   s("wy-l028", "liaison", "Liaison with a school after a suicide", "suicide", "suicide", 3, "UMS", "Advise a school on postvention", "Principal calls after a student suicide", [
     b("She asks how to tell students.", [
-      ["o", "Tell her to hold a memorial with photos and the story of how he died, so students understand", "Method details raise contagion risk."],
+      ["h", "Tell her to hold a memorial with photos and the story of how he died, so students understand", "Method details raise contagion risk."],
       ["b", "Suggest a calm, factual message, support for students, and screening for those at risk", "Students are supported and at-risk peers identified."],
       ["h", "Tell her to say nothing", "Rumours spread and students feel shut out. Silence does not protect them."],
     ]),
@@ -229,7 +229,7 @@ export const LIAISON: Scenario[] = [
   ]),
   s("wy-l033", "liaison", "Liaison with a child welfare committee", "child", "child", 4, "UMS", "Give the CWC useful information", "CWC asks about a child in care", [
     b("They need to decide placement.", [
-      ["o", "Recommend sending the child home quickly, since children always do best with their parents", "The child is sent back to an unsafe home. Going home is not always safe."],
+      ["h", "Recommend sending the child home quickly, since children always do best with their parents", "The child is sent back to an unsafe home. Going home is not always safe."],
       ["h", "Refuse to share", "The child's interest needs your input."],
       ["b", "Share a clear account of the child's needs, wishes and risks", "The CWC makes a well-informed decision."],
     ]),
@@ -278,7 +278,7 @@ export const LIAISON: Scenario[] = [
   ]),
   s("wy-l040", "liaison", "Liaison with a psychiatrist about a teenager", "child", "child", 3, "UMS", "Escalate a teen with worsening depression", "Teen, 16, worsening despite therapy", [
     b("She now has suicidal thoughts.", [
-      ["o", "Continue therapy and wait to see if she improves over the next month", "Her risk rises while you wait. Rising suicidal thoughts need escalation now."],
+      ["h", "Continue therapy and wait to see if she improves over the next month", "Her risk rises while you wait. Rising suicidal thoughts need escalation now."],
       ["b", "Refer urgently to a child psychiatrist with consent and a clear summary", "She is reviewed quickly and is safer. Clear, urgent referral gets the right help."],
       ["h", "Tell her parents she is attention-seeking", "Her parents stop taking her seriously. Calling it attention-seeking dismisses risk."],
     ]),
@@ -371,7 +371,7 @@ export const LIAISON: Scenario[] = [
     b("She is at high risk of overdose.", [
       ["h", "Say nothing to the GP", "She may be given a large supply."],
       ["b", "With consent or under safety exceptions, advise smaller supplies", "Supplies are limited. Means restriction saves lives."],
-      ["o", "Tell the patient to ask for smaller supplies herself at her next GP visit", "She is given a month's supply and overdoses. She may not ask for smaller supplies herself."],
+      ["h", "Tell the patient to ask for smaller supplies herself at her next GP visit", "She is given a month's supply and overdoses. She may not ask for smaller supplies herself."],
     ]),
   ]),
   s("wy-l054", "liaison", "Liaison with a hospital chaplain", "depression", "depression", 2, "US", "Use spiritual support", "Patient wants to see a priest", [
@@ -413,7 +413,7 @@ export const LIAISON: Scenario[] = [
     b("Your client has a history of violence.", [
       ["h", "Share all session content", "Breaches confidentiality beyond need."],
       ["b", "With consent or legal requirement, share risk-relevant information only", "Risk is managed and trust kept."],
-      ["o", "Refuse to share anything at all, even if there is a clear risk to others", "Someone is hurt when a warning sign was known. Refusing to share in clear risk may leave others at risk."],
+      ["h", "Refuse to share anything at all, even if there is a clear risk to others", "Someone is hurt when a warning sign was known. Refusing to share in clear risk may leave others at risk."],
     ]),
   ]),
   s("wy-l060", "liaison", "Liaison with a community health worker", "schizophrenia", "psychosis", 2, "US", "Work with ASHA workers", "Rural patient with schizophrenia", [
@@ -432,7 +432,7 @@ export const LIAISON: Scenario[] = [
     b("He has capacity but is depressed.", [
       ["b", "Offer treatment for depression and revisit the decision together over time", "His mood improves and he reconsiders."],
       ["h", "Override his decision", "He feels overruled and distrusts the team. Overriding a capable person's decision breaks the law and trust."],
-      ["o", "Accept the decision immediately and stop all contact, since he has made his choice", "He stops dialysis while still depressed. Accepting it at once misses treatable depression."],
+      ["h", "Accept the decision immediately and stop all contact, since he has made his choice", "He stops dialysis while still depressed. Accepting it at once misses treatable depression."],
     ], "Your assessment is complete."),
   ]),
 ];

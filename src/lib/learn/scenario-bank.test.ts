@@ -32,6 +32,12 @@ describe("What would you do library", () => {
     expect(bad).toEqual([]);
   });
 
+  it("a choice that leads to death, abuse or a missed emergency is never marked 'Okay, but'", () => {
+    const DANGER = /\b(can kill|kills|may die|might die|not live|fatal|shakes the baby|brain damage|collapses|unconscious|overdoses|tries again|hurt again|breaks? (his|her|their) confidentiality|break the law|not allowed)\b/i;
+    const bad = SCENARIOS.flatMap((s) => s.beats.flatMap((b) => b.choices.filter((c) => c.outcome === "ok" && DANGER.test(c.consequence)).map((c) => `${s.id}: ${c.text}`)));
+    expect(bad).toEqual([]);
+  });
+
   it("covers every area and spreads across difficulty", () => {
     for (const a of AREAS) expect(SCENARIOS.filter((s) => s.area === a).length, a).toBeGreaterThanOrEqual(40);
     for (const d of [1, 2, 3, 4, 5]) expect(SCENARIOS.filter((s) => s.difficulty === d).length / SCENARIOS.length).toBeGreaterThan(0.08);

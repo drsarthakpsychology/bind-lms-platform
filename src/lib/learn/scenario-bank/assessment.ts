@@ -140,7 +140,7 @@ export const ASSESSMENT: Scenario[] = [
     b("A student scores 6 on the PHQ-9 but says she thinks about dying daily.", [
       ["b", "Act on the suicidal thoughts and assess her fully, whatever the total", "Item 9 matters more than the total. Scales support clinical judgement."],
       ["h", "Mark her as mild and low risk", "A low total hides a high-risk answer."],
-      ["o", "Repeat the scale next week to see if it changes, so the trend can guide what to do next", "The risk is now; waiting a week is too long."],
+      ["h", "Repeat the scale next week to see if it changes, so the trend can guide what to do next", "The risk is now; waiting a week is too long."],
     ]),
   ]),
   s("wy-a021", "assessment", "Assessing a child for autism", "child", "child", 3, "UMS", "Use several sources in autism assessment", "Aryan, 3", [
@@ -251,7 +251,7 @@ export const ASSESSMENT: Scenario[] = [
   s("wy-a036", "assessment", "Assessing catatonia", "schizophrenia", "psychosis", 4, "MDS", "Examine for catatonic signs", "Arjun, 26, mute and still", [
     b("He has not spoken for two days.", [
       ["b", "Check for posturing, rigidity, waxy flexibility and refusal of food, and take vital signs", "He shows waxy flexibility. Catatonia is identified and treated with lorazepam."],
-      ["o", "Note 'uncooperative' and try again tomorrow, since he may be tired or upset", "Catatonia can become life-threatening. It needs recognising now."],
+      ["h", "Note 'uncooperative' and try again tomorrow, since he may be tired or upset", "Catatonia can become life-threatening. It needs recognising now."],
       ["h", "Assume he is pretending", "Mislabelling a medical emergency is dangerous."],
     ]),
   ]),
@@ -356,7 +356,7 @@ export const ASSESSMENT: Scenario[] = [
   s("wy-a051", "assessment", "Assessing for medical causes of psychosis", "schizophrenia", "psychosis", 4, "MDS", "Look for red flags of organic psychosis", "Rahul, 22, new psychosis and headache", [
     b("He also has fever and a stiff neck.", [
       ["b", "Refer urgently for medical assessment for infection of the brain", "He has encephalitis. Red flags change the plan."],
-      ["o", "Start the usual first-episode psychosis plan, since he is young and psychosis is common at his age", "Fever and a stiff neck are ignored. Brain infection can kill within days and needs urgent medical care."],
+      ["h", "Start the usual first-episode psychosis plan, since he is young and psychosis is common at his age", "Fever and a stiff neck are ignored. Brain infection can kill within days and needs urgent medical care."],
       ["h", "Ignore the fever as unrelated", "Fever with psychosis needs urgent attention."],
     ]),
   ]),
@@ -404,7 +404,7 @@ export const ASSESSMENT: Scenario[] = [
   ]),
   s("wy-a058", "assessment", "Assessing an intoxicated patient", "substance", "substance", 3, "MDS", "Know when to wait for a full assessment", "Man, 30, drunk in the emergency room", [
     b("He is intoxicated and saying he will kill himself.", [
-      ["o", "Discharge him, since people often say things when drunk that they do not mean", "Risk may be real; you cannot dismiss it."],
+      ["h", "Discharge him, since people often say things when drunk that they do not mean", "Risk may be real; you cannot dismiss it."],
       ["h", "Do a full psychiatric assessment while he is intoxicated", "Assessment is unreliable while drunk."],
       ["b", "Keep him safe, then reassess risk properly when he is sober", "Sober, he still has suicidal thoughts and a plan. Waiting gave a true picture."],
     ]),

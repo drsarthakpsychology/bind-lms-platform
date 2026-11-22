@@ -55,7 +55,7 @@ const SCENARIOS_CORE: Scenario[] = [
         choices: [
           { text: "Ask about intent and timing, make a safety plan, and involve your supervisor today", outcome: "best", consequence: "She agrees to her mother keeping the pills and to a follow-up tomorrow. Your supervisor reviews her the same day." },
           { text: "Promise to keep it between the two of you so she trusts you", outcome: "harm", consequence: "You've made a promise you can't keep. If she's at risk, you must act, and she'll feel betrayed." },
-          { text: "Book her next weekly session as usual", outcome: "ok", consequence: "She's still at risk for 7 days with access to the means. Risk needs same-day action." },
+          { text: "Book her next weekly session as usual", outcome: "harm", consequence: "She's still at risk for 7 days with access to the means. Risk needs same-day action." },
         ],
       },
     ],
@@ -112,7 +112,7 @@ const SCENARIOS_CORE: Scenario[] = [
         says: "“The voices tell me to hurt the neighbour's dog.”",
         choices: [
           { text: "Ask if he plans to act, whether he's acted before, and inform the psychiatrist today", outcome: "best", consequence: "Command hallucinations with possible action need urgent review. The team acts in time." },
-          { text: "Reassure him that voices can't make him do anything", outcome: "ok", consequence: "Kind, but you haven't assessed the risk." },
+          { text: "Reassure him that voices can't make him do anything", outcome: "harm", consequence: "Kind, but you haven't assessed the risk." },
           { text: "Change the topic to keep him calm", outcome: "harm", consequence: "You've avoided a risk you were told about." },
         ],
       },
@@ -155,7 +155,7 @@ const SCENARIOS_CORE: Scenario[] = [
         choices: [
           { text: "Treat it as possible lithium toxicity: urgent medical review and a blood level today", outcome: "best", consequence: "His level is high. The team stops lithium and he recovers." },
           { text: "Tell him it's probably a stomach bug", outcome: "harm", consequence: "Lithium toxicity can damage the kidneys and brain. This delay is dangerous." },
-          { text: "Advise him to drink more water and see how it goes", outcome: "ok", consequence: "Fluids help, but this needs same-day medical assessment." },
+          { text: "Advise him to drink more water and see how it goes", outcome: "harm", consequence: "Fluids help, but this needs same-day medical assessment." },
         ],
       },
     ],

@@ -35,7 +35,7 @@ export const CHILD_FAMILY: Scenario[] = [
     b("They want to know everything she says in sessions.", [
       ["h", "Agree to share all session content with them", "She stops talking in sessions. Teens need some privacy to open up."],
       ["b", "Explain what stays private and what you would share", "Parents feel included and she keeps talking. Clear limits protect both trust and safety."],
-      ["o", "Refuse to tell them anything at all, even about risk, since she is the client", "If risk rises, they would not know. Parents of minors need safety information."],
+      ["h", "Refuse to tell them anything at all, even about risk, since she is the client", "If risk rises, they would not know. Parents of minors need safety information."],
     ]),
   ]),
   s("wy-f006", "child-family", "Exam pressure from parents", "child", "child", 2, "US", "Help parents lower harmful pressure", "Father of a Class 10 student in Kota", [
@@ -47,7 +47,7 @@ export const CHILD_FAMILY: Scenario[] = [
   ]),
   s("wy-f007", "child-family", "Disclosure of abuse by a child", "child", "child", 3, "UMS", "Respond well to a child's disclosure", "Girl, 9, in a school counselling room", [
     b("“Mama's friend touches me when she goes to work. Don't tell.”", [
-      ["o", "Ask her many detailed questions to be sure it really happened before you do anything", "Repeated detailed questioning can upset her and harm the later legal process. Let trained investigators do that."],
+      ["h", "Ask her many detailed questions to be sure it really happened before you do anything", "Repeated detailed questioning can upset her and harm the later legal process. Let trained investigators do that."],
       ["b", "Stay calm, believe her, and report under POCSO", "She is protected and the man is investigated. Calm belief and prompt reporting are the core response."],
       ["h", "Promise not to tell anyone", "You cannot keep that promise. POCSO makes reporting mandatory, and secrecy leaves her in danger."],
     ]),
@@ -145,7 +145,7 @@ export const CHILD_FAMILY: Scenario[] = [
   ]),
   s("wy-f021", "child-family", "Child in a violent home", "child", "child", 3, "UMS", "Protect a child exposed to domestic violence", "Boy, 10, nightmares after fights at home", [
     b("His mother says the father hits her.", [
-      ["o", "Focus therapy on the boy's nightmares only", "The violence continues and the nightmares return. The cause is at home."],
+      ["h", "Focus therapy on the boy's nightmares only", "The violence continues and the nightmares return. The cause is at home."],
       ["b", "Assess safety for both and link protection", "The mother gets a protection order. Safety comes before therapy."],
       ["h", "Tell the mother to stay for the child's sake", "The child stays exposed to violence. Witnessing abuse harms children."],
     ]),
@@ -244,7 +244,7 @@ export const CHILD_FAMILY: Scenario[] = [
   s("wy-f035", "child-family", "Teen pregnancy", "child", "ethics-law", 4, "UMS", "Respond to an adolescent pregnancy", "Girl, 16, pregnant by her boyfriend", [
     b("She begs you not to tell anyone.", [
       ["b", "Support her and explain the POCSO duty to report", "She is supported medically and emotionally. The law protects minors."],
-      ["o", "Keep it secret and help her find a clinic quietly on her own", "You break the law and she lacks support."],
+      ["h", "Keep it secret and help her find a clinic quietly on her own", "You break the law and she lacks support."],
       ["h", "Tell her parents to punish her", "She feels shamed, hides the pregnancy and avoids care. Punishment makes her unsafe."],
     ]),
   ]),
@@ -285,7 +285,7 @@ export const CHILD_FAMILY: Scenario[] = [
   ]),
   s("wy-f041", "child-family", "Teen and sexting", "child", "child", 3, "UMS", "Handle a sexting incident", "Girl, 14, her photo shared by a classmate", [
     b("Her parents blame her.", [
-      ["o", "Tell the parents to take her phone forever and move on", "The harm continues and she feels blamed. Reporting is needed."],
+      ["h", "Tell the parents to take her phone forever and move on", "The harm continues and she feels blamed. Reporting is needed."],
       ["h", "Agree with the parents", "She feels ashamed and at risk."],
       ["b", "Support her and report it under POCSO", "The image is removed and she feels protected."],
     ]),
@@ -392,7 +392,7 @@ export const CHILD_FAMILY: Scenario[] = [
     b("He is exhausted.", [
       ["h", "Tell him that is a terrible thought", "He feels judged and does not share again."],
       ["b", "Explain the danger and a safe plan", "He learns safe steps and the baby stays safe. Naming the danger and giving a plan prevents harm."],
-      ["o", "Tell him all parents feel that way and move on", "He shakes the baby that night. Brushing it off leaves the risk unaddressed."],
+      ["h", "Tell him all parents feel that way and move on", "He shakes the baby that night. Brushing it off leaves the risk unaddressed."],
     ]),
   ]),
   s("wy-f057", "child-family", "Child after a disaster", "ptsd", "child", 3, "US", "Support a child after a flood", "Girl, 7, after floods destroyed her home", [
@@ -411,7 +411,7 @@ export const CHILD_FAMILY: Scenario[] = [
   ]),
   s("wy-f059", "child-family", "Child abuse by a parent", "child", "child", 4, "UMS", "Report suspected abuse by a parent", "Boy, 8, with belt marks", [
     b("He says his father beats him.", [
-      ["o", "Talk to the father first to understand", "May put the child at greater risk."],
+      ["h", "Talk to the father first to understand", "May put the child at greater risk."],
       ["h", "Ignore it as discipline", "He keeps being beaten. Abuse is not discipline; it must be reported."],
       ["b", "Record his words and report to Childline", "He is protected and the family is supported."],
     ]),
