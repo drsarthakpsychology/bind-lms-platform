@@ -49,7 +49,7 @@ function PushNotice({ problem }: { problem: PushProblem | null }) {
       <T v="small" tone="muted">
         {line}
       </T>
-      {problem === "denied" ? <Button testID="push-open-settings" kind="secondary" small label="Open phone settings" onPress={() => void Linking.openSettings().catch(() => undefined)} /> : null}
+      {problem === "denied" ? <Button testID="push-open-settings" kind="raised" small label="Open phone settings" onPress={() => void Linking.openSettings().catch(() => undefined)} /> : null}
     </Stone>
   );
 }
