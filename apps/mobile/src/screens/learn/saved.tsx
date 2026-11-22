@@ -107,8 +107,8 @@ export function SavedScreen() {
   const bookmarks = keysOn.filter((k) => k.marked);
   const notes = keysOn.filter((k) => k.note);
   return (
-    <Screen testID="saved" onRefresh={() => void marks.refetch()} refreshing={marks.isRefetching}>
-      <Stack.Screen options={{ title: "Saved" }} />
+    <Screen testID="saved" area="learn" title="Saved" lead="Your bookmarks and notes" onRefresh={() => void marks.refetch()} refreshing={marks.isRefetching}>
+      <Stack.Screen options={{ title: "" }} />
       <Loaded q={marks} soon what="what you saved" skeleton={<RowsSkeleton rows={4} />}>
         {(d) =>
           !keysOn.length ? (
