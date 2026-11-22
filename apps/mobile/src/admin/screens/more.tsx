@@ -19,7 +19,7 @@ import { useAdminRole } from "../role";
 import { startViewAs } from "../view-as";
 import { useTestMode } from "../test-mode";
 import { FAILED_EMAILS, FEATURES, WALL_REPORTS } from "./mock";
-import { Group, Panel, RolePill, Screen } from "../ui";
+import { Group, Panel, Screen } from "../ui";
 
 /**
  * More: everything the admin runs that is not a tab, grouped by the job it
@@ -51,7 +51,6 @@ export function AdminMoreScreen() {
             {roleLabel}
           </T>
         </View>
-        <RolePill />
       </Panel>
       <Group title="Messages and queues">
         <Panel rows>
