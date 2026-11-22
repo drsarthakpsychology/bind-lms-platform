@@ -106,7 +106,7 @@ describe("as the Super Admin", () => {
     expect(await screen.findByText("Sana Khan")).toBeTruthy();
     expect(screen.getByTestId("learner-module-m01")).toBeTruthy();
     await render(<StudentSections id="u5" name="Sana Khan" />);
-    await fireEvent(await screen.findByTestId("section-wall"), "valueChange", false);
+    await fireEvent.press(await screen.findByTestId("section-wall"));
     await fireEvent.press(await screen.findByTestId("confirm-go"));
     await waitFor(() => expect(liveMock.state().blocks.u5).toEqual(["wall"]));
   });

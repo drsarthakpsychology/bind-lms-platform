@@ -3,7 +3,7 @@
  * no stickers), the five tabs, the new screens, and view-only admins seeing
  * every write control locked with a reason.
  */
-import { fireEvent, screen } from "@testing-library/react-native";
+import { fireEvent, screen, waitFor } from "@testing-library/react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 
@@ -15,6 +15,7 @@ import { FailedEmailsScreen, WallReportsScreen } from "@/admin/screens/queues";
 import { SwitchesScreen, TestModeScreen } from "@/admin/screens/switches";
 import { LearningScreen } from "@/admin/screens/learning";
 import { currentSession } from "@/clinic/admin/today";
+import { liveMock } from "@/admin/mock-live";
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
 import { render } from "./utils";
@@ -99,7 +100,7 @@ describe("as the Super Admin", () => {
     await render(<AddStudentScreen />);
     await fireEvent.press(screen.getByTestId("add-student-go"));
     expect(screen.getByText("Write at least one full email address.")).toBeTruthy();
-    await screen.findByTestId("add-cohort");
+    await screen.findAllByTestId(/^add-cohort-/);
     await fireEvent.changeText(screen.getByTestId("add-list"), "new.person@example.com");
     await fireEvent.press(screen.getByTestId("add-student-go"));
     expect(await screen.findByText(/New account made/)).toBeTruthy();
@@ -119,7 +120,8 @@ describe("as the Super Admin", () => {
     await render(<FailedEmailsScreen />);
     expect(await screen.findByTestId("failed-11111111-1111-4111-8111-111111111111")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("failed-11111111-1111-4111-8111-111111111111-clear"));
-    expect(await screen.findByText(/cleared. The history keeps them/)).toBeTruthy();
+    await waitFor(() => expect(liveMock.state().failed.length).toBe(1));
+    await waitFor(() => expect(screen.queryByTestId("failed-11111111-1111-4111-8111-111111111111")).toBeNull());
     expect(screen.queryByText(/sample data/i)).toBeNull();
     // The leaderboard reads the real board: every student with full names and cohorts, a page at a time.
     await render(<AdminLeaderboardScreen />);
