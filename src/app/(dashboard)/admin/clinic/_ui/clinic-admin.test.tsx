@@ -126,7 +126,7 @@ describe("leave queue", () => {
 
 describe("trackers", () => {
   it("averages attendance over students with any sessions due", () => {
-    const r = (p: number | null, due: number): ClinicTrackerRow => ({ userId: "u", name: null, roll: null, batch: null, attendance: { required: 1, attended: 1, late: 0, onLeave: 0, absent: 0, noScanOut: 0, percent: p, minutes: 0 }, leave: { allowance: 5, used: 5, pending: 0, left: 0 }, cases: { base: 8, extras: [], total: 8, done: 2, pending: 6 }, visits: { planned: 4, done: 1, absent: 0, missed: 0, due } });
+    const r = (p: number | null, due: number): ClinicTrackerRow => ({ userId: "u", name: null, roll: null, batch: null, attendance: { required: 1, attended: 1, late: 0, onLeave: 0, absent: 0, noScanOut: 0, percent: p, minutes: 0, counted: 1, countedPresent: 1, present: 1, leftEarly: 0 }, leave: { allowance: 5, used: 5, pending: 0, left: 0 }, cases: { base: 8, extras: [], total: 8, done: 2, pending: 6 }, visits: { planned: 4, done: 1, absent: 0, missed: 0, due } });
     expect(cohortTotals([r(80, 1), r(100, 0), r(null, 2)])).toEqual({ attendance: 90, casesDone: 6, casesTotal: 24, logsDue: 3, noLeaves: 3 });
   });
 });

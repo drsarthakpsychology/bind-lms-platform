@@ -31,7 +31,7 @@ export default async function ClinicStudentPage({ params, searchParams }: { para
           { label: "Batch", value: r.batch ? BATCH_LABEL[r.batch] : "None" },
           { label: "Leaves", value: `${leaves(r.leave.left)} left of ${r.leave.allowance}${r.leave.pending ? `, ${r.leave.pending} waiting` : ""}` },
           { label: "Cases", value: `${r.cases.done} of ${r.cases.total}${r.cases.extras.length ? `, ${cases(r.cases.extras.reduce((n, e) => n + e.count, 0))} added` : ""}` },
-          { label: "OPD visits", value: `${r.visits.done} of ${r.visits.planned}${r.visits.due ? `, ${r.visits.due} count due` : ""}${r.visits.missed ? `, ${r.visits.missed} missed` : ""}` },
+          { label: "OPD visits", value: `${r.visits.done} of ${r.visits.planned}${r.visits.due ? `, ${r.visits.due} count due` : ""}${r.visits.missed ? `, ${r.visits.missed} missed (counted as leave)` : ""}` },
         ]}
       />
       <Block title="OPD days" count={d.visits.length}>
@@ -42,7 +42,7 @@ export default async function ClinicStudentPage({ params, searchParams }: { para
                 <span className="type-body font-semibold">
                   {dayShort(v.date)}, {BATCH_LABEL[v.batch].toLowerCase()}
                 </span>
-                <span className="type-small text-muted-foreground">{v.log ? (v.log.absent ? "Absent" : cases(v.log.cases)) : v.state === "upcoming" ? "Coming up" : v.state === "missed" ? "Missed" : v.state === "due" ? "Count due" : v.state === "on_leave" ? "On leave" : "Today"}</span>
+                <span className="type-small text-muted-foreground">{v.log ? (v.log.absent ? "Absent, counted as a leave" : cases(v.log.cases)) : v.state === "upcoming" ? "Coming up" : v.state === "missed" ? "Missed, counted as a leave" : v.state === "due" ? "Count due" : v.state === "on_leave" ? "On leave" : "Today"}</span>
               </RowItem>
             ))}
           </Rows>

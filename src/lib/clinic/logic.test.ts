@@ -141,7 +141,7 @@ describe("attendance rules", () => {
       { status: "not_required", required: false, minutes: null },
       { status: "present", required: false, minutes: 30 }, // came to an OPD day not assigned
     ]);
-    expect(s).toEqual({ required: 4, attended: 3, late: 1, onLeave: 1, absent: 1, noScanOut: 0, percent: 67, minutes: 210 });
+    expect(s).toEqual({ required: 4, attended: 3, late: 1, onLeave: 1, absent: 1, noScanOut: 0, percent: 67, minutes: 210, counted: 3, countedPresent: 2, present: 2, leftEarly: 0 });
     expect(summarize([]).percent).toBeNull();
     expect(summarize([{ status: "present", required: true, minutes: 1 }, { status: "absent", required: true, minutes: null }]).percent).toBe(50);
   });

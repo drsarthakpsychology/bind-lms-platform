@@ -21,7 +21,9 @@ const isOpdKind = (k: string) => k === "opd_morning" || k === "opd_evening";
 export const ref = (v: unknown): C.Ref => ({ id: str(obj(v).id), name: str(obj(v).name, "Cohort") });
 
 /** The server's per-student status, as the screens' state. `open` says scanning is accepted now. */
-export function stateOf(status: unknown, open: boolean, inAt: string | null, outAt: string | null): C.AttendState | null {
+export function stateOf(status: unknown, open: boolean, inAt: string | null, outAt: string | null, mark?: unknown): C.AttendState | null {
+  // The server's one shared count says how it counts: approved early leave is "left early", never "no scan out".
+  if (mark === "left_early" && status !== "in") return "left_early";
   switch (status) {
     case "upcoming":
       return open ? "open" : "upcoming";
@@ -53,7 +55,7 @@ export function session(v: unknown): C.ClinicSession {
   const cancelled = r.status === "cancelled";
   const inAt = my ? strOr(my.inAt) : null;
   const outAt = my ? strOr(my.outAt) : null;
-  const state = my ? stateOf(my.status, bool(r.open), inAt, outAt) : null;
+  const state = my ? stateOf(my.status, bool(r.open), inAt, outAt, my.mark) : null;
   const kind = oneOf(r.kind, KINDS, "other");
   return {
     id: str(r.id),
@@ -69,7 +71,7 @@ export function session(v: unknown): C.ClinicSession {
     note: strOr(r.note),
     cohortIds: arr<string>(r.cohortIds).map(String),
     batch: oneOrNull(r.batch, BATCHES) ?? (kind === "opd_morning" ? "morning" : kind === "opd_evening" ? "evening" : null),
-    mine: my && state ? { state: cancelled ? "cancelled" : state, inAt, outAt, late: bool(my.late) || my.status === "late", leaveAt: strOr(my.earlyLeaveAt) } : null,
+    mine: my && state ? { state: cancelled ? "cancelled" : state, inAt, outAt, late: bool(my.late) || my.status === "late", leaveAt: strOr(my.earlyLeaveAt), missedOpd: my.status === "on_leave" && bool(my.missedOpd) } : null,
   };
 }
 
@@ -211,8 +213,15 @@ export function attendance(v: unknown): C.MyAttendance {
   const rows = sortT(arr(r.sessions).filter(mineOnly).map(session))
     .filter((x) => x.mine && x.mine.state !== "upcoming" && x.mine.state !== "open" && x.status !== "cancelled")
     .reverse()
-    .map((x) => ({ sessionId: x.id, date: x.date, title: x.title || "Session", kind: x.kind, state: x.mine!.state, inAt: x.mine!.inAt, outAt: x.mine!.outAt, late: x.mine!.late }));
-  return { pct: numOr(s.percent), present: num(s.attended), late: num(s.late), missed: num(s.absent), onLeave: num(s.onLeave), noOut: num(s.noScanOut), total: num(s.required), minutes: num(s.minutes), rows };
+    .map((x) => ({ sessionId: x.id, date: x.date, title: x.title || "Session", kind: x.kind, state: x.mine!.state, inAt: x.mine!.inAt, outAt: x.mine!.outAt, late: x.mine!.late, missedOpd: x.mine!.missedOpd }));
+  // Every number comes from the server's one shared count. An older server sends no `counted`: fall back to its own numbers.
+  const late = num(s.late);
+  const leftEarly = num(s.leftEarly);
+  const hasCount = typeof s.counted === "number";
+  const counted = hasCount ? num(s.counted) : Math.max(0, num(s.required) - num(s.onLeave));
+  const came = hasCount ? num(s.countedPresent) : Math.min(num(s.attended), counted);
+  const present = typeof s.present === "number" ? num(s.present) : Math.max(0, num(s.attended) - late);
+  return { pct: numOr(s.percent), present, leftEarly, came, counted, late, missed: num(s.absent), onLeave: num(s.onLeave), noOut: num(s.noScanOut), total: num(s.required), minutes: num(s.minutes), rows };
 }
 
 /* --------------------------------------------------------------- admin */
@@ -245,7 +254,8 @@ export function adminToday(v: unknown, sessions?: unknown): C.AdminClinicToday {
   };
 }
 
-function rosterState(status: unknown, outAt: string | null, inAt: string | null): C.RosterState {
+function rosterState(status: unknown, outAt: string | null, inAt: string | null, mark?: unknown): C.RosterState {
+  if (mark === "left_early" && status !== "in") return "left_early";
   switch (status) {
     case "in":
       return "in";
@@ -271,7 +281,7 @@ export function sessionDetail(v: unknown): C.AdminSessionDetail {
     .map((o) => {
       const inAt = strOr(o.inAt);
       const outAt = strOr(o.outAt);
-      return { studentId: str(o.userId), name: str(o.name, str(o.roll, "Student")), state: rosterState(o.status, outAt, inAt), inAt, outAt, late: bool(o.late) || o.status === "late", manual: bool(o.manual), note: strOr(o.note), leaveAt: strOr(o.earlyLeaveAt) };
+      return { studentId: str(o.userId), name: str(o.name, str(o.roll, "Student")), state: rosterState(o.status, outAt, inAt, o.mark), inAt, outAt, late: bool(o.late) || o.status === "late", manual: bool(o.manual), note: strOr(o.note), leaveAt: strOr(o.earlyLeaveAt) };
     })
     .sort((a, b) => a.name.localeCompare(b.name));
   return { session: { ...session(r.session), counts: counts(r.counts) }, roster, open: bool(r.open), lateMinutes: num(r.lateMinutes, 10) };

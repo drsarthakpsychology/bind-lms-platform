@@ -22,7 +22,7 @@ type Filter = "all" | "in" | "out" | "missing" | "late" | "leave";
 export function filterRoster(rows: RosterRow[], f: Filter): RosterRow[] {
   if (f === "all") return rows;
   if (f === "late") return rows.filter((r) => r.late);
-  if (f === "out") return rows.filter((r) => r.state === "out" || r.state === "no_out");
+  if (f === "out") return rows.filter((r) => r.state === "out" || r.state === "no_out" || r.state === "left_early");
   return rows.filter((r) => r.state === f);
 }
 

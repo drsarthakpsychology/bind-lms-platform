@@ -25,6 +25,7 @@ import {
   myVisits,
   mySessions,
   quotaFor,
+  summaryOf,
   reconcileMissed,
   studentCohort,
   todayOf,
@@ -94,13 +95,13 @@ export async function getWeek(db: Db, userId: string, cohort: string | null | un
 
 export async function getMyAttendance(db: Db, userId: string, cohort: string | null | undefined, now: number): Promise<ClinicMyAttendance> {
   const ctx = await context(db, userId, cohort, now);
-  const empty = { required: 0, attended: 0, late: 0, onLeave: 0, absent: 0, noScanOut: 0, percent: null, minutes: 0 };
+  const empty = summarize([]);
   if (!ctx) return { v: 1, cohortId: null, summary: empty, sessions: [] };
   const today = todayOf(now);
   const list = mySessions(ctx.b, userId, ctx.b.sessions.filter((s) => s.date <= today), now)
     .filter((s) => s.required || s.my.inAt || s.my.status === "on_leave")
     .reverse();
-  return { v: 1, cohortId: ctx.cohortId, summary: summarize(list.map((s) => ({ status: s.my.status, required: s.required, minutes: s.my.minutes }))), sessions: list };
+  return { v: 1, cohortId: ctx.cohortId, summary: summaryOf(list), sessions: list };
 }
 
 /* -------------------------------------------------------------- scan */

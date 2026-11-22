@@ -186,13 +186,14 @@ export function LiveAttendance({
 }
 
 function RowStatus({ r }: { r: ClinicAttendanceRow }) {
-  const text = r.inAt && !r.outAt && r.status !== "no_scan_out" ? (r.late ? "In, late" : "In") : r.status === "upcoming" ? "Not in" : STATUS_LABEL[r.status];
-  const tone = r.inAt && !r.outAt && r.status !== "no_scan_out" ? (r.late ? "warn" : "info") : STATUS_TONE[r.status];
+  const inNow = r.inAt && !r.outAt && r.status === "in";
+  const text = r.status === "on_leave" ? (r.missedOpd ? "On leave (missed OPD day)" : "On leave") : inNow ? (r.late ? "In, late" : "In") : r.mark === "left_early" ? "Left early (approved)" : r.status === "upcoming" ? "Not in" : STATUS_LABEL[r.status];
+  const tone = r.status === "on_leave" ? STATUS_TONE.on_leave : inNow ? (r.late ? "warn" : "info") : r.mark === "left_early" ? "ok" : STATUS_TONE[r.status];
   return (
     <span className="flex flex-col items-end gap-0.5 md:items-start">
       <Status tone={tone}>{text}</Status>
       {r.manual ? <span className="type-caption text-muted-foreground">By hand</span> : null}
-      {r.earlyLeaveAt ? <span className="type-caption text-muted-foreground">Leaving early</span> : null}
+      {r.earlyLeaveAt && r.mark !== "left_early" ? <span className="type-caption text-muted-foreground">Leaving early, approved</span> : null}
     </span>
   );
 }

@@ -214,13 +214,16 @@ function myOf(s: State, x: Sess, userId: string): W.ClinicMySession["my"] {
   const today = todayIST(now());
   let status: W.ClinicMyStatus;
   if (x.cancelled) status = "cancelled";
+  else if (leave) status = "on_leave"; // approved leave: never counted, even with a scan
   else if (scan?.inAt && scan.outAt) status = late ? "late" : "present";
   else if (scan?.inAt) status = x.date < today ? "no_scan_out" : late ? "late" : "in";
   else if (!required) status = "not_required";
-  else if (leave) status = "on_leave";
   else if (x.date < today) status = "absent";
   else status = "upcoming";
-  return { status, inAt: scan?.inAt ?? null, outAt: scan?.outAt ?? null, late, minutes, leaveId: leave?.id ?? null, earlyLeaveAt: early?.leaveAt ?? null };
+  const earlyLeaveAt = early?.leaveAt ?? null;
+  const came = status === "present" || status === "late" || status === "in" || status === "no_scan_out";
+  const mark = status === "on_leave" ? "on_leave" : came ? (earlyLeaveAt ? "left_early" : late ? "late" : "present") : status === "absent" ? "absent" : null;
+  return { status, inAt: scan?.inAt ?? null, outAt: scan?.outAt ?? null, late, minutes, leaveId: leave?.id ?? null, earlyLeaveAt, mark, missedOpd: false };
 }
 
 const wire = (x: Sess): W.ClinicSession => ({ id: x.id, cohortIds: x.cohortIds, date: x.date, start: x.start, end: x.end, kind: x.kind, title: x.title, place: x.place, onlineLink: x.link, compulsory: x.compulsory, status: x.cancelled ? "cancelled" : "scheduled", origin: x.oneOff ? "one_off" : "timetable", note: x.note, movedFrom: x.movedFrom, batch: x.kind === "opd_morning" ? "morning" : x.kind === "opd_evening" ? "evening" : null });
@@ -389,11 +392,25 @@ function summary(s: State, id: string, cohortId: string): W.ClinicAttendanceSumm
   const rows = cohortSessions(s, cohortId)
     .filter((x) => x.date <= today && !x.cancelled)
     .map((x) => ({ x, req: expected(s, x).some((p) => p.id === id), my: myOf(s, x, id) }));
+  // The same rule as the server: leave is in neither number, approved early leave counts as came.
   const req = rows.filter((r) => r.req && (r.x.date < today || r.my.inAt));
-  const attended = req.filter((r) => r.my.inAt).length;
-  const onLeave = req.filter((r) => r.my.status === "on_leave").length;
-  const denom = req.length - onLeave;
-  return { required: req.length, attended, late: req.filter((r) => r.my.late).length, onLeave, absent: req.filter((r) => r.my.status === "absent").length, noScanOut: req.filter((r) => r.my.status === "no_scan_out").length, percent: denom > 0 ? Math.round((attended / denom) * 100) : null, minutes: rows.reduce((n, r) => n + (r.my.minutes ?? 0), 0) };
+  const counted = req.filter((r) => r.my.mark && r.my.mark !== "on_leave");
+  const countedPresent = counted.filter((r) => r.my.mark !== "absent").length;
+  const n = (m: string) => req.filter((r) => r.my.mark === m).length;
+  return {
+    required: req.length,
+    attended: req.filter((r) => r.my.inAt && r.my.mark !== "on_leave").length,
+    late: n("late"),
+    onLeave: n("on_leave"),
+    absent: n("absent"),
+    noScanOut: req.filter((r) => r.my.status === "no_scan_out" && r.my.mark !== "left_early").length,
+    percent: counted.length ? Math.round((countedPresent / counted.length) * 100) : null,
+    minutes: rows.reduce((t, r) => t + (r.my.minutes ?? 0), 0),
+    counted: counted.length,
+    countedPresent,
+    present: n("present"),
+    leftEarly: n("left_early"),
+  };
 }
 
 function trackerRow(s: State, p: Student): W.ClinicTrackerRow {
@@ -466,7 +483,7 @@ export function clinicRoute(method: string, fullPath: string, rawBody: unknown, 
         .map((p) => {
           const my = myOf(s, x, p.id);
           const scan = s.scans[sk(x.id, p.id)];
-          return { userId: p.id, name: p.name, roll: p.roll, status: my.status, inAt: my.inAt, outAt: my.outAt, late: my.late, minutes: my.minutes, manual: !!scan?.manual, note: scan?.note ?? null, earlyLeaveAt: my.earlyLeaveAt };
+          return { userId: p.id, name: p.name, roll: p.roll, status: my.status, inAt: my.inAt, outAt: my.outAt, late: my.late, minutes: my.minutes, manual: !!scan?.manual, note: scan?.note ?? null, earlyLeaveAt: my.earlyLeaveAt, mark: my.mark, missedOpd: my.missedOpd };
         })
         .sort((a, b) => a.name.localeCompare(b.name)),
       counts: liveCounts(s, x),

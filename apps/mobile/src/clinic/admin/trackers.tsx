@@ -46,7 +46,7 @@ export function AdminTrackersScreen() {
                   { value: avg === null ? "None yet" : `${avg}%`, label: "Attendance" },
                   { value: `${done}/${total}`, label: "Cases done" },
                   { value: String(due.reduce((n, x) => n + x.unsubmitted, 0)), label: "Logs not in", onPress: () => setBy("logs"), testID: "trk-logs" },
-                  { value: String(d.items.reduce((n, x) => n + x.absences, 0)), label: "OPD absences" },
+                  { value: String(d.items.reduce((n, x) => n + x.absences, 0)), label: "Missed OPD (leave)" },
                 ]}
               />
               <FilterChips
@@ -72,7 +72,7 @@ export function AdminTrackersScreen() {
                         key={s.studentId}
                         testID={`trk-${s.studentId}`}
                         title={s.name}
-                        meta={`${s.attendancePct === null ? "No sessions yet" : `${s.attendancePct}% attendance`} · ${s.casesDone} of ${s.opdTotal} cases · ${s.visits} visits${s.absences ? ` · ${s.absences} absent` : ""}`}
+                        meta={`${s.attendancePct === null ? "No sessions yet" : `${s.attendancePct}% attendance`} · ${s.casesDone} of ${s.opdTotal} cases · ${s.visits} visits${s.absences ? ` · ${s.absences} OPD missed (leave)` : ""}`}
                         trailing={s.unsubmitted ? <Tag tone="warn">{`${s.unsubmitted} to log`}</Tag> : undefined}
                         below={<Meter pct={cp} label={`${cp}%`} />}
                         onPress={() => openStudent(s.studentId)}

@@ -195,6 +195,14 @@ describe("clinic words and numbers", () => {
     expect(S.stateOf("on_leave", false, null, null)).toBe("leave");
     expect(S.stateOf("absent", false, null, null)).toBe("missed");
     expect(S.stateOf("not_required", false, null, null)).toBeNull();
+    // The one shared count: approved early leave is "Left early (approved)", never "No scan out".
+    expect(S.stateOf("no_scan_out", false, "a", null, "left_early")).toBe("left_early");
+    expect(S.stateOf("present", false, "a", "b", "left_early")).toBe("left_early");
+    expect(S.stateOf("in", true, "a", null, "left_early")).toBe("in");
+    expect(L.stateWord("left_early")).toBe("Left early (approved)");
+    expect(L.stateWord("missed")).toBe("Absent");
+    expect(L.stateWord("done", true)).toBe("Late");
+    expect(L.stateWord("leave")).toBe("On leave");
     const s = S.session({ id: "x", kind: "online_class", onlineLink: "https://meet", movedFrom: "2026-11-18 08:00", my: { status: "upcoming" }, open: true });
     expect(s.link).toBe("https://meet");
     expect(s.status).toBe("moved");
@@ -203,6 +211,23 @@ describe("clinic words and numbers", () => {
     expect(S.today(null).sessions).toEqual([]);
     expect(S.plan(undefined).status).toBe("none");
     expect(S.trackers({ rows: [null, 3] }).items).toHaveLength(1);
+  });
+
+  it("my attendance reads the shared count: leave in neither number", () => {
+    const d = S.attendance({
+      summary: { required: 5, attended: 3, late: 1, onLeave: 2, absent: 0, noScanOut: 0, percent: 100, minutes: 300, counted: 3, countedPresent: 3, present: 1, leftEarly: 1 },
+      sessions: [
+        { id: "a", date: "2026-11-16", start: "08:00", end: "10:00", kind: "class", compulsory: true, my: { status: "no_scan_out", inAt: "x", outAt: null, mark: "left_early", earlyLeaveAt: "09:00" } },
+        { id: "b", date: "2026-11-17", start: "08:00", end: "10:00", kind: "opd_morning", assigned: true, required: true, my: { status: "on_leave", mark: "on_leave", missedOpd: true } },
+      ],
+    });
+    expect(d).toMatchObject({ pct: 100, came: 3, counted: 3, present: 1, leftEarly: 1, onLeave: 2, missed: 0 });
+    expect(d.rows.map((r) => r.state)).toEqual(["leave", "left_early"]);
+    expect(d.rows[0]!.missedOpd).toBe(true);
+    // An older server without the new numbers: leave still left out.
+    expect(S.attendance({ summary: { required: 4, attended: 2, late: 0, onLeave: 1, absent: 1, percent: 67 } })).toMatchObject({ counted: 3, came: 2, present: 2 });
+    // The admin list: approved early leave shows as left early.
+    expect(S.sessionDetail({ rows: [{ userId: "u", name: "U", status: "no_scan_out", inAt: "x", mark: "left_early" }] }).roster[0]!.state).toBe("left_early");
   });
 
   it("filters and sorts the admin lists", () => {

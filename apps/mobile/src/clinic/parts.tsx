@@ -12,8 +12,8 @@ import { clockOf, isOpd, LEAVE_WORD, rangeLabel, ROSTER_WORD, sessionTitle, stat
 
 export const KIND_ICON: Record<SessionKind, typeof Users> = { opd_morning: Hospital, opd_evening: Hospital, class: Users, online_class: MonitorPlay, early_class: Sunrise, other: CalendarClock };
 
-export const STATE_TONE: Record<AttendState, Tone> = { upcoming: "quiet", open: "info", in: "ok", done: "ok", no_out: "warn", missed: "alert", leave: "quiet", cancelled: "quiet" };
-export const ROSTER_TONE: Record<RosterState, Tone> = { in: "ok", out: "quiet", missing: "alert", leave: "quiet", no_out: "warn" };
+export const STATE_TONE: Record<AttendState, Tone> = { upcoming: "quiet", open: "info", in: "ok", done: "ok", left_early: "ok", no_out: "warn", missed: "alert", leave: "quiet", cancelled: "quiet" };
+export const ROSTER_TONE: Record<RosterState, Tone> = { in: "ok", out: "quiet", missing: "alert", leave: "quiet", no_out: "warn", left_early: "quiet" };
 export const LEAVE_TONE: Record<LeaveStatus, Tone> = { pending: "info", approved: "ok", rejected: "alert", cancelled: "quiet" };
 export const VISIT_TONE: Record<OpdVisitStatus, Tone> = { upcoming: "quiet", today: "info", to_log: "warn", logged: "ok", absent: "alert", leave: "quiet" };
 

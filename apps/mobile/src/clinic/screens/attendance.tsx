@@ -53,7 +53,10 @@ function Body({ d }: { d: MyAttendance }) {
           <View style={{ flex: 1, minWidth: 0, gap: space[1] }}>
             <T v="h3">{d.pct === null ? "No sessions yet" : "Present"}</T>
             <T v="small" tone="muted" num>
-              {d.pct === null ? "Your percent starts with your first session." : `${d.present} of ${d.total - d.onLeave} sessions that counted. Leave is left out.`}
+              {d.pct === null ? "Your percent starts with your first session." : `Came to ${d.came} of ${d.counted} sessions that count.`}
+            </T>
+            <T v="caption" tone="muted">
+              Approved leave is left out. Leaving early with approval never lowers it.
             </T>
             {d.minutes ? (
               <T v="small" tone="muted" num>
@@ -66,9 +69,14 @@ function Body({ d }: { d: MyAttendance }) {
       <View style={{ flexDirection: "row", gap: space[2] }}>
         <Count value={d.present} label="Present" />
         <Count value={d.late} label="Late" />
-        <Count value={d.missed} label="Missed" />
-        <Count value={d.onLeave} label="On leave" />
+        <Count value={d.onLeave} label="On leave" testID="att-leave" />
+        <Count value={d.missed} label="Absent" testID="att-absent" />
       </View>
+      {d.leftEarly ? (
+        <T v="small" tone="muted" style={{ paddingHorizontal: space[1] }} num testID="att-left-early">
+          {d.leftEarly === 1 ? "1 session left early with approval. It counts as present." : `${d.leftEarly} sessions left early with approval. They count as present.`}
+        </T>
+      ) : null}
       {d.noOut ? (
         <T v="small" style={{ color: c.warnFg, paddingHorizontal: space[1] }} num>
           {d.noOut === 1 ? "1 session has no scan out. Remember to mark OUT when you leave." : `${d.noOut} sessions have no scan out. Remember to mark OUT when you leave.`}
@@ -86,6 +94,7 @@ function Body({ d }: { d: MyAttendance }) {
                     {r.date === today ? relDay(r.date, today) : dateLabel(r.date)}
                     {r.inAt ? ` · In ${clockOf(r.inAt)}` : ""}
                     {r.outAt ? ` · Out ${clockOf(r.outAt)}` : ""}
+                    {r.missedOpd ? " · Missed OPD day, counted as a leave" : ""}
                   </T>
                 </View>
                 <StatePill s={r.state} late={r.late} />
@@ -103,7 +112,7 @@ function Body({ d }: { d: MyAttendance }) {
 /** My attendance: the percent drawn in a ring, the counts, and every session so far with in and out times. */
 export function AttendanceScreen() {
   const q = useMyAttendance();
-  const lead = q.data ? (q.data.pct === null ? "No sessions yet" : `${q.data.present} present, ${q.data.missed} missed`) : undefined;
+  const lead = q.data ? (q.data.pct === null ? "No sessions yet" : `${q.data.came} came, ${q.data.onLeave} on leave, ${q.data.missed} absent`) : undefined;
   return (
     <AreaProvider area="home">
       <OwnHeader />
