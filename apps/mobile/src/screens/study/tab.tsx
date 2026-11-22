@@ -4,14 +4,14 @@ import * as React from "react";
 import { Pressable, View, type LayoutChangeEvent } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 
-import { useNotes } from "@/api/learn";
 import { go } from "@/api/prefetch";
 import { useMe, useStudyHome } from "@/api/queries";
 import { IconDot, Jyo, QuietEmpty, Screen, Stone, T } from "@/ds";
 import { springs, Swap, useMotionTier } from "@/motion";
 import { hasStudy, isSide, loadStudySide, saveStudySide, studySideNow, type StudySide } from "@/nav/study";
 import { TabTop } from "@/nav/top";
-import { NotesSide } from "@/screens/notes/hub";
+import { QuickBrowse } from "@/library/quick-browse";
+import { useQuickLibrary } from "@/library/quick-notes";
 import { Fetched, TilesSkeleton } from "@/screens/learn/parts";
 import { fonts, space, useTheme } from "@/theme";
 import { StudyHomeBody } from "./home";
@@ -122,7 +122,8 @@ function useSide(): [StudySide, (s: StudySide) => void] {
 /**
  * Study, the tab: Modules and Notes side by side, one big switch on the field.
  * Modules: carry on reading, Your map, every module on three shelves.
- * Notes: revision notes, medicines, the quick reference. The side you used
+ * Notes: Quick Notes, the one look-up library (criteria, comparisons,
+ * medicines, therapies, summaries and words). The side you used
  * last comes back next time. Switching crossfades the layer's content.
  */
 export function StudyTab() {
@@ -130,11 +131,11 @@ export function StudyTab() {
   const on = hasStudy(me.data);
   const [side, setSide] = useSide();
   const study = useStudyHome(on);
-  const notes = useNotes(on);
+  const notes = useQuickLibrary(on);
   const d = study.data;
   const done = d ? d.modules.filter((m) => m.status.complete).length : 0;
   const modulesMeta = d?.modules.length ? `${done} of ${d.modules.length} done` : undefined;
-  const notesMeta = notes.data?.notes.length ? `${notes.data.notes.length} notes` : undefined;
+  const notesMeta = notes.data?.items.length ? "Look up anything" : undefined;
   const refresh = () => void Promise.all([study.refetch(), notes.refetch()]);
 
   if (!on) {
@@ -183,7 +184,9 @@ export function StudyTab() {
             )}
           </Fetched>
         ) : (
-          <NotesSide />
+          <View testID="notes-hub">
+            <QuickBrowse />
+          </View>
         )}
       </Swap>
     </Screen>

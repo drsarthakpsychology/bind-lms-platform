@@ -1,5 +1,6 @@
 import type { RawResponse } from "../client";
 import type * as C from "../contract";
+import { mockQuickLibrary, mockQuickNote, mockQuickSearch } from "@/library/quick-notes-mock";
 
 /**
  * Mock answers for the Learn and Me routes added in round 2 (notes, the
@@ -113,6 +114,14 @@ export function resetLearnMock(): void {
 export function learnRoute(method: string, path: string, body: Record<string, unknown>, kind: string, opts: { empty: boolean }): RawResponse | null {
   const seg = path.split("/").filter(Boolean);
   const full = kind !== "lecture";
+  // Quick Notes (src/library/quick-notes-mock.ts holds a slice of the real library).
+  if (method === "GET" && seg[0] === "study" && seg[1] === "quick-notes") {
+    if (!full) return scope();
+    if (!seg[2]) return ok(mockQuickLibrary());
+    if (seg[2] === "search") return ok(mockQuickSearch(String(body.q ?? "")));
+    const n = mockQuickNote(decodeURIComponent(seg[2]));
+    return n ? ok(n) : notFound();
+  }
   if (method === "GET" && path === "/study/notes") return full ? ok<C.RevisionNoteList>({ blocks: ["Weeks 1 to 2: Mood", "Weeks 3 to 4: Anxiety"], notes: NOTES.map((n) => ({ ...n, readOn: read[n.id] ?? (opts.empty ? null : n.readOn) })) }) : scope();
   if (method === "GET" && seg[0] === "study" && seg[1] === "notes" && seg[2]) {
     if (!full) return scope();

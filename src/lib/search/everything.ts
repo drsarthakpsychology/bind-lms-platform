@@ -6,6 +6,8 @@ import { loadMyBlocks } from "@/lib/access/blocks";
 import { readFlags, type FlagStatus } from "@/lib/flags";
 import { MODULES } from "@/lib/study";
 import { NOTES } from "@/lib/learn/notes";
+import { QUICK_NOTES, REPLACED_SLUGS } from "@/lib/quick-notes";
+import { quickNoteView } from "@/lib/quick-notes/view";
 import { MEDS } from "@/lib/meds";
 import { referenceIndex } from "@/lib/reference/data";
 import { LANDMARK_CASES } from "@/lib/landmark/cases";
@@ -121,6 +123,11 @@ function buildContent(): Doc[] {
   for (const n of NOTES) {
     out.push(doc({ id: `note:${n.id}`, type: "note", gate: "notes", title: n.title, meta: n.tagline, keywords: [n.tagline, ...n.sections.map((s) => s.title)], href: `/study/notes/${e(n.id)}`, app: `/notes/${e(n.id)}`, boost: 1 }));
   }
+  // Quick Notes: names, headings and the facts strip, so "lithium level" or "Hoover" finds the note.
+  for (const n of QUICK_NOTES) {
+    const v = quickNoteView(n);
+    out.push(doc({ id: `note:${n.id}`, type: "note", gate: "notes", title: n.title, meta: `Quick Note · ${v.typeLabel}`, keywords: [...(n.aka ?? []), ...(n.keywords ?? []), ...v.sections.map((s) => s.title), ...v.facts.map((f) => f.value)], href: `/study/notes/${e(n.id)}`, app: "/notes/" + e(n.id), boost: 2 }));
+  }
   for (const m of MEDS) {
     out.push(doc({ id: `medicine:${m.id}`, type: "medicine", gate: "medicines", title: m.name, meta: m.cls, keywords: [...m.brands, m.cls, ...m.uses], href: `/practice/medicines/${e(m.id)}`, app: `/medicine/${e(m.id)}`, boost: 1 }));
   }
@@ -129,6 +136,8 @@ function buildContent(): Doc[] {
     for (const r of referenceIndex({ full: false })) {
       // A medicine already has its own page under Medicines.
       if (r.kind === "medicine" && medNames.has(r.label.toLowerCase())) continue;
+      // A card that became a typed Quick Note is found as that note.
+      if (r.kind === "disorder" && REPLACED_SLUGS.has(r.slug)) continue;
       const kind = r.kind === "disorder" ? "Disorder" : r.kind === "medicine" ? "Medicine" : "Word";
       out.push(doc({ id: `glossary:${r.slug}`, type: "glossary", gate: "reference", title: r.label, meta: `${kind} · ${r.summary}`, keywords: r.aliases, href: `/study/reference/${e(r.slug)}`, app: `/reference/${e(r.slug)}` }));
     }

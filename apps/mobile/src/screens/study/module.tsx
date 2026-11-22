@@ -12,6 +12,7 @@ import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Enter, StaggerList, Swap } from "@/motion";
 import { openTarget } from "@/nav/targets";
+import { ModuleQuickNotes } from "@/library/quick-module";
 import { Fetched, Group, Pill, StateMark, Tile, TilesSkeleton } from "@/screens/learn/parts";
 import { saveLearn, withActivity, withWritten } from "@/study/state";
 import { space, useTheme } from "@/theme";
@@ -225,6 +226,7 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
               </Group>
             ) : null}
             {m.noteId ? <Tile testID="module-note" icon={NotebookText} title="One-page note for this module" meta="Read it before the test" onPress={() => go(`/notes/${encodeURIComponent(m.noteId!)}`)} /> : null}
+            <ModuleQuickNotes moduleId={m.id} />
           </>
         ) : null}
       </Swap>

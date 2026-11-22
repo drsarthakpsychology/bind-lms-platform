@@ -501,7 +501,7 @@ export const DISORDERS: DisorderRef[] = [
     chapter: "Feeding and eating disorders",
     core: "Restricting food to a significantly low weight, with intense fear of gaining weight.",
     features: ["Significantly low weight for age, sex and health", "Intense fear of weight gain or behaviour that stops weight gain", "Distorted body image or not seeing how serious the low weight is", "Types: restricting or binge-eating/purging"],
-    criteria: ["Severity by BMI in adults (mild ≥17, moderate 16 to 16.99, severe 15 to 15.99, extreme below 15)", "Amenorrhoea is no longer required"],
+    criteria: ["Severity by BMI in adults (mild 17 or more, moderate 16 to 16.99, severe 15 to 15.99, extreme below 15)", "Amenorrhoea is no longer required"],
     duration: "No minimum duration (current episode: past 3 months for type).",
     lookAlikes: [
       { name: "Medical causes of weight loss", tell: "Thyroid, diabetes, coeliac, cancer, TB: no fear of weight gain." },

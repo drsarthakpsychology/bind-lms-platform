@@ -33,8 +33,7 @@ export const LEARN_GROUPS: HubGroup[] = [
     title: "Study",
     rows: [
       { href: "/study", label: "Modules", icon: "bookOpen", study: true, full: true },
-      { href: "/study/notes", label: "Notes", icon: "notebook", study: true, full: true },
-      { href: "/study/reference", label: "Quick reference", icon: "layers", study: true, full: true },
+      { href: "/study/notes", label: "Quick Notes", icon: "notebook", study: true, full: true },
     ],
   },
 ];

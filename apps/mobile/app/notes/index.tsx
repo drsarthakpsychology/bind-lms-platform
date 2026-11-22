@@ -1,1 +1,1 @@
-export { NotesScreen as default } from "@/screens/notes/notes";
+export { QuickNotesScreen as default } from "@/library/quick-browse";

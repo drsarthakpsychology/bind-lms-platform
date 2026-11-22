@@ -206,6 +206,9 @@ All study routes: student, gate `/study` with flag `learn` (closed for lectures-
 | built | `PUT /study/marks` | `SaveMarksBody` | `SaveMarksResult` | `pushMarks`, then `pullMarks` |
 | built | `GET /study/notes` | none | `RevisionNoteList` | `noteList` (`src/lib/app-api/notes.ts`): `NOTES`, `WEEK_BLOCKS` |
 | built | `GET /study/notes/:noteId` | none | `RevisionNote` | `noteDetail`: the note, plus the figures the website places between its sections (`NOTE_FIGURES`) |
+| built | `GET /study/quick-notes` | none | `QuickLibrary` | `quickLibrary` (`src/lib/quick-notes/library.ts`): typed notes, summaries, disorder cards, words and medicines in one list. Types in `src/lib/quick-notes/view-types.ts` (copied to the app) |
+| built | `GET /study/quick-notes/search?q=` | none | `QuickSearch` | `searchQuick`: searches the text inside every note |
+| built | `GET /study/quick-notes/:id` | none | `QuickNoteView` | `quickNoteView`: one typed note (`criteria-adhd` ...) ready to draw |
 | built | `GET /study/figures/:figureId` | none | `Figure` | `figureData` (`src/lib/app-api/figure-svg.ts`): `FIGURES` (`src/components/study/figures/registry.ts`) drawn to standalone SVG on the server, the figure palette resolved for light and dark |
 
 Writes are rate limited: state 120 a minute, checkpoint and test answers 30 a minute, marks 60 a minute. Study content is the same for everyone and comes from the website's code (no database read), so it is fast; only the learn state, history and marks are per student.

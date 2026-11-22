@@ -7,6 +7,7 @@ import { session } from "@/auth";
 import { prepSetPathOf, prepSetQuery, readQuery } from "@/practise/api";
 import type * as C from "./contract";
 import { learnQo } from "./learn";
+import { isQuickId, quickQo } from "@/library/quick-notes";
 import { isSlow, netStore } from "./online";
 import { qo, queryClient } from "./queries";
 
@@ -58,7 +59,7 @@ export function tabReads(me: C.Me | null): Read[] {
     qo.progress(),
     can.lectures !== false && qo.courses(),
     can.study !== false && qo.study(),
-    can.study !== false && learnQo.notes(),
+    can.study !== false && quickQo.library(),
     learnQo.assignments(),
     (can.practice !== false || can.games !== false) && readQuery("/practise"),
     (can.practice !== false || can.games !== false) && readQuery("/prep"),
@@ -96,10 +97,10 @@ export function routeReads(href: string): Read[] {
       if (c === "checkpoint" || c === "test") return [qo.module(b)];
       return [qo.section(b, c), qo.module(b), learnQo.marks()];
     case "notes":
-      return b ? [learnQo.note(b)] : [learnQo.notes()];
-    // The Study tab: modules and notes.
+      return b ? [isQuickId(b) ? quickQo.note(b) : learnQo.note(b)] : [quickQo.library()];
+    // The Study tab: modules and Quick Notes.
     case "library":
-      return [qo.study(), learnQo.notes()];
+      return [qo.study(), quickQo.library()];
     case "reference":
       return b ? [learnQo.term(b)] : [learnQo.terms()];
     case "assignments":

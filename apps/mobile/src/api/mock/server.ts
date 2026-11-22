@@ -349,7 +349,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
   if (mw) return mw;
 
   /* ------------------------------------------------------------- study */
-  const learn = learnRoute(req.method, path, body, kind, { empty: isNew || state.scenario === "empty" });
+  const learn = learnRoute(req.method, path, path.startsWith("/study/quick-notes/search") ? { ...query, ...body } : body, kind, { empty: isNew || state.scenario === "empty" });
   if (learn) return learn;
   if (path.startsWith("/study") && kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");
   if (is("GET", "/study/modules")) return ok<C.StudyHome>({ modules: fx.modules, next: fx.moduleDetail("m02")!.next, goal: { points: 18, goal: 30, streak: 6 }, courseMinutes: 505 });

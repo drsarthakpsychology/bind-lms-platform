@@ -6,6 +6,7 @@ import { AlertTriangle, ArrowLeft, ArrowRight, BookOpen, Clock, Lightbulb, Messa
 import { requireFeature } from "@/lib/flags";
 import { referenceLabel, resolveReference, type MedicineRef, type TermRef } from "@/lib/reference/data";
 import { REFERENCE_BASE } from "@/lib/reference/href";
+import { REPLACED_SLUGS } from "@/lib/quick-notes";
 import type { DisorderRef } from "@/lib/reference/disorders";
 import { KindTag } from "@/components/reference/reference-library";
 import { backLinkClass } from "@/components/design-system/back-link";
@@ -195,6 +196,9 @@ export default async function ReferenceEntryPage({ params }: Params) {
   const slug = decodeURIComponent(raw);
   const e = resolveReference(slug);
   if (!e) redirect(`${REFERENCE_BASE}?q=${encodeURIComponent(slug.replace(/-/g, " "))}`);
+  // Cards now kept as a typed Quick Note open that note (old links from games and modules keep working).
+  const replaced = REPLACED_SLUGS.get(e.slug);
+  if (replaced) redirect(`/study/notes/${replaced}`);
   if (e.slug !== slug) redirect(`${REFERENCE_BASE}/${e.slug}`);
 
   const sub =
@@ -203,8 +207,8 @@ export default async function ReferenceEntryPage({ params }: Params) {
 
   return (
     <div className="mx-auto max-w-3xl space-y-4">
-      <Link href={REFERENCE_BASE} className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Back to Quick Reference
+      <Link href="/study/notes" className={backLinkClass}>
+        <ArrowLeft className="size-4" aria-hidden /> Back to Quick Notes
       </Link>
       <header className="space-y-2">
         <KindTag kind={e.kind} />
