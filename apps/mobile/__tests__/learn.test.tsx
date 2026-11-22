@@ -103,7 +103,8 @@ describe("Learn screens", () => {
 
   it("notes: Carry on goes to the first unread note", async () => {
     await render(<NotesScreen />);
-    expect(await screen.findByText("Weeks 1 to 2: Mood")).toBeTruthy();
+    // The part name is both a filter chip and the group label over its notes.
+    expect((await screen.findAllByText("Weeks 1 to 2: Mood")).length).toBeGreaterThan(0);
     fireEvent.press(screen.getByTestId("notes-next"));
     expect(router.push).toHaveBeenLastCalledWith("/notes/bipolar");
   });

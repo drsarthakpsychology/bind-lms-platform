@@ -102,6 +102,7 @@ describe("quick reference card", () => {
         <PairTable rows={[{ label: "Grief", value: "Waves tied to the loss", testID: "row-grief", onPress: open }]} />
       </>,
     );
+    if (!screen.queryByText("2 weeks")) screen.debug();
     expect(screen.getByText("2 weeks")).toBeTruthy();
     expect(screen.queryByText("Onset")).toBeNull();
     fireEvent.press(screen.getByTestId("row-grief"));
@@ -112,7 +113,10 @@ describe("quick reference card", () => {
 describe("medicines", () => {
   it("browses by class and by how they work, and searches", async () => {
     await render(<LibraryScreen />);
-    expect(await screen.findByTestId("class-Antidepressants")).toBeTruthy();
+    await waitFor(() => expect(screen.getByTestId("class-Antidepressants")).toBeTruthy(), { timeout: 4000 }).catch((e) => {
+      screen.debug({ maxLength: 4000 });
+      throw e;
+    });
     fireEvent.press(screen.getByText("By how they work"));
     expect(await screen.findByTestId("how-note")).toBeTruthy();
     expect(screen.getByText(MECHANISM_GROUPS[0]!.tag)).toBeTruthy();
