@@ -55,7 +55,7 @@ export function removalNote(reason: string | null | undefined): string | null {
 export type Kind = "remove" | "restore" | "delete";
 
 export type Actor = { id: string; role: string };
-export type Target = { id: string; role: string; status?: string | null; block_reason?: string | null; removed_at?: string | null; deleted_at?: string | null; name?: string | null; email?: string | null };
+export type Target = { id: string; role: string; roll_number?: string | null; status?: string | null; block_reason?: string | null; removed_at?: string | null; deleted_at?: string | null; name?: string | null; email?: string | null };
 
 /** Words the admin sees when a rule says no. */
 export const REFUSE = {
