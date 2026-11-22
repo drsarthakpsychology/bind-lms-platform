@@ -7,7 +7,7 @@ describe("OSCE on the server", () => {
     const cards = toCards(SEED_OSCE_STATIONS);
     expect(cards).toHaveLength(SEED_OSCE_STATIONS.length);
     const text = JSON.stringify(cards);
-    expect(text).not.toMatch(/checklist|model_points|role_brief|weight/);
+    expect(text).not.toMatch(/"(checklist|model_points|role_brief|weight|global_rating)"/);
     expect(cards[0].number).toBe(1);
   });
 

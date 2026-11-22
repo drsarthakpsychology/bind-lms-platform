@@ -6,8 +6,9 @@ const { supabase, admin, insertMock } = vi.hoisted(() => {
     auth: { getUser: vi.fn() },
     from: vi.fn(() => ({ insert: insertMock })),
   };
+  // Attempts are written with the server key (2026_11_22_status.sql).
   const admin = {
-    from: vi.fn(() => ({
+    from: vi.fn((table: string) => table === "formulation_attempts" ? { insert: insertMock } : ({
       select: vi.fn(() => ({
         eq: vi.fn(() => ({ maybeSingle: vi.fn().mockResolvedValue({ data: { id: "case-uuid" } }) })),
         single: vi.fn().mockResolvedValue({ data: { id: "case-uuid" } }),

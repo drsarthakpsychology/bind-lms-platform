@@ -85,7 +85,7 @@ export function buildTermsRound(history: History, now: number, rng: () => number
 /** The public view of one question in a round (null for an unknown id). */
 export function questionOf(q: { id: string; options: string[] }): TermsQuestion | null {
   const f = fullFor(q.id);
-  return f ? { id: f.id, prompt: f.prompt, language: f.language, options: q.options, kind: f.kind } : null;
+  return f ? { id: f.id, prompt: f.prompt, ...(f.language ? { language: f.language } : {}), options: q.options, kind: f.kind } : null;
 }
 
 /** Check a pick (it must be one of the options shown). */
