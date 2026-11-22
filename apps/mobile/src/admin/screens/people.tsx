@@ -4,7 +4,8 @@ import { Mail, MessageCircle, Phone } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Chips, Field, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
+import { EmptyState, Screen, Locked } from "../ui";
 import { messageOf } from "@/api/errors";
 import { toast } from "@/ds/toast";
 import { space, useTheme } from "@/theme";
@@ -161,23 +162,19 @@ function Pipeline({ initialView, picked, setPicked, sheet, setSheet }: { initial
             <View style={{ flexDirection: "row" }}>
               <SearchBox value={search} onChange={setSearch} placeholder="Name, email or phone" label="Search people" testID="people-search" />
             </View>
-            {d.waiting && canWrite ? (
-              <Notice action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingPeople(), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} />}>
+            {d.waiting ? <Locked><Notice action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingPeople(), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} />}>
                 {`${plural(d.waiting, "email")} waiting for today's allowance.`}
-              </Notice>
-            ) : null}
+              </Notice></Locked> : null}
             {d.paymentReady === false ? <Quiet>Mark paid needs a database step first. Ask the owner to paste it.</Quiet> : null}
             <FilterChips label="View" value={view} onChange={(v) => { setView(v); setPicked(new Set()); }} options={PEOPLE_VIEWS.map((v) => ({ id: v.id, name: v.label, count: count(v.id) }))} testID="people-view" />
             {shown.length ? (
               <View style={{ gap: space[1] }}>
-                {canWrite ? (
-                  <View style={{ flexDirection: "row", alignItems: "center", marginLeft: -space[2] }}>
+                <Locked><View style={{ flexDirection: "row", alignItems: "center", marginLeft: -space[2] }}>
                     <Check on={all} onPress={() => setPicked(all ? new Set() : new Set(shown.map((p) => p.key)))} label="Select everyone shown" testID="people-all" />
                     <T v="small" tone="muted" num>
                       {plural(shown.length, "person", "people")}
                     </T>
-                  </View>
-                ) : null}
+                  </View></Locked>
                 <View style={{ borderTopWidth: 1, borderColor: c.hairline }}>
                   {shown.map((p) => (
                     <View key={p.key} style={{ borderBottomWidth: 1, borderColor: c.hairline }}>
@@ -364,12 +361,11 @@ export function AdminPersonScreen() {
   const [link, setLink] = React.useState<LoginLinkResult | null>(null);
   const icon = { size: 18, color: c.ink };
   return (
-    <Screen testID="admin-person" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen title={q.data?.name ?? "Person"} testID="admin-person" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Loaded q={q} soon what="this person" skeleton={<RowsSkeleton rows={6} />}>
         {(p) => (
           <>
             <View style={{ gap: space[2] }}>
-              <T v="h1">{p.name}</T>
               <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: space[3], rowGap: space[1] }}>
                 <Status tone={stageTone(p.stage)}>{STAGE_LABEL[p.stage]}</Status>
                 {p.paid ? <Tag>Paid</Tag> : null}
@@ -387,8 +383,7 @@ export function AdminPersonScreen() {
               <SmallButton label="Email" icon={<Mail {...icon} />} onPress={() => void openLink(`mailto:${p.email}`)} />
               {p.studentId ? <SmallButton label="Open student" onPress={() => openStudent(p.studentId!)} /> : null}
             </View>
-            {canWrite ? (
-              <View style={{ gap: space[2] }}>
+            <Locked><View style={{ gap: space[2] }}>
                 <T v="h3">Next step</T>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
                   <SmallButton
@@ -404,10 +399,7 @@ export function AdminPersonScreen() {
                   {!p.isStudent ? <SmallButton label={p.invitedAt ? "Send invite again" : "Send invite"} testID="person-invite" busy={busy === "invite"} onPress={() => void run("invite", () => adminCalls.invite(p.key, p.name), { done: `Invitation sent to ${p.name}` }).then((x) => x && setLink(x))} /> : null}
                   <SmallButton label={p.paid ? "Mark not paid" : "Mark paid"} testID="person-paid" busy={busy === "mark-paid"} onPress={() => void run("mark-paid", () => adminCalls.markPaid(p.key, !p.paid), { done: p.paid ? "Marked as not paid" : "Marked as paid" })} />
                 </View>
-              </View>
-            ) : (
-              <Notice testID="view-only-note">{VIEW_ONLY_LINE}</Notice>
-            )}
+              </View></Locked>
             <View style={{ gap: space[3] }}>
               <T v="h3">Timeline</T>
               {p.timeline.length ? (

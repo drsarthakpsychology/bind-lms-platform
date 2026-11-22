@@ -3,7 +3,8 @@ import { X } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, Row, RowList, Screen, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Chips, Field, Row, RowList, Sheet, SwitchRow, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useCohorts, useStudents } from "../api";
 import type { AdminSendBody } from "../contract";
@@ -104,7 +105,7 @@ export function AdminComposeScreen() {
   const whom = to === "everyone" ? "every student" : (cohortOptions.find((x) => x.id === cohort)?.name ?? "this cohort");
 
   return (
-    <Screen testID="compose" gap={space[5]} footer={<Button label={reach ? `Send to ${plural(reach, "student")}` : "Send"} busy={busy === "message"} onPress={check} testID="compose-send" />}>
+    <Screen title="New message" testID="compose" gap={space[5]} footer={<Button label={reach ? `Send to ${plural(reach, "student")}` : "Send"} busy={busy === "message"} onPress={check} testID="compose-send" />}>
       <View style={{ gap: space[2] }}>
         <T v="small">To</T>
         <Chips

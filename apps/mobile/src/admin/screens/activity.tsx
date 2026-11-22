@@ -2,7 +2,8 @@ import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen } from "@/ds";
+import { Button, Row, RowList, RowsSkeleton } from "@/ds";
+import { EmptyState, Screen, Locked } from "../ui";
 import { space } from "@/theme";
 import { useActivity, useBehind, useCohorts, useRefreshAdmin } from "../api";
 import { ago, day, pct } from "../format";
@@ -87,14 +88,14 @@ function Behind() {
                         <View style={{ flex: 1 }}>
                           <Meter tone="warn" pct={pct(r.done, r.available)} label={`${r.done}/${r.available}`} />
                         </View>
-                        {canWrite ? <SmallButton label="Nudge" testID={`nudge-${r.id}`} onPress={() => openCompose({ to: [r.id], title: "Checking in" })} /> : null}
+                        <Locked><SmallButton label="Nudge" testID={`nudge-${r.id}`} onPress={() => openCompose({ to: [r.id], title: "Checking in" })} /></Locked>
                       </View>
                     }
                     onPress={() => openStudent(r.id, "activity")}
                   />
                 ))}
               </RowList>
-              {canWrite ? <Button kind="quiet" label={`Nudge all ${d.items.length}`} onPress={() => openCompose({ to: d.items.map((r) => r.id), title: "Checking in" })} testID="nudge-all" /> : null}
+              <Locked><Button kind="quiet" label={`Nudge all ${d.items.length}`} onPress={() => openCompose({ to: d.items.map((r) => r.id), title: "Checking in" })} testID="nudge-all" /></Locked>
             </>
           ) : (
             <EmptyState mood="clear" title="Nobody is behind" body="Everyone is keeping up with their cohort." />
@@ -193,7 +194,7 @@ export function AdminActivityScreen() {
   }
   const { refresh, refreshing } = useRefreshAdmin();
   return (
-    <Screen tab top={<AdminTop />} title="Activity" testID="admin-activity" gap={space[5]} onRefresh={refresh} refreshing={refreshing}>
+    <Screen title="Activity" testID="admin-activity" gap={space[5]} onRefresh={refresh} refreshing={refreshing}>
       <ScrollTabs tabs={VIEWS} value={view} onChange={setView} />
       <TabSwap tabs={VIEWS} value={view} gap={space[5]}>
         {view === "live" ? <Live /> : view === "behind" ? <Behind /> : view === "students" ? <Students /> : <Cohorts />}

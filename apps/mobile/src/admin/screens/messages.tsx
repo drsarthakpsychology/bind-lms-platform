@@ -4,7 +4,8 @@ import { PenLine } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, Field, Row, RowList, RowsSkeleton, T } from "@/ds";
+import { EmptyState, Screen, Locked } from "../ui";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useInbox, useInboxThread, useRefreshAdmin } from "../api";
 import type { InboxItem } from "../extra";
@@ -66,7 +67,7 @@ export function AdminMessagesScreen() {
   const { refresh, refreshing } = useRefreshAdmin();
   const unread = inbox.data?.unread ?? 0;
   return (
-    <Screen tab top={<AdminTop />} title="Messages" testID="admin-messages" gap={space[5]} onRefresh={refresh} refreshing={refreshing} footer={canWrite ? <Button label="New message" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose()} testID="messages-new" /> : undefined}>
+    <Screen title="Announcements" testID="admin-messages" gap={space[5]} onRefresh={refresh} refreshing={refreshing} footer={<Locked><Button label="New message" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose()} testID="messages-new" /></Locked>}>
       <ScrollTabs
         tabs={[
           { id: "inbox" as const, name: unread ? `Inbox ${unread}` : "Inbox" },
@@ -105,7 +106,7 @@ export function AdminThreadScreen() {
     if (r) setText("");
   };
   return (
-    <Screen testID="admin-thread" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={canWrite && q.data ? <Button label="Send reply" busy={busy === "reply"} onPress={() => void send()} testID="thread-send" /> : undefined}>
+    <Screen title="Message" testID="admin-thread" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={q.data ? <Locked><Button label="Send reply" busy={busy === "reply"} onPress={() => void send()} testID="thread-send" /></Locked> : undefined}>
       <Loaded q={q} soon what="this message" skeleton={<RowsSkeleton rows={4} />}>
         {(t) => (
           <>
@@ -135,7 +136,7 @@ export function AdminThreadScreen() {
                 </View>
               ))}
             </View>
-            {canWrite ? <Field label="Your reply" value={text} onChangeText={setText} area error={error} maxLength={4000} testID="thread-reply" /> : <Notice testID="view-only-note">{VIEW_ONLY_LINE}</Notice>}
+            <Locked><Field label="Your reply" value={text} onChangeText={setText} area error={error} maxLength={4000} testID="thread-reply" /></Locked>
           </>
         )}
       </Loaded>

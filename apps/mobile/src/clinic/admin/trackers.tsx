@@ -5,10 +5,11 @@ import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { Figures, FilterChips, Meter, Quiet, SmallButton, Tag } from "@/admin/kit";
 import { openStudent } from "@/admin/nav";
 import { useAdminRole } from "@/admin/role";
-import { Row, RowsSkeleton, Screen } from "@/ds";
+import { Row, RowsSkeleton } from "@/ds";
+import { Screen, Locked } from "@/admin/ui";
 import { space } from "@/theme";
 import { adminClinicCalls, useClinicStudents } from "../api";
-import { ClinicLoaded } from "../loaded";
+import { ClinicLoaded } from "./kit";
 import type { ClinicStudent } from "../contract";
 import { pct } from "../logic";
 
@@ -59,11 +60,9 @@ export function AdminTrackersScreen() {
                   { id: "logs", name: "Logs not in", count: due.length },
                 ]}
               />
-              {by === "logs" && due.length && canWrite ? (
-                <View style={{ alignItems: "flex-start" }}>
+              {by === "logs" && due.length ? <Locked><View style={{ alignItems: "flex-start" }}>
                   <SmallButton label={`Remind ${due.length} ${due.length === 1 ? "student" : "students"}`} busy={!!busy} onPress={() => d.cohortId && void run("clinic", () => adminClinicCalls.remind(d.cohortId!), { done: (r) => `Reminder sent to ${r.notified}` })} testID="trk-remind" />
-                </View>
-              ) : null}
+                </View></Locked> : null}
               {rows.length ? (
                 <View>
                   {rows.map((s) => {

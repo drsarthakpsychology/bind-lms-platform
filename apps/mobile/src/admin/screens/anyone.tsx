@@ -7,7 +7,8 @@ import * as React from "react";
 import { Image, PixelRatio, Share, useWindowDimensions, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
-import { Button, Chips, EmptyState, Field, Screen, SwitchRow, T } from "@/ds";
+import { Button, Chips, Field, SwitchRow, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Burst, Reveal, Stamp } from "@/motion";

@@ -6,10 +6,11 @@ import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { DateField } from "@/admin/date-field";
 import { ConfirmSheet, Quiet, SmallButton, TabSwap, ScrollTabs } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
-import { Button, Field, RowsSkeleton, Screen, Section, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Field, RowsSkeleton, Section, Sheet, SwitchRow, T } from "@/ds";
+import { Screen, Locked } from "@/admin/ui";
 import { space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminClinicToday, useCohortId, useTimetable } from "../api";
-import { ClinicLoaded } from "../loaded";
+import { ClinicLoaded } from "./kit";
 import type { AdminSession, Ref, SessionKind, Slot, Timetable, Weekday } from "../contract";
 import { WEEKDAYS } from "../contract";
 import { dateLabel, dayLong, dayShort, isOpd, KIND_NAME, KINDS, minutesOf, parseClock, relDay, sessionMeta, todayIST } from "../logic";
@@ -139,7 +140,7 @@ function Weekly({ t, canWrite, cohorts, cohortId }: { t: Timetable; canWrite: bo
   const { run, busy } = useAdminAction();
   return (
     <View style={{ gap: space[5] }}>
-      {canWrite ? <Button kind="quiet" label="Add a weekly slot" icon={<Plus size={20} color={c.ink} />} onPress={() => setEdit("new")} testID="slot-add" /> : null}
+      <Locked><Button kind="quiet" label="Add a weekly slot" icon={<Plus size={20} color={c.ink} />} onPress={() => setEdit("new")} testID="slot-add" /></Locked>
       {WEEKDAYS.map((w) => {
         const rows = t.slots.filter((s) => s.weekday === w);
         if (!rows.length) return null;
@@ -149,12 +150,10 @@ function Weekly({ t, canWrite, cohorts, cohortId }: { t: Timetable; canWrite: bo
               {rows.map((s) => (
                 <View key={s.id} style={{ borderTopWidth: 1, borderColor: c.hairline }}>
                   <SessionLine s={{ ...s, date: "", status: "scheduled", note: null, mine: null, batch: null }} testID={`slot-${s.id}`} trailing={s.cohortIds.length > 1 ? <T v="small" tone="muted">{cohorts.filter((x) => s.cohortIds.includes(x.id)).map((x) => x.name).join(", ")}</T> : undefined} />
-                  {canWrite ? (
-                    <View style={{ flexDirection: "row", gap: space[2], marginLeft: 48, paddingBottom: space[3] }}>
+                  <Locked><View style={{ flexDirection: "row", gap: space[2], marginLeft: 48, paddingBottom: space[3] }}>
                       <SmallButton label="Change" onPress={() => setEdit(s)} testID={`slot-${s.id}-edit`} />
                       <SmallButton label="Remove" danger onPress={() => setRemove(s)} testID={`slot-${s.id}-remove`} />
-                    </View>
-                  ) : null}
+                    </View></Locked>
                 </View>
               ))}
             </View>
@@ -178,7 +177,7 @@ function Coming({ t, canWrite, cohorts, cohortId }: { t: Timetable; canWrite: bo
   const days = [...new Set(t.upcoming.map((s) => s.date))];
   return (
     <View style={{ gap: space[5] }}>
-      {canWrite ? <Button kind="quiet" label="Add a one-off session" icon={<Plus size={20} color={c.ink} />} onPress={() => setAdd(true)} testID="oneoff-add" /> : null}
+      <Locked><Button kind="quiet" label="Add a one-off session" icon={<Plus size={20} color={c.ink} />} onPress={() => setAdd(true)} testID="oneoff-add" /></Locked>
       {days.map((d) => (
         <Section key={d} title={relDay(d, today) === dateLabel(d) ? dateLabel(d, true) : `${relDay(d, today)}, ${dateLabel(d)}`}>
           <View>
@@ -187,12 +186,10 @@ function Coming({ t, canWrite, cohorts, cohortId }: { t: Timetable; canWrite: bo
               .map((s) => (
                 <View key={s.id} style={{ borderTopWidth: 1, borderColor: c.hairline }}>
                   <SessionLine s={s} testID={`up-${s.id}`} trailing={s.status === "cancelled" ? undefined : <T v="small" tone="muted" num>{s.counts.expected ? `${s.counts.expected} students` : ""}</T>} />
-                  {canWrite && s.status !== "cancelled" ? (
-                    <View style={{ flexDirection: "row", gap: space[2], marginLeft: 48, paddingBottom: space[3] }}>
+                  {s.status !== "cancelled" ? <Locked><View style={{ flexDirection: "row", gap: space[2], marginLeft: 48, paddingBottom: space[3] }}>
                       <SmallButton label="Move" onPress={() => setMove(s)} testID={`up-${s.id}-move`} />
                       <SmallButton label="Cancel" danger onPress={() => setCancel(s)} testID={`up-${s.id}-cancel`} />
-                    </View>
-                  ) : null}
+                    </View></Locked> : null}
                 </View>
               ))}
           </View>

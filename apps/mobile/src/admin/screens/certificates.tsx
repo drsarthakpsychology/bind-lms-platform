@@ -5,7 +5,8 @@ import * as React from "react";
 import { Image, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
-import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Chips, Field, Row, RowList, RowsSkeleton, Sheet, SwitchRow, T } from "@/ds";
+import { EmptyState, Screen, Locked } from "../ui";
 import { Enter } from "@/motion";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
@@ -89,8 +90,7 @@ function CertSheet({ x, onClose, onRevoke }: { x: CertRow | null; onClose: () =>
           <SmallButton label="Check page" onPress={() => void openUrl(x.verifyUrl || `${config.site}/verify/${encodeURIComponent(x.credentialId)}`)} />
           {x.hasPdf ? <SmallButton label="PDF" icon={<FileDown size={16} />} onPress={() => void openLink(() => adminCalls.certificatePdf(x.credentialId))} testID="cert-pdf" /> : null}
         </View>
-        {canWrite && live ? (
-          <View style={{ gap: space[2] }}>
+        {live ? <Locked><View style={{ gap: space[2] }}>
             {x.isDraft ? <Button label="Issue this draft" busy={busy === "issue-certificate"} onPress={() => void run("issue-certificate", () => adminCalls.issueDraft(x.credentialId), { done: "Issued" }).then((r) => r && onClose())} testID="cert-issue-draft" /> : null}
             {x.kind !== "badge" && !x.isDraft ? <Button kind="quiet" label="Send it again" busy={busy === "resend-certificate"} onPress={() => void run("resend-certificate", () => adminCalls.resend(x.credentialId, true), { done: `Sent again to ${x.recipient}` }).then((r) => r && onClose())} testID="cert-resend" /> : null}
             {x.canCorrect && !x.isDraft ? (
@@ -107,8 +107,7 @@ function CertSheet({ x, onClose, onRevoke }: { x: CertRow | null; onClose: () =>
             <Button kind="danger" full label="Revoke" onPress={() => onRevoke(x)} testID="cert-revoke" />
           </View>
         ) : !canWrite ? (
-          <Notice>{VIEW_ONLY_LINE}</Notice>
-        ) : null}
+          <Notice>{VIEW_ONLY_LINE}</Notice></Locked> : null}
       </View>
     </Sheet>
   );
@@ -163,11 +162,9 @@ function Issued({ openId }: { openId?: string }) {
           const opened = d.items.find((x) => x.credentialId === open) ?? null;
           return (
             <>
-              {d.waiting && canWrite ? (
-                <Notice testID="certs-waiting" action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingCertificates(), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} testID="certs-send-waiting" />}>
+              {d.waiting ? <Locked><Notice testID="certs-waiting" action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingCertificates(), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} testID="certs-send-waiting" />}>
                   {`${plural(d.waiting, "certificate email")} waiting for today's allowance.`}
-                </Notice>
-              ) : null}
+                </Notice></Locked> : null}
               {!d.ready ? <Quiet>Certificates are not set up in the database yet.</Quiet> : null}
               {d.items.length ? (
                 <RowList>
@@ -203,7 +200,7 @@ function Find() {
       <View style={{ flexDirection: "row" }}>
         <SearchBox value={search} onChange={setSearch} placeholder="Name, email or roll number" label="Find a student" testID="find-search" />
       </View>
-      {canWrite ? <Row icon={<UserRoundPlus size={20} color={c.ink} />} title="Someone without an account" meta="A guest speaker or a volunteer" onPress={() => router.push("/admin/certificates/anyone" as never)} testID="find-anyone" /> : null}
+      <Locked><Row icon={<UserRoundPlus size={20} color={c.ink} />} title="Someone without an account" meta="A guest speaker or a volunteer" onPress={() => router.push("/admin/certificates/anyone" as never)} testID="find-anyone" /></Locked>
       <Loaded q={q} soon what="students" skeleton={<RowsSkeleton rows={5} />}>
         {(d) =>
           d.items.length ? (
@@ -402,7 +399,7 @@ function Types() {
               <Block title="Course certificates" count={group("certificate").length || undefined}>
                 {group("certificate").length ? <RowList>{group("certificate").map(line)}</RowList> : <Quiet>None yet.</Quiet>}
               </Block>
-              {canWrite ? <Button kind="quiet" label="Give every earned badge now" busy={busy === "award-all"} onPress={() => void run("award-all", () => adminCalls.awardAllBadges(), { done: (r) => (r.awarded ? `Gave ${plural(r.awarded, "badge")}` : "Everyone already has what they earned") })} testID="badges-award-all" /> : <Notice>{VIEW_ONLY_LINE}</Notice>}
+              <Locked><Button kind="quiet" label="Give every earned badge now" busy={busy === "award-all"} onPress={() => void run("award-all", () => adminCalls.awardAllBadges(), { done: (r) => (r.awarded ? `Gave ${plural(r.awarded, "badge")}` : "Everyone already has what they earned") })} testID="badges-award-all" /></Locked>
               <TypeSheet key={editing === "new" ? "new" : (editing?.id ?? "none")} list={d} editing={editing} onClose={() => setEditing(null)} />
             </View>
           );
@@ -412,16 +409,12 @@ function Types() {
         {open ? (
           <View style={{ gap: space[3] }}>
             <Facts items={[{ label: "Earned by", value: open.ruleText }, { label: "Given", value: String(open.issued) }, ...(open.description ? [{ label: "For", value: open.description }] : []), ...(open.type === "certificate" ? [{ label: "Signature", value: open.hasSignature ? (open.signatureLabel ?? "Saved") : "None yet" }] : [])]} />
-            {canWrite ? (
-              <>
+            <Locked><>
                 <SwitchRow title="Switched on" meta={open.type === "badge" ? "Students can earn it" : "Drafts can be made"} value={open.enabled} onChange={(v) => { const t = open; setOpen({ ...t, enabled: v }); void run("studio-settings", () => adminCalls.enableType(t.id, v), { done: v ? "Switched on" : "Switched off" }); }} testID="type-enabled" />
                 {open.type === "badge" && open.enabled ? <Button label="Give it by hand" onPress={() => { const b = (badges.data?.items ?? []).find((x) => x.id === open.id) ?? { id: open.id, title: open.title, about: open.description ?? "", enabled: true, issued: open.issued, automatic: !!open.rule }; setOpen(null); setGiving(b); }} testID="type-give" /> : null}
                 {open.type === "certificate" && open.enabled ? <Button label="Who qualifies now" onPress={() => { const t = open; setOpen(null); setEligible(t); }} testID="type-eligible" /> : null}
                 {open.rule ? <Button kind="quiet" label="Change it" onPress={() => { const t = open; setOpen(null); setEditing(t); }} testID="type-edit" /> : null}
-              </>
-            ) : (
-              <Notice>{VIEW_ONLY_LINE}</Notice>
-            )}
+              </></Locked>
           </View>
         ) : null}
       </Sheet>
@@ -482,17 +475,11 @@ function Settings() {
                   {saved.signatures.length ? <Chips label="Signature" value={sig.signatureFrom ?? ""} onChange={(v) => canWrite && setSig(i, { signatureFrom: v || null })} options={[{ id: "", name: "None" }, ...saved.signatures.map((g) => ({ id: g.id, name: g.label }))]} /> : null}
                 </Enter>
               ))}
-              {canWrite ? (
-                <View style={{ flexDirection: "row", gap: space[4] }}>
+              <Locked><View style={{ flexDirection: "row", gap: space[4] }}>
                   {sigs.length < 3 ? <Button kind="text" label="Add someone who signs" onPress={() => setDraft([...sigs, { name: "", role: "", signatureFrom: null }])} /> : null}
                   {sigs.length > 1 ? <Button kind="danger" label="Remove the last" onPress={() => setDraft(sigs.slice(0, -1))} /> : null}
-                </View>
-              ) : null}
-              {canWrite ? (
-                <Button kind="quiet" label="Save who signs" busy={busy === "studio-settings"} onPress={() => { const list = sigs.filter((x) => x.name.trim()); if (!list.length) return toast.show("Add at least one person who signs."); void run("studio-settings", () => adminCalls.saveSignatories(list), { done: "Saved" }).then((r) => r && setDraft(null)); }} testID="settings-save" />
-              ) : (
-                <Notice>{VIEW_ONLY_LINE}</Notice>
-              )}
+                </View></Locked>
+              <Locked><Button kind="quiet" label="Save who signs" busy={busy === "studio-settings"} onPress={() => { const list = sigs.filter((x) => x.name.trim()); if (!list.length) return toast.show("Add at least one person who signs."); void run("studio-settings", () => adminCalls.saveSignatories(list), { done: "Saved" }).then((r) => r && setDraft(null)); }} testID="settings-save" /></Locked>
             </Block>
             <Block title="Signature images" count={saved.signatures.length || undefined}>
               {saved.signatures.length ? (
@@ -511,7 +498,7 @@ function Settings() {
               ) : (
                 <Quiet>None saved yet.</Quiet>
               )}
-              {canWrite ? <AddSignature suggest={sigs.find((x) => x.name.trim())?.name ?? ""} /> : null}
+              <Locked><AddSignature suggest={sigs.find((x) => x.name.trim())?.name ?? ""} /></Locked>
             </Block>
             <Block title="Email">
               {e.configured ? (
@@ -519,7 +506,7 @@ function Settings() {
                   <Row title="Sent today" trailing={`${e.sentToday} of ${e.limit}`} />
                   <Meter pct={e.limit ? Math.round((e.sentToday / e.limit) * 100) : 0} tone={e.sentToday >= e.limit ? "warn" : "info"} />
                   {e.waiting ? (
-                    <Notice testID="settings-waiting" action={canWrite ? <SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingCertificates(), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} /> : undefined}>
+                    <Notice testID="settings-waiting" action={<Locked><SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingCertificates(), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} /></Locked>}>
                       {`${plural(e.waiting, "certificate email")} waiting for today's allowance.`}
                     </Notice>
                   ) : null}
@@ -550,7 +537,7 @@ export function AdminCertificatesScreen() {
   const { canWrite } = useAdminRole();
   const { refresh, refreshing } = useRefreshAdmin();
   return (
-    <Screen title="Certificates" testID="admin-certificates" gap={space[4]} onRefresh={refresh} refreshing={refreshing} footer={canWrite ? <Button label="Issue certificates" icon={<Plus size={20} color={c.onPrimary} />} onPress={() => router.push("/admin/certificates/new")} testID="certs-issue" /> : undefined}>
+    <Screen title="Certificates" testID="admin-certificates" gap={space[4]} onRefresh={refresh} refreshing={refreshing} footer={<Locked><Button label="Issue certificates" icon={<Plus size={20} color={c.onPrimary} />} onPress={() => router.push("/admin/certificates/new")} testID="certs-issue" /></Locked>}>
       <ScrollTabs tabs={TABS} value={tab} onChange={setTab} />
       <TabSwap tabs={TABS} value={tab} gap={space[4]}>
         {tab === "issued" ? <Issued openId={params.open} /> : tab === "find" ? <Find /> : tab === "types" ? <Types /> : <Settings />}

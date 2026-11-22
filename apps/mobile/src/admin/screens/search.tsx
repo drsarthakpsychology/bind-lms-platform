@@ -4,7 +4,8 @@ import * as React from "react";
 import { Pressable, ScrollView, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { EmptyState, Row, RowList, RowsSkeleton, Section, T } from "@/ds";
+import { Row, RowList, RowsSkeleton, Section, T } from "@/ds";
+import { EmptyState } from "../ui";
 import { layout, space, type as scale, useTheme } from "@/theme";
 import { useCohorts, usePeople, useStudents } from "../api";
 import type { AdminStudentRow } from "../contract";

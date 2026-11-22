@@ -3,7 +3,8 @@ import { openLink } from "@/lib/open";
 import * as React from "react";
 import { Share, View } from "react-native";
 
-import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Field, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
+import { EmptyState, Screen, Locked } from "../ui";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { space, useTheme } from "@/theme";
@@ -112,12 +113,10 @@ export function AdminSystemScreen() {
                       <SwipeRow key={k.id} enabled={canWrite && !k.revokedAt} action={{ label: "Revoke", danger: true, onPress: () => setAsk({ k, what: "revoke" }) }} testID={`swipe-key-${k.id}`}>
                         <View>
                           <KeyLine k={k} />
-                          {canWrite && !k.revokedAt ? (
-                            <View style={{ flexDirection: "row", gap: space[2], paddingBottom: space[3] }}>
+                          {!k.revokedAt ? <Locked><View style={{ flexDirection: "row", gap: space[2], paddingBottom: space[3] }}>
                               <SmallButton label="Rotate" onPress={() => setAsk({ k, what: "rotate" })} testID={`key-rotate-${k.id}`} />
                               <SmallButton label="Revoke" danger onPress={() => setAsk({ k, what: "revoke" })} testID={`key-revoke-${k.id}`} />
-                            </View>
-                          ) : null}
+                            </View></Locked> : null}
                         </View>
                       </SwipeRow>
                     ))}
@@ -126,7 +125,7 @@ export function AdminSystemScreen() {
                   <EmptyState mood="empty" title="No keys yet" body={canWrite ? "Make one for each person who helps students sign in." : undefined} />
                 )}
                 {d.legacyKeyOn ? (
-                  <Notice tone="warn" action={canWrite ? <SmallButton label="Turn it off" danger onPress={() => setLegacy(true)} testID="key-legacy" /> : undefined}>
+                  <Notice tone="warn" action={<Locked><SmallButton label="Turn it off" danger onPress={() => setLegacy(true)} testID="key-legacy" /></Locked>}>
                     The older shared key still works. Turn it off once everyone has their own.
                   </Notice>
                 ) : null}

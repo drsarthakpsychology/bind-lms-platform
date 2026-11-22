@@ -3,7 +3,8 @@ import { PenLine } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, Row, RowList, RowsSkeleton, T } from "@/ds";
+import { EmptyState, Screen } from "../ui";
 import { space, useTheme } from "@/theme";
 import { useCohort, useCohorts, useRefreshAdmin } from "../api";
 import type { CohortStatus } from "../extra";
@@ -63,12 +64,11 @@ export function AdminCohortScreen() {
   const [tab, setTab] = React.useState<(typeof TABS)[number]["id"]>("members");
   const { canWrite } = useAdminRole();
   return (
-    <Screen testID="admin-cohort" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={canWrite && q.data?.people.length ? <Button label="Message this cohort" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose({ cohort: String(id) })} testID="cohort-message" /> : undefined}>
+    <Screen title={q.data?.name ?? "Cohort"} testID="admin-cohort" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={canWrite && q.data?.people.length ? <Button label="Message this cohort" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose({ cohort: String(id) })} testID="cohort-message" /> : undefined}>
       <Loaded q={q} soon what="this cohort" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => (
           <>
             <View style={{ gap: space[2] }}>
-              <T v="h1">{d.name}</T>
               <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: space[3], rowGap: space[1] }}>
                 <Status tone={COHORT_STATUS[d.status].tone}>{COHORT_STATUS[d.status].label}</Status>
                 <T v="small" tone="muted">

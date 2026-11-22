@@ -4,15 +4,16 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
-import { Figures, FilterChips, OptionRow, Quiet } from "@/admin/kit";
+import { FilterChips, OptionRow, Quiet } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
-import { Button, Field, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Field, RowsSkeleton, Sheet, T } from "@/ds";
+import { Screen, Locked, Panel, Tiles } from "@/admin/ui";
 import { StaggerList } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useSessionDetail } from "../api";
-import { ClinicLoaded } from "../loaded";
+import { ClinicLoaded } from "./kit";
 import type { AdminSessionDetail, MarkState, RosterRow } from "../contract";
-import { clockOf, dateLabel, KIND_NAME, sessionMeta, sessionTitle, timeLabel } from "../logic";
+import { clockOf, dateLabel, KIND_NAME, sessionMeta, rangeLabel, sessionTitle, timeLabel } from "../logic";
 import { RosterWord } from "../parts";
 import { openCode } from "./today";
 
@@ -112,7 +113,6 @@ export function SessionBody({ d }: { d: AdminSessionDetail }) {
         <T v="small" tone="muted">
           {KIND_NAME[s.kind]} · {dateLabel(s.date)}
         </T>
-        <T v="h1">{sessionTitle(s)}</T>
         <T tone="muted" num>
           {sessionMeta(s)}
         </T>
@@ -126,12 +126,13 @@ export function SessionBody({ d }: { d: AdminSessionDetail }) {
         </T>
       ) : null}
       {s.status !== "cancelled" ? <Button label="Show code" icon={<QrCode size={20} color={c.onPrimary} />} onPress={() => openCode(s.id)} testID="session-code" /> : null}
-      <Figures
+      <Tiles
+        per={2}
         items={[
-          { value: String(n.in + n.out), label: `of ${n.expected} came`, onPress: () => setF("all") },
-          { value: String(n.in), label: "In now", onPress: () => setF("in") },
-          { value: String(n.missing), label: "Not here", onPress: () => setF("missing") },
-          { value: String(n.late), label: "Late", onPress: () => setF("late") },
+          { value: n.in + n.out, label: `of ${n.expected} came`, onPress: () => setF("all"), testID: "tile-all" },
+          { value: n.in, label: "in now", onPress: () => setF("in"), testID: "tile-in" },
+          { value: n.missing, label: "not here", tone: "warn", onPress: () => setF("missing"), testID: "tile-missing" },
+          { value: n.late, label: "late", tone: "warn", onPress: () => setF("late"), testID: "tile-late" },
         ]}
       />
       <FilterChips
@@ -149,19 +150,21 @@ export function SessionBody({ d }: { d: AdminSessionDetail }) {
         ]}
       />
       {rows.length ? (
-        <StaggerList>
-          {rows.map((r) => (
-            <RosterLine key={r.studentId} r={r} canWrite={canWrite} onPress={() => setMark(r)} />
-          ))}
-        </StaggerList>
+        <Panel>
+          <StaggerList>
+            {rows.map((r) => (
+              <RosterLine key={r.studentId} r={r} canWrite={canWrite} onPress={() => setMark(r)} />
+            ))}
+          </StaggerList>
+        </Panel>
       ) : (
         <Quiet>No one here.</Quiet>
       )}
-      {canWrite ? (
+      <Locked>
         <T v="small" tone="muted">
           Tap a name to mark it by hand.
         </T>
-      ) : null}
+      </Locked>
       <MarkSheet row={mark} sessionId={s.id} onClose={() => setMark(null)} />
     </View>
   );
@@ -173,7 +176,7 @@ export function AdminSessionScreen() {
   const q = useSessionDetail(String(id));
   const { refresh, refreshing } = useRefreshAdmin();
   return (
-    <Screen testID="admin-session" onRefresh={refresh} refreshing={refreshing}>
+    <Screen title={q.data ? sessionTitle(q.data.session) : "Session"} lead={q.data ? rangeLabel(q.data.session.start, q.data.session.end) : undefined} testID="admin-session" onRefresh={refresh} refreshing={refreshing}>
       <ClinicLoaded admin q={q} what="this session" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => <SessionBody d={d} />}
       </ClinicLoaded>

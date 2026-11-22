@@ -4,11 +4,12 @@ import { View } from "react-native";
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { FilterChips, Quiet, SmallButton, Tag } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
-import { Button, Field, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Field, RowsSkeleton, Sheet, T } from "@/ds";
+import { Screen, Locked } from "@/admin/ui";
 import { StaggerList } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminLeaves } from "../api";
-import { ClinicLoaded } from "../loaded";
+import { ClinicLoaded } from "./kit";
 import type { AdminLeave } from "../contract";
 import { dateLabel, leavesLine, requestTitle, timeLabel } from "../logic";
 import { LeaveWord } from "../parts";
@@ -81,12 +82,10 @@ function LeaveCard({ l, onDecide, canWrite }: { l: AdminLeave; onDecide: (d: "ap
           Your note: {l.adminNote}
         </T>
       ) : null}
-      {l.status === "pending" && canWrite ? (
-        <View style={{ flexDirection: "row", gap: space[2], paddingTop: space[1] }}>
+      {l.status === "pending" ? <Locked><View style={{ flexDirection: "row", gap: space[2], paddingTop: space[1] }}>
           <SmallButton label="Approve" onPress={() => onDecide("approve")} testID={`aleave-${l.id}-approve`} />
           <SmallButton label="Not approve" danger onPress={() => onDecide("reject")} testID={`aleave-${l.id}-reject`} />
-        </View>
-      ) : null}
+        </View></Locked> : null}
     </View>
   );
 }

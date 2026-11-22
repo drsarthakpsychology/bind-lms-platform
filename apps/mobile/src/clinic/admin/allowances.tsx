@@ -4,10 +4,11 @@ import { Pressable, View } from "react-native";
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { ActionBar, Check, Quiet, SearchBox, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
-import { Button, Field, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
+import { Button, Field, RowsSkeleton, Section, Sheet, T } from "@/ds";
+import { Screen, Locked } from "@/admin/ui";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminClinicToday, useClinicStudents } from "../api";
-import { ClinicLoaded } from "../loaded";
+import { ClinicLoaded } from "./kit";
 import type { Batch, ClinicStudent, ClinicStudents, Ref } from "../contract";
 import { BATCH_NAME } from "../logic";
 import { LineRow, Pills, Stepper } from "./kit";
@@ -139,11 +140,9 @@ function Body({ d, cohort }: { d: ClinicStudents; cohort: Ref }) {
   return (
     <View style={{ gap: space[4] }}>
       <SearchBox value={search} onChange={setSearch} placeholder="Find a student" label="Find a student" testID="allow-search" />
-      {canWrite && !picked.length ? (
-        <View style={{ alignItems: "flex-start" }}>
+      {!picked.length ? <Locked><View style={{ alignItems: "flex-start" }}>
           <SmallButton label={`Set for all of ${cohort.name}`} onPress={() => setBulk(true)} testID="allow-bulk" />
-        </View>
-      ) : null}
+        </View></Locked> : null}
       <Section>
         {rows.length ? (
           <View>
