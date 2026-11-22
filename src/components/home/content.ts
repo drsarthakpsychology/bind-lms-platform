@@ -452,7 +452,7 @@ export const DISORDERS = [
     ask: "Safety first. Don't push for details in the first session.",
     mse: "On guard\u00a0· easily startled\u00a0· numb\u00a0· intrusive memories",
     ruleOut: "Head injury, depression, substance use, acute stress (under a month)",
-    meds: "SSRIs such as sertraline; prazosin for nightmares in some cases",
+    meds: "SSRIs such as sertraline; prazosin is sometimes tried for nightmares; the evidence is mixed",
     therapy: "Stabilise and ground first, then trauma-focused CBT",
     redFlag: "Ongoing danger or abuse. A child's abuse must be reported under POCSO",
   },

@@ -18,7 +18,7 @@ const WHO = [
   },
   {
     title: "Clinical psychologist",
-    tag: "RCI-registered (M.Phil in Clinical Psychology or equivalent)",
+    tag: "RCI-registered",
     does: ["Psychological assessment and testing", "Diagnosis", "Evidence-based therapy (CBT, DBT and others)", "Works alongside psychiatrists"],
     when: "Depression, anxiety, panic, OCD, trauma, personality difficulties, or when you want a formal assessment.",
   },
