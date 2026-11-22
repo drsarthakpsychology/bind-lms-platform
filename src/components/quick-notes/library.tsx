@@ -4,7 +4,6 @@ import Link from "next/link";
 import * as React from "react";
 import { Pin, Search, X } from "lucide-react";
 import { chipClass, chipRow, EmptyLine, Row, RowList, Section } from "@/components/ds";
-import { cn } from "@/lib/utils";
 import type { QuickItem, QuickLibrary, QuickSearch, QuickType } from "@/lib/quick-notes/view-types";
 import { useQuickPins } from "./pins";
 
@@ -28,6 +27,9 @@ function quickScore(i: QuickItem, q: string): number {
 }
 
 const TYPE_TAG: Record<QuickType, string> = { criteria: "Criteria", summary: "Summary", differential: "Differential", distinction: "Compare", theory: "Theory", therapy: "Therapy", pharm: "Medicine", assessment: "Assessment", term: "Word", exam: "Exam points" };
+
+/** Inside a topic: the typed Quick Notes first, then one-page summaries, older cards and medicines, words last. */
+const rank = (i: QuickItem) => (i.type === "term" ? 3 : !i.key.includes(":") ? 0 : i.key.startsWith("note:") ? 1 : 2);
 
 function Tag({ type }: { type: QuickType }) {
   return <span className="shrink-0 rounded-full bg-[var(--ds-tint)] px-2 py-0.5 type-caption font-semibold text-muted-foreground">{TYPE_TAG[type]}</span>;
@@ -119,7 +121,7 @@ export function QuickNotesLibrary({ lib, owner, initialQuery = "", initialType =
   const groups = React.useMemo(() => {
     const m = new Map<string, QuickItem[]>();
     for (const i of lib.items) if (ofType(i)) m.set(i.topic, [...(m.get(i.topic) ?? []), i]);
-    for (const list of m.values()) list.sort((a, b) => (a.type === "term" ? 1 : 0) - (b.type === "term" ? 1 : 0) || a.title.localeCompare(b.title, "en", { sensitivity: "base" }));
+    for (const list of m.values()) list.sort((a, b) => rank(a) - rank(b) || a.title.localeCompare(b.title, "en", { sensitivity: "base" }));
     return lib.topics.filter((t) => m.has(t.id)).map((t) => ({ ...t, items: m.get(t.id)! }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lib, type]);
@@ -143,7 +145,7 @@ export function QuickNotesLibrary({ lib, owner, initialQuery = "", initialType =
               setQuery(ev.target.value);
               syncUrl(ev.target.value, type);
             }}
-            placeholder="Search: ADHD, lithium level, Hoover's sign"
+            placeholder="Search: ADHD, lithium level"
             autoComplete="off"
             enterKeyHint="search"
             className="h-12 w-full rounded-full border-[1.5px] border-[var(--ds-card-line)] bg-card pr-12 pl-12 type-body outline-hidden focus-visible:border-foreground focus-visible:ring-2 focus-visible:ring-ring"
@@ -220,9 +222,9 @@ export function QuickNotesLibrary({ lib, owner, initialQuery = "", initialType =
               <Pin className="size-4 shrink-0" aria-hidden /> Pin a note from its page to keep it at the top here.
             </p>
           ) : null}
-          <nav aria-label="Topics" className={cn(chipRow, "-mt-4")}>
+          <nav aria-label="Jump to a topic" className="-mt-4 flex min-w-0 flex-wrap gap-x-4 type-small">
             {groups.map((g) => (
-              <Link key={g.id} href={`#topic-${g.id}`} className={chipClass(false)}>
+              <Link key={g.id} href={`#topic-${g.id}`} className="inline-flex min-h-11 items-center font-semibold underline decoration-[var(--ds-card-line)] underline-offset-4 hover:decoration-foreground">
                 {g.label}
               </Link>
             ))}
