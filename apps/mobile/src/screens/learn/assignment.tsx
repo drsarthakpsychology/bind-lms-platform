@@ -5,7 +5,8 @@ import { View } from "react-native";
 
 import { useLecture } from "@/api/queries";
 import { Button, Label, QuietEmpty, Screen, Skeleton } from "@/ds";
-import { AssignmentPart, dueLine } from "@/lecture/assignment";
+import { AssignmentPart } from "@/lecture/assignment";
+import { dueWord } from "./assignments";
 import { HandInSlot, type FooterAction } from "@/lecture/handin-ui";
 import { createStore } from "@/lib/store";
 import { Enter } from "@/motion";
@@ -28,13 +29,14 @@ export function AssignmentScreen() {
   const [footer] = React.useState(() => createStore<{ action: FooterAction | null; owner: object | null }>({ action: null, owner: null }));
   const handIn = footer.use((x) => x.action);
   const setHandIn = React.useCallback((action: FooterAction | null, owner: object) => footer.set((s) => (action ? { action, owner } : s.owner === owner ? { action: null, owner: null } : {})), [footer]);
-  const due = a ? dueLine(a) : null;
+  const [now] = React.useState(() => Date.now());
+  const due = a ? dueWord(a.dueAt, now) : null;
   return (
     <Screen
       testID="assignment"
       title={a?.title ?? (l ? "Assignment" : undefined)}
       lead={l ? `Week ${l.week} · ${l.title}` : undefined}
-      field={a ? <Pill tone="field">{due ? due.split(".")[0]! : "No due date"}</Pill> : undefined}
+      field={a ? <Pill tone="field">{due ?? "No due date"}</Pill> : undefined}
       gap={space[5]}
       onRefresh={() => void q.refetch()}
       refreshing={q.isRefetching}

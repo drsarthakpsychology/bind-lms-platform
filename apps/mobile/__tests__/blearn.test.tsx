@@ -90,7 +90,7 @@ describe("the lecture page", () => {
     expect(await screen.findByTestId("lecture-upnext")).toBeTruthy();
     await fireEvent.press(screen.getByText("Chapters"));
     expect(await screen.findByTestId("chapter-0")).toBeTruthy();
-    await fireEvent.press(screen.getByText("My notes"));
+    await fireEvent.press(screen.getByText("Notes"));
     expect(await screen.findByTestId("lecture-note-add")).toBeTruthy();
   });
 });

@@ -126,7 +126,7 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
                       testID={`section-${s.id}`}
                       title={s.title}
                       accessibilityLabel={`${s.num} ${s.title}${s.doneOn ? ". Read" : ""}`}
-                      meta={[s.isTest ? "Module test" : `${Math.max(1, Math.round(s.words / 200))} min read`, s.levelCheck ? "Optional self-check" : s.tag === "extra" ? "Extra reading" : null].filter(Boolean).join(" · ")}
+                      meta={[s.isTest ? "Answer every question to finish the module" : `${Math.max(1, Math.round(s.words / 200))} min read`, s.levelCheck ? "Optional self-check" : s.tag === "extra" ? "Extra reading" : null].filter(Boolean).join(" · ")}
                       lead={<StateMark state={s.doneOn ? "done" : "todo"} n={s.isTest ? "T" : s.num} size={40} />}
                       trailing={s.id === nextId && !s.doneOn ? <Pill tone="ink">Next</Pill> : undefined}
                       plain
