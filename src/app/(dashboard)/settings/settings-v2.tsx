@@ -2,6 +2,8 @@ import { Bell, MessageCircle } from "lucide-react";
 import { PageFrame, Row, RowList, Section } from "@/components/ds";
 import { MiddleTruncate } from "@/components/ui/middle-truncate";
 import { logout } from "@/lib/auth/actions";
+import { ReminderSwitches } from "@/components/settings/reminder-switches";
+import type { ReminderPrefs } from "@/lib/app-api/contract";
 import { DisplaySwitches, LearningSwitches, LogOutRow } from "./settings-controls";
 
 /**
@@ -9,7 +11,21 @@ import { DisplaySwitches, LearningSwitches, LogOutRow } from "./settings-control
  * signed in, how the app looks, how it behaves while you learn, where your
  * notifications are, help, and log out last.
  */
-export function SettingsV2({ email, roleLabel, rollNumber, student, whatsappHref }: { email: string | null; roleLabel: string; rollNumber: string | null; student: boolean; whatsappHref: string }) {
+export function SettingsV2({
+  email,
+  roleLabel,
+  rollNumber,
+  student,
+  whatsappHref,
+  reminders,
+}: {
+  email: string | null;
+  roleLabel: string;
+  rollNumber: string | null;
+  student: boolean;
+  whatsappHref: string;
+  reminders: ReminderPrefs | null;
+}) {
   return (
     <PageFrame title="Settings" width="reading">
       <Section id="account" title="Account">
@@ -41,6 +57,12 @@ export function SettingsV2({ email, roleLabel, rollNumber, student, whatsappHref
       {student ? (
         <Section id="learning" title="Learning">
           <LearningSwitches />
+        </Section>
+      ) : null}
+
+      {student && reminders ? (
+        <Section id="reminders" title="Clinic reminders">
+          <ReminderSwitches initial={reminders} />
         </Section>
       ) : null}
 

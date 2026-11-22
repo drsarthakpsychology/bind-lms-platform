@@ -12,8 +12,20 @@ const APP_NAME = "Vibha Psychology";
 const PACKAGE = "com.vibhapsychology.app";
 const SITE = "vibhapsychology.com";
 const BLUE = "#1d44d8";
-/** Firebase file for push on Android. The build adds it when the owner has given it (docs/app/README.md). */
-const GOOGLE_SERVICES = fs.existsSync(path.join(__dirname, "google-services.json")) ? "./google-services.json" : undefined;
+/**
+ * Firebase file for push on Android. The build adds it when the owner has given it
+ * (GitHub secret GOOGLE_SERVICES_JSON, written to apps/mobile/google-services.json by the
+ * build; or a path in GOOGLE_SERVICES_FILE, as expo.dev file variables give it).
+ */
+function googleServices(): string | undefined {
+  const given = process.env.GOOGLE_SERVICES_FILE;
+  if (given && fs.existsSync(given)) return given;
+  return fs.existsSync(path.join(__dirname, "google-services.json")) ? "./google-services.json" : undefined;
+}
+const GOOGLE_SERVICES = googleServices();
+/** The Expo project id push tokens need (GitHub variable EAS_PROJECT_ID). A made-up value is ignored. */
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const EAS_PROJECT_ID = UUID.test((process.env.EAS_PROJECT_ID ?? "").trim()) ? (process.env.EAS_PROJECT_ID ?? "").trim() : undefined;
 /**
  * Version shown in the stores. Raise it by hand for each public release (1.0.0, 1.0.1, 1.1.0).
  * The build number (Android versionCode, iPhone buildNumber) must go up on every upload:
@@ -127,11 +139,14 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
       // No advertising: the advertising id is never read.
       "com.google.android.gms.permission.AD_ID",
     ],
-    // Links to the website open the app (verified once /.well-known/assetlinks.json is on the site).
+    // Links to the website open the app once /.well-known/assetlinks.json carries the signing fingerprint
+    // (ANDROID_SHA256_FINGERPRINTS on Vercel; push and links guide).
     intentFilters: [
       {
         action: "VIEW",
         autoVerify: true,
+        // Same list as APP_LINK_PATHS in src/lib/app-links.ts (the website). Never /set-password:
+        // its reset link keeps the sign-in after "#", which only the website reads.
         data: [
           { scheme: "https", host: SITE, pathPrefix: "/setup" },
           { scheme: "https", host: SITE, pathPrefix: "/dashboard" },
@@ -143,6 +158,18 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
           { scheme: "https", host: SITE, pathPrefix: "/achievements" },
           { scheme: "https", host: SITE, pathPrefix: "/practice" },
           { scheme: "https", host: SITE, pathPrefix: "/games" },
+          { scheme: "https", host: SITE, pathPrefix: "/prep" },
+          { scheme: "https", host: SITE, pathPrefix: "/tools" },
+          { scheme: "https", host: SITE, pathPrefix: "/journey" },
+          { scheme: "https", host: SITE, pathPrefix: "/progress" },
+          { scheme: "https", host: SITE, pathPrefix: "/assignments" },
+          { scheme: "https", host: SITE, pathPrefix: "/wall" },
+          { scheme: "https", host: SITE, pathPrefix: "/leaderboard" },
+          { scheme: "https", host: SITE, pathPrefix: "/clinic" },
+          { scheme: "https", host: SITE, pathPrefix: "/schedule" },
+          { scheme: "https", host: SITE, pathPrefix: "/attendance" },
+          { scheme: "https", host: SITE, pathPrefix: "/leave" },
+          { scheme: "https", host: SITE, pathPrefix: "/opd" },
         ],
         category: ["BROWSABLE", "DEFAULT"],
       },
@@ -209,6 +236,8 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
     // "mock" serves fixtures from inside the app (no server needed). "live" calls apiUrl.
     apiMode: process.env.EXPO_PUBLIC_API_MODE ?? "live",
     site: `https://${SITE}`,
-    eas: { projectId: process.env.EAS_PROJECT_ID || undefined },
+    eas: { projectId: EAS_PROJECT_ID },
+    // What this build has for push, so Settings can say plainly when notifications are not set up.
+    push: { projectId: Boolean(EAS_PROJECT_ID), firebase: Boolean(GOOGLE_SERVICES) },
   },
 });

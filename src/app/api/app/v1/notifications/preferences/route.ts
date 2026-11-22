@@ -13,6 +13,10 @@ const schema = z
     achievements: z.boolean(),
     studyReminder: z.boolean(),
     studyReminderTime: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/),
+    reminders: z
+      .object({ opdDay: z.boolean(), sessionSoon: z.boolean(), scanOut: z.boolean(), caseLog: z.boolean(), leaveLow: z.boolean() })
+      .partial()
+      .strict(),
   })
   .partial()
   .strict();

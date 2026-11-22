@@ -105,6 +105,13 @@ describe("Notifications", () => {
     expect(await screen.findByTestId("pref-push")).toBeTruthy();
     for (const id of ["pref-messages", "pref-doubts", "pref-achievements", "pref-reminder"]) expect(screen.getByTestId(id)).toBeTruthy();
   });
+
+  it("each clinic reminder has its own switch, saved on the server", async () => {
+    await render(<NotificationSettingsScreen />);
+    for (const id of ["opdDay", "sessionSoon", "scanOut", "caseLog", "leaveLow"]) expect(await screen.findByTestId(`pref-rem-${id}`)).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("pref-rem-scanOut"));
+    await waitFor(() => expect(mock.log().some((l) => l.path === "/notifications/preferences" && l.method === "PUT" && (l.body as { reminders?: { scanOut?: boolean } })?.reminders?.scanOut === false)).toBe(true));
+  });
 });
 
 describe("Certificates", () => {

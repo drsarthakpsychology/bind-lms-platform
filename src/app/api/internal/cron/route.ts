@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 /**
  * Internal cron endpoint (Part 3.4): hit by GitHub Actions with a
@@ -88,6 +89,19 @@ export async function GET(req: Request) {
         .lte("release_at", now);
       if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
       return NextResponse.json({ ok: true, task, released: (data ?? []).length });
+    }
+    case "clinic-reminders": {
+      // Smart reminders (every 10 minutes): OPD today, session in 30 minutes,
+      // forgot to scan out, log your cases, only 1 leave left. Each is sent once.
+      // Also checks the delivery receipts of earlier pushes and clears dead phones.
+      const [{ runRemindersNow }, { checkReceipts }] = await Promise.all([import("@/lib/reminders/run"), import("@/lib/app-api/push-receipts")]);
+      const report = await runRemindersNow();
+      const receipts = await checkReceipts();
+      return NextResponse.json({ task, ...report, receipts });
+    }
+    case "push-receipts": {
+      const { checkReceipts } = await import("@/lib/app-api/push-receipts");
+      return NextResponse.json({ ok: true, task, ...(await checkReceipts()) });
     }
     case "send-reminders": {
       // TODO(provider): daily digest via Resend when a template + key exist.

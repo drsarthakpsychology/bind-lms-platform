@@ -247,6 +247,11 @@ export function pathFromLink(input: string): string {
   // The old Modules page and the old Notes tab: both are the Study tab now.
   if (p === "/study") return STUDY_MODULES;
   if (p === "/library") return q ? `/library${q}` : STUDY_NOTES;
+  // Website pages the app opens (App Links) but has no screen of its own for: the nearest tab, never a dead end.
+  if (p.startsWith("/dashboard/")) return "/";
+  if (p === "/tools" || p.startsWith("/tools/")) return "/practise";
+  if (p.startsWith("/clinic/")) return "/clinic/schedule";
+  if (p === "/leaderboard" || p.startsWith("/leaderboard/")) return "/game/leaderboard";
   // Paths that are the same in the app: /study, /study/m02, /study/m02/s1, /doubts, /notifications, /progress, /settings, /lecture/..., /course/...
   return p + q;
 }

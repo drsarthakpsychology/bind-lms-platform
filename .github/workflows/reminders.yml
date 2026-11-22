@@ -4,10 +4,15 @@ on:
   schedule:
     # 16:37 UTC = 22:07 IST — the daily digest, after the evening's study window.
     - cron: "37 16 * * *"
+    # Every 10 minutes from 05:30 to 00:20 IST (00:00 to 18:50 UTC): clinic
+    # reminders (OPD today, session in 30 minutes, scan out, log your cases,
+    # 1 leave left). Each reminder is sent once; a late or skipped run is fine.
+    - cron: "*/10 0-18 * * *"
   workflow_dispatch: {}
 
 jobs:
   reminders:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '37 16 * * *'
     runs-on: ubuntu-latest
     steps:
       - name: Trigger daily digest
@@ -20,6 +25,7 @@ jobs:
             || echo "::warning::reminders endpoint failed — check CRON_SECRET / APP_URL"
 
   release-scheduled:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '37 16 * * *'
     runs-on: ubuntu-latest
     steps:
       - name: Release due modules (A2 scheduled releases)
@@ -30,3 +36,20 @@ jobs:
           curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" \
             "${APP_URL}/api/internal/cron?task=release-scheduled" \
             || echo "::warning::release-scheduled endpoint failed — check CRON_SECRET / APP_URL"
+
+  clinic-reminders:
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '*/10 0-18 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    concurrency:
+      group: clinic-reminders
+      cancel-in-progress: false
+    steps:
+      - name: Send due clinic reminders
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl -fsS --max-time 90 -H "Authorization: Bearer ${CRON_SECRET}" \
+            "${APP_URL}/api/internal/cron?task=clinic-reminders" \
+            || echo "::warning::clinic reminders endpoint failed — check CRON_SECRET / APP_URL"

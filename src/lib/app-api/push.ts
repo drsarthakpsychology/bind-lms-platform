@@ -1,6 +1,7 @@
 import "server-only";
 import { after } from "next/server";
 import { activePushTargets, dropPushTokens } from "./devices";
+import { keepTickets, type Ticket } from "./push-receipts";
 import { loadPrefsMany, type PushKind } from "./prefs";
 import { toAppTarget } from "./target";
 import type { PushData } from "./contract";
@@ -16,7 +17,9 @@ import type { PushData } from "./contract";
  * and does nothing before the app_devices database step (no phones known).
  * A student gets push only on their active phone, only when their
  * preferences allow that kind. Expo's "DeviceNotRegistered" answers clear
- * the dead token.
+ * the dead token at once; the other tickets are kept and their receipts
+ * checked later by the cron (push-receipts.ts), which clears tokens Google or
+ * Apple say are dead.
  */
 export type BellRow = { id?: string | null; user_id: string; type?: string | null; title: string; body?: string | null; href?: string | null };
 
@@ -38,7 +41,8 @@ export function buildMessages(
   const out: ExpoMessage[] = [];
   for (const r of rows) {
     const p = prefs.get(r.user_id);
-    if (p && (!p.push || !p[kind])) continue;
+    // Reminders have their own switches (checked by the reminder runner); here only the master switch.
+    if (p && (!p.push || (kind !== "reminders" && !p[kind]))) continue;
     const href = r.href ?? (r.id ? `/notifications/${r.id}` : "/notifications");
     for (const to of byUser.get(r.user_id) ?? []) {
       out.push({
@@ -47,7 +51,7 @@ export function buildMessages(
         body: String(r.body ?? "").slice(0, 300),
         sound: "default",
         priority: "high",
-        channelId: kind === "achievements" ? "achievements" : "messages",
+        channelId: kind === "achievements" ? "achievements" : kind === "reminders" ? "reminders" : "messages",
         data: { notificationId: r.id ?? "", type: r.type ?? "message", target: toAppTarget(href), ...extra },
       });
     }
@@ -69,19 +73,35 @@ export async function sendPush(rows: readonly BellRow[], kind: PushKind, opts: {
     const f = opts.fetchImpl ?? fetch;
     let accepted = 0;
     const dead: string[] = [];
+    const tickets: Ticket[] = [];
+    const refused: Record<string, number> = {};
+    const userOf = new Map(targets.map((t) => [t.token, t.userId]));
     for (let i = 0; i < messages.length; i += CHUNK) {
       const batch = messages.slice(i, i + CHUNK);
       const headers: Record<string, string> = { "Content-Type": "application/json", Accept: "application/json" };
       if (process.env.EXPO_ACCESS_TOKEN) headers.Authorization = `Bearer ${process.env.EXPO_ACCESS_TOKEN}`;
       const res = await f(EXPO_URL, { method: "POST", headers, body: JSON.stringify(batch), signal: AbortSignal.timeout(8000) }).catch(() => null);
-      if (!res || !res.ok) continue;
-      const json = (await res.json().catch(() => null)) as { data?: { status?: string; details?: { error?: string } }[] } | null;
+      if (!res || !res.ok) {
+        console.warn("push: Expo did not take the batch:", res ? res.status : "no answer");
+        continue;
+      }
+      const json = (await res.json().catch(() => null)) as { data?: { status?: string; id?: string; details?: { error?: string } }[] } | null;
       (json?.data ?? []).forEach((t, j) => {
-        if (t?.status === "ok") accepted++;
-        else if (t?.details?.error === "DeviceNotRegistered") dead.push(batch[j].to);
+        const to = batch[j]?.to;
+        if (!to) return;
+        if (t?.status === "ok") {
+          accepted++;
+          if (t.id) tickets.push({ ticketId: t.id, token: to, userId: userOf.get(to) ?? "" });
+          return;
+        }
+        const why = t?.details?.error ?? "Unknown";
+        refused[why] = (refused[why] ?? 0) + 1;
+        if (why === "DeviceNotRegistered") dead.push(to);
       });
     }
     if (dead.length) await dropPushTokens(dead);
+    await keepTickets(tickets.filter((t) => t.userId));
+    console.info(`push ${kind}: ${messages.length} to send, ${accepted} taken by Expo${Object.keys(refused).length ? `, refused ${JSON.stringify(refused)}` : ""}`);
     return accepted;
   } catch (e) {
     console.warn("sendPush failed:", e instanceof Error ? e.message : e);

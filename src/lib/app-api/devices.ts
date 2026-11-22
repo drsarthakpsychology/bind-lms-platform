@@ -242,7 +242,12 @@ export async function deviceState(input: { userId: string; role: string; email?:
 }
 
 /** Rename the phone, set or clear its push token. */
-export async function updateDevice(input: { userId: string; role: string; deviceId: string; name?: string; pushToken?: string | null; appVersion?: string; osVersion?: string }): Promise<DeviceState> {
+export async function updateDevice(input: { userId: string; role: string; deviceId: string; name?: string; pushToken?: string | null; pushProblem?: string; appVersion?: string; osVersion?: string }): Promise<DeviceState> {
+  // Push set-up is logged (never the token itself), so a missing Firebase file or project id shows in the server logs.
+  const who = `${input.userId.slice(0, 8)} on ${input.deviceId.slice(0, 8)}`;
+  if (input.pushToken) console.info(`push: phone registered for ${who}`);
+  else if (input.pushToken === null) console.info(`push: phone turned off for ${who}`);
+  if (input.pushProblem) console.warn(`push: no token for ${who}: ${input.pushProblem}`);
   const db = admin();
   if (!db) return UNENFORCED;
   const patch: Record<string, unknown> = { last_seen_at: new Date().toISOString() };
@@ -255,8 +260,9 @@ export async function updateDevice(input: { userId: string; role: string; device
     // One phone per push token: a token that moved accounts stops reaching the old one.
     if (input.pushToken) await db.from("app_devices").update({ push_token: null }).eq("push_token", input.pushToken).neq("user_id", input.userId);
   }
-  const { error } = await db.from("app_devices").update(patch).eq("user_id", input.userId).eq("device_id", input.deviceId);
+  const { data: updated, error } = await db.from("app_devices").update(patch).eq("user_id", input.userId).eq("device_id", input.deviceId).select("id");
   if (error && !tableMissing(error)) console.error("app_devices update failed:", error.code, error.message);
+  else if (!error && input.pushToken && !(updated ?? []).length) console.warn(`push: token not saved for ${who}: this phone has no row (sign in again)`);
   return deviceState({ userId: input.userId, role: input.role, deviceId: input.deviceId });
 }
 
