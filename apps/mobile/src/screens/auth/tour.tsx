@@ -1,4 +1,4 @@
-import { BookOpen, House, NotebookText, Target, User } from "lucide-react-native";
+import { BookOpen, House, LibraryBig, Target, User } from "lucide-react-native";
 import * as React from "react";
 import { BackHandler, View } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
@@ -15,9 +15,9 @@ type IconType = React.ComponentType<{ size?: number; color?: string; strokeWidth
 /** The five tabs, in the order of the tab bar (app/(student)/_layout.tsx). */
 export const TOUR_TABS: { id: string; area: Area; name: string; icon: IconType; line: string; points: [string, string, string] }[] = [
   { id: "today", area: "home", name: "Today", icon: House, line: "What matters right now.", points: ["Your next class or clinic session, with Scan in", "The lecture you stopped, ready to pick up", "Quick ways to Medicines, Notes and Leave"] },
-  { id: "learn", area: "learn", name: "Learn", icon: BookOpen, line: "Lectures, modules and hand-ins.", points: ["Watch lectures and keep your place", "Read modules and take the checkpoints", "Hand in your assignments"] },
+  { id: "learn", area: "learn", name: "Learn", icon: BookOpen, line: "Lectures, hand-ins and doubts.", points: ["Watch lectures and keep your place", "Hand in your assignments", "Ask a doubt and see the answer"] },
+  { id: "study", area: "library", name: "Study", icon: LibraryBig, line: "Modules and notes, one switch apart.", points: ["Modules: read, take the checkpoints, see your map", "Notes: revision notes and quick reference", "Medicines, with a way to compare two"] },
   { id: "practise", area: "practise", name: "Practise", icon: Target, line: "Cases and games for your clinical eye.", points: ["A case of the day in about five minutes", "Games that train what you notice", "Practice sets and full mocks"] },
-  { id: "notes", area: "library", name: "Notes", icon: NotebookText, line: "Everything you look up.", points: ["Revision notes for each topic", "Quick reference for terms and criteria", "Medicines, with a way to compare two"] },
   { id: "me", area: "me", name: "Me", icon: User, line: "Your clinic, your progress, your settings.", points: ["Attendance, leave and your schedule", "Progress and certificates", "Text size, vibration, PIN and fingerprint"] },
 ];
 

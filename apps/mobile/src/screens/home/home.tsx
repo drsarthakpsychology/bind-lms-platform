@@ -14,6 +14,7 @@ import type { QuestCard } from "@/api/contract";
 import { FieldCard, IconDot, Jyo, Label, LoadError, Pebbles, QuietEmpty, Row, RowList, Screen, Sheet, Skeleton, StillTrying, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Enter, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
+import { STUDY_NOTES } from "@/nav/study";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useAccent, useTheme } from "@/theme";
@@ -328,7 +329,7 @@ export function HomeView({ data }: { data: HomeData }) {
             items={[
               { label: "Scan", icon: QrCode, live: true, onPress: () => go("/clinic/scan"), testID: "quick-scan" },
               { label: "Medicines", icon: Pill, onPress: () => go("/medicines"), testID: "quick-medicines" },
-              { label: "Notes", icon: NotebookText, onPress: () => router.push("/library"), testID: "quick-notes" },
+              { label: "Notes", icon: NotebookText, onPress: () => router.push(STUDY_NOTES), testID: "quick-notes" },
               { label: "Leave", icon: CalendarOff, onPress: () => go("/clinic/leave"), testID: "quick-leave" },
             ]}
           />

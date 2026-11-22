@@ -5,7 +5,7 @@ import { useReducedMotion } from "react-native-reanimated";
 import { MotionTabBar, tabSceneOptions, useMotionTier, type TabIcon } from "@/motion";
 import { useTheme, type Area } from "@/theme";
 
-export type TabDef = { name: string; title: string; icon: TabIcon; /** The area the tab's screen wears: the bar's pill washes into its colour. */ area?: Area };
+export type TabDef = { name: string; title: string; icon: TabIcon; /** The area the tab's screen wears: the bar's pill washes into its colour. */ area?: Area; /** Not shown in the bar (an account without this part); its address still opens it. */ hidden?: boolean };
 
 /**
  * The bottom tab bar, the same for every kind of account: a dark pill
@@ -38,7 +38,7 @@ export function TabBar({ tabs }: { tabs: TabDef[] }) {
       }}
     >
       {tabs.map((t) => (
-        <Tabs.Screen key={t.name} name={t.name} options={{ title: t.title, tabBarAccessibilityLabel: t.title }} />
+        <Tabs.Screen key={t.name} name={t.name} options={{ title: t.title, tabBarAccessibilityLabel: t.title, ...(t.hidden ? { tabBarItemStyle: { display: "none" } } : null) }} />
       ))}
     </Tabs>
   );

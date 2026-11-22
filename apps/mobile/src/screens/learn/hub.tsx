@@ -1,16 +1,17 @@
 import { router } from "expo-router";
-import { Bookmark, BookOpen, CirclePlay, ClipboardList, Layers, Map as MapIcon, MessageCircleQuestion, NotebookText, Play } from "lucide-react-native";
+import { ArrowRight, CirclePlay, ClipboardList, LibraryBig, MessageCircleQuestion, Play } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import type { CourseSummary, CourseWeek, StudyHome } from "@/api/contract";
-import { useAssignments, useNotes } from "@/api/learn";
+import type { CourseSummary, CourseWeek } from "@/api/contract";
+import { useAssignments } from "@/api/learn";
 import { go } from "@/api/prefetch";
 import { useCourse, useCourses, useMe, useStudyHome } from "@/api/queries";
 import { Button, IconDot, Jyo, Label, Pebbles, QuietEmpty, Screen, Skeleton, Stone, T } from "@/ds";
 import { toast } from "@/ds/toast";
-import { Enter, Press, ProgressRing, StaggerList } from "@/motion";
+import { Enter, ProgressRing, StaggerList } from "@/motion";
 import { openTarget } from "@/nav/targets";
+import { hasStudy, STUDY_MODULES } from "@/nav/study";
 import { TabTop } from "@/nav/top";
 import { layout, space, useTheme } from "@/theme";
 import { dueWord } from "./assignments";
@@ -22,9 +23,8 @@ import { Group, Pill, StateMark, Tile, TilesSkeleton } from "./parts";
  * On the layer, top to bottom:
  *   1. Pick up: the lecture to carry on with (it grows into the lecture)
  *   2. This week: this week's lectures and what is due
- *   3. Four pebbles: Lectures, Modules, Hand-ins, Doubts
- *   4. Modules: the reading you are on, with how far through
- *   5. Also here: Your map, Saved, Notes, Quick reference
+ *   3. Three pebbles: Lectures, Hand-ins, Doubts
+ *   4. A card to Study, where modules and notes live (when the account has them)
  */
 
 /** "Pick up": the next lecture, with a ring for how much of the course is watched and the one lime play. */
@@ -102,70 +102,27 @@ function ThisWeek({ courseId }: { courseId: string }) {
   );
 }
 
-/** The reading you are on: a ring for the module, the next step in words. */
-function ModulesCard({ d }: { d: StudyHome }) {
-  const c = useTheme();
-  const done = d.modules.filter((m) => m.status.complete).length;
-  const id = "moduleId" in d.next ? d.next.moduleId : null;
-  const mod = d.modules.find((m) => m.id === id) ?? d.modules.find((m) => !m.status.complete) ?? d.modules[0];
-  if (!mod) return null;
-  const allDone = d.next.kind === "done";
-  return (
-    <Group>
-      <Label action={<Button kind="text" small label="All modules" onPress={() => go("/study")} testID="learn-study" />}>{`Modules · ${done} of ${d.modules.length} complete`}</Label>
-      <Stone testID="learn-module" accessibilityLabel={allDone ? "Every module done. Open modules" : `${d.next.label}. Module ${mod.num}, ${mod.status.pct}% done`} onPress={() => (allDone ? go("/study") : openTarget(d.next.target))}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
-          <ProgressRing pct={allDone ? 100 : mod.status.pct} size={58} stroke={5} delay={260} color={c.dark ? c.lime : c.brand} track={c.hairline}>
-            <BookOpen size={20} color={c.ink} strokeWidth={1.9} />
-          </ProgressRing>
-          <View style={{ flex: 1, minWidth: 0, gap: 3 }}>
-            <T v="h3">{allDone ? "Every module done" : d.next.label}</T>
-            <T v="small" tone="muted" num>
-              {allDone ? "Re-tests show here when they are due" : `Module ${mod.num} · ${mod.title}`}
-            </T>
-          </View>
-        </View>
-      </Stone>
-    </Group>
-  );
-}
-
-/** A small square stone for the two-by-two grid at the end. */
-function Square({ title, meta, icon, onPress, testID }: { title: string; meta: string; icon: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>; onPress: () => void; testID: string }) {
-  const c = useTheme();
-  return (
-    <Press testID={testID} accessibilityRole="button" accessibilityLabel={`${title}. ${meta}`} onPress={onPress} scale={0.97} style={{ flexBasis: "47%", flexGrow: 1 }} innerStyle={{ backgroundColor: c.card, borderRadius: 22, padding: space[3] + 2, gap: space[2], minHeight: 112 }}>
-      <IconDot icon={icon} />
-      <View style={{ gap: 1 }}>
-        <T v="bodyStrong">{title}</T>
-        <T v="small" tone="muted" num>
-          {meta}
-        </T>
-      </View>
-    </Press>
-  );
-}
-
 export function LearnHub() {
+  const c = useTheme();
   const me = useMe();
   const can = me.data?.access.can;
   const lectures = can?.lectures !== false;
-  const studyOn = can?.study !== false && !me.data?.access.lecturesOnly;
+  const studyOn = hasStudy(me.data);
   const courses = useCourses();
   const study = useStudyHome(studyOn);
-  const notes = useNotes(studyOn);
   const assignments = useAssignments();
   const toHandIn = (assignments.data?.items ?? []).filter((a) => a.status === "not_started").length;
-  const notesRead = (notes.data?.notes ?? []).filter((n) => n.readOn).length;
   const list = courses.data?.courses ?? [];
   const course = list.find((x) => x.next) ?? list[0];
   const lead = course ? `${course.completedCount} of ${course.totalLessons} lectures watched` : undefined;
   const loading = lectures && !courses.data && !courses.isError;
   const failed = lectures && courses.isError && !courses.data;
   const nothing = !!courses.data && !list.length && (!studyOn || (!!study.data && !study.data.modules.length));
+  const mods = study.data?.modules ?? [];
+  const modsDone = mods.filter((m) => m.status.complete).length;
 
   return (
-    <Screen tab area="learn" top={<TabTop />} title="Learn" lead={lead} testID="learn" gap={space[5]} onRefresh={() => void Promise.all([courses.refetch(), study.refetch(), notes.refetch(), assignments.refetch()])} refreshing={courses.isRefetching || study.isRefetching}>
+    <Screen tab area="learn" top={<TabTop />} title="Learn" lead={lead} testID="learn" gap={space[5]} onRefresh={() => void Promise.all([courses.refetch(), study.refetch(), assignments.refetch()])} refreshing={courses.isRefetching || assignments.isRefetching}>
       {loading ? (
         <View testID="learn-skeleton" style={{ gap: space[5] }}>
           <Skeleton w="34%" h={14} />
@@ -173,7 +130,7 @@ export function LearnHub() {
         </View>
       ) : null}
       {failed ? <QuietEmpty testID="load-error" title="Could not load your lectures" body="Check the internet and try again. What you opened before is still on this phone." action={{ label: "Try again", onPress: () => void courses.refetch() }} /> : null}
-      {nothing ? <QuietEmpty testID="learn-empty" art={<Jyo pose="resting" size={64} />} title="Nothing to learn yet" body="Your lectures and modules appear here as soon as your course starts." /> : null}
+      {nothing ? <QuietEmpty testID="learn-empty" art={<Jyo pose="resting" size={64} />} title="Nothing to learn yet" body="Your lectures appear here as soon as your course starts." /> : null}
       {lectures && course?.next ? (
         <Enter i={0}>
           <Resume course={course} />
@@ -189,28 +146,28 @@ export function LearnHub() {
           <Pebbles
             items={[
               ...(lectures ? [{ label: "Lectures", icon: CirclePlay, onPress: () => go("/lectures"), testID: "learn-lectures" }] : []),
-              ...(studyOn ? [{ label: "Modules", icon: BookOpen, onPress: () => go("/study"), testID: "learn-modules" }] : []),
               ...(lectures ? [{ label: toHandIn ? `Hand-ins · ${toHandIn}` : "Hand-ins", icon: ClipboardList, onPress: () => go("/assignments"), testID: "learn-assignments" }] : []),
               { label: "Doubts", icon: MessageCircleQuestion, onPress: () => go("/doubts"), testID: "learn-doubts" },
             ]}
           />
         </Enter>
       ) : null}
-      {studyOn && study.data?.modules.length ? (
+      {studyOn && !loading && !nothing ? (
         <Enter i={3}>
-          <ModulesCard d={study.data} />
-        </Enter>
-      ) : null}
-      {studyOn && !loading ? (
-        <Enter i={4}>
           <Group>
-            <Label>Also here</Label>
-            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
-              <Square testID="learn-map" title="Your map" meta="How well you know each topic" icon={MapIcon} onPress={() => router.push("/map")} />
-              <Square testID="learn-saved" title="Saved" meta="Bookmarks and your notes" icon={Bookmark} onPress={() => router.push("/saved")} />
-              <Square testID="learn-notes" title="Revision notes" meta={notes.data?.notes.length ? `${notesRead} of ${notes.data.notes.length} read` : "One page per topic"} icon={NotebookText} onPress={() => go("/notes")} />
-              <Square testID="learn-reference" title="Quick reference" meta="Terms, A to Z" icon={Layers} onPress={() => go("/reference")} />
-            </View>
+            <Label>Modules and notes</Label>
+            <Stone quiet testID="learn-to-study" accessibilityLabel="Modules and revision notes are on the Study tab" onPress={() => router.push(STUDY_MODULES)}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
+                <IconDot icon={LibraryBig} />
+                <View style={{ flex: 1, minWidth: 0, gap: 1 }}>
+                  <T v="bodyStrong">On the Study tab</T>
+                  <T v="small" tone="muted" num>
+                    {mods.length ? `Modules · ${modsDone} of ${mods.length} done, and your notes` : "Your modules and revision notes"}
+                  </T>
+                </View>
+                <ArrowRight size={18} color={c.faint} />
+              </View>
+            </Stone>
           </Group>
         </Enter>
       ) : null}

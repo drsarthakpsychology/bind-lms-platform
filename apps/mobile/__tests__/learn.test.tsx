@@ -92,13 +92,13 @@ describe("links", () => {
 });
 
 describe("Learn screens", () => {
-  it("the Learn hub lists Notes, Quick reference, Saved and Assignments", async () => {
+  it("the Learn hub keeps lectures, hand-ins and doubts, and points modules to Study", async () => {
     await render(<LearnHub />);
-    expect(await screen.findByTestId("learn-notes")).toBeTruthy();
-    expect(screen.getByTestId("learn-reference")).toBeTruthy();
-    expect(screen.getByTestId("learn-saved")).toBeTruthy();
-    expect(screen.getByTestId("learn-map")).toBeTruthy();
     expect(await screen.findByText("Hand-ins · 1")).toBeTruthy();
+    expect(screen.getByTestId("learn-doubts")).toBeTruthy();
+    for (const gone of ["learn-modules", "learn-module", "learn-notes", "learn-reference", "learn-map"]) expect(screen.queryByTestId(gone)).toBeNull();
+    fireEvent.press(await screen.findByTestId("learn-to-study"));
+    expect(router.push).toHaveBeenLastCalledWith("/library?side=modules");
   });
 
   it("notes: Carry on goes to the first unread note", async () => {

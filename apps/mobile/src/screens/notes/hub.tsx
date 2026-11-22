@@ -1,54 +1,29 @@
 import { router } from "expo-router";
-import { ArrowRight, BookA, Bookmark, GitCompareArrows, NotebookText, Pill, Search } from "lucide-react-native";
+import { ArrowRight, BookA, Bookmark, GitCompareArrows, NotebookText, Pill } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import { useNotes, useTerms } from "@/api/learn";
 import { go } from "@/api/prefetch";
-import { Label, Row, RowList, Screen, Stone, T } from "@/ds";
+import { Label, Row, RowList, Stone, T } from "@/ds";
 import { useMedicineList } from "@/library/list";
-import { Enter, Press } from "@/motion";
-import { TabTop } from "@/nav/top";
+import { Enter } from "@/motion";
 import { fonts, space, useTheme, type Area } from "@/theme";
 
 /**
- * The Notes tab: one place for everything a student looks up fast. For now it
- * is a hub over the three screens that already exist (revision notes, the A to
- * Z quick reference, the medicine library); they become one searchable library
- * in a later step. Counts come from the same queries those screens use, so
- * opening one is instant.
+ * The Notes side of the Study tab: everything a student looks up fast, as
+ * shelves over the screens that already exist (revision notes, the A to Z
+ * quick reference, the medicine library). Counts come from the same queries
+ * those screens use, so opening one is instant. Search is the top bar's.
  */
-export function NotesHubScreen() {
+export function NotesSide() {
   const c = useTheme();
   const notes = useNotes();
   const terms = useTerms();
   const meds = useMedicineList();
-  const refresh = () => {
-    void notes.refetch();
-    void terms.refetch();
-    void meds.refetch();
-  };
   const count = (n: number | undefined, one: string, many: string) => (n === undefined ? "" : `${n} ${n === 1 ? one : many}`);
   return (
-    <Screen
-      tab
-      area="library"
-      top={<TabTop />}
-      testID="notes-hub"
-      title="Notes"
-      lead="Everything you look up, in one place."
-      gap={space[5]}
-      onRefresh={refresh}
-      refreshing={notes.isRefetching || terms.isRefetching || meds.isRefetching}
-      field={
-        <Press testID="notes-search" accessibilityRole="search" accessibilityLabel="Search disorders, medicines and terms" onPress={() => go("/reference")} scale={0.98} innerStyle={{ minHeight: 52, borderRadius: 26, backgroundColor: c.fieldTint, flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[4] }}>
-          <Search size={18} color={c.onField} />
-          <T v="small" tone="onFieldMuted" style={{ flex: 1 }}>
-            Search disorders, medicines, terms
-          </T>
-        </Press>
-      }
-    >
+    <View testID="notes-hub" style={{ gap: space[5] }}>
       <Enter i={0}>
         <View style={{ flexDirection: "row", gap: space[3] }}>
           <Shelf testID="hub-notes" area="learn" icon={NotebookText} title="Revision notes" meta={count(notes.data?.notes.length, "note", "notes") || "One page per topic"} href="/notes" />
@@ -67,7 +42,7 @@ export function NotesHubScreen() {
           </RowList>
         </View>
       </Enter>
-    </Screen>
+    </View>
   );
 }
 

@@ -1,16 +1,14 @@
-import { Stack } from "expo-router";
 import { ArrowRight, Flame as FlameIcon } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import type { ModuleSummary, StudyHome } from "@/api/contract";
 import { go } from "@/api/prefetch";
-import { useStudyHome } from "@/api/queries";
-import { FieldCard, Jyo, Label, QuietEmpty, Screen, Stone, T } from "@/ds";
+import { Jyo, Label, QuietEmpty, Stone, T } from "@/ds";
 import { Enter, ProgressRing, StaggerList } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { streakLine } from "@/screens/home/home";
-import { Fetched, Group, Pill, StateMark, TilesSkeleton } from "@/screens/learn/parts";
+import { Group, Pill, StateMark } from "@/screens/learn/parts";
 import { space, useTheme } from "@/theme";
 
 export function moduleMeta(m: ModuleSummary): string {
@@ -47,7 +45,7 @@ function ModuleCard({ m }: { m: ModuleSummary }) {
   );
 }
 
-export function StudyHomeBody({ d }: { d: StudyHome }) {
+export function StudyHomeBody({ d, after }: { d: StudyHome; /** Shown under the one thing to carry on with (the Study tab puts Your map here). */ after?: React.ReactNode }) {
   const c = useTheme();
   const now = d.modules.filter((m) => !m.status.complete && m.status.readDone > 0);
   const later = d.modules.filter((m) => !m.status.complete && m.status.readDone === 0);
@@ -100,24 +98,10 @@ export function StudyHomeBody({ d }: { d: StudyHome }) {
           </T>
         </View>
       ) : null}
+      {after}
       {shelf("Reading now", now, 1)}
       {shelf("Coming up", later, 2)}
       {shelf("Done", done, 3)}
     </>
-  );
-}
-
-/** Modules: the one thing to carry on with, then every module on three shelves. Your map sits on the field. */
-export function StudyHomeScreen() {
-  const q = useStudyHome();
-  const d = q.data;
-  const done = d ? d.modules.filter((m) => m.status.complete).length : 0;
-  return (
-    <Screen testID="study" title="Modules" lead={d?.modules.length ? `${done} of ${d.modules.length} complete` : undefined} field={d?.modules.length ? <FieldCard testID="study-map" title="Your map" meta="Every topic and how well you know it" onPress={() => go("/map")} /> : undefined} gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Stack.Screen options={{ title: "" }} />
-      <Fetched q={q} what="your modules" skeleton={<TilesSkeleton card rows={4} />}>
-        {(x) => <StudyHomeBody d={x} />}
-      </Fetched>
-    </Screen>
   );
 }
