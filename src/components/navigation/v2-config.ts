@@ -195,6 +195,7 @@ export const ADMIN_MORE_MATCH = [
   "/admin/clinic",
   "/admin/people",
   "/admin/enquiries",
+  "/admin/requests",
   "/admin/triage",
   "/admin/submissions",
   "/admin/doubts",
@@ -237,6 +238,7 @@ export const ADMIN_MORE_GROUPS: HubGroup[] = [
       { href: "/admin/cohorts", label: "Cohorts", icon: "users" },
       { href: "/admin/clinic", label: "Clinic", icon: "calendar" },
       { href: "/admin/people", label: "People", icon: "radar" },
+      { href: "/admin/requests", label: "Requests: where people stop", icon: "activity" },
     ],
   },
   {

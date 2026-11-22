@@ -11,7 +11,7 @@ describe("admin navigation, new design", () => {
 
   it("More holds every admin place that is not on a tab", () => {
     const labels = ADMIN_MORE_GROUPS.flatMap((g) => g.rows.map((r) => r.label));
-    expect(labels).toEqual(["Inbox", "Cohorts", "Clinic", "People", "Review", "Content", "Forms", "Certificates", "Badges and types", "System", "Settings"]);
+    expect(labels).toEqual(["Inbox", "Cohorts", "Clinic", "People", "Requests: where people stop", "Review", "Content", "Forms", "Certificates", "Badges and types", "System", "Settings"]);
   });
 
   it("pages reached from More light the More tab; tab pages light their own tab", () => {

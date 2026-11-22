@@ -119,6 +119,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     tabs: [
       { href: "/admin/people", label: "Pipeline" },
       { href: "/admin/enquiries", label: "Enquiry forms" },
+      { href: "/admin/requests", label: "Where people stop" },
     ],
   },
   {

@@ -6,7 +6,7 @@ import { INSTRUMENTS } from "@/lib/free/tests";
 import s from "@/components/free/free.module.css";
 
 export const metadata: Metadata = {
-  title: "Free mental health self-checks and calm exercises · VIBHA",
+  title: "Free mental health self-checks and calm exercises",
   description:
     "Free, private self-checks used by clinicians (PHQ-9, GAD-7, WHO-5, Big Five personality, self-esteem, adult ADHD screener) plus guided breathing, grounding and muscle relaxation. Nothing you answer is stored.",
   alternates: { canonical: "/free" },

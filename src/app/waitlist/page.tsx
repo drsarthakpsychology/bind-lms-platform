@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FunnelCounter } from "@/components/analytics/funnel-counter";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader, SiteHeaderLink } from "@/components/site/site-header";
 import { COHORT, CONTACT, JOIN_STEPS } from "@/components/home/content";
@@ -6,7 +7,10 @@ import { WaitlistForm } from "./waitlist-form";
 
 export const metadata: Metadata = {
   title: "Request an invitation",
+  description:
+    "Ask to join VIBHA School of Psychology: practical psychology training and supervised internship in Ahmedabad and online. We call you back with your fee and dates.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "/waitlist" },
 };
 
 /**
@@ -22,6 +26,7 @@ export default function WaitlistPage() {
   const starts = COHORT.starts.charAt(0).toLowerCase() + COHORT.starts.slice(1);
   return (
     <div className="flex min-h-dvh flex-col bg-background">
+      <FunnelCounter path="/waitlist" fallback="waitlist" />
       <SiteHeader>
         <SiteHeaderLink href="/login">Sign in</SiteHeaderLink>
       </SiteHeader>

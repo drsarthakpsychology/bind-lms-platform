@@ -82,7 +82,7 @@ export function HomeNav() {
           <Link href={LINKS.login} className={`${s.btn} ${s.btnGhost} ${s.btnSm} ${s.hideSm}`}>
             Login
           </Link>
-          <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime} ${s.btnSm}`} aria-label="Request an invitation">
+          <Link href={LINKS.apply} data-funnel="home-nav" className={`${s.btn} ${s.btnLime} ${s.btnSm}`} aria-label="Request an invitation">
             <span className={s.ctaLong}>Request an invitation</span>
             <span className={s.ctaShort} aria-hidden>
               Apply
@@ -123,7 +123,7 @@ export function HomeNav() {
           </Link>
         </nav>
         <div className={s.menuActions}>
-          <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime}`} onClick={() => setOpen(false)}>
+          <Link href={LINKS.apply} data-funnel="home-nav" className={`${s.btn} ${s.btnLime}`} onClick={() => setOpen(false)}>
             Request an invitation
           </Link>
           <Link href={LINKS.login} className={`${s.btn} ${s.btnGhost}`} onClick={() => setOpen(false)}>

@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CONTACT } from "@/components/home/content";
 import { trackEvent } from "@/lib/analytics";
+import { countStep } from "@/lib/funnel/client";
 import { cn } from "@/lib/utils";
 import { submitWaitlist } from "./actions";
 
@@ -42,6 +43,13 @@ export function WaitlistForm() {
   const doneRef = React.useRef<HTMLHeadingElement>(null);
   const errorRef = React.useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+  const started = React.useRef(false);
+  React.useEffect(() => countStep("form_open", undefined, "/waitlist"), []);
+  function onStart() {
+    if (started.current) return;
+    started.current = true;
+    countStep("form_start", undefined, "/waitlist");
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -51,9 +59,11 @@ export function WaitlistForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
     let res: Awaited<ReturnType<typeof submitWaitlist>>;
+    let reached = true;
     try {
       res = await submitWaitlist(data);
     } catch {
+      reached = false;
       // No connection, or the site was updated while the form was open: the
       // request never reached us. Say so instead of spinning forever.
       res = { ok: false, error: "Your request was not sent. Check your connection and try again." };
@@ -62,12 +72,14 @@ export function WaitlistForm() {
       // Funnel event. Non-identifying only: the status bucket is useful for
       // cohort mix; name/email/phone never leave the DB as events.
       trackEvent("waitlist_joined", { status: data.get("status") ?? "unknown" });
+      countStep("form_sent", undefined, "/waitlist");
       setState("done");
       requestAnimationFrame(() => {
         doneRef.current?.focus();
         doneRef.current?.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
       });
     } else {
+      countStep("form_failed", reached ? "refused" : "no-connection", "/waitlist");
       setState("idle");
       setError(res.error ?? "Something went wrong. Please try again.");
       requestAnimationFrame(() => errorRef.current?.focus());
@@ -109,7 +121,7 @@ export function WaitlistForm() {
   const busy = state === "submitting";
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5" aria-busy={busy || undefined}>
+    <form onSubmit={onSubmit} onFocus={onStart} onInput={onStart} className="space-y-5" aria-busy={busy || undefined}>
       <div className="space-y-1.5">
         <Label htmlFor="name">Your name</Label>
         <Input

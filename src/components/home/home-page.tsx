@@ -43,6 +43,7 @@ import { INSTRUMENTS } from "@/lib/free/tests";
 import { CALM_TOOLS } from "@/lib/free/calm";
 import { Carousel, ClinicCallGame, DaySwitch, DefenceGame, DepthTabs, DisorderPicker, FoldList, MemoryGame, TherapyMixer } from "./games";
 import { HomeNav } from "./home-nav";
+import { FunnelCounter } from "@/components/analytics/funnel-counter";
 import { CountUp, Cursor, Magnetic, Marquee, Parallax, Reveal, ScrollProgress, SectionHead, Stagger, Tilt } from "./motion-kit";
 import { CollegeVs, GroupScene, JourneyScene, ScenarioStack, ScrubText, Stickers, WeeksTimeline } from "./scenes";
 import s from "./home.module.css";
@@ -109,7 +110,7 @@ function Hero() {
             <Reveal delay={0.2} y={12}>
               <div className={s.ctaRow}>
                 <Magnetic>
-                  <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime} ${s.btnLg}`}>
+                  <Link href={LINKS.apply} data-funnel="home-hero" className={`${s.btn} ${s.btnLime} ${s.btnLg}`}>
                     Request an invitation <span aria-hidden>→</span>
                   </Link>
                 </Magnetic>
@@ -626,7 +627,7 @@ function FeesJoin() {
             </ol>
             <div className={s.joinBtns}>
               <Magnetic>
-                <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime}`}>
+                <Link href={LINKS.apply} data-funnel="home-fees" className={`${s.btn} ${s.btnLime}`}>
                   Request an invitation <span aria-hidden>→</span>
                 </Link>
               </Magnetic>
@@ -941,7 +942,7 @@ function Closing() {
         <p className={s.closeB}>Practice begins.</p>
         <div className={s.ctaRow}>
           <Magnetic>
-            <Link href={LINKS.apply} className={`${s.btn} ${s.btnLime} ${s.btnLg}`}>
+            <Link href={LINKS.apply} data-funnel="home-final" className={`${s.btn} ${s.btnLime} ${s.btnLg}`}>
               Request an invitation <span aria-hidden>→</span>
             </Link>
           </Magnetic>
@@ -1020,6 +1021,9 @@ function Footer() {
             </li>
             <li>
               <Link href="/free">Free self-checks &amp; calm</Link>
+            </li>
+            <li>
+              <Link href="/psychology-internship">Psychology internship</Link>
             </li>
           </ul>
         </nav>
@@ -1100,6 +1104,7 @@ export function HomePage() {
         <Closing />
       </main>
       <Footer />
+      <FunnelCounter path="/" fallback="home-other" />
     </div>
   );
 }
