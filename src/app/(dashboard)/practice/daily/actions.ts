@@ -9,6 +9,7 @@ import {
   cleanLog,
   dailyIndex,
   dailyStreak,
+  hintUsesAllowance,
   MAX_HINTS,
   pickPractice,
   pointsUsed,
@@ -166,10 +167,10 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
   const hintItem = itemKey("daily", mode, rowDay, c.id);
   let baseLog = stored ? cleanLog(row?.log ?? []) : cleanLog(input.log);
   if (!stored) {
-    // The browser's log can't add hints the server never granted.
+    // The browser's log can't add hints the server never granted (the first hint is free, so it needs no grant).
     const granted = (await hintedItems(me.id, hintItem).catch(() => new Map<string, number>())).get(hintItem) ?? 0;
     let seen = 0;
-    baseLog = baseLog.filter((a) => a.t !== "hint" || ++seen <= granted);
+    baseLog = baseLog.filter((a) => a.t !== "hint" || ++seen <= granted + 1);
   }
   const before = replay(c, baseLog);
   let progress = before.progress;
@@ -180,8 +181,12 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
     if (!action) return { ok: false, error: "That move isn't allowed." };
     if (action.t === "hint") {
       if (progress.status !== "playing" || progress.hints >= MAX_HINTS) return { ok: false, error: "No more hints for this case." };
-      const spent = await spendHint(me.id, { game: "daily", item: hintItem, step: progress.hints + 1 });
-      if (!spent.ok) return { ok: false, error: spent.error };
+      // The first hint is free. The second and third each use one of the day's hints (steps 1 and 2 there).
+      const n = progress.hints + 1;
+      if (hintUsesAllowance(n)) {
+        const spent = await spendHint(me.id, { game: "daily", item: hintItem, step: n - 1 });
+        if (!spent.ok) return { ok: false, error: spent.error };
+      }
     }
     const next = apply(c, progress, action);
     if (next !== progress) {

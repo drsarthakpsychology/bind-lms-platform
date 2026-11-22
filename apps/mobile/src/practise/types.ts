@@ -141,12 +141,15 @@ export type DailyView = {
   ai: boolean;
   difficulty: 1 | 2 | 3;
   setting: string;
+  /** Free starting picture (missing on older servers). */
+  opening?: { who: string; says: string; since: string; seen: string[] } | null;
   clues: string[];
   cluesOpen: number;
   unopened: number;
   investigations: { i: number; kind: DailyKind; label: string; result: string | null; ordered: boolean }[];
   guesses: { dx: string; name: string; ok: boolean; sameChapter: boolean; reason: string }[];
-  hints: { chapter: string | null; pointer: string | null; used: number };
+  /** `steps`, `max` and `next` are missing on older servers. */
+  hints: { chapter: string | null; pointer: string | null; used: number; steps?: string[]; max?: number; next?: { n: number; points: number; usesHint: boolean } | null };
   canClue: boolean;
   status: "playing" | "solved" | "lost";
   points: number;

@@ -32,7 +32,7 @@ import { trackLearn } from "@/lib/learn/track";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { searchDiagnoses, type Diagnosis } from "@/lib/games/diagnoses";
-import { dailyStreak, MAX_CLUES, shareText, type Action, type PracticeRecord } from "@/lib/games/daily/engine";
+import { dailyStreak, hintPoints, MAX_CLUES, shareText, type Action, type PracticeRecord } from "@/lib/games/daily/engine";
 import type { CaseRest, CaseView } from "@/lib/games/daily/view";
 import type { InvestigationKind } from "@/lib/games/daily/types";
 import { CountUp } from "@/lib/games/ui/count-up";
@@ -46,8 +46,8 @@ import { AI_TOPICS } from "@/lib/ai-cases/criteria";
 import { RecycleNote } from "@/components/cases/case-mark";
 import { dailyMove, dailyRest, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
-import { HintButton, type HintUse } from "@/components/hints/hint-chip";
-import { CASE_SCORE_PER_HINT } from "@/lib/hints/rules";
+import { type HintUse } from "@/components/hints/hint-chip";
+import { outOfHints } from "@/lib/hints/rules";
 import type { HintStatus } from "@/lib/hints/engine";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
@@ -75,7 +75,7 @@ function dayLabel(day: string) {
 }
 
 function worth(v: CaseView) {
-  return Math.max(0, Math.max(10, 100 - 15 * v.points) - CASE_SCORE_PER_HINT * v.hints.used);
+  return Math.max(0, Math.max(10, 100 - 15 * v.points) - hintPoints(v.hints.used));
 }
 
 export function DailyGame({ serverState, save, initial }: { serverState: LearnState | null; save: Save; initial: MoveResult }) {
@@ -321,7 +321,6 @@ function CaseBoard({
   const [showTests, setShowTests] = React.useState(false);
   const [confirmQuit, setConfirmQuit] = React.useState(false);
   const ordered = v.investigations.filter((x) => x.ordered);
-  const canHint = playing && v.hints.used < 2;
 
   return (
     <div className="space-y-4">
@@ -342,12 +341,14 @@ function CaseBoard({
         <ClueMeter shown={v.cluesOpen} status={v.status} />
         {playing && (
           <p className="mt-2 text-sm">
-            Worth <strong className="tabular-nums">{worth(v)} points</strong> now. Each clue or test: minus 15. Each hint: minus {CASE_SCORE_PER_HINT}.
+            Worth <strong className="tabular-nums">{worth(v)} points</strong> now. Each clue or test: minus 15. First hint free, then minus 5 each.
           </p>
         )}
       </header>
 
       {error && <CalmLine text={error} />}
+
+      {v.opening ? <OpeningCard o={v.opening} /> : null}
 
       <ol className="space-y-2" aria-label="Clues">
         {v.clues.map((c, i) => {
@@ -402,21 +403,7 @@ function CaseBoard({
       {playing ? (
         <section className={cn(card, "space-y-3 p-4")} aria-label="Your move">
           <GuessBox disabled={pending} guessed={v.guesses.map((g) => g.dx)} onGuess={(dx) => onMove({ t: "guess", dx })} />
-          <HintButton
-            status={meta.hints}
-            onStatus={onHints}
-            onUse={onHint}
-            used={!canHint}
-            disabled={pending}
-            shown={
-              v.hints.chapter || v.hints.pointer ? (
-                <>
-                  {v.hints.chapter && <p>Chapter: {v.hints.chapter}.</p>}
-                  {v.hints.pointer && <p>{v.hints.pointer}</p>}
-                </>
-              ) : null
-            }
-          />
+          <GuidedHints view={v} status={meta.hints} onStatus={onHints} onUse={onHint} disabled={pending} />
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             <button type="button" className={btnSecondary} disabled={pending || !v.canClue} onClick={() => onMove({ t: "clue" })}>
               <ArrowRight className="size-4" aria-hidden /> Next clue
@@ -962,6 +949,77 @@ function AiFlag({ caseId }: { caseId: string }) {
           )}
         </form>
       )}
+    </div>
+  );
+}
+
+/** The free starting picture: who, their words, how long, what anyone would notice. */
+function OpeningCard({ o }: { o: NonNullable<CaseView["opening"]> }) {
+  return (
+    <section className={cn(card, "space-y-2 p-4")} aria-label="The patient">
+      <p className="font-bold leading-snug">{o.who}</p>
+      <p className="text-lg leading-snug">&ldquo;{o.says}&rdquo;</p>
+      <p className="text-sm">
+        <span className="font-semibold">How long: </span>
+        {o.since}
+      </p>
+      <ul className="list-disc space-y-1 pl-5 text-sm leading-snug">
+        {o.seen.map((x, i) => (
+          <li key={i}>{x}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+/** Up to three guided hints, opened in order. The cost of the next one is on the button. */
+function GuidedHints({ view: v, status, onStatus, onUse, disabled }: { view: CaseView; status: HintStatus | null; onStatus: (h: HintStatus) => void; onUse: () => Promise<HintUse>; disabled: boolean }) {
+  const [busy, start] = React.useTransition();
+  const [note, setNote] = React.useState<string | null>(null);
+  const next = v.hints.next;
+  const none = !!next?.usesHint && status !== null && (status.mode === "off" || status.left === 0);
+  const cost = next ? (next.points === 0 ? "free" : `minus ${next.points} points${next.usesHint ? ", uses 1 hint" : ""}`) : "";
+  function go() {
+    setNote(null);
+    start(async () => {
+      const r = await onUse().catch(() => null);
+      if (!r) return setNote("Couldn't get a hint. Try again.");
+      if (r.status) onStatus(r.status);
+      if (!r.ok) setNote(r.error ?? "Couldn't get a hint. Try again.");
+    });
+  }
+  return (
+    <div className="space-y-2">
+      {v.hints.steps.length ? (
+        <ol className="space-y-2" aria-label="Hints">
+          {v.hints.steps.map((h, i) => (
+            <li key={i} role="status" className="flex items-start gap-2 rounded-md border-2 border-foreground bg-status-info-bg p-3 text-sm text-status-info-fg">
+              <Sparkles className="mt-0.5 size-4 shrink-0" aria-hidden />
+              <p className="min-w-0 flex-1 leading-snug">
+                <span className="font-bold">Hint {i + 1}. </span>
+                {h}
+              </p>
+            </li>
+          ))}
+        </ol>
+      ) : null}
+      {next ? (
+        <button type="button" className={cn(btnSecondary, "w-full justify-between sm:w-auto")} disabled={disabled || busy || none} onClick={go}>
+          <span className="inline-flex items-center gap-2">
+            {busy ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Sparkles className="size-4" aria-hidden />}
+            Hint {next.n} of {v.hints.max}
+          </span>
+          <span className="text-sm font-normal">{cost}</span>
+        </button>
+      ) : null}
+      {next?.usesHint && status && status.mode !== "off" ? (
+        <p className="text-sm text-muted-foreground">{none ? outOfHints(status, status.mode === "full") : `You have ${status.left} hints left today.`}</p>
+      ) : null}
+      {note ? (
+        <p role="status" className="text-sm text-muted-foreground">
+          {note}
+        </p>
+      ) : null}
     </div>
   );
 }

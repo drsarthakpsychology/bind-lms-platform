@@ -14,7 +14,9 @@ import { useReactions } from "../reactions";
 import type { DailyAction, DailyMove, DailyView } from "../types";
 import { GuessSheet } from "./guess";
 
-const HOW = ["One new patient a day. The case opens on the first clue.", "Name the diagnosis. A wrong guess shows why it's wrong and opens the next clue.", "You may open a clue or order a test instead; each costs one clue point. From clue four, a guess comes first.", "100 points on clue one, 15 less for each point used. Hints cost 10."];
+const HOW = ["One new patient a day. You start with who they are, what they say, how long, and what anyone would notice.", "Name the diagnosis. A wrong guess shows why it's wrong and opens the next clue.", "You may open a clue or order a test instead; each costs one clue point. From clue four, a guess comes first.", "100 points at the start, 15 less for each clue point. Up to 3 hints: the first is free, the next two cost 5 points each."];
+const HINT_PTS = [0, 5, 5];
+const hintLoss = (n: number) => HINT_PTS.slice(0, n).reduce((a, b) => a + b, 0);
 const KIND: Record<string, string> = { mse: "Mental state", collateral: "Family", scale: "Rating scale", lab: "Tests" };
 
 /** Daily case: name today's patient in as few clues as you can. Each move is checked on the server. */
@@ -65,9 +67,28 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
 
   const title = mode === "daily" ? `Daily case #${res.meta.number}` : "Practice case";
   const hud = <HudLine left={v.setting} right={`Clue ${v.cluesOpen} of 6`} />;
+  const o = v.opening;
+  const steps = v.hints.steps ?? (v.hints.pointer ? [v.hints.pointer] : []);
+  const maxHints = v.hints.max ?? 2;
+  const next = v.hints.next === undefined ? (v.hints.used < maxHints ? { n: v.hints.used + 1, points: 10, usesHint: true } : null) : v.hints.next;
+  const hintLabel = next ? `Hint ${next.n} of ${maxHints}: ${next.points ? `minus ${next.points}` : "free"}` : "No hints left";
   const body = (
     <>
-      <Story kicker="The patient">
+      {o ? (
+        <Story kicker="The patient">
+          <View style={{ gap: space[2] }} testID="daily-opening">
+            <T v="bodyStrong">{o.who}</T>
+            <T v="reading">{`"${o.says}"`}</T>
+            <T v="small">{`How long: ${o.since}`}</T>
+            {o.seen.map((x, k) => (
+              <T key={k} v="small" tone="muted">
+                {`\u2022 ${x}`}
+              </T>
+            ))}
+          </View>
+        </Story>
+      ) : null}
+      <Story kicker={o ? "Clues" : "The patient"}>
         <View style={{ gap: space[3] }}>
           {v.clues.map((cl, k) => (
             <Animated.View key={k} entering={reduce || k < first.view.clues.length ? undefined : FadeInDown.duration(motion.state)} style={{ flexDirection: "row", gap: space[3] }}>
@@ -109,10 +130,15 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
           ))}
         </RowList>
       </View>
-      {v.hints.chapter || v.hints.pointer ? (
-        <Story kicker="Hint">
-          {v.hints.chapter ? <T>Chapter: {v.hints.chapter}</T> : null}
-          {v.hints.pointer ? <T>{v.hints.pointer}</T> : null}
+      {steps.length ? (
+        <Story kicker="Hints">
+          <View style={{ gap: space[2] }}>
+            {steps.map((h, k) => (
+              <T key={k} testID={`daily-hint-${k + 1}`}>
+                {`${k + 1}. ${h}`}
+              </T>
+            ))}
+          </View>
         </Story>
       ) : null}
     </>
@@ -165,7 +191,7 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
       testID="case-daily"
       title={title}
       howTo={HOW}
-      score={String(Math.max(10, 100 - 15 * v.points))}
+      score={String(Math.max(0, Math.max(10, 100 - 15 * v.points) - hintLoss(v.hints.used)))}
       scoreLabel="Points on the table"
       hud={hud}
       saves
@@ -175,7 +201,7 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
           <Button label="Name the diagnosis" onPress={() => setGuessing(true)} disabled={mv.pending} testID="daily-guess" />
           <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
             <Button kind="text" label={v.canClue ? "Next clue" : "Guess to open the next clue"} disabled={!v.canClue || mv.pending} onPress={() => void act({ t: "clue" })} testID="daily-clue" />
-            <Button kind="text" label={v.hints.used >= 2 ? "No hints left" : "Hint"} disabled={v.hints.used >= 2 || mv.pending} onPress={() => void act({ t: "hint" })} icon={<Lightbulb size={16} color={c.link} />} testID="daily-hint" />
+            <Button kind="text" label={hintLabel} disabled={!next || mv.pending} onPress={() => void act({ t: "hint" })} icon={<Lightbulb size={16} color={c.link} />} testID="daily-hint" />
           </View>
         </>
       }

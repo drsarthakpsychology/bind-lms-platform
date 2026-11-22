@@ -11,6 +11,30 @@ export type Investigation = {
   result: string;
 };
 
+/**
+ * The free starting picture a case opens with, so a student never guesses
+ * from one line: who, the complaint in the patient's or family's words, how
+ * long, and 2 or 3 things anyone in the room would notice. It never gives the
+ * deciding detail; that stays in the clues and tests.
+ */
+export type Opening = {
+  /** Name, age, work or school ("Meera, 34, a school teacher"). */
+  who: string;
+  /** The complaint in the patient's or family's own words. */
+  says: string;
+  /** How long ("About six weeks"). */
+  since: string;
+  /** 2 or 3 key observations. */
+  seen: string[];
+};
+
+/**
+ * Three guided hints, in order: 1 the area to think in, 2 the key detail and
+ * why it matters, 3 narrow the choice to two or three names. The first two
+ * never name the answer.
+ */
+export type GuideHints = [string, string, string];
+
 export type DailyCase = {
   /** Neutral id (never hints at the answer). */
   id: string;
@@ -36,6 +60,10 @@ export type DailyCase = {
   refs: string[];
   /** One short line: what the student should take away. Filled for every case (older cases via tags.ts). */
   objective?: string;
+  /** Free starting picture (src/lib/games/daily/openings.ts). */
+  opening?: Opening;
+  /** Three guided hints (src/lib/games/daily/openings.ts). Built from the chapter and pointer when missing. */
+  guide?: GuideHints;
   /** Exams the case is honestly useful for. */
   exams?: Exam[];
 };
