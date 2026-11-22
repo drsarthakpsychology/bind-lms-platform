@@ -1,15 +1,19 @@
 import "server-only";
 import { KEY, bankTopics, learnHrefForTopic } from "@/lib/prep/bank";
-import { EXAM_TRACKS_ENABLED, SUBJECT_TITLE, isSubject } from "@/lib/prep/catalog";
+import { EXAM_TRACKS_ENABLED, SUBJECT_TITLE, activeGoal, isSubject } from "@/lib/prep/catalog";
 import { loadHome, loadList, loadSmart, loadSubject, loadTopicSet } from "@/lib/prep/path";
-import { loadMockHistory } from "@/lib/prep/server";
+import { loadInterviewHistory, loadMockHistory, loadProfile } from "@/lib/prep/server";
+import { INTERVIEWS } from "@/lib/prep/bank";
+import { CATEGORY_LABEL, pickPanel } from "@/lib/prep/interview";
+import { makeRng } from "@/lib/learn/model/picker";
+import { requestSeed } from "@/lib/prep/path";
 import { toView } from "@/lib/prep/view";
 import { longCount, longSubjects, longTopic, longTopicsFor } from "@/lib/prep/long-server";
 import { EXAM_SPECS, PRACTICE_SPECS } from "@/content/prep/specs";
 import type { Subject } from "@/lib/prep/types";
 import type { Profile } from "@/lib/auth/session";
 import { toAppTarget } from "./target";
-import type { PractiseRow, PrepHome, PrepLong, PrepMocks, PrepQuestion, PrepSet, PrepStats, PrepSubjectDetail } from "./contract-practise-admin";
+import type { PractiseRow, PrepHome, PrepInterview, PrepLong, PrepMocks, PrepQuestion, PrepSet, PrepStats, PrepSubjectDetail } from "./contract-practise-admin";
 
 /**
  * Exam Prep for the app, from the website's own loaders (src/lib/prep/path.ts:
@@ -27,7 +31,7 @@ const questions = (ids: readonly string[]): PrepQuestion[] => ids.flatMap((id) =
   return q ? [toView(q) as unknown as PrepQuestion] : [];
 });
 
-const row = (id: string, title: string, meta: string, href: string): PractiseRow => ({ id, title, meta, kind: "prep", target: toAppTarget(href), trailing: null, locked: false, play: id === "interview" ? "web" : "native" });
+const row = (id: string, title: string, meta: string, href: string): PractiseRow => ({ id, title, meta, kind: "prep", target: toAppTarget(href), trailing: null, locked: false, play: "native" });
 
 export async function prepHome(p: Profile): Promise<PrepHome> {
   const home = await loadHome(p.id);
@@ -118,4 +122,13 @@ export function prepLong(level: PrepLong["level"], subject?: string, topic?: str
   if (i < 0) return null;
   const next = t.items[i + 1];
   return { v: 1, level, data: { item: t.items[i], next: next ? { id: next.id, question: next.question } : null } };
+}
+
+/** GET /prep/interview: a five-question panel (the website's pickPanel, its goal and what the student has had before). The rubric and model answer come only after answering (POST /play/prep/interviewReveal). */
+export async function prepInterview(p: Profile): Promise<PrepInterview> {
+  // The website's currentGoal without its cookie copy (the app sends no cookies).
+  const [prof, history] = await Promise.all([EXAM_TRACKS_ENABLED ? loadProfile(p.id).catch(() => ({ goal: null })) : Promise.resolve({ goal: null }), loadInterviewHistory(p.id).catch(() => ({ seen: new Set<string>() }))]);
+  const goal = EXAM_TRACKS_ENABLED ? activeGoal(prof.goal) : null;
+  const panel = pickPanel(INTERVIEWS, goal, makeRng(requestSeed(p.id)), history.seen);
+  return { v: 1, questions: panel.map((q) => ({ id: q.id, category: CATEGORY_LABEL[q.category], question: q.question, followUp: q.followUps[0] ?? null })), saving: isLearner(p) };
 }

@@ -349,6 +349,8 @@ export type PrepMocks = { v: 1; specs: { id: string; title: string; minutes: num
 export type PrepMockResult = { v: 1; id: string; specId: string; title: string; result: Record<string, unknown> | null };
 
 /** GET /prep/long, /prep/long/:subject, /prep/long/:subject/:topic, /prep/long/:subject/:topic/:id : long answers (written answers, read and compared). */
+/** GET /prep/interview: a five-question panel (the website's pickPanel). The rubric and model answer come only after answering (POST /play/prep/interviewReveal). */
+export type PrepInterview = { v: 1; questions: { id: string; category: string; question: string; followUp: string | null }[]; saving: boolean };
 export type PrepLong = { v: 1; level: "home" | "subject" | "topic" | "question"; data: Record<string, unknown> };
 
 // ===========================================================================
