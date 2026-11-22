@@ -15,7 +15,7 @@ import { JourneySketch } from "./sketch/journey";
 import { NeuronSketch } from "./sketch/neuron";
 import { PathwaysSketch } from "./sketch/pathways";
 import { BrainMapSketch, HypnogramSketch, NervousSketch } from "./sketch/places";
-import { ReceptorSketch } from "./sketch/receptor";
+import { MainTarget, ReceptorSketch } from "./sketch/receptor";
 import { SynapseSketch } from "./sketch/synapse";
 import { medicineDiagrams, visualDiagram, type MedDiagram } from "@/lib/meds/diagrams";
 
@@ -26,8 +26,12 @@ export function MedicineDiagram({ d }: { d: MedDiagram }) {
   switch (d.kind) {
     case "note":
       return <p className="text-[0.95rem] leading-relaxed lg:col-span-2">{d.text}</p>;
+    case "target":
+      return <MainTarget medName={d.medName} target={d.target} action={d.action} effect={d.effect} />;
     case "receptor":
       return <ReceptorSketch medName={d.medName} receptor={d.receptor} pick={d.pick} note={d.note} />;
+    case "messenger":
+      return <ReceptorSketch messenger={d.messenger} receptor={d.receptor} pick="Full agonist" note={d.note} />;
     case "journey":
       return <JourneySketch medName={d.medName} target={d.target} routes={d.routes} notes={d.notes ?? undefined} />;
     case "synapse":
@@ -37,7 +41,7 @@ export function MedicineDiagram({ d }: { d: MedDiagram }) {
     case "dose":
       return <DoseSketch title={d.title} shape={d.shape} caption={d.caption ?? undefined} />;
     case "pathways":
-      return <PathwaysSketch medName={d.medName} caption={d.caption ?? undefined} atypical={d.atypical} focus={d.focus ?? undefined} />;
+      return <PathwaysSketch medName={d.medName} caption={d.caption ?? undefined} atypical={d.atypical} partial={d.partial} focus={d.focus ?? undefined} />;
     case "compare":
       return <CompareSketch title={d.title} a={d.a} b={d.b} />;
     case "neuron":
@@ -56,7 +60,7 @@ export function MedicineVisual({ v, med, atypical = false }: { v: MedVisual; med
   return <MedicineDiagram d={visualDiagram(v, med, atypical)} />;
 }
 
-/** Every "how it works" picture for one medicine: the receptor, the journey through the body, then its own pictures. */
+/** Every "how it works" picture for one medicine: its main target, the receptor (or the body's own messenger), the journey through the body, then its own pictures. */
 export function MedicineSketches({ med, mech, visuals }: { med: Med; mech?: Mechanism; visuals: MedVisual[] }) {
   const plan = medicineDiagrams(med, mech, visuals);
   return (

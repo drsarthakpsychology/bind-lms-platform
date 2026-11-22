@@ -59,7 +59,7 @@ export function PathwaysArt({ pick, flow, block, label, className }: { pick: Pat
               <Cv k={`path-${p.id}`} pts={pts} stroke={on ? C.blue : C.ink} sw={on ? 4.2 : 2.6} single rough={0.5} />
               <Cv k={`flow-${p.id}`} pts={pts} stroke={C.lime} sw={2.2} dash={f >= 1 ? "3 6" : f > 0.5 ? "3 12" : "3 26"} single rough={0.3} />
               <Head k={`head-${p.id}`} x={end[0]} y={end[1]} a={a} stroke={on ? C.blue : C.ink} size={9} sw={on ? 2.8 : 2.2} />
-              {block !== "none" ? <L k={`block-${p.id}-${block}`} x1={bx - nx} y1={by - ny} x2={bx + nx} y2={by + ny} stroke={f < 0.5 ? C.red : C.ink} sw={4} single rough={0.4} /> : null}
+              {block !== "none" ? <L k={`block-${p.id}-${block}`} x1={bx - nx} y1={by - ny} x2={bx + nx} y2={by + ny} stroke={block === "partial" ? C.blue : f < 0.5 ? C.red : C.ink} sw={4} single rough={0.4} /> : null}
             </g>
           );
         })}
@@ -80,8 +80,8 @@ export function PathwaysArt({ pick, flow, block, label, className }: { pick: Pat
       <Label x={336} y={21} size={13} bold={false}>dopamine</Label>
       {block !== "none" ? (
         <>
-          <L k="key-block" x1={315} y1={30} x2={315} y2={44} stroke={C.red} sw={4} single rough={0.3} />
-          <Label x={336} y={42} size={13} bold={false}>blocked</Label>
+          <L k={`key-block-${block === "partial" ? "p" : "b"}`} x1={315} y1={30} x2={315} y2={44} stroke={block === "partial" ? C.blue : C.red} sw={4} single rough={0.3} />
+          <Label x={336} y={42} size={13} bold={false}>{block === "partial" ? "partly on" : "blocked"}</Label>
         </>
       ) : null}
     </Sheet>

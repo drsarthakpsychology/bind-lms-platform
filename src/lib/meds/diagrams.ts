@@ -18,12 +18,18 @@ type Side = { label: string; points: string[]; summary: string };
 export type MedDiagram =
   /** The medicine acts on a channel, an enzyme or inside the cell: one line instead of a receptor picture. */
   | { kind: "note"; text: string }
+  /** What the medicine itself does at its main target (always first when the medicine has a mechanism). */
+  | { kind: "target"; medName: string; target: string; action: string; effect: string }
+  /** The medicine itself binds this receptor: the explainer starts on what the medicine does there. */
   | { kind: "receptor"; medName: string; receptor: string; pick: ReceptorPick; note: string }
+  /** The medicine does not bind this receptor: the body's own messenger (always the full agonist) shown on its own, never with the medicine's name. */
+  | { kind: "messenger"; messenger: string; receptor: string; note: string }
   | { kind: "journey"; medName: string; target: string; routes: Route[]; notes: Record<string, string> | null }
   | { kind: "synapse"; medName: string; action: SynapseAction; transmitter: string; title: string; caption: string | null }
   | { kind: "halfLife"; title: string; hl: string; meaning: string }
   | { kind: "dose"; title: string; shape: DoseShape; caption: string | null }
-  | { kind: "pathways"; medName: string; caption: string | null; atypical: boolean; focus: "nigrostriatal" | null }
+  /** `partial`: a D2 partial agonist (aripiprazole): the pathways start partly switched on, never drawn as blocked. */
+  | { kind: "pathways"; medName: string; caption: string | null; atypical: boolean; partial: boolean; focus: "nigrostriatal" | null }
   | { kind: "compare"; title: string; a: Side; b: Side }
   | { kind: "neuron"; medName: string; title: string; caption: string | null }
   | { kind: "nervous"; medName: string; title: string; caption: string | null }
@@ -44,6 +50,11 @@ export function doseShapeFor(medId: string): DoseShape {
   return DOSE[medId] ?? "window";
 }
 
+/** True when the medicine is a dopamine D2 partial agonist (aripiprazole), not a D2 blocker. */
+export function d2Partial(mech?: Mechanism | null): boolean {
+  return Boolean(mech?.targets.some((t) => /Dopamine D2/.test(t.target) && /partial agonist/i.test(t.action)));
+}
+
 /** True when the medicine blocks serotonin 2A as well as D2 (second-generation antipsychotics). */
 export function blocks2A(mech?: Mechanism | null): boolean {
   return Boolean(mech?.targets.some((t) => /5-HT2A/.test(t.target) && /antagonist|inverse/i.test(t.action)));
@@ -52,7 +63,7 @@ export function blocks2A(mech?: Mechanism | null): boolean {
 const str = (v: unknown): string | null => (typeof v === "string" ? v : null);
 
 /** One extra picture for a medicine (one entry of src/lib/meds/visuals.ts). */
-export function visualDiagram(v: MedVisual, med: Pick<Med, "id" | "name">, atypical = false): MedDiagram {
+export function visualDiagram(v: MedVisual, med: Pick<Med, "id" | "name">, atypical = false, partial = false): MedDiagram {
   switch (v.kind) {
     case "release":
     case "synapse3d":
@@ -62,7 +73,7 @@ export function visualDiagram(v: MedVisual, med: Pick<Med, "id" | "name">, atypi
         ? { kind: "halfLife", title: str(v.data.title) ?? `How long ${med.name} stays in the body`, hl: v.half.hl, meaning: v.half.meaning }
         : { kind: "dose", title: str(v.data.title) ?? med.name, shape: doseShapeFor(med.id), caption: str(v.data.caption) };
     case "pathways":
-      return { kind: "pathways", medName: med.name, caption: str(v.data.caption), atypical, focus: med.id === "trihexyphenidyl" ? "nigrostriatal" : null };
+      return { kind: "pathways", medName: med.name, caption: str(v.data.caption), atypical: atypical && !partial, partial, focus: med.id === "trihexyphenidyl" ? "nigrostriatal" : null };
     case "compare":
       return { kind: "compare", title: str(v.data.title) ?? "Compared", a: v.data.a, b: v.data.b };
     case "neuron":
@@ -76,15 +87,19 @@ export function visualDiagram(v: MedVisual, med: Pick<Med, "id" | "name">, atypi
   }
 }
 
-/** Every "how it works" picture for one medicine, in page order: the receptor, the journey through the body, then its own pictures. */
+/** Every "how it works" picture for one medicine, in page order: its main target, the receptor (or the body's own messenger when the medicine binds no receptor there), the journey through the body, then its own pictures. */
 export function medicineDiagrams(med: Pick<Med, "id" | "name">, mech: Mechanism | null | undefined, visuals: readonly MedVisual[]): MedDiagram[] {
   const atypical = blocks2A(mech);
+  const partial = d2Partial(mech);
   // Some medicines act on a channel, an enzyme or inside the cell, not at a receptor: no receptor picture for them.
   const receptor = mech && mech.receptor.name !== "a receptor" ? mech.receptor : null;
   const out: MedDiagram[] = [];
+  const main = mech?.targets[0];
+  if (main) out.push({ kind: "target", medName: med.name, target: main.target, action: main.action, effect: main.effect });
   if (mech && !receptor) out.push({ kind: "note", text: mech.receptor.note });
-  if (receptor) out.push({ kind: "receptor", medName: med.name, receptor: receptor.name, pick: receptor.pick, note: receptor.note });
+  if (receptor?.messenger) out.push({ kind: "messenger", messenger: receptor.messenger, receptor: receptor.name, note: receptor.note });
+  else if (receptor) out.push({ kind: "receptor", medName: med.name, receptor: receptor.name, pick: receptor.pick, note: receptor.note });
   if (mech) out.push({ kind: "journey", medName: med.name, target: mech.site, routes: [...mech.routes], notes: mech.notes ? { ...mech.notes } : null });
-  for (const v of visuals) out.push(visualDiagram(v, med, atypical));
+  for (const v of visuals) out.push(visualDiagram(v, med, atypical, partial));
   return out;
 }

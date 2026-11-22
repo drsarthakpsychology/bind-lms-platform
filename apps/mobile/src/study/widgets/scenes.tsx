@@ -217,25 +217,25 @@ export function NeuronWidget({ d }: { d: NeuronData }) {
 /* --------------------------------------------------------------- pathways */
 
 const DA_PATHS = [
-  { id: "mesolimbic", name: "Mesolimbic", from: [196, 132], to: [150, 104], role: "reward and motivation; overactive in psychosis (hallucinations, delusions)", blocked: "Positive symptoms ease. This is the effect you want.", rescued: "Still blocked enough: positive symptoms stay controlled." },
-  { id: "mesocortical", name: "Mesocortical", from: [196, 132], to: [76, 62], role: "thinking, planning and drive; underactive in negative and cognitive symptoms", blocked: "Can worsen apathy, flat mood and slowed thinking.", rescued: "Serotonin 2A block lets more dopamine through here: less worsening of negative symptoms." },
-  { id: "nigrostriatal", name: "Nigrostriatal", from: [206, 128], to: [160, 78], role: "movement control", blocked: "Movement side effects: stiffness, tremor, restlessness (akathisia), and later tardive dyskinesia.", rescued: "Less blocked in practice: fewer movement side effects." },
-  { id: "tuberoinfundibular", name: "Tuberoinfundibular", from: [168, 124], to: [166, 152], role: "dopamine here keeps prolactin low", blocked: "Prolactin rises: breast changes, missed periods, sexual problems.", rescued: "Prolactin rise is usually smaller (with exceptions such as risperidone)." },
+  { id: "mesolimbic", name: "Mesolimbic", from: [196, 132], to: [150, 104], role: "reward and motivation; overactive in psychosis (hallucinations, delusions)", blocked: "Positive symptoms ease. This is the effect you want.", rescued: "Still blocked enough: positive symptoms stay controlled.", partial: "Where dopamine is too high, the partial agonist takes its place and gives a smaller signal: positive symptoms ease." },
+  { id: "mesocortical", name: "Mesocortical", from: [196, 132], to: [76, 62], role: "thinking, planning and drive; underactive in negative and cognitive symptoms", blocked: "Can worsen apathy, flat mood and slowed thinking.", rescued: "One explanation: serotonin 2A block lets a little more dopamine through here, so negative symptoms worsen less.", partial: "Where dopamine is low, the partial agonist keeps some signal going, so negative symptoms are less likely to worsen." },
+  { id: "nigrostriatal", name: "Nigrostriatal", from: [206, 128], to: [160, 78], role: "movement control", blocked: "Movement side effects: stiffness, tremor, restlessness (akathisia), and later tardive dyskinesia.", rescued: "Less blocked in practice: fewer movement side effects.", partial: "Partly switched on rather than blocked: stiffness is uncommon, but restlessness (akathisia) is common." },
+  { id: "tuberoinfundibular", name: "Tuberoinfundibular", from: [168, 124], to: [166, 152], role: "dopamine here keeps prolactin low", blocked: "Prolactin rises: breast changes, missed periods, sexual problems.", rescued: "Prolactin rise is usually smaller (with exceptions such as risperidone).", partial: "Enough signal stays to keep prolactin low; prolactin often falls." },
 ] as const;
 
 export function PathwaysWidget({ d }: { d: PathwaysData }) {
   const [pick, setPick] = React.useState<string>(DA_PATHS[0].id);
-  const [block, setBlock] = React.useState<"none" | "d2" | "d2-2a">("none");
+  const [block, setBlock] = React.useState<"none" | "d2" | "d2-2a" | "partial">(d.start ?? "none");
   const sel = DA_PATHS.find((p) => p.id === pick)!;
-  const text = `**${sel.name}:** ${sel.role}. ${block === "none" ? "Dopamine flows normally." : block === "d2" ? sel.blocked : sel.rescued}`;
+  const text = `**${sel.name}:** ${sel.role}. ${block === "none" ? "Dopamine flows normally." : block === "d2" ? sel.blocked : block === "partial" ? sel.partial : sel.rescued}`;
   return (
     <WidgetFrame label="Dopamine pathways" title={d.title ?? "The four dopamine pathways"} caption={d.caption} testID="w-pathways">
       <SketchSheet name="pathways" w={320} h={200} label={`Brain cut down the middle, front to the left, with the four dopamine pathways; ${sel.name} picked`}>
         <P k="pw-brain" d="M40 110 C30 50 110 14 190 22 C262 28 300 74 290 118 C282 150 250 160 220 150 C206 172 200 186 196 196 M220 150 C150 166 70 160 40 110 Z" fill={C.wash} fillStyle="solid" sw={2} />
         {DA_PATHS.map((p) => {
           const on = p.id === pick;
-          const weak = block !== "none" && !(block === "d2-2a" && p.id !== "mesolimbic");
-          return <Arrow key={p.id} k={`pw-${p.id}`} from={p.from as unknown as [number, number]} to={p.to as unknown as [number, number]} bend={0.15} stroke={on ? C.blue : C.soft} sw={on ? 3 : 1.8} dash={weak ? "5 5" : undefined} />;
+          const weak = block !== "none" && block !== "partial" && !(block === "d2-2a" && p.id !== "mesolimbic");
+          return <Arrow key={p.id} k={`pw-${p.id}-${block === "partial" ? "p" : "n"}`} from={p.from as unknown as [number, number]} to={p.to as unknown as [number, number]} bend={0.15} stroke={on ? C.blue : C.soft} sw={on ? 3 : 1.8} dash={weak ? "5 5" : block === "partial" ? "9 4" : undefined} />;
         })}
         <E k="pw-vta" cx={198} cy={134} w={14} h={12} fill={C.lime} fillStyle="solid" sw={1.4} />
         <Label x={210} y={170} size={12} bold={false} color={C.soft}>
@@ -252,6 +252,7 @@ export function PathwaysWidget({ d }: { d: PathwaysData }) {
           { id: "none", name: "No medicine" },
           { id: "d2", name: "D2 blocker" },
           { id: "d2-2a", name: "D2 + serotonin 2A block" },
+          ...(d.start === "partial" ? [{ id: "partial", name: "D2 partly switched on" }] : []),
         ]}
         value={block}
         onChange={(v) => setBlock(v as typeof block)}

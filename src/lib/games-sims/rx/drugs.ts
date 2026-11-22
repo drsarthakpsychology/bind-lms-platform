@@ -270,7 +270,11 @@ function toDrug(m: Med): Drug | null {
     target: {
       receptor: mech.receptor.name,
       action: ACTION[mech.receptor.pick],
-      line: `Press ${mech.receptor.pick}. ${mech.receptor.note}`,
+      // Never pair the medicine's name with an action it does not have: when the medicine does not bind this
+      // receptor, the line says so and the action belongs to the body's own messenger.
+      line: mech.receptor.messenger
+        ? `${m.name} does not bind ${mech.receptor.name}. ${mech.receptor.messenger} acts there as the ${mech.receptor.pick.toLowerCase()}. ${mech.receptor.note}`
+        : `${m.name} is ${/^[AEIOU]/i.test(mech.receptor.pick) ? "an" : "a"} ${mech.receptor.pick.toLowerCase()} at ${mech.receptor.name}. ${mech.receptor.note}`,
     },
   };
 }

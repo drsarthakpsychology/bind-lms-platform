@@ -56,12 +56,14 @@ export type MedDose = {
 /** One "How it works" picture, drawn natively. The same plan the website draws (src/lib/meds/diagrams.ts). */
 export type MedDiagram =
   | { kind: "note"; text: string }
+  | { kind: "target"; medName: string; target: string; action: string; effect: string }
   | { kind: "receptor"; medName: string; receptor: string; pick: "Full agonist" | "Partial agonist" | "Antagonist" | "Inverse agonist"; note: string }
+  | { kind: "messenger"; messenger: string; receptor: string; note: string }
   | { kind: "journey"; medName: string; target: string; routes: ("oral" | "iv" | "nasal" | "depot")[]; notes: Record<string, string> | null }
   | { kind: "synapse"; medName: string; action: "reuptake" | "gaba" | "calcium" | "enzyme" | "nmda" | "glutamate"; transmitter: string; title: string; caption: string | null }
   | { kind: "halfLife"; title: string; hl: string; meaning: string }
   | { kind: "dose"; title: string; shape: "window" | "targets" | "ceiling"; caption: string | null }
-  | { kind: "pathways"; medName: string; caption: string | null; atypical: boolean; focus: "nigrostriatal" | null }
+  | { kind: "pathways"; medName: string; caption: string | null; atypical: boolean; partial?: boolean; focus: "nigrostriatal" | null }
   | { kind: "compare"; title: string; a: { label: string; points: string[]; summary: string }; b: { label: string; points: string[]; summary: string } }
   | { kind: "neuron"; medName: string; title: string; caption: string | null }
   | { kind: "nervous"; medName: string; title: string; caption: string | null }
