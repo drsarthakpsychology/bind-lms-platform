@@ -60,21 +60,25 @@ function Choice({ icon, title, meta, onPress, danger, testID }: { icon: React.Re
 export function RemoveSheet({ target: given, open, onClose, start }: { target: RemoveTarget | null; open: boolean; onClose: () => void; start?: Step }) {
   const c = useTheme();
   // Keep the last person while the sheet slides away, so it closes instead of vanishing.
-  const last = React.useRef<RemoveTarget | null>(given);
-  if (given) last.current = given;
-  const target = given ?? last.current;
+  const [kept, setKept] = React.useState<RemoveTarget | null>(given);
+  if (given && given !== kept) setKept(given);
+  const target = given ?? kept;
   const first: Step = start ?? (target?.state === "removed" ? "restore" : "menu");
   const [step, setStep] = React.useState<Step>(first);
   const [note, setNote] = React.useState("");
   const [typed, setTyped] = React.useState("");
   const { run, busy } = useAdminAction();
-  React.useEffect(() => {
-    if (open) {
-      setStep(first);
+  // Each time the sheet opens (or opens on another step), start clean.
+  const openKey = open ? first : null;
+  const [seen, setSeen] = React.useState<Step | null>(openKey);
+  if (openKey !== seen) {
+    setSeen(openKey);
+    if (openKey) {
+      setStep(openKey);
       setNote("");
       setTyped("");
     }
-  }, [open, first]);
+  }
   if (!target) return null;
   const name = target.name;
   const words = step === "menu" ? null : REMOVE_WORDS[step];
@@ -193,8 +197,8 @@ export function RemovePeopleScreen() {
   const [view, setView] = React.useState<View3 | null>(null);
   const [search, setSearch] = React.useState("");
   const [pick, setPick] = React.useState<{ t: RemoveTarget; step?: Step } | null>(null);
-  const lastStep = React.useRef<Step | undefined>(undefined);
-  if (pick) lastStep.current = pick.step;
+  const [lastStep, setLastStep] = React.useState<Step | undefined>(undefined);
+  if (pick && pick.step !== lastStep) setLastStep(pick.step);
   return (
     <Screen title="Remove people" lead="Take someone off VIBHA. Remove access can be undone. Delete account is permanent." testID="admin-remove" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Loaded q={q} what="people" skeleton={<RowsSkeleton rows={6} />}>
@@ -250,7 +254,7 @@ export function RemovePeopleScreen() {
           );
         }}
       </Loaded>
-      <RemoveSheet target={pick?.t ?? null} open={!!pick} start={pick?.step ?? lastStep.current} onClose={() => setPick(null)} />
+      <RemoveSheet target={pick?.t ?? null} open={!!pick} start={pick?.step ?? lastStep} onClose={() => setPick(null)} />
     </Screen>
   );
 }

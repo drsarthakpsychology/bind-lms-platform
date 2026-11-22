@@ -113,13 +113,18 @@ function Shelf({ lib, type }: { lib: QuickLibrary; type: QuickType }) {
   const items = lib.items.filter((i) => i.type === type);
   const groups = lib.topics.map((t) => ({ ...t, items: items.filter((i) => i.topic === t.id).sort((a, b) => a.title.localeCompare(b.title)) })).filter((g) => g.items.length);
   const long = items.length > CAP;
+  // A long shelf shows only its first CAP notes, topic by topic.
+  const slices: { g: (typeof groups)[number]; shown: QuickItem[] }[] = [];
   let left = CAP;
+  for (const g of groups) {
+    if (long && left <= 0) break;
+    const shown = long ? g.items.slice(0, left) : g.items;
+    left -= shown.length;
+    slices.push({ g, shown });
+  }
   return (
     <View style={{ gap: space[5] }} testID={`qn-shelf-${type}`}>
-      {groups.map((g) => {
-        if (long && left <= 0) return null;
-        const shown = long ? g.items.slice(0, left) : g.items;
-        left -= shown.length;
+      {slices.map(({ g, shown }) => {
         return (
           <View key={g.id} style={{ gap: space[2] }}>
             <Label>{g.label}</Label>

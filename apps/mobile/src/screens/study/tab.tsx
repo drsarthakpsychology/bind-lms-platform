@@ -100,10 +100,15 @@ function useSide(): [StudySide, (s: StudySide) => void] {
     };
   }, []);
   // A link (Today's Notes, a notice) opened this tab on one side: show it, remember it, and clear the ask so the next link works too.
+  const ask = isSide(asked) ? asked : null;
+  const [seenAsk, setSeenAsk] = React.useState<StudySide | null>(ask);
+  if (ask !== seenAsk) {
+    setSeenAsk(ask);
+    if (ask) setSide(ask);
+  }
   React.useEffect(() => {
     if (!isSide(asked)) return;
     chosen.current = true;
-    setSide(asked);
     saveStudySide(asked);
     try {
       router.setParams?.({ side: undefined });
