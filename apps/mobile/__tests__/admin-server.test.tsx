@@ -63,7 +63,7 @@ describe("never crash on what the server sends", () => {
   it("Home draws from an almost empty answer", async () => {
     await signInAs("admin@example.com");
     await render(<AdminHomeView data={safeHome({ counts: {} })} />);
-    expect(screen.getByText("All clear")).toBeTruthy();
+    expect(screen.getByText("All clear today")).toBeTruthy();
     expect(screen.getByText("Nobody on VIBHA right now")).toBeTruthy();
   });
 
