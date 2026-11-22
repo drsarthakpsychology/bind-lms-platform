@@ -9,13 +9,14 @@ import { DailyCase } from "./daily";
 import { DetectiveCase } from "./detective";
 import { ToolCaseScreen } from "./tool";
 import { RichCaseScreen } from "../player/rich";
+import { SHOWN } from "@/lib/shown";
 
 /** Every case tool by its id (/case/:id). */
 export function CaseRoute() {
   const { id = "" } = useLocalSearchParams<{ id: string }>();
   const t = caseTool(String(id));
-  // The full case player, on the design sample for now (src/practise/player/mock.ts).
-  if (id === "full")
+  // The full case player, on the design sample (src/practise/player/mock.ts): hidden until the rich cases are on the website.
+  if (id === "full" && SHOWN.fullCasePlayer)
     return (
       <AccentProvider value={accentFor("rich")}>
         <RichCaseScreen />

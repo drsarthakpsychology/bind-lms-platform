@@ -9,9 +9,9 @@ import { CompareScreen } from "@/library/compare";
 import { FactStrip, PairTable } from "@/library/kit";
 import { LibraryScreen } from "@/library/list";
 import { MedicineScreen, splitLine } from "@/library/medicine";
-import { MECHANISM_GROUPS } from "@/library/mock";
 import { pinnedMeds } from "@/library/pins";
-import { medicineList } from "@/practise/mock";
+import { mechanismGroups } from "@/library/list";
+import { medicineList, referenceHome } from "@/practise/mock";
 import { NotesScreen, searchNotes } from "@/screens/notes/notes";
 import { EntryBody } from "@/screens/reference/reference";
 import { render } from "./utils";
@@ -116,9 +116,9 @@ describe("medicines", () => {
     await waitFor(() => expect(screen.getByTestId("class-Antidepressants")).toBeTruthy(), { timeout: 4000 });
     await fireEvent.press(screen.getByText("By how they work"));
     expect(await screen.findByTestId("how-note")).toBeTruthy();
-    expect(screen.getByText(MECHANISM_GROUPS[0]!.tag)).toBeTruthy();
-    await fireEvent.press(screen.getByTestId("how-0-escitalopram"));
-    expect(router.push).toHaveBeenLastCalledWith("/medicine/escitalopram");
+    expect(screen.getByText(referenceHome().byMechanism[0]!.tag)).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("how-0-donepezil"));
+    expect(router.push).toHaveBeenLastCalledWith("/medicine/donepezil");
     await fireEvent.changeText(screen.getByTestId("library-search"), "zolp");
     expect(await screen.findByTestId("med-zolpidem")).toBeTruthy();
     expect(screen.getByTestId("library-count")).toBeTruthy();
@@ -126,9 +126,17 @@ describe("medicines", () => {
     expect(await screen.findByTestId("library-empty")).toBeTruthy();
   });
 
-  it("every mock mechanism group names medicines the mock library has", async () => {
-    const ids = new Set(medicineList().rows.map((r) => r.id));
-    for (const g of MECHANISM_GROUPS) for (const m of g.meds) expect(ids.has(m.id)).toBe(true);
+  it("every mechanism group from the server is matched to the medicine list, and unknown medicines are left out", async () => {
+    const rows = medicineList().rows;
+    const home = referenceHome();
+    const groups = mechanismGroups(home, rows);
+    expect(groups).toHaveLength(home.byMechanism.length);
+    for (const g of groups) for (const x of g.items) expect(rows).toContain(x.m);
+    const odd = mechanismGroups({ ...home, byMechanism: [{ tag: "Something", drugs: [{ slug: "not-a-medicine", name: "Not a medicine", qualifier: null }] }] }, rows);
+    expect(odd).toEqual([]);
+    // Matched by name too, when the slug differs.
+    const byName = mechanismGroups({ ...home, byMechanism: [{ tag: "T", drugs: [{ slug: "x", name: rows[0]!.name, qualifier: "q" }] }] }, rows);
+    expect(byName[0]!.items[0]).toEqual({ m: rows[0], q: "q" });
   });
 
   it("an interaction line splits into what and why, and a plain line stays whole", () => {
@@ -148,8 +156,10 @@ describe("medicines", () => {
     expect(screen.getAllByTestId("med-dose-text")).toHaveLength(1);
     await fireEvent.press(screen.getByTestId("med-related-sertraline"));
     expect(router.push).toHaveBeenLastCalledWith("/medicine/sertraline");
+    // Pins are hidden while the website keeps none.
+    expect(screen.queryByTestId("pin")).toBeNull();
     pinnedMeds.add("escitalopram");
-    pinnedMeds.remove("escitalopram");
+    expect(pinnedMeds.use).toBeDefined();
   });
 
   it("compare opens empty, lets you choose, and then shows both side by side", async () => {

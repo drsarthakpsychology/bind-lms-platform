@@ -13,6 +13,7 @@ import { ApiFailure, isClosed, reasonOf } from "@/api/errors";
 import { ComingSoon, layerShadow, OfflineLine, QuietEmpty, RowsSkeleton, StillTrying, T, toast, WaitingForInternet } from "@/ds";
 import { LoadSwap, Press, presets, useFromRow, useGrowIn, useMotionTier } from "@/motion";
 import { layout, space, type as scale, useLightStatusBar, useTheme } from "@/theme";
+import { pinsShown } from "./pins";
 
 /**
  * Parts shared by everything the Notes tab opens (revision notes, the quick
@@ -333,7 +334,11 @@ export function KindTag({ children, style }: { children: string; style?: StylePr
 /* ------------------------------------------------------------------ pin */
 
 /** Pin or unpin this page. Sits in the header, on the field. The pin fills when on. */
-export function PinButton({ list, id, name }: { list: Recent; id: string; name: string }) {
+export function PinButton(p: { list: Recent; id: string; name: string }) {
+  // Hidden while the website keeps no pins (SHOWN.pins in src/lib/shown.ts).
+  return pinsShown ? <PinToggle {...p} /> : null;
+}
+function PinToggle({ list, id, name }: { list: Recent; id: string; name: string }) {
   const c = useTheme();
   const on = list.use().includes(id);
   return (

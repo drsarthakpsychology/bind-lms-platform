@@ -49,6 +49,11 @@ export const DYNAMIC: AppCall[] = [
   dyn("GET", "/prep/long/:p/:p/:p", "src/practise/prep/long.tsx:29"),
   // src/practise/api.ts sendRecord(kind): POST /practise/records/:kind
   dyn("POST", "/practise/records/:p", "src/practise/api.ts:120"),
+  // src/lab/data.ts send(): Lab runs, checks, reflections and Casebook scores
+  { ...dyn("POST", "/lab/:p/run", "src/lab/data.ts:65"), body: ["numbers"] },
+  { ...dyn("POST", "/lab/:p/check", "src/lab/data.ts:66"), body: ["answers"] },
+  dyn("POST", "/lab/:p/reflect", "src/lab/data.ts:67"),
+  { ...dyn("POST", "/casebook/:p/done", "src/lab/data.ts:68"), body: ["right", "total"] },
 ];
 function dyn(method: Method, p: string, where: string): AppCall {
   return { method, path: p, query: [], body: [], public: false, where };

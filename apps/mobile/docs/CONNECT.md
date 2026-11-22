@@ -4,10 +4,14 @@ One list, by area, of what still runs on sample data or waits for a server
 part. It joins the area notes (`CONNECT-badmin.md`, `CONNECT-bauth.md`,
 `CONNECT-bclinic.md`, `CONNECT-blab.md`, `CONNECT-blearn.md`, `CONNECT-bme.md`,
 `CONNECT-bnotes.md`, `CONNECT-bpractise.md`), which stay for their detail.
-Updated when the areas were joined (22 Nov 2026).
+Updated when the areas were joined (22 Nov 2026), then again when the
+student screens left sample data (22 Nov 2026, round 2: see "Hidden until
+the website has it" at the end).
 
-Sample data always lives in a `mock.ts` (or `mock-data.json`) beside the
-screen and is marked. Admin screens on sample data also show the line "...
+No student screen runs on sample data any more. The browser build's mock
+server (`src/api/mock`, loaded only when `EXPO_PUBLIC_API_MODE` is `mock`)
+answers the same routes as the website. Admin sample data still lives in
+`src/admin/screens/mock.ts`. Admin screens on sample data also show the line "...
 shows sample data. It is not connected to the live site yet." (`MockNote`).
 
 ## Admin
@@ -56,14 +60,14 @@ or every scan says "That code did not work".
 
 | Screen | File | Data it needs | Website code that has it |
 |---|---|---|---|
-| Lecture page, Chapters tab | `src/screens/lecture/lecture.tsx`, sample in `src/screens/lecture/mock.ts` (`mockChapters`) | `chapters: { at, title }[]` on `GET /lectures/:lessonId` | Not on the website yet |
-| Lecture page, My notes tab | same files (`MOCK_NOTES`) | Per-student notes pinned to a time: `GET` and `PUT /lectures/:lessonId/notes` | Not on the website; copy `src/app/api/app/v1/study/marks/route.ts` |
+| Lecture page, Chapters tab (hidden: `SHOWN.lectureChapters`) | `src/screens/lecture/lecture.tsx` | `chapters: { at, title }[]` on `GET /lectures/:lessonId` | Not on the website yet |
+| Lecture page, My notes tab (hidden: `SHOWN.lectureNotes`) | same file | Per-student notes pinned to a time: `GET` and `PUT /lectures/:lessonId/notes` | Not on the website; copy `src/app/api/app/v1/study/marks/route.ts` |
 
 ## Practise
 
 | Screen | File | Data it needs | Website code that has it |
 |---|---|---|---|
-| Full case player (`/case/full`, mock builds only) | `src/practise/player/rich.tsx`, sample in `src/practise/player/mock.ts` | Rich cases in `src/practise/player/types.ts`, keys sent only after each answer | Not built yet (`src/lib/practice/rich/*`) |
+| Full case player (`/case/full`, hidden: `SHOWN.fullCasePlayer`) | `src/practise/player/rich.tsx`, design sample in `src/practise/player/mock.ts` | Rich cases in `src/practise/player/types.ts`, keys sent only after each answer | Not built yet (`src/lib/practice/rich/*`) |
 | Pick-one practice steps | `src/practise/player/step.tsx` | Live already; hints, per-option reasons and common errors show once the banks carry them | Content work |
 | Hub levels | `src/practise/hub.tsx` (`LEVEL_OF`) | A level per tool from the server | `src/lib/practice/ladder.ts` |
 | Hub numbers, board rank | `src/practise/hub.tsx` `Numbers` | A rank field on the hub's League row | `src/app/(dashboard)/leaderboard/*` |
@@ -73,24 +77,24 @@ or every scan says "That code did not work".
 
 | Screen | File | Data it needs | Website code that has it |
 |---|---|---|---|
-| Psychology Lab, home and experiment | `src/lab/screens.tsx`, data in `src/lab/mock.ts` (`mock-data.json`); runs kept on the phone (`src/lab/progress.ts`) | `GET /lab` behind the `lab` switch, `GET /lab/:id`, `POST /lab/:id/run`, `/check`, `/reflect` | `src/lib/lab/experiments.ts`, `experiments2.ts`, `src/app/(dashboard)/games/lab/gate.ts`, `src/lib/learn/engine.ts` |
-| Lab reflection | `src/lab/screens.tsx` | A text box saved with `recordLabReflection` | `src/components/lab/experiment-view.tsx` |
+| Psychology Lab, home and experiment | `src/lab/screens.tsx`, `src/lab/data.ts` | Done: `GET /lab` (behind the `lab` switch), `POST /lab/:id/run`, `/check` (graded on the server), `/reflect` | `src/lib/app-api/lab.ts`, routes in `src/app/api/app/v1/lab` |
+| Lab reflection | `src/lab/screens.tsx` | The reflection box is not drawn yet; `POST /lab/:id/reflect` is ready for it (the text stays on the phone, as on the website) | `src/components/lab/experiment-view.tsx` |
 | Lab scoring | `src/lab/scoring.ts`, `scoring2.ts` | Nothing; keep the copies in step with the website | `src/lib/lab/scoring.ts`, `scoring2.ts` |
-| Casebook | `src/casebook/screens.tsx`, sample in `src/casebook/mock.ts` (`mock-data.json`, 15 activities) | `GET /casebook` behind the `lab` switch, `GET /casebook/:id`, adaptive rounds | `src/content/casebook/*.ts`, `src/lib/casebook/rounds.ts`, `src/components/casebook/case-player.tsx` |
-| Saved cases, best scores | `src/casebook/progress.ts` (on the phone only) | Saved cases and results in the learn state | `src/lib/learn/engine.ts` |
-| Mock interview | `src/interview/screen.tsx`, sample in `src/interview/mock.ts` | `GET /prep/interview`, reveal, feedback, saving the session (written on branch `agent/appaudit`, not merged) | `src/app/(dashboard)/prep/interview/*`, `src/lib/prep/interview.ts`, `src/lib/prep/bank.ts` |
+| Casebook | `src/casebook/screens.tsx` | Done: `GET /casebook`, `POST /casebook/:id/done` (score checked against the case, round level from the server). The phone's rounds do not use the level yet | `src/lib/app-api/lab.ts`, `src/lib/casebook/rounds.ts` |
+| Saved cases (hidden: `SHOWN.savedCases`) | `src/casebook/progress.ts` | A saved list per student | Not on the website |
+| Mock interview | `src/interview/screen.tsx` | Done: `GET /prep/interview`, `POST /play/prep/interviewReveal` and `interviewSave`. AI feedback (`interviewFeedback`) is on the server but its switch is off, so the app does not show it | `src/lib/app-api/prep.ts`, `src/app/(dashboard)/prep/actions.ts` |
 | Ethics | `src/ethics/screens.tsx` | Real data (`GET /practise/tools/ethics`) | done |
 | Self-checks, Calm | `src/selfcheck/*`, `src/calm/*` | Complete on the phone, nothing stored. To open them signed out, add `selfcheck` and `calm` to `PUBLIC` in `src/nav/guard.ts`. Calm bubbles is not built | `src/lib/free/tests.ts`, `src/lib/free/calm.ts` |
 
-The Practise tab shows Lab and Casebook to everyone on Practise; once `GET
-/lab` exists, hide them when the `lab` switch is off.
+The Practise tab leaves out the Lab and Casebook cards when `GET /lab`
+answers that the Lab is switched off or closed for the account.
 
 ## Notes tab
 
 | Screen | File | Data it needs | Website code that has it |
 |---|---|---|---|
-| Medicines, by how they work | `src/library/list.tsx`, sample in `src/library/mock.ts` | Groups of medicine ids per target. `GET /library/reference` already answers `byMechanism`; add a hook and match slugs to ids | `src/lib/app-api/library.ts`, `mechanismIndex()` in `src/lib/psychopharm/store.ts` |
-| Pinned and recently opened | `src/library/pins.ts` (on the phone only) | A saved list per student | the learn state store (`src/lib/learn`) |
+| Medicines, by how they work | `src/library/list.tsx` (`useByMechanism`) | Done: `GET /library/reference` `byMechanism`, matched by slug or name | `src/lib/app-api/library.ts` |
+| Pinned and recently opened (hidden: `SHOWN.pins`) | `src/library/pins.ts` | A saved list per student | Not on the website |
 | Quick reference card, extra slots | `src/screens/reference/reference.tsx` | Threshold, onset, settings, impairment, types, lesson link on `GET /library/terms/:slug` | Not on the website yet |
 | Revision notes search | `src/screens/notes/notes.tsx` | Search inside the note text | `src/lib/search/everything.ts` (titles only today) |
 | Revision notes filter chips | `src/screens/notes/notes.tsx` | A topic and a type per note | `src/lib/learn/notes/types.ts` |
@@ -101,7 +105,7 @@ The Practise tab shows Lab and Casebook to everyone on Practise; once `GET
 
 | Screen | File | Data it needs | Website code that has it |
 |---|---|---|---|
-| Search | `src/search/screen.tsx` | Real data from the phone plus `GET /search`. The browser build's mock server has no `/search`. Lab and Casebook results come from their sample files until those have an API | `src/lib/search/engine.ts`, `src/lib/search/everything.ts` |
+| Search | `src/search/screen.tsx` | Real data from the phone plus `GET /search`. The browser build's mock server has no `/search`. Lab and Casebook results come from `GET /lab` and `GET /casebook` | `src/lib/search/engine.ts`, `src/lib/search/everything.ts` |
 
 ## Me
 
@@ -118,3 +122,19 @@ orange); notification settings and the class wall tile need nothing.
 The mock server signs in before it applies `?mock=`, and every tab's data is
 fetched the moment the account opens, so `?mock=error` and `?mock=new` with
 `?as=` show the normal data. Use the jest tests for those states.
+
+## Hidden until the website has it
+
+Built, switched off in `src/lib/shown.ts` (`SHOWN`), because the website has
+no data for them. Set the line to `true` once the server part exists.
+
+| Switch | What it hides | Needs |
+|---|---|---|
+| `lectureChapters` | Lecture page, Chapters tab | Chapters per lecture on the website |
+| `lectureNotes` | Lecture page, My notes tab | Per-lecture notes on the website |
+| `savedCases` | Casebook, Saved tab and the bookmark on a case | Saved cases on the website |
+| `pins` | Pin buttons, Pinned and Recently opened in Notes | Pins on the website |
+| `fullCasePlayer` | `/case/full` and its card on the Practise tab | Rich cases on the website |
+
+The design gallery (`/kit`) opens only in the browser build on sample data
+and in development (`designPages`), never in a release build.

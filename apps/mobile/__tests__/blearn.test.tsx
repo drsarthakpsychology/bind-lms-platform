@@ -9,7 +9,6 @@ import { AssignmentScreen } from "@/screens/learn/assignment";
 import { dueWord } from "@/screens/learn/assignments";
 import { LearnHub, weekNow } from "@/screens/learn/hub";
 import { chapterAt, LectureScreen } from "@/screens/lecture/lecture";
-import { mockChapters } from "@/screens/lecture/mock";
 import { plainText } from "@/study/rich";
 import { render } from "./utils";
 
@@ -36,7 +35,7 @@ describe("small rules", () => {
   });
 
   it("finds the chapter the video is in", () => {
-    const ch = mockChapters(1000);
+    const ch = [0, 120, 340, 580, 800, 930].map((at, i) => ({ at, title: `Part ${i + 1}` }));
     expect(ch[0]!.at).toBe(0);
     expect(chapterAt(ch, 0)).toBe(0);
     expect(chapterAt(ch, ch[2]!.at + 1)).toBe(2);
@@ -83,14 +82,13 @@ describe("the assignment page", () => {
 });
 
 describe("the lecture page", () => {
-  it("has chapters and notes tabs beside the player, and up next on About", async () => {
+  it("shows the player and up next on About, and no Chapters or Notes tab until the website has them", async () => {
     (useLocalSearchParams as jest.Mock).mockReturnValue({ lessonId: "l5" });
     await render(<LectureScreen />);
     expect(await screen.findByTestId("player")).toBeTruthy();
     expect(await screen.findByTestId("lecture-upnext")).toBeTruthy();
-    await fireEvent.press(screen.getByText("Chapters"));
-    expect(await screen.findByTestId("chapter-0")).toBeTruthy();
-    await fireEvent.press(screen.getByText("Notes"));
-    expect(await screen.findByTestId("lecture-note-add")).toBeTruthy();
+    expect(screen.queryByText("Chapters")).toBeNull();
+    expect(screen.queryByText("Notes")).toBeNull();
+    expect(screen.queryByText("Sample")).toBeNull();
   });
 });

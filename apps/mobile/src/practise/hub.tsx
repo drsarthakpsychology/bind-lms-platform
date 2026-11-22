@@ -9,6 +9,7 @@ import { Enter, Press, ProgressRing, RollingNumber } from "@/motion";
 import { toast } from "@/ds/toast";
 import { PractiseExtras, WellbeingExtras } from "@/lab/entries";
 import { config } from "@/lib/config";
+import { SHOWN } from "@/lib/shown";
 import { recentPractise, recentPrep } from "@/lib/recent";
 import { canGuess, go, prefetchRoute } from "@/api/prefetch";
 import { hrefFor } from "@/nav/targets";
@@ -422,7 +423,7 @@ export function PractiseHub() {
               <Enter key={l.id} i={n++} style={{ gap: space[4] }} testID={`hub-level-${l.id}`}>
                 <LevelHead n={k + 1} name={l.name} line={l.line} />
                 <TileGrid rows={levels[l.id]} />
-                {l.id === "cases" && config.apiMode === "mock" ? (
+                {l.id === "cases" && SHOWN.fullCasePlayer ? (
                   // The full case player on its design sample: shown only in mock builds until the rich cases are connected.
                   <Stone quiet grow={() => router.push("/case/full")} testID="hub-full-case" accessibilityLabel="Full case player. A sample case in the new format">
                     <T v="bodyStrong">Full case player</T>

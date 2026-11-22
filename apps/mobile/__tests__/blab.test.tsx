@@ -8,14 +8,15 @@ import { session } from "@/auth";
 import { PATTERNS, phaseAt } from "@/calm/data";
 import { BreathingScreen } from "@/calm/breath";
 import { CalmHomeScreen, GroundingScreen, WorryScreen } from "@/calm/screens";
-import { CASEBOOK } from "@/casebook/mock";
+import caseData from "@/api/mock/lab/casebook.json";
+import labData from "@/api/mock/lab/lab.json";
+import type { Case } from "@/lab/data";
+import type { LabExperiment } from "@/lab/types";
 import { CasebookScreen, CaseScreen } from "@/casebook/screens";
 import { caseSteps, orderRight } from "@/casebook/steps";
 import { dilemmaSteps, EthicsHomeScreen } from "@/ethics/screens";
-import { InterviewScreen, pickPanel, selfScore } from "@/interview/screen";
-import { INTERVIEWS } from "@/interview/mock";
+import { InterviewScreen, selfScore } from "@/interview/screen";
 import { PractiseExtras, WellbeingExtras } from "@/lab/entries";
-import { EXPERIMENTS } from "@/lab/mock";
 import { QuestionRun } from "@/lab/run";
 import { RUNNERS } from "@/lab/runners-b";
 import { ExperimentScreen, LabHomeScreen } from "@/lab/screens";
@@ -24,6 +25,10 @@ import { fixedDocs, mergeServer, SearchScreen } from "@/search/screen";
 import { SelfCheckHomeScreen, SelfCheckRunScreen } from "@/selfcheck/screens";
 import { INSTRUMENTS, PHQ9, scoreInstrument } from "@/selfcheck/tests";
 import { render } from "./utils";
+
+// The browser build's samples of the website's Lab and Casebook (the mock server answers GET /lab and /casebook with them).
+const CASEBOOK = caseData as unknown as Case[];
+const EXPERIMENTS = (labData as unknown as { experiments: LabExperiment[] }).experiments;
 
 /** Shows a render error as text, so a test can say what broke. */
 class Catch extends React.Component<{ children: React.ReactNode }, { e: string | null }> {
@@ -195,11 +200,7 @@ describe("The question run", () => {
 });
 
 describe("Mock interview", () => {
-  it("draws one question per category and scores like the website", () => {
-    const panel = pickPanel(INTERVIEWS);
-    expect(panel).toHaveLength(5);
-    expect(new Set(panel.map((q) => q.category)).size).toBe(5);
-    expect(pickPanel(INTERVIEWS, 1)[0]!.id).not.toBe(panel[0]!.id);
+  it("scores like the website", () => {
     expect(selfScore(4, 3, 0)).toEqual({ pct: 75, band: "strong" });
     expect(selfScore(4, 3, 2)).toEqual({ pct: 45, band: "okay" });
     expect(selfScore(0, 0, 0)).toEqual({ pct: 0, band: "weak" });
@@ -207,23 +208,26 @@ describe("Mock interview", () => {
 
   it("answer, follow-up, mark yourself, read a strong answer", async () => {
     await render(<InterviewScreen />);
-    await fireEvent.press(screen.getByTestId("interview-start"));
+    await fireEvent.press(await screen.findByTestId("interview-start"));
     await fireEvent.changeText(screen.getByTestId("interview-answer"), "My answer in points");
     await fireEvent.press(screen.getByTestId("interview-next"));
     const mark = screen.queryByTestId("interview-mark");
     if (mark) await fireEvent.press(mark);
-    await fireEvent.press(screen.getByTestId("cover-0"));
+    // The rubric arrives from the server only now.
+    await fireEvent.press(await screen.findByTestId("cover-0"));
     expect(screen.getByText("A strong answer")).toBeTruthy();
     expect(screen.getByTestId("interview-continue")).toBeTruthy();
   });
 });
 
 describe("Casebook", () => {
-  it("browses every case and shows an empty saved list", async () => {
+  it("browses every case from the server; saved cases are hidden (the website has none)", async () => {
     await render(<CasebookScreen />);
-    expect(screen.getByTestId(`case-${CASEBOOK[0]!.id}`)).toBeTruthy();
+    expect(await screen.findByTestId(`case-${CASEBOOK[0]!.id}`)).toBeTruthy();
+    expect(screen.queryByText("Saved")).toBeNull();
     await render(<CasebookScreen start="saved" />);
-    expect(screen.getAllByTestId("casebook-empty").length).toBe(1);
+    expect(await screen.findAllByTestId(`case-${CASEBOOK[0]!.id}`)).toBeTruthy();
+    expect(screen.queryByTestId("casebook-empty")).toBeNull();
   });
 
   it("every read-then-choose case makes a round with a right answer in range", () => {
@@ -243,13 +247,12 @@ describe("Casebook", () => {
     expect(orderRight(["a", "b", "c"], ["a", "c", "b"])).toBe(1);
   });
 
-  it("the case page saves the case and starts the player", async () => {
+  it("the case page starts the player, with no save button", async () => {
     const c = CASEBOOK.find((x) => x.format === "differential")!;
     (useLocalSearchParams as jest.Mock).mockReturnValue({ id: c.id });
     await render(<CaseScreen />);
-    expect(screen.getByText(c.objective)).toBeTruthy();
-    await fireEvent.press(screen.getByTestId("case-save"));
-    expect(screen.getByLabelText("Remove from saved cases")).toBeTruthy();
+    expect(await screen.findByText(c.objective)).toBeTruthy();
+    expect(screen.queryByTestId("case-save")).toBeNull();
     await fireEvent.press(screen.getByTestId("case-start"));
     expect(screen.getByTestId("case-run")).toBeTruthy();
   });
@@ -258,7 +261,7 @@ describe("Casebook", () => {
     const c = CASEBOOK.find((x) => x.format === "timeline")!;
     (useLocalSearchParams as jest.Mock).mockReturnValue({ id: c.id });
     await render(<CaseScreen />);
-    await fireEvent.press(screen.getByTestId("case-start"));
+    await fireEvent.press(await screen.findByTestId("case-start"));
     if (c.format !== "timeline") return;
     for (const e of c.events) await fireEvent.press(screen.getByTestId(`event-${e.id}`));
     await fireEvent.press(screen.getByTestId("run-check"));
@@ -274,7 +277,7 @@ describe("Psychology Lab", () => {
 
   it("lists the experiments and points at the Casebook", async () => {
     await render(<LabHomeScreen />);
-    expect(screen.getByTestId("lab-digit-span")).toBeTruthy();
+    expect(await screen.findByTestId("lab-digit-span")).toBeTruthy();
     expect(screen.getByTestId("lab-next")).toBeTruthy();
     expect(screen.getByTestId("lab-casebook")).toBeTruthy();
   });
@@ -282,7 +285,7 @@ describe("Psychology Lab", () => {
   it("an experiment shows the question first; the result and the reading come after a run", async () => {
     (useLocalSearchParams as jest.Mock).mockReturnValue({ id: "design-study" });
     await render(<ExperimentScreen />);
-    expect(screen.getByText("The question")).toBeTruthy();
+    expect(await screen.findByText("The question")).toBeTruthy();
     expect(screen.queryByText("The classic finding")).toBeNull();
     await fireEvent.press(screen.getByTestId("lab-start"));
     for (const key of ["sample", "size", "control", "assign", "blind", "measure"]) await fireEvent.press(screen.getByTestId(`design-${key}-2`.replace("blind-2", "blind-1")));

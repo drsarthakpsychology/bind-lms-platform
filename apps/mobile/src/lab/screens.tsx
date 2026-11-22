@@ -3,10 +3,12 @@ import { ArrowRight, BookOpenText, Check, FlaskConical } from "lucide-react-nati
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, Chips, Label, QuietEmpty, Stone, T } from "@/ds";
+import { Button, Chips, Label, QuietEmpty, RowsSkeleton, Stone, T } from "@/ds";
+import { QuietError } from "@/library/kit";
 import { Enter, ProgressFill, StaggerList } from "@/motion";
 import { space, useTheme } from "@/theme";
-import { experimentById, EXPERIMENTS, LAB_AREAS, type LabArea, type LabExperiment } from "./mock";
+import { useLabHome } from "./data";
+import { LAB_AREAS, type LabArea, type LabExperiment } from "./types";
 import { recordCheck, recordRun, useLabDone } from "./progress";
 import { QuestionRun } from "./run";
 import type { LabResult } from "./runners-a";
@@ -44,7 +46,22 @@ function ExperimentCard({ e, done }: { e: LabExperiment; done: boolean }) {
 
 /** The Psychology Lab: classic experiments you run on yourself first and read about second. */
 export function LabHomeScreen() {
+  const q = useLabHome();
   const done = useLabDone();
+  if (!q.data) return <LabLoading q={q} testID="lab-home" />;
+  return <LabHome experiments={q.data.experiments} done={done} />;
+}
+
+/** The first load: a skeleton, then the error with a retry. */
+function LabLoading({ q, testID }: { q: ReturnType<typeof useLabHome>; testID: string }) {
+  return (
+    <Page testID={testID} home="/practise" title="Psychology Lab" area="practise">
+      {q.isError ? <QuietError what="the Lab" error={q.error} onRetry={() => void q.refetch()} testID="lab-error" /> : <RowsSkeleton />}
+    </Page>
+  );
+}
+
+function LabHome({ experiments: EXPERIMENTS, done }: { experiments: LabExperiment[]; done: ReturnType<typeof useLabDone> }) {
   const [filter, setFilter] = React.useState<Filter>("all");
   const areas = LAB_AREAS.filter((a) => EXPERIMENTS.some((e) => e.area === a));
   const list = EXPERIMENTS.filter((e) => filter === "all" || e.area === filter);
@@ -142,10 +159,12 @@ function Reading({ title, paras }: { title: string; paras: string[] }) {
 /** /lab/:id : what the experiment asks, the run, then your own data beside the classic finding. */
 export function ExperimentScreen() {
   const { id } = useLocalSearchParams<{ id?: string }>();
-  const e = experimentById(String(id ?? ""));
+  const q = useLabHome();
+  const e = q.data?.experiments.find((x) => x.id === String(id ?? ""));
   const done = useLabDone();
   const [stage, setStage] = React.useState<"page" | "run" | "check">("page");
   const [fresh, setFresh] = React.useState<LabResult | null>(null);
+  if (!q.data) return <LabLoading q={q} testID="lab-experiment" />;
   if (!e)
     return (
       <Page testID="lab-missing" home="/lab" title="Psychology Lab">
@@ -165,7 +184,7 @@ export function ExperimentScreen() {
       />
     );
   if (stage === "check")
-    return <QuestionRun testID="lab-check" title={e.title} steps={e.checks.map((k, i) => ({ id: `${e.id}-${i}`, prompt: k.q, options: k.options, answer: k.answer, why: k.why }))} onClose={() => setStage("page")} onDone={(r) => recordCheck(e.id, r.filter((x) => x.right).length, r.length)} doneLabel="Back to the experiment" />;
+    return <QuestionRun testID="lab-check" title={e.title} steps={e.checks.map((k, i) => ({ id: `${e.id}-${i}`, prompt: k.q, options: k.options, answer: k.answer, why: k.why }))} onClose={() => setStage("page")} onDone={(r) => recordCheck(e.id, r.map((x) => x.picked))} doneLabel="Back to the experiment" />;
   const mine = fresh ?? done[e.id]?.result ?? null;
   const check = done[e.id]?.check;
   return (
@@ -219,7 +238,7 @@ export function ExperimentScreen() {
                   </View>
                 ) : null}
                 <T v="caption" tone="muted">
-                  One run on one day. Kept on this phone.
+                  One run on one day. Saved to your progress.
                 </T>
               </View>
             </Stone>

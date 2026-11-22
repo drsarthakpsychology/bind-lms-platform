@@ -27,7 +27,13 @@ import { beats, DrawInk, Enter, Press, Reveal, StaggerList, Swap, useLoadGate } 
 import { enablePush, pushStatus } from "@/push";
 import { Group, Pill, Tile } from "@/screens/learn/parts";
 import { fixed, layout, space, useLightStatusBar, useTheme } from "@/theme";
-import { MOCK_NOTES, mockChapters, type LectureChapter, type LectureNote } from "./mock";
+import { SHOWN } from "@/lib/shown";
+
+/** A part of the lecture and where it starts (seconds). Lectures have no chapters on the website yet, so the tab is hidden (SHOWN.lectureChapters). */
+export type LectureChapter = { at: number; title: string };
+/** A note on the lecture pinned to a time. Hidden until the website keeps them (SHOWN.lectureNotes). */
+export type LectureNote = { id: string; at: number; text: string };
+const NO_CHAPTERS: LectureChapter[] = [];
 
 type Tab = "about" | "chapters" | "notes" | "materials" | "assignment";
 
@@ -90,7 +96,7 @@ export function chapterAt(chapters: LectureChapter[], time: number): number {
 function Chapters({ chapters, current, onSeek }: { chapters: LectureChapter[]; current: number; onSeek: (at: number) => void }) {
   return (
     <Group>
-      <Label action={<Pill>Sample</Pill>}>Jump to a part</Label>
+      <Label>Jump to a part</Label>
       <StaggerList style={{ gap: space[2] }}>
         {chapters.map((ch, i) => (
           <Tile key={ch.at} testID={`chapter-${i}`} title={ch.title} lead={<TimeChip at={ch.at} on={i === current} />} trailing={i === current ? <Pill tone="ink">Playing</Pill> : undefined} plain accessibilityLabel={`${ch.title}, at ${clock(ch.at)}. Jump there`} onPress={() => onSeek(ch.at)} />
@@ -100,12 +106,12 @@ function Chapters({ chapters, current, onSeek }: { chapters: LectureChapter[]; c
   );
 }
 
-/** Your own notes on this lecture, each pinned to the moment it was written. Sample data for now (./mock). */
+/** Your own notes on this lecture, each pinned to the moment it was written. Hidden until the website keeps them. */
 function Notes({ notes, onSeek, onWrite }: { notes: LectureNote[]; onSeek: (at: number) => void; onWrite: () => void }) {
   const c = useTheme();
   return (
     <Group>
-      <Label action={<Pill>Sample</Pill>}>My notes on this lecture</Label>
+      <Label>My notes on this lecture</Label>
       <StaggerList style={{ gap: space[2] }}>
         {notes.map((n) => (
           <Stone key={n.id} testID={`lecture-note-${n.id}`} pad={space[3] + 2}>
@@ -202,14 +208,14 @@ export function LectureScreen() {
   );
   const lastSent = React.useRef(0);
   const last = React.useRef({ t: 0, d: 0 });
-  // Chapters and notes (sample data, ./mock): jump the video, and know which part is playing.
+  // Chapters and notes (hidden until the website has them): jump the video, and know which part is playing.
   const control = React.useRef<PlayerControl | null>(null);
   const [chapter, setChapter] = React.useState(0);
-  const [notes, setNotes] = React.useState<LectureNote[]>(MOCK_NOTES);
+  const [notes, setNotes] = React.useState<LectureNote[]>([]);
   // The time a new note is pinned to, taken when the note sheet opens (null: closed).
   const [writing, setWriting] = React.useState<number | null>(null);
   const [draft, setDraft] = React.useState("");
-  const chapters = React.useMemo(() => mockChapters(q.data?.durationSeconds ?? null), [q.data?.durationSeconds]);
+  const chapters = NO_CHAPTERS;
   const scroller = React.useRef<React.ComponentRef<typeof ScrollView>>(null);
   // The Assignment tab's hand-in button lives in the pinned footer.
   const [footer] = React.useState(() => createStore<{ action: FooterAction | null; owner: object | null }>({ action: null, owner: null }));
@@ -304,7 +310,7 @@ export function LectureScreen() {
   // The skeleton only after 120ms, then at least 380ms (no grey flash).
   const gate = useLoadGate(!!l || q.isError);
   const tabs: { id: Tab; name: string }[] = l
-    ? [{ id: "about", name: "About" }, ...(l.hasVideo ? [{ id: "chapters" as Tab, name: "Chapters" }, { id: "notes" as Tab, name: "Notes" }] : []), ...(l.materials.length && !l.hasVideo ? [{ id: "materials" as Tab, name: "Materials" }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
+    ? [{ id: "about", name: "About" }, ...(l.hasVideo && SHOWN.lectureChapters && chapters.length ? [{ id: "chapters" as Tab, name: "Chapters" }] : []), ...(l.hasVideo && SHOWN.lectureNotes ? [{ id: "notes" as Tab, name: "Notes" }] : []), ...(l.materials.length && !l.hasVideo ? [{ id: "materials" as Tab, name: "Materials" }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
     : [];
   const watched = l ? l.progress.completed || done : false;
   const blockedByAssignment = !!l?.requiresAssignment && !l.assignment?.submission;
@@ -414,7 +420,7 @@ export function LectureScreen() {
           <Sheet open={writing !== null} onClose={() => setWriting(null)} title="A note on this lecture" testID="lecture-note-sheet">
             <View style={{ gap: space[4] }}>
               <T v="small" tone="muted" num>
-                Pinned at {clock(writing ?? 0)}. Sample for now: it stays until you leave this lecture.
+                Pinned at {clock(writing ?? 0)}.
               </T>
               <Field label="Your note" area value={draft} onChangeText={setDraft} placeholder="What to remember from this part" maxLength={2000} testID="lecture-note-text" />
               <Button label="Add note" disabled={!draft.trim()} onPress={saveNote} testID="lecture-note-save" />

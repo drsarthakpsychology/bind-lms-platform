@@ -2,10 +2,10 @@ import { BookOpenText, ClipboardCheck, FlaskConical, MessagesSquare, Scale, Wind
 import * as React from "react";
 import { View } from "react-native";
 
+import { ApiFailure } from "@/api/errors";
 import { Label } from "@/ds";
-import { CASEBOOK } from "@/casebook/mock";
+import { useLabHome } from "./data";
 import { space } from "@/theme";
-import { EXPERIMENTS } from "./mock";
 import { EntryCard } from "./shell";
 
 /**
@@ -19,22 +19,30 @@ import { EntryCard } from "./shell";
  * or one at a time: <LabEntry />, <CasebookEntry tall />, ...
  */
 type P = { tall?: boolean };
-export const LabEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-lab" icon={FlaskConical} area="practise" title="Psychology Lab" meta={tall ? `${EXPERIMENTS.length} experiments` : `${EXPERIMENTS.length} experiments to run on yourself`} href="/lab" />;
-export const CasebookEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-casebook" icon={BookOpenText} area="practise" title="Casebook" meta={tall ? `${CASEBOOK.length} cases` : "Short cases to read and reason through"} href="/casebook" />;
+export const LabEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-lab" icon={FlaskConical} area="practise" title="Psychology Lab" meta={tall ? "Run it on yourself" : "Classic experiments to run on yourself"} href="/lab" />;
+export const CasebookEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-casebook" icon={BookOpenText} area="practise" title="Casebook" meta={tall ? "Read and reason" : "Short cases to read and reason through"} href="/casebook" />;
 export const EthicsEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-ethics" icon={Scale} area="practise" title={tall ? "Ethics and law" : "Ethics, law and referral"} meta={tall ? "3 new each day" : "Decide first, then the law behind it"} href="/ethics" />;
-export const InterviewEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-interview" icon={MessagesSquare} area="practise" title="Mock interview" meta={tall ? "5 questions" : "Five questions, the way a panel asks them"} href="/interview" />;
+export const InterviewEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-interview" icon={MessagesSquare} area="practise" title="Mock interview" meta={tall ? "Panel practice" : "Questions the way a panel asks them"} href="/interview" />;
 export const CalmEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-calm" icon={Wind} area="me" title="Calm" meta={tall ? "Breathe, ground" : "Breathing, grounding and more"} href="/calm" />;
 export const SelfCheckEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-selfcheck" icon={ClipboardCheck} area="me" title="Self-checks" meta={tall ? "6 short checks" : "Short questionnaires, scored on your phone"} href="/selfcheck" />;
 
+const LAB_CLOSED = new Set(["feature_locked", "feature_off", "access_block", "forbidden", "scope", "not_found"]);
+
 /** For the Practise tab: two shelves side by side, then two wide rows. */
 export function PractiseExtras({ label = "Read and reason", ethics = true }: { label?: string | null; /** False when Ethics is switched off for this account. */ ethics?: boolean }) {
+  // Reading the Lab here also gets it ready before it is opened. When the website has the Lab
+  // switched off (or closed for this account), its two cards are left out.
+  const lab = useLabHome();
+  const labOff = lab.error instanceof ApiFailure && LAB_CLOSED.has(lab.error.code);
   return (
     <View testID="practise-extras" style={{ gap: space[3] }}>
       {label ? <Label>{label}</Label> : null}
-      <View style={{ flexDirection: "row", gap: space[3] }}>
-        <CasebookEntry tall />
-        <LabEntry tall />
-      </View>
+      {labOff ? null : (
+        <View style={{ flexDirection: "row", gap: space[3] }}>
+          <CasebookEntry tall />
+          <LabEntry tall />
+        </View>
+      )}
       {ethics ? <EthicsEntry /> : null}
       <InterviewEntry />
     </View>

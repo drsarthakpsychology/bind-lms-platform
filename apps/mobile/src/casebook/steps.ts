@@ -1,6 +1,6 @@
 import type { Step } from "@/lab/run";
 import { seeded, shuffle } from "@/lab/scoring";
-import type { Case } from "./mock";
+import type { Case } from "@/lab/data";
 import { URGENCY_LABEL, type Urgency } from "./types";
 
 export const ROUND_SIZE = 8;
