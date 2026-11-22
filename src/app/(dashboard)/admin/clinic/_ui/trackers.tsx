@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { BATCH_LABEL } from "@/components/clinic/format";
+import { cohortAverage } from "@/lib/clinic/attendance";
 import type { ClinicTrackerRow, ClinicTrackers } from "@/lib/clinic/types";
 import { cn } from "@/lib/utils";
 import { Empty, Figures, Meter, Status, nameLink, table } from "../../_v2/kit";
@@ -12,9 +13,8 @@ import { Empty, Figures, Meter, Status, nameLink, table } from "../../_v2/kit";
 
 export function cohortTotals(rows: ClinicTrackerRow[]) {
   const sum = (f: (r: ClinicTrackerRow) => number) => rows.reduce((n, r) => n + f(r), 0);
-  const pcts = rows.map((r) => r.attendance.percent).filter((p): p is number => p !== null);
   return {
-    attendance: pcts.length ? Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length) : null,
+    attendance: cohortAverage(rows.map((r) => r.attendance)),
     casesDone: sum((r) => r.cases.done),
     casesTotal: sum((r) => r.cases.total),
     logsDue: sum((r) => r.visits.due),
@@ -51,7 +51,7 @@ export function Trackers({ data, hrefFor, remind }: { data: ClinicTrackers; href
         <tbody>
           {rows.map((r) => {
             const a = r.attendance;
-            const flag = r.visits.due ? `${r.visits.due} due` : r.visits.missed ? `${r.visits.missed} missed` : null;
+            const flag = r.visits.due ? `${r.visits.due} due` : r.visits.missed ? `${r.visits.missed} missed, counted as leave` : null;
             return (
               <tr key={r.userId} className={table.tr}>
                 <td className={table.td}>

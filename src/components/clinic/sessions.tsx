@@ -32,6 +32,11 @@ export function StatusText({ tone, children, className }: { tone: StatusTone; ch
 export function myLine(s: ClinicMySession): { text: string; tone: StatusTone } {
   if (s.status === "cancelled") return { text: "Cancelled", tone: "quiet" };
   const m = s.my;
+  if (m.status === "on_leave") return { text: m.missedOpd ? "On leave (missed OPD day)" : "On leave", tone: "info" };
+  if (m.mark === "left_early" && m.status !== "in") {
+    const d = m.minutes !== null ? `, ${duration(m.minutes)}` : "";
+    return { text: `Left early (approved)${d}`, tone: "ok" };
+  }
   if (m.status === "in") return { text: `In at ${instantClock(m.inAt)}${m.late ? ", late" : ""}`, tone: m.late ? "warn" : "info" };
   if (m.status === "present" || m.status === "late") {
     const d = m.minutes !== null ? `, ${duration(m.minutes)}` : "";

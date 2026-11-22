@@ -5,7 +5,7 @@ import { ApiFail } from "@/lib/app-api/respond";
 import { currentTestScope } from "@/lib/test-mode/server";
 import { cohortsAllowed, cohortsFor, TEST_MODE_REFUSED } from "@/lib/test-mode/rules";
 import { isHiddenAccount } from "@/lib/people/hidden";
-import { isOpen, myStatus, summarize } from "./attendance";
+import { isOpen, markOf, myStatus, summarize } from "./attendance";
 import { quotaOf, toVisit, visitTally, countsAsLeave } from "./cases";
 import { approvedLeaveMap, balance, earlyLeaveMap } from "./leave";
 import { localDate } from "./time";
@@ -234,20 +234,48 @@ export function mySessions(b: Bundle, userId: string, sessions: readonly Session
   const early = earlyLeaveMap(mine);
   const assigned = new Set(b.assignments.filter((a) => a.user_id === userId).map((a) => `${a.date}|${a.batch}`));
   const attBy = new Map(b.att.filter((a) => a.user_id === userId).map((a) => [a.session_id, a]));
+  const missed = missedOpdSessions(b, userId, localDate(now));
   return sessions.map((row) => {
     const s = toSession(row);
     const isAssigned = s.batch ? assigned.has(`${s.date}|${s.batch}`) : false;
     const required = s.batch ? isAssigned : s.compulsory;
     const att = attBy.get(s.id) ?? null;
-    const st = myStatus({ session: s, now, required, att, onLeave: leaveMap.has(s.id), lateMinutes: b.settings.late_minutes });
+    const missedOpd = !leaveMap.has(s.id) && missed.has(s.id);
+    const st = myStatus({ session: s, now, required, att, onLeave: leaveMap.has(s.id), missedOpdLeave: missedOpd, lateMinutes: b.settings.late_minutes });
+    const earlyLeaveAt = early.get(s.id) ?? null;
     return {
       ...s,
       required,
       assigned: isAssigned,
       open: isOpen(s, now),
-      my: { status: st.status, inAt: att?.in_at ?? null, outAt: att?.out_at ?? null, late: st.late, minutes: st.minutes, leaveId: leaveMap.get(s.id) ?? null, earlyLeaveAt: early.get(s.id) ?? null },
+      my: {
+        status: st.status,
+        inAt: att?.in_at ?? null,
+        outAt: att?.out_at ?? null,
+        late: st.late,
+        minutes: st.minutes,
+        leaveId: leaveMap.get(s.id) ?? null,
+        earlyLeaveAt,
+        mark: markOf({ status: st.status, required, minutes: st.minutes, late: st.late, earlyLeaveAt }),
+        missedOpd: st.status === "on_leave" && missedOpd,
+      },
     };
   });
+}
+
+/** The summary for a list of my sessions: the one shared count. */
+export function summaryOf(list: readonly ClinicMySession[]) {
+  return summarize(list.map((s) => ({ status: s.my.status, required: s.required, minutes: s.my.minutes, late: s.my.late, earlyLeaveAt: s.my.earlyLeaveAt })));
+}
+
+/**
+ * OPD session ids of assigned days the student missed with no approved leave
+ * (or logged "I was absent"): each is counted as one leave, never an absence.
+ */
+export function missedOpdSessions(b: Bundle, userId: string, today: string): Set<string> {
+  const out = new Set<string>();
+  for (const v of myVisits(b, userId, today)) if (countsAsLeave(v.state) && v.sessionId) out.add(v.sessionId);
+  return out;
 }
 
 /** One student's published OPD visits, with their state. */
@@ -301,7 +329,7 @@ export function trackerRow(b: Bundle, p: { userId: string; name: string | null; 
     name: p.name,
     roll: p.roll,
     batch: batchOf(b, p.userId),
-    attendance: summarize(mySessions(b, p.userId, past, now).map((s) => ({ status: s.my.status, required: s.required, minutes: s.my.minutes }))),
+    attendance: summaryOf(mySessions(b, p.userId, past, now)),
     leave: balanceOf(b, p.userId),
     cases: quotaFor(b, p.userId, visits),
     visits: visitTally(visits),

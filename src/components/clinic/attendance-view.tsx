@@ -4,19 +4,26 @@ import { StatusText, myLine } from "./sessions";
 
 /** Attendance numbers in one quiet line: percent first, then the counts. No boxes. */
 export function AttendanceFigures({ s }: { s: ClinicAttendanceSummary }) {
+  // The same five words as everywhere else; every number comes from the one shared count on the server.
   const items: [string, string | number][] = [
-    ["Attended", s.attended],
+    ["Present", s.present],
     ["Late", s.late],
     ["On leave", s.onLeave],
     ["Absent", s.absent],
   ];
+  if (s.leftEarly) items.splice(2, 0, ["Left early (approved)", s.leftEarly]);
   if (s.noScanOut) items.push(["No scan out", s.noScanOut]);
   return (
     <div className="flex min-w-0 flex-col gap-4">
       <p className="flex flex-wrap items-baseline gap-x-3">
         <span className="type-display type-num">{s.percent === null ? "None yet" : `${s.percent}%`}</span>
-        {s.percent !== null ? <span className="type-small text-muted-foreground type-num">of {s.required} sessions, {duration(s.minutes) || "0 min"} present</span> : null}
+        {s.percent !== null ? (
+          <span className="type-small text-muted-foreground type-num">
+            came to {s.countedPresent} of {s.counted} sessions that count, {duration(s.minutes) || "0 min"} present
+          </span>
+        ) : null}
       </p>
+      <p className="type-caption text-muted-foreground">Sessions on approved leave are left out of the percent. Leaving early with approval never lowers it.</p>
       <ul className="grid min-w-0 grid-cols-2 gap-x-6 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-10">
         {items.map(([label, v]) => (
           <li key={label} className="flex min-w-0 flex-col">

@@ -60,52 +60,131 @@ export type MyStatusInput = {
   now: number;
   required: boolean;
   att: Pick<AttendanceRow, "in_at" | "out_at"> | null;
+  /** An APPROVED leave covers this session (pending or rejected ones do not). */
   onLeave: boolean;
+  /**
+   * An assigned OPD day that was missed with no approved leave (or logged
+   * "I was absent"): it is counted as one leave, so here it is "on leave", not absent.
+   */
+  missedOpdLeave?: boolean;
   lateMinutes: number;
 };
 
-/** One student's place in one session. */
+/**
+ * One student's place in one session. In order: cancelled; approved leave
+ * (always "on leave", even with a scan, so it is never counted); scanned;
+ * a missed OPD day counted as a leave; not required; absent or still to come.
+ */
 export function myStatus(i: MyStatusInput): { status: ClinicMyStatus; late: boolean; minutes: number | null } {
+  if (i.session.status === "cancelled") return { status: "cancelled", late: false, minutes: null };
+  if (i.onLeave) return { status: "on_leave", late: false, minutes: null };
   const late = isLate(i.att?.in_at ?? null, i.session, i.lateMinutes);
   const minutes = minutesPresent(i.att?.in_at ?? null, i.att?.out_at ?? null);
-  if (i.session.status === "cancelled") return { status: "cancelled", late: false, minutes: null };
   const { endsAt, closesAt } = sessionTimes(i.session);
   if (i.att?.in_at) {
     if (i.att.out_at) return { status: late ? "late" : "present", late, minutes };
     // No scan out: flagged once scanning has closed (never an invented out time).
     return { status: i.now > closesAt ? "no_scan_out" : "in", late, minutes: null };
   }
-  if (i.onLeave) return { status: "on_leave", late: false, minutes: null };
+  if (i.missedOpdLeave && i.required) return { status: "on_leave", late: false, minutes: null };
   if (!i.required) return { status: "not_required", late: false, minutes: null };
   return { status: i.now > endsAt ? "absent" : "upcoming", late: false, minutes: null };
 }
 
-const ATTENDED: ClinicMyStatus[] = ["present", "late", "in", "no_scan_out"];
+/* ------------------------------------------------- one way of counting */
 
-/** Counts over the sessions that are required (or were attended), up to now. The percentage is over required sessions only. */
-export function summarize(list: readonly { status: ClinicMyStatus; required: boolean; minutes: number | null }[]): ClinicAttendanceSummary {
-  let required = 0;
-  let attended = 0;
-  let late = 0;
-  let onLeave = 0;
-  let absent = 0;
-  let noScanOut = 0;
-  let minutes = 0;
-  let requiredAttended = 0;
-  for (const x of list) {
-    if (x.status === "cancelled" || x.status === "upcoming") continue;
-    const went = ATTENDED.includes(x.status);
-    if (!x.required && !went && x.status !== "on_leave") continue;
-    if (x.required) required++;
-    if (went) attended++;
-    if (went && x.required) requiredAttended++;
-    if (x.status === "late") late++;
-    if (x.status === "on_leave") onLeave++;
-    if (x.status === "absent") absent++;
-    if (x.status === "no_scan_out") noScanOut++;
-    minutes += x.minutes ?? 0;
+/**
+ * The words people see, everywhere (website, app, admin, student):
+ * Present, Late, On leave, Absent, Left early (approved).
+ */
+export type AttendanceMark = "present" | "late" | "on_leave" | "absent" | "left_early";
+export const MARK_LABEL: Record<AttendanceMark, string> = {
+  present: "Present",
+  late: "Late",
+  on_leave: "On leave",
+  absent: "Absent",
+  left_early: "Left early (approved)",
+};
+
+export type CountInput = {
+  status: ClinicMyStatus;
+  required: boolean;
+  minutes: number | null;
+  late?: boolean;
+  /** Approved "leave early" time for this session, if any. */
+  earlyLeaveAt?: string | null;
+};
+
+export type SessionCount = {
+  mark: AttendanceMark;
+  /** Part of the attendance percentage (both the top and the bottom number). */
+  inPercent: boolean;
+  /** Counts as came (top number) when in the percentage. */
+  came: boolean;
+};
+
+const CAME: readonly ClinicMyStatus[] = ["present", "late", "in", "no_scan_out"];
+
+/**
+ * THE rule for one session, used by every screen and route:
+ *   - not counted at all: cancelled, still to come, not this student's day (null);
+ *   - On leave (approved, or a missed OPD day counted as a leave): left out of the
+ *     percentage completely, adds to the leave count, never an absence;
+ *   - Present / Late / Left early (approved): came, in the percentage when required;
+ *     approved early leave never lowers the percentage and is never an absence;
+ *   - Absent: required, over, no scan, no approved leave (a pending or rejected
+ *     leave does not help).
+ */
+export function countSession(x: CountInput): SessionCount | null {
+  if (x.status === "cancelled" || x.status === "upcoming" || x.status === "not_required") return null;
+  if (x.status === "on_leave") return { mark: "on_leave", inPercent: false, came: false };
+  if (CAME.includes(x.status)) {
+    const mark: AttendanceMark = x.earlyLeaveAt ? "left_early" : x.status === "late" || x.late ? "late" : "present";
+    return { mark, inPercent: x.required, came: true };
   }
-  const due = required - onLeave;
-  const percent = due > 0 ? Math.min(100, Math.round((Math.min(requiredAttended, due) / due) * 100)) : null;
-  return { required, attended, late, onLeave, absent, noScanOut, percent, minutes };
+  // absent
+  return x.required ? { mark: "absent", inPercent: true, came: false } : null;
+}
+
+/** "Present", "Late", "On leave", "Absent", "Left early (approved)", or null when it does not count. */
+export function markOf(x: CountInput): AttendanceMark | null {
+  return countSession(x)?.mark ?? null;
+}
+
+/**
+ * The counts and the percentage, from countSession only.
+ * percent = came / counted, where counted = required sessions that are over,
+ * minus every session on leave. Null when nothing counted yet.
+ */
+export function summarize(list: readonly CountInput[]): ClinicAttendanceSummary {
+  const t = { required: 0, attended: 0, late: 0, onLeave: 0, absent: 0, noScanOut: 0, minutes: 0, counted: 0, countedPresent: 0, leftEarly: 0, present: 0 };
+  for (const x of list) {
+    const c = countSession(x);
+    if (!c) continue;
+    if (x.required) t.required++;
+    if (c.mark === "on_leave") {
+      t.onLeave++;
+      continue;
+    }
+    if (c.came) t.attended++;
+    if (c.inPercent) {
+      t.counted++;
+      if (c.came) t.countedPresent++;
+    }
+    if (c.mark === "present") t.present++;
+    if (c.mark === "late") t.late++;
+    if (c.mark === "left_early") t.leftEarly++;
+    if (c.mark === "absent") t.absent++;
+    // An approved early leave is not a missing scan out.
+    if (x.status === "no_scan_out" && c.mark !== "left_early") t.noScanOut++;
+    t.minutes += x.minutes ?? 0;
+  }
+  const percent = t.counted > 0 ? Math.round((t.countedPresent / t.counted) * 100) : null;
+  return { ...t, percent };
+}
+
+/** The cohort's average percentage: students with a percentage only, test accounts never. */
+export function cohortAverage(rows: readonly { percent: number | null; isTest?: boolean | null }[]): number | null {
+  const pcts = rows.filter((r) => !r.isTest).map((r) => r.percent).filter((p): p is number => p !== null);
+  return pcts.length ? Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length) : null;
 }

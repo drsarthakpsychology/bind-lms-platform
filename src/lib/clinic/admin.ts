@@ -29,7 +29,7 @@ import type {
 } from "@/lib/app-api/contract";
 import { ApiFail } from "@/lib/app-api/respond";
 import { notifyClinic } from "@/lib/notify/clinic";
-import { isOpen, myStatus, sessionTimes } from "./attendance";
+import { isOpen, markOf, myStatus, sessionTimes } from "./attendance";
 import {
   adminCohort,
   assertSandbox,
@@ -42,6 +42,7 @@ import {
   loadBundle,
   loadSettings,
   must,
+  missedOpdSessions,
   myVisits,
   mySessions,
   namesOf,
@@ -313,11 +314,14 @@ function liveRows(b: Bundle, row: SessionRow, people: readonly Person[], now: nu
   }
   const rows: ClinicAttendanceRow[] = [];
   const counts = { expected: 0, in: 0, out: 0, late: 0, onLeave: 0, missing: 0 };
+  const today = todayOf(now);
   for (const p of people) {
     const required = batch ? assigned.has(p.userId) : s.compulsory;
     const att = attBy.get(p.userId) ?? null;
     if (!required && !att && !onLeave.has(p.userId) && batch) continue; // OPD: only the assigned and anyone who came
-    const st = myStatus({ session: s, now, required, att, onLeave: onLeave.has(p.userId), lateMinutes: b.settings.late_minutes });
+    // A past assigned OPD day missed with no approved leave counts as a leave (the same rule as the student's own page).
+    const missedOpd = Boolean(batch && required && !att?.in_at && !onLeave.has(p.userId) && s.date < today && missedOpdSessions(b, p.userId, today).has(s.id));
+    const st = myStatus({ session: s, now, required, att, onLeave: onLeave.has(p.userId), missedOpdLeave: missedOpd, lateMinutes: b.settings.late_minutes });
     if (required) counts.expected++;
     if (att?.in_at) counts.in++;
     if (att?.out_at) counts.out++;
@@ -336,6 +340,8 @@ function liveRows(b: Bundle, row: SessionRow, people: readonly Person[], now: nu
       manual: att?.in_method === "manual" || att?.out_method === "manual",
       note: att?.note ?? null,
       earlyLeaveAt: early.get(p.userId) ?? null,
+      mark: markOf({ status: st.status, required, minutes: st.minutes, late: st.late, earlyLeaveAt: early.get(p.userId) ?? null }),
+      missedOpd: st.status === "on_leave" && missedOpd,
     });
   }
   const order = (r: ClinicAttendanceRow) => (r.inAt ? 1 : r.status === "on_leave" ? 2 : 0);
