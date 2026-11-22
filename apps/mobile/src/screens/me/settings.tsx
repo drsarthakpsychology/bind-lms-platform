@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router, Stack } from "expo-router";
-import { Bell, CircleHelp, FileText, LogOut, Moon, Pencil, ShieldCheck, Smartphone, Trash2, Type, Vibrate } from "lucide-react-native";
+import { Bell, CircleHelp, FileText, LogOut, Moon, ShieldCheck, Smartphone, Trash2, Type, Vibrate } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -199,7 +199,7 @@ export function SettingsScreen() {
   const number = s?.account.mobileNumber ?? me?.mobileNumber ?? null;
   const legal = s?.legal ?? cfg?.legal;
   const prefs = s?.notifications;
-  const noteLine = prefs ? (prefs.push ? [prefs.messages ? "messages" : null, prefs.doubtReplies ? "doubt answers" : null, prefs.achievements ? "badges" : null].filter(Boolean).join(", ") || "On" : "Off on this phone") : "Messages, doubt answers, badges, a reminder";
+  const noteLine = prefs ? (prefs.push ? [prefs.messages ? "messages" : null, prefs.doubtReplies ? "doubt answers" : null, prefs.achievements ? "badges" : null].filter(Boolean).join(", ").replace(/^./, (x) => x.toUpperCase()) || "On" : "Off on this phone") : "Messages, doubt answers, badges, a reminder";
   return (
     <Screen
       testID="settings"
@@ -241,7 +241,7 @@ export function SettingsScreen() {
       </View>
 
       <Group title="This phone">
-        <Row title={s?.device.current?.name ?? "This phone"} icon={<IconPatch icon={Smartphone} area="me" size={36} />} meta={s?.device.enforced ? "VIBHA works on one phone at a time. Signing in on another phone signs this one out." : undefined} trailing={s && s.device.limit !== null ? `${s.device.changesUsed} of ${s.device.limit} changes` : undefined} />
+        <Row title={s?.device.current?.name ?? "This phone"} icon={<IconPatch icon={Smartphone} area="me" size={36} />} meta={[s?.device.enforced ? "VIBHA works on one phone at a time. Signing in on another phone signs this one out." : null, s && s.device.limit !== null ? `Phone changes this month: ${s.device.changesUsed} of ${s.device.limit}.` : null].filter(Boolean).join(" ") || undefined} />
         <PhoneSecurity />
       </Group>
 
@@ -258,7 +258,7 @@ export function SettingsScreen() {
               <Row title="Name" trailing={d.account.name ?? "Not set"} />
               <Row title="Email" meta={d.account.email ?? "Not set"} />
               {d.account.rollNumber ? <Row title="Roll number" trailing={d.account.rollNumber} /> : null}
-              <Row testID="settings-number" title="WhatsApp number" trailing={d.account.mobileNumber ?? "Not given"} icon={<Pencil size={18} color={c.muted} />} onPress={() => setEditing(true)} chevron={false} />
+              <Row testID="settings-number" title="WhatsApp number" trailing={d.account.mobileNumber ?? "Not given"} onPress={() => setEditing(true)} accessibilityLabel={`WhatsApp number, ${d.account.mobileNumber ?? "not given"}. Change it`} />
               <Row title="Account" trailing={d.account.roleLabel} />
             </Group>
           )}
