@@ -71,8 +71,8 @@ export function TeamCode({ code, name, message }: { code: string; name: string; 
         </T>
       </View>
       <Stamp rotate={-2}>
-        <View accessible accessibilityLabel={`Team code ${code.split("").join(" ")}`} style={{ paddingHorizontal: space[3], paddingVertical: space[1], borderRadius: 8, borderWidth: 2, borderColor: c.ink, backgroundColor: c.primary }}>
-          <T style={{ fontFamily: fonts.pixelDigits, fontSize: 20, lineHeight: 26, letterSpacing: 3, color: c.onPrimary }}>{code}</T>
+        <View accessible accessibilityLabel={`Team code ${code.split("").join(" ")}`} style={{ paddingHorizontal: space[3], paddingVertical: space[1], borderRadius: 12, backgroundColor: c.lime }}>
+          <T style={{ fontFamily: fonts.big, fontSize: 20, lineHeight: 26, letterSpacing: 3, color: c.onLime }}>{code}</T>
         </View>
       </Stamp>
       <Button kind="text" full={false} label="Share the code" icon={<Share2 size={16} color={c.link} />} onPress={share} testID="team-share" />
@@ -164,7 +164,7 @@ export function TeamsBlock({ on, teams, createLabel, onCreate, onJoin, onOpen, t
   }
   return (
     <Section title="Team mode">
-      <View style={{ gap: space[4], borderWidth: 1.5, borderColor: c.cardLine, borderRadius: layout.radius, padding: space[4] }}>
+      <View style={{ gap: space[4], backgroundColor: c.card, borderRadius: layout.radiusLg, padding: space[4] }}>
         <Button kind="quiet" label={createLabel} icon={<Users size={18} color={c.ink} />} busy={busy} onPress={onCreate} testID="team-create" />
         {error ? (
           <T v="small" tone="danger" accessibilityLiveRegion="polite">

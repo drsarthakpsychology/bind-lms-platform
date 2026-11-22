@@ -4,12 +4,12 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, EmptyState, RowList, Section, T } from "@/ds";
+import { Button, QuietEmpty, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { play, saveCase, useMove, useTool } from "../api";
-import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
+import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudBar, HudLine, HudWord, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
 import { Story, Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import { ESC_PENALTY_S, ESC_STAGE, TEAM_LIMITS, type EscDoor, type EscResult, type EscRoomCard, type EscTeamView, type RaceRow, type TeamJoin, type TeamListItem } from "../types";
@@ -131,8 +131,8 @@ export function EscapeGame() {
             <RowList>
               {v.opened.map((o, k) => (
                 <View key={k} style={{ paddingVertical: space[3], gap: 2 }}>
-                  <T v="caption" tone="muted">
-                    {ESC_STAGE[o.stage].toUpperCase()}
+                  <T v="label" tone="muted">
+                    {ESC_STAGE[o.stage]}
                   </T>
                   <T v="small">{o.why}</T>
                 </View>
@@ -161,7 +161,7 @@ export function EscapeGame() {
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={Math.min(st.stage, v.doors - 1)} total={v.doors} marks={v.stages.map((_, k) => (k < st.stage ? "ok" : null))} />
-      <HudLine left={`Door ${Math.min(st.stage + (opened ? 0 : 1), v.doors)} of ${v.doors}${v.door ? ` · ${ESC_STAGE[v.door.stage]}` : ""}`} right={<T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20 }}>{mmss(elapsed)}</T>} />
+      <HudLine left={`Door ${Math.min(st.stage + (opened ? 0 : 1), v.doors)} of ${v.doors}${v.door ? ` · ${ESC_STAGE[v.door.stage]}` : ""}`} right={<HudWord accessibilityRole="timer">{mmss(elapsed)}</HudWord>} />
     </View>
   );
   return (
@@ -231,7 +231,7 @@ function Door({ door, disabled, onSubmit }: { door: EscDoor; disabled: boolean; 
           Put them in order, first at the top.
         </T>
         {order.map((pos, k) => (
-          <View key={pos} style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.row, paddingLeft: space[4], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card }}>
+          <View key={pos} style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.row, paddingLeft: space[4], borderRadius: layout.radius, backgroundColor: c.card }}>
             <T v="score" style={{ width: 18 }} num>
               {k + 1}
             </T>
@@ -255,13 +255,13 @@ function Door({ door, disabled, onSubmit }: { door: EscDoor; disabled: boolean; 
   return (
     <View style={{ gap: space[4], alignItems: "center" }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[5] }}>
-        <Pressable accessibilityRole="button" accessibilityLabel="Less" onPress={() => step(-1)} style={{ width: 56, height: 56, borderRadius: 28, borderWidth: 1.5, borderColor: c.cardLine, alignItems: "center", justifyContent: "center" }} testID="escape-minus">
+        <Pressable accessibilityRole="button" accessibilityLabel="Less" onPress={() => step(-1)} style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: c.card, alignItems: "center", justifyContent: "center" }} testID="escape-minus">
           <Minus size={22} color={c.ink} />
         </Pressable>
-        <T style={{ fontFamily: fonts.pixelDigits, fontSize: 44, lineHeight: 52, minWidth: 96, textAlign: "center", color: c.ink }} num accessibilityLiveRegion="polite">
+        <T style={{ fontFamily: fonts.big, fontSize: 44, lineHeight: 52, minWidth: 96, textAlign: "center", color: c.ink }} num accessibilityLiveRegion="polite">
           {num}
         </T>
-        <Pressable accessibilityRole="button" accessibilityLabel="More" onPress={() => step(1)} style={{ width: 56, height: 56, borderRadius: 28, borderWidth: 1.5, borderColor: c.cardLine, alignItems: "center", justifyContent: "center" }} testID="escape-plus">
+        <Pressable accessibilityRole="button" accessibilityLabel="More" onPress={() => step(1)} style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: c.card, alignItems: "center", justifyContent: "center" }} testID="escape-plus">
           <Plus size={22} color={c.ink} />
         </Pressable>
       </View>
@@ -286,7 +286,7 @@ function RaceBoard({ rows }: { rows: RaceRow[] }) {
       <View style={{ gap: 0 }} testID="escape-race">
         {rows.map((r, i) => (
           <View key={r.id} accessible accessibilityLabel={`${i + 1}. ${r.name}${r.me ? ", your team" : ""}: ${r.done ? `out in ${mmss(r.ms)}` : `door ${r.stage + 1}`}`} style={{ minHeight: 44, flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[2], borderRadius: 8, backgroundColor: r.me ? c.successBg : "transparent" }}>
-            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20, width: 24, color: i < 3 ? c.link : c.muted }} num>
+            <T style={{ fontFamily: fonts.big, fontSize: 16, lineHeight: 20, width: 24, color: i < 3 ? c.link : c.muted }} num>
               {String(i + 1)}
             </T>
             <T v="bodyStrong" style={{ flex: 1 }} numberOfLines={1}>
@@ -350,7 +350,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
   if (missing && !view) {
     return (
       <GameFrame title="Escape Room" testID="escape-team-missing">
-        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
+        <QuietEmpty title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
       </GameFrame>
     );
   }
@@ -419,7 +419,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={Math.min(st.stage, room.doors - 1)} total={room.doors} marks={room.stages.map((_, k) => (k < st.stage ? "ok" : null))} />
-      <HudLine left={`Door ${Math.min(stage + 1, room.doors)} of ${room.doors}${room.door ? ` · ${ESC_STAGE[room.door.stage]}` : ""}`} right={<T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20 }} accessibilityRole="timer">{mmss(ms)}</T>} />
+      <HudLine left={`Door ${Math.min(stage + 1, room.doors)} of ${room.doors}${room.door ? ` · ${ESC_STAGE[room.door.stage]}` : ""}`} right={<HudWord accessibilityRole="timer">{mmss(ms)}</HudWord>} />
     </View>
   );
   return (

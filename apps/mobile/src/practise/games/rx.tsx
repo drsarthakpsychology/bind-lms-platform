@@ -127,8 +127,8 @@ export function RxGame() {
   return (
     <GameFrame testID="game-rx" title="Rx Detective" howTo={HOW} score={String(score)} hud={hud} confirmLeave thumb={answered ? <Button label={lives <= 0 || i + 1 >= run.cases.length ? "See my score" : "Next case"} onPress={next} testID="rx-next" /> : undefined}>
       <Swap k={i} style={{ gap: space[4] }}>
-        <T v="caption" tone="muted">
-          {cs.title.toUpperCase()}
+        <T v="label" tone="muted">
+          {cs.title}
         </T>
         {cs.kind === "chain" ? (
           <View style={{ gap: space[1] }}>
@@ -169,8 +169,8 @@ export function RxGame() {
             <StepStrip at={chainAt} total={RX_STEPS.length} marks={stepMarks.map((m) => (m.right ? "ok" : "miss"))} />
             {stepMarks.map((m, k) => (
               <View key={k} style={{ gap: 2 }}>
-                <T v="caption" tone="muted">
-                  {RX_STEPS[k]!.label.toUpperCase()}
+                <T v="label" tone="muted">
+                  {RX_STEPS[k]!.label}
                 </T>
                 <T v="bodyStrong" tone={m.right ? "ink" : "danger"}>
                   {m.right ? m.correct : `${m.chosen}: no. It is ${m.correct}.`}

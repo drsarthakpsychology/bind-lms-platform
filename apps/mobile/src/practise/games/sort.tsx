@@ -165,7 +165,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
                   if (put(card, gi)) haptic.success();
                 } else setOpen(gi);
               }}
-              style={({ pressed }) => ({ width: "48.5%", minHeight: 112, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: target ? 2 : 1.5, borderStyle: target ? "dashed" : "solid", borderColor: ok ? (c.dark ? c.primary : c.ink) : target ? c.accent : c.cardLine, backgroundColor: ok ? c.successBg : pressed ? c.tint : c.card })}
+              style={({ pressed }) => ({ width: "48.5%", minHeight: 112, padding: space[3], gap: space[2], borderRadius: layout.radiusLg, borderWidth: target ? 2 : 0, borderStyle: "dashed", borderColor: c.accent, backgroundColor: ok ? c.lime : pressed ? c.tint : c.card })}
             >
               <View style={{ flexDirection: "row", alignItems: "flex-start", gap: space[1] }}>
                 <T v="small" style={{ flex: 1, fontWeight: "700" }} numberOfLines={3}>
@@ -179,8 +179,8 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
                 ))}
               </View>
               {away ? (
-                <T v="caption" tone="link" testID={`sort-away-${gi}`}>
-                  ONE AWAY
+                <T v="label" tone="link" testID={`sort-away-${gi}`}>
+                  One away
                 </T>
               ) : null}
               {view.thresholds ? (
@@ -204,7 +204,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
                   setSel(sel === top ? null : top);
                 }}
                 testID={`sort-tile-${top}`}
-                style={{ minHeight: 120, padding: space[5], justifyContent: "center", borderRadius: layout.radius, borderWidth: 2, borderColor: sel === top ? c.accent : c.ink, backgroundColor: c.card }}
+                style={{ minHeight: 120, padding: space[5], justifyContent: "center", borderRadius: layout.radiusLg, backgroundColor: sel === top ? c.ink : c.card }}
               >
                 <T v="h3" center>
                   {view.tiles[top]}

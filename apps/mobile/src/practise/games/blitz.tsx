@@ -3,12 +3,12 @@ import * as React from "react";
 import { View } from "react-native";
 import { useReducedMotion } from "react-native-reanimated";
 
-import { ProgressLine, RowList, Section, T } from "@/ds";
+import { Label, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { fonts, space, useTheme } from "@/theme";
 import { play, useMove } from "../api";
-import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen } from "../frame";
+import { EndPanel, EndThumb, GameFrame, HudBar, HudLine, HudWord, MoveError, StartScreen } from "../frame";
 import { Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import { BLITZ_MS, multiplier, type BlitzAnswer, type BlitzFinish, type BlitzPrompt, type BlitzStart } from "../types";
@@ -166,22 +166,21 @@ export function BlitzGame() {
             </T>
           ) : null}
           {misses.length ? (
-            <Section title="What you missed">
-              <RowList>
-                {misses.map((m, i) => {
-                  const why = missWhy(m);
-                  return (
-                    <View key={i} style={{ paddingVertical: space[3], gap: space[1] }}>
-                      <T v="small" tone="muted">
-                        {m.prompt}
-                      </T>
-                      <T v="bodyStrong">{m.answer}</T>
-                      {why ? <T v="small">{why}</T> : null}
-                    </View>
-                  );
-                })}
-              </RowList>
-            </Section>
+            <View style={{ gap: space[2] }}>
+              <Label>What you missed</Label>
+              {misses.map((m, i) => {
+                const why = missWhy(m);
+                return (
+                  <Stone key={i} pad={space[4]} style={{ gap: space[1] }}>
+                    <T v="small" tone="muted">
+                      {m.prompt}
+                    </T>
+                    <T v="bodyStrong">{m.answer}</T>
+                    {why ? <T v="small">{why}</T> : null}
+                  </Stone>
+                );
+              })}
+            </View>
           ) : null}
         </EndPanel>
       </GameFrame>
@@ -192,22 +191,22 @@ export function BlitzGame() {
   const secs = Math.ceil(left / 1000);
   const hud = (
     <View>
-      <ProgressLine value={(left / BLITZ_MS) * 100} height={4} label={`${secs} seconds left`} />
-      <HudLine left={`${run.correct} right · ${secs}s`} right={mult > 1 ? <T style={{ fontFamily: fonts.pixelDigits, color: c.link, fontSize: 16, lineHeight: 20 }} testID="blitz-mult">{`x${mult}`}</T> : undefined} />
+      <HudBar value={(left / BLITZ_MS) * 100} label={`${secs} seconds left`} />
+      <HudLine left={`${run.correct} right · ${secs}s`} right={mult > 1 ? <HudWord testID="blitz-mult">{`x${mult}`}</HudWord> : undefined} />
     </View>
   );
   return (
     <GameFrame testID="game-blitz" title="Blitz" score={String(run.score)} hud={hud} hideHowTo confirmLeave>
       {phase.t === "count" ? (
         <Swap k={phase.n} style={{ alignItems: "center", paddingVertical: space[8] }}>
-          <T style={{ fontFamily: fonts.pixelDigits, fontSize: 96, lineHeight: 104, color: c.ink }} accessibilityLiveRegion="polite">
+          <T style={{ fontFamily: fonts.big, fontSize: 96, lineHeight: 104, letterSpacing: -3, color: c.ink }} accessibilityLiveRegion="polite">
             {phase.n || "Go"}
           </T>
         </Swap>
       ) : q ? (
         <Swap k={q.n} style={{ gap: space[5] }}>
-          <T v="caption" tone="muted">
-            {q.kind === "tf" ? "TRUE OR FALSE" : "PICK ONE"}
+          <T v="label" tone="muted">
+            {q.kind === "tf" ? "True or false" : "Pick one"}
           </T>
           <T v="h2" testID="blitz-prompt">
             {q.prompt}

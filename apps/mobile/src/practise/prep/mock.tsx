@@ -5,7 +5,7 @@ import { AppState, Pressable, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { day } from "@/admin/format";
-import { Button, Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
+import { Button, Chips, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Burst, ProgressFill, Swap } from "@/motion";
 import { PixelLoader, useSlow } from "@/moments/parts";
@@ -14,7 +14,7 @@ import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { moveError, play, useRead } from "../api";
 import type { PrepMockResult, PrepMocks } from "../contract";
-import { EndPanel, FrameError, FrameLoading, GameFrame, MoveError } from "../frame";
+import { EndPanel, FrameError, FrameLoading, GameFrame, MoveError, loadLine } from "../frame";
 import { Stagger } from "../fx";
 import { AnswerRow } from "../parts";
 import { reactions } from "../reactions";
@@ -84,16 +84,16 @@ export function MocksScreen() {
   return (
     <Screen testID="mocks" title="Mock tests" lead="Timed papers, mostly questions you have not seen." onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {(q.isError && q.data === undefined) ? (
-        <LoadError error={q.error} what="the mock tests" onRetry={() => void q.refetch()} />
+        <QuietEmpty testID="load-error" title="That didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : !q.data ? (
         <RowsSkeleton rows={5} />
       ) : !full ? (
-        <EmptyState mood="soon" title="No mock tests yet" body="New papers are on their way." />
+        <QuietEmpty title="No mock tests yet" body="New papers are on their way." />
       ) : (
         <Stagger gap={space[6]}>
-          <View style={{ gap: space[4], borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[4], backgroundColor: c.card }}>
-            <T v="caption" tone="muted">
-              FULL PAPER
+          <View style={{ gap: space[4], borderRadius: layout.radiusLg, padding: space[4], backgroundColor: c.card }}>
+            <T v="label" tone="muted">
+              Full paper
             </T>
             <T v="h2">{full.title}</T>
             <Facts spec={full} />
@@ -122,7 +122,7 @@ export function MocksScreen() {
                     meta={day(h.submittedAt, true) || undefined}
                     icon={<History size={20} color={c.muted} />}
                     trailing={
-                      <T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20, color: c.ink }} num>
+                      <T style={{ fontFamily: fonts.big, fontSize: 16, lineHeight: 20, color: c.ink }} num>
                         {`${h.score ?? 0}/${h.max ?? 0}`}
                       </T>
                     }
@@ -315,7 +315,7 @@ export function MockExamScreen() {
   if (!spec) {
     return (
       <GameFrame title="Mock test">
-        <EmptyState mood="missing" title="That mock doesn't exist" body="Go back and pick one from the list." />
+        <QuietEmpty title="That mock doesn't exist" body="Go back and pick one from the list." />
       </GameFrame>
     );
   }
@@ -370,16 +370,16 @@ export function MockExamScreen() {
   const hud = (
     <View style={{ gap: space[2] }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
-        <View accessible accessibilityRole="timer" accessibilityLabel={`Time left ${clock(left)}`} style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: 40, paddingHorizontal: space[3], borderRadius: 10, borderWidth: 2, borderColor: c.ink, backgroundColor: warn ? c.alertBg : c.card }} testID="mock-clock">
-          {warn ? <TriangleAlert size={16} color={c.alertFg} /> : <Clock size={16} color={c.ink} />}
-          <T style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 22, color: warn ? c.alertFg : c.ink }} num>
+        <View accessible accessibilityRole="timer" accessibilityLabel={`Time left ${clock(left)}`} style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: 40, paddingHorizontal: space[3], borderRadius: 20, backgroundColor: warn ? c.missBg : c.fieldTint }} testID="mock-clock">
+          {warn ? <TriangleAlert size={16} color={c.ink} /> : <Clock size={16} color={c.onField} />}
+          <T style={{ fontFamily: fonts.bold, fontSize: 18, lineHeight: 22, color: warn ? c.ink : c.onField }} num>
             {clock(left)}
           </T>
         </View>
         <View style={{ flex: 1 }} />
-        <Pressable accessibilityRole="button" accessibilityLabel="All questions" onPress={() => setPalette(true)} testID="mock-palette" style={({ pressed }) => ({ minHeight: 40, flexDirection: "row", alignItems: "center", gap: space[1], paddingHorizontal: space[3], borderRadius: 10, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: pressed ? c.tint : "transparent" })}>
-          <Grid3x3 size={16} color={c.ink} />
-          <T v="small" num style={{ fontFamily: fonts.semibold }}>{`${counts.answered}/${flat.length}`}</T>
+        <Pressable accessibilityRole="button" accessibilityLabel="All questions" onPress={() => setPalette(true)} testID="mock-palette" style={({ pressed }) => ({ minHeight: 40, flexDirection: "row", alignItems: "center", gap: space[1], paddingHorizontal: space[3], borderRadius: 20, backgroundColor: c.fieldTint, opacity: pressed ? 0.8 : 1 })}>
+          <Grid3x3 size={16} color={c.onField} />
+          <T v="small" num tone="onField" style={{ fontFamily: fonts.semibold }}>{`${counts.answered}/${flat.length}`}</T>
         </Pressable>
         <Pressable accessibilityRole="button" accessibilityLabel="Submit" onPress={() => setConfirm(true)} testID="mock-submit-open" style={({ pressed }) => ({ minHeight: 40, flexDirection: "row", alignItems: "center", gap: space[1], paddingHorizontal: space[3], borderRadius: 10, backgroundColor: c.ink, opacity: pressed ? 0.85 : 1 })}>
           <Send size={15} color={c.bg} />
@@ -416,7 +416,7 @@ export function MockExamScreen() {
       {q && cur ? (
         <Swap k={q.id} dir={dir > 0 ? 1 : -1} style={{ gap: space[4] }}>
           <T v="caption" tone="muted" num>
-            {`${paper.sections.length > 1 ? `${cur.title.toUpperCase()} · ` : ""}QUESTION ${at + 1} OF ${flat.length}`}
+            {`${paper.sections.length > 1 ? `${cur.title} · ` : ""}Question ${at + 1} of ${flat.length}`}
           </T>
           <QuestionBody q={q} />
           <View style={{ gap: space[3] }} accessibilityRole="radiogroup">
@@ -437,8 +437,8 @@ export function MockExamScreen() {
             return (
               <View key={`${s.title}-${si}`} style={{ gap: space[2] }}>
                 {paper.sections.length > 1 ? (
-                  <T v="caption" tone="muted">
-                    {s.title.toUpperCase()}
+                  <T v="label" tone="muted">
+                    {s.title}
                   </T>
                 ) : null}
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
@@ -529,8 +529,8 @@ export function MockResultBody({ r, fresh }: { r: MockResult; fresh?: boolean })
       <View>
         <EndPanel kicker="Your score" score={String(r.score)} scoreOf={`/ ${r.max}`} right={r.right} total={Math.max(1, r.right + r.wrong + r.blank)} outcome={fresh ? (pct >= 0.6 ? "won" : pct >= 0.35 ? "mixed" : "lost") : undefined} line={r.late ? "Handed in after the time was up." : undefined} stats={[{ label: "Right", value: String(r.right) }, { label: "Wrong", value: String(r.wrong) }, { label: "Blank", value: String(r.blank) }, ...(r.accuracy !== null ? [{ label: "Accuracy", value: `${Math.round(r.accuracy * 100)}%` }] : [])]}>
           <View style={{ gap: space[1] }}>
-            <T v="caption" tone="muted">
-              AMONG VIBHA STUDENTS
+            <T v="label" tone="muted">
+              Among VIBHA students
             </T>
             <T v="bodyStrong" testID="mock-standing">
               {standing}
@@ -673,13 +673,13 @@ export function MockResultScreen() {
   return (
     <Screen testID="mock-saved" title={d?.title ?? "Mock results"} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {(q.isError && q.data === undefined) ? (
-        <LoadError error={q.error} what="this mock" onRetry={() => void q.refetch()} />
+        <QuietEmpty testID="load-error" title="That didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : !d ? (
         <RowsSkeleton rows={6} />
       ) : d.result ? (
         <MockResultBody r={d.result as unknown as MockResult} />
       ) : (
-        <EmptyState mood="empty" title="This mock wasn't submitted" body="Start a fresh one from the mocks page." action={{ label: "Mock tests", onPress: () => router.replace("/prep/mock") }} />
+        <QuietEmpty title="This mock wasn't submitted" body="Start a fresh one from the mocks page." action={{ label: "Mock tests", onPress: () => router.replace("/prep/mock") }} />
       )}
     </Screen>
   );

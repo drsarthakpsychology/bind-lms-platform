@@ -7,7 +7,7 @@ import { Swap } from "@/motion";
 import { fonts, space, useTheme } from "@/theme";
 import { moveError, useTool } from "../api";
 import { diagnosisName } from "../data";
-import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
+import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudBar, HudLine, HudWord, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
 import { Bump } from "../fx";
 import { AnswerRow, Story } from "../parts";
 import { useReactions } from "../reactions";
@@ -67,14 +67,12 @@ function Board({ how, round, total, marks, score, opp, left, reveal, waiting, bu
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={round.n} total={total} marks={marks} />
-      {!reveal ? <ProgressLine value={(left / ROUND_MS) * 100} height={4} label={`${Math.ceil(left / 1000)} seconds left`} /> : null}
+      {!reveal ? <HudBar value={(left / ROUND_MS) * 100} label={`${Math.ceil(left / 1000)} seconds left`} /> : null}
       <HudLine
         left={`Round ${round.n + 1} of ${total} · You : ${opp}`}
         right={
           <Bump value={`${score.you}:${score.opp}`}>
-            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20, color: c.ink }} testID="duel-score">
-              {`${score.you} : ${score.opp}`}
-            </T>
+            <HudWord testID="duel-score">{`${score.you} : ${score.opp}`}</HudWord>
           </Bump>
         }
       />

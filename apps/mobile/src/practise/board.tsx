@@ -3,7 +3,8 @@ import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, LoadError, RowList, RowsSkeleton, Screen, StillTrying, T } from "@/ds";
+import { Button, Chips, Field, QuietEmpty, RowList, RowsSkeleton, Screen, StillTrying, T } from "@/ds";
+import { loadLine } from "./frame";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { isSoon, readQuery } from "./api";
 import type { Leaderboard, LeaderboardAdmin, LeaderboardRow } from "./contract";
@@ -79,20 +80,20 @@ export function BoardScreen() {
         </T>
       ) : null}
       {(q.isError && q.data === undefined) ? (
-        isSoon(q.error) ? <SoonState web="/leaderboard" /> : <LoadError error={q.error} onRetry={() => void q.refetch()} />
+        isSoon(q.error) ? <SoonState web="/leaderboard" /> : <QuietEmpty testID="load-error" title="That didn't load" body={loadLine(q.error)} action={{ label: "Try again", onPress: () => void q.refetch() }} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>
           <RowsSkeleton rows={8} />
           <StillTrying failed={q.failureCount > 0} />
         </View>
       ) : !d.rows.length ? (
-        admin ? <EmptyState mood="empty" title={admin.q ? "No student matches" : "No students here yet"} body={admin.q ? `Nobody called "${admin.q}" on this board.` : "Add students to this cohort and they show up here."} /> : <EmptyState mood="empty" title="Nobody on the board yet" body="Play this week and your name shows up here." />
+        admin ? <QuietEmpty title={admin.q ? "No student matches" : "No students here yet"} body={admin.q ? `Nobody called "${admin.q}" on this board.` : "Add students to this cohort and they show up here."} /> : <QuietEmpty title="Nobody on the board yet" body="Play this week and your name shows up here." />
       ) : (
         <Stagger>
         <RowList>
           {d.rows.map((r) => (
             <View key={`${r.rank}-${r.name}`} accessible accessibilityLabel={`${r.rank}. ${r.name}${r.me ? " (you)" : ""}, ${r.points} points`} style={{ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[4], marginHorizontal: -space[2], paddingHorizontal: space[2], borderRadius: 8, backgroundColor: r.me ? c.tint : "transparent" }} testID={r.me ? "board-you" : undefined}>
-              <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, minWidth: 40, flexShrink: 0, color: r.rank <= 3 ? c.link : c.muted }} num>
+              <T numberOfLines={1} style={{ fontFamily: fonts.big, fontSize: 18, lineHeight: 24, minWidth: 40, flexShrink: 0, color: r.rank <= 3 ? c.link : c.muted }} num>
                 {r.rank}
               </T>
               {admin ? (
@@ -109,7 +110,7 @@ export function BoardScreen() {
                   {r.me ? `${r.name} (you)` : r.name}
                 </T>
               )}
-              <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, flexShrink: 0, color: c.ink }} num>
+              <T numberOfLines={1} style={{ fontFamily: fonts.big, fontSize: 18, lineHeight: 24, flexShrink: 0, color: c.ink }} num>
                 {r.points.toLocaleString("en-IN")}
               </T>
             </View>

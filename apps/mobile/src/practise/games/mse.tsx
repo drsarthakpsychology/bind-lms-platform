@@ -136,8 +136,8 @@ export function MseGame() {
         <View style={{ gap: space[3] }}>
           {ex.lines.map(([w, t], k) => (
             <View key={k} style={{ flexDirection: "row", gap: space[3] }}>
-              <T v="caption" tone="muted" style={{ width: 56, paddingTop: 4 }}>
-                {(WHO[w] ?? w).toUpperCase()}
+              <T v="label" tone="muted" style={{ width: 56, paddingTop: 4 }}>
+                {(WHO[w] ?? w)}
               </T>
               <T v="reading" style={{ flex: 1 }}>
                 {mark(t)}
@@ -145,8 +145,8 @@ export function MseGame() {
             </View>
           ))}
           <View style={{ borderLeftWidth: 3, borderColor: c.hairline, paddingLeft: space[3] }}>
-            <T v="caption" tone="muted">
-              WHAT YOU SEE
+            <T v="label" tone="muted">
+              What you see
             </T>
             <T v="reading">{mark(ex.note)}</T>
           </View>
@@ -171,7 +171,7 @@ export function MseGame() {
                   setDomain(d.id);
                 }}
                 testID={`mse-domain-${d.id}`}
-                style={({ pressed }) => ({ minHeight: layout.target, paddingHorizontal: space[4], justifyContent: "center", borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: pressed ? c.tint : "transparent" })}
+                style={({ pressed }) => ({ minHeight: layout.target, paddingHorizontal: space[4], justifyContent: "center", borderRadius: layout.radius, backgroundColor: pressed ? c.tint : c.card })}
               >
                 <T v="small">{d.short}</T>
               </Pressable>
