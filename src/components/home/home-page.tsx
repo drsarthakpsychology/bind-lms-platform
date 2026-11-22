@@ -36,6 +36,7 @@ import {
   TICKER,
   WEEK,
   WHO_FOR,
+  CERT_NOTE,
 } from "./content";
 import { archivo, pixel, pixelDigits } from "./fonts";
 import { INSTRUMENTS } from "@/lib/free/tests";
@@ -101,7 +102,7 @@ function Hero() {
             </h1>
             <Reveal delay={0.12} y={12}>
               <p className={s.heroLede}>
-                A 16-week clinical training programme where you see real patients, write real treatment plans, and get
+                A clinical training programme where you see real patients, write real treatment plans, and get
                 corrected by psychiatrists. Led by Dr. Sarthak Dave, MBBS, MD (Psychiatry).
               </p>
             </Reveal>
@@ -202,7 +203,7 @@ function WhatYouGet() {
     <section id="programme" className={`${s.section} ${s.white}`}>
       <div className={s.wrap}>
         <div className={s.headWithArt}>
-          <SectionHead tag="What you get" title="Everything you get" accent="in 16 weeks." />
+          <SectionHead tag="What you get" title="Everything you get" accent="in the programme." />
           <Person who="bun" className={s.headArt} />
         </div>
         <div className={s.getGrid}>
@@ -228,7 +229,7 @@ function WhatYouGet() {
         </div>
         <div className={s.subHead}>
           <span className={`${s.tag} ${s.tagBlue}`}>Also yours</span>
-          <h3 className={s.h3}>What you keep after the 16 weeks.</h3>
+          <h3 className={s.h3}>What you keep after the programme.</h3>
         </div>
         <ul className={`${s.beyond} ${s.beyondTight}`}>
           {BEYOND.map((b, i) => (
@@ -255,6 +256,7 @@ function WhatYouGet() {
           <div>
             <span className={s.pixLabel}>Your certificate</span>
             <p>{CERTIFICATE}</p>
+            <p className={s.certNote}>{CERT_NOTE}</p>
           </div>
           <Parallax className={s.seal} speed={0} rotate={60}>
             <Art className={s.fill} html={starSvg(16, 66, 98, "#1d44d8", "#111111")} />
@@ -708,7 +710,7 @@ function Curriculum() {
       </div>
       <div className={s.wrap}>
         <div className={s.subHead}>
-          <span className={`${s.tag} ${s.tagLime}`}>16 weeks</span>
+          <span className={`${s.tag} ${s.tagLime}`}>Full programme</span>
           <h3 className={s.h3}>How the weeks unfold.</h3>
           <p className={s.ledeSmall}>One module a week, in order. Topics may shift slightly as the cohort runs.</p>
         </div>
@@ -913,7 +915,7 @@ function Faq() {
               </summary>
               <p>
                 {f.a}
-                {f.q === "Is there a refund policy?" ? (
+                {f.q === "Can I get a refund?" ? (
                   <>
                     {" "}
                     <Link href="/policies/refund" className={s.textLinkInk}>

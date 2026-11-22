@@ -1,14 +1,14 @@
 ---
 title: Attendance and Session Completion Policy
 slug: attendance
-lastUpdated: "[EFFECTIVE_DATE]"
+lastUpdated: "2026-11-22"
 summary: The live-attendance and session-completion rules for certification.
 order: 11
 ---
 
 ## 11.1 The requirement
 
-The cohort runs over **three months**, with live sessions held on weekends.
+Each track runs from **a few weeks to three months or more**, depending on the track you choose, with live sessions held mainly on weekends.
 
 To be eligible for certification, a learner must:
 
@@ -20,7 +20,7 @@ All three conditions must be met. Attending 50% of sessions alone is not suffici
 
 ## 11.2 Why it is structured this way
 
-We recognise that many of our learners are working professionals or full-time students, and that attending every live session over three months is not always possible. The 50% live requirement exists so that you have genuine contact with faculty and peers. The completion requirement exists so that no learner is certified having skipped material.
+We recognise that many of our learners are working professionals or full-time students, and that attending every live session across a whole track is not always possible. The 50% live requirement exists so that you have genuine contact with faculty and peers. The completion requirement exists so that no learner is certified having skipped material.
 
 ## 11.3 What counts as live attendance
 

@@ -22,7 +22,7 @@ export const LEGAL = {
   /** GST: not registered, GSTIN deliberately absent everywhere. */
   gstin: null as string | null,
   /** Course duration used across policies. */
-  courseDuration: "three months",
+  courseDuration: "from a few weeks to three months or more, depending on the track",
   /** Live-attendance requirement for certification. */
   liveAttendanceRequirement: "50%",
   /**

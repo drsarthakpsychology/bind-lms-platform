@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { decideHost } from "@/lib/seo/canonical-host";
 
 /**
  * Next.js 16 renamed `middleware.ts` to `proxy.ts` and narrowed its job to a
@@ -30,13 +31,19 @@ import { NextResponse, type NextRequest } from "next/server";
 const MARKDOWN_ACCEPTED = /text\/markdown|application\/markdown/;
 const LANDING_MARKDOWN = `# VIBHA School of Psychology
 
-A clinical psychology training programme.
+A practical clinical psychology training programme and supervised
+internship in Ahmedabad and online.
 
 ## The school
 
-VIBHA closes the gap between describing therapy and practising it: real
-cases, simulated patients, timed assessments, and a debrief after every
-session. Cohort One is by invitation.
+Students interview real patients in person under a psychiatrist's
+supervision, write case sheets and treatment plans, and join live online
+discussions on weekends. Tracks run from a few weeks to three months or more.
+Anyone can join; no psychology degree is needed. In-person sessions are open
+to every student. Fees are not refundable.
+
+This is skills training by a private provider. It is not an RCI-recognised
+qualification, a degree, or a licence to practise as a clinical psychologist.
 
 ## Programme
 
@@ -64,6 +71,22 @@ session. Cohort One is by invitation.
 `;
 
 export async function proxy(request: NextRequest) {
+  // One public address: other hosts that serve this site (the old Vercel
+  // address, www) redirect to https://vibhapsychology.com; previews and the
+  // API on those hosts are never indexed.
+  const host = decideHost({
+    host: request.headers.get("x-forwarded-host") ?? request.headers.get("host"),
+    pathname: request.nextUrl.pathname,
+    search: request.nextUrl.search,
+    method: request.method,
+  });
+  if (host.action === "redirect") return NextResponse.redirect(host.location, 308);
+  const response = await route(request);
+  if (host.action !== "none") response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return response;
+}
+
+async function route(request: NextRequest): Promise<NextResponse> {
   const accept = request.headers.get("accept") ?? "";
   const pathname = request.nextUrl.pathname;
   // Expose the pathname to Server Components (via headers()) so the dashboard
