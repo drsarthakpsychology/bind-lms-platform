@@ -1,5 +1,6 @@
 import "server-only";
 import { isHiddenAccount } from "@/lib/people/hidden";
+import { isRemovedAccount } from "@/lib/people/removal-rules";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { pageAll } from "@/lib/db/counts";
@@ -37,7 +38,7 @@ export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => 
   type Total = { user_id: string; platform_seconds: number; watched_seconds: number; lessons_done: number };
   // Paged: a function's rows obey the same 1000-row limit as a table's.
   const [profiles, learn, totalRowsRes, cohorts] = await Promise.all([
-    pageAll<{ id: string; name: string | null; email: string | null; role: string; is_test: boolean | null }>(() => admin.from("profiles").select("id, name, email, role, is_test").eq("role", "student").order("id")),
+    pageAll<{ id: string; name: string | null; email: string | null; role: string; is_test: boolean | null; status: string | null; block_reason: string | null }>(() => admin.from("profiles").select("id, name, email, role, is_test, status, block_reason").eq("role", "student").order("id")),
     pageAll<{ user_id: string; xp: number | null; state: unknown }>(() => admin.from("learn_progress").select("user_id, xp, state").order("user_id")),
     pageAll<Total>(() => admin.rpc("standing_totals").order("user_id")),
     loadCohortMap(),
@@ -56,7 +57,7 @@ export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => 
     weekXp.set(l.user_id as string, Object.entries(st.history).reduce((a, [d, x]) => (d >= weekStart ? a + Number(x) : a), 0));
   }
   const rows = (profiles ?? [])
-    .filter((p) => !isHiddenAccount(p))
+    .filter((p) => !isHiddenAccount(p) && !isRemovedAccount(p))
     .map((p) => {
       const id = p.id as string;
       const t = totals.get(id);

@@ -19,6 +19,7 @@ import { CertLine } from "./certificates";
 import { FromRow } from "@/motion";
 import { StudentSections } from "./access";
 import { StudentLearning } from "./learning";
+import { RemoveBlock } from "./remove";
 
 const TABS = [
   { id: "overview" as const, name: "Overview" },
@@ -127,7 +128,7 @@ function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
         <Locked><SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /></Locked>
       </Block>
       <StudentSections id={r.id} name={r.name} />
-      {/* Removing someone from VIBHA (builder r2remove) goes here, last on the Access tab. */}
+      <RemoveBlock id={r.id} name={r.name} />
       <ConfirmSheet open={lockOpen} onClose={() => setLockOpen(false)} title={`Lock ${r.name}?`} body="They are signed out and cannot sign in until you unlock them." confirm="Lock account" danger busy={busy === "lock"} reason={{ label: "Reason (only admins see it)" }} onConfirm={(reason) => void run("lock", () => adminCalls.lock(r.id, reason || undefined), { done: `${r.name} is locked` }).then(() => setLockOpen(false))} testID="confirm-lock" />
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>

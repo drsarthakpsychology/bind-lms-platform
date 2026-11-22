@@ -1,5 +1,6 @@
 import "server-only";
 import { isHiddenAccount } from "@/lib/people/hidden";
+import { isRemovedAccount } from "@/lib/people/removal-rules";
 import { createAdminClient } from "@/lib/supabase/server";
 import { addDays, istToday, levelFor, liveStreak, normalise } from "./engine";
 import { domainMastery } from "./adaptive";
@@ -37,11 +38,11 @@ export async function loadBoard(): Promise<BoardRow[]> {
   const admin = createAdminClient();
   const [{ data: rows }, { data: profiles }] = await Promise.all([
     admin.from("learn_progress").select("user_id, xp, state").limit(2000),
-    admin.from("profiles").select("id, name, email, role, is_test").eq("role", "student").limit(5000),
+    admin.from("profiles").select("id, name, email, role, is_test, status, block_reason").eq("role", "student").limit(5000),
   ]);
   const today = istToday();
   const weekStart = addDays(today, -6);
-  const prof = new Map((profiles ?? []).filter((p) => !isHiddenAccount(p)).map((p) => [p.id as string, p]));
+  const prof = new Map((profiles ?? []).filter((p) => !isHiddenAccount(p) && !isRemovedAccount(p)).map((p) => [p.id as string, p]));
   return (rows ?? [])
     .filter((r) => prof.has(r.user_id as string))
     .map((r) => {

@@ -2,8 +2,9 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { KeyRound, Loader2, Lock, MoreHorizontal, Trash2, Unlock } from "lucide-react";
+import { KeyRound, Loader2, Lock, MoreHorizontal, Trash2, Unlock, UserX } from "lucide-react";
 import { deleteStudent, resetStudentPassword, setAccountStatus } from "./actions";
+import { RemovePersonSheet } from "@/components/admin/remove-person";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,11 +23,20 @@ export function StudentActions({
   userId,
   isTest,
   status,
+  name = "this person",
+  confirmWord = "",
+  removed = false,
 }: {
   userId: string;
   isTest: boolean;
   status: "active" | "blocked";
+  name?: string;
+  /** The word the server asks for to delete (their name, or email). */
+  confirmWord?: string;
+  /** Removed from VIBHA (can be restored). */
+  removed?: boolean;
 }) {
+  const [removeOpen, setRemoveOpen] = useState(false);
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [open, setOpen] = useState(false);
@@ -105,11 +115,11 @@ export function StudentActions({
         open={open}
         onOpenChange={(next) => !next && close()}
         title={
-          mode === "delete" ? "Delete this student?" : mode === "block" ? "Block access" : "Student actions"
+          mode === "delete" ? "Delete this test account?" : mode === "block" ? "Block access" : "Student actions"
         }
         description={
           mode === "delete"
-            ? "This permanently deletes the account and all of its progress, submissions, and files. This can't be undone."
+            ? "Test accounts only. This permanently deletes the account and everything in it. It cannot be undone."
             : mode === "block"
               ? "The account is cut off immediately, even if they're logged in right now. The note is for you only; the student just sees \"your access is paused\"."
               : undefined
@@ -119,7 +129,7 @@ export function StudentActions({
             <div className="flex flex-col gap-2">
               <Button type="button" variant="destructive" onClick={handleDelete} disabled={isPending} className="w-full">
                 {isPending && <Loader2 className="size-4 animate-spin" aria-hidden />}
-                Delete student
+                Delete test account
               </Button>
               <Button type="button" variant="outline" onClick={() => setMode("menu")} className="w-full">
                 Cancel
@@ -192,18 +202,33 @@ export function StudentActions({
             )}
             <button
               type="button"
+              data-testid="student-remove"
               onClick={() => {
-                setError(null);
-                setMode("delete");
+                close();
+                setRemoveOpen(true);
               }}
               className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium text-status-alert-fg transition-colors hover:bg-accent"
             >
-              <Trash2 className="size-4" aria-hidden />
-              Delete student
+              <UserX className="size-4" aria-hidden />
+              {removed ? "Restore or delete" : "Remove from VIBHA"}
             </button>
+            {isTest ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setError(null);
+                  setMode("delete");
+                }}
+                className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium text-status-alert-fg transition-colors hover:bg-accent"
+              >
+                <Trash2 className="size-4" aria-hidden />
+                Delete test account
+              </button>
+            ) : null}
           </div>
         ) : null}
       </MobileBottomSheet>
+      <RemovePersonSheet target={{ id: userId, name, confirmWord, state: removed ? "removed" : status === "blocked" ? "locked" : "active" }} open={removeOpen} onOpenChange={setRemoveOpen} />
     </>
   );
 }

@@ -6,6 +6,9 @@ import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { generateCredential, deriveName, issueSetupLink } from "@/lib/auth/roster";
 import { canResetToTestPassword } from "@/lib/auth/test-account";
+import { isHiddenAccount } from "@/lib/people/hidden";
+import { removalOf } from "@/lib/people/removal-rules";
+import { loadRemovedIdsFrom, type RemovalDb } from "@/lib/people/removal";
 
 export type CreateStudentState = {
   error: string | null;
@@ -106,14 +109,18 @@ export async function createStudent(
 }
 
 /**
- * Delete a student account (auth user + profile + their rows). One-click
- * cleanup for test accounts. Admin only.
+ * Wipe a TEST account completely (auth user + profile + their rows). One-click
+ * cleanup for test accounts only: for a real person it would also erase their
+ * certificates, so real people go through Remove from VIBHA
+ * (src/lib/people/removal.ts) instead. Super Admin only.
  */
 export async function deleteStudent(userId: string): Promise<{ error: string | null }> {
   try {
     if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
     const admin = createAdminClient();
+    const { data: target } = await admin.from("profiles").select("email, is_test").eq("id", userId).maybeSingle();
+    if (!target || !isHiddenAccount(target)) return { error: "Only test accounts can be wiped here. Use Remove from VIBHA for a real person." };
     const { error } = await admin.auth.admin.deleteUser(userId);
     if (error) return { error: "Could not delete the account." };
 
@@ -157,6 +164,12 @@ export async function setAccountStatus(
   if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const admin = createAdminClient();
+  // A removed or deleted person is not a plain lock: unlocking here would skip
+  // turning their sign-in back on, and locking would wipe the removal mark.
+  const { data: cur } = await admin.from("profiles").select("status, block_reason").eq("id", userId).maybeSingle();
+  const gone = removalOf(cur);
+  if (gone === "deleted") return { error: "This account was deleted. It cannot be locked or unlocked." };
+  if (gone === "removed") return { error: "This person was removed from VIBHA. Use Restore access in Remove people." };
   const { error } = await admin
     .from("profiles")
     .update({
@@ -183,14 +196,17 @@ export async function setAllStudentsStatus(
   if (!(await requireSuperAdmin())) return { error: "Not authorized.", updated: 0 };
 
   const admin = createAdminClient();
-  const { data, error } = await admin
+  // Removed and deleted people stay as they are (a whole-programme unlock must not bring them back).
+  const gone = [...(await loadRemovedIdsFrom(admin as unknown as RemovalDb))];
+  let q = admin
     .from("profiles")
     .update({
       status,
       block_reason: status === "blocked" ? "Admin lock: whole programme" : null,
     })
-    .eq("role", "student")
-    .select("id");
+    .eq("role", "student");
+  if (gone.length) q = q.not("id", "in", `(${gone.join(",")})`);
+  const { data, error } = await q.select("id");
 
   if (error) return { error: "Could not update accounts.", updated: 0 };
 

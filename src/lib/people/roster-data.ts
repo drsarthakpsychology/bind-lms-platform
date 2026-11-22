@@ -5,6 +5,7 @@ import { requestMemo } from "@/lib/app-api/context";
 import { loadActivity } from "@/lib/analytics/activity";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { presenceOf, type Presence } from "@/lib/people/presence";
+import { removalOf } from "./removal-rules";
 import { accountStatus, NEEDS_ACTION, type AccountStatus } from "./account-status";
 import { attentionFlags, type AttentionFlag } from "./attention";
 import { isTestCohort } from "@/lib/test-mode/rules";
@@ -53,7 +54,7 @@ async function readRoster(): Promise<Roster> {
   const admin = createAdminClient();
   const [activity, profilesRes, cohortsRes, membersRes, linksRes, grantsRes, invitesRes, tokensRes, detailsRes, lessonsRes, failedRes] = await Promise.all([
     loadActivity(),
-    admin.from("profiles").select("id, email, name, role, roll_number, mobile_number, scope, status, expires_at, active_session_token, is_test, created_at").eq("role", "student").limit(5000),
+    admin.from("profiles").select("id, email, name, role, roll_number, mobile_number, scope, status, block_reason, expires_at, active_session_token, is_test, created_at").eq("role", "student").limit(5000),
     admin.from("cohorts").select("id, name, status, course_id, starts_on, ends_on").order("created_at", { ascending: true }),
     admin.from("cohort_members").select("cohort_id, user_id").limit(20000),
     admin.from("lesson_cohorts").select("cohort_id, lesson_id").limit(50000),
@@ -106,7 +107,8 @@ async function readRoster(): Promise<Roster> {
 
   const now = Date.now();
   const rows: RosterRow[] = (profilesRes.data ?? [])
-    .filter((p) => !isHiddenAccount(p))
+    // Deleted accounts are gone from the roster (their records stay, nameless).
+    .filter((p) => !isHiddenAccount(p) && removalOf(p) !== "deleted")
     .map((p) => {
       const id = p.id as string;
       const email = String(p.email ?? "");
@@ -119,6 +121,7 @@ async function readRoster(): Promise<Roster> {
       const account = accountStatus(
         {
           blocked: p.status === "blocked",
+          removed: removalOf(p) === "removed",
           expiresAt: (p.expires_at as string | null) ?? null,
           role: p.role as string,
           hasSignedIn: Boolean(p.active_session_token),

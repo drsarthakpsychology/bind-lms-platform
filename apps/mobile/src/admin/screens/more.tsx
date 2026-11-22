@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { go } from "@/api/prefetch";
 import { router } from "expo-router";
-import { Award, BellRing, CircleHelp, ShieldCheck, ClipboardList, FileCheck, Flag, FlaskConical, Gauge, GraduationCap, KeyRound, LogOut, MailWarning, Megaphone, MessageCircleQuestion, Radar, Settings, ToggleRight, Trophy, Users } from "lucide-react-native";
+import { Award, BellRing, CircleHelp, ShieldCheck, ClipboardList, FileCheck, Flag, FlaskConical, Gauge, GraduationCap, KeyRound, LogOut, MailWarning, Megaphone, MessageCircleQuestion, Radar, Settings, ToggleRight, Trophy, UserX, Users } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -77,7 +77,7 @@ export function AdminMoreScreen() {
         <Panel rows>
           {canWrite ? <Row title="Admins" meta="Who can use the admin side, and what they may change" icon={<IconDot icon={ShieldCheck} />} onPress={() => router.push("/admin/admins")} testID="more-admins" /> : null}
           <Row title="Add students" meta="Give new students an account and a cohort" icon={<IconDot icon={Users} />} onPress={() => router.push("/admin/students/new")} testID="more-add-students" />
-          {/* Removing people from VIBHA (builder r2remove) goes here. */}
+          <Row title="Remove people" meta="Take someone off VIBHA, or bring them back" icon={<IconDot icon={UserX} />} onPress={() => router.push("/admin/remove")} testID="more-remove" />
         </Panel>
       </Group>
       <Group title="Controls">

@@ -29,6 +29,7 @@ import { cn } from "@/lib/utils";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
 import { toneOf } from "../../_v2/kit";
+import { confirmWord, removalOf } from "@/lib/people/removal-rules";
 import { AccessV2, ActivityV2, CredentialsV2, MessagesV2, OverviewV2, StudentProfileV2 } from "../../_v2/student-profile";
 
 export const metadata: Metadata = { title: "Student" };
@@ -352,7 +353,7 @@ async function AccessTab({ id, email, canWrite, person, r, isTest, v2 }: { id: s
             <>
               <LoginQuick email={email} name={r?.name || email.split("@")[0]} />
               <LockToggle userId={id} status={status} />
-              <StudentActions userId={id} isTest={isTest} status={status} />
+              <StudentActions userId={id} isTest={isTest} status={status} name={r?.name || email} confirmWord={confirmWord({ name: (person.profile.name as string | null) ?? null, email })} removed={removalOf(person.profile as { status?: string | null; block_reason?: string | null }) === "removed"} />
             </>
           ) : undefined
         }
@@ -391,7 +392,7 @@ async function AccessTab({ id, email, canWrite, person, r, isTest, v2 }: { id: s
             <div className="flex flex-wrap items-center gap-2">
               <LoginQuick email={email} name={r?.name || email.split("@")[0]} />
               <LockToggle userId={id} status={status} />
-              <StudentActions userId={id} isTest={isTest} status={status} />
+              <StudentActions userId={id} isTest={isTest} status={status} name={r?.name || email} confirmWord={confirmWord({ name: (person.profile.name as string | null) ?? null, email })} removed={removalOf(person.profile as { status?: string | null; block_reason?: string | null }) === "removed"} />
             </div>
           ) : null}
           <p className="text-caption text-muted-foreground">Lock = can&apos;t sign in until unlocked. A new login link replaces older ones.</p>

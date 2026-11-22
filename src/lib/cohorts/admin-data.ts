@@ -122,7 +122,7 @@ export async function loadCohort(id: string) {
 /** One person's access and details, for the admin "access" page. */
 export async function loadPersonAccess(userId: string) {
   const admin = createAdminClient();
-  const { data: profile } = await admin.from("profiles").select("id, email, name, role, scope, status, mobile_number, created_at").eq("id", userId).maybeSingle();
+  const { data: profile } = await admin.from("profiles").select("id, email, name, role, scope, status, block_reason, mobile_number, created_at").eq("id", userId).maybeSingle();
   if (!profile) return null;
   const [{ data: members }, { data: grants }, { data: details }] = await Promise.all([
     admin.from("cohort_members").select("cohort_id").eq("user_id", userId),
