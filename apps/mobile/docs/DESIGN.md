@@ -217,11 +217,17 @@ would be.
 
 ## 8. Navigation
 
-Student tabs: **Today, Learn, Practise, Notes, Me**. Route files keep their
-old names so every link still works: Today is `/home`, Notes is `/library`.
+Student tabs: **Today, Learn, Study, Practise, Me**. Route files keep their
+old names so every link still works: Today is `/home`, Study is `/library`
+(`/library?side=modules` or `?side=notes`; `/study` redirects to the Modules
+side). Study opens on the side used last (`src/nav/study.ts`) and is hidden
+for accounts without modules.
 
 - Today: greeting, the now pill with Scan in, Keep going, quick actions, After that.
-- Learn: lectures, modules, hand-ins. A shelf of courses.
+- Learn: pick up, this week's lectures, hand-ins, doubts, and a card to Study.
+- Study (`src/screens/study/tab.tsx`): two big switches, Modules | Notes, with a
+  sliding lime pill (UI thread) and a crossfade. Modules: carry on, Your map,
+  every module. Notes: the hub below.
 - Practise: cases, games, exam prep.
 - Notes: a hub (`src/screens/notes/hub.tsx`) for Revision notes (`/notes`),
   Quick reference (`/reference`) and Medicines (`/medicines`, the old library
@@ -348,8 +354,8 @@ without marking them.
 
 | Screen | What is designed | What it needs |
 |---|---|---|
-| Notes tab (`src/screens/notes/hub.tsx`) | The search pill opens Quick reference | One search across notes, reference and medicines |
-| Notes tab | Three shelves that link to three old lists | One merged library with filters (Criteria, Disorders, Medicines, Terms) |
+| Study tab, Notes side (`src/screens/notes/hub.tsx`) | Search is the top bar's | One search across notes, reference and medicines |
+| Study tab, Notes side | Three shelves that link to three old lists | One merged library with filters (Criteria, Disorders, Medicines, Terms) |
 | Today (`src/screens/home/home.tsx`) | "Your day" still uses the old clinic block (`src/clinic/today.tsx`) | Restyle with the clinic screens; no new data |
 | Attendance (`/clinic/scan`) | Kit parts only (`ChoicePebbles`, `HoldButton`, `Flood` in `/kit`) | The two-step scan contract (identify, then confirm IN or OUT) |
 | Today, quick actions | Scan is always shown | Hide or dim Scan on days with no clinic, from the clinic day data |
