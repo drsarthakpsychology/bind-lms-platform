@@ -10,6 +10,7 @@ import { Row, RowsSkeleton, T } from "@/ds";
 import { config } from "@/lib/config";
 import { space, useTheme } from "@/theme";
 import { useAdminHome } from "../api";
+import { useFailedEmails, useWallReports } from "../live";
 import type { AdminHome } from "../contract";
 import { todoHref } from "../safe";
 import { attentionGroups } from "../format";
@@ -52,6 +53,8 @@ function openTodo(web: string) {
  */
 export function AdminHomeView({ data }: { data: AdminHome }) {
   const clinic = useAdminClinicToday().data;
+  const failed = useFailedEmails().data?.items.length ?? 0;
+  const reports = useWallReports().data?.length ?? 0;
   const groups = attentionGroups(data.needsLook);
   const names = (rows: { name: string }[]) => (rows.length <= 2 ? rows.map((r) => r.name).join(" and ") : `${rows[0]!.name}, ${rows[1]!.name} and ${rows.length - 2} more`);
   const toGrade = data.today.submissionsToGrade;
@@ -64,10 +67,12 @@ export function AdminHomeView({ data }: { data: AdminHome }) {
   ];
   if (clinic?.pendingLeaves) todo.push({ key: "leave", count: clinic.pendingLeaves, label: "Leave requests", detail: "Students asked for leave. Approve or turn down.", urgent: false, go: () => router.push("/admin/clinic/leaves") });
   if (clinic?.logsDue) todo.push({ key: "logs", count: clinic.logsDue, label: "Case logs due", detail: "OPD days with no cases logged yet.", urgent: false, go: () => router.push("/admin/clinic/trackers") });
+  if (reports && !todo.some((t) => t.key.includes("wall"))) todo.push({ key: "wall", count: reports, label: "Wall reports", detail: "Posts students reported. Read and mark handled.", urgent: false, go: () => router.push("/admin/wall-reports") });
+  if (failed && !todo.some((t) => t.key.includes("email") && t.label.toLowerCase().includes("fail"))) todo.push({ key: "failed-emails", count: failed, label: "Emails that did not arrive", detail: "Send them again, or clear them.", urgent: false, go: () => router.push("/admin/failed-emails") });
   const total = todo.reduce((n, t) => n + t.count, 0);
   return (
     <>
-      <Group title="Needs attention" count={total || undefined} testID="needs-look">
+      <Group title="To do today" count={total || undefined} testID="needs-look">
         {todo.length ? (
           <Panel rows>
             {todo.map((t) => (
@@ -76,9 +81,9 @@ export function AdminHomeView({ data }: { data: AdminHome }) {
           </Panel>
         ) : (
           <Panel>
-            <T v="bodyStrong">All clear</T>
+            <T v="bodyStrong">All clear today</T>
             <T v="small" tone="muted">
-              Nothing needs you right now.
+              Nothing needs you right now. New doubts, leave requests and hand-ins show here.
             </T>
           </Panel>
         )}
@@ -99,7 +104,7 @@ export function AdminHomeView({ data }: { data: AdminHome }) {
             icon={<Dot tone={data.live.length ? "ok" : "quiet"} />}
             onPress={() => router.push(data.live.length ? "/admin/activity?view=live" : "/admin/activity")}
           />
-          <Row testID="home-insights" title="Learning insights" meta="What the class finds hard, and who has gone quiet" onPress={() => router.push("/admin/insights")} />
+          <Row testID="home-insights" title="Learning" meta="Who is behind, and what the class finds hard" onPress={() => router.push("/admin/teaching")} />
         </Panel>
       </Group>
       {data.cohorts.length ? (

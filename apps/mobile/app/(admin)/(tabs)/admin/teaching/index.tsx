@@ -1,1 +1,1 @@
-export { TeachingScreen as default } from "@/admin/screens/teaching";
+export { LearningScreen as default } from "@/admin/screens/learning";

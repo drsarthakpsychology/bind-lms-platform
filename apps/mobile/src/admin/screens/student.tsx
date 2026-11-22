@@ -17,11 +17,12 @@ import { openCompose } from "../nav";
 import { useAdminRole } from "../role";
 import { CertLine } from "./certificates";
 import { FromRow } from "@/motion";
-import { StudentRecord, StudentSections } from "./access";
+import { StudentSections } from "./access";
+import { StudentLearning } from "./learning";
 
 const TABS = [
   { id: "overview" as const, name: "Overview" },
-  { id: "record" as const, name: "Record" },
+  { id: "record" as const, name: "Learning" },
   { id: "access" as const, name: "Access" },
   { id: "activity" as const, name: "Activity" },
   { id: "credentials" as const, name: "Credentials" },
@@ -125,7 +126,8 @@ function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
         {phone ? <Row title={phone.name} meta={`${phone.changesUsed} of ${phone.limit} changes used this month${phone.nextChangeAt ? ` · next free ${day(phone.nextChangeAt, true)}` : ""}`} testID="access-phone-now" /> : <Quiet>Not signed in to the app yet.</Quiet>}
         <Locked><SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /></Locked>
       </Block>
-      <StudentSections name={r.name} />
+      <StudentSections id={r.id} name={r.name} />
+      {/* Removing someone from VIBHA (builder r2remove) goes here, last on the Access tab. */}
       <ConfirmSheet open={lockOpen} onClose={() => setLockOpen(false)} title={`Lock ${r.name}?`} body="They are signed out and cannot sign in until you unlock them." confirm="Lock account" danger busy={busy === "lock"} reason={{ label: "Reason (only admins see it)" }} onConfirm={(reason) => void run("lock", () => adminCalls.lock(r.id, reason || undefined), { done: `${r.name} is locked` }).then(() => setLockOpen(false))} testID="confirm-lock" />
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>
@@ -270,7 +272,7 @@ export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentR
       </Notice>
       <ScrollTabs tabs={TABS} value={tab} onChange={onTab} />
       <TabSwap tabs={TABS} value={tab} gap={space[5]}>
-        {tab === "overview" ? <Overview r={r} d={d} /> : tab === "record" ? <StudentRecord name={r.name} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+        {tab === "overview" ? <Overview r={r} d={d} /> : tab === "record" ? <StudentLearning id={r.id} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
       </TabSwap>
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>

@@ -166,6 +166,10 @@ export function todoHref(web: string): { app: string } | { web: string } {
   const q = { get: (k: string) => (params[k] ? encodeURIComponent(params[k]!) : null) };
   if (path === "/admin/inbox") return { app: "/admin/messages" };
   if (path === "/admin/emails" && q.get("folder") === "inbox") return { app: "/admin/messages" };
+  if (path === "/admin/emails" && q.get("folder") === "failed") return { app: "/admin/failed-emails" };
+  if (path === "/admin/wall-reports") return { app: "/admin/wall-reports" };
+  if (path === "/admin/flags") return { app: "/admin/switches" };
+  if (path === "/admin/learning") return { app: "/admin/teaching" };
   if (path === "/admin/people") return { app: `/admin/people${q.get("view") ? `?view=${q.get("view")}` : ""}` };
   if (path === "/admin/submissions") return { app: "/admin/review" };
   if (path === "/admin/activity") return { app: `/admin/activity${q.get("view") ? `?view=${q.get("view")}` : ""}` };

@@ -1,4 +1,3 @@
-import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { openLink } from "@/lib/open";
 import { FileText, Mic } from "lucide-react-native";
@@ -12,7 +11,7 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useRefreshAdmin, useSignOffs, useSubmissions } from "../api";
 import type { SignOff, Submission } from "../extra";
 import { ago, day } from "../format";
-import { ConfirmSheet, Facts, Loaded, Notice, ScrollTabs, Status, TabSwap } from "../kit";
+import { ConfirmSheet, Facts, Loaded, Notice, Status } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 
@@ -195,28 +194,24 @@ function SignOffs() {
   );
 }
 
-/** Review: hand-ins to grade and supervision sign-offs. */
+/**
+ * Assignments to mark: work students handed in. Supervision sign-offs are
+ * not shown: that feature is switched off on the website. When it opens,
+ * bring back SignOffs below as a second tab.
+ */
 export function AdminReviewScreen() {
-  const params = useLocalSearchParams<{ tab?: string }>();
-  const [tab, setTab] = React.useState<"subs" | "signoffs">(params.tab === "signoffs" ? "signoffs" : "subs");
   const subs = useSubmissions("pending");
-  const so = useSignOffs();
   const { refresh, refreshing } = useRefreshAdmin();
-  const n = (x: number | undefined) => (x ? ` ${x}` : "");
+  const n = subs.data?.pending ?? 0;
   return (
-    <Screen title="Review" testID="admin-review" gap={space[5]} onRefresh={refresh} refreshing={refreshing}>
-      <ScrollTabs
-        tabs={[
-          { id: "subs" as const, name: `Hand-ins${n(subs.data?.pending)}` },
-          { id: "signoffs" as const, name: `Sign-offs${n(so.data?.items.length)}` },
-        ]}
-        value={tab}
-        onChange={setTab}
-      />
-      <TabSwap tabs={[{ id: "subs" as const }, { id: "signoffs" as const }]} value={tab} gap={space[5]}>
-        {tab === "subs" ? <Submissions /> : <SignOffs />}
-      </TabSwap>
+    <Screen title="Assignments to mark" lead={subs.data ? (n ? `${n} waiting for you` : "Nothing waiting") : "Work students handed in"} testID="admin-review" gap={space[5]} onRefresh={refresh} refreshing={refreshing}>
+      <T v="small" tone="muted">
+        Give a mark and feedback, or approve it as it is. The student gets a notice.
+      </T>
+      <Submissions />
     </Screen>
   );
 }
 
+/** Kept for when supervision opens on the website (see above). */
+export const SupervisionSignOffs = SignOffs;
