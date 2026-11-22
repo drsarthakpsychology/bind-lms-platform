@@ -8,6 +8,7 @@
  * expired one is "Expired"; then how far the person got with logging in.
  */
 export type AccountStatus =
+  | "removed"
   | "locked"
   | "expired"
   | "active"
@@ -20,6 +21,8 @@ export type AccountStatus =
 export type AccountFacts = {
   /** profiles.status === "blocked" */
   blocked?: boolean;
+  /** Removed from VIBHA (src/lib/people/removal-rules.ts): can be restored. */
+  removed?: boolean;
   /** profiles.expires_at (ISO) */
   expiresAt?: string | null;
   role?: string | null;
@@ -37,6 +40,7 @@ export type AccountFacts = {
 };
 
 export const ACCOUNT_LABEL: Record<AccountStatus, string> = {
+  removed: "Removed from VIBHA",
   locked: "Locked",
   expired: "Access ended",
   active: "Active",
@@ -49,6 +53,7 @@ export const ACCOUNT_LABEL: Record<AccountStatus, string> = {
 
 /** What the admin should do next, in plain words (null = nothing). */
 export const ACCOUNT_NEXT: Record<AccountStatus, string | null> = {
+  removed: "Restore them from Remove people if they should come back.",
   locked: "Unlock when they should get back in.",
   expired: "Extend access if they should continue.",
   active: null,
@@ -61,6 +66,7 @@ export const ACCOUNT_NEXT: Record<AccountStatus, string | null> = {
 
 /** Chip tone per status (maps to Badge variants in the design system). */
 export const ACCOUNT_TONE: Record<AccountStatus, "published" | "destructive" | "pending" | "outline"> = {
+  removed: "destructive",
   locked: "destructive",
   expired: "destructive",
   active: "published",
@@ -72,6 +78,7 @@ export const ACCOUNT_TONE: Record<AccountStatus, "published" | "destructive" | "
 };
 
 export function accountStatus(f: AccountFacts, now = Date.now()): AccountStatus {
+  if (f.removed) return "removed";
   if (f.blocked) return "locked";
   if (f.expiresAt && f.role !== "alumni" && new Date(f.expiresAt).getTime() <= now) return "expired";
   if (f.hasSignedIn || f.lastSeen) return "active";

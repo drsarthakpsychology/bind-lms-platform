@@ -11,6 +11,6 @@ export const POST = appRoute<{ id: string }>({ auth: "superAdmin" }, async ({ us
   if (!uuid.safeParse(params.id).success) throw new ApiFail("not_found");
   await limitWrite(`app:lock:${user.profile.id}`, 60);
   const r = await setAccountStatus(params.id, "active");
-  if (r.error) throw new ApiFail(r.error === "Not authorized." ? "forbidden" : "server_error", r.error);
+  if (r.error) throw new ApiFail(r.error === "Not authorized." ? "forbidden" : /removed from VIBHA|was deleted/.test(r.error) ? "conflict" : "server_error", r.error);
   return { blocked: false };
 });

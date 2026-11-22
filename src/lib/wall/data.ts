@@ -1,6 +1,6 @@
 import "server-only";
 import { createClient } from "@/lib/supabase/server";
-import { loadHiddenIds } from "@/lib/people/hidden-ids";
+import { loadStudentHiddenIds } from "@/lib/people/hidden-ids";
 import { currentTestScope } from "@/lib/test-mode/server";
 import { canSeeAuthor } from "@/lib/test-mode/rules";
 
@@ -47,7 +47,7 @@ export async function loadWall(userId?: string | null): Promise<WallPostData[]> 
     .limit(50);
 
   // Test mode: a test student's posts and replies show only to itself and its own admin.
-  const [hidden, scope] = await Promise.all([loadHiddenIds().catch(() => new Set<string>()), currentTestScope()]);
+  const [hidden, scope] = await Promise.all([loadStudentHiddenIds(), currentTestScope()]);
   const seen = (row: Row) => canSeeAuthor(String(row.author_id ?? ""), userId ?? null, scope, hidden);
   const shown = ((posts ?? []) as Row[]).filter(seen);
   const postIds = shown.map((p) => p.id as string);

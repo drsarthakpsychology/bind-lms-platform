@@ -1,6 +1,7 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { isHiddenAccount } from "@/lib/people/hidden";
+import { isRemovedAccount } from "@/lib/people/removal-rules";
 import { normalise } from "@/lib/learn/engine";
 import { displayName } from "@/lib/learn/leaderboard";
 import { loadCohortMap } from "@/lib/standing/cohort-map";
@@ -32,16 +33,16 @@ export type Student = {
 /** Every visible student (test and robot accounts are left out). */
 export async function loadStudents(admin: Admin = createAdminClient()): Promise<Student[]> {
   let rows: Record<string, unknown>[] = [];
-  const full = await admin.from("profiles").select("id, name, email, role, is_test, alias, title, look").eq("role", "student").limit(5000);
+  const full = await admin.from("profiles").select("id, name, email, role, is_test, status, block_reason, alias, title, look").eq("role", "student").limit(5000);
   if (!full.error) rows = (full.data ?? []) as Record<string, unknown>[];
   else {
     // The alias/title/look columns aren't there yet.
-    const basic = await admin.from("profiles").select("id, name, email, role, is_test").eq("role", "student").limit(5000);
+    const basic = await admin.from("profiles").select("id, name, email, role, is_test, status, block_reason").eq("role", "student").limit(5000);
     rows = (basic.data ?? []) as Record<string, unknown>[];
   }
   const cohorts = await loadCohortMap().catch(() => new Map<string, string[]>());
   return rows
-    .filter((p) => !isHiddenAccount(p as { email?: string | null; is_test?: boolean | null }))
+    .filter((p) => !isHiddenAccount(p as { email?: string | null; is_test?: boolean | null }) && !isRemovedAccount(p as { status?: string | null; block_reason?: string | null }))
     .map((p) => {
       const email = String(p.email ?? "");
       const name = (p.name as string | null) ?? null;

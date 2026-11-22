@@ -1,5 +1,6 @@
 import "server-only";
 import { isHiddenAccount } from "@/lib/people/hidden";
+import { isRemovedAccount } from "@/lib/people/removal-rules";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
@@ -34,7 +35,7 @@ export type StandingRow = {
 export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => {
   const admin = createAdminClient();
   const [{ data: profiles }, { data: learn }, totalsRes, cohorts] = await Promise.all([
-    admin.from("profiles").select("id, name, email, role, is_test").eq("role", "student").limit(5000),
+    admin.from("profiles").select("id, name, email, role, is_test, status, block_reason").eq("role", "student").limit(5000),
     admin.from("learn_progress").select("user_id, xp, state").limit(5000),
     admin.rpc("standing_totals"),
     loadCohortMap(),
@@ -53,7 +54,7 @@ export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => 
     weekXp.set(l.user_id as string, Object.entries(st.history).reduce((a, [d, x]) => (d >= weekStart ? a + Number(x) : a), 0));
   }
   const rows = (profiles ?? [])
-    .filter((p) => !isHiddenAccount(p))
+    .filter((p) => !isHiddenAccount(p) && !isRemovedAccount(p))
     .map((p) => {
       const id = p.id as string;
       const t = totals.get(id);

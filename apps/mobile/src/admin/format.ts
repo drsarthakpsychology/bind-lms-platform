@@ -8,6 +8,7 @@ export type Tone = "ok" | "info" | "warn" | "alert" | "quiet";
 
 /** The website's ACCOUNT_LABEL (src/lib/people/account-status.ts). */
 export const ACCOUNT_LABEL: Record<string, string> = {
+  removed: "Removed from VIBHA",
   locked: "Locked",
   expired: "Access ended",
   active: "Active",
@@ -18,6 +19,7 @@ export const ACCOUNT_LABEL: Record<string, string> = {
   "not-invited": "Not invited yet",
 };
 export const ACCOUNT_TONE: Record<string, Tone> = {
+  removed: "alert",
   locked: "alert",
   expired: "quiet",
   active: "ok",
@@ -29,6 +31,7 @@ export const ACCOUNT_TONE: Record<string, Tone> = {
 };
 /** The website's ACCOUNT_NEXT: what to do next, in plain words. */
 export const ACCOUNT_NEXT: Record<string, string | null> = {
+  removed: "Restore them from Remove people if they should come back.",
   locked: "Unlock when they should get back in.",
   expired: "Extend access if they should continue.",
   active: null,
@@ -190,6 +193,8 @@ export function studentsCsv(rows: AdminStudentRow[]): string {
 
 /** The one next step for a student, as on the website's profile. */
 export function nextStep(r: AdminStudentRow): { label: string; why: string; action: "unlock" | "login-link" | "message" | "phone" | null } {
+  // Removed people come back only through Restore access (it also turns their sign-in back on).
+  if (r.account === "removed") return { label: "Removed from VIBHA", why: ACCOUNT_NEXT.removed!, action: null };
   if (r.blocked || r.account === "locked") return { label: "Unlock", why: ACCOUNT_NEXT.locked!, action: "unlock" };
   if (r.account === "link-expired" || r.account === "email-failed" || r.account === "not-invited" || r.flags.includes("login")) return { label: "Send a login link", why: ACCOUNT_NEXT[r.account] ?? "Their login is stuck.", action: "login-link" };
   if (r.account === "set-up" || r.flags.includes("never-seen")) return { label: "Send a nudge", why: "They have not come in yet.", action: "message" };

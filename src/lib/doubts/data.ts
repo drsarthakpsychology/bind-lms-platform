@@ -2,13 +2,13 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
 import { lastReplyBy, type LastReplyBy } from "./last-reply";
-import { loadHiddenIds } from "@/lib/people/hidden-ids";
+import { loadStudentHiddenIds } from "@/lib/people/hidden-ids";
 import { currentTestScope } from "@/lib/test-mode/server";
 import { canSeeAuthor } from "@/lib/test-mode/rules";
 
 /** Test mode: a test student's posts show only to itself and its own admin in test mode. */
 async function authorFilter(viewerId: string): Promise<(authorId: string) => boolean> {
-  const [hidden, scope] = await Promise.all([loadHiddenIds().catch(() => new Set<string>()), currentTestScope()]);
+  const [hidden, scope] = await Promise.all([loadStudentHiddenIds(), currentTestScope()]);
   return (authorId) => canSeeAuthor(authorId, viewerId, scope, hidden);
 }
 

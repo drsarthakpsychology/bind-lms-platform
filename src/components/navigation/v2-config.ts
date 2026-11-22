@@ -237,6 +237,7 @@ export const ADMIN_MORE_GROUPS: HubGroup[] = [
       { href: "/admin/cohorts", label: "Cohorts", icon: "users" },
       { href: "/admin/clinic", label: "Clinic", icon: "calendar" },
       { href: "/admin/people", label: "People", icon: "radar" },
+      { href: "/admin/remove", label: "Remove people", icon: "userX" },
     ],
   },
   {
