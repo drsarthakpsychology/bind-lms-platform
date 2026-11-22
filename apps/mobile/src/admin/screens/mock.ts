@@ -138,18 +138,6 @@ export const PRACTICE_SETS: PracticeSet[] = [
   { id: "p-mock-1", title: "Timed mock 1", kind: "Exam practice", attempts: 64, score: 62, hardest: "Statistics: reading a table", questions: [kq("p3.q1", "In a table of 200 people, 50 improved. What share improved?", ["10%", "25%", "50%", "75%"], 1, "50 out of 200 is one in four.", 71, 2)] },
 ];
 
-/* ------------------------------------------------------------ leaderboard */
-
-export type BoardRow = { id: string; rank: number; name: string; cohort: string; points: number; games: number; streak: number; change: number };
-const NAMES = ["Aarav Shah", "Diya Patel", "Kabir Mehta", "Isha Rao", "Meera Joshi", "Rohan Desai", "Tanvi Kulkarni", "Vivaan Gupta", "Anaya Nair", "Arjun Iyer", "Saanvi Reddy", "Reyansh Kapoor", "Myra Bose", "Advait Menon", "Kiara Sethi", "Dhruv Malhotra", "Navya Pillai", "Ishaan Verma", "Riya Chawla", "Aditya Bhatt", "Pari Saxena", "Yash Trivedi", "Zoya Khan", "Neil Fernandes"];
-export const BOARD: BoardRow[] = NAMES.map((name, i) => ({ id: `u${i + 1}`, rank: i + 1, name, cohort: i % 3 === 0 ? "Evening batch" : "Morning batch", points: 2480 - i * 87 - (i % 4) * 11, games: 42 - i, streak: Math.max(0, 19 - i), change: [2, 0, -1, 1, 0, 3, -2, 0][i % 8] ?? 0 }));
-export const BOARD_KINDS = [
-  { id: "week", name: "This week" },
-  { id: "all", name: "All time" },
-  { id: "games", name: "Games" },
-  { id: "practice", name: "Practice" },
-] as const;
-
 /* ------------------------------------------------------------ wall reports */
 
 export type WallReport = { id: string; post: string; author: string; authorId: string; reportedBy: string; reason: string; when: string; state: "open" | "kept" | "removed" };

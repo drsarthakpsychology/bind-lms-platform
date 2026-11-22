@@ -49,11 +49,13 @@ type State = {
   pushToken: string | null;
   /** Set to make the next signed-in call answer device_replaced (tests). */
   replaced: boolean;
+  /** Test mode, switched on from the admin side (PUT /test-mode). */
+  testMode: boolean;
   log: { method: string; path: string; body?: unknown; /** ms since page start (speed checks) */ at?: number }[];
 };
 
 function fresh(): State {
-  return { scenario: "default", delayMs: 0, read: new Set(), doubts: structuredCloneSafe(fx.doubts), watched: {}, completed: new Set(), prefs: { ...fx.prefs }, learn: structuredCloneSafe(fx.learnState), pushToken: null, replaced: false, log: [] };
+  return { scenario: "default", delayMs: 0, read: new Set(), doubts: structuredCloneSafe(fx.doubts), watched: {}, completed: new Set(), prefs: { ...fx.prefs }, learn: structuredCloneSafe(fx.learnState), pushToken: null, replaced: false, testMode: false, log: [] };
 }
 function structuredCloneSafe<T>(v: T): T {
   return JSON.parse(JSON.stringify(v)) as T;
@@ -110,7 +112,10 @@ function tokensFor(kind: string): C.AuthTokens {
 function meFor(kind: string): C.Me {
   const me = kind === "lecture" ? fx.lectureOnly : kind === "admin" ? fx.admin : kind === "viewadmin" ? { ...fx.admin, id: "u-viewadmin", email: "viewadmin@example.com", name: "Riya Sharma", role: "view_admin" as const, watermark: { name: "Riya Sharma", rollNumber: null, text: "Riya Sharma" } } : fx.student;
   const unread = state.scenario === "empty" || state.scenario === "new" ? 0 : fx.notifications.filter((n) => !n.readAt && !state.read.has(n.id)).length;
-  return { ...me, unreadNotifications: kind === "admin" || kind === "viewadmin" ? 0 : unread };
+  // The hidden test student (test mode, "Open as test student").
+  if (kind === "teststudent") return { ...fx.student, id: "u-test-student", name: "Test student", email: "test-student@example.com", unreadNotifications: unread, testMode: { as: "student" } };
+  const testMode = kind === "admin" && state.testMode ? { as: "admin" as const } : null;
+  return { ...me, unreadNotifications: kind === "admin" || kind === "viewadmin" ? 0 : unread, testMode };
 }
 function kindOf(req: RawRequest): string | null {
   const m = /^Bearer mock\.(\w+)\.access$/.exec(req.headers.Authorization ?? "");
@@ -201,7 +206,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
 
   if (state.scenario === "slow") return new Promise<RawResponse>(() => undefined);
   if (state.scenario === "error") return fail(500, "server_error", "Something went wrong on our side. Try again in a minute.");
-  const practise = practiseMock?.practiseRoute(req.method, path, req.body, kind);
+  const practise = practiseMock?.practiseRoute(req.method, req.path, req.body, kind);
   if (practise) return practise;
 
   // Schedule, attendance, leave and OPD (src/clinic/mock.ts).
@@ -379,6 +384,14 @@ async function route(req: RawRequest): Promise<RawResponse> {
     const me = meFor(kind);
     return ok<C.Settings>({ account: { email: me.email, name: me.name, roleLabel: me.role === "admin" ? "Admin" : me.role === "view_admin" ? "View Admin" : me.scope === "lectures_only" ? "Student (lectures)" : "Student", rollNumber: me.rollNumber, mobileNumber: me.mobileNumber }, device: fx.device, notifications: state.prefs, support: fx.config.support, legal: fx.config.legal, app: { minSupportedVersion: "1.0.0", latestVersion: "1.0.0" } });
   }
+
+  /* ------------------------------------------------------- test mode */
+  if (kind === "admin" && is("PUT", "/test-mode")) {
+    state.testMode = body.on === true;
+    return ok<C.TestModeState>({ ready: true, as: state.testMode ? "admin" : null, active: state.testMode, hasTestStudent: true });
+  }
+  if (kind === "admin" && is("POST", "/test-mode/reset")) return state.testMode ? ok<C.TestModeResetResult>({ reset: true, cleared: 3 }) : fail(409, "conflict", "Turn test mode on first.");
+  if (kind === "admin" && is("POST", "/test-mode/session")) return state.testMode ? ok<C.TestModeSessionResult>({ tokens: tokensFor("teststudent"), me: meFor("teststudent"), device: fx.device }) : fail(409, "conflict", "Turn test mode on first.");
 
   /* ------------------------- not in the contract yet (src/api/extra.ts) */
   if (is("POST", "/me/deletion-request")) return ok<X.DeletionRequestResult>({ received: true, at: new Date().toISOString() });

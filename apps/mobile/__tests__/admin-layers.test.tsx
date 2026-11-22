@@ -127,9 +127,12 @@ describe("as the Super Admin", () => {
     expect(screen.getByTestId("failed-fe1")).toBeTruthy();
     await render(<InsightsScreen />);
     expect(screen.getByText("Hardest topics")).toBeTruthy();
+    // The leaderboard reads the real board: every student with full names and cohorts, a page at a time.
     await render(<AdminLeaderboardScreen />);
-    await fireEvent.press(screen.getByTestId("board-u1"));
-    expect(router.push).toHaveBeenCalledWith("/student/u1");
+    expect(await screen.findByTestId("board-row-0")).toBeTruthy();
+    expect(screen.getByText("Page 1 of 2")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("board-next"));
+    expect(await screen.findByText("Page 2 of 2")).toBeTruthy();
   });
 });
 
