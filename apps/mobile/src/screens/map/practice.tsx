@@ -184,7 +184,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
             </T>
           )}
         </View>
-        <ResultSheet testID="map" open={checked && !done} right={ok} title={ok ? "Yes, that fits" : "Not quite"} why={why} action={{ label: i + 1 === total ? "See how you did" : "Next", onPress: next }} />
+        <ResultSheet testID="verdict" open={checked && !done} right={ok} title={ok ? "Yes, that fits" : "Not quite"} why={why} action={{ label: i + 1 === total ? "See how you did" : "Next", onPress: next }} />
       </Layer>
       {allRight ? <Confetti fire={1} /> : null}
       {done ? <EndReaction right={right} total={total} /> : null}
