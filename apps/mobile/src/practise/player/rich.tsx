@@ -6,7 +6,6 @@ import { Label, Stone, T } from "@/ds";
 import { Swap } from "@/motion";
 import { space } from "@/theme";
 import { EndPanel, EndThumb, GameFrame, HudLine, StepStrip } from "../frame";
-import { useReactions } from "../reactions";
 import { sampleCase } from "./mock";
 import { CaseStone, GradeChip } from "./parts";
 import { useStepPlay, type StepResult } from "./step";
@@ -33,7 +32,6 @@ export function RichCaseScreen() {
 }
 
 function RichRun({ cs, again }: { cs: KeyedCase; again: () => void }) {
-  const react = useReactions();
   const [at, setAt] = React.useState(0);
   const [results, setResults] = React.useState<StepResult[]>([]);
   const total = cs.steps.length;
@@ -48,7 +46,6 @@ function RichRun({ cs, again }: { cs: KeyedCase; again: () => void }) {
     check: () => cs.keys[step.id] ?? null,
     onDone: (r) => {
       setResults((x) => [...x, r]);
-      react.answer(r.outcome === "right");
     },
     onNext: () => setAt((a) => a + 1),
   });
@@ -57,7 +54,7 @@ function RichRun({ cs, again }: { cs: KeyedCase; again: () => void }) {
     const hints = results.reduce((a, r) => a + r.hints, 0);
     return (
       <GameFrame testID="rich-end" title={cs.title} thumb={<EndThumb again={again} againLabel="Do it again" extra={cs.links?.quickNote ? { label: "Read the note", onPress: () => router.push(`/notes/${cs.links!.quickNote}`) } : undefined} />}>
-        <EndPanel kicker="Case done" score={`${pct}%`} right={pct} total={100} line={pct >= 85 ? "Clear reasoning." : pct >= 60 ? "Mostly there." : "Worth another look."} stats={[{ label: "Steps", value: String(total) }, { label: "First try", value: `${results.filter((r) => r.firstRight).length}/${total}` }, { label: "Hints", value: String(hints) }]}>
+        <EndPanel quiet kicker="Case done" score={`${pct}%`} right={pct} total={100} line={pct >= 85 ? "Clear reasoning." : pct >= 60 ? "Mostly there." : "Worth another look."} stats={[{ label: "Steps", value: String(total) }, { label: "First try", value: `${results.filter((r) => r.firstRight).length}/${total}` }, { label: "Hints", value: String(hints) }]}>
           <View style={{ gap: space[2] }}>
             <Label>What this case was about</Label>
             <Stone>

@@ -19,7 +19,6 @@ import { keyFromReveal, stepFromPick } from "../player/adapt";
 import { useStepPlay } from "../player/step";
 import type { Step } from "../player/types";
 import { markWord, Story, Tag, Tile, AnswerRow } from "../parts";
-import { useReactions } from "../reactions";
 import type { ToolId, ToolReveal, ToolStep } from "../types";
 
 const HOW: Record<ToolId, string[]> = {
@@ -102,7 +101,6 @@ function ToolPicker({ tool, title, line, howTo, list, recycleLine, onPick }: { t
 }
 
 function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; def: Def; howTo: string[]; records: PractiseRecordKind[]; browse: (() => void) | null; again: () => void }) {
-  const react = useReactions();
   const entry = caseTool(tool);
   const [at, setAt] = React.useState(def.start ?? 0);
   const [reveal, setReveal] = React.useState<ToolReveal | null>(null);
@@ -134,10 +132,9 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
   const count = (a: unknown, r: ToolReveal) => {
     answers.current.push({ step: at, answer: a, ms: since(shownAt.current) });
     const right = countsRight(r);
-    if (!r.selfCheck) {
-      setScores((s) => [...s, r.score]);
-      react.answer(r.score >= 0.75);
-    } else haptic.select();
+    // No stickers or sparks inside a case (docs/DESIGN.md, case player): the verdict carries the result.
+    if (!r.selfCheck) setScores((s) => [...s, r.score]);
+    else haptic.select();
     setMarks((m) => [...m, r.selfCheck ? null : r.score >= 0.999 ? "ok" : r.score > 0 ? null : "miss"]);
     noteAnswers(HISTORY_TOOL[tool], [{ item: key?.item ?? def.id, correct: right }]);
   };
@@ -192,7 +189,7 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
   if (done || !key) {
     return (
       <GameFrame testID="tool-end" title={def.title} thumb={browse ? <EndThumb again={browse} againLabel="Choose another case" extra={{ label: "Do this one again", onPress: again }} /> : <EndThumb again={again} againLabel="Do it again" />}>
-        <EndPanel kicker="Case done" score={graded ? `${pct}%` : "Done"} right={graded ? pct : 1} total={graded ? 100 : 1}>
+        <EndPanel quiet kicker="Case done" score={graded ? `${pct}%` : "Done"} right={graded ? pct : 1} total={graded ? 100 : 1}>
           <Story kicker="Take away">
             <Rich text={def.takeaway} v="reading" />
           </Story>
