@@ -8,7 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ApiFailure, messageOf } from "@/api/errors";
 import { session, useSession } from "@/auth";
 import { holdPin, releasePin } from "@/auth/handoff";
-import { Button, Jyo, LAYER_OVERLAP, layerShadow, RoundButton, T, Wordmark } from "@/ds";
+import { Button, LAYER_OVERLAP, layerShadow, RoundButton, T, Wordmark } from "@/ds";
 import { useKeyboardPad } from "@/ds/keyboard-pad";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
@@ -16,6 +16,7 @@ import { KeyboardState, useKeyboard } from "@/lib/keyboard";
 import { openLink } from "@/lib/open";
 import { curves, dur, Enter, presets, Press, useMotionTier } from "@/motion";
 import { fonts, layout, space, useLightStatusBar, useTheme } from "@/theme";
+import { JyoOnField } from "@/visitor/jyo-field";
 import { AuthField, SubmitButton, useShake } from "@/visitor/form";
 
 /** Height of the field while the keyboard is up (under the status bar). */
@@ -158,7 +159,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
           </Enter>
           {ended ? null : (
             <Enter i={2} kind="pop">
-              <Jyo pose="hello" size={band > 220 ? 84 : 68} label="Jyo, a small clay lamp, says hello" />
+              <JyoOnField size={band > 220 ? 76 : 62} label="Jyo, a small clay lamp, says hello" />
             </Enter>
           )}
         </Animated.View>
