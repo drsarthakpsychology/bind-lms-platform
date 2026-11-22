@@ -5,7 +5,7 @@ import { useStackMotion } from "@/motion";
 import { useTheme } from "@/theme";
 
 /**
- * Admins: the five tabs (Home, People, Clinic, Teaching, More) and the admin
+ * Admins: the five tabs (Home, People, Clinic, Learning, More) and the admin
  * screens that open on top of them. Every screen draws its own bar
  * (src/admin/ui.tsx), so the stack has no header. Everything in this group is
  * admin-only: the root guard sends anyone else home.

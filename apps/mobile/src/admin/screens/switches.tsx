@@ -1,53 +1,54 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { FlaskConical, RotateCcw, UserRound } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import { messageOf } from "@/api/errors";
-import { Stepper } from "@/clinic/admin/kit";
 import { Button, Row, RowsSkeleton, Sheet, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
-import { LoadSwap } from "@/motion";
 import { space, useTheme } from "@/theme";
-import { ConfirmSheet, FilterChips, OptionRow, Status } from "../kit";
-import { plural, type Tone } from "../format";
+import { ConfirmSheet, FilterChips, Loaded, OptionRow, Status } from "../kit";
+import type { Tone } from "../format";
+import { liveCalls, useSwitches, type Switch, type SwitchState } from "../live";
 import { openAsTestStudent, setTestMode, testModeCalls, useTestMode } from "../test-mode";
-import { ControlSwitch, Group, Locked, LockLine, MockNote, Panel, Screen, Tiles, useSample } from "../ui";
-import { useAdminRole } from "../role";
-import { FEATURES, SWITCH_ABOUT, SWITCH_LABEL, type FeatureSwitch, type SwitchState } from "./mock";
+import { ControlSwitch, Group, Locked, LockLine, Panel, Screen, Tiles } from "../ui";
+import { guarded, useAdminRole } from "../role";
 
 const TONE: Record<SwitchState, Tone> = { unlocked: "ok", live: "info", off: "quiet" };
 const ORDER: SwitchState[] = ["unlocked", "live", "off"];
 /** How open a state is, to tell "closing" (asks first) from "opening". */
 const OPENNESS: Record<SwitchState, number> = { off: 0, live: 1, unlocked: 2 };
+export const SWITCH_LABEL: Record<SwitchState, string> = { unlocked: "Open", live: "Shown, locked", off: "Hidden" };
+export const SWITCH_ABOUT: Record<SwitchState, string> = { unlocked: "Students see it and can use it.", live: "Students see it with a lock and cannot open it yet.", off: "Students do not see it at all." };
 
-/** One feature: its state, its limit and who is using it. Changes that take something away from students ask first. */
-function FeatureSheet({ f, onClose, onSave }: { f: FeatureSwitch | null; onClose: () => void; onSave: (key: string, state: SwitchState, limit: number | null) => void }) {
+/** One feature: who can see it. Changes that take something away from students ask first. */
+function FeatureSheet({ f, onClose, onSave, busy }: { f: Switch | null; onClose: () => void; onSave: (key: string, state: SwitchState) => Promise<void>; busy: boolean }) {
   const { viewOnly } = useAdminRole();
   const [state, setState] = React.useState<SwitchState>(f?.state ?? "off");
-  const [limit, setLimit] = React.useState<number>(f?.limit?.value ?? 0);
   const [ask, setAsk] = React.useState(false);
   const [key, setKey] = React.useState<string | null>(null);
   if (f && f.key !== key) {
     setKey(f.key);
     setState(f.state);
-    setLimit(f.limit?.value ?? 0);
   }
   if (!f) return <Sheet open={false} onClose={onClose} />;
-  const changed = state !== f.state || (f.limit ? limit !== f.limit.value : false);
+  const changed = state !== f.state;
   const closing = OPENNESS[state] < OPENNESS[f.state];
-  const save = () => {
-    onSave(f.key, state, f.limit ? limit : null);
+  const save = async () => {
     setAsk(false);
+    await onSave(f.key, state);
     onClose();
   };
   return (
     <>
       <Sheet open={!ask} onClose={onClose} title={f.name} testID="feature-sheet">
         <View style={{ gap: space[4] }}>
-          <T v="small" tone="muted">
-            {f.about}
-          </T>
+          {f.about ? (
+            <T v="small" tone="muted">
+              {f.about}
+            </T>
+          ) : null}
           <Locked>
             <View accessibilityRole="radiogroup" accessibilityLabel={`${f.name}: who can see it`}>
               {ORDER.map((s) => (
@@ -55,41 +56,7 @@ function FeatureSheet({ f, onClose, onSave }: { f: FeatureSwitch | null; onClose
               ))}
             </View>
           </Locked>
-          {f.limit ? (
-            <Locked>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
-                <View style={{ flex: 1, minWidth: 0 }}>
-                  <T v="bodyStrong">{f.limit.label}</T>
-                  <T v="small" tone="muted" num>
-                    Now {f.limit.value} {f.limit.unit}
-                  </T>
-                </View>
-                <Stepper label={f.limit.label} value={limit} min={f.limit.min} max={f.limit.max} onChange={(n) => setLimit(Math.round(n / f.limit!.step) * f.limit!.step || n)} testID="feature-limit" />
-              </View>
-            </Locked>
-          ) : null}
-          <View style={{ gap: space[1] }}>
-            <T v="label" tone="muted">
-              Who is using it
-            </T>
-            {f.using ? (
-              <>
-                <T v="small" num>
-                  {plural(f.using, "student")} in the last 7 days
-                </T>
-                {f.recent.map((r) => (
-                  <T key={r.name} v="small" tone="muted">
-                    {r.name} · {r.when}
-                  </T>
-                ))}
-              </>
-            ) : (
-              <T v="small" tone="muted">
-                Nobody yet. It is not open to students.
-              </T>
-            )}
-          </View>
-          {viewOnly ? null : <Button label={changed ? "Save" : "No changes"} disabled={!changed} needsServer onPress={() => (closing ? setAsk(true) : save())} testID="feature-save" />}
+          {viewOnly ? null : <Button label={changed ? "Save" : "No changes"} disabled={!changed} busy={busy} onPress={() => (closing ? setAsk(true) : void save())} testID="feature-save" />}
           <Button kind="text" full label="Close" onPress={onClose} />
         </View>
       </Sheet>
@@ -97,10 +64,11 @@ function FeatureSheet({ f, onClose, onSave }: { f: FeatureSwitch | null; onClose
         open={ask}
         onClose={() => setAsk(false)}
         title={state === "off" ? `Hide ${f.name}?` : `Lock ${f.name}?`}
-        body={`${f.using ? `${plural(f.using, "student")} used it this week. ` : ""}${state === "off" ? "It disappears from their app at once." : "They will still see it, but it will not open."} You can open it again any time.`}
+        body={`${state === "off" ? "It disappears from every student's app at once." : "Students still see it, but it will not open."} Their progress is kept. You can open it again any time.`}
         confirm={state === "off" ? "Hide it" : "Lock it"}
         danger
-        onConfirm={save}
+        busy={busy}
+        onConfirm={() => void save()}
         testID="feature-confirm"
       />
     </>
@@ -108,65 +76,68 @@ function FeatureSheet({ f, onClose, onSave }: { f: FeatureSwitch | null; onClose
 }
 
 /**
- * What is live: every feature students can reach, grouped by kind. One tap
- * shows its three-way switch, its limit and who is using it.
+ * Features for students: every feature students can reach, grouped by kind,
+ * read from the website. One tap shows its three-way switch.
  */
 export function SwitchesScreen() {
-  const sample = useSample(FEATURES);
-  const [over, setOver] = React.useState<Record<string, { state: SwitchState; limit: number | null }>>({});
+  const q = useSwitches();
+  const qc = useQueryClient();
+  const { role } = useAdminRole();
   const [show, setShow] = React.useState<"" | SwitchState>("");
   const [openKey, setOpenKey] = React.useState<string | null>(null);
-  const groups = FEATURES.map((g) => ({ ...g, items: g.items.map((f) => (over[f.key] ? { ...f, state: over[f.key]!.state, limit: f.limit && over[f.key]!.limit !== null ? { ...f.limit, value: over[f.key]!.limit! } : f.limit } : f)) }));
-  const all = groups.flatMap((g) => g.items);
+  const [busy, setBusy] = React.useState(false);
+  const all = (q.data ?? []).flatMap((g) => g.items);
   const count = (s: SwitchState) => all.filter((f) => f.state === s).length;
   const open = all.find((f) => f.key === openKey) ?? null;
+  const onSave = async (key: string, state: SwitchState) => {
+    await guarded(role, "switch", async () => {
+      setBusy(true);
+      try {
+        await liveCalls.setSwitch(key, state);
+        haptic.success();
+        toast.show(`${all.find((f) => f.key === key)?.name ?? "Feature"}: ${SWITCH_LABEL[state].toLowerCase()}`);
+        await qc.invalidateQueries({ queryKey: ["admin"] });
+      } catch (e) {
+        haptic.warn();
+        toast.show(messageOf(e));
+      } finally {
+        setBusy(false);
+      }
+    });
+  };
   return (
-    <Screen title="What is live" lead="Every feature students can reach" testID="admin-switches">
-      <LoadSwap ready={sample.ready} skeleton={<RowsSkeleton rows={6} />}>
-        <View style={{ gap: space[5] }}>
-          <Tiles
-            items={[
-              { value: count("unlocked"), label: "open to students" },
-              { value: count("live"), label: "shown, locked" },
-              { value: count("off"), label: "hidden" },
-            ]}
-          />
-          <FilterChips label="Show" value={show} onChange={setShow} testID="switch-filter" options={[{ id: "", name: "All" }, { id: "unlocked", name: "Open" }, { id: "live", name: "Shown, locked" }, { id: "off", name: "Hidden" }]} />
-          {groups.map((g) => {
-            const items = g.items.filter((f) => !show || f.state === show);
-            if (!items.length) return null;
-            return (
-              <Group key={g.title} title={g.title} count={items.length}>
-                <Panel rows>
-                  {items.map((f) => (
-                    <Row
-                      key={f.key}
-                      testID={`feature-${f.key}`}
-                      title={f.name}
-                      meta={`${f.using ? `${plural(f.using, "student")} this week` : "Not in use"}${f.limit ? ` · ${f.limit.label.toLowerCase()}: ${f.limit.value}` : ""}`}
-                      trailing={<Status tone={TONE[f.state]}>{SWITCH_LABEL[f.state]}</Status>}
-                      onPress={() => setOpenKey(f.key)}
-                    />
-                  ))}
-                </Panel>
-              </Group>
-            );
-          })}
-          <T v="caption" tone="muted" style={{ paddingHorizontal: space[1] }}>
-            Admins can always open everything, whatever is set here. Uploading courses and lectures stays on the website.
-          </T>
-          <MockNote />
-        </View>
-      </LoadSwap>
-      <FeatureSheet
-        f={open}
-        onClose={() => setOpenKey(null)}
-        onSave={(key, state, limit) => {
-          setOver((o) => ({ ...o, [key]: { state, limit } }));
-          haptic.success();
-          toast.show(`${all.find((f) => f.key === key)?.name ?? "Feature"}: ${SWITCH_LABEL[state].toLowerCase()}`);
-        }}
-      />
+    <Screen title="Features for students" lead="Choose what students can see and open" testID="admin-switches" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Loaded q={q} what="features" skeleton={<RowsSkeleton rows={6} />}>
+        {(groups) => (
+          <View style={{ gap: space[5] }}>
+            <Tiles
+              items={[
+                { value: count("unlocked"), label: "open to students", onPress: () => setShow("unlocked") },
+                { value: count("live"), label: "shown, locked", onPress: () => setShow("live") },
+                { value: count("off"), label: "hidden", onPress: () => setShow("off") },
+              ]}
+            />
+            <FilterChips label="Show" value={show} onChange={setShow} testID="switch-filter" options={[{ id: "", name: "All" }, { id: "unlocked", name: "Open" }, { id: "live", name: "Shown, locked" }, { id: "off", name: "Hidden" }]} />
+            {groups.map((g) => {
+              const items = g.items.filter((f) => !show || f.state === show);
+              if (!items.length) return null;
+              return (
+                <Group key={g.title} title={g.title} count={items.length}>
+                  <Panel rows>
+                    {items.map((f) => (
+                      <Row key={f.key} testID={`feature-${f.key}`} title={f.name} meta={f.about || undefined} trailing={<Status tone={TONE[f.state]}>{SWITCH_LABEL[f.state]}</Status>} onPress={() => setOpenKey(f.key)} />
+                    ))}
+                  </Panel>
+                </Group>
+              );
+            })}
+            <T v="caption" tone="muted" style={{ paddingHorizontal: space[1] }}>
+              Admins can always open everything, whatever is set here.
+            </T>
+          </View>
+        )}
+      </Loaded>
+      <FeatureSheet f={open} busy={busy} onClose={() => setOpenKey(null)} onSave={onSave} />
     </Screen>
   );
 }

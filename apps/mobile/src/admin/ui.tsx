@@ -10,7 +10,6 @@
  * Tile, Tiles  the numbers that matter, each one opens its list
  * Locked       a write control shown locked, with one line saying why (view-only admins)
  * EmptyState, LoadError, Loaded   the plain ones (no sticker)
- * MockNote     marks a screen whose numbers are sample data
  */
 import type { UseQueryResult } from "@tanstack/react-query";
 import { router, Stack } from "expo-router";
@@ -398,29 +397,5 @@ export function PlainLoaded<D>({ q, skeleton, what, soon, children }: { q: UseQu
     >
       {body}
     </LoadSwap>
-  );
-}
-
-/**
- * A screen built on sample data shows its skeleton for a moment and then the
- * content, the same way a real read does, so the loading state is designed too.
- */
-export function useSample<D>(data: D): { data: D | undefined; ready: boolean } {
-  const [ready, setReady] = React.useState(process.env.NODE_ENV === "test");
-  React.useEffect(() => {
-    const t = setTimeout(() => setReady(true), 260);
-    return () => clearTimeout(t);
-  }, []);
-  return { data: ready ? data : undefined, ready };
-}
-
-/** Says plainly that a screen shows sample data until it is connected (docs/CONNECT-badmin.md). */
-export function MockNote({ what = "This screen" }: { what?: string }) {
-  return (
-    <View testID="mock-note" style={{ paddingTop: space[2] }}>
-      <T v="caption" tone="muted" center>
-        {what} shows sample data. It is not connected to the live site yet.
-      </T>
-    </View>
   );
 }

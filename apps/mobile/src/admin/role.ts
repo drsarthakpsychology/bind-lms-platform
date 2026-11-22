@@ -40,7 +40,14 @@ export type AdminAction =
   | "award-all"
   | "support-key"
   /** Schedule, attendance, leave and OPD (src/clinic). */
-  | "clinic";
+  | "clinic"
+  /** Connected 22 Nov 2026 (src/admin/live.ts). */
+  | "admin-rights"
+  | "access"
+  | "switch"
+  | "mail"
+  | "wall"
+  | "add-student";
 
 export function roleOf(me: Pick<Me, "role"> | null | undefined): AdminRole | null {
   if (me?.role === "admin") return "super";

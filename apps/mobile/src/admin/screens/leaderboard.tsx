@@ -1,110 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { router } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
 import { Button, Field, Row, RowsSkeleton, T } from "@/ds";
-import { LoadSwap } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { FilterChips } from "../kit";
-import { openStudent } from "../nav";
 import { boardPath, type AdminFilter } from "@/practise/board";
 import { readQuery } from "@/practise/api";
 import type { Leaderboard } from "@/practise/contract";
-import { EmptyState, Group, MockNote, Panel, PlainLoaded, Screen, ShareBar, Tiles, useSample } from "../ui";
-import { INSIGHTS } from "./mock";
-
-/** Active students per day, as plain bars with the number on top. Still: admin numbers do not move. */
-function DayChart({ days, of }: { days: { day: string; active: number }[]; of: number }) {
-  const c = useTheme();
-  const max = Math.max(1, ...days.map((d) => d.active));
-  return (
-    <View accessible accessibilityRole="image" accessibilityLabel={`Students active each day: ${days.map((d) => `${d.day} ${d.active}`).join(", ")}. Out of ${of}.`} style={{ flexDirection: "row", alignItems: "flex-end", gap: space[2], height: 132 }}>
-      {days.map((d) => (
-        <View key={d.day} style={{ flex: 1, alignItems: "center", gap: 4, height: "100%", justifyContent: "flex-end" }}>
-          <T v="caption" num>
-            {d.active}
-          </T>
-          <View style={{ width: "100%", height: `${Math.max(4, (d.active / max) * 70)}%`, borderRadius: 6, backgroundColor: d.active === max ? c.ink : c.hairline }} />
-          <T v="caption" tone="muted">
-            {d.day}
-          </T>
-        </View>
-      ))}
-    </View>
-  );
-}
-
-/**
- * Learning insights for the whole class: how many are learning, what they get
- * wrong most, where they stop, and who has gone quiet. Every line opens the
- * place to act on it.
- */
-export function InsightsScreen() {
-  const sample = useSample(INSIGHTS);
-  const d = INSIGHTS;
-  return (
-    <Screen title="Learning insights" lead={d.window} testID="admin-insights">
-      <LoadSwap ready={sample.ready} skeleton={<RowsSkeleton rows={6} />}>
-        <View style={{ gap: space[5] }}>
-          <Tiles
-            items={[
-              { value: d.totals.active, label: `of ${d.totals.students} active` },
-              { value: d.totals.minutesPerStudent, label: "minutes a student" },
-              { value: d.totals.firstTryRight, suffix: "%", label: "right first try" },
-            ]}
-          />
-          <Group title="Active each day">
-            <Panel>
-              <DayChart days={d.byDay} of={d.totals.students} />
-            </Panel>
-          </Group>
-          <Group title="Hardest topics" action={{ label: "Answer keys", onPress: () => router.push("/admin/teaching") }}>
-            <Panel style={{ gap: space[3] }}>
-              {d.topics.map((t) => (
-                <View key={t.topic} style={{ gap: 4 }}>
-                  <View style={{ flexDirection: "row", justifyContent: "space-between", gap: space[2] }}>
-                    <T v="small" style={{ flex: 1 }}>
-                      {t.topic}
-                    </T>
-                    <T v="caption" tone="muted" num>
-                      {t.answers} answers
-                    </T>
-                  </View>
-                  <ShareBar pct={t.rightPct} tone={t.rightPct < 60 ? "warn" : "plain"} label={`${t.topic}: ${t.rightPct} percent right first try`} />
-                </View>
-              ))}
-              <T v="caption" tone="muted">
-                Share of answers right at the first try. Under 60% is marked.
-              </T>
-            </Panel>
-          </Group>
-          <Group title="Where students stop">
-            <Panel rows>
-              {d.stuck.map((s) => (
-                <Row key={s.where} title={s.where} meta="Started, not finished in 7 days" trailing={`${s.students} students`} onPress={() => router.push(s.href as never)} />
-              ))}
-            </Panel>
-          </Group>
-          <Group title="Gone quiet" action={{ label: "All activity", onPress: () => router.push("/admin/activity") }}>
-            <Panel rows>
-              {d.quiet.map((s) => (
-                <Row key={s.id} title={s.name} meta={`No visit for ${s.days} days`} onPress={() => openStudent(s.id)} testID={`quiet-${s.id}`} />
-              ))}
-            </Panel>
-          </Group>
-          <Group title="This week">
-            <Panel rows>
-              <Row title="Sections read" trailing={String(d.totals.sectionsRead)} />
-              <Row title="Questions answered" trailing={d.totals.questions.toLocaleString("en-IN")} />
-            </Panel>
-          </Group>
-          <MockNote />
-        </View>
-      </LoadSwap>
-    </Screen>
-  );
-}
+import { EmptyState, Panel, PlainLoaded, Screen } from "../ui";
 
 /**
  * The full leaderboard, the admin's way: every student with full names, any

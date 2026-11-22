@@ -3,18 +3,19 @@
  * no stickers), the five tabs, the new screens, and view-only admins seeing
  * every write control locked with a reason.
  */
-import { fireEvent, screen } from "@testing-library/react-native";
+import { fireEvent, screen, waitFor } from "@testing-library/react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 
 import { AddStudentScreen, BulkAccessScreen } from "@/admin/screens/access";
 import { AdminHomeScreen } from "@/admin/screens/home";
-import { AdminLeaderboardScreen, InsightsScreen } from "@/admin/screens/insights";
+import { AdminLeaderboardScreen } from "@/admin/screens/leaderboard";
 import { AdminMoreScreen } from "@/admin/screens/more";
 import { FailedEmailsScreen, WallReportsScreen } from "@/admin/screens/queues";
 import { SwitchesScreen, TestModeScreen } from "@/admin/screens/switches";
-import { AnswerKeyScreen, PracticeSetScreen, TeachingModuleScreen, TeachingScreen } from "@/admin/screens/teaching";
+import { LearningScreen } from "@/admin/screens/learning";
 import { currentSession } from "@/clinic/admin/today";
+import { liveMock } from "@/admin/mock-live";
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
 import { render } from "./utils";
@@ -41,63 +42,53 @@ describe("as the Super Admin", () => {
     await signInAs("admin@example.com");
   });
 
-  it("Home has no blue field, no Jyo and no sticker, and leads with needs attention and the numbers", async () => {
+  it("Home has no blue field, no Jyo and no sticker, and leads with today's to-do and the numbers", async () => {
     await render(<AdminHomeScreen />);
     expect(await screen.findByText("Fix logins")).toBeTruthy();
-    expect(screen.getByText("Needs attention")).toBeTruthy();
+    expect(screen.getByText("To do today")).toBeTruthy();
+    expect(await screen.findByTestId("todo-wall")).toBeTruthy();
     expect(screen.getByTestId("home-students")).toBeTruthy();
     expect(screen.getByTestId("role-pill")).toBeTruthy();
     expect(screen.queryByTestId("jyo")).toBeNull();
     expect(screen.queryByTestId("meme")).toBeNull();
     expect(screen.queryByTestId("view-only-note")).toBeNull();
+    expect(screen.queryByText(/sample data/i)).toBeNull();
   });
 
-  it("More groups every admin place and opens the new ones", async () => {
+  it("More groups every admin place in plain words and opens them", async () => {
     await render(<AdminMoreScreen />);
-    for (const id of ["more-switches", "more-access", "more-test-mode", "more-wall", "more-failed", "more-insights", "more-leaderboards"]) expect(screen.getByTestId(id)).toBeTruthy();
+    for (const id of ["more-switches", "more-access", "more-test-mode", "more-wall", "more-failed", "more-leaderboards", "more-admins"]) expect(screen.getByTestId(id)).toBeTruthy();
+    expect(screen.queryByTestId("more-insights")).toBeNull();
+    expect(screen.getByText("Features for students")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("more-switches"));
     expect(router.push).toHaveBeenCalledWith("/admin/switches");
   });
 
-  it("Teaching is a reviewer view: no Continue, opens class results", async () => {
-    await render(<TeachingScreen />);
+  it("Learning lists every student, behind first, and opens one record", async () => {
+    await render(<LearningScreen />);
+    expect(await screen.findByTestId("learner-u3")).toBeTruthy();
     expect(screen.queryByText("Continue")).toBeNull();
-    await fireEvent.press(screen.getByTestId("teach-m02"));
-    expect(router.push).toHaveBeenCalledWith("/admin/teaching/m02");
+    expect(screen.getAllByText("Behind").length).toBeGreaterThan(0);
+    await fireEvent.changeText(screen.getByTestId("learn-search"), "sana");
+    expect(screen.queryByTestId("learner-u3")).toBeNull();
+    await fireEvent.press(screen.getByTestId("learner-u5"));
+    expect(router.push).toHaveBeenCalledWith("/admin/learning/u5");
   });
 
-  it("a module shows class results per section and opens the answer key", async () => {
-    params.mockReturnValue({ module: "m02" });
-    await render(<TeachingModuleScreen />);
-    expect(screen.getByText("Class results by section")).toBeTruthy();
-    await fireEvent.press(screen.getByTestId("teach-m02.c1"));
-    expect(router.push).toHaveBeenCalledWith("/admin/teaching/section/m02.c1");
+  it("Learning has a whole class view", async () => {
+    await render(<LearningScreen />);
+    await screen.findByTestId("learner-u3");
+    await fireEvent.press(screen.getByTestId("learn-view-class"));
+    expect(await screen.findByText("Hardest modules")).toBeTruthy();
+    expect(screen.getByText("Delusion or overvalued idea")).toBeTruthy();
   });
 
-  it("the answer key shows the correct answer in words and can flag a question", async () => {
-    params.mockReturnValue({ id: "m02.c1" });
-    await render(<AnswerKeyScreen />);
-    expect(screen.getAllByText("Correct answer").length).toBe(3);
-    await fireEvent.press(screen.getByTestId("key-m02.c1.q1-flag"));
-    await fireEvent.press(screen.getByTestId("flag-save"));
-    expect(screen.getByText("Write one line about what is wrong.")).toBeTruthy();
-    await fireEvent.changeText(screen.getByTestId("flag-note"), "Two options could both fit");
-    await fireEvent.press(screen.getByTestId("flag-save"));
-    expect(screen.getByText("Two options could both fit")).toBeTruthy();
-  });
-
-  it("a practice set has an answer key", async () => {
-    params.mockReturnValue({ id: "p-case-day" });
-    await render(<PracticeSetScreen />);
-    expect(screen.getByText("Correct answer")).toBeTruthy();
-  });
-
-  it("What is live: hiding a feature asks first", async () => {
+  it("Features for students: hiding one asks first, then saves", async () => {
     await render(<SwitchesScreen />);
-    await fireEvent.press(screen.getByTestId("feature-games"));
+    await fireEvent.press(await screen.findByTestId("feature-lab"));
     await fireEvent.press(screen.getByTestId("feature-state-off"));
     await fireEvent.press(screen.getByTestId("feature-save"));
-    expect(screen.getByText("Hide Games?")).toBeTruthy();
+    expect(screen.getByText("Hide Psychology Lab?")).toBeTruthy();
   });
 
   it("Test mode has the switch", async () => {
@@ -105,28 +96,33 @@ describe("as the Super Admin", () => {
     expect(screen.getByTestId("test-mode-switch")).toBeTruthy();
   });
 
-  it("Add a student checks the fields before sending", async () => {
+  it("Add students checks the emails before sending, then shows what happened", async () => {
     await render(<AddStudentScreen />);
     await fireEvent.press(screen.getByTestId("add-student-go"));
-    expect(screen.getByText("Write the student's name.")).toBeTruthy();
-    expect(screen.getByText("Write a full email address.")).toBeTruthy();
+    expect(screen.getByText("Write at least one full email address.")).toBeTruthy();
+    await screen.findAllByTestId(/^add-cohort-/);
+    await fireEvent.changeText(screen.getByTestId("add-list"), "new.person@example.com");
+    await fireEvent.press(screen.getByTestId("add-student-go"));
+    expect(await screen.findByText(/New account made/)).toBeTruthy();
   });
 
   it("Access for many says what will happen and asks before applying", async () => {
     await render(<BulkAccessScreen />);
-    await fireEvent.press(screen.getByTestId("bulk-section-practice"));
-    expect(screen.getByText(/Closed: Practice and games/)).toBeTruthy();
+    await fireEvent.press(await screen.findByTestId("bulk-section-practice-close"));
+    expect(screen.getByText(/Close: Practice \(every tool\)/)).toBeTruthy();
     await fireEvent.press(screen.getByTestId("bulk-apply"));
     expect(screen.getByTestId("bulk-confirm")).toBeTruthy();
   });
 
-  it("queues, insights and the leaderboard draw and link to students", async () => {
+  it("wall reports and failed emails read real answers and act on them", async () => {
     await render(<WallReportsScreen />);
-    expect(screen.getByTestId("wall-wr1")).toBeTruthy();
+    expect(await screen.findByTestId("wall-33333333-3333-4333-8333-333333333333")).toBeTruthy();
     await render(<FailedEmailsScreen />);
-    expect(screen.getByTestId("failed-fe1")).toBeTruthy();
-    await render(<InsightsScreen />);
-    expect(screen.getByText("Hardest topics")).toBeTruthy();
+    expect(await screen.findByTestId("failed-11111111-1111-4111-8111-111111111111")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("failed-11111111-1111-4111-8111-111111111111-clear"));
+    await waitFor(() => expect(liveMock.state().failed.length).toBe(1));
+    await waitFor(() => expect(screen.queryByTestId("failed-11111111-1111-4111-8111-111111111111")).toBeNull());
+    expect(screen.queryByText(/sample data/i)).toBeNull();
     // The leaderboard reads the real board: every student with full names and cohorts, a page at a time.
     await render(<AdminLeaderboardScreen />);
     expect(await screen.findByTestId("board-row-0")).toBeTruthy();
@@ -149,17 +145,15 @@ describe("as a view-only admin", () => {
   });
 
   it("write controls stay on the screen, locked, with the reason", async () => {
-    params.mockReturnValue({ id: "m02.c1" });
-    await render(<AnswerKeyScreen />);
+    await render(<FailedEmailsScreen />);
+    await screen.findByTestId("failed-11111111-1111-4111-8111-111111111111");
     expect(screen.getAllByTestId("locked").length).toBeGreaterThan(0);
     expect(screen.getAllByText(/view-only access/i).length).toBeGreaterThan(0);
-    await render(<FailedEmailsScreen />);
-    expect(screen.getAllByTestId("locked").length).toBeGreaterThan(0);
   });
 
-  it("What is live: the sheet shows the state locked and has no Save", async () => {
+  it("Features for students: the sheet shows the state locked and has no Save", async () => {
     await render(<SwitchesScreen />);
-    await fireEvent.press(screen.getByTestId("feature-games"));
+    await fireEvent.press(await screen.findByTestId("feature-lab"));
     expect(screen.queryByTestId("feature-save")).toBeNull();
     expect(screen.getAllByTestId("locked").length).toBeGreaterThan(0);
   });
