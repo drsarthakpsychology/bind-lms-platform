@@ -14,6 +14,7 @@ import type * as A from "./contract";
 import type * as X from "./extra";
 import { PEOPLE_VIEWS, STAGES } from "./extra";
 import { inPeopleView } from "./format";
+import { liveMock, liveRoute } from "./mock-live";
 
 const MIN = 60_000;
 const ago = (min: number) => new Date(Date.now() - min * MIN).toISOString();
@@ -201,6 +202,7 @@ let s = fresh();
 export const adminMock = {
   reset() {
     s = fresh();
+    liveMock.reset();
   },
   state: () => s,
 };
@@ -770,5 +772,7 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
     s.prefs = { ...s.prefs, ...(body as Partial<X.AdminPushPrefs>) };
     return ok(s.prefs);
   }
+  const connected = liveRoute(is, body, s.students, ok, fail, empty);
+  if (connected) return connected;
   return path.startsWith("/admin") ? notFound() : null;
 }

@@ -8,7 +8,7 @@ import { AdminAnyoneScreen, anyoneProblem } from "@/admin/screens/anyone";
 import { AdminCertificatesScreen } from "@/admin/screens/certificates";
 import { AdminCohortScreen, AdminCohortsScreen } from "@/admin/screens/cohorts";
 import { AdminAlertsScreen } from "@/admin/screens/more";
-import { AdminReviewScreen } from "@/admin/screens/review";
+import { SupervisionSignOffs } from "@/admin/screens/review";
 import { AdminSystemScreen } from "@/admin/screens/system";
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
@@ -121,8 +121,7 @@ describe("as a Super Admin", () => {
   });
 
   it("signs a supervision entry", async () => {
-    params.mockReturnValue({ tab: "signoffs" });
-    await render(<AdminReviewScreen />);
+    await render(<SupervisionSignOffs />);
     await fireEvent.press(await screen.findByText("Observed intake interviews at the clinic"));
     await fireEvent.press(screen.getByTestId("signoff-sign"));
     await waitFor(() => expect(adminMock.state().signoffs[0]?.status).toBe("signed"));
