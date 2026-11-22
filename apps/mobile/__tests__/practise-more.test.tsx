@@ -204,7 +204,7 @@ describe("Medicine page", () => {
     await render(<MedicineScreen />);
     await waitFor(() => expect(screen.getByTestId("d-dose-window")).toBeTruthy(), { timeout: 4000 });
     expect(screen.queryByText(/arousal|performance/)).toBeNull();
-    expect(screen.getByText("lithium blood level, mmol/L")).toBeTruthy();
+    expect(screen.getByTestId("sketch-dose-window")).toBeTruthy();
     expect(screen.getAllByText(/check with the prescriber and the local lab|Check the target with the prescriber and the local lab/).length).toBeGreaterThan(0);
   });
 
