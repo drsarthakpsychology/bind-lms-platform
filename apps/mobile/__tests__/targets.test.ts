@@ -74,3 +74,24 @@ describe("server targets for Prep, medicines and the clinic open the exact scree
     expect(nativeFor("/odd")).toBeNull();
   });
 });
+
+describe("every website page the app opens from a link lands on a real screen", () => {
+  it.each([
+    ["https://vibhapsychology.com/setup?token=abc", "/setup?token=abc"],
+    ["https://vibhapsychology.com/clinic", "/clinic/schedule"],
+    ["https://vibhapsychology.com/clinic/whatever", "/clinic/schedule"],
+    ["https://vibhapsychology.com/leave", "/clinic/leave"],
+    ["https://vibhapsychology.com/opd", "/clinic/opd"],
+    ["https://vibhapsychology.com/schedule", "/clinic/schedule"],
+    ["https://vibhapsychology.com/attendance", "/clinic/attendance"],
+    ["https://vibhapsychology.com/dashboard/anything", "/"],
+    ["https://vibhapsychology.com/tools/unknown", "/practise"],
+    ["https://vibhapsychology.com/tools/psychopharm", "/medicines"],
+    ["https://vibhapsychology.com/leaderboard", "/game/leaderboard"],
+    ["https://vibhapsychology.com/wall", "/wall"],
+    ["https://vibhapsychology.com/assignments", "/assignments"],
+    ["https://vibhapsychology.com/journey", "/journey"],
+  ])("%s", (link, screen) => {
+    expect(pathFromLink(link)).toBe(screen);
+  });
+});

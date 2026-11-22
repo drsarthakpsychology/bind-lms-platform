@@ -139,11 +139,14 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
       // No advertising: the advertising id is never read.
       "com.google.android.gms.permission.AD_ID",
     ],
-    // Links to the website open the app (verified once /.well-known/assetlinks.json is on the site).
+    // Links to the website open the app once /.well-known/assetlinks.json carries the signing fingerprint
+    // (ANDROID_SHA256_FINGERPRINTS on Vercel; push and links guide).
     intentFilters: [
       {
         action: "VIEW",
         autoVerify: true,
+        // Same list as APP_LINK_PATHS in src/lib/app-links.ts (the website). Never /set-password:
+        // its reset link keeps the sign-in after "#", which only the website reads.
         data: [
           { scheme: "https", host: SITE, pathPrefix: "/setup" },
           { scheme: "https", host: SITE, pathPrefix: "/dashboard" },
@@ -155,6 +158,18 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
           { scheme: "https", host: SITE, pathPrefix: "/achievements" },
           { scheme: "https", host: SITE, pathPrefix: "/practice" },
           { scheme: "https", host: SITE, pathPrefix: "/games" },
+          { scheme: "https", host: SITE, pathPrefix: "/prep" },
+          { scheme: "https", host: SITE, pathPrefix: "/tools" },
+          { scheme: "https", host: SITE, pathPrefix: "/journey" },
+          { scheme: "https", host: SITE, pathPrefix: "/progress" },
+          { scheme: "https", host: SITE, pathPrefix: "/assignments" },
+          { scheme: "https", host: SITE, pathPrefix: "/wall" },
+          { scheme: "https", host: SITE, pathPrefix: "/leaderboard" },
+          { scheme: "https", host: SITE, pathPrefix: "/clinic" },
+          { scheme: "https", host: SITE, pathPrefix: "/schedule" },
+          { scheme: "https", host: SITE, pathPrefix: "/attendance" },
+          { scheme: "https", host: SITE, pathPrefix: "/leave" },
+          { scheme: "https", host: SITE, pathPrefix: "/opd" },
         ],
         category: ["BROWSABLE", "DEFAULT"],
       },

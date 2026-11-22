@@ -243,6 +243,11 @@ export function pathFromLink(input: string): string {
   if ((m = /^\/practice\/([^/]+)$/.exec(p)) && (CASE_TOOLS.has(m[1]!) || WEB_TOOL[m[1]!])) return `/case/${WEB_TOOL[m[1]!] ?? m[1]}`;
   if (p === "/prep") return "/prep";
   if (p === "/learn" || p === "/me") return p;
+  // Website pages the app opens (App Links) but has no screen of its own for: the nearest tab, never a dead end.
+  if (p.startsWith("/dashboard/")) return "/";
+  if (p === "/tools" || p.startsWith("/tools/")) return "/practise";
+  if (p.startsWith("/clinic/")) return "/clinic/schedule";
+  if (p === "/leaderboard" || p.startsWith("/leaderboard/")) return "/game/leaderboard";
   // Paths that are the same in the app: /study, /study/m02, /study/m02/s1, /doubts, /notifications, /progress, /settings, /lecture/..., /course/...
   return p + q;
 }
