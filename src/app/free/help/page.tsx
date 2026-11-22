@@ -4,7 +4,7 @@ import { CrisisLine } from "@/components/free/free-shell";
 import s from "@/components/free/free.module.css";
 
 export const metadata: Metadata = {
-  title: "Psychologist, psychiatrist or counsellor? A plain guide · VIBHA",
+  title: "Psychologist, psychiatrist or counsellor? A plain guide",
   description: "Who does what in mental health care in India, when to see each, and what to do in a crisis. Written by VIBHA School of Psychology.",
   alternates: { canonical: "/free/help" },
 };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CANONICAL_ORIGIN } from "@/lib/seo/canonical-host";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -48,9 +49,9 @@ export default async function PolicyPage({
     "@type": "WebPage",
     name: `${policy.meta.title}: ${LEGAL.operatingName}`,
     description: policy.meta.summary,
-    url: `/policies/${policy.meta.slug}`,
+    url: `${CANONICAL_ORIGIN}/policies/${policy.meta.slug}`,
     dateModified: policy.meta.lastUpdated,
-    isPartOf: { "@type": "WebSite", name: LEGAL.operatingName, url: "/" },
+    isPartOf: { "@type": "WebSite", "@id": `${CANONICAL_ORIGIN}/#website`, name: LEGAL.operatingName, url: `${CANONICAL_ORIGIN}/` },
   };
 
   return (

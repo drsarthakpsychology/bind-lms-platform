@@ -17,7 +17,7 @@ import type { PublicHome } from "./contract";
 
 export const HOME_HEADINGS = {
   hero: { title: ["Don't just study", "Psychology.", "Practise it."] },
-  programme: { tag: "What you get", title: "Everything you get", accent: "in 16 weeks." },
+  programme: { tag: "What you get", title: "Everything you get", accent: "in the programme." },
   patients: { tag: "Real patients", title: "Not observership.", accent: "You talk to the patient." },
   different: { tag: "Why VIBHA", title: "We don't teach", accent: "what your college teaches." },
   disorders: { tag: "Every disorder, the whole plan", title: "Not just symptoms.", accent: "The whole clinical plan." },
@@ -31,7 +31,7 @@ export const HOME_HEADINGS = {
 } as const;
 
 export const HERO_LEDE =
-  "A 16-week clinical training programme where you see real patients, write real treatment plans, and get corrected by psychiatrists. Led by Dr. Sarthak Dave, MBBS, MD (Psychiatry).";
+  "A clinical training programme where you see real patients, write real treatment plans, and get corrected by psychiatrists. Led by Dr. Sarthak Dave, MBBS, MD (Psychiatry).";
 
 const section = (href: string) => href.replace(/^#/, "");
 const tt = (x: { title: string; text: string }) => ({ title: x.title, text: x.text });

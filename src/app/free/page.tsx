@@ -6,7 +6,7 @@ import { INSTRUMENTS } from "@/lib/free/tests";
 import s from "@/components/free/free.module.css";
 
 export const metadata: Metadata = {
-  title: "Free mental health self-checks and calm exercises · VIBHA",
+  title: "Free mental health self-checks and calm exercises",
   description:
     "Free, private self-checks used by clinicians (PHQ-9, GAD-7, WHO-5, Big Five personality, self-esteem, adult ADHD screener) plus guided breathing, grounding and muscle relaxation. Nothing you answer is stored.",
   alternates: { canonical: "/free" },
@@ -100,7 +100,7 @@ export default function FreeHub() {
               <span className={s.cardMeta}>For students</span>
               <span className={s.cardTitle}>Want to learn how clinicians use these?</span>
               <span className={s.cardText}>
-                VIBHA&apos;s 16-week programme teaches assessment, diagnosis and treatment planning with real patients.
+                VIBHA&apos;s programme teaches assessment, diagnosis and treatment planning with real patients.
               </span>
               <span className={s.cardGo}>See the programme →</span>
             </Link>

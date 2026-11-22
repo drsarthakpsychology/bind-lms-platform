@@ -8,7 +8,7 @@ import type { CastName, IconName } from "./art";
 
 export const HERO = {
   lines: ["Don't just study", "Psychology.", "Practise it."] as const,
-  lede: "A 16-week clinical training programme where you see real patients, write real treatment plans, and get corrected by psychiatrists. Led by Dr. Sarthak Dave, MBBS, MD (Psychiatry).",
+  lede: "A clinical training programme where you see real patients, write real treatment plans, and get corrected by psychiatrists. Led by Dr. Sarthak Dave, MBBS, MD (Psychiatry).",
   bubble: "Let's see a patient.",
 } as const;
 
@@ -62,7 +62,7 @@ export const JOURNEY = {
     { k: "Interview", title: "Take the history", text: "In his own words. Onset, triggers, sleep, work, family, alcohol.", icon: "chat" },
     { k: "MSE", title: "Examine the mind", text: "Affect depressed and restricted. Hopelessness. No suicidal plan. Insight present.", icon: "eye" },
     { k: "Rule out", title: "Check what else it could be", text: "Bipolar episodes? Alcohol? Thyroid? Medicines hiding symptoms?", icon: "alert" },
-    { k: "Diagnosis", title: "Name it, provisionally", text: "Depressive episode, moderate (ICD-11). Written, not guessed.", icon: "clipboard" },
+    { k: "Diagnosis", title: "Name it, provisionally", text: "Single episode depressive disorder, moderate (ICD-11). Written, not guessed.", icon: "clipboard" },
     { k: "Case sheet", title: "Write it up properly", text: "Every finding in its place, in the format psychiatrists read.", icon: "book" },
     { k: "Treatment plan", title: "Plan with the psychiatrist", text: "Medicines reviewed by the psychiatrist. Your role, their role, clearly split.", icon: "pill" },
     { k: "Therapy plan", title: "Plan the sessions", text: "Sessions 1 to 2 motivational interviewing, 3 to 6 behavioural activation and CBT, then relapse prevention.", icon: "puzzle" },
@@ -75,9 +75,9 @@ export const JOURNEY = {
 export const GET = {
   tag: "What you get",
   title: "Everything you get",
-  accent: "in 16 weeks.",
+  accent: "in the programme.",
   stats: [
-    { n: "16", t: "weeks, start to finish" },
+    { n: "3+", t: "months for the full programme, or a shorter track of a few weeks" },
     { n: "7", t: "disciplines, from psychiatry to counselling" },
     { n: "18", t: "modules, taught in order" },
     { n: "8", t: "specialist faculty, led by a psychiatrist" },

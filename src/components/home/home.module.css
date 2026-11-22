@@ -3941,6 +3941,12 @@ details[open] > summary .chev {
   font-size: clamp(1.02rem, 1.6vw, 1.14rem);
   line-height: 1.5;
 }
+.certificate p.certNote {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
 .seal {
   position: relative;
   width: 170px;

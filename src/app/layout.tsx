@@ -41,6 +41,10 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   interactiveWidget: "resizes-content",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#111111" },
+  ],
 };
 
 export const metadata: Metadata = {
@@ -50,6 +54,8 @@ export const metadata: Metadata = {
     template: `%s · ${BRAND.shortName}`,
   },
   description: BRAND.description,
+  applicationName: BRAND.shortName,
+  appleWebApp: { title: BRAND.shortName },
   // The public site (/, /waitlist) is indexable. The LMS routes opt out in the
   // (dashboard) layout; /login, /expired and /verify opt out individually.
   robots: { index: true, follow: true },
@@ -62,7 +68,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: BRAND.name,
     description: BRAND.description,
   },

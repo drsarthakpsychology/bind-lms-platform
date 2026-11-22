@@ -9,7 +9,7 @@ describe("legal constants — the single source of truth for policy pages", () =
     expect(LEGAL.phone).toBe("+91 78770 49920");
     expect(LEGAL.grievanceOfficer).toBe("Kavya Bothra, Program Manager & Head");
     expect(LEGAL.gstin).toBeNull();
-    expect(LEGAL.courseDuration).toBe("three months");
+    expect(LEGAL.courseDuration).toBe("from a few weeks to three months or more, depending on the track");
     expect(LEGAL.liveAttendanceRequirement).toBe("50%");
   });
 

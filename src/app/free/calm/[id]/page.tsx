@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const tool = getCalmTool(id);
   if (!tool) return {};
   return {
-    title: `${tool.title}: free calm exercise · VIBHA`,
+    title: `${tool.title}: free calm exercise`,
     description: tool.text,
     alternates: { canonical: `/free/calm/${tool.id}` },
   };

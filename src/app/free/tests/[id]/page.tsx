@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const inst = getInstrument(id);
   if (!inst) return {};
   return {
-    title: `Free ${inst.name}: ${inst.short} · VIBHA`,
+    title: `Free ${inst.name}: ${inst.short}`,
     description: `${inst.measures}. ${inst.items.length} questions, about ${inst.minutes} minutes. Validated questionnaire, scored instantly and privately.`,
     alternates: { canonical: `/free/tests/${inst.id}` },
   };

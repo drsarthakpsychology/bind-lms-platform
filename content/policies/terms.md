@@ -1,7 +1,7 @@
 ---
 title: Terms and Conditions
 slug: terms
-lastUpdated: "[EFFECTIVE_DATE]"
+lastUpdated: "2026-11-22"
 summary: The rules that govern using the VIBHA website, enrolling in a course, and taking a course.
 order: 1
 ---
@@ -18,8 +18,7 @@ These Terms are published in accordance with the Information Technology Act, 200
 
 You may enrol only if you:
 
-- are at least 18 years of age, or are between 16 and 18 and enrol with the consent of a parent or legal guardian who accepts these Terms on your behalf;
-- are legally capable of entering into a binding contract under the Indian Contract Act, 1872;
+- are legally capable of entering into a binding contract under the Indian Contract Act, 1872, or, if you are not, enrol with the consent of a parent or legal guardian who accepts these Terms on your behalf;
 - provide accurate, current and complete information during registration; and
 - meet any academic or professional prerequisites stated on the course page.
 
@@ -47,7 +46,7 @@ Seats are limited and allotted on a first-confirmed basis. We may close enrolmen
 
 ## 1.5 Course delivery and changes
 
-The cohort runs over a period of three months. Sessions are delivered live over Zoom on weekends, and in person at our Ahmedabad centre for learners enrolled under a specific institutional collaboration. Recordings of live sessions are made available on the learning platform. Supporting material is made available through our learning platform and community channels.
+The length of a course depends on the track you choose, from a few weeks to three months or more. Live discussions are held online, mainly on weekends. In-person sessions at our Ahmedabad centre are open to every learner. Recordings of live sessions are made available on the learning platform. Supporting material is made available through our learning platform and community channels.
 
 We reserve the right, acting reasonably, to:
 

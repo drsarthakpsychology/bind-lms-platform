@@ -9,7 +9,8 @@ export const COHORT = {
   label: "Cohort Two",
   starts: "First week of December 2026",
   startsShort: "Dec 2026",
-  length: "16 weeks",
+  /** Owner, 22 Nov 2026: the length depends on the track. */
+  length: "A few weeks to 3+ months, by track",
   where: "Ahmedabad + online",
   hours: "90 to 400+ hours",
 } as const;
@@ -40,7 +41,7 @@ export const NAV = [
 
 
 export const STATS = [
-  { n: "16", t: "weeks, start to finish", tone: "blue" },
+  { n: "3+", t: "months for the full programme, or a shorter track of a few weeks", tone: "blue" },
   { n: "7", t: "disciplines, from psychiatry to counselling", tone: "white" },
   { n: "18", t: "modules, taught in order", tone: "ink" },
   { n: "8", t: "specialist faculty, led by a psychiatrist", tone: "white" },
@@ -127,7 +128,7 @@ export const CASE_SHEET = {
     { k: "Present illness", v: "Gradual onset after losing his job. Worse in the mornings. No past episodes of elated mood." },
     { k: "Personal\u00a0· family", v: "Father treated for depression. Social drinker; alcohol use asked and noted.", mark: "alcohol use asked and noted" },
     { k: "MSE", v: "Affect: depressed, restricted. Thought: hopelessness, no suicidal plan. Insight present.", mark: "depressed, restricted" },
-    { k: "Provisional diagnosis", v: "Depressive episode, moderate (ICD-11)", mark: "Depressive episode, moderate" },
+    { k: "Provisional diagnosis", v: "Single episode depressive disorder, moderate (ICD-11)", mark: "Single episode depressive disorder, moderate" },
     { k: "Ruled out", v: "Bipolar disorder\u00a0· alcohol-related low mood\u00a0· thyroid problem" },
     { k: "Plan", v: "Psychiatrist review for medicines\u00a0· behavioural activation and CBT\u00a0· follow-up in one week" },
   ],
@@ -271,12 +272,23 @@ export const COLLEGES = {
   ],
 } as const;
 
+/** The plain "what this certificate is not" line (homepage, certificate, FAQ). */
+export const NOT_RCI =
+  "No. This is skills training by a private provider. It is not an RCI-recognised qualification, a degree, or a licence to practise as a clinical psychologist.";
+
+/** The same fact, as one line under the certificate. */
+export const CERT_NOTE =
+  "Skills training by a private provider. Not an RCI-recognised qualification, a degree, or a licence to practise.";
+
 export const FAQ = [
   { q: "How big is the cohort?", a: "Small. We run one cohort at a time, by invitation." },
   { q: "Can I take leave from patient batches?", a: "Up to 2 mental health leaves a month, asked for on WhatsApp the same day. Medical leave by email, with a recent medical certificate." },
   { q: "Can college students do only the internship?", a: "Yes. Clinical internships run with the cohort or on their own." },
   { q: "Why learn medicines if I won't prescribe?", a: "A prescription tells you the likely diagnosis and what to watch for, and lets you work with psychiatrists as part of the team." },
-  { q: "Is there a refund policy?", a: "Yes. Read it on the Refund policy page." },
+  { q: "Can I get a refund?", a: "No. Fees are not refundable once paid." },
+  { q: "Is this an RCI qualification?", a: NOT_RCI },
+  { q: "Is there an age limit?", a: "No. Anyone can join." },
+  { q: "Can I come in person?", a: "Yes. In-person patient sessions in Ahmedabad are open to every student, not only those sent by a college." },
 ] as const;
 
 /* ======================================================================
@@ -318,7 +330,7 @@ export const JOURNEY = {
     { k: "Interview", title: "Take the history", text: "In his own words. Onset, triggers, sleep, work, family, alcohol.", icon: "chat" },
     { k: "MSE", title: "Examine the mind", text: "Affect depressed and restricted. Hopelessness. No suicidal plan. Insight present.", icon: "eye" },
     { k: "Rule out", title: "Check what else it could be", text: "Bipolar episodes? Alcohol? Thyroid? Medicines hiding symptoms?", icon: "alert" },
-    { k: "Diagnosis", title: "Name it, provisionally", text: "Depressive episode, moderate (ICD-11). Written, not guessed.", icon: "clipboard" },
+    { k: "Diagnosis", title: "Name it, provisionally", text: "Single episode depressive disorder, moderate (ICD-11). Written, not guessed.", icon: "clipboard" },
     { k: "Case sheet", title: "Write it up properly", text: "Every finding in its place, in the format psychiatrists read.", icon: "book" },
     { k: "Treatment plan", title: "Plan with the psychiatrist", text: "Medicines reviewed by the psychiatrist. Your role, their role, clearly split.", icon: "pill" },
     { k: "Therapy plan", title: "Plan the sessions", text: "Sessions 1 to 2 motivational interviewing\u00a0· 3 to 6 behavioural activation + CBT\u00a0· then relapse prevention.", icon: "puzzle" },
