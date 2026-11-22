@@ -96,7 +96,7 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
           <div aria-hidden className={cn("hidden border-b border-[var(--ds-hairline)] pb-2 pl-3 type-pix text-muted-foreground", cols)}>
             <span>Medicine</span>
             <span>Class</span>
-            <span className="text-right">Usual dose</span>
+            <span className="text-right">Usual dose or level</span>
           </div>
           <ul aria-label="Medicines" className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-b border-[var(--ds-hairline)] max-md:border-t">
             {found.map((m) => (
