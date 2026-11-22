@@ -27,11 +27,11 @@ import { render } from "./utils";
 
 /** Shows a render error as text, so a test can say what broke. */
 class Catch extends React.Component<{ children: React.ReactNode }, { e: string | null }> {
-  state = { e: null as string | null };
+  override state = { e: null as string | null };
   static getDerivedStateFromError(e: Error) {
     return { e: String(e?.stack ?? e).slice(0, 700) };
   }
-  render() {
+  override render() {
     return this.state.e ? <Text testID="render-error">{this.state.e}</Text> : this.props.children;
   }
 }
