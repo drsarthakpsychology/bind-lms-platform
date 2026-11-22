@@ -58,7 +58,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
           <CheckCircle2 className="size-4" aria-hidden /> All dilemmas done
         </p>
         <p className="mt-2 text-small text-muted-foreground">
-          The law has teeth: every choice here maps to MHA 2017, POCSO, or RCI scope.
+          The law has teeth: every choice here maps to MHCA 2017, POCSO, or RCI scope.
         </p>
         <button
           type="button"

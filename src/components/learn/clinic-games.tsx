@@ -51,6 +51,8 @@ export function ScenarioGame({ serverState, save, noteId, ctx }: { serverState: 
   const [si, setSi] = React.useState(0);
   const [bi, setBi] = React.useState(0);
   const [picked, setPicked] = React.useState<Choice | null>(null);
+  /** Hints open on this step: the first is free, the second and third make a best answer count as a near miss. */
+  const [hints, setHints] = React.useState(0);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
   const [recycled, setRecycled] = React.useState(false);
@@ -122,13 +124,16 @@ export function ScenarioGame({ serverState, save, noteId, ctx }: { serverState: 
     setPicked(c);
     haptic(c.outcome === "best" ? "success" : "warning");
     const id = `${sc.id}-${bi}`;
+    // Two or more hints: a best answer is a near miss, not full marks.
+    const full = c.outcome === "best" && hints < 2;
     // A fast double tap must not count the same answer twice.
-    setAnswers((a) => (a.some((x) => x.id === id) ? a : [...a, { id, correct: c.outcome === "best" }]));
+    setAnswers((a) => (a.some((x) => x.id === id) ? a : [...a, { id, correct: full }]));
     // "Okay, but" is a near miss; a risky choice is wrong.
-    reaction.onAnswer(c.outcome === "best", { partial: c.outcome === "ok" });
+    reaction.onAnswer(full, { partial: c.outcome === "ok" || (c.outcome === "best" && !full) });
   }
   function next() {
     setPicked(null);
+    setHints(0);
     if (bi + 1 < sc.beats.length) return setBi(bi + 1);
     // A scenario counts as right when every step took the best response.
     const mine = [...answers.filter((a) => a.id.startsWith(`${sc.id}-`))];
@@ -155,7 +160,10 @@ export function ScenarioGame({ serverState, save, noteId, ctx }: { serverState: 
           {si + 1}
         </span>
       </div>
-      <Options key={`${sc.id}-${bi}`} beat={beat} picked={picked} onChoose={choose} />
+      {bi === 0 && sc.opening ? <OpeningCard o={sc.opening} /> : null}
+      <Options key={`${sc.id}-${bi}`} beat={beat} picked={picked} onChoose={choose} hideContext={bi === 0 && !!sc.opening?.lines.includes(beat.context ?? "")} />
+      {beat.hints && !picked ? <StepHints hints={beat.hints} used={hints} onMore={() => setHints((h) => Math.min(3, h + 1))} /> : null}
+      {beat.hints && picked && hints > 0 ? <StepHints hints={beat.hints} used={hints} locked /> : null}
       {picked ? (
         <div className={cn("rounded-3xl border-2 border-foreground p-4 hard-shadow-md", BADGE[picked.outcome].cls, s.rise)}>
           <div className="flex items-start gap-3">
@@ -164,8 +172,11 @@ export function ScenarioGame({ serverState, save, noteId, ctx }: { serverState: 
               <p className="text-lg font-bold">{BADGE[picked.outcome].label}</p>
               <p className="text-sm font-semibold">What happens: {picked.consequence}</p>
               {picked.outcome !== "best" ? <p className="mt-2 text-sm">Best: {beat.choices.find((c) => c.outcome === "best")!.text}</p> : null}
+              {picked.outcome === "best" && hints >= 2 ? <p className="mt-2 text-sm">Counted as a near miss, because you opened {hints} hints.</p> : null}
             </div>
           </div>
+          <EveryChoice beat={beat} picked={picked} />
+          {bi + 1 >= sc.beats.length && sc.learn ? <TakeAway learn={sc.learn} /> : null}
           <button type="button" autoFocus onClick={next} className="mt-3 h-12 w-full rounded-2xl border-2 border-foreground bg-background font-bold text-foreground">
             {bi + 1 < sc.beats.length ? "What happens next →" : si + 1 < deck.length ? "Next patient" : "Finish"}
           </button>
@@ -175,12 +186,78 @@ export function ScenarioGame({ serverState, save, noteId, ctx }: { serverState: 
   );
 }
 
-function Options({ beat, picked, onChoose }: { beat: Scenario["beats"][number]; picked: Choice | null; onChoose: (c: Choice) => void }) {
+/** The free starting picture: where you are and your role, then the story so far. */
+function OpeningCard({ o }: { o: NonNullable<Scenario["opening"]> }) {
+  return (
+    <section aria-label="The case" className={cn("space-y-1 rounded-2xl border-2 border-foreground bg-card p-4 text-sm leading-snug", s.rise)}>
+      <p className="font-bold">{o.setting}</p>
+      {o.lines.map((l, i) => (
+        <p key={i}>{l}</p>
+      ))}
+    </section>
+  );
+}
+
+/** Up to three hints, opened one at a time. The cost of the next one is on the button. */
+function StepHints({ hints, used, onMore, locked }: { hints: readonly string[]; used: number; onMore?: () => void; locked?: boolean }) {
+  const cost = used === 0 ? "free" : "a best answer then counts as a near miss";
+  return (
+    <div className="space-y-2">
+      {hints.slice(0, used).map((h, i) => (
+        <p key={i} role="status" className="rounded-xl border-2 border-foreground bg-status-info-bg px-3 py-2 text-sm text-status-info-fg">
+          <span className="font-bold">Hint {i + 1}. </span>
+          {h}
+        </p>
+      ))}
+      {!locked && used < hints.length ? (
+        <button type="button" onClick={onMore} className="flex min-h-11 w-full items-center justify-between gap-3 rounded-2xl border-2 border-dashed border-foreground px-4 py-2 text-left text-sm font-semibold">
+          <span>
+            Hint {used + 1} of {hints.length}
+          </span>
+          <span className="font-normal text-muted-foreground">{cost}</span>
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+/** After an answer: every choice with what happens and why, the picked one first. */
+function EveryChoice({ beat, picked }: { beat: Scenario["beats"][number]; picked: Choice }) {
+  const rest = beat.choices.filter((c) => c !== picked);
+  return (
+    <ul className="mt-3 space-y-2 rounded-2xl bg-background p-3 text-sm text-foreground" aria-label="Every choice">
+      {rest.map((c) => (
+        <li key={c.text}>
+          <span className="font-bold">{BADGE[c.outcome].label} </span>
+          {c.text}. <span className="text-muted-foreground">{c.consequence}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function TakeAway({ learn }: { learn: NonNullable<Scenario["learn"]> }) {
+  return (
+    <div className="mt-3 space-y-1 rounded-2xl bg-background p-3 text-sm text-foreground">
+      <p className="font-bold">{learn.concept}</p>
+      <p>{learn.point}</p>
+      {learn.errors.length ? (
+        <ul className="list-disc pl-5">
+          {learn.errors.map((e) => (
+            <li key={e}>{e}</li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+  );
+}
+
+function Options({ beat, picked, onChoose, hideContext }: { beat: Scenario["beats"][number]; picked: Choice | null; onChoose: (c: Choice) => void; hideContext?: boolean }) {
   // Shuffled once per step (not on every render).
   const [order] = React.useState(() => shuffle(beat.choices));
   return (
     <div className={cn("space-y-3", s.rise)}>
-      {beat.context ? <p className="rounded-xl border-2 border-dashed border-foreground/40 px-3 py-2 text-sm">{beat.context}</p> : null}
+      {beat.context && !hideContext ? <p className="rounded-xl border-2 border-dashed border-foreground/40 px-3 py-2 text-sm">{beat.context}</p> : null}
       <p className="relative isolate overflow-hidden rounded-3xl border-2 border-foreground bg-card p-4 text-lg font-bold leading-snug hard-shadow-sm">
         <HalftoneCorner />
         {beat.says}

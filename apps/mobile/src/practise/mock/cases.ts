@@ -19,7 +19,7 @@ type Prog = { clues: number; invs: number[]; guesses: P.DailyView["guesses"]; hi
 const dailyRows = new Map<string, Prog>();
 const fresh = (): Prog => ({ clues: 1, invs: [], guesses: [], hints: 0, status: "playing", chapterHit: false, marks: [], log: [] });
 const used = (p: Prog) => p.clues - 1 + p.invs.length;
-const scoreOf = (p: Prog) => (p.status === "solved" ? Math.max(0, Math.max(10, 100 - 15 * used(p)) - 10 * p.hints) : p.status === "lost" ? (p.chapterHit ? 15 : 0) : 0);
+const scoreOf = (p: Prog) => (p.status === "solved" ? Math.max(0, Math.max(10, 100 - 15 * used(p)) - [0, 0, 5, 10][Math.min(3, p.hints)]!) : p.status === "lost" ? (p.chapterHit ? 15 : 0) : 0);
 const canClue = (p: Prog) => p.status === "playing" && p.clues < 6 && p.clues + 1 <= 3;
 function applyDaily(c: DailyCase, p: Prog, a: P.DailyAction): Prog {
   if (p.status !== "playing") return p;
@@ -30,7 +30,7 @@ function applyDaily(c: DailyCase, p: Prog, a: P.DailyAction): Prog {
     case "inv":
       return a.i >= 0 && a.i < c.investigations.length && !p.invs.includes(a.i) ? { ...p, invs: [...p.invs, a.i], marks: [...p.marks, "inv"], log } : p;
     case "hint":
-      return p.hints < 2 ? { ...p, hints: p.hints + 1, marks: [...p.marks, "hint"], log } : p;
+      return p.hints < 3 ? { ...p, hints: p.hints + 1, marks: [...p.marks, "hint"], log } : p;
     case "giveup":
       return { ...p, status: "lost", log };
     case "guess": {
@@ -62,7 +62,12 @@ function dailyView(c: DailyCase, p: Prog, mode: "daily" | "practice"): P.DailyVi
     unopened: Math.max(0, c.clues.length - p.clues) + c.investigations.filter((_, i) => !p.invs.includes(i)).length,
     investigations: c.investigations.map((x, i) => ({ i, kind: x.kind, label: x.label, result: p.invs.includes(i) ? x.result : null, ordered: p.invs.includes(i) })),
     guesses: p.guesses,
-    hints: { used: p.hints, chapter: p.hints >= 1 || over ? (CH[c.chapter]?.name ?? null) : null, pointer: p.hints >= 2 || over ? c.pointer : null },
+    opening: null,
+    hints: (() => {
+      const guide = [`Think of the ${(CH[c.chapter]?.name ?? c.chapter).toLowerCase()}.`, c.pointer, "Weigh it against the look-alikes: one detail rules each of them out."];
+      const steps = guide.slice(0, over ? 3 : p.hints);
+      return { used: p.hints, chapter: null, pointer: steps.length ? steps.join(" ") : null, steps, max: 3, next: !over && p.hints < 3 ? { n: p.hints + 1, points: [0, 5, 5][p.hints]!, usesHint: p.hints >= 1 } : null };
+    })(),
     canClue: canClue(p),
     status: p.status,
     points: used(p),
@@ -119,9 +124,16 @@ const detective = {
   },
   clue(token: unknown, round: unknown, n: unknown): { ok: true; clue: string } {
     const c = held<DetRun>(token).cases[Number(round)];
-    const clue = c?.clues[Number(n)];
+    // Numbered from 1, as on the server (src/lib/learn/detective-deal.ts clueOf).
+    const clue = c?.clues[Number(n) - 1];
     if (!clue) throw FAIL();
     return { ok: true, clue };
+  },
+  hint(token: unknown, round: unknown, n: unknown): { ok: true; hint: string } {
+    const c = held<DetRun>(token).cases[Number(round)];
+    const k = Number(n);
+    if (!c || !(k >= 1 && k <= 3)) throw FAIL();
+    return { ok: true, hint: ["Think about which group this belongs to: a medicine or a disorder, and which family.", "Look at the clue that is most specific, and what it usually points to.", "Two of the four options can be ruled out by the first clue alone."][k - 1]! };
   },
   clues(token: unknown, round: unknown): { ok: true; clues: string[] } {
     const c = held<DetRun>(token).cases[Number(round)];
@@ -248,7 +260,7 @@ function scoreMock(spec: (typeof MOCK_SPECS)[number], ids: string[], answers: Re
 
 export const CASES: Record<string, Record<string, (...args: never[]) => unknown>> = {
   daily: { move: daily.move, rest: daily.rest, next: daily.next },
-  detective: { deal: detective.deal, clue: detective.clue, clues: detective.clues, guess: detective.guess },
+  detective: { deal: detective.deal, clue: detective.clue, clues: detective.clues, guess: detective.guess, hint: detective.hint },
   cases: { progress: cases.progress, mark: cases.mark },
   prep: { check: prep.check, reveal: prep.reveal, save: prep.save, mockStart: prep.mockStart, mockSubmit: prep.mockSubmit },
 };

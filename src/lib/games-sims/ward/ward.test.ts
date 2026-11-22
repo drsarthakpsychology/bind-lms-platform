@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { CAMPAIGNS, campaignById } from "./campaigns";
+import { EXTRA_KEYS } from "./extra";
 import { choose, currentDecision, endingFor, holds, outcomeScore, startState, visibleBeats, type WardState } from "./engine";
 import { TOPICS } from "@/lib/learn/model/topics";
 import { tagProblems } from "../item-tags";
@@ -53,6 +54,19 @@ describe("Ward Week library tags", () => {
       expect(c.endings.map((e) => e.min).sort((a, b) => a - b), c.id).toEqual([0, 50, 72]);
     }
   });
+  it("no decision is a two-way coin toss: every one has 3 or more choices, each with a reason", () => {
+    for (const c of CAMPAIGNS)
+      for (const ch of c.chapters)
+        for (const d of ch.decisions) {
+          expect(d.options.length, `${c.id} ${d.id}`).toBeGreaterThanOrEqual(3);
+          for (const o of d.options) expect(o.why.length, `${c.id} ${d.id} ${o.id}`).toBeGreaterThan(20);
+        }
+    // Every extra was written for a real decision.
+    const keys = new Set(CAMPAIGNS.flatMap((c) => c.chapters.flatMap((ch) => ch.decisions.map((d) => `${c.id}:${d.id}`))));
+    for (const k of EXTRA_KEYS) expect(keys.has(k), k).toBe(true);
+    expect(EXTRA_KEYS.length).toBe(121);
+  });
+
   it("spreads the best option across positions", () => {
     const pos = [0, 0, 0];
     let n = 0;

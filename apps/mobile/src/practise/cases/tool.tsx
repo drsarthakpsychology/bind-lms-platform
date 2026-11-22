@@ -167,7 +167,7 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
   const isPick = step.kind === "pick";
   const first = React.useRef<number | null>(null);
   const player = useStepPlay({
-    step: isPick ? stepFromPick(`${def.id}-${at}`, step.ask, step.options) : NO_STEP,
+    step: isPick ? { ...stepFromPick(`${def.id}-${at}`, step.ask, step.options), hints: key?.hints ?? [] } : NO_STEP,
     resetKey: `${def.id}-${at}`,
     ids: { option: "tool-option", next: "tool-next" },
     seed: at,
@@ -183,7 +183,11 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
         first.current = j;
         count(j, r);
       }
-      return keyFromReveal(isPick ? step.options : [], r, j, tool === "ethics" ? "The law" : "More");
+      const k = keyFromReveal(isPick ? step.options : [], r, j, tool === "ethics" ? "The law" : "More");
+      // Every choice's own result shows after the answer, and the case's take-away on its last step.
+      if (key.notes) for (const [i, note] of key.notes.entries()) if (note && k.options[String(i)] && !k.options[String(i)]!.feedback) k.options[String(i)]!.feedback = note;
+      if (key.learn) k.explanation = { ...k.explanation, concept: key.learn.concept, implication: key.learn.point, commonErrors: key.learn.errors };
+      return k;
     },
   });
   if (done || !key) {

@@ -26,7 +26,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c004", "crisis", "Disaster response", "ptsd", "trauma", 2, "UMS", "Avoid mass debriefing", "Village after a flood in Assam", [
     b("The district asks you to run group sessions where everyone retells the flood in detail.", [
-      ["o", "Agree, since talking about trauma is always healing and the district wants to help everyone", "Forced detailed retelling can harm some survivors."],
+      ["h", "Agree, since talking about trauma is always healing and the district wants to help everyone", "Forced detailed retelling can harm some survivors."],
       ["h", "Refuse to help at all", "People still need support; refusing helps no one."],
       ["b", "Suggest practical help and screening for those who need more", "Most recover with support. Those with ongoing distress are referred."],
     ]),
@@ -69,7 +69,7 @@ export const CRISIS: Scenario[] = [
   s("wy-c010", "crisis", "Domestic violence crisis", "ptsd", "trauma", 3, "UMS", "Plan immediate safety", "Woman, 28, calls after being beaten", [
     b("She is hiding in the bathroom and her husband is outside.", [
       ["b", "Ask if she can call 112, stay on the line, and help her plan to get to safety", "Police arrive. Immediate safety comes first."],
-      ["o", "Tell her to talk to him calmly when he settles, and try to sort it out tomorrow", "She may be hurt again tonight."],
+      ["h", "Tell her to talk to him calmly when he settles, and try to sort it out tomorrow", "She may be hurt again tonight."],
       ["h", "Ask what she did to make him angry", "Blames her and wastes precious time."],
     ]),
   ]),
@@ -90,7 +90,7 @@ export const CRISIS: Scenario[] = [
   s("wy-c013", "crisis", "Crisis in a teen after cyberbullying", "child", "child", 3, "UMS", "Respond to online humiliation", "Girl, 15, whose photo was shared", [
     b("“Everyone has seen it. I can't go back to school.”", [
       ["b", "Ask about suicide, and report the image with her parents", "The image is removed and the school acts. She feels protected."],
-      ["o", "Tell her to delete her accounts and stay off social media for a while until it blows over", "Helps a little, but does not stop the abuse or check her safety."],
+      ["h", "Tell her to delete her accounts and stay off social media for a while until it blows over", "Helps a little, but does not stop the abuse or check her safety."],
       ["h", "Ask why she sent the photo in the first place", "Blaming her raises shame and suicide risk."],
     ]),
   ]),
@@ -124,7 +124,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c018", "crisis", "Crisis in psychosis at home", "schizophrenia", "psychosis", 3, "UMS", "Guide a family on the phone", "Mother calls: her son is breaking things", [
     b("He is shouting that the family is poisoning him.", [
-      ["o", "Tell her to lock him in his room until he calms down and then call you back", "Locking in can escalate danger."],
+      ["h", "Tell her to lock him in his room until he calms down and then call you back", "Locking in can escalate danger."],
       ["h", "Tell her to argue with him until he admits he is ill", "He becomes more frightened and angry. Arguing with a delusion during a crisis raises anger and risk."],
       ["b", "Advise her to stay safe, not argue, and call for help", "Police and the team bring him in safely."],
     ]),
@@ -133,7 +133,7 @@ export const CRISIS: Scenario[] = [
     b("Nurses are exhausted and tearful.", [
       ["b", "Offer rest, peer support and later check-ins", "Most recover. A few are referred for help."],
       ["h", "Tell them they are professionals and should cope", "Two nurses later go off sick. Telling staff to cope ignores real distress and stops them asking for help."],
-      ["o", "Hold a compulsory detailed debriefing session the same night for all staff on duty", "Some staff relive the night and sleep worse. Forced debriefing on the same night can harm rather than help."],
+      ["h", "Hold a compulsory detailed debriefing session the same night for all staff on duty", "Some staff relive the night and sleep worse. Forced debriefing on the same night can harm rather than help."],
     ]),
   ]),
   s("wy-c020", "crisis", "Crisis in a lift", "anxiety", "anxiety", 1, "CUS", "Calm someone trapped", "Man, 40, trapped in a lift with you", [
@@ -159,7 +159,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c023", "crisis", "Student in crisis after a breakup", "suicide", "suicide", 2, "CUS", "Respond to a crisis text", "Student texts you, 'I can't take this'", [
     b("It is late at night.", [
-      ["o", "Reply that you will talk tomorrow in office hours, since it is late and you are off duty", "She does not make it through the night safely. A crisis message cannot wait for office hours; it may be too late."],
+      ["h", "Reply that you will talk tomorrow in office hours, since it is late and you are off duty", "She does not make it through the night safely. A crisis message cannot wait for office hours; it may be too late."],
       ["h", "Ignore it; it is not a working hour", "You read it in the morning, too late to help. Late messages can be the only warning of a crisis."],
       ["b", "Reply to check her safety and share Tele-MANAS 14416", "She calls the helpline and is safe."],
     ]),
@@ -243,7 +243,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c035", "crisis", "Crisis in a farmer after crop loss", "suicide", "suicide", 3, "UMS", "Respond to rural distress", "Farmer, 50, crop destroyed by hail", [
     b("He has stopped eating and the pesticide is in the house.", [
-      ["o", "Tell him to apply for government compensation forms first and come back next week", "He fills in forms but the pesticide is still in reach. Practical help matters, but risk comes first."],
+      ["h", "Tell him to apply for government compensation forms first and come back next week", "He fills in forms but the pesticide is still in reach. Practical help matters, but risk comes first."],
       ["b", "Ask about suicide and lock away the pesticide", "He admits thoughts of suicide. Means are removed."],
       ["h", "Tell him farming is risky anyway", "He feels unheard and leaves. Brushing off his loss is dismissive at a dangerous moment."],
     ]),
@@ -264,7 +264,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c038", "crisis", "Crisis in a transgender person after rejection", "suicide", "suicide", 3, "UMS", "Support with affirmation", "Trans woman, 22, thrown out of home", [
     b("She has nowhere to sleep tonight.", [
-      ["o", "Suggest she go back home and apologise to her family, since they might accept her in time", "Her family attacks her again. Sending her back may expose her to harm."],
+      ["h", "Suggest she go back home and apologise to her family, since they might accept her in time", "Her family attacks her again. Sending her back may expose her to harm."],
       ["h", "Tell her to dress as a man to be accepted", "She feels rejected by you too. Telling her to hide who she is is rejecting and harmful."],
       ["b", "Help her find safe shelter or a community organisation tonight, and check suicide risk", "She stays at a shelter and connects with support."],
     ]),
@@ -301,7 +301,7 @@ export const CRISIS: Scenario[] = [
     b("He says seniors beat him and he wants to leave college.", [
       ["b", "Check his safety, report to the anti-ragging committee, and support him", "Seniors are disciplined; he stays."],
       ["h", "Tell him ragging is a tradition", "Harmful; ragging is a punishable offence."],
-      ["o", "Tell him to avoid the seniors and stay in his room, so that it stops on its own", "The beatings continue. Hiding in his room does not stop the abuse; it needs reporting."],
+      ["h", "Tell him to avoid the seniors and stay in his room, so that it stops on its own", "The beatings continue. Hiding in his room does not stop the abuse; it needs reporting."],
     ]),
   ]),
   s("wy-c044", "crisis", "Crisis in a person with OCD during a pandemic", "ocd", "ocd", 3, "US", "Support OCD under real threats", "Woman, 30, with contamination OCD", [
@@ -329,7 +329,7 @@ export const CRISIS: Scenario[] = [
     b("He is shouting that people are after him.", [
       ["h", "Shout at him to stop", "He becomes more frightened and pushes people away. Shouting escalates fear in psychosis."],
       ["b", "Help him to a quieter place, speak calmly, and contact his family or medical help", "He calms and is taken home by his brother. A quiet place and calm words reduce fear in crowds."],
-      ["o", "Ignore him and walk away, since festivals are noisy and people shout all the time", "He may get hurt or hurt others."],
+      ["h", "Ignore him and walk away, since festivals are noisy and people shout all the time", "He may get hurt or hurt others."],
     ]),
   ]),
   s("wy-c048", "crisis", "Crisis in a teen after a friend's suicide", "suicide", "suicide", 3, "UMS", "Screen friends after a suicide", "Boy, 16, best friend died by suicide", [
@@ -350,7 +350,7 @@ export const CRISIS: Scenario[] = [
     b("The police plan to keep him in the lock-up overnight.", [
       ["h", "Agree; it is safer for everyone", "MHCA bars keeping such a person in a lock-up."],
       ["b", "Remind them he must go to a hospital within 24 hours", "He is taken to hospital and assessed."],
-      ["o", "Suggest the police call his family to collect him in the morning instead", "Delay and lock-up are not allowed."],
+      ["h", "Suggest the police call his family to collect him in the morning instead", "Delay and lock-up are not allowed."],
     ]),
   ]),
   s("wy-c051", "crisis", "Crisis after an acid attack", "ptsd", "trauma", 4, "UMS", "Support a survivor of disfiguring violence", "Woman, 24, after an acid attack", [
@@ -369,7 +369,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c053", "crisis", "Crisis in a person who was outed", "suicide", "suicide", 3, "UMS", "Respond to forced disclosure", "Man, 26, outed as gay at work", [
     b("He says everyone is laughing at him and he wants to disappear.", [
-      ["o", "Tell him to ignore the gossip because it will die down in a week or two", "He feels unheard and thinks of hurting himself. Minimising his crisis misses the risk."],
+      ["h", "Tell him to ignore the gossip because it will die down in a week or two", "He feels unheard and thinks of hurting himself. Minimising his crisis misses the risk."],
       ["h", "Tell him it was bound to happen", "He feels blamed for being himself. Saying it was bound to happen is dismissive."],
       ["b", "Ask about suicide and affirm him", "He feels supported and is safe."],
     ]),
@@ -404,7 +404,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c058", "crisis", "Crisis in a person after a medical diagnosis", "depression", "depression", 3, "US", "Support after bad news", "Man, 50, just told he has cancer", [
     b("He says, “I'll just end it before it gets bad.”", [
-      ["o", "Tell him not to think like that because cancer is very treatable nowadays", "He goes home with his plan unspoken. Reassurance about treatment does not check risk."],
+      ["h", "Tell him not to think like that because cancer is very treatable nowadays", "He goes home with his plan unspoken. Reassurance about treatment does not check risk."],
       ["b", "Ask about suicide and link him with support", "He has a plan; support reduces risk."],
       ["h", "Change the subject to treatment details", "He feels his despair is not welcome. Skipping to treatment details ignores his despair."],
     ]),
@@ -418,7 +418,7 @@ export const CRISIS: Scenario[] = [
   ]),
   s("wy-c060", "crisis", "Crisis after a lynching threat", "ptsd", "trauma", 4, "US", "Respond to community violence", "Man, 30, threatened by a mob", [
     b("He is hiding and terrified for his family.", [
-      ["o", "Tell him to move to another town immediately without telling anyone where he is going", "He is followed and attacked on the road. Leaving suddenly without support is unsafe."],
+      ["h", "Tell him to move to another town immediately without telling anyone where he is going", "He is followed and attacked on the road. Leaving suddenly without support is unsafe."],
       ["h", "Tell him to confront the mob", "He is badly beaten. Confronting a mob is dangerous."],
       ["b", "Get him safe and contact the police", "Police protect the family and a case is registered. Safety, police and legal help come first."],
     ]),

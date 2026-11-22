@@ -7,8 +7,8 @@
  */
 
 import { CHAPTERS, diagnosisById } from "../diagnoses";
-import { canOpenClue, pointsUsed, scoreOf, shareGrid, type Progress, type Status } from "./engine";
-import type { DailyCase, InvestigationKind } from "./types";
+import { canOpenClue, HINT_COST, hintUsesAllowance, MAX_HINTS, pointsUsed, scoreOf, shareGrid, type Progress, type Status } from "./engine";
+import type { DailyCase, GuideHints, InvestigationKind, Opening } from "./types";
 
 export type CaseView = {
   mode: "daily" | "practice";
@@ -17,6 +17,8 @@ export type CaseView = {
   ai: boolean;
   difficulty: 1 | 2 | 3;
   setting: string;
+  /** The free starting picture (null for a case written without one). */
+  opening: Opening | null;
   /** Only the clues the student opened. */
   clues: string[];
   /** Clues open when the case ended (or now). */
@@ -25,7 +27,17 @@ export type CaseView = {
   unopened: number;
   investigations: { i: number; kind: InvestigationKind; label: string; result: string | null; ordered: boolean }[];
   guesses: { dx: string; name: string; ok: boolean; sameChapter: boolean; reason: string }[];
-  hints: { chapter: string | null; pointer: string | null; used: number };
+  hints: {
+    /** Older phones show these two lines; newer screens show `steps`. */
+    chapter: string | null;
+    pointer: string | null;
+    used: number;
+    /** The guided hints opened so far, in order. */
+    steps: string[];
+    max: number;
+    /** What the next hint costs, or null when none are left. */
+    next: { n: number; points: number; usesHint: boolean } | null;
+  };
   /** False from clue 4 on: a guess opens the next clue, "Next clue" doesn't. */
   canClue: boolean;
   status: Status;
@@ -43,6 +55,17 @@ export type CaseView = {
   };
 };
 
+/** The three guided hints: the case's own, or built from its chapter, pointer and look-alikes. */
+export function guideOf(c: DailyCase): GuideHints {
+  if (c.guide) return c.guide;
+  const names = c.differentials.slice(0, 2).map((x) => diagnosisById(x.dx)?.name ?? x.dx);
+  return [
+    `Think of the ${CHAPTERS[c.chapter].name.toLowerCase()}.`,
+    c.pointer,
+    names.length ? `Weigh it against ${names.join(" and ")}: one detail in the case rules each of them out.` : "Go back to the detail that has lasted longest, and count it against the rule for each choice.",
+  ];
+}
+
 export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice", admin: boolean, opts: { ai?: boolean } = {}): CaseView {
   const over = p.status !== "playing";
   return {
@@ -51,12 +74,13 @@ export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice",
     ai: opts.ai === true,
     difficulty: c.difficulty,
     setting: c.setting,
+    opening: c.opening ?? null,
     clues: c.clues.slice(0, p.clues),
     cluesOpen: p.clues,
     unopened: Math.max(0, c.clues.length - p.clues) + c.investigations.filter((_, i) => !p.invs.includes(i)).length,
     investigations: c.investigations.map((x, i) => ({ i, kind: x.kind, label: x.label, result: p.invs.includes(i) ? x.result : null, ordered: p.invs.includes(i) })),
     guesses: p.guesses.map((g) => ({ ...g, name: diagnosisById(g.dx)?.name ?? g.dx })),
-    hints: { used: p.hints, chapter: p.hints >= 1 || over ? CHAPTERS[c.chapter].name : null, pointer: p.hints >= 2 || over ? c.pointer : null },
+    hints: hintsView(c, p, over),
     canClue: canOpenClue(p),
     status: p.status,
     points: pointsUsed(p),
@@ -85,5 +109,20 @@ export function restOf(c: DailyCase, p: Progress): CaseRest | null {
   return {
     clues: c.clues.slice(p.clues).map((text, i) => ({ n: p.clues + i + 1, text })),
     tests: c.investigations.filter((_, i) => !p.invs.includes(i)).map((x) => ({ kind: x.kind, label: x.label, result: x.result })),
+  };
+}
+
+function hintsView(c: DailyCase, p: Progress, over: boolean): CaseView["hints"] {
+  const guide = guideOf(c);
+  const steps = guide.slice(0, over ? MAX_HINTS : p.hints);
+  const n = p.hints + 1;
+  return {
+    used: p.hints,
+    // Older phones read only these: the opened hints as one block.
+    chapter: null,
+    pointer: steps.length ? steps.join(" ") : null,
+    steps,
+    max: MAX_HINTS,
+    next: !over && p.hints < MAX_HINTS ? { n, points: HINT_COST[p.hints], usesHint: hintUsesAllowance(n) } : null,
   };
 }

@@ -66,7 +66,7 @@ export const PLAY: Record<string, PlayGame> = {
   },
   detective: {
     gate: { path: "/practice/detective", flag: "learn" },
-    actions: { deal: a(detective.dealDetective, 2), clue: a(detective.detectiveClue, 3, false), clues: a(detective.detectiveAllClues, 2, false), guess: a(detective.detectiveGuess, 4) },
+    actions: { deal: a(detective.dealDetective, 2), clue: a(detective.detectiveClue, 3, false), clues: a(detective.detectiveAllClues, 2, false), guess: a(detective.detectiveGuess, 4), hint: a(detective.detectiveHint, 3, false) },
   },
   daily: {
     gate: { path: "/practice/daily", flag: "learn" },

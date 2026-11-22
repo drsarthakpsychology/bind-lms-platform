@@ -125,7 +125,9 @@ export const ESC_PENALTY_S = 20;
 /** src/lib/learn/detective-rules.ts, src/lib/cases/fresh.ts */
 export type CaseMark = "started" | "week" | "new" | "done";
 export type DetFamily = "drug" | "disorder" | "mixed";
-export type DetRound = { options: string[]; clue: string };
+export type DetRound = { options: string[]; clue: string; /** Newer servers: a free starting picture, and the options as names. */ picture?: string; names?: string[] };
+/** Up to three guided hints: the first free, the next two 5 points each. */
+export const DET_HINT_COST = [0, 5, 5] as const;
 export type DetDeal = { ok: true; token: string; run: string; rounds: DetRound[]; marks: CaseMark[]; recycled: boolean };
 export const DET_POINTS = [40, 30, 20, 10] as const;
 export const DET_WRONG = 5;
@@ -141,12 +143,15 @@ export type DailyView = {
   ai: boolean;
   difficulty: 1 | 2 | 3;
   setting: string;
+  /** Free starting picture (missing on older servers). */
+  opening?: { who: string; says: string; since: string; seen: string[] } | null;
   clues: string[];
   cluesOpen: number;
   unopened: number;
   investigations: { i: number; kind: DailyKind; label: string; result: string | null; ordered: boolean }[];
   guesses: { dx: string; name: string; ok: boolean; sameChapter: boolean; reason: string }[];
-  hints: { chapter: string | null; pointer: string | null; used: number };
+  /** `steps`, `max` and `next` are missing on older servers. */
+  hints: { chapter: string | null; pointer: string | null; used: number; steps?: string[]; max?: number; next?: { n: number; points: number; usesHint: boolean } | null };
   canClue: boolean;
   status: "playing" | "solved" | "lost";
   points: number;

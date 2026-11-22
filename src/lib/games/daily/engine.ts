@@ -10,19 +10,34 @@
  *   guess opens the next clue), so clue spam turns into practice.
  * - A wrong guess with all 6 clues showing ends the case.
  * - Score: 100 on clue 1 with nothing ordered, minus 15 per clue point used,
- *   at least 10 when solved, then minus 10 per hint (never below 0). Unsolved
- *   but a guess hit the right DSM chapter (before using the chapter hint): 15.
- * - Hints are counted and charged by src/lib/hints (3 free a day, then spare
- *   or bought ones); this file only knows how many this case used.
+ *   at least 10 when solved, then minus the hints used (never below 0).
+ *   Unsolved but a guess hit the right DSM chapter (before any hint): 15.
+ * - Up to 3 guided hints. The first is free (no points, no hint from the
+ *   day's allowance); the second and third cost HINT_COST points each and
+ *   one hint from src/lib/hints (3 free a day, then spare or bought ones).
  */
 
 import { CHAPTERS, diagnosisById, normaliseName } from "../diagnoses";
-import { CASE_SCORE_PER_HINT, clueOpens } from "@/lib/hints/rules";
+import { clueOpens } from "@/lib/hints/rules";
 import type { DailyCase } from "./types";
 import { orderByHistory, tierOf, type HistoryRow } from "@/lib/history/order";
 
 export const MAX_CLUES = 6;
-export const MAX_HINTS = 2;
+export const MAX_HINTS = 3;
+/** Points each hint costs, in order: the first is free. */
+export const HINT_COST = [0, 5, 5] as const;
+
+/** Points lost to the first `n` hints. */
+export function hintPoints(n: number): number {
+  let t = 0;
+  for (let i = 0; i < Math.min(n, MAX_HINTS); i++) t += HINT_COST[i];
+  return t;
+}
+
+/** Does hint number `n` (1-based) use one of the day's hints? The first never does. */
+export function hintUsesAllowance(n: number): boolean {
+  return n >= 2;
+}
 export const MAX_LOG = 40;
 
 export type Action = { t: "clue" } | { t: "inv"; i: number } | { t: "guess"; dx: string } | { t: "hint" } | { t: "giveup" };
@@ -49,7 +64,7 @@ export function pointsUsed(p: Pick<Progress, "clues" | "invs">): number {
 }
 
 export function scoreOf(p: Progress): number {
-  if (p.status === "solved") return Math.max(0, Math.max(10, 100 - 15 * pointsUsed(p)) - CASE_SCORE_PER_HINT * p.hints);
+  if (p.status === "solved") return Math.max(0, Math.max(10, 100 - 15 * pointsUsed(p)) - hintPoints(p.hints));
   if (p.status === "lost") return p.chapterHit ? 15 : 0;
   return 0;
 }

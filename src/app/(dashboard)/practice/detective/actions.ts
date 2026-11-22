@@ -6,7 +6,7 @@ import { loadHistory, requestRng } from "@/lib/history/server";
 import { cleanItem, mergeHistory, type HistoryRow } from "@/lib/history/order";
 import { freshRound, arrangeCases, type CaseMark } from "@/lib/cases/fresh";
 import { ownerTag } from "@/lib/cases/progress";
-import { clueOf, deal, judge, poolFor, ROUNDS, type DealtRound, type Family } from "@/lib/learn/detective-deal";
+import { clueOf, deal, hintOf, judge, poolFor, ROUNDS, type DealtRound, type Family } from "@/lib/learn/detective-deal";
 import { detectiveCase, detectiveMask as mask } from "@/lib/learn/detective-server";
 
 /** Clinic detective on the server: the answer and the clues not yet opened never reach the browser early. */
@@ -57,6 +57,13 @@ export async function detectiveClue(token: string, round: number, n: number): Pr
   const c = await caseFor(token, round);
   const clue = c ? clueOf(c, n) : null;
   return clue ? { ok: true, clue } : { ok: false, error: FAIL };
+}
+
+/** Guided hint n (1 to 3) of a round. The first is free; the browser takes 5 points for each later one. */
+export async function detectiveHint(token: string, round: number, n: number): Promise<{ ok: true; hint: string } | { ok: false; error: string }> {
+  const c = await caseFor(token, round);
+  const hint = c ? hintOf(c, n) : null;
+  return hint ? { ok: true, hint } : { ok: false, error: FAIL };
 }
 
 /** After a round ends: every clue, for "Show the other clues". */

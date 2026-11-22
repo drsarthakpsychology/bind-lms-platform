@@ -6,9 +6,17 @@
  */
 import type { PrepExam } from "@/lib/prep/types";
 import { SCENARIO_BANK } from "./scenario-bank";
+import { withGuides } from "./scenario-guides";
+import { MERGED_AWAY, RICH_SCENARIOS } from "./scenario-rich";
 export type Outcome = "best" | "ok" | "harm";
-export type Choice = { text: string; outcome: Outcome; consequence: string };
-export type Beat = { says: string; context?: string; choices: Choice[] };
+/** `why`: the reason this choice is right or wrong here (rich cases); `consequence` is what happens next. */
+export type Choice = { text: string; outcome: Outcome; consequence: string; why?: string };
+/** `hints`: 1 the area to think in, 2 the key detail and why, 3 narrow the choice. Every beat has them once guides are added. */
+export type Beat = { says: string; context?: string; choices: Choice[]; hints?: [string, string, string] };
+/** The free starting picture: where you are and your role, then the story so far. */
+export type Opening = { setting: string; lines: string[] };
+/** What to take away (rich cases): the principle by name, the clinical point, common errors. */
+export type Learn = { concept: string; point: string; errors: string[] };
 /** Where the decision sits in clinical work. */
 export type Area = "assessment" | "risk" | "emergency" | "crisis" | "treatment" | "liaison" | "child-family" | "boundaries";
 /** Difficulty ladder: 1 recognise, 2 recall, 3 apply, 4 tell look-alikes apart, 5 full case. */
@@ -27,6 +35,8 @@ export type Scenario = {
   exams: PrepExam[];
   /** Study module for "Learn this". */
   moduleId: string;
+  opening?: Opening;
+  learn?: Learn;
 };
 
 const SCENARIOS_CORE: Scenario[] = [
@@ -55,7 +65,7 @@ const SCENARIOS_CORE: Scenario[] = [
         choices: [
           { text: "Ask about intent and timing, make a safety plan, and involve your supervisor today", outcome: "best", consequence: "She agrees to her mother keeping the pills and to a follow-up tomorrow. Your supervisor reviews her the same day." },
           { text: "Promise to keep it between the two of you so she trusts you", outcome: "harm", consequence: "You've made a promise you can't keep. If she's at risk, you must act, and she'll feel betrayed." },
-          { text: "Book her next weekly session as usual", outcome: "ok", consequence: "She's still at risk for 7 days with access to the means. Risk needs same-day action." },
+          { text: "Book her next weekly session as usual", outcome: "harm", consequence: "She's still at risk for 7 days with access to the means. Risk needs same-day action." },
         ],
       },
     ],
@@ -112,7 +122,7 @@ const SCENARIOS_CORE: Scenario[] = [
         says: "“The voices tell me to hurt the neighbour's dog.”",
         choices: [
           { text: "Ask if he plans to act, whether he's acted before, and inform the psychiatrist today", outcome: "best", consequence: "Command hallucinations with possible action need urgent review. The team acts in time." },
-          { text: "Reassure him that voices can't make him do anything", outcome: "ok", consequence: "Kind, but you haven't assessed the risk." },
+          { text: "Reassure him that voices can't make him do anything", outcome: "harm", consequence: "Kind, but you haven't assessed the risk." },
           { text: "Change the topic to keep him calm", outcome: "harm", consequence: "You've avoided a risk you were told about." },
         ],
       },
@@ -155,7 +165,7 @@ const SCENARIOS_CORE: Scenario[] = [
         choices: [
           { text: "Treat it as possible lithium toxicity: urgent medical review and a blood level today", outcome: "best", consequence: "His level is high. The team stops lithium and he recovers." },
           { text: "Tell him it's probably a stomach bug", outcome: "harm", consequence: "Lithium toxicity can damage the kidneys and brain. This delay is dangerous." },
-          { text: "Advise him to drink more water and see how it goes", outcome: "ok", consequence: "Fluids help, but this needs same-day medical assessment." },
+          { text: "Advise him to drink more water and see how it goes", outcome: "harm", consequence: "Fluids help, but this needs same-day medical assessment." },
         ],
       },
     ],
@@ -268,7 +278,12 @@ const SCENARIOS_CORE: Scenario[] = [
 ];
 
 /** Core scenarios plus the authored bank; ids are stable. */
-export const SCENARIOS: Scenario[] = [...SCENARIOS_CORE, ...SCENARIO_BANK];
+export const SCENARIOS: Scenario[] = [...SCENARIOS_CORE, ...SCENARIO_BANK]
+  // The most used cases, rebuilt in the rich shape (same id, so answer history carries on).
+  .map((x) => RICH_SCENARIOS.get(x.id) ?? x)
+  // Near-duplicates folded into a rich case are no longer dealt.
+  .filter((x) => !MERGED_AWAY.has(x.id))
+  .map(withGuides);
 
 /** "Words matter": pick the better way to say it. */
 export const WORDS: { worse: string; better: string; why: string }[] = [

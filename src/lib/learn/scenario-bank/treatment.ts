@@ -97,7 +97,7 @@ export const TREATMENT: Scenario[] = [
   s("wy-t014", "treatment", "Depression in pregnancy", "depression", "lifespan", 4, "MDS", "Weigh treatment in pregnancy", "Fatima, 28, depressed, 16 weeks pregnant", [
     b("She is afraid any treatment will harm the baby.", [
       ["b", "Explain the risks of both untreated depression and treatment options, and decide with her and her doctors", "She chooses therapy and close review. Shared decisions balance risks."],
-      ["o", "Tell her to avoid all treatment until the baby is born, since that is the safest option", "Untreated depression also harms mother and baby."],
+      ["h", "Tell her to avoid all treatment until the baby is born, since that is the safest option", "Untreated depression also harms mother and baby."],
       ["h", "Tell her tablets are completely safe", "Not accurate; risks must be explained."],
     ]),
   ]),
@@ -118,7 +118,7 @@ export const TREATMENT: Scenario[] = [
   s("wy-t017", "treatment", "Lithium monitoring", "stabilisers", "stabilisers", 2, "MDS", "Explain lithium safety", "Sunil, 40, starting lithium", [
     b("He asks what he needs to know.", [
       ["b", "Explain regular blood tests, drinking enough fluid, and avoiding certain painkillers", "He knows the signs of toxicity. Education prevents harm."],
-      ["o", "Tell him to take it daily and not worry about anything else, since the doctor will monitor it", "He gets dehydrated in summer and becomes toxic. Without the safety points he cannot protect himself."],
+      ["h", "Tell him to take it daily and not worry about anything else, since the doctor will monitor it", "He gets dehydrated in summer and becomes toxic. Without the safety points he cannot protect himself."],
       ["h", "Tell him lithium is just salt and harmless", "He takes painkillers that raise his level. Lithium has a narrow safe range and can be toxic."],
     ]),
   ]),
@@ -266,7 +266,7 @@ export const TREATMENT: Scenario[] = [
     b("He is well now and asks how to prevent relapse.", [
       ["h", "Tell him nothing helps", "He feels there is no way to protect himself. It is untrue; relapse prevention works."],
       ["b", "Suggest mindfulness-based cognitive therapy", "His risk of relapse falls. MBCT reduces relapse in people with recurrent depression."],
-      ["o", "Tell him to stop medicine now he is well, and come back if the depression returns", "He relapses within months. Stopping medicine soon after recovery raises relapse risk."],
+      ["h", "Tell him to stop medicine now he is well, and come back if the depression returns", "He relapses within months. Stopping medicine soon after recovery raises relapse risk."],
     ]),
   ]),
   s("wy-t039", "treatment", "Somatic symptoms", "dsm-somatic", "more-disorders", 3, "UMS", "Manage somatic symptom disorder", "Mrs Shaikh, 50, many symptoms", [
@@ -327,7 +327,7 @@ export const TREATMENT: Scenario[] = [
   ]),
   s("wy-t047", "treatment", "Self-harm treatment", "suicide", "suicide", 3, "UMS", "Teach alternatives to self-harm", "Tanya, 16, cuts", [
     b("She wants to stop.", [
-      ["o", "Give her a rubber band to snap on her wrist instead, and tell her to use it whenever the urge comes", "She snaps it until her wrist bruises. Replacement pain may still be harmful."],
+      ["h", "Give her a rubber band to snap on her wrist instead, and tell her to use it whenever the urge comes", "She snaps it until her wrist bruises. Replacement pain may still be harmful."],
       ["b", "Teach distress tolerance skills and plan for urges", "Her self-harm reduces over months. Skills give her other ways to handle distress."],
       ["h", "Tell her to just stop", "She cannot stop and feels a failure. Without skills, she cannot simply stop."],
     ]),
@@ -335,7 +335,7 @@ export const TREATMENT: Scenario[] = [
   s("wy-t048", "treatment", "Delusional disorder", "schizophrenia", "psychosis", 4, "MDS", "Engage a person with delusional disorder", "Mr Iyer, 55, jealous delusions", [
     b("He refuses medicine.", [
       ["h", "Argue about the delusion", "He leaves angry. Arguing about a delusion breaks trust."],
-      ["o", "Discharge him since he refuses medicine and says he does not want your help", "He stops coming and his wife remains at risk. Discharge leaves the risk unmanaged."],
+      ["h", "Discharge him since he refuses medicine and says he does not want your help", "He stops coming and his wife remains at risk. Discharge leaves the risk unmanaged."],
       ["b", "Focus on his distress, build trust, and offer treatment for it", "He accepts help for sleep and stress, then medicine."],
     ]),
   ]),
@@ -404,7 +404,7 @@ export const TREATMENT: Scenario[] = [
   ]),
   s("wy-t058", "treatment", "Medication review in older adults", "dementia", "medicine-profiles", 4, "MDS", "Reduce harmful medicines", "Mr Rao, 80, on many medicines", [
     b("He has falls and confusion.", [
-      ["o", "Add a new medicine for the confusion, so that he becomes clearer during the day", "He becomes drowsier and falls again. Adding medicines adds risk."],
+      ["h", "Add a new medicine for the confusion, so that he becomes clearer during the day", "He becomes drowsier and falls again. Adding medicines adds risk."],
       ["b", "Suggest a full medicine review with his doctor", "Sedatives are reduced; falls stop."],
       ["h", "Ignore it", "He falls again and breaks his hip. Ignoring the medicines lets falls continue."],
     ]),
@@ -418,7 +418,7 @@ export const TREATMENT: Scenario[] = [
   ]),
   s("wy-t060", "treatment", "Treatment for complex trauma", "ptsd", "trauma", 5, "UMS", "Phase treatment for complex trauma", "Woman, 28, years of childhood abuse", [
     b("She has PTSD, self-harm and unstable moods.", [
-      ["o", "Start trauma exposure work straight away, since the trauma is the root of everything", "She becomes overwhelmed and self-harms. Starting with exposure may overwhelm her."],
+      ["h", "Start trauma exposure work straight away, since the trauma is the root of everything", "She becomes overwhelmed and self-harms. Starting with exposure may overwhelm her."],
       ["b", "Begin with safety and stabilisation, then trauma processing, then reintegration", "She stabilises and progresses."],
       ["h", "Focus only on her moods", "Her moods steady a little but flashbacks continue. Focusing only on moods misses the trauma."],
     ]),

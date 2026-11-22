@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { CASES } from "./detective";
-import { caseAt, clueOf, deal, judge, poolFor, ROUNDS } from "./detective-deal";
+import { caseAt, clueOf, deal, hintOf, judge, poolFor, ROUNDS } from "./detective-deal";
+import { DETECTIVE_GUIDE } from "./detective-guide";
+import { hintLoss } from "./detective-rules";
+import { conceptById } from "./concepts";
 
 const mask = (run: string, round: number) => (run.length * 7919 + round * 104729) >>> 0;
 const rng = () => 0.42;
@@ -51,5 +54,37 @@ describe("Clinic detective deal", () => {
     const dd = deal("u1", "run-b", drugs, mask, rng);
     dd.rounds.forEach((_, i) => expect(caseAt(dd.payload, "u1", i, mask)?.answer).toBe(drugs[i]));
     expect(dd.rounds.every((r) => r.options.every((o) => CASES.find((x) => x.answer === o)?.family === "drug"))).toBe(true);
+  });
+});
+
+describe("Clinic detective: starting picture and guided hints", () => {
+  it("every case has a picture and three hints, and the deal sends the picture and option names", () => {
+    for (const c of CASES) {
+      const g = DETECTIVE_GUIDE[c.answer];
+      expect(g, c.answer).toBeTruthy();
+      expect(g!.hints).toHaveLength(3);
+      expect(g!.picture.length, c.answer).toBeGreaterThan(40);
+    }
+    const d = deal("u1", "run-b", poolFor("mixed").map((c) => c.answer), (run, r) => (run.length + r) >>> 0, () => 0.3);
+    for (const r of d.rounds) {
+      expect(r.picture).toBeTruthy();
+      expect(r.names).toHaveLength(4);
+    }
+  });
+
+  it("the picture and hints 1 and 2 never name the answer", () => {
+    for (const c of CASES) {
+      const g = DETECTIVE_GUIDE[c.answer]!;
+      const term = (conceptById(c.answer)?.term ?? c.answer).toLowerCase();
+      for (const t of [g.picture, g.hints[0], g.hints[1]]) expect(t.toLowerCase().includes(term), `${c.answer}: ${t}`).toBe(false);
+      expect(JSON.stringify(g)).not.toMatch(/[–—]/);
+    }
+  });
+
+  it("gives hints 1 to 3 only; the first is free and the next two cost 5 each", () => {
+    expect(hintOf(CASES[0], 1)).toBe(DETECTIVE_GUIDE[CASES[0].answer]!.hints[0]);
+    expect(hintOf(CASES[0], 0)).toBeNull();
+    expect(hintOf(CASES[0], 4)).toBeNull();
+    expect([0, 1, 2, 3, 9].map(hintLoss)).toEqual([0, 0, 5, 10, 10]);
   });
 });

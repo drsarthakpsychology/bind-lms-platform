@@ -87,8 +87,8 @@ export type KeyedCase = RichCase & { keys: Record<string, StepKey> };
 
 export const GRADE_WORD: Record<Grade, string> = { best: "Best choice", acceptable: "Acceptable, not best", poor: "A weak choice", harmful: "This could harm" };
 export const GRADE_SCORE: Record<Grade, number> = { best: 1, acceptable: 0.6, poor: 0.2, harmful: 0 };
-/** The most a step can score after 0, 1, 2 or 3 hints. */
-export const HINT_CAP = [1, 0.85, 0.7, 0.5] as const;
+/** The most a step can score after 0, 1, 2 or 3 hints: the first hint is free, the next two cost a little each. */
+export const HINT_CAP = [1, 1, 0.85, 0.7] as const;
 
 export const BLOCK_LABEL: Record<ContextBlock["kind"], string> = {
   setting: "Where you are",

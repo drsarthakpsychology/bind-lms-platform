@@ -11,7 +11,7 @@ import { Burst, curves, Enter, Press, springs } from "@/motion";
 import { Rich } from "@/study/rich";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { AnswerRow } from "../parts";
-import { BLOCK_LABEL, GRADE_WORD, type ContextBlock, type Grade, type Option, type StepKey } from "./types";
+import { BLOCK_LABEL, GRADE_WORD, HINT_CAP, type ContextBlock, type Grade, type Option, type StepKey } from "./types";
 
 /* ---------------------------------------------------------------- the case */
 
@@ -146,7 +146,7 @@ export function QuestionHead({ prompt, hints, used, onHint, locked, kicker }: { 
           {used < hints.length && !locked ? (
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: space[3] }}>
               <T v="caption" tone="muted" style={{ flex: 1 }}>
-                Each hint lowers what this step can score.
+                {`Hint ${used + 1} lowers the most this step can score to ${Math.round((HINT_CAP[Math.min(3, used + 1)] ?? 0.7) * 100)}%.`}
               </T>
               <Button kind="quiet" small full={false} label={`Hint ${used + 1}`} onPress={onHint} testID="hint-more" />
             </View>

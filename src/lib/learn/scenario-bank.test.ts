@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { SCENARIOS } from "./scenarios";
+import { RICH_SCENARIOS } from "./scenario-rich";
 import { NOTES } from "./notes";
 import { EXAMS, MODULE_IDS, lengthBias, textProblems } from "@/lib/library/checks";
 
@@ -30,6 +31,37 @@ describe("What would you do library", () => {
       }
     }
     expect(bad).toEqual([]);
+  });
+
+  it("a choice that leads to death, abuse or a missed emergency is never marked 'Okay, but'", () => {
+    const DANGER = /\b(can kill|kills|may die|might die|not live|fatal|shakes the baby|brain damage|collapses|unconscious|overdoses|tries again|hurt again|breaks? (his|her|their) confidentiality|break the law|not allowed)\b/i;
+    const bad = SCENARIOS.flatMap((s) => s.beats.flatMap((b) => b.choices.filter((c) => c.outcome === "ok" && DANGER.test(c.consequence)).map((c) => `${s.id}: ${c.text}`)));
+    expect(bad).toEqual([]);
+  });
+
+  it("every case opens with a starting picture and every step has three hints", () => {
+    for (const s of SCENARIOS) {
+      expect(s.opening?.setting.length, s.id).toBeGreaterThan(10);
+      expect(s.opening?.lines.length, s.id).toBeGreaterThan(0);
+      for (const b of s.beats) expect(b.hints, s.id).toHaveLength(3);
+    }
+  });
+
+  it("rich cases have 4 or more graded choices, their own hints and a take-away", () => {
+    const rich = [...RICH_SCENARIOS.values()];
+    expect(rich.length).toBeGreaterThanOrEqual(60);
+    for (const s of rich) {
+      expect(s.learn?.errors.length, s.id).toBeGreaterThan(0);
+      expect(s.opening!.lines.length, s.id).toBeGreaterThanOrEqual(2);
+      for (const b of s.beats) {
+        expect(b.choices.length, s.id).toBeGreaterThanOrEqual(4);
+        expect(b.choices.filter((c) => c.outcome === "best"), s.id).toHaveLength(1);
+        // Hints 1 and 2 never quote the best choice.
+        const best = b.choices.find((c) => c.outcome === "best")!.text.toLowerCase();
+        for (const h of b.hints!.slice(0, 2)) expect(best.includes(h.toLowerCase().slice(0, 40)), s.id).toBe(false);
+      }
+      expect(JSON.stringify(s), s.id).not.toMatch(/[\u2013\u2014]/);
+    }
   });
 
   it("covers every area and spreads across difficulty", () => {

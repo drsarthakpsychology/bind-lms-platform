@@ -36,7 +36,7 @@ describe("ethics & law dilemmas", () => {
 
   it("dilemmas cover the grounding domains (MHA 2017, POCSO, RCI, confidentiality)", () => {
     const tags = new Set(ETHICS_DILEMMAS.map((d) => d.tag));
-    expect(tags.has("MHA 2017")).toBe(true);
+    expect(tags.has("MHCA 2017")).toBe(true);
     expect(tags.has("POCSO")).toBe(true);
     expect(tags.has("RCI scope")).toBe(true);
     expect(tags.has("Confidentiality")).toBe(true);

@@ -7,6 +7,9 @@ import {
   cleanLog,
   dailyIndex,
   dailyStreak,
+  HINT_COST,
+  hintPoints,
+  hintUsesAllowance,
   isCorrect,
   MAX_CLUES,
   pickPractice,
@@ -104,9 +107,11 @@ describe("moves", () => {
     expect(scoreOf(p)).toBe(70);
   });
 
-  it("hints don't cost points but cap at two, and the chapter hint removes chapter credit", () => {
+  it("hints cap at three, and any hint removes chapter credit", () => {
     let p = apply(mdd, start(), { t: "hint" });
     p = apply(mdd, p, { t: "hint" });
+    p = apply(mdd, p, { t: "hint" });
+    expect(p.hints).toBe(3);
     expect(apply(mdd, p, { t: "hint" })).toBe(p);
     p = apply(mdd, p, { t: "guess", dx: "pdd" });
     expect(p.chapterHit).toBe(false);
@@ -159,16 +164,26 @@ describe("hint and clue rules", () => {
     expect(p.clues).toBe(4);
   });
 
-  it("a hint lowers the case score, never below zero", () => {
+  it("the first hint is free; the second and third cost 5 points each, never below zero", () => {
     const solved = apply(mdd, start(), { t: "guess", dx: "mdd" });
     expect(scoreOf(solved)).toBe(100);
     let p = apply(mdd, start(), { t: "hint" });
-    expect(scoreOf(apply(mdd, p, { t: "guess", dx: "mdd" }))).toBe(90);
+    expect(scoreOf(apply(mdd, p, { t: "guess", dx: "mdd" }))).toBe(100);
     p = apply(mdd, p, { t: "hint" });
-    expect(scoreOf(apply(mdd, p, { t: "guess", dx: "mdd" }))).toBe(80);
-    expect(xpFor("practice", 80)).toBeLessThan(xpFor("practice", 100));
+    expect(scoreOf(apply(mdd, p, { t: "guess", dx: "mdd" }))).toBe(95);
+    p = apply(mdd, p, { t: "hint" });
+    expect(scoreOf(apply(mdd, p, { t: "guess", dx: "mdd" }))).toBe(90);
+    expect(xpFor("practice", 90)).toBeLessThan(xpFor("practice", 100));
+    expect(HINT_COST).toEqual([0, 5, 5]);
+    expect(hintPoints(0)).toBe(0);
+    expect(hintPoints(3)).toBe(10);
+    expect(hintPoints(9)).toBe(10);
+    expect(hintUsesAllowance(1)).toBe(false);
+    expect(hintUsesAllowance(2)).toBe(true);
+    expect(hintUsesAllowance(3)).toBe(true);
     // At the floor of 10, hints still take it lower.
     let q = apply(mdd, start(), { t: "hint" });
+    q = apply(mdd, q, { t: "hint" });
     q = apply(mdd, q, { t: "hint" });
     q = apply(mdd, q, { t: "clue" });
     q = apply(mdd, q, { t: "clue" });

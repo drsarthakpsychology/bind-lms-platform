@@ -152,7 +152,7 @@ export const BOUNDARIES: Scenario[] = [
     b("A colleague shows you a public post from his account that suggests he plans to harm himself.", [
       ["h", "Ignore it, since you have a rule against searching", "A clear risk sign is now in front of you. Rules about searching do not mean ignoring safety information."],
       ["b", "Contact him today, tell him what you saw and how, and assess risk", "He admits he wrote it late at night and agrees to a safety plan. Being open about how you saw it keeps trust."],
-      ["o", "Wait until his next session in five days", "Five days is too long for a possible suicide warning. Same-day contact is needed."],
+      ["h", "Wait until his next session in five days", "Five days is too long for a possible suicide warning. Same-day contact is needed."],
     ], "You did not search for it yourself."),
   ]),
   s("wy-g017", "boundaries", "Client posts about you", "personality", "ethics-law", 3, "UMS", "Respond to a client's public post about therapy", "Riya, 26, posts a long story about her sessions and tags your clinic", [
@@ -180,7 +180,7 @@ export const BOUNDARIES: Scenario[] = [
     b("She sends long messages at 1 am most nights.", [
       ["h", "Reply every time to keep her safe", "She sends more, and you burn out within weeks. Round-the-clock replies make her depend on you instead of her own plan."],
       ["b", "Agree when messages are used, and give her a night crisis plan and helpline", "The night messages drop and she uses her plan. Clear limits plus a real crisis route are safer than you on call."],
-      ["o", "Block her number without telling her, so the messages stop and she learns to cope alone", "She feels abandoned at night. Cutting contact without a plan can raise risk."],
+      ["h", "Block her number without telling her, so the messages stop and she learns to cope alone", "She feels abandoned at night. Cutting contact without a plan can raise risk."],
     ]),
   ]),
   s("wy-g021", "boundaries", "Full case: a viral video", "ptsd", "ethics-law", 5, "UMDS", "Protect a client's identity when your content goes viral", "You make short educational reels for your practice", [
@@ -228,7 +228,7 @@ export const BOUNDARIES: Scenario[] = [
   s("wy-g026", "boundaries", "Massage offered as therapy", "therapies", "ethics-law", 4, "UMDS", "Recognise harmful touch dressed as treatment", "A colleague's wellness centre", [
     b("A colleague says he uses massage to release trauma during psychotherapy sessions.", [
       ["h", "Join in to learn the technique", "Clients later report feeling violated. Touch-based methods inside psychotherapy invite boundary violations."],
-      ["o", "Say nothing to him, since how he runs his own wellness centre is his own business", "Clients may be at risk. Concern about a colleague's practice should be raised."],
+      ["h", "Say nothing to him, since how he runs his own wellness centre is his own business", "Clients may be at risk. Concern about a colleague's practice should be raised."],
       ["b", "Raise your concern and suggest he takes advice from his supervisor", "He stops the practice after review. Speaking up early protects clients."],
     ]),
   ]),
@@ -328,7 +328,7 @@ export const BOUNDARIES: Scenario[] = [
   ]),
   s("wy-g037", "boundaries", "Relative asks about a client", "schizophrenia", "ethics-law", 1, "CUS", "Keep confidentiality with your own family", "Your aunt at a family wedding", [
     b("“I heard the Shah boy is seeing you. Is he mad?”", [
-      ["o", "Say you cannot say anything, but hint that it is nothing serious so she stops worrying", "Even a hint confirms he is your client. Hints break confidentiality too."],
+      ["h", "Say you cannot say anything, but hint that it is nothing serious so she stops worrying", "Even a hint confirms he is your client. Hints break confidentiality too."],
       ["h", "Tell her what you know so she stops gossiping", "The story now spreads with your authority behind it. You have breached his privacy."],
       ["b", "Say you never talk about who you see, and change the topic", "She is curious but drops it. A standard reply protects everyone."],
     ]),
@@ -342,7 +342,7 @@ export const BOUNDARIES: Scenario[] = [
   ]),
   s("wy-g039", "boundaries", "Marriage and illness disclosure", "schizophrenia", "ethics-law", 5, "UMDS", "Balance a client's privacy and a future spouse's interest", "Vijay, 27, schizophrenia, well on treatment, family arranging his marriage", [
     b("His parents ask you not to tell the girl's family about his illness.", [
-      ["o", "Tell the girl's family yourself to be fair to her", "You break his confidentiality without his consent. This is not your disclosure to make."],
+      ["h", "Tell the girl's family yourself to be fair to her", "You break his confidentiality without his consent. This is not your disclosure to make."],
       ["b", "Explain you cannot share without his consent, and encourage the family to be honest", "Vijay decides to tell her himself. Supporting honest disclosure respects him and her."],
       ["h", "Help the family hide it, and stop his medicine before the wedding so he looks well", "He relapses on his wedding night. Stopping treatment to hide illness is dangerous."],
     ]),
@@ -361,7 +361,7 @@ export const BOUNDARIES: Scenario[] = [
   ]),
   s("wy-g041", "boundaries", "Full case: a family in a small town", "suicide", "ethics-law", 5, "UMDS", "Manage confidentiality and safety in a close-knit town", "Pallavi, 17, self-harm, from a family you know in your town", [
     b("She asks you not to tell her parents, who are friends of your parents.", [
-      ["o", "Promise complete secrecy, since keeping her trust matters more than anything else right now", "If her risk rises, you cannot keep the promise. False promises break trust later."],
+      ["h", "Promise complete secrecy, since keeping her trust matters more than anything else right now", "If her risk rises, you cannot keep the promise. False promises break trust later."],
       ["h", "Tell her parents straight away, without discussing it with her", "She feels betrayed and refuses to come back. Acting without her makes things worse."],
       ["b", "Explain what stays private and what you must share for safety, then plan with her", "She agrees you can tell her parents about the self-harm, but not her diary. Clear limits keep her engaged."],
     ]),
@@ -375,7 +375,7 @@ export const BOUNDARIES: Scenario[] = [
   // Confidentiality and the duty to protect
   s("wy-g042", "boundaries", "Explaining confidentiality at the start", "interview", "ethics-law", 1, "CUS", "Explain the limits of confidentiality before therapy begins", "Rahul, 21, first session at a college counselling centre", [
     b("“Whatever I say here stays here, right?”", [
-      ["o", "Say yes, everything stays private, so he feels safe enough to talk about anything at all", "If he later discloses a plan to hurt himself, you will have to break a promise you made. Limits must be stated at the start."],
+      ["h", "Say yes, everything stays private, so he feels safe enough to talk about anything at all", "If he later discloses a plan to hurt himself, you will have to break a promise you made. Limits must be stated at the start."],
       ["b", "Say most things stay private, and explain the few times you would have to share", "He nods and later trusts you when you need to act. Clear limits at the start make later action feel fair."],
       ["h", "Say you will tell his parents if anything worrying comes up", "He decides to say nothing worrying. Overstating what you share stops adult clients from opening up."],
     ]),
@@ -388,13 +388,13 @@ export const BOUNDARIES: Scenario[] = [
     ]),
     b("Deepak says he was only angry and begs you not to tell anyone.", [
       ["b", "Explain kindly what you must share and why, and keep him involved", "He is upset but agrees to an assessment. Being honest with him keeps some trust."],
-      ["o", "Believe him and cancel your plan to inform anyone", "His plan was detailed a few minutes ago. A quick change of story does not remove the risk."],
+      ["h", "Believe him and cancel your plan to inform anyone", "His plan was detailed a few minutes ago. A quick change of story does not remove the risk."],
       ["h", "Agree to keep it secret as long as he promises to stay at home all weekend and call you", "His manager stays unprotected. Promises do not replace action on a credible threat."],
     ], "He named the manager, the weapon and the day."),
   ]),
   s("wy-g044", "boundaries", "Vague anger, no target", "personality", "ethics-law", 4, "UMDS", "Tell vague anger apart from a credible threat", "Suresh, 45, venting about his in-laws", [
     b("“Sometimes I could kill them, they make me so angry.” He has no history of violence.", [
-      ["o", "Call the police after the session to be on the safe side, since he used the word kill", "There is no plan or intent, and an unneeded report breaks trust and may harm him. Not every angry phrase is a threat."],
+      ["h", "Call the police after the session to be on the safe side, since he used the word kill", "There is no plan or intent, and an unneeded report breaks trust and may harm him. Not every angry phrase is a threat."],
       ["b", "Ask calmly about intent, plans and past violence before deciding", "He laughs and says it is a figure of speech, with no plans. Careful questions separate venting from danger."],
       ["h", "Ignore it, since people say this all the time", "You miss the chance to check. Even common phrases deserve a few questions."],
     ]),
@@ -402,11 +402,11 @@ export const BOUNDARIES: Scenario[] = [
   s("wy-g045", "boundaries", "Partner with HIV not told", "substance", "ethics-law", 5, "UMDS", "Handle a third party at risk of infection", "Manoj, 30, in counselling for drug use, has HIV and will not tell his wife", [
     b("He says his wife does not know and they do not use condoms.", [
       ["h", "Tell his wife yourself straight away", "He feels betrayed and drops out of all care. Disclosure without first working with him is a last resort, not a first step."],
-      ["o", "Keep it secret and say nothing more, since his HIV status is his private medical information", "His wife remains at risk of infection. You have a duty to help protect her."],
+      ["h", "Keep it secret and say nothing more, since his HIV status is his private medical information", "His wife remains at risk of infection. You have a duty to help protect her."],
       ["b", "Explain the risk to her, and work with him towards telling her", "He agrees to tell her with the doctor present. Supported disclosure protects her and keeps him in care."],
     ]),
     b("After several sessions he still refuses and says he will never tell her.", [
-      ["o", "Keep encouraging him gently each week and wait for him to be ready, however long it takes", "Months pass and she remains at risk. There is a point where waiting is no longer safe."],
+      ["h", "Keep encouraging him gently each week and wait for him to be ready, however long it takes", "Months pass and she remains at risk. There is a point where waiting is no longer safe."],
       ["b", "Consult his doctor and seniors on informing her, telling him first", "His doctor informs her through the proper process and she gets tested. A careful, consulted disclosure balances both duties."],
       ["h", "Stop seeing him because he will not listen", "He is out of care and she is no safer. Ending therapy helps no one."],
     ], "His doctor knows his HIV status."),
@@ -437,7 +437,7 @@ export const BOUNDARIES: Scenario[] = [
       ["o", "Tell him you will have to report this, then end the session", "He clams up and you have no details. Assess first, then explain what you will do."],
     ]),
     b("You now know there is a plan and a date.", [
-      ["o", "Tell only his parents and leave it to them", "His parents may not act, and the school is still at risk. The people at risk must be protected."],
+      ["h", "Tell only his parents and leave it to them", "His parents may not act, and the school is still at risk. The people at risk must be protected."],
       ["h", "Promise to keep it secret if he hands over the petrol and agrees to stay home that day", "The plan may continue with other means. A secret pact cannot keep others safe."],
       ["b", "Tell him you must act, then inform those who need to know to keep people safe", "The attack is prevented and he gets help with the bullying. Protecting others comes first, with him kept informed."],
     ], "He has bought petrol and named a day."),
@@ -449,13 +449,13 @@ export const BOUNDARIES: Scenario[] = [
   ]),
   s("wy-g049", "boundaries", "Pilot with depression", "depression", "ethics-law", 5, "UMDS", "Weigh confidentiality against public safety in a safety-critical job", "Captain Rao, 42, airline pilot, severe depression with suicidal thoughts", [
     b("He says he is still flying and will not tell his airline.", [
-      ["o", "Respect his wish, since it is his job", "Hundreds of passengers fly with a pilot who may be unsafe. Some jobs carry a risk to the public."],
+      ["h", "Respect his wish, since it is his job", "Hundreds of passengers fly with a pilot who may be unsafe. Some jobs carry a risk to the public."],
       ["b", "Explain the safety concern and urge him to stop flying and see his medical examiner", "He agrees to take medical leave. Persuasion first often works and keeps trust."],
       ["h", "Call the airline today without telling him, since passenger safety comes before his feelings", "He is grounded and humiliated, and stops all care. Acting behind his back should be a last resort."],
     ]),
     b("He refuses and says he is flying tomorrow.", [
       ["h", "Leave it, since you have done your best", "Passengers remain at risk. A refusal with imminent risk changes your duty."],
-      ["o", "Ask him to promise to call in sick tomorrow, and phone him in the morning to check that he did", "A promise from a man with suicidal thoughts is not enough to protect passengers."],
+      ["h", "Ask him to promise to call in sick tomorrow, and phone him in the morning to check that he did", "A promise from a man with suicidal thoughts is not enough to protect passengers."],
       ["b", "Tell him you must inform the aviation medical authority, then do so", "He is grounded and treated. Serious, imminent public risk justifies a limited, open disclosure."],
     ], "He has suicidal thoughts and flies a passenger plane."),
   ]),
@@ -470,7 +470,7 @@ export const BOUNDARIES: Scenario[] = [
   // A supervisor's misconduct
   s("wy-g051", "boundaries", "Supervisor dates a client", "therapies", "ethics-law", 4, "UMDS", "Act when a supervisor crosses a sexual boundary", "You are a trainee; your supervisor is seeing a client socially", [
     b("You see your supervisor and his current client holding hands at a café.", [
-      ["o", "Mention it quietly to other trainees first to see whether they have noticed anything similar", "Gossip spreads but nothing changes, and the client stays at risk. Concerns need proper channels."],
+      ["h", "Mention it quietly to other trainees first to see whether they have noticed anything similar", "Gossip spreads but nothing changes, and the client stays at risk. Concerns need proper channels."],
       ["h", "Say nothing, since he controls your marks", "The client continues to be exploited. Fear is real, but silence leaves a vulnerable person at risk."],
       ["b", "Write down what you saw and raise it with the head of department or the ethics body", "An inquiry begins and the client is protected. Reporting through proper channels protects her and you."],
     ]),
@@ -613,7 +613,7 @@ export const BOUNDARIES: Scenario[] = [
     b("During a hypomanic phase, he tells you about a company's unpublished deal.", [
       ["b", "Do not act on it, and focus on his mood and judgement", "You note his loss of caution as a sign of hypomania. Using what clients tell you for profit is a boundary violation."],
       ["h", "Buy shares, since he told you freely", "You have exploited his illness and may break insider trading law. This is a serious violation."],
-      ["o", "Do not buy yourself, but pass the tip to a friend who invests", "Passing on what he said is a breach of confidentiality and still exploits him."],
+      ["h", "Do not buy yourself, but pass the tip to a friend who invests", "Passing on what he said is a breach of confidentiality and still exploits him."],
     ]),
   ]),
   s("wy-g068", "boundaries", "Cash with no receipt", "therapies", "ethics-law", 1, "CUS", "Keep honest records of payments", "A client asks for a cheaper rate if she pays cash with no receipt", [
@@ -671,14 +671,14 @@ export const BOUNDARIES: Scenario[] = [
     ]),
     b("The call drops while you are waiting.", [
       ["h", "Wait for her to call back", "Minutes are lost. You must act on what you know."],
-      ["o", "Keep calling her phone and messaging her until she answers, since she may just have lost signal", "She may be unconscious. Use the emergency contacts too."],
+      ["h", "Keep calling her phone and messaging her until she answers, since she may just have lost signal", "She may be unconscious. Use the emergency contacts too."],
       ["b", "Call the ambulance and her contact with her address, and keep calling her", "Her brother reaches her first. Clear plans made at the start of online work make this possible."],
     ], "You have her address and her brother's number from intake."),
   ]),
   s("wy-g074", "boundaries", "Recording sessions", "interview", "ethics-law", 2, "CUS", "Get consent before recording", "You want to record online sessions for supervision", [
     b("Your client does not know about the recording.", [
       ["h", "Record anyway, since it is for training", "She finds out and feels betrayed. Recording without consent is a breach."],
-      ["o", "Record it, but delete it as soon as your supervisor has watched it, so no copy is kept", "She still did not agree. Consent comes first."],
+      ["h", "Record it, but delete it as soon as your supervisor has watched it, so no copy is kept", "She still did not agree. Consent comes first."],
       ["b", "Explain why, ask for written consent, and tell her she can say no", "She agrees, knowing she can stop it. Clear consent makes recording fair."],
     ]),
   ]),
@@ -710,7 +710,7 @@ export const BOUNDARIES: Scenario[] = [
   ]),
   s("wy-g078", "boundaries", "Full case: online therapy and identity", "dsm-personality", "ethics-law", 5, "UMS", "Verify identity and keep safety in online-only work", "A client books online therapy with only a first name", [
     b("She will not give a full name, address or emergency contact.", [
-      ["o", "Start anyway without those details, since her wish for privacy should come first in online work", "If she is at risk, you have no way to help. Basic safety details are needed."],
+      ["h", "Start anyway without those details, since her wish for privacy should come first in online work", "If she is at risk, you have no way to help. Basic safety details are needed."],
       ["h", "Refuse and end the call", "She feels judged and may not seek help elsewhere. Explain the reason first."],
       ["b", "Explain why you need location and an emergency contact, and agree what stays private", "She shares her city and a friend's number. Explaining the reason builds trust."],
     ]),
@@ -727,7 +727,7 @@ export const BOUNDARIES: Scenario[] = [
       ["o", "Refuse, explain that you never prescribe it, and end the call", "She feels rejected and may buy it without a prescription. Explain and offer help."],
     ]),
     b("She returns asking for a stronger dose by chat.", [
-      ["o", "Increase it by chat, since you know her now", "Changing medicines without a review misses side effects and risk."],
+      ["h", "Increase it by chat, since you know her now", "Changing medicines without a review misses side effects and risk."],
       ["b", "Book a video review before any change", "You find she has started drinking and adjust the plan. A proper review is safer."],
       ["h", "Tell her to double the dose herself", "She becomes very drowsy and falls. Doses must be set by the prescriber after review."],
     ], "She has been on an SSRI for a month."),
