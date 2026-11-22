@@ -49,7 +49,7 @@ describe("What would you do library", () => {
 
   it("rich cases have 4 or more graded choices, their own hints and a take-away", () => {
     const rich = [...RICH_SCENARIOS.values()];
-    expect(rich.length).toBeGreaterThanOrEqual(15);
+    expect(rich.length).toBeGreaterThanOrEqual(60);
     for (const s of rich) {
       expect(s.learn?.errors.length, s.id).toBeGreaterThan(0);
       expect(s.opening!.lines.length, s.id).toBeGreaterThanOrEqual(2);
