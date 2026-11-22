@@ -1,10 +1,9 @@
-import { Stack } from "expo-router";
 import { CalendarCheck, CalendarOff, ChevronLeft, ChevronRight, ClipboardList, Hospital } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { go } from "@/api/prefetch";
-import { IconDot, Label, QuietEmpty, RoundButton, Row, RowList, RowsSkeleton, Screen, Skeleton, Stone, T } from "@/ds";
+import { BackBar, OwnHeader, IconDot, Label, QuietEmpty, RoundButton, Row, RowList, RowsSkeleton, Screen, Skeleton, Stone, T } from "@/ds";
 import { Swap } from "@/motion";
 import { AreaProvider, fonts, space, useTheme } from "@/theme";
 import { useClinicWeek } from "../api";
@@ -179,8 +178,8 @@ export function ScheduleScreen() {
   );
   return (
     <AreaProvider area="home">
-      <Stack.Screen options={{ title: "" }} />
-      <Screen area="home" title="Schedule" field={field} testID="clinic-schedule" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <OwnHeader />
+      <Screen area="home" safeTop top={<BackBar home="/home" />} title="Schedule" field={field} testID="clinic-schedule" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your schedule" skeleton={<WeekSkeleton />}>
           {(w) => (
             <View style={{ gap: space[5] }}>

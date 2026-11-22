@@ -5,7 +5,7 @@ import { ScrollView, View } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { BlueField, Button, Label, Layer, LAYER_OVERLAP, pebbleShape, ProgressLine, QuietEmpty, RoundButton, Sheet, Skeleton, Stone, T } from "@/ds";
+import { BlueField, Button, leave as kitLeave, Label, Layer, LAYER_OVERLAP, pebbleShape, ProgressLine, QuietEmpty, RoundButton, Sheet, Skeleton, Stone, T } from "@/ds";
 import { useKeyboardPad } from "@/ds/keyboard-pad";
 import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
@@ -28,8 +28,7 @@ import { SETTLE_MS } from "@/ds/reactions";
 import { QuestMoment } from "./quest";
 
 export function leave(): void {
-  if (router.canGoBack()) router.back();
-  else router.replace("/practise");
+  kitLeave("/practise");
 }
 
 /** The frame's screen-wide effects and its field slot, for parts deep in the scroll (confetti must cover the screen; a result's big number sits on the field). */

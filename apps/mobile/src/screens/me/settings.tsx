@@ -222,7 +222,7 @@ export function SettingsScreen() {
         </ChoiceStone>
         <Group>
           <TextSizeRow icon={<IconPatch icon={Type} area="me" size={36} />} />
-          <SwitchRow testID="pref-colour-blind" title="Colour-blind friendly colours" meta="Right shows blue, wrong shows orange. Your choice is saved on this phone; the colours follow in the next update." value={colourBlind} onChange={(v) => updateSettings({ colourBlind: v })} />
+          <SwitchRow testID="pref-colour-blind" title="Colour-blind friendly colours" meta="Right shows blue, wrong shows orange. Saved on this phone." value={colourBlind} onChange={(v) => updateSettings({ colourBlind: v })} />
         </Group>
       </View>
 

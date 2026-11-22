@@ -1,12 +1,12 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { router, Stack } from "expo-router";
+import { router } from "expo-router";
 import { CircleAlert, Clock, WifiOff } from "lucide-react-native";
 import * as React from "react";
 import { ScrollView, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { netStore } from "@/api/online";
-import { BlueField, Button, Field, Layer, OfflineLine, T } from "@/ds";
+import { BackBar, OwnHeader, BlueField, Button, Field, Layer, OfflineLine, T } from "@/ds";
 import { useKeyboardPad } from "@/ds/keyboard-pad";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
@@ -230,8 +230,9 @@ export function ScanScreen() {
 
   return (
     <AreaProvider area="home">
-      <Stack.Screen options={{ title: "" }} />
-      <View ref={root} onLayout={kbLayout} testID="clinic-scan" style={{ flex: 1, backgroundColor: c.field, paddingBottom: kb }}>
+      <OwnHeader />
+      <View ref={root} onLayout={kbLayout} testID="clinic-scan" style={{ flex: 1, backgroundColor: c.field, paddingTop: insets.top, paddingBottom: kb }}>
+        <BackBar home="/home" />
         <OfflineLine />
         <BlueField safeTop={false} style={{ paddingTop: space[2], gap: space[1] }}>
           <T v={head.title.length > 22 ? "h1" : "display"} tone="onField" accessibilityRole="header" testID={phase.k === "choose" ? "scan-session" : "scan-title"}>

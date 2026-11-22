@@ -1,9 +1,8 @@
-import { Stack } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
 import { go } from "@/api/prefetch";
-import { Label, QuietEmpty, Skeleton, Screen, Stone, T } from "@/ds";
+import { BackBar, OwnHeader, Label, QuietEmpty, Skeleton, Screen, Stone, T } from "@/ds";
 import { ProgressRing, RollingNumber } from "@/motion";
 import { AreaProvider, space, useTheme } from "@/theme";
 import { useMyAttendance } from "../api";
@@ -107,8 +106,8 @@ export function AttendanceScreen() {
   const lead = q.data ? (q.data.pct === null ? "No sessions yet" : `${q.data.present} present, ${q.data.missed} missed`) : undefined;
   return (
     <AreaProvider area="home">
-      <Stack.Screen options={{ title: "" }} />
-      <Screen area="home" title="My attendance" lead={lead} testID="clinic-attendance" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <OwnHeader />
+      <Screen area="home" safeTop top={<BackBar home="/home" />} title="My attendance" lead={lead} testID="clinic-attendance" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your attendance" skeleton={<AttendanceSkeleton />}>
           {(d) => <Body d={d} />}
         </ClinicLoaded>

@@ -4,7 +4,7 @@ import * as React from "react";
 import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { BlueField, FieldProgress, Layer, RoundButton, Screen, Stone, T, type ScreenProps } from "@/ds";
+import { BackBar, BlueField, FieldProgress, Layer, leave as kitLeave, OwnHeader, RoundButton, Screen, Stone, T, type ScreenProps } from "@/ds";
 import { GrowIn, useStackMotion } from "@/motion";
 import { fonts, layout, space, useLightStatusBar, useTheme, type Area } from "@/theme";
 
@@ -16,30 +16,11 @@ import { fonts, layout, space, useLightStatusBar, useTheme, type Area } from "@/
  * field. Nothing here talks to the server.
  */
 
-/** Back to where you came from; a fresh link with nothing behind it lands on `home`. */
+/** Back, the header switch and the back bar now live in the kit (src/ds/nav.tsx). */
+export { OwnHeader, BackBar } from "@/ds";
+/** Back to where you came from; a fresh link with nothing behind it lands on `home` (Practise by default). */
 export function leave(home = "/practise"): void {
-  if (router.canGoBack()) router.back();
-  else router.replace(home);
-}
-
-/** Hides the stack header for a screen that draws its own. `play` rises from the bottom and has no edge swipe. */
-export function OwnHeader({ kind = "push" }: { kind?: "push" | "play" | "overlay" }) {
-  const m = useStackMotion();
-  return <Stack.Screen options={{ headerShown: false, ...m[kind], ...(kind === "play" ? { gestureEnabled: false } : null) }} />;
-}
-
-/** The small bar on the field: a round back button, and at most one thing on the right. */
-export function BackBar({ home, right, label = "Back" }: { home?: string; right?: React.ReactNode; label?: string }) {
-  const c = useTheme();
-  const insets = useSafeAreaInsets();
-  return (
-    <View style={{ minHeight: 52, flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right), paddingTop: space[1] }}>
-      <RoundButton onField label={label} testID="back" onPress={() => leave(home)}>
-        <ArrowLeft size={20} color={c.onField} />
-      </RoundButton>
-      {right}
-    </View>
-  );
+  kitLeave(home);
 }
 
 /** A browse or reading screen in look B: the field with back and title, the layer under it. */

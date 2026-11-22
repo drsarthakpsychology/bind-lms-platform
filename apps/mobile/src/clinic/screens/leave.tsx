@@ -1,11 +1,10 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { Stack } from "expo-router";
 import { Check as CheckIcon } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
-import { Button, Field, FieldCard, Label, QuietEmpty, Screen, Sheet, Skeleton, Stone, T, toast } from "@/ds";
+import { BackBar, OwnHeader, Button, Field, FieldCard, Label, QuietEmpty, Screen, Sheet, Skeleton, Stone, T, toast } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { ProgressRing, RollingNumber } from "@/motion";
 import { AreaProvider, layout, space, useTheme } from "@/theme";
@@ -250,8 +249,8 @@ export function LeaveScreen() {
   const field = p0 ? <FieldCard title={p0.pending ? `${p0.pending} ${p0.pending === 1 ? "request is" : "requests are"} waiting` : "Nothing waiting"} meta={p0.pending ? "You get a notification when the admin decides." : "Ask below when you need a day off."} live={p0.pending > 0} /> : null;
   return (
     <AreaProvider area="home">
-      <Stack.Screen options={{ title: "" }} />
-      <Screen area="home" title="Leave" field={field} testID="clinic-leave" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <OwnHeader />
+      <Screen area="home" safeTop top={<BackBar home="/home" />} title="Leave" field={field} testID="clinic-leave" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your leave" skeleton={<LeaveSkeleton />}>
           {(p) => (
             <View style={{ gap: space[5] }}>

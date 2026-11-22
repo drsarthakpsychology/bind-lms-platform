@@ -1,12 +1,11 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { Stack } from "expo-router";
 import { Minus, Moon, Plus, Sun } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import { ConfirmSheet } from "@/admin/kit";
 import { messageOf } from "@/api/errors";
-import { Button, Field, FieldCard, IconButton, Label, pebbleShape, QuietEmpty, Screen, Sheet, Skeleton, Stone, T, toast } from "@/ds";
+import { BackBar, OwnHeader, Button, Field, FieldCard, IconButton, Label, pebbleShape, QuietEmpty, Screen, Sheet, Skeleton, Stone, T, toast } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Burst, Press, ProgressRing, RollingNumber, useCelebrate } from "@/motion";
 import { AreaProvider, space, useTheme } from "@/theme";
@@ -171,8 +170,8 @@ export function OpdScreen() {
   };
   return (
     <AreaProvider area="home">
-      <Stack.Screen options={{ title: "" }} />
-      <Screen area="home" title="OPD cases" field={field} testID="clinic-opd" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <OwnHeader />
+      <Screen area="home" safeTop top={<BackBar home="/home" />} title="OPD cases" field={field} testID="clinic-opd" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your OPD cases" skeleton={<OpdSkeleton />}>
           {(p: OpdPage) => {
             const needed = visitsNeeded(p.total, p.done, p.casesPerVisit);

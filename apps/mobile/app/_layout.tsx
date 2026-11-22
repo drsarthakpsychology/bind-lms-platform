@@ -299,11 +299,32 @@ function Shell() {
             <Stack.Screen name="kit" options={{ title: "Kit" }} />
             <Stack.Screen name="medicine/compare" options={{ title: "Compare" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />
-            <Stack.Screen name="clinic/schedule" options={{ title: "Schedule" }} />
-            <Stack.Screen name="clinic/scan" options={{ title: "" }} />
-            <Stack.Screen name="clinic/leave" options={{ title: "Leave" }} />
-            <Stack.Screen name="clinic/opd" options={{ title: "OPD cases" }} />
-            <Stack.Screen name="clinic/attendance" options={{ title: "My attendance" }} />
+            {/* The clinic screens draw their own back bar on the field (no empty header band above the title). */}
+            <Stack.Screen name="clinic/schedule" options={{ headerShown: false }} />
+            <Stack.Screen name="clinic/scan" options={{ headerShown: false }} />
+            <Stack.Screen name="clinic/leave" options={{ headerShown: false }} />
+            <Stack.Screen name="clinic/opd" options={{ headerShown: false }} />
+            <Stack.Screen name="clinic/attendance" options={{ headerShown: false }} />
+            <Stack.Screen name="notification-settings" options={{ title: "" }} />
+            <Stack.Screen name="assignments" options={{ title: "" }} />
+            <Stack.Screen name="assignment/[lessonId]" options={({ route }) => ({ title: "", ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="journey" options={{ title: "" }} />
+            <Stack.Screen name="saved" options={{ title: "" }} />
+            <Stack.Screen name="notes/[id]" options={{ title: "" }} />
+            <Stack.Screen name="reference/[slug]" options={{ title: "" }} />
+            {/* Read and reason, and wellbeing: each screen draws its own bar on the field. */}
+            <Stack.Screen name="lab/index" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="lab/[id]" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="casebook/index" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="casebook/saved" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="casebook/[id]" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="ethics/index" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="ethics/[id]" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.play, reduce), gestureEnabled: false })} />
+            <Stack.Screen name="interview/index" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="selfcheck/index" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="selfcheck/[id]" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="calm/index" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
+            <Stack.Screen name="calm/[id]" options={({ route }) => ({ headerShown: false, ...growOr(route.key ?? route.name, m.push, reduce) })} />
             <Stack.Screen name="compose" options={{ title: "New message", ...m.sheet }} />
           </Stack>
         }

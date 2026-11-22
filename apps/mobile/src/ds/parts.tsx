@@ -383,11 +383,11 @@ export type EmptyMood = StateMood | OldMood;
  * Nothing here, or something went wrong: a meme picture (see STATE_STICKER
  * for which one each `mood` shows), one line, and at most one action.
  */
-export function EmptyState({ title, body, action, mood = "empty", testID }: { title: string; body?: string; action?: { label: string; onPress: () => void; primary?: boolean }; mood?: EmptyMood; testID?: string }) {
+export function EmptyState({ title, body, action, mood = "empty", sticker = false, testID }: { title: string; body?: string; action?: { label: string; onPress: () => void; primary?: boolean }; mood?: EmptyMood; /** Show the reaction sticker (only when "Funny reactions" is on). Off by default, and never for an error. */ sticker?: boolean; testID?: string }) {
   const m = mood in OLD ? OLD[mood as OldMood] : (mood as StateMood);
   return (
     <View testID={testID} style={{ alignItems: "flex-start", gap: space[3], paddingVertical: space[5] }}>
-      <Meme mood={m} />
+      {sticker && m !== "error" ? <Meme mood={m} /> : null}
       <T v="h2">{title}</T>
       {body ? (
         <T tone="muted" style={{ maxWidth: 420 }}>

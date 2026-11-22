@@ -113,10 +113,22 @@ describe("the reaction layer", () => {
   });
 
   it("empty states draw the meme with plain words, and only the words with reactions off", async () => {
-    await render(<EmptyState mood="empty" title="Nothing here" />);
+    await render(<EmptyState mood="empty" title="Nothing here" sticker />);
     expect(screen.getByLabelText("Wet cat staring blankly")).toBeTruthy();
     await act(async () => updateSettings({ reactions: false }));
     expect(screen.queryByLabelText("Wet cat staring blankly")).toBeNull();
     expect(screen.getByText("Nothing here")).toBeTruthy();
+  });
+
+  it("has no sticker unless asked, and an error never shows one", async () => {
+    await act(async () => updateSettings({ reactions: true }));
+    await render(
+      <>
+        <EmptyState mood="empty" title="Plain" />
+        <EmptyState mood="error" title="Broken" sticker />
+      </>,
+    );
+    expect(screen.queryByTestId("meme")).toBeNull();
+    await act(async () => updateSettings({ reactions: false }));
   });
 });

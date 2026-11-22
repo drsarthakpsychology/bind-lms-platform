@@ -148,6 +148,9 @@ export type Palette = {
   onLime: string;
   /** A wrong pick: warm, never alarming. */
   missBg: string;
+  /** A right answer's fill and its text (lime; blue with colour-blind friendly colours on). */
+  right: string;
+  onRight: string;
   /** Area accents (one family per screen; see `Area`). */
   areas: Record<Area, Swatch>;
   /** App canvas. */
@@ -223,6 +226,8 @@ export const light: Palette = {
   lime: "#cdf24b",
   onLime: "#12131a",
   missBg: "#ffd9c9",
+  right: "#cdf24b",
+  onRight: "#12131a",
   // Contrast, deep on wash / on bg: lime 6.1 / 6.2, blue 6.3 / 6.7, peach 5.2 / 5.5, mint 5.3 / 5.8, lilac 6.1 / 6.7.
   areas: {
     home: { wash: "#e9f3bd", deep: "#4a6400", onDeep: "#ffffff" },
@@ -285,6 +290,8 @@ export const dark: Palette = {
   lime: "#cdf24b",
   onLime: "#12131a",
   missBg: "#5c2a1a",
+  right: "#cdf24b",
+  onRight: "#12131a",
   // Contrast, deep on wash / on card: lime 11.7 / 13, blue 7.5 / 8.6, peach 8.9 / 9.9, mint 9.1 / 10, lilac 8.2 / 9.
   areas: {
     home: { wash: "#212a0b", deep: "#cdf24b", onDeep: "#111111" },
@@ -335,3 +342,14 @@ export const dark: Palette = {
   paperLine: "rgba(17,17,17,0.14)",
   sk: { ink: "#f2f2f2", soft: "#8f8f8f", paper: "#161616", blue: "#8fa6ff", lime: "#cdf24b", red: "#ff7b6e", wash: "#1d2547" },
 };
+
+/**
+ * Colour-blind friendly colours (Me > Settings, the website's switch): right
+ * turns blue and wrong turns orange, the pair most people with colour
+ * blindness tell apart. Same values as the website (globals.css, data-cvd).
+ */
+export function withColourBlind(p: Palette): Palette {
+  return p.dark
+    ? { ...p, right: "#9dbcff", onRight: "#10234f", successBg: "#10234f", successFg: "#9dbcff", ok: "#9dbcff", missBg: "#4a2a08", alertBg: "#3a2208", alertFg: "#ffb366", danger: "#ff9a3d" }
+    : { ...p, right: "#2a5bd7", onRight: "#ffffff", successBg: "#e3edff", successFg: "#0b3a9e", ok: "#0b3a9e", missBg: "#ffd8ad", alertBg: "#fff0e0", alertFg: "#9a3d00", danger: "#b54a00" };
+}

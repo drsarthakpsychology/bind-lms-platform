@@ -8,7 +8,7 @@ import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, w
 import { settingsStore } from "@/lib/settings";
 import { setNavigationBarDark } from "../../modules/system-bars/src";
 import { useAreaName, neutralSwatch } from "./area";
-import { dark, light, type Palette, type Swatch } from "./tokens";
+import { dark, light, withColourBlind, type Palette, type Swatch } from "./tokens";
 
 export * from "./tokens";
 export { AreaProvider, neutralSwatch, useAreaName } from "./area";
@@ -40,7 +40,9 @@ export function ThemeProvider({ children, force }: { children: React.ReactNode; 
   const system = useColorScheme();
   const choice = settingsStore.use((s) => s.theme);
   const mode = force ?? (choice === "system" ? (system === "dark" ? "dark" : "light") : choice);
-  const palette = mode === "dark" ? dark : light;
+  const cvd = settingsStore.use((s) => s.colourBlind);
+  const base = mode === "dark" ? dark : light;
+  const palette = React.useMemo(() => (cvd ? withColourBlind(base) : base), [cvd, base]);
 
   // The colour the screen had before the last change, for the fade.
   const [shown, setShown] = React.useState(mode);

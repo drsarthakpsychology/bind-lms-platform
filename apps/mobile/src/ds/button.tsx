@@ -14,9 +14,9 @@ const ease = curves.standard;
 type ButtonProps = {
   label: string;
   onPress?: () => void;
-  /** primary: the lime pill (one per screen). quiet: a stone pill. ink: the dark pill on a result. text: words only. danger: red words. */
-  kind?: "primary" | "quiet" | "ink" | "text" | "danger";
-  /** A 40px pill for a row or the field ("Scan in"). */
+  /** primary: the lime pill (one per screen). quiet: a stone pill. raised: a quiet pill that shows on a stone card. ink: the dark pill on a result. text: words only. danger: red words. */
+  kind?: "primary" | "quiet" | "raised" | "ink" | "text" | "danger";
+  /** A 44px pill for a row, a card or the field ("Scan in"). */
   small?: boolean;
   icon?: React.ReactNode;
   disabled?: boolean;
@@ -85,11 +85,12 @@ export function Button({ label, onPress, kind = "primary", small, icon, disabled
   }
 
   // Pills. primary: lime, the one live thing. quiet: stone. ink: your choice, confirmed (the button on a result).
-  const fill = blocked ? c.card : kind === "primary" ? c.primary : kind === "ink" ? c.ink : c.card;
+  // A quiet pill on a stone card would vanish into it: `raised` sits one step lighter (white in light).
+  const fill = kind === "raised" ? c.raised : blocked ? c.card : kind === "primary" ? c.primary : kind === "ink" ? c.ink : c.card;
   const tone = blocked ? "muted" : kind === "primary" ? "onPrimary" : kind === "ink" ? "onInk" : "ink";
   return (
-    <Pressable {...a11y} testID={testID} onPress={press} onPressIn={pressIn} onPressOut={pressOut} disabled={blocked} hitSlop={small ? 6 : 0} style={[{ alignSelf: full === false || small ? "flex-start" : "stretch", opacity: blocked && kind !== "primary" ? 0.6 : 1 }, style]}>
-      <Animated.View style={[{ minHeight: small ? 40 : tall ? TALL : kind === "primary" || kind === "ink" ? layout.primary : layout.target, paddingHorizontal: small ? space[4] : space[5], paddingVertical: small ? space[2] : space[3], borderRadius: 999, backgroundColor: fill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, sunk]}>
+    <Pressable {...a11y} testID={testID} onPress={press} onPressIn={pressIn} onPressOut={pressOut} disabled={blocked} hitSlop={small ? 4 : 0} style={[{ alignSelf: full === false || small ? "flex-start" : "stretch", opacity: blocked && kind !== "primary" ? 0.6 : 1 }, style]}>
+      <Animated.View style={[{ minHeight: small ? 44 : tall ? TALL : kind === "primary" || kind === "ink" ? layout.primary : layout.target, paddingHorizontal: small ? space[4] : space[5], paddingVertical: small ? space[2] : space[3], borderRadius: 999, backgroundColor: fill, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] }, sunk]}>
         <T v={small ? "small" : "button"} tone={tone} center style={[{ flexShrink: 1 }, small ? { fontFamily: fonts.bold } : null]}>
           {label}
         </T>

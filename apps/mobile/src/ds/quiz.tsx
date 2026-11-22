@@ -104,8 +104,8 @@ export function VerdictBand({ right, title, why, seed = 0, testID = "verdict" }:
   const head = title ?? (reactions ? pool[seed % pool.length]! : right ? "Right." : "Not this one.");
   return (
     <Animated.View testID={testID} entering={reduce ? undefined : presets.verdict()} accessibilityLiveRegion="polite" accessibilityRole="alert" style={{ backgroundColor: c.band, borderRadius: layout.radius, padding: space[4], gap: space[1], flexDirection: "row", alignItems: "flex-start" }}>
-      <View style={{ width: 28, height: 28, borderRadius: 14, alignItems: "center", justifyContent: "center", backgroundColor: right ? c.primary : c.danger, marginRight: space[3], marginTop: 1 }}>
-        {right ? <Check size={18} color={c.onPrimary} strokeWidth={3} /> : <X size={18} color={c.bg} strokeWidth={3} />}
+      <View style={{ width: 28, height: 28, borderRadius: 14, alignItems: "center", justifyContent: "center", backgroundColor: right ? c.right : c.danger, marginRight: space[3], marginTop: 1 }}>
+        {right ? <Check size={18} color={c.onRight} strokeWidth={3} /> : <X size={18} color={c.bg} strokeWidth={3} />}
       </View>
       <View style={{ flex: 1, gap: space[1] }}>
         <T v="bodyStrong" tone="onBand">

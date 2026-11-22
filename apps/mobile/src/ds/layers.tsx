@@ -267,8 +267,8 @@ function OptionPill({ text, picked, checked, right, onPress, testID }: { text: s
   const wrong = checked && picked && !right;
   const { style, handlers } = usePressScale(0.98);
   const state = right ? "Correct answer" : wrong ? "Your answer" : null;
-  const bg = right ? c.lime : wrong ? c.missBg : picked ? c.ink : c.card;
-  const fg = right ? c.onLime : wrong ? c.ink : picked ? c.bg : c.ink;
+  const bg = right ? c.right : wrong ? c.missBg : picked ? c.ink : c.card;
+  const fg = right ? c.onRight : wrong ? c.ink : picked ? c.bg : c.ink;
   return (
     <Pressable
       testID={testID}
@@ -390,8 +390,8 @@ export function ResultSheet({ open, right, win, title, why, action, testID = "re
     <Animated.View testID={testID} accessibilityLiveRegion="polite" accessibilityViewIsModal style={[{ position: "absolute", left: 0, right: 0, bottom: 0, backgroundColor: c.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, paddingTop: space[5], paddingHorizontal: layout.gutter, paddingBottom: space[5], gap: space[2], ...layerShadow(c) }, style]}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
         {right ? (
-          <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>
-            <Check size={16} color={c.onLime} strokeWidth={3} />
+          <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: c.right, alignItems: "center", justifyContent: "center" }}>
+            <Check size={16} color={c.onRight} strokeWidth={3} />
             {win ? <Burst fire={fire} reach={38} /> : null}
           </View>
         ) : null}
