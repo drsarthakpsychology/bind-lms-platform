@@ -4,6 +4,7 @@ import type { AppTarget, Me } from "@/api/contract";
 import { prefetchRoute } from "@/api/prefetch";
 import { toast } from "@/ds/toast";
 import { openWebsite } from "@/ds/query";
+import { STUDY_MODULES, STUDY_NOTES } from "./study";
 
 /** Practise case tools the app has (src/practise/catalog.ts), and the website's names for them. */
 const CASE_TOOLS = new Set(["daily", "detective", "wwyd", "two-minute", "say-it", "judgment", "ethics", "landmark", "osce", "mse-trainer", "formulation", "out-of-depth", "weak-spots"]);
@@ -119,7 +120,7 @@ export function hrefFor(t: AppTarget): string | null {
     case "material":
       return `/material/${encodeURIComponent(t.materialId)}${t.courseId ? `?course=${encodeURIComponent(t.courseId)}` : ""}`;
     case "study":
-      return "/study";
+      return STUDY_MODULES;
     case "studyModule":
       return `/study/${encodeURIComponent(t.moduleId)}`;
     case "studySection":
@@ -243,6 +244,9 @@ export function pathFromLink(input: string): string {
   if ((m = /^\/practice\/([^/]+)$/.exec(p)) && (CASE_TOOLS.has(m[1]!) || WEB_TOOL[m[1]!])) return `/case/${WEB_TOOL[m[1]!] ?? m[1]}`;
   if (p === "/prep") return "/prep";
   if (p === "/learn" || p === "/me") return p;
+  // The old Modules page and the old Notes tab: both are the Study tab now.
+  if (p === "/study") return STUDY_MODULES;
+  if (p === "/library") return q ? `/library${q}` : STUDY_NOTES;
   // Paths that are the same in the app: /study, /study/m02, /study/m02/s1, /doubts, /notifications, /progress, /settings, /lecture/..., /course/...
   return p + q;
 }

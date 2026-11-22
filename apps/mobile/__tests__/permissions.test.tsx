@@ -161,8 +161,8 @@ describe("the first-run tab tour", () => {
   it("can be skipped from the first page, and a tab in the small bar jumps to its page", async () => {
     await fresh();
     await render(<FirstRunPermissions active me={student} />);
-    await fireEvent.press(await screen.findByTestId("tour-tab-notes"));
-    expect(screen.getByTestId("tour-page-notes")).toBeTruthy();
+    await fireEvent.press(await screen.findByTestId("tour-tab-study"));
+    expect(screen.getByTestId("tour-page-study")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("tour-skip"));
     await waitFor(() => expect(screen.queryByTestId("tab-tour")).toBeNull());
   });

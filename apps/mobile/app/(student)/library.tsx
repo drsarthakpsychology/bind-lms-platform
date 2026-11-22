@@ -1,1 +1,1 @@
-export { NotesHubScreen as default } from "@/screens/notes/hub";
+export { StudyTab as default } from "@/screens/study/tab";

@@ -12,6 +12,7 @@ import { api } from "@/auth";
 import { Button, Jyo, Label, ProgressLine, QuietEmpty, Row, Screen, Sheet, Stone, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { Confetti, Enter, presets, Press, staggerDelay, useNewWins } from "@/motion";
+import { STUDY_MODULES } from "@/nav/study";
 import { layout, space, useTheme } from "@/theme";
 import { Group, HubSkeleton, IconPatch, Load } from "./parts";
 
@@ -135,7 +136,7 @@ export function CertificatesScreen() {
                     ))}
                   </View>
                 ) : (
-                  <QuietEmpty testID="certs-empty" title="No certificates yet" body="Finish a module and pass its test to earn your first one." art={<Jyo pose="resting" size={56} />} action={{ label: "Open your modules", onPress: () => router.push("/study") }} />
+                  <QuietEmpty testID="certs-empty" title="No certificates yet" body="Finish a module and pass its test to earn your first one." art={<Jyo pose="resting" size={56} />} action={{ label: "Open your modules", onPress: () => router.push(STUDY_MODULES) }} />
                 )}
 
                 {!badgesOnly && certsToEarn.length ? (

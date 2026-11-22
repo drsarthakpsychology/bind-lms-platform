@@ -97,6 +97,9 @@ export function routeReads(href: string): Read[] {
       return [qo.section(b, c), qo.module(b), learnQo.marks()];
     case "notes":
       return b ? [learnQo.note(b)] : [learnQo.notes()];
+    // The Study tab: modules and notes.
+    case "library":
+      return [qo.study(), learnQo.notes()];
     case "reference":
       return b ? [learnQo.term(b)] : [learnQo.terms()];
     case "assignments":
@@ -155,7 +158,7 @@ function targetHref(t: C.AppTarget | null | undefined): string | null {
     case "lecture":
       return `/lecture/${encodeURIComponent(t.lessonId)}`;
     case "study":
-      return "/study";
+      return "/library?side=modules";
     case "studyModule":
       return `/study/${encodeURIComponent(t.moduleId)}`;
     case "studySection":

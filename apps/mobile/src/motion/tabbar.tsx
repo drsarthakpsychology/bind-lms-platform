@@ -1,6 +1,6 @@
 import type { BottomTabBarProps, BottomTabNavigationOptions } from "expo-router/build/layouts/Tabs";
 import * as React from "react";
-import { Platform, Pressable, View, type LayoutChangeEvent, type ViewStyle } from "react-native";
+import { Platform, Pressable, StyleSheet, View, type LayoutChangeEvent, type ViewStyle } from "react-native";
 import Animated, { interpolate, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
@@ -143,6 +143,8 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
         {state.routes.map((route, index) => {
           const focused = index === state.index;
           const options = descriptors[route.key]?.options as BottomTabNavigationOptions | undefined;
+          // A tab this account does not have (Study without modules): not drawn.
+          if (StyleSheet.flatten(options?.tabBarItemStyle)?.display === "none") return null;
           const label = typeof options?.title === "string" ? options.title : route.name;
           return (
             <TabItem
