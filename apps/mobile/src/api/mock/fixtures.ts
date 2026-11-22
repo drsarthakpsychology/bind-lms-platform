@@ -326,7 +326,7 @@ export const notifications: NotificationDetail[] = [
   },
 ];
 
-export const prefs: NotificationPrefs = { push: true, messages: true, doubtReplies: true, achievements: true, studyReminder: false, studyReminderTime: "19:00", synced: true };
+export const prefs: NotificationPrefs = { push: true, messages: true, doubtReplies: true, achievements: true, studyReminder: false, studyReminderTime: "19:00", synced: true, reminders: { opdDay: true, sessionSoon: true, scanOut: true, caseLog: true, leaveLow: true } };
 
 /* ---------------------------------------------------------------- doubts */
 

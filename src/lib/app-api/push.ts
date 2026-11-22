@@ -38,7 +38,8 @@ export function buildMessages(
   const out: ExpoMessage[] = [];
   for (const r of rows) {
     const p = prefs.get(r.user_id);
-    if (p && (!p.push || !p[kind])) continue;
+    // Reminders have their own switches (checked by the reminder runner); here only the master switch.
+    if (p && (!p.push || (kind !== "reminders" && !p[kind]))) continue;
     const href = r.href ?? (r.id ? `/notifications/${r.id}` : "/notifications");
     for (const to of byUser.get(r.user_id) ?? []) {
       out.push({
@@ -47,7 +48,7 @@ export function buildMessages(
         body: String(r.body ?? "").slice(0, 300),
         sound: "default",
         priority: "high",
-        channelId: kind === "achievements" ? "achievements" : "messages",
+        channelId: kind === "achievements" ? "achievements" : kind === "reminders" ? "reminders" : "messages",
         data: { notificationId: r.id ?? "", type: r.type ?? "message", target: toAppTarget(href), ...extra },
       });
     }
