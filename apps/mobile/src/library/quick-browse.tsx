@@ -15,8 +15,8 @@ const TAG: Record<QuickType, string> = { criteria: "Criteria", summary: "Summary
 /** Long types show a first slice here; the rest are a tap away. */
 const CAP = 24;
 
-function ItemRow({ i, snippet, testID }: { i: QuickItem; snippet?: string | null; testID?: string }) {
-  return <Row testID={testID ?? `qn-row-${i.key}`} title={i.title} meta={snippet ?? i.line} trailing={<KindTag>{TAG[i.type]}</KindTag>} onPress={() => go(i.app)} chevron accessibilityLabel={`${i.title}. ${TAG[i.type]}. ${snippet ?? i.line}`} />;
+function ItemRow({ i, snippet, testID, tag = true }: { i: QuickItem; snippet?: string | null; testID?: string; /** Off inside a one-type shelf, where it would repeat the chip. */ tag?: boolean }) {
+  return <Row testID={testID ?? `qn-row-${i.key}`} title={i.title} meta={snippet ?? i.line} trailing={tag ? <KindTag>{TAG[i.type]}</KindTag> : undefined} onPress={() => go(i.app)} chevron accessibilityLabel={`${i.title}. ${TAG[i.type]}. ${snippet ?? i.line}`} />;
 }
 
 function useDebounced(v: string, ms = 180) {
@@ -125,7 +125,7 @@ function Shelf({ lib, type }: { lib: QuickLibrary; type: QuickType }) {
             <Label>{g.label}</Label>
             <RowList bare still={shown.length > 12}>
               {shown.map((i) => (
-                <ItemRow key={i.key} i={i} />
+                <ItemRow key={i.key} i={i} tag={false} />
               ))}
             </RowList>
           </View>

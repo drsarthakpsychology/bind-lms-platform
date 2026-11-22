@@ -47,29 +47,20 @@ export function QuickNotesLibrary({ lib, owner, initialQuery = "", initialType =
   const [query, setQuery] = React.useState(initialQuery);
   const [type, setType] = React.useState<QuickType | "all">(initialType);
   const [found, setFound] = React.useState<QuickSearch | null>(null);
-  const [searching, setSearching] = React.useState(false);
   const { pinned, recent } = useQuickPins(owner);
   const q = norm(React.useDeferredValue(query));
   const byKey = React.useMemo(() => new Map(lib.items.map((i) => [i.key, i])), [lib.items]);
 
-  // The search inside the notes: debounced, last answer wins.
+  // The search inside the notes: debounced, last answer wins. "Searching" is derived: a query whose answer has not come yet.
   React.useEffect(() => {
-    if (!q) {
-      setFound(null);
-      setSearching(false);
-      return;
-    }
-    setSearching(true);
+    if (!q) return;
     const ctl = new AbortController();
     const t = setTimeout(() => {
       fetch(`/api/quick-notes/search?q=${encodeURIComponent(q)}`, { signal: ctl.signal })
-        .then((r) => (r.ok ? (r.json() as Promise<QuickSearch>) : null))
-        .then((d) => {
-          if (d) setFound(d);
-          setSearching(false);
-        })
+        .then((r) => (r.ok ? (r.json() as Promise<QuickSearch>) : { q, hits: [] }))
+        .then((d) => setFound({ ...d, q }))
         .catch(() => {
-          if (!ctl.signal.aborted) setSearching(false);
+          if (!ctl.signal.aborted) setFound({ q, hits: [] });
         });
     }, 160);
     return () => {
@@ -77,6 +68,7 @@ export function QuickNotesLibrary({ lib, owner, initialQuery = "", initialType =
       ctl.abort();
     };
   }, [q]);
+  const searching = !!q && (!found || norm(found.q) !== q);
 
   const syncUrl = (nextQ: string, nextType: QuickType | "all") => {
     try {

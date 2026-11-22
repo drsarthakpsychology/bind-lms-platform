@@ -12,14 +12,22 @@ import { cn } from "@/lib/utils";
 const key = (owner: string | null, what: "pins" | "recent") => `vibha-qn-${what}:${owner ?? "anon"}`;
 const listeners = new Set<() => void>();
 
-function read(k: string): string[] {
+function readRaw(k: string): string {
   try {
-    const v = JSON.parse(window.localStorage.getItem(k) ?? "[]");
+    return window.localStorage.getItem(k) ?? "[]";
+  } catch {
+    return "[]";
+  }
+}
+function parse(raw: string): string[] {
+  try {
+    const v = JSON.parse(raw);
     return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string").slice(0, 40) : [];
   } catch {
     return [];
   }
 }
+const read = (k: string) => parse(readRaw(k));
 function write(k: string, v: string[]) {
   try {
     window.localStorage.setItem(k, JSON.stringify(v.slice(0, 40)));
@@ -29,18 +37,19 @@ function write(k: string, v: string[]) {
   for (const l of listeners) l();
 }
 
+const subscribe = (fn: () => void) => {
+  listeners.add(fn);
+  return () => {
+    listeners.delete(fn);
+  };
+};
+
 export function useQuickPins(owner: string | null) {
-  const [, bump] = React.useReducer((n: number) => n + 1, 0);
-  const [ready, setReady] = React.useState(false);
-  React.useEffect(() => {
-    listeners.add(bump);
-    setReady(true);
-    return () => {
-      listeners.delete(bump);
-    };
-  }, []);
-  const pinned = ready ? read(key(owner, "pins")) : [];
-  const recent = ready ? read(key(owner, "recent")) : [];
+  // The stored text is the snapshot (a string compares by value); the server and first paint see none.
+  const pinsRaw = React.useSyncExternalStore(subscribe, () => readRaw(key(owner, "pins")), () => "[]");
+  const recentRaw = React.useSyncExternalStore(subscribe, () => readRaw(key(owner, "recent")), () => "[]");
+  const pinned = React.useMemo(() => parse(pinsRaw), [pinsRaw]);
+  const recent = React.useMemo(() => parse(recentRaw), [recentRaw]);
   return {
     pinned,
     recent,
