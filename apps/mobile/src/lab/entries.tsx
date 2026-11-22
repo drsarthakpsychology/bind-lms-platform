@@ -27,7 +27,7 @@ export const CalmEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-c
 export const SelfCheckEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-selfcheck" icon={ClipboardCheck} area="me" title="Self-checks" meta={tall ? "6 short checks" : "Short questionnaires, scored on your phone"} href="/selfcheck" />;
 
 /** For the Practise tab: two shelves side by side, then two wide rows. */
-export function PractiseExtras({ label = "Read and reason" }: { label?: string | null }) {
+export function PractiseExtras({ label = "Read and reason", ethics = true }: { label?: string | null; /** False when Ethics is switched off for this account. */ ethics?: boolean }) {
   return (
     <View testID="practise-extras" style={{ gap: space[3] }}>
       {label ? <Label>{label}</Label> : null}
@@ -35,7 +35,7 @@ export function PractiseExtras({ label = "Read and reason" }: { label?: string |
         <CasebookEntry tall />
         <LabEntry tall />
       </View>
-      <EthicsEntry />
+      {ethics ? <EthicsEntry /> : null}
       <InterviewEntry />
     </View>
   );

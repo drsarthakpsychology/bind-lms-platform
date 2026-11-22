@@ -77,7 +77,10 @@ describe("Practise hub", () => {
     expect(screen.getByTestId("hub-pick-wwyd")).toBeTruthy();
     for (const t of ["Basics", "Apply", "Cases", "Decisions", "Advanced", "Exam prep", "Boards", "League"]) expect(screen.getAllByText(t).length).toBeGreaterThan(0);
     // Every live case and game is on the path, once, on its level.
-    for (const id of ["blitz", "sort", "terms", "mse-lab", "duel", "rx", "detective", "two-minute", "formulation", "escape", "ward", "ethics", "osce", "judgment"]) expect(screen.getAllByTestId(`practise-${id}`).length).toBe(1);
+    for (const id of ["blitz", "sort", "terms", "mse-lab", "duel", "rx", "detective", "two-minute", "formulation", "escape", "ward", "osce", "judgment"]) expect(screen.getAllByTestId(`practise-${id}`).length).toBe(1);
+    // Ethics moves to "Read and reason" with the Casebook, the Lab and the interview; Calm and the self-checks close the tab.
+    expect(screen.queryByTestId("practise-ethics")).toBeNull();
+    for (const id of ["practise-extras", "entry-casebook", "entry-lab", "entry-ethics", "entry-interview", "wellbeing-extras", "entry-calm", "entry-selfcheck"]) expect(screen.getByTestId(id)).toBeTruthy();
     expect(screen.queryByTestId("practise-daily")).toBeNull();
     expect(screen.queryByText("120+ new cases")).toBeNull();
     expect(screen.getByTestId("hub-all-prep")).toBeTruthy();

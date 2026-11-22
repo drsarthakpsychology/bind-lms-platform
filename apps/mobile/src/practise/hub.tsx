@@ -7,6 +7,7 @@ import { View } from "react-native";
 import { FieldCard, IconDot, Label, Pebbles, QuietEmpty, Row, RowList, Screen, Skeleton, StillTrying, Stone, T } from "@/ds";
 import { Enter, Press, ProgressRing, RollingNumber } from "@/motion";
 import { toast } from "@/ds/toast";
+import { PractiseExtras, WellbeingExtras } from "@/lab/entries";
 import { config } from "@/lib/config";
 import { recentPractise, recentPrep } from "@/lib/recent";
 import { go } from "@/api/prefetch";
@@ -369,7 +370,9 @@ export function PractiseHub() {
     if (r.id === "daily" || r.locked || r.trailing !== "In progress" || pick.some((p) => p.id === r.id)) continue;
     pick.push(r);
   }
-  const levels = s ? byLevel(s) : null;
+  // Ethics lives in "Read and reason" (with the Casebook, the Lab and the interview), so its tile leaves the levels.
+  const ethicsOpen = !!s?.cases.some((r) => r.id === "ethics" && !r.locked);
+  const levels = s ? byLevel({ ...s, cases: s.cases.filter((r) => r.id !== "ethics" || r.locked) }) : null;
   const league = s?.boards.find((b) => b.id === "league");
   const empty = s && !s.cases.length && !s.games.length && !s.prep.length;
   let n = 0;
@@ -427,12 +430,18 @@ export function PractiseHub() {
             ) : null,
           )}
           <PrepBlock home={prep.data} row={s.prep[0]} />
+          <Enter i={n++}>
+            <PractiseExtras ethics={ethicsOpen} />
+          </Enter>
           {s.boards.length ? (
             <View style={{ gap: space[2] }}>
               <Label>Boards</Label>
               <PractiseRows rows={s.boards} />
             </View>
           ) : null}
+          <Enter i={n++}>
+            <WellbeingExtras />
+          </Enter>
         </>
       )}
     </Screen>
