@@ -5,7 +5,8 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { mock } from "@/api/mock/server";
 import { api, session } from "@/auth";
-import { play } from "@/practise/api";
+import { dropPrepSet, play, prefetchPrepSet, prepSetPath, prepSetPathOf, prepSetQuery } from "@/practise/api";
+import { queryClient } from "@/api/queries";
 import type * as C from "@/practise/contract";
 import { buildDefs, grade, scoreSct, simulatedPanel } from "@/practise/tools/engine";
 import { CaseLibrary } from "@/practise/cases/library";
@@ -339,6 +340,19 @@ describe("Exam Prep", () => {
       await press("prep-next");
     }
     await waitFor(() => expect(screen.getByText(/set done/i)).toBeTruthy());
+  });
+  it("a set can be loaded ahead, and is forgotten once played", async () => {
+    const path = prepSetPath({ subject: "statistics", topic: "descriptives", set: "1" });
+    expect(path).toBe("/prep/subjects/statistics/topics/descriptives?set=1");
+    expect(prepSetPathOf("/prep/set?subject=statistics&topic=descriptives&set=1")).toBe(path);
+    expect(prepSetPathOf("/prep/set?list=smart")).toBe("/prep/smart");
+    expect(prepSetPathOf("/prep/statistics")).toBeNull();
+    prefetchPrepSet(path);
+    await waitFor(() => expect(queryClient.getQueryData<C.PrepSet>(prepSetQuery(path).queryKey)?.questions.length).toBeGreaterThan(0));
+    // Never written to the phone's cache between launches.
+    expect(prepSetQuery(path).queryKey[0]).toBe("prepSet");
+    dropPrepSet(path);
+    expect(queryClient.getQueryData(prepSetQuery(path).queryKey)).toBeUndefined();
   });
   it("long answers: the model answer only on Show answer", async () => {
     const home = await api.get<C.PrepLong>("/prep/long");

@@ -52,6 +52,27 @@ async function safe(p: PromiseLike<{ error: unknown }>): Promise<boolean> {
   }
 }
 
+/** Rows per database read (the API's own cap is 1000; asking for more silently returns 1000). */
+const PAGE = 1000;
+
+/**
+ * Every row of one student's list, past the 1000-row cap: the first page, then
+ * the rest a few pages at a time in parallel (a student with 3,000 rows waits
+ * for two round trips, not three). `page(from, to)` must use a stable order.
+ */
+export async function allRows(page: (from: number, to: number) => PromiseLike<{ data: unknown; error: unknown }>, max = 12_000): Promise<Row[]> {
+  const first = await rows(page(0, PAGE - 1));
+  if (first.length < PAGE) return first;
+  const out = [...first];
+  for (let from = PAGE; from < max; from += PAGE * 4) {
+    const starts = [0, 1, 2, 3].map((k) => from + k * PAGE).filter((x) => x < max);
+    const got = await Promise.all(starts.map((x) => rows(page(x, x + PAGE - 1))));
+    for (const g of got) out.push(...g);
+    if (got.some((g) => g.length < PAGE)) break;
+  }
+  return out;
+}
+
 const num = (v: unknown, d = 0) => (typeof v === "number" && Number.isFinite(v) ? v : typeof v === "string" && v.trim() !== "" && Number.isFinite(Number(v)) ? Number(v) : d);
 const str = (v: unknown) => (typeof v === "string" ? v : null);
 
@@ -96,18 +117,59 @@ export async function loadSkills(userId: string): Promise<Map<Subject, SkillSnap
   return out;
 }
 
-/** Calibrated difficulty for prep questions (by bank id). */
-export async function loadItemB(ids: string[]): Promise<Map<string, number>> {
+const B_TTL = 5 * 60_000;
+const bCache = new Map<string, { b: number | null; at: number }>();
+
+/**
+ * Calibrated difficulty for prep questions (by bank id). Kept in this server's
+ * memory for 5 minutes (it moves slowly, with every student's answers), and
+ * what is missing is read in parallel chunks, not one chunk after another.
+ */
+export async function loadItemB(ids: string[], now = Date.now()): Promise<Map<string, number>> {
   const out = new Map<string, number>();
+  if (!ids.length) return out;
+  const missing: string[] = [];
+  for (const id of ids) {
+    const c = bCache.get(id);
+    if (c && now - c.at < B_TTL) {
+      if (c.b !== null) out.set(id, c.b);
+    } else missing.push(id);
+  }
+  if (!missing.length) return out;
   const db = admin();
-  if (!db || !ids.length) return out;
-  for (let i = 0; i < ids.length; i += 300) {
-    for (const r of await rows(db.from("item_stats").select("item, b").in("item", ids.slice(i, i + 300).map(prepItem)))) {
-      const id = fromPrepItem(String(r.item));
-      if (id) out.set(id, num(r.b));
+  if (!db) return out;
+  const chunks: string[][] = [];
+  for (let i = 0; i < missing.length; i += 300) chunks.push(missing.slice(i, i + 300));
+  const results = await Promise.all(
+    chunks.map(async (chunk) => {
+      try {
+        const { data, error } = await db.from("item_stats").select("item, b").in("item", chunk.map(prepItem));
+        return error || !Array.isArray(data) ? null : { chunk, data: data as Row[] };
+      } catch {
+        return null;
+      }
+    }),
+  );
+  if (bCache.size > 50_000) bCache.clear();
+  for (const r of results) {
+    if (!r) continue; // a failed read is not remembered as "no difficulty"
+    const found = new Set<string>();
+    for (const row of r.data) {
+      const id = fromPrepItem(String(row.item));
+      if (!id) continue;
+      const b = num(row.b);
+      out.set(id, b);
+      found.add(id);
+      bCache.set(id, { b, at: now });
     }
+    for (const id of r.chunk) if (!found.has(id)) bCache.set(id, { b: null, at: now });
   }
   return out;
+}
+
+/** For tests: forget the remembered difficulties. */
+export function clearItemBCache() {
+  bCache.clear();
 }
 
 export type PrepCard = { id: string; dueAt: string; lapses: number };
@@ -116,7 +178,7 @@ export type PrepCard = { id: string; dueAt: string; lapses: number };
 export async function loadCards(userId: string): Promise<PrepCard[]> {
   const db = admin();
   if (!db || !userId) return [];
-  return (await rows(db.from("review_cards").select("item, due_at, lapses").eq("user_id", userId).like("item", "prep:%").limit(5000))).flatMap((r) => {
+  return (await allRows((a, b) => db.from("review_cards").select("item, due_at, lapses").eq("user_id", userId).like("item", "prep:%").order("item").range(a, b), 6000)).flatMap((r) => {
     const id = fromPrepItem(String(r.item));
     return id ? [{ id, dueAt: str(r.due_at) ?? new Date(0).toISOString(), lapses: num(r.lapses) }] : [];
   });
@@ -127,7 +189,7 @@ export async function loadSeen(userId: string): Promise<Map<string, number>> {
   const out = new Map<string, number>();
   const db = admin();
   if (!db || !userId) return out;
-  for (const r of await rows(db.from("prep_seen").select("item, n").eq("user_id", userId).limit(10000))) out.set(String(r.item), num(r.n, 1));
+  for (const r of await allRows((a, b) => db.from("prep_seen").select("item, n").eq("user_id", userId).order("item").range(a, b), 10_000)) out.set(String(r.item), num(r.n, 1));
   return out;
 }
 
@@ -136,7 +198,7 @@ export async function loadSeenRows(userId: string): Promise<Map<string, { n: num
   const out = new Map<string, { n: number; at: string | null }>();
   const db = admin();
   if (!db || !userId) return out;
-  for (const r of await rows(db.from("prep_seen").select("item, n, last_at").eq("user_id", userId).limit(10000))) out.set(String(r.item), { n: num(r.n, 1), at: str(r.last_at) });
+  for (const r of await allRows((a, b) => db.from("prep_seen").select("item, n, last_at").eq("user_id", userId).order("item").range(a, b), 10_000)) out.set(String(r.item), { n: num(r.n, 1), at: str(r.last_at) });
   return out;
 }
 

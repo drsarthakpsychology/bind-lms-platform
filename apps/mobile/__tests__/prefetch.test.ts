@@ -13,6 +13,11 @@ describe("prefetch", () => {
     expect(keysOf(routeReads("/lecture/l5?tab=materials"))).toEqual(['["lecture","l5"]']);
     expect(keysOf(routeReads("/prep/cognitive"))).toEqual(['["practise","read","/prep/subjects/cognitive"]']);
     expect(routeReads("/prep/set?subject=x")).toEqual([]);
+    // An Exam Prep set loads on the tap, so its first question is there when the screen draws.
+    expect(keysOf(routeReads("/prep/set?subject=statistics&topic=t-test&set=2"))).toEqual(['["prepSet","/prep/subjects/statistics/topics/t-test?set=2"]']);
+    expect(keysOf(routeReads("/prep/set?list=smart"))).toEqual(['["prepSet","/prep/smart"]']);
+    expect(keysOf(routeReads("/prep/set?list=wrong"))).toEqual(['["prepSet","/prep/lists/wrong"]']);
+    expect(keysOf(routeReads("/prep/mock"))).toEqual(['["practise","read","/prep/mock"]']);
     expect(routeReads("/game/blitz")).toEqual([]);
     expect(routeReads("/study/%E0%A4%A")).toHaveLength(1);
   });

@@ -10,7 +10,7 @@ import { toast } from "@/ds/toast";
 import { PractiseExtras, WellbeingExtras } from "@/lab/entries";
 import { config } from "@/lib/config";
 import { recentPractise, recentPrep } from "@/lib/recent";
-import { go } from "@/api/prefetch";
+import { canGuess, go, prefetchRoute } from "@/api/prefetch";
 import { hrefFor } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { fonts, space, useTheme } from "@/theme";
@@ -282,10 +282,15 @@ function Numbers({ shop, rank }: { shop: XpShop | undefined; rank: string | null
 /** Exam prep on the hub: one stone that carries on where you stopped, and three quick doors. */
 function PrepBlock({ home, row }: { home: PrepHome | undefined; row: PractiseRow | undefined }) {
   const c = useTheme();
-  if (!row || row.locked) return null;
+  const open = !!row && !row.locked;
+  const resume = home?.resume ? (hrefFor(home.resume.target) ?? `/prep/set?subject=${encodeURIComponent(home.resume.subject)}&topic=${encodeURIComponent(home.resume.topic)}&set=${home.resume.set}`) : null;
+  // Practise tab open: the set you would carry on with starts loading, so it opens on its first question.
+  React.useEffect(() => {
+    if (open && resume && canGuess()) prefetchRoute(resume);
+  }, [open, resume]);
+  if (!open) return null;
   const total = home?.subjects.reduce((n, x) => n + x.stats.total, 0) ?? 0;
   const answered = home?.subjects.reduce((n, x) => n + x.stats.answered, 0) ?? 0;
-  const resume = home?.resume ? (hrefFor(home.resume.target) ?? `/prep/set?subject=${encodeURIComponent(home.resume.subject)}&topic=${encodeURIComponent(home.resume.topic)}&set=${home.resume.set}`) : null;
   const pct = total ? Math.round((answered / total) * 100) : 0;
   return (
     <View style={{ gap: space[3] }}>
@@ -295,7 +300,7 @@ function PrepBlock({ home, row }: { home: PrepHome | undefined; row: PractiseRow
         accessibilityLabel={home?.resume ? `Carry on: ${home.resume.topicTitle}, ${home.resume.subjectTitle}` : "Question bank. Questions by subject and topic"}
         grow={() => {
           if (home?.resume) recentPrep.add(home.resume.subject);
-          router.push(resume ?? "/prep");
+          go(resume ?? "/prep");
         }}
       >
         <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>

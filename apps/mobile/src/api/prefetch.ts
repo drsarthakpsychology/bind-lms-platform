@@ -4,7 +4,7 @@ import { router } from "expo-router";
 import { adminQo } from "@/admin/api";
 import { clinicAdminQo, clinicQo, clinicRouteReads } from "@/clinic/api";
 import { session } from "@/auth";
-import { readQuery } from "@/practise/api";
+import { prepSetPathOf, prepSetQuery, readQuery } from "@/practise/api";
 import type * as C from "./contract";
 import { learnQo } from "./learn";
 import { isSlow, netStore } from "./online";
@@ -120,10 +120,17 @@ export function routeReads(href: string): Read[] {
       return b ? [qo.doubt(b)] : [];
     case "settings":
       return [qo.settings()];
-    case "prep":
+    case "prep": {
       if (!b) return [readQuery("/prep")];
-      if (b === "set" || b === "long" || b === "mock") return [];
+      if (b === "set") {
+        // The set itself (its query string says which), so the first question is there when the screen draws.
+        const set = prepSetPathOf(href);
+        return set ? [prepSetQuery(set)] : [];
+      }
+      if (b === "mock") return [readQuery("/prep/mock")];
+      if (b === "long") return [];
       return [readQuery(`/prep/subjects/${encodeURIComponent(b)}`)];
+    }
     case "practise":
       return [readQuery("/practise")];
     default:

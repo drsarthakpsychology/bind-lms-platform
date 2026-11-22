@@ -8,6 +8,7 @@ import { Enter, ProgressRing, StaggerList } from "@/motion";
 import { loadLine } from "../frame";
 import { recentPrep } from "@/lib/recent";
 import { hrefFor } from "@/nav/targets";
+import { canGuess, go, prefetchRoute } from "@/api/prefetch";
 import { space, useTheme } from "@/theme";
 import { useRead } from "../api";
 import type { PrepHome as Home, PrepStats, PrepSubjectDetail } from "../contract";
@@ -29,11 +30,17 @@ export function PrepHome() {
   const q = useRead<Home>("/prep");
   const d = q.data;
   const resume = d?.resume ? hrefFor(d.resume.target) ?? `/prep/set?subject=${enc(d.resume.subject)}&topic=${enc(d.resume.topic)}&set=${d.resume.set}` : null;
+  // Exam prep open: the set you would carry on with, and a Smart set, start loading (first question at once).
+  React.useEffect(() => {
+    if (!d || !canGuess()) return;
+    prefetchRoute(resume);
+    prefetchRoute("/prep/set?list=smart");
+  }, [d, resume]);
   const doors: Pebble[] = d
     ? [
-        { label: "Smart set", icon: Sparkles, onPress: () => router.push("/prep/set?list=smart"), testID: "prep-smart", live: !d.resume },
-        ...(d.wrong ? [{ label: "Try again", icon: RotateCcw, onPress: () => router.push("/prep/set?list=wrong"), testID: "prep-wrong" }] : []),
-        { label: "Mock tests", icon: Timer, onPress: () => router.push("/prep/mock"), testID: "prep-more-mock" },
+        { label: "Smart set", icon: Sparkles, onPress: () => go("/prep/set?list=smart"), testID: "prep-smart", live: !d.resume },
+        ...(d.wrong ? [{ label: "Try again", icon: RotateCcw, onPress: () => go("/prep/set?list=wrong"), testID: "prep-wrong" }] : []),
+        { label: "Mock tests", icon: Timer, onPress: () => go("/prep/mock"), testID: "prep-more-mock" },
         { label: "Long answers", icon: BookOpen, onPress: () => router.push("/prep/long"), testID: "prep-long" },
       ].slice(0, 4)
     : [];
@@ -43,7 +50,7 @@ export function PrepHome() {
       area="practise"
       title="Exam prep"
       lead="Questions by subject and topic, one at a time. Nothing here counts towards your marks."
-      field={d?.resume && resume ? <FieldCard title={`Carry on: ${d.resume.topicTitle}`} meta={`${d.resume.subjectTitle} · set ${d.resume.set} of ${d.resume.sets}`} action={{ label: "Carry on", onPress: () => router.push(resume), testID: "prep-resume" }} /> : undefined}
+      field={d?.resume && resume ? <FieldCard title={`Carry on: ${d.resume.topicTitle}`} meta={`${d.resume.subjectTitle} · set ${d.resume.set} of ${d.resume.sets}`} action={{ label: "Carry on", onPress: () => go(resume), testID: "prep-resume" }} /> : undefined}
       gap={space[6]}
       onRefresh={() => void q.refetch()}
       refreshing={q.isRefetching}
@@ -67,7 +74,7 @@ export function PrepHome() {
                 const pct = s.stats.total ? Math.round((s.stats.answered / s.stats.total) * 100) : 0;
                 const done = !!s.stats.total && s.stats.answered >= s.stats.total;
                 return (
-                  <Stone key={s.id} testID={`prep-${s.id}`} accessibilityLabel={`${s.title}. ${statLine(s.stats) ?? "Not started"}`} grow={() => { recentPrep.add(s.id); router.push(`/prep/${enc(s.id)}`); }}>
+                  <Stone key={s.id} testID={`prep-${s.id}`} accessibilityLabel={`${s.title}. ${statLine(s.stats) ?? "Not started"}`} grow={() => { recentPrep.add(s.id); go(`/prep/${enc(s.id)}`); }}>
                     <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
                       <ProgressRing pct={pct} size={44} stroke={5} color={c.dark ? c.lime : c.brand} track={c.hairline} label={`${pct} percent answered`}>
                         {done ? <Tag tag="done" /> : null}
@@ -88,7 +95,7 @@ export function PrepHome() {
             <Enter i={2} style={{ gap: space[2] }}>
               <Label>More</Label>
               <RowList>
-                {d.canSave && d.saved ? <Row testID="prep-saved" title="Saved questions" meta="The ones you bookmarked" icon={<Bookmark size={20} color={c.muted} />} onPress={() => router.push("/prep/set?list=saved")} /> : null}
+                {d.canSave && d.saved ? <Row testID="prep-saved" title="Saved questions" meta="The ones you bookmarked" icon={<Bookmark size={20} color={c.muted} />} onPress={() => go("/prep/set?list=saved")} /> : null}
                 {d.more
                   .filter((r) => r.id !== "long" && r.id !== "mock")
                   .map((r) => (
@@ -121,7 +128,7 @@ export function PrepSubject() {
         <Stagger>
           <RowList>
             {d.topics.map((t) => (
-              <Row key={t.id} testID={`prep-topic-${t.id}`} title={t.title} meta={statLine(t.stats)} below={bar(t.stats)} trailing={t.stats.total && t.stats.answered >= t.stats.total ? <Tag tag="done" /> : undefined} onPress={() => router.push(`/prep/set?subject=${enc(subject)}&topic=${enc(t.id)}`)} />
+              <Row key={t.id} testID={`prep-topic-${t.id}`} title={t.title} meta={statLine(t.stats)} below={bar(t.stats)} trailing={t.stats.total && t.stats.answered >= t.stats.total ? <Tag tag="done" /> : undefined} onPress={() => go(`/prep/set?subject=${enc(subject)}&topic=${enc(t.id)}`)} />
             ))}
           </RowList>
           {d.long ? (
