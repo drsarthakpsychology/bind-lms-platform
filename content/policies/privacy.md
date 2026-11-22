@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 slug: privacy
-lastUpdated: "[EFFECTIVE_DATE]"
+lastUpdated: "2026-11-22"
 summary: What personal data VIBHA collects, why, and your rights under Indian law.
 order: 6
 ---
