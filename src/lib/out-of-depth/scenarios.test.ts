@@ -14,6 +14,10 @@ describe("out-of-depth", () => {
     }
   });
 
+  it("every option is a real choice (no filler like 'Not applicable')", () => {
+    for (const s of OUT_OF_DEPTH_SCENARIOS) for (const o of s.options) expect(o.label, s.id).not.toMatch(/not applicable|none of the above|all of the above/i);
+  });
+
   it("over-referral is scored as a distinct failure", () => {
     const continueCase = OUT_OF_DEPTH_SCENARIOS.find((s) => s.correct === "continue")!;
     const over = scoreReferralDecision(continueCase, "refer_psychiatrist");

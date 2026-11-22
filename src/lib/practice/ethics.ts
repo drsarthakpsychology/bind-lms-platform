@@ -3,7 +3,7 @@
  *
  * Each dilemma presents a realistic Indian counselling context, asks the
  * student to commit to ONE action, then reveals the consequence: what the law
- * (MHA 2017, POCSO, RCI scope) and best practice require, and why the wrong
+ * (MHCA 2017, POCSO, RCI scope) and best practice require, and why the wrong
  * call has teeth. No AI involved: authored, deterministic, grounded.
  *
  * The practice here is deciding BEFORE seeing the outcome, which is what the
@@ -12,7 +12,7 @@
 
 export interface EthicDilemma {
   id: string;
-  tag: "MHA 2017" | "POCSO" | "Confidentiality" | "RCI scope" | "Consent" | "Minor";
+  tag: "MHCA 2017" | "POCSO" | "Confidentiality" | "RCI scope" | "Consent" | "Minor";
   setting: string;
   vignette: string;
   options: Array<{
@@ -26,21 +26,21 @@ export interface EthicDilemma {
 export const ETHICS_DILEMMAS: EthicDilemma[] = [
   {
     id: "mha-advance-directive",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Outpatient follow-up",
     vignette:
       "A 41-year-old man with recurrent major depressive disorder has an advance directive on file refusing ECT. He arrives in a severe catatonic state, can't give consent, and his family demands 'the shock treatment' because it worked before. The treating psychiatrist asks your opinion on the next legal step.",
     options: [
       {
-        label: "Proceed with ECT: the family's consent overrides a document.",
+        label: "Go ahead with ECT, since the family agrees and it worked before.",
         consequence:
-          "The advance directive is a legal instrument under MHA 2017, not a family preference. Treating against it without invoking Section 5(4) is a breach with professional consequences. The nominated representative's consent is the right pathway, but they consent within the directive's limits, not over it.",
+          "Family wishes do not override a valid advance directive. The Act puts a duty on the treating psychiatrist to follow it (section 10), and ECT can never be given as emergency treatment either (section 94). Going ahead would be a breach of the Act.",
         correct: false,
       },
       {
-        label: "Honour the advance directive: ECT is barred by MHA 2017 Section 5.",
+        label: "Follow the directive for now, treat the catatonia another way, and if the team wants to set the directive aside, apply to the Mental Health Review Board.",
         consequence:
-          "Correct. An advance directive refusing a treatment binds the treating team unless one of the narrow Section 5(4) exceptions applies (a high risk of death or irreversible harm and no other equally effective option). You would first treat the catatonia with benzodiazepines and pursue consent from the nominated representative, not default to ECT.",
+          "Correct. A valid directive must be followed (section 10). If the psychiatrist, a relative or a carer does not want to follow it, the Act's route is an application to the Mental Health Review Board, which hears everyone, including the patient, and can uphold, change or cancel it (section 11). Meanwhile the psychiatrist treats the catatonia by other means, such as medicines. Your part as the psychologist is to flag the directive, record the family's request and support them.",
         correct: true,
       },
       {
@@ -50,7 +50,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
         correct: false,
       },
     ],
-    law: "MHA 2017 Section 5: advance directives bind the treating team; exceptions are narrow and must be invoked, not assumed.",
+    law: "MHCA 2017: a valid advance directive must be followed (section 10); anyone who wants to set it aside applies to the Mental Health Review Board (section 11); emergency treatment can never include ECT (section 94).",
   },
   {
     id: "pocso-minor-grooming",
@@ -134,7 +134,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
         correct: true,
       },
     ],
-    law: "Confidentiality is absolute unless: imminent risk to self/others, child abuse (POCSO), or court order. State the limits up front.",
+    law: "Confidentiality is strong but not absolute. It can be broken only in narrow cases, such as serious risk to the client or others, child sexual abuse (POCSO), or a court order (MHCA 2017 section 23). State the limits up front.",
   },
   {
     id: "minor-consent",
@@ -162,11 +162,11 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
         correct: false,
       },
     ],
-    law: "MHA 2017 and case law support the mature-minor doctrine: capacity assessment, not blanket assumption about guardianship.",
+    law: "MHCA 2017 and case law support the mature-minor doctrine: capacity assessment, not blanket assumption about guardianship.",
   },
   {
     id: "mha-nominated-representative",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Inpatient ward",
     vignette:
       "A 52-year-old man with bipolar disorder, currently manic and refusing all treatment, is admitted against his wishes. His wife is the nominated representative. She asks you to explain how treatment decisions will be made over the coming days.",
@@ -180,17 +180,17 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       {
         label: "Proceed with whatever the treating team thinks best, no consultation needed.",
         consequence:
-          "Paternalism without the MHA's safeguards (advance directive check, nominated representative, appeal rights) is exactly what the Act replaced. Consultation and documentation are the point.",
+          "Paternalism without the MHCA's safeguards (advance directive check, nominated representative, appeal rights) is exactly what the Act replaced. Consultation and documentation are the point.",
         correct: false,
       },
       {
-        label: "Explain supported decision-making: he should be consulted, and treatment proceeds under the MHA's provisions when he can't decide.",
+        label: "Explain supported decision-making: he should be consulted, and treatment proceeds under the MHCA's provisions when he can't decide.",
         consequence:
-          "Correct. MHA 2017's core shift is supported decision-making: treatment decisions involve the person as far as they can participate, with the nominated representative supporting, not replacing, their voice. Capacity fluctuates, so you reassess repeatedly.",
+          "Correct. MHCA 2017's core shift is supported decision-making: treatment decisions involve the person as far as they can participate, with the nominated representative supporting, not replacing, their voice. Capacity fluctuates, so you reassess repeatedly.",
         correct: true,
       },
     ],
-    law: "MHA 2017: supported decision-making with a nominated representative; advance directives and appeal rights frame every inpatient decision.",
+    law: "MHCA 2017: supported decision-making with a nominated representative; advance directives and appeal rights frame every inpatient decision.",
   },
   {
     id: "confidentiality-family-pressure",
@@ -206,7 +206,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       },
       { label: "Tell him you can't share anything without her consent, and invite her to decide what, if anything, she wants him to know.", consequence: "Correct. Payment creates no disclosure right. The client decides; your job is to make that decision real and safe.", correct: true },
     ],
-    law: "Confidentiality is the client's, regardless of who pays. See also the Mental Healthcare Act 2017's privacy provisions (Sections 22-24).",
+    law: "Confidentiality is the client's, regardless of who pays. The Mental Healthcare Act 2017 (section 23) allows sharing without consent only in narrow cases, such as protecting someone from harm or a court order. Paying for sessions is not one of them.",
   },
   {
     id: "employer-paid-sessions",
@@ -214,7 +214,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     setting: "Employer-paid counselling",
     vignette: "An employer pays for your counselling service and asks for a monthly 'attendance and progress report' naming each employee and their 'issues'. Your employee-client has consented to attend, not to be reported on.",
     options: [
-      { label: "Provide the report: the employer is the payer and the consent to attend covers it.", consequence: "Wrong. Consent to attend is not consent to disclose content. The report would breach confidentiality and likely the MHA's privacy provisions.", correct: false },
+      { label: "Provide the report: the employer is the payer and the consent to attend covers it.", consequence: "Wrong. Consent to attend is not consent to disclose content. The report would breach confidentiality and likely the MHCA's privacy provisions.", correct: false },
       {
         label: "Compromise: give the employer a summary of each employee's 'mood' without details.",
         consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
@@ -222,7 +222,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       },
       { label: "Provide attendance-only data if agreed, never content, and get the employee's written consent for anything more.", consequence: "Correct. Anonymised/attendance data can be a legitimate employer arrangement; clinical content never flows without explicit consent.", correct: true },
     ],
-    law: "MHA 2017 Sections 22-24: privacy of persons with mental illness; confidentiality of information. Employer contracts cannot override it.",
+    law: "MHCA 2017 section 23: confidentiality of mental health information, with narrow exceptions (care by other professionals, protecting someone from harm, a court or Board order). An employer's contract is not one of them.",
   },
   {
     id: "whatsapp-boundary",
@@ -258,7 +258,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
   },
   {
     id: "mha-court-letter",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Court letter request",
     vignette: "A client in a family dispute asks you to write 'a strong letter' saying the other party's behaviour caused their mental illness, so they can use it in court.",
     options: [
@@ -318,7 +318,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       },
       { label: "Assess their capacity to consent, and negotiate a workable confidentiality arrangement: safety issues still go to parents.", consequence: "Correct. Capacity assessment, not age assumption. Safety overrides; otherwise their autonomy is respected.", correct: true },
     ],
-    law: "MHA 2017 + Indian case law support the mature-minor doctrine: capacity-based, not blanket parental authority.",
+    law: "MHCA 2017 + Indian case law support the mature-minor doctrine: capacity-based, not blanket parental authority.",
   },
   {
     id: "confidentiality-safety-exception",
@@ -334,11 +334,11 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       },
       { label: "Address the risk directly, involve the appropriate authorities/support, and document the decision to break confidentiality.", consequence: "Correct. Imminent risk to an identifiable other is the classic exception: action, not secrecy, is the ethical move.", correct: true },
     ],
-    law: "Confidentiality is absolute unless: imminent risk to self/others, child abuse (POCSO), or court order, stated in the RCI code of ethics.",
+    law: "Confidentiality is strong but not absolute. It can be broken only in narrow cases, such as serious risk to the client or others, child sexual abuse (POCSO), or a court order (MHCA 2017 section 23 and the RCI code of ethics).",
   },
   {
     id: "mha-restraint-decision",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Restraint concern",
     vignette: "A nurse tells you a patient at the hospital is being tied to the bed 'because he's shouting'. You're a visiting counsellor; you've seen the patient and he is calm now.",
     options: [
@@ -348,9 +348,9 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
         consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
         correct: false,
       },
-      { label: "Raise it through the hospital's grievance mechanism and with the treating team, documenting what you saw.", consequence: "Correct. MHA 2017 severely restricts restraint; reporting observed violations is the ethical minimum.", correct: true },
+      { label: "Raise it through the hospital's grievance mechanism and with the treating team, documenting what you saw.", consequence: "Correct. MHCA 2017 severely restricts restraint; reporting observed violations is the ethical minimum.", correct: true },
     ],
-    law: "MHA 2017: restraint is prohibited except in narrowly defined emergency conditions and must be recorded and reported.",
+    law: "MHCA 2017: restraint is prohibited except in narrowly defined emergency conditions and must be recorded and reported.",
   },
   {
     id: "pocso-court-testimony",
@@ -398,7 +398,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       },
       { label: "Offer the parents a separate initial session, explain the value of the teen's privacy, and negotiate a review structure that keeps them informed without surveillance.", consequence: "Correct. The teen's consent to therapy is real; parental involvement is negotiated, not assumed.", correct: true },
     ],
-    law: "MHA 2017 + mature-minor doctrine: a minor's consent to psychotherapy is assessed by capacity, not by age alone.",
+    law: "MHCA 2017 + mature-minor doctrine: a minor's consent to psychotherapy is assessed by capacity, not by age alone.",
   },
   {
     id: "confidentiality-death",
@@ -418,7 +418,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
   },
   {
     id: "mha-fees-exploitation",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Fee exploitation",
     vignette: "A client in a vulnerable financial position agrees to a package of 40 sessions costing more than their monthly salary because they're desperate and 'the more sessions the better'.",
     options: [
@@ -430,7 +430,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       },
       { label: "Recommend a sustainable plan, name the pressure openly, and refuse to profit from their desperation.", consequence: "Correct. The therapeutic relationship must not exploit distress. A smaller honest plan is the ethical sale.", correct: true },
     ],
-    law: "RCI code of ethics, no exploitation of clients; fees must not exploit vulnerability. MHA 2017 also protects against predatory practices.",
+    law: "RCI code of ethics, no exploitation of clients; fees must not exploit vulnerability. MHCA 2017 also protects against predatory practices.",
   },
   {
     id: "confidentiality-group",
@@ -450,7 +450,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
   },
   {
     id: "mha-seclusion-witness",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Seclusion witness",
     vignette: "During a hospital visit to see a client, you find them in a locked side-room alone for 'their safety'. The staff say it's been six hours.",
     options: [
@@ -460,9 +460,9 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
         consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
         correct: false,
       },
-      { label: "Document what you saw, raise it with the treating team and the hospital's grievance channel, and support the client afterwards.", consequence: "Correct. Seclusion has strict limits and documentation duties under MHA 2017; silence is complicity.", correct: true },
+      { label: "Document what you saw, raise it with the treating team and the hospital's grievance channel, and support the client afterwards.", consequence: "Correct. Seclusion has strict limits and documentation duties under MHCA 2017; silence is complicity.", correct: true },
     ],
-    law: "MHA 2017: seclusion and restraint are last-resort, time-limited, and must be documented and reported.",
+    law: "MHCA 2017: seclusion and restraint are last-resort, time-limited, and must be documented and reported.",
   },
   {
     id: "consent-recording",
@@ -482,7 +482,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
   },
   {
     id: "mha-transition-discharge",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Discharge support",
     vignette: "A client is being discharged from a psychiatric unit after 3 weeks. Their family says the doctors 'didn't tell us anything about the medicine' and the client is confused about what they're taking.",
     options: [
@@ -494,7 +494,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
       },
       { label: "Help them make a written medication/support plan for discharge, and flag the information gap to the treating team for a proper handover.", consequence: "Correct. Discharge planning is part of continuity of care; a confused patient leaving with medicines they don't understand is a foreseeable harm.", correct: true },
     ],
-    law: "MHA 2017: continuity of care and informed consent for treatment, including medication information.",
+    law: "MHCA 2017: continuity of care and informed consent for treatment, including medication information.",
   },
   {
     id: "pocso-prevention-dialogue",
@@ -546,19 +546,19 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
   },
   {
     id: "mha-advance-directive-family",
-    tag: "MHA 2017",
+    tag: "MHCA 2017",
     setting: "Advance directive vs family",
     vignette: "A client's advance directive says 'no ECT under any circumstances'. Now, in a severe relapse, the family insists on ECT because 'it's the only thing that worked last time'. The client is currently unable to communicate.",
     options: [
       { label: "Follow the family. They know what's best and they have the client's interest at heart.", consequence: "Family preference does not override a valid advance directive. Following the family breaches the Act and the client's expressed will.", correct: false },
       {
-        label: "Compromise: let the family decide but ask the nominated representative to agree.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Ask the nominated representative to sign consent for ECT on the client's behalf.",
+        consequence: "The nominated representative's job is to support the client's own wishes. They cannot consent to a treatment the client's valid directive refuses. Only the Mental Health Review Board can review the directive.",
         correct: false,
       },
-      { label: "Honour the directive and follow the MHA's mechanism for challenging it (a review by the medical team), involving the nominated representative.", consequence: "Correct. The directive is the client's will; overriding it requires the Act's specific procedure, not family preference.", correct: true },
+      { label: "Follow the directive, and tell the family that if they or the team want it set aside, the route is an application to the Mental Health Review Board.", consequence: "Correct. The directive is the client's will. Setting it aside needs the Board's review under the Act, where the client is also heard, not family preference.", correct: true },
     ],
-    law: "MHA 2017 Sections 5-6: advance directives bind the treating team; exceptions require the statutory review mechanism.",
+    law: "MHCA 2017 sections 10 and 11: a valid advance directive must be followed; the Mental Health Review Board can review, change or cancel it on an application.",
   },
   {
     id: "consent-abandonment-closure",
@@ -783,11 +783,11 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     setting: "Client workplace",
     vignette: "You run an EAP (employee assistance) service. A client at a client-company is being performance-managed, and their manager, who commissions your service, asks how the employee is 'doing'.",
     options: [
-      { label: "Share a status: the manager commissions the service.", consequence: "EAP confidentiality is absolute: commissioning creates access rights to the SERVICE, not the clinical content.", correct: false },
+      { label: "Share a status: the manager commissions the service.", consequence: "Commissioning the service gives the manager access to the service, not to what clients say. Session content stays confidential unless the client consents or a narrow legal exception applies.", correct: false },
       { label: "Refuse clinical content, confirm only attendance-with-consent framing, and explain the confidentiality wall to the manager.", consequence: "Correct. The EAP wall is the product's value: the manager learns the boundary and the employee stays protected.", correct: true },
       { label: "Share 'general progress' without details.", consequence: "'General progress' is still clinical content: the wall is binary.", correct: false },
     ],
-    law: "EAP confidentiality is absolute for content; the commissioning relationship covers access to the service, not the session.",
+    law: "In employee counselling, session content stays confidential; the employer pays for the service, not for the content (MHCA 2017 section 23).",
   },
   {
     id: "boundary-billing-anonymous",

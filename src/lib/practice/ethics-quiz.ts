@@ -21,15 +21,15 @@ export const ETHICS_QUIZ: QuizItem[] = [
     type: "standard_vs_common",
     prompt: "A client's advance directive refuses ECT. The family demands it. Which is standard of care?",
     options: [
-      "Honour the directive and use the MHA's review mechanism if overriding is considered (standard)",
+      "Follow the directive; if the team or family want it set aside, apply to the Mental Health Review Board (standard)",
       "Follow the family's wishes as the 'real' decision-makers (common but wrong)",
       "Ignore the directive as paperwork",
       "Transfer without documenting the conflict",
     ],
     correct: 0,
     isStandardCare: true,
-    rationale: "MHA 2017 Section 5 makes advance directives binding; exceptions are narrow and must be invoked.",
-    source: "Mental Healthcare Act 2017, Section 5",
+    rationale: "A valid advance directive must be followed. Anyone who wants to set it aside applies to the Mental Health Review Board, which can review, change or cancel it.",
+    source: "Mental Healthcare Act 2017, sections 10 and 11",
   },
   {
     id: "eq-3",
