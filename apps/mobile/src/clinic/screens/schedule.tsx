@@ -38,8 +38,8 @@ function DayStrip({ week, day, onPick, today }: { week: ClinicWeek | undefined; 
         const opd = week.opdDays.some((o) => o.date === d.date);
         const has = d.sessions.some((s) => s.status !== "cancelled");
         const n = Number(d.date.slice(8));
-        const bg = on ? c.raised : isToday ? c.lime : c.fieldTint;
-        const fg = on ? c.ink : isToday ? c.onLime : c.onField;
+        const bg = on ? c.ink : isToday ? c.lime : c.fieldTint;
+        const fg = on ? c.bg : isToday ? c.onLime : c.onField;
         return (
           <Pressable
             key={d.date}

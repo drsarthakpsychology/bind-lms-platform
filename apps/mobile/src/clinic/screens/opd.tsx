@@ -125,7 +125,7 @@ function VisitRow({ v, onLog }: { v: OpdVisit; onLog: () => void }) {
           </T>
         ) : null}
       </View>
-      {canLog ? <Button small kind={v.status === "to_log" ? "primary" : "quiet"} full={false} label="Log cases" onPress={onLog} testID={`visit-${v.id}-log`} /> : <VisitPill s={v.status} />}
+      {canLog ? <Button small={v.status === "to_log"} kind={v.status === "to_log" ? "primary" : "text"} full={false} label="Log cases" onPress={onLog} testID={`visit-${v.id}-log`} /> : <VisitPill s={v.status} />}
     </Line>
   );
 }
