@@ -2,28 +2,21 @@ import { Check, MessagesSquare } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, Field, Label, Stone, T } from "@/ds";
+import { Button, Field, Label, RowsSkeleton, Stone, T } from "@/ds";
 import { IconPatch, leave, Page, PlayShell, Tag } from "@/lab/shell";
 import { Enter, Press, ProgressRing, RollingNumber, StaggerList, Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
-import { INTERVIEWS, type InterviewCategory, type InterviewQuestion } from "./mock";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { api } from "@/auth";
+import { QuietError } from "@/library/kit";
+import { moveError, play } from "@/practise/api";
+import { toast } from "@/ds/toast";
 
-/** The order a panel usually runs (src/lib/prep/interview.ts on the website). */
-export const PANEL_ORDER: InterviewCategory[] = ["motivation", "academic", "clinical-vignette", "assessment", "research", "ethics", "current-affairs"];
-export const CATEGORY_LABEL: Record<InterviewCategory, string> = { motivation: "About you", academic: "Subject knowledge", "clinical-vignette": "A case", assessment: "Tests and assessment", research: "Research", ethics: "Ethics and law", "current-affairs": "Current affairs" };
-export const PANEL_SIZE = 5;
-
-/** One question per category in panel order, up to five; `turn` moves to the next question in each category. */
-export function pickPanel(bank: InterviewQuestion[], turn = 0, size = PANEL_SIZE): InterviewQuestion[] {
-  const out: InterviewQuestion[] = [];
-  for (const cat of PANEL_ORDER) {
-    if (out.length >= size) break;
-    const pool = bank.filter((q) => q.category === cat);
-    const q = pool[turn % Math.max(1, pool.length)];
-    if (q) out.push(q);
-  }
-  return out;
-}
+/** GET /prep/interview: a fresh panel (the website's pickPanel). The rubric and model answer come only after answering. */
+export type PanelQ = { id: string; category: string; question: string; followUp: string | null };
+export type PrepInterview = { v: 1; questions: PanelQ[]; saving: boolean };
+type Reveal = { modelAnswer: string; mustCover: string[]; redFlags: string[] };
+export const interviewKey = ["prep", "interview"] as const;
 
 export type SelfScore = { pct: number; band: "strong" | "okay" | "weak" };
 /** The website's selfScore: share of points covered, minus 15 for each slip admitted. */
@@ -34,7 +27,7 @@ export function selfScore(mustCover: number, covered: number, redFlags: number):
 }
 const BAND: Record<SelfScore["band"], string> = { strong: "Strong", okay: "Getting there", weak: "Needs work" };
 
-type Done = { q: InterviewQuestion; score: SelfScore };
+type Done = { q: PanelQ; score: SelfScore; answer: string; covered: string[]; flags: string[] };
 
 function Tick({ label, on, onPress, testID }: { label: string; on: boolean; onPress: () => void; testID?: string }) {
   const c = useTheme();
@@ -55,8 +48,11 @@ function Tick({ label, on, onPress, testID }: { label: string; on: boolean; onPr
  * (the phone keyboard's microphone works here too).
  */
 export function InterviewScreen() {
-  const [turn, setTurn] = React.useState(0);
-  const panel = React.useMemo(() => pickPanel(INTERVIEWS, turn), [turn]);
+  const q = useQuery({ queryKey: interviewKey, queryFn: () => api.get<PrepInterview>("/prep/interview"), staleTime: Infinity, gcTime: 0 });
+  const panel = q.data?.questions ?? [];
+  const [reveal, setReveal] = React.useState<Reveal | null>(null);
+  const [busy, setBusy] = React.useState(false);
+  const [kept, setKept] = React.useState<{ saved: boolean; score: number } | null>(null);
   const [idx, setIdx] = React.useState(-1);
   const [stage, setStage] = React.useState<"answer" | "follow" | "check">("answer");
   const [main, setMain] = React.useState("");
@@ -68,9 +64,18 @@ export function InterviewScreen() {
   const flip = (list: string[], set: (v: string[]) => void, x: string) => set(list.includes(x) ? list.filter((y) => y !== x) : [...list, x]);
   const start = () => {
     setDone([]);
+    setKept(null);
+    setReveal(null);
     setIdx(0);
     setStage("answer");
   };
+
+  if (idx < 0 && !q.data)
+    return (
+      <Page testID="interview" home="/prep" title="Mock interview" area="practise">
+        {q.isError ? <QuietError what="the interview" error={q.error} onRetry={() => void q.refetch()} testID="interview-error" /> : <RowsSkeleton />}
+      </Page>
+    );
 
   if (idx < 0)
     return (
@@ -94,9 +99,9 @@ export function InterviewScreen() {
           <View style={{ gap: space[2] }}>
             <Label>This round</Label>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2], paddingHorizontal: space[1] }}>
-              {panel.map((q) => (
-                <Tag key={q.id} onLayer>
-                  {CATEGORY_LABEL[q.category]}
+              {panel.map((p) => (
+                <Tag key={p.id} onLayer>
+                  {p.category}
                 </Tag>
               ))}
             </View>
@@ -123,8 +128,8 @@ export function InterviewScreen() {
               label="Another round"
               testID="interview-again"
               onPress={() => {
-                setTurn((t) => t + 1);
                 setIdx(-1);
+                void q.refetch();
               }}
             />
           </>
@@ -154,7 +159,7 @@ export function InterviewScreen() {
                 <View style={{ gap: space[1] }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", gap: space[2] }}>
                     <T v="caption" tone="muted">
-                      {CATEGORY_LABEL[d.q.category]}
+                      {d.q.category}
                     </T>
                     <T v="caption" num>{`${BAND[d.score.band]} · ${d.score.pct}%`}</T>
                   </View>
@@ -165,16 +170,39 @@ export function InterviewScreen() {
           </StaggerList>
         </View>
         <T v="small" tone="muted" style={{ paddingHorizontal: space[1] }}>
-          This round is not kept after you close it.
+          {kept?.saved ? "Saved to your progress." : q.data?.saving === false ? "A practice round: staff rounds are not saved." : "This round was not saved."}
         </T>
       </PlayShell>
     );
   }
 
-  const followUp = cur.followUps[0] ?? null;
-  const score = selfScore(cur.mustCover.length, covered.length, flags.length);
+  const followUp = cur.followUp;
+  const score = selfScore(reveal?.mustCover.length ?? 0, covered.length, flags.length);
+  // The rubric and the model answer come from the server only after the answer is written.
+  const toCheck = async () => {
+    setBusy(true);
+    try {
+      const r = await play<Reveal | { error: string }>("prep", "interviewReveal", cur.id);
+      if ("error" in r) toast.show(r.error);
+      else {
+        setReveal(r);
+        setStage("check");
+      }
+    } catch (e) {
+      toast.show(moveError(e));
+    } finally {
+      setBusy(false);
+    }
+  };
   const next = () => {
-    setDone((d) => [...d, { q: cur, score }]);
+    const all = [...done, { q: cur, score, answer: [main.trim(), follow.trim()].filter(Boolean).join("\n\n"), covered, flags }];
+    setDone(all);
+    setReveal(null);
+    if (idx === panel.length - 1 && q.data?.saving)
+      // Saved and scored again on the server (the website's saveInterviewSession).
+      void play<{ saved: boolean; score: number }>("prep", "interviewSave", { items: all.map((d) => ({ id: d.q.id, answer: d.answer.slice(0, 6000), covered: d.covered, flags: d.flags })) })
+        .then(setKept)
+        .catch((e) => toast.show(moveError(e)));
     setMain("");
     setFollow("");
     setCovered([]);
@@ -184,16 +212,16 @@ export function InterviewScreen() {
   };
   const footer =
     stage === "answer" ? (
-      <Button label={followUp ? "Next: the follow-up" : "Mark my answer"} testID="interview-next" disabled={main.trim().length < 3} onPress={() => setStage(followUp ? "follow" : "check")} />
+      <Button label={followUp ? "Next: the follow-up" : "Mark my answer"} testID="interview-next" disabled={main.trim().length < 3} busy={busy && !followUp} onPress={() => (followUp ? setStage("follow") : void toCheck())} />
     ) : stage === "follow" ? (
-      <Button label="Mark my answer" testID="interview-mark" onPress={() => setStage("check")} />
+      <Button label="Mark my answer" testID="interview-mark" busy={busy} onPress={() => void toCheck()} />
     ) : (
       <Button kind="ink" label={idx === panel.length - 1 ? "See how it went" : "Next question"} testID="interview-continue" onPress={next} />
     );
   return (
     <PlayShell testID="interview-run" done={idx + (stage === "check" ? 1 : 0)} total={panel.length} onClose={() => leave("/prep")} footer={footer}>
       <Swap k={`${cur.id}-${stage}`} dir={1} style={{ gap: space[4] }}>
-        <Tag onLayer>{CATEGORY_LABEL[cur.category]}</Tag>
+        <Tag onLayer>{cur.category}</Tag>
         {stage === "answer" ? (
           <>
             <T v="h2" accessibilityRole="header">
@@ -219,14 +247,14 @@ export function InterviewScreen() {
             <T v="h3">{cur.question}</T>
             <View style={{ gap: space[2] }}>
               <Label>Tick what your answer covered</Label>
-              {cur.mustCover.map((x, n) => (
+              {(reveal?.mustCover ?? []).map((x, n) => (
                 <Tick key={x} testID={`cover-${n}`} label={x} on={covered.includes(x)} onPress={() => flip(covered, setCovered, x)} />
               ))}
             </View>
-            {cur.redFlags.length ? (
+            {reveal?.redFlags.length ? (
               <View style={{ gap: space[2] }}>
                 <Label>Be honest: did any of these slip in?</Label>
-                {cur.redFlags.map((x, n) => (
+                {reveal.redFlags.map((x, n) => (
                   <Tick key={x} testID={`flag-${n}`} label={x} on={flags.includes(x)} onPress={() => flip(flags, setFlags, x)} />
                 ))}
               </View>
@@ -240,7 +268,7 @@ export function InterviewScreen() {
             <View style={{ gap: space[2] }}>
               <Label>A strong answer</Label>
               <T v="reading" style={{ paddingHorizontal: space[1] }}>
-                {cur.modelAnswer}
+                {reveal?.modelAnswer}
               </T>
             </View>
           </>

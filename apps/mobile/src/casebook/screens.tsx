@@ -1,21 +1,45 @@
-import { router, useLocalSearchParams } from "expo-router";
+import { Redirect, router, useLocalSearchParams } from "expo-router";
 import { ArrowRight, Bookmark, BookmarkCheck, Check, X } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 import Animated, { LinearTransition, useReducedMotion } from "react-native-reanimated";
 
-import { Button, Chips, HintText, Jyo, Label, OptionList, QuietEmpty, ResultSheet, RoundButton, Stone, T, TabRow, toast } from "@/ds";
+import { Button, Chips, HintText, Jyo, Label, OptionList, QuietEmpty, ResultSheet, RoundButton, RowsSkeleton, Stone, T, TabRow, toast } from "@/ds";
 import { QuestionRun, type RunResult } from "@/lab/run";
 import { seeded, shuffle } from "@/lab/scoring";
 import { Page, PlayShell, Tag } from "@/lab/shell";
 import { Enter, Press, ProgressRing, RollingNumber, StaggerList, Swap, useMotionTier } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
-import { caseById, CASEBOOK, moduleName, type Case } from "./mock";
-import { recordCase, savedCases, useBest } from "./progress";
+import { QuietError } from "@/library/kit";
+import { SHOWN } from "@/lib/shown";
+import { moduleName, saveCase, useCasebook, type Case, type CasebookHome } from "@/lab/data";
+import { savedCases } from "./progress";
 import { caseSteps, FORMAT_HOW, itemCount, orderRight } from "./steps";
 import { FORMAT_LABEL, LEVEL_ORDER, type CaseFormat } from "./types";
 
 type Filter = "all" | CaseFormat;
+
+type Best = Record<string, { right: number; total: number }>;
+/** The latest score of each case the student has played, from the server. */
+function bestOf(home: CasebookHome | undefined): Best {
+  const out: Best = {};
+  for (const [id, r] of Object.entries(home?.records ?? {})) if (r.check) out[id] = r.check;
+  return out;
+}
+/** Saved cases are hidden while the website keeps none (SHOWN.savedCases). */
+const useSaved = (): string[] => {
+  const list = savedCases.use();
+  return SHOWN.savedCases ? list : NO_SAVED;
+};
+const NO_SAVED: string[] = [];
+
+function CaseLoading({ q, testID }: { q: ReturnType<typeof useCasebook>; testID: string }) {
+  return (
+    <Page testID={testID} home="/practise" title="Casebook" area="practise">
+      {q.isError ? <QuietError what="the Casebook" error={q.error} onRetry={() => void q.refetch()} testID="casebook-error" /> : <RowsSkeleton />}
+    </Page>
+  );
+}
 
 function CaseCard({ c, best, saved }: { c: Case; best?: { right: number; total: number }; saved: boolean }) {
   const t = useTheme();
@@ -28,7 +52,7 @@ function CaseCard({ c, best, saved }: { c: Case; best?: { right: number; total: 
           <View style={{ flex: 1 }} />
           {saved ? <BookmarkCheck size={18} color={t.ink} /> : null}
           {best ? (
-            <T v="caption" tone="muted" num>{`Best ${best.right} of ${best.total}`}</T>
+            <T v="caption" tone="muted" num>{`Last ${best.right} of ${best.total}`}</T>
           ) : (
             <ArrowRight size={18} color={t.muted} />
           )}
@@ -47,16 +71,19 @@ export function CasebookScreen({ start }: { start?: "browse" | "saved" }) {
   const params = useLocalSearchParams<{ tab?: string }>();
   const [tab, setTab] = React.useState<"browse" | "saved">(start ?? (params.tab === "saved" ? "saved" : "browse"));
   const [filter, setFilter] = React.useState<Filter>("all");
-  const saved = savedCases.use();
-  const best = useBest();
-  const formats = React.useMemo(() => [...new Set(CASEBOOK.map((c) => c.format))], []);
-  const sorted = React.useMemo(() => [...CASEBOOK].sort((a, b) => LEVEL_ORDER[a.level] - LEVEL_ORDER[b.level]), []);
-  const list = tab === "saved" ? saved.map((id) => caseById(id)).filter((c): c is Case => !!c) : sorted.filter((c) => filter === "all" || c.format === filter);
+  const q = useCasebook();
+  const saved = useSaved();
+  const best = React.useMemo(() => bestOf(q.data), [q.data]);
+  const CASEBOOK = React.useMemo(() => q.data?.cases ?? [], [q.data]);
+  const formats = React.useMemo(() => [...new Set(CASEBOOK.map((c) => c.format))], [CASEBOOK]);
+  const sorted = React.useMemo(() => [...CASEBOOK].sort((a, b) => LEVEL_ORDER[a.level] - LEVEL_ORDER[b.level]), [CASEBOOK]);
+  if (!q.data) return <CaseLoading q={q} testID="casebook" />;
+  const list = tab === "saved" && SHOWN.savedCases ? saved.map((id) => CASEBOOK.find((c) => c.id === id)).filter((c): c is Case => !!c) : sorted.filter((c) => filter === "all" || c.format === filter);
   const done = Object.keys(best).length;
   return (
     <Page testID="casebook" home="/practise" title="Casebook" lead={done ? `${done} of ${CASEBOOK.length} tried. Read, reason, decide.` : "Short clinical cases. Read, reason, decide."} area="practise">
-      <TabRow<"browse" | "saved"> scroll={false} tabs={[{ id: "browse", name: "All cases" }, { id: "saved", name: saved.length ? `Saved (${saved.length})` : "Saved" }]} value={tab} onChange={setTab} />
-      {tab === "browse" ? <Chips scroll label="Kind of case" value={filter} onChange={setFilter} options={[{ id: "all" as Filter, name: "All" }, ...formats.map((f) => ({ id: f as Filter, name: FORMAT_LABEL[f] }))]} /> : null}
+      {SHOWN.savedCases ? <TabRow<"browse" | "saved"> scroll={false} tabs={[{ id: "browse", name: "All cases" }, { id: "saved", name: saved.length ? `Saved (${saved.length})` : "Saved" }]} value={tab} onChange={setTab} /> : null}
+      {tab === "browse" || !SHOWN.savedCases ? <Chips scroll label="Kind of case" value={filter} onChange={setFilter} options={[{ id: "all" as Filter, name: "All" }, ...formats.map((f) => ({ id: f as Filter, name: FORMAT_LABEL[f] }))]} /> : null}
       {list.length ? (
         <StaggerList key={`${tab}-${filter}`} style={{ gap: space[3] }}>
           {list.map((c) => (
@@ -72,17 +99,21 @@ export function CasebookScreen({ start }: { start?: "browse" | "saved" }) {
 
 /** /casebook/saved : the same screen, opened on your saved cases. */
 export function SavedCasesScreen() {
+  if (!SHOWN.savedCases) return <Redirect href="/casebook" />;
   return <CasebookScreen start="saved" />;
 }
 
 /** /casebook/:id : the case page (what it is, what you will practise), and its player. */
 export function CaseScreen() {
   const { id } = useLocalSearchParams<{ id?: string }>();
-  const c = caseById(String(id ?? ""));
+  const q = useCasebook();
+  const c = q.data?.cases.find((x) => x.id === String(id ?? ""));
   const [playing, setPlaying] = React.useState(0);
-  const saved = savedCases.use();
-  const best = useBest();
+  const saved = useSaved();
+  const best = React.useMemo(() => bestOf(q.data), [q.data]);
   const t = useTheme();
+  if (!q.data) return <CaseLoading q={q} testID="case-page" />;
+  const CASEBOOK = q.data.cases;
   if (!c)
     return (
       <Page testID="case-missing" home="/casebook" title="Casebook">
@@ -102,7 +133,7 @@ export function CaseScreen() {
       lead={c.hook}
       area="practise"
       right={
-        <RoundButton
+        SHOWN.savedCases ? <RoundButton
           onField
           testID="case-save"
           label={isSaved ? "Remove from saved cases" : "Save this case"}
@@ -113,7 +144,7 @@ export function CaseScreen() {
           }}
         >
           {isSaved ? <BookmarkCheck size={20} color={t.lime} /> : <Bookmark size={20} color={t.onField} />}
-        </RoundButton>
+        </RoundButton> : undefined
       }
       footer={<Button label={mine ? "Play again" : "Start the case"} testID="case-start" onPress={() => setPlaying((mine?.total ?? 0) + Date.now() % 1000 + 1)} />}
     >
@@ -123,7 +154,7 @@ export function CaseScreen() {
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
               <Tag>{FORMAT_LABEL[c.format]}</Tag>
               <Tag>{c.level}</Tag>
-              <Tag>{moduleName(c.module)}</Tag>
+              <Tag>{moduleName(q.data, c.module)}</Tag>
               <Tag>{`${n} ${c.format === "branching" ? "decisions" : c.format === "timeline" ? "events" : "items"}`}</Tag>
             </View>
             <View style={{ gap: space[1] }}>
@@ -150,9 +181,9 @@ export function CaseScreen() {
             <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
               <ProgressRing pct={Math.round((mine.right / Math.max(1, mine.total)) * 100)} size={44} stroke={5} />
               <View style={{ flex: 1 }}>
-                <T v="bodyStrong" num>{`Your best: ${mine.right} of ${mine.total}`}</T>
+                <T v="bodyStrong" num>{`Last time: ${mine.right} of ${mine.total}`}</T>
                 <T v="small" tone="muted">
-                  Kept on this phone
+                  Saved to your progress
                 </T>
               </View>
             </View>
@@ -175,9 +206,14 @@ export function CaseScreen() {
   );
 }
 
+/** A finished play, saved on the server (it also sets the next round's level). */
+function saveCaseScore(id: string, right: number, total: number) {
+  if (total > 0) void saveCase(id, right, total);
+}
+
 function CasePlayer({ c, seed, onClose }: { c: Case; seed: number; onClose: () => void }) {
   const steps = React.useMemo(() => caseSteps(c, seed), [c, seed]);
-  const done = React.useCallback((r: RunResult[]) => recordCase(c.id, r.filter((x) => x.right).length, r.length), [c.id]);
+  const done = React.useCallback((r: RunResult[]) => saveCaseScore(c.id, r.filter((x) => x.right).length, r.length), [c.id]);
   if (c.format === "branching") return <BranchRun c={c} onClose={onClose} />;
   if (c.format === "timeline") return <TimelineRun c={c} seed={seed} onClose={onClose} />;
   return <QuestionRun testID="case-run" calm title={FORMAT_LABEL[c.format]} steps={steps} onDone={done} takeaway={c.debrief} home={`/casebook/${c.id}`} doneLabel="Back to the case" rightTitle={c.format === "skill" ? "The best reply" : "Yes, that fits"} wrongTitle={c.format === "skill" ? "There is a better reply" : "Not quite"} />;
@@ -242,7 +278,7 @@ function BranchRun({ c, onClose }: { c: Extract<Case, { format: "branching" }>; 
     setSheet(false);
     setPicked(null);
     setNodeId(choice.next);
-    if (!choice.next || !c.nodes.some((n) => n.id === choice.next)) recordCase(c.id, all.filter((p) => p.good).length, all.length);
+    if (!choice.next || !c.nodes.some((n) => n.id === choice.next)) saveCaseScore(c.id, all.filter((p) => p.good).length, all.length);
   };
   const step = c.nodes.findIndex((n) => n.id === node.id);
   return (
@@ -277,7 +313,7 @@ function TimelineRun({ c, seed, onClose }: { c: Extract<Case, { format: "timelin
   const all = right === correct.length;
   const check = () => {
     setChecked(true);
-    recordCase(c.id, right, correct.length);
+    saveCaseScore(c.id, right, correct.length);
   };
   const ev = (id: string) => c.events.find((e) => e.id === id)!;
   const left = pool.filter((e) => !order.includes(e.id));

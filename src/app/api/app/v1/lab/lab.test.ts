@@ -32,7 +32,7 @@ const state = () => h.state as LearnState;
 beforeEach(() => {
   resetGuard();
   clearDeviceCache();
-  G.flags = { learn: "live", lab: "live" };
+  G.flags = { learn: "unlocked", lab: "unlocked" };
   h.state = normalise(null);
   h.load.mockReset().mockImplementation(async () => ({ ...(h.state as object), owner: STUDENT_ID }));
   h.save.mockReset().mockImplementation(async (s: unknown) => ((h.state = s), { ok: true, clamped: false }));
@@ -40,7 +40,7 @@ beforeEach(() => {
 
 describe("Lab", () => {
   it("is closed while the Lab switch is off", async () => {
-    G.flags = { learn: "live", lab: "off" };
+    G.flags = { learn: "unlocked", lab: "off" };
     const r = await read(await home(appReq("/lab"), noParams));
     expect(r.ok).toBe(false);
   });

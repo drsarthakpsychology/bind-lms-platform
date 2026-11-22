@@ -34,6 +34,9 @@ import { publicHome } from "./public-home";
  */
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const practiseMock: typeof import("@/practise/mock") | null = process.env.EXPO_PUBLIC_API_MODE === "mock" ? require("@/practise/mock") : null;
+// The Lab, the Casebook and the mock interview on samples (./lab), mock builds only.
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const labMock: typeof import("./lab") | null = process.env.EXPO_PUBLIC_API_MODE === "mock" ? require("./lab") : null;
 
 export type Scenario = "default" | "new" | "done" | "empty" | "error" | "slow" | "update" | "paused";
 
@@ -84,6 +87,7 @@ export const mock = {
     clinicMock.reset();
     resetLearnMock();
     resetMapWallMock();
+    labMock?.resetLabMock();
   },
   setScenario(s: Scenario) {
     state.scenario = s;
@@ -206,6 +210,8 @@ async function route(req: RawRequest): Promise<RawResponse> {
 
   if (state.scenario === "slow") return new Promise<RawResponse>(() => undefined);
   if (state.scenario === "error") return fail(500, "server_error", "Something went wrong on our side. Try again in a minute.");
+  const labbed = labMock?.labRoute(req.method, req.path, req.body, kind);
+  if (labbed) return labbed;
   const practise = practiseMock?.practiseRoute(req.method, req.path, req.body, kind);
   if (practise) return practise;
 

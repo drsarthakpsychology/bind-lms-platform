@@ -2,11 +2,12 @@ import * as React from "react";
 import { View } from "react-native";
 import Svg, { Circle, Line, Polyline } from "react-native-svg";
 
-import { Button, Chips, HintText, Label, OptionList, Slider, Stone, T } from "@/ds";
+import { Button, Chips, HintText, Label, OptionList, RowsSkeleton, Slider, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { ProgressFill, Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
-import { ATTRIBUTION_CASES, BIAS_CASES, BIASES, CONS_ITEMS, CONS_REASONS, CONS_STAGES, CONS_TASK_TEXT, CORR_READINGS, CORR_SCENARIOS, type CorrScenario } from "./mock";
+import { useLabLists } from "./data";
+import type { CorrScenario } from "./types";
 import { QuestionRun, type RunResult, type Step } from "./run";
 import { ChangeDetection, DigitSpan, MullerLyer, SerialPosition, Stroop, type LabResult, type RunnerProps } from "./runners-a";
 import { seeded, shuffle, simulateSchedule, type Schedule } from "./scoring";
@@ -179,12 +180,13 @@ export function DesignStudy({ onDone, onClose }: RunnerProps) {
 /* -------------------------------------------------------- why did they do it */
 
 export function Attribution({ onDone, onClose }: RunnerProps) {
+  const L = useLabLists();
   const [i, setI] = React.useState(0);
   const [stage, setStage] = React.useState<"before" | "after">("before");
   const [v, setV] = React.useState(50);
   const before = React.useRef(50);
   const rows = React.useRef<{ before: number; after: number }[]>([]);
-  const k = ATTRIBUTION_CASES[i]!;
+  const k = L.ATTRIBUTION_CASES[i];
   const next = () => {
     if (stage === "before") {
       before.current = v;
@@ -192,7 +194,7 @@ export function Attribution({ onDone, onClose }: RunnerProps) {
       return;
     }
     rows.current.push({ before: before.current, after: v });
-    if (i + 1 >= ATTRIBUTION_CASES.length) {
+    if (i + 1 >= L.ATTRIBUTION_CASES.length) {
       const s = attributionSummary(rows.current);
       onDone({ headline: s.shift > 0 ? `Once you knew the situation, you blamed the person ${s.shift} points less.` : "Knowing the situation did not move your ratings much.", lines: [{ label: "Before the full story", value: `${s.before} of 100 on the person` }, { label: "After the full story", value: `${s.after} of 100 on the person` }, { label: "Shift", value: `${s.shift} points` }], bars: [{ label: "Before", pct: s.before }, { label: "After", pct: s.after }], barsLabel: "How much you put it on the person" });
       return;
@@ -201,8 +203,14 @@ export function Attribution({ onDone, onClose }: RunnerProps) {
     setStage("before");
     setV(50);
   };
+  if (!k)
+    return (
+      <PlayShell testID="lab-run" title="Why did they do it?" onClose={onClose}>
+        <RowsSkeleton />
+      </PlayShell>
+    );
   return (
-    <PlayShell testID="lab-run" title="Why did they do it?" done={i + (stage === "after" ? 0.5 : 0)} total={ATTRIBUTION_CASES.length} onClose={onClose} footer={<Button label={stage === "before" ? "Tell me more" : i + 1 < ATTRIBUTION_CASES.length ? "Next person" : "See my pattern"} testID="lab-submit" onPress={next} />}>
+    <PlayShell testID="lab-run" title="Why did they do it?" done={i + (stage === "after" ? 0.5 : 0)} total={L.ATTRIBUTION_CASES.length} onClose={onClose} footer={<Button label={stage === "before" ? "Tell me more" : i + 1 < L.ATTRIBUTION_CASES.length ? "Next person" : "See my pattern"} testID="lab-submit" onPress={next} />}>
       <Swap k={`${i}-${stage}`} dir={1} style={{ gap: space[4] }}>
         <Stone>
           <T v="reading">{k.act}</T>
@@ -268,40 +276,50 @@ function quizResult(noun: string, r: RunResult[]): LabResult {
 }
 
 function Quiz({ steps, title, noun, onDone, onClose }: RunnerProps & { steps: Step[]; title: string; noun: string }) {
+  // The questions come with the Lab from the server; a skeleton for the moment they are not here.
+  if (!steps.length)
+    return (
+      <PlayShell testID="lab-run" title={title} onClose={onClose}>
+        <RowsSkeleton />
+      </PlayShell>
+    );
   return <QuestionRun testID="lab-run" title={title} steps={steps} summary={false} calm onClose={onClose} onDone={(r) => onDone(quizResult(noun, r))} />;
 }
 
 export function CorrelationCause(p: RunnerProps) {
-  const steps = React.useMemo<Step[]>(() => CORR_SCENARIOS.map((sc) => ({ id: sc.id, context: sc.headline, contextLabel: "Headline", art: <Scatter sc={sc} />, prompt: "What is the fairest reading?", options: CORR_READINGS.slice(0, 5), answer: Math.max(0, CORR_READINGS.indexOf(sc.answer)), why: `${sc.why} ${sc.behind}` })), []);
+  const L = useLabLists();
+  const steps = React.useMemo<Step[]>(() => L.CORR_SCENARIOS.map((sc) => ({ id: sc.id, context: sc.headline, contextLabel: "Headline", art: <Scatter sc={sc} />, prompt: "What is the fairest reading?", options: L.CORR_READINGS.slice(0, 5), answer: Math.max(0, L.CORR_READINGS.indexOf(sc.answer)), why: `${sc.why} ${sc.behind}` })), [L]);
   return <Quiz {...p} steps={steps} title="Correlation or cause?" noun="headlines" />;
 }
 
 export function BiasSpotter(p: RunnerProps) {
+  const L = useLabLists();
   const steps = React.useMemo<Step[]>(() => {
     const rand = seeded(11);
-    return BIAS_CASES.flatMap((b) => {
-      const options = shuffle([b.bias, ...shuffle(BIASES.filter((x) => x !== b.bias), rand).slice(0, 3)], rand);
+    return L.BIAS_CASES.flatMap((b) => {
+      const options = shuffle([b.bias, ...shuffle(L.BIASES.filter((x) => x !== b.bias), rand).slice(0, 3)], rand);
       return [
         { id: b.id, context: b.text, contextLabel: "On the ward", prompt: "Which thinking trap is this?", options, answer: options.indexOf(b.bias), why: b.why },
         { id: `${b.id}-fix`, context: b.text, contextLabel: b.bias, prompt: "What would have caught it?", options: b.fixes.slice(0, 5), answer: b.fix },
       ];
     });
-  }, []);
+  }, [L]);
   return <Quiz {...p} steps={steps} title="Bias spotter" noun="questions" />;
 }
 
 export function Conservation(p: RunnerProps) {
+  const L = useLabLists();
   const steps = React.useMemo<Step[]>(
     () =>
-      CONS_ITEMS.flatMap((it) => {
-        const task = CONS_TASK_TEXT[it.task];
+      L.CONS_ITEMS.flatMap((it) => {
+        const task = L.CONS_TASK_TEXT[it.task];
         const scene = `${task?.before ?? ""} ${task?.after ?? ""}\n\n${it.child}, ${it.age}: "${it.says}"`;
         return [
-          { id: it.id, context: scene, contextLabel: task?.title ?? "Task", prompt: "Which stage is this child showing?", options: CONS_STAGES, answer: Math.max(0, CONS_STAGES.indexOf(it.stage)), why: it.why },
-          { id: `${it.id}-why`, context: `${it.child}, ${it.age}: "${it.says}"`, contextLabel: task?.title ?? "Task", prompt: "What is behind the answer?", options: CONS_REASONS, answer: Math.max(0, CONS_REASONS.indexOf(it.reason)), why: it.why },
+          { id: it.id, context: scene, contextLabel: task?.title ?? "Task", prompt: "Which stage is this child showing?", options: L.CONS_STAGES, answer: Math.max(0, L.CONS_STAGES.indexOf(it.stage)), why: it.why },
+          { id: `${it.id}-why`, context: `${it.child}, ${it.age}: "${it.says}"`, contextLabel: task?.title ?? "Task", prompt: "What is behind the answer?", options: L.CONS_REASONS, answer: Math.max(0, L.CONS_REASONS.indexOf(it.reason)), why: it.why },
         ];
       }),
-    [],
+    [L],
   );
   return <Quiz {...p} steps={steps} title="Conservation tasks" noun="answers" />;
 }

@@ -11,9 +11,9 @@ import { useOffline } from "@/api/online";
 import { courseQuery, useCourses, useLibraryMedicines, useMe, useStudyHome } from "@/api/queries";
 import { Chips, Label, OfflineLine, QuietEmpty, RoundButton, Row, RowList, Skeleton, T, layerShadow } from "@/ds";
 import { CALM_TOOLS } from "@/calm/data";
-import { CASEBOOK } from "@/casebook/mock";
 import { FORMAT_LABEL } from "@/casebook/types";
-import { EXPERIMENTS } from "@/lab/mock";
+import { useCasebook, useLabHome, type Case } from "@/lab/data";
+import type { LabExperiment } from "@/lab/types";
 import { leave, OwnHeader, type IconType } from "@/lab/shell";
 import { recentSearches } from "@/lib/recent";
 import { Press, presets, useMotionTier } from "@/motion";
@@ -56,7 +56,7 @@ const SERVER_GROUP: Partial<Record<SearchType, Group>> = { lecture: "lessons", f
 const doc = (type: Group, key: string, title: string, href: string, meta?: string, keywords?: string[], boost?: number): Doc => ({ id: key, key, type, title, href, meta, keywords, boost });
 
 /** Things that are always on the phone: the practise tools, the Lab, the Casebook, calm, self-checks and the app's own screens. */
-export function fixedDocs(open: { practise: boolean; games: boolean; study: boolean; lecturesOnly: boolean }): Doc[] {
+export function fixedDocs(open: { practise: boolean; games: boolean; study: boolean; lecturesOnly: boolean }, CASEBOOK: readonly Case[] = [], EXPERIMENTS: readonly LabExperiment[] = []): Doc[] {
   const out: Doc[] = [];
   if (open.practise) {
     for (const t of CASE_TOOLS) out.push(doc("cases", `c-${t.id}`, t.title, t.id === "ethics" ? "/ethics" : t.href, t.line));
@@ -148,6 +148,9 @@ export function SearchScreen() {
   const notes = useNotes(studyOpen);
   const terms = useTerms(studyOpen);
   const meds = useLibraryMedicines(medsOpen);
+  // The Lab and the Casebook are on the server: their titles join once loaded (failures leave them out quietly).
+  const lab = useLabHome(practiseOpen);
+  const casebook = useCasebook(practiseOpen);
 
   const index = React.useMemo(() => {
     const e = encodeURIComponent;
@@ -164,11 +167,11 @@ export function SearchScreen() {
     if (studyOpen) for (const n of notes.data?.notes ?? []) docs.push(doc("notes", `n-${n.id}`, n.title, `/notes/${e(n.id)}`, n.tagline || "Note"));
     if (studyOpen) for (const r of terms.data?.items ?? []) docs.push(doc("words", `r-${r.slug}`, r.label, `/reference/${e(r.slug)}`, r.summary, r.aliases));
     if (medsOpen) for (const r of meds.data?.rows ?? []) docs.push(doc("medicines", `d-${r.id}`, r.name, `/medicine/${e(r.id)}`, r.cls, [...r.brands, r.group, ...r.uses]));
-    docs.push(...fixedDocs({ practise: practiseOpen, games: gamesOpen, study: studyOpen, lecturesOnly }));
+    docs.push(...fixedDocs({ practise: practiseOpen, games: gamesOpen, study: studyOpen, lecturesOnly }, casebook.data?.cases, lab.data?.experiments));
     return createIndex(docs);
     // weeksKey stands for every course's answer.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [weeksKey, study.data, notes.data, terms.data, meds.data, studyOpen, medsOpen, practiseOpen, gamesOpen, lecturesOnly]);
+  }, [weeksKey, study.data, notes.data, terms.data, meds.data, lab.data, casebook.data, studyOpen, medsOpen, practiseOpen, gamesOpen, lecturesOnly]);
 
   // The list follows the box at low priority: a slow search never holds a key press.
   const term = React.useDeferredValue(q).trim();

@@ -3,9 +3,7 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { Label } from "@/ds";
-import { CASEBOOK } from "@/casebook/mock";
 import { space } from "@/theme";
-import { EXPERIMENTS } from "./mock";
 import { EntryCard } from "./shell";
 
 /**
@@ -19,10 +17,10 @@ import { EntryCard } from "./shell";
  * or one at a time: <LabEntry />, <CasebookEntry tall />, ...
  */
 type P = { tall?: boolean };
-export const LabEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-lab" icon={FlaskConical} area="practise" title="Psychology Lab" meta={tall ? `${EXPERIMENTS.length} experiments` : `${EXPERIMENTS.length} experiments to run on yourself`} href="/lab" />;
-export const CasebookEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-casebook" icon={BookOpenText} area="practise" title="Casebook" meta={tall ? `${CASEBOOK.length} cases` : "Short cases to read and reason through"} href="/casebook" />;
+export const LabEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-lab" icon={FlaskConical} area="practise" title="Psychology Lab" meta={tall ? "Run it on yourself" : "Classic experiments to run on yourself"} href="/lab" />;
+export const CasebookEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-casebook" icon={BookOpenText} area="practise" title="Casebook" meta={tall ? "Read and reason" : "Short cases to read and reason through"} href="/casebook" />;
 export const EthicsEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-ethics" icon={Scale} area="practise" title={tall ? "Ethics and law" : "Ethics, law and referral"} meta={tall ? "3 new each day" : "Decide first, then the law behind it"} href="/ethics" />;
-export const InterviewEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-interview" icon={MessagesSquare} area="practise" title="Mock interview" meta={tall ? "5 questions" : "Five questions, the way a panel asks them"} href="/interview" />;
+export const InterviewEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-interview" icon={MessagesSquare} area="practise" title="Mock interview" meta={tall ? "Panel practice" : "Questions the way a panel asks them"} href="/interview" />;
 export const CalmEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-calm" icon={Wind} area="me" title="Calm" meta={tall ? "Breathe, ground" : "Breathing, grounding and more"} href="/calm" />;
 export const SelfCheckEntry = ({ tall }: P) => <EntryCard tall={tall} testID="entry-selfcheck" icon={ClipboardCheck} area="me" title="Self-checks" meta={tall ? "6 short checks" : "Short questionnaires, scored on your phone"} href="/selfcheck" />;
 
