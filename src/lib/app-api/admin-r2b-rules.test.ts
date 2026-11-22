@@ -27,7 +27,8 @@ describe("learnerStudy", () => {
     expect(s.avgTestPct).toBe(65);
     expect(s.rightPct).toBe(75);
     expect(s.weak.map((w) => w.label)).toEqual(["Mental state", "Flat affect or Blunted affect"]);
-    expect(s.lastStudyDay).toBe("2026-11-20");
+    // Any saved study counts as activity, even in a module no longer listed (m9).
+    expect(s.lastStudyDay).toBe("2026-11-21");
   });
   it("gives zeros for a missing or broken state", () => {
     for (const raw of [null, "nonsense", { study: 5 }]) {
@@ -44,7 +45,7 @@ describe("learnerRow", () => {
   const base = { id: "u1", name: "Asha", email: "a@x.org", cohorts: [], lecturesDone: 1, lecturesAvailable: 6, lastSeen: "2026-11-10T08:00:00.000Z", min7: 30, account: "active" };
   it("takes the later of the last visit and the last study day, and marks behind", () => {
     const r = learnerRow(base, learnerStudy(state, catalog));
-    expect(r.lastActive?.slice(0, 10)).toBe("2026-11-20");
+    expect(r.lastActive?.slice(0, 10)).toBe("2026-11-21");
     expect(r.behind).toBe(true);
     expect(r.progress).toBeGreaterThan(0);
   });

@@ -271,8 +271,8 @@ export function BulkAccessScreen() {
           </T>
         </Group>
       )}
-      <Group title="Access">
-        <Pills label="Access" value={scope} onChange={(s: Scope) => setScope(s === scope ? null : s)} options={SCOPES.map((s) => ({ id: s.id, name: s.name }))} testID="bulk-scope" />
+      <Group title="Full platform or lectures only">
+        <Pills label="Leave both unpicked to keep it as it is" value={scope} onChange={(s: Scope) => setScope(s === scope ? null : s)} options={SCOPES.map((s) => ({ id: s.id, name: s.name }))} testID="bulk-scope" />
       </Group>
       <Group title="Sections to change">
         <Loaded q={sections} what="sections" skeleton={<RowsSkeleton rows={4} />}>
