@@ -6,7 +6,7 @@ import * as React from "react";
 import { Share, View } from "react-native";
 
 import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
-import { space, useTheme } from "@/theme";
+import { space, useTheme, fonts } from "@/theme";
 import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
 import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
 import type { LoginLinkResult } from "../extra";
@@ -33,7 +33,7 @@ export function LinkSheet({ link, name, mobile, onClose, title = "Login link sen
       <View style={{ gap: space[4] }}>
         <T tone="muted">{link?.emailed ? `${name} has it by email. It replaces older links${link.expiresAt ? ` and works until ${day(link.expiresAt, true)}` : ""}.` : "The link is ready. Send it to them yourself."}</T>
         {link?.url ? (
-          <T v="small" selectable style={{ fontFamily: "Archivo-500" }}>
+          <T v="small" selectable style={{ fontFamily: fonts.medium }}>
             {link.url}
           </T>
         ) : null}
@@ -267,7 +267,7 @@ export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentR
       </View>
       <Notice testID="next-step" action={canWrite && next.action ? <SmallButton label={next.label} busy={!!busy} onPress={doNext} testID="next-step-do" /> : undefined}>
         <T v="small">
-          <T v="small" style={{ fontFamily: "Archivo-700" }}>
+          <T v="small" style={{ fontFamily: fonts.bold }}>
             Next: {next.label}.
           </T>{" "}
           <T v="small" tone="muted">

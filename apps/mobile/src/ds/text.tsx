@@ -4,7 +4,7 @@ import { Text, type TextProps } from "react-native";
 import { type as scale, useAreaName, useTheme, type Palette, type TypeName } from "@/theme";
 
 /** `accent`: the area's deep colour (a tab screen's one accent family); the link colour outside an area. */
-type Tone = "ink" | "muted" | "link" | "danger" | "onPrimary" | "onBand" | "onBrand" | "alert" | "accent";
+type Tone = "ink" | "muted" | "faint" | "link" | "danger" | "onPrimary" | "onBand" | "onBrand" | "onField" | "onFieldMuted" | "onInk" | "alert" | "accent";
 
 function toneColor(c: Palette, tone: Tone, area: ReturnType<typeof useAreaName>): string {
   switch (tone) {
@@ -12,6 +12,14 @@ function toneColor(c: Palette, tone: Tone, area: ReturnType<typeof useAreaName>)
       return area ? c.areas[area].deep : c.link;
     case "muted":
       return c.muted;
+    case "faint":
+      return c.faint;
+    case "onInk":
+      return c.bg;
+    case "onField":
+      return c.onField;
+    case "onFieldMuted":
+      return c.onFieldMuted;
     case "link":
       return c.link;
     case "danger":

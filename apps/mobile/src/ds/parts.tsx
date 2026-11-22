@@ -249,13 +249,13 @@ export function Tint({ children, style }: { children?: React.ReactNode; style?: 
   return <View style={[{ borderRadius: layout.radius, backgroundColor: c.tint, padding: space[4], gap: space[2] }, style]}>{children}</View>;
 }
 
-/** One object tapped as a whole (a certificate, a case): a 1.5px outline, 12px corners, no shadow. */
+/** One object tapped as a whole (a certificate, a case): a stone surface resting on the layer, 26px corners, no outline, no shadow. */
 export function Card({ children, onPress, accessibilityLabel, style, testID }: { children?: React.ReactNode; onPress?: () => void; accessibilityLabel?: string; style?: StyleProp<ViewStyle>; testID?: string }) {
   const c = useTheme();
   const base: ViewStyle = {
-    borderRadius: layout.radius,
+    borderRadius: layout.radiusLg,
     borderWidth: 1.5,
-    borderColor: c.cardLine,
+    borderColor: "transparent",
     backgroundColor: c.card,
     padding: space[4],
     gap: space[3],
@@ -295,7 +295,7 @@ function PressCard({ children, onPress, label, base, style, testID }: { children
         setDown(false);
       }}
     >
-      <Animated.View style={[base, down ? { borderColor: c.ink } : null, style, anim]}>{children}</Animated.View>
+      <Animated.View style={[base, down ? { borderColor: c.cardLine } : null, style, anim]}>{children}</Animated.View>
     </Pressable>
   );
 }

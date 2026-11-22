@@ -8,7 +8,7 @@ import type { MessageBlock, MessageSpan } from "@/api/contract";
 import { keys, useNotification } from "@/api/queries";
 import { Button, Loaded, RowsSkeleton, Screen, T } from "@/ds";
 import { openTarget } from "@/nav/targets";
-import { space } from "@/theme";
+import { space, fonts } from "@/theme";
 import { when } from "./list";
 import { FromRow } from "@/motion";
 
@@ -16,7 +16,7 @@ function Spans({ spans }: { spans: MessageSpan[] }) {
   return (
     <>
       {spans.map((s, i) => {
-        const style = { fontFamily: s.bold ? "Archivo-700" : undefined, fontStyle: s.italic ? ("italic" as const) : undefined };
+        const style = { fontFamily: s.bold ? fonts.bold : undefined, fontStyle: s.italic ? ("italic" as const) : undefined };
         if (s.link) {
           const link = s.link;
           return (

@@ -196,20 +196,28 @@ Worked out once per launch: low-end is Android with 2GB RAM or less, Android
 10 or older, or a screen density of 2 or less. Reduce Motion is separate.
 
 ### Tab bar and screen transitions
-- `src/nav/tabs.tsx` uses `MotionTabBar`: a soft pill springs behind the current
-  icon and stretches a little as it travels, the icon pops on arrival, presses
-  sink. On the student tabs (`TabDef.area`) the pill washes from one area's
-  colour into the next as it travels (`interpolateColor` on the UI thread) and
-  the current icon and label wear the area's deep colour. Tab screens "fade
-  through" (`tabSceneOptions(reduce, low)`, native driver): the old one fades
-  out in the first 70ms, the new one fades in with an 8px lift after it, so
-  two pages of text never show at once; low-end Android fades only. The tab
-  screen's area glow then washes down from the top (`AreaGlow` in `Screen`,
-  420ms, fade only on low-end) each time the tab comes to the front. The other
-  tabs render in the background 1.2s after the first one settles, so a first
-  visit never shows an empty frame. The bar slides down behind the keyboard
-  frame by frame (`useAnimatedKeyboard`, UI thread) and comes back as the
-  keyboard closes.
+- `src/nav/tabs.tsx` uses `MotionTabBar` (the Layers look, docs/DESIGN.md): a
+  dark bar floats over the layer and the page scrolls under it. One lime pill
+  sits under the current tab and slides to the next one on `springs.snappy`
+  (translateX and width of one small view, UI thread) while the neighbours
+  glide aside; the current tab shows its name. Icons squish under the thumb.
+  The screens themselves switch at once (`tabSceneOptions` returns no
+  animation): tabs are peers used all day. Reduce Motion and low-end Android:
+  the pill jumps. The other tabs render in the background 1.2s after the first
+  one settles, so a first visit never shows an empty frame. The bar slides
+  down behind the keyboard frame by frame and comes back as it closes.
+- **A card grows into its screen** (`src/motion/grow.tsx`): `Stone grow` notes
+  where the card is, the route uses `growOr(...)` so the native transition is
+  a fade of the same length, and the new screen's root starts at the card's
+  place and size and opens to full on the sheet curve (420ms). Coming back the
+  page fades and the card settles from 0.96 to 1. Reduce Motion and low-end
+  Android: a fade only.
+- **A layer rises** (`presets.layer`, used by `Screen` and `Layer`): 36px up on
+  `springs.layer`, a hair of overshoot, with the content following (`presets.body`).
+- **Soft press** (`Press squish`): pebbles and round buttons go wider and
+  flatter under the thumb and wobble back on `springs.bouncy`.
+- **Refresh**: on a field screen the wait is Jyo's flame (`Flame`) at the top
+  of the field while the pull to refresh runs.
 - Every stack (root, admin, visitor) takes its transitions from
   `useStackMotion()` (`src/motion/stack.ts`), one kind per route:
 

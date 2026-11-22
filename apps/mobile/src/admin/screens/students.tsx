@@ -9,7 +9,7 @@ import { Button, Chips, EmptyState, RowsSkeleton, Screen, Sheet, SwitchRow, T } 
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { usePressScale } from "@/motion";
-import { layout, space, useTheme } from "@/theme";
+import { layout, space, useTheme, fonts } from "@/theme";
 import { adminCalls, useStudents } from "../api";
 import type { AdminStudentRow, AttentionFlag } from "../contract";
 import { ACCOUNT_LABEL, accountLabel, accountTone, ago, filterCount, filterStudents, FLAG_LABEL, NO_FILTERS, PRESENCE_LABEL, studentsCsv, type Presence, type StudentFilters } from "../format";
@@ -224,7 +224,7 @@ export function AdminStudentsScreen() {
           style={({ pressed }) => ({ minHeight: layout.target, paddingHorizontal: space[3], borderRadius: layout.radius, borderWidth: 1.5, borderColor: nFilters ? c.ink : c.cardLine, flexDirection: "row", alignItems: "center", gap: space[2], backgroundColor: pressed ? c.tint : c.card })}
         >
           <ListFilter size={18} color={c.ink} />
-          <T v="small" style={{ fontFamily: "Archivo-600" }}>
+          <T v="small" style={{ fontFamily: fonts.semibold }}>
             {nFilters ? `Filters ${nFilters}` : "Filters"}
           </T>
         </Pressable>

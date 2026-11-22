@@ -1,33 +1,32 @@
 import { Bell, CloudOff, Search } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, RefreshControl, ScrollView, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
-import { useIsFocused } from "expo-router";
-import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
+import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useOffline } from "@/api/online";
-import { curves, FlowGap, presets, tabSwitchCount, useFromRow, useMotionTier, usePressScale } from "@/motion";
-import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
+import { FlowGap, presets, useFromRow, useGrowIn, useMotionTier, usePressScale } from "@/motion";
 
-import { AreaProvider, fonts, layout, space, useAccent, useTheme, type Area } from "@/theme";
+import { AreaProvider, fonts, layout, space, useAccent, useLightStatusBar, useTheme, type Area } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
-import { useBottomChrome } from "./bottom-chrome";
+import { bottomChrome, useBottomChrome } from "./bottom-chrome";
 import { useKeyboardPad } from "./keyboard-pad";
+import { Flame } from "./jyo";
+import { layerShadow } from "./layers";
 import { T } from "./text";
-import { TitleInk } from "@/moments/title";
 
 /** The VIBHA wordmark, as on the website: wide black Archivo, with the school line under it in the pixel face. */
-export function Wordmark({ sub = "School of Psychology", size = 22 }: { sub?: string | null; size?: number }) {
+export function Wordmark({ sub = "School of Psychology", size = 22, onField }: { sub?: string | null; size?: number; /** White, for the blue field. */ onField?: boolean }) {
   const c = useTheme();
   const subSize = Math.max(9, Math.round(size * 0.45));
   return (
     <View accessible accessibilityRole="header" accessibilityLabel={sub ? `VIBHA ${sub}` : "VIBHA"}>
-      <T style={{ fontFamily: fonts.wordmark, fontSize: size, lineHeight: size + 2, letterSpacing: -0.4, color: c.ink }} maxFontSizeMultiplier={1.2}>
+      <T style={{ fontFamily: fonts.wordmark, fontSize: size, lineHeight: size + 2, letterSpacing: -0.4, color: onField ? c.onField : c.ink }} maxFontSizeMultiplier={1.2}>
         VIBHA
       </T>
       {sub ? (
-        <T tone="muted" maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.pixel, fontSize: subSize, lineHeight: subSize + 4, letterSpacing: subSize * 0.06, textTransform: "uppercase", marginTop: 2 }}>
+        <T tone={onField ? "onFieldMuted" : "muted"} maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.semibold, fontSize: subSize + 1, lineHeight: subSize + 5, letterSpacing: 0.2, marginTop: 1 }}>
           {sub}
         </T>
       ) : null}
@@ -36,35 +35,36 @@ export function Wordmark({ sub = "School of Psychology", size = 22 }: { sub?: st
 }
 
 /** A 48px round icon button. Sinks to 0.88 while pressed; the unread dot pops in. */
-export function IconButton({ label, onPress, children, dot, testID }: { label: string; onPress: () => void; children: React.ReactNode; /** A small blue dot (unread). */ dot?: boolean; testID?: string }) {
+export function IconButton({ label, onPress, children, dot, testID, onField }: { label: string; onPress: () => void; children: React.ReactNode; /** A small dot (unread). */ dot?: boolean; testID?: string; /** Sits on the blue field: a soft round patch behind it, a lime dot. */ onField?: boolean }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const { style, handlers } = usePressScale(0.88);
   return (
-    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={label} onPress={onPress} {...handlers} hitSlop={4} android_ripple={{ color: c.tint, borderless: true, radius: 24 }} style={({ pressed }) => ({ width: layout.target, height: layout.target, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? c.tint : "transparent" })}>
+    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={label} onPress={onPress} {...handlers} hitSlop={4} android_ripple={{ color: onField ? c.fieldTint : c.tint, borderless: true, radius: 24 }} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}>
+      {onField ? <View pointerEvents="none" style={{ position: "absolute", width: 38, height: 38, borderRadius: 19, backgroundColor: c.fieldTint }} /> : null}
       <Animated.View style={style}>{children}</Animated.View>
-      {dot ? <Animated.View entering={reduce ? undefined : presets.pop(300)} style={{ position: "absolute", top: 11, right: 11, width: 9, height: 9, borderRadius: 5, backgroundColor: c.accent, borderWidth: 1.5, borderColor: c.card }} /> : null}
+      {dot ? <Animated.View entering={reduce ? undefined : presets.pop(300)} style={{ position: "absolute", top: 11, right: 11, width: 9, height: 9, borderRadius: 5, backgroundColor: onField ? c.lime : c.accent, borderWidth: 1.5, borderColor: onField ? c.field : c.card }} /> : null}
     </Pressable>
   );
 }
 
-/** The bar on top of the tab screens: wordmark, search, bell. Nothing else. */
+/** The bar on top of the tab screens, on the blue field: wordmark, search, bell. Nothing else. */
 export function TopBar({ onSearch, onBell, unread = 0, sub }: { onSearch?: () => void; onBell?: () => void; unread?: number; sub?: string }) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   return (
-    <View style={{ paddingTop: insets.top, backgroundColor: c.card, borderBottomWidth: 1, borderColor: c.hairline }}>
+    <View style={{ paddingTop: insets.top, backgroundColor: c.field }}>
       <View style={{ minHeight: 56, paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(space[2], insets.right), flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <Wordmark sub={sub} />
+        <Wordmark sub={sub ?? null} onField />
         <View style={{ flexDirection: "row" }}>
           {onSearch ? (
-            <IconButton label="Search" onPress={onSearch} testID="top-search">
-              <Search size={22} color={c.ink} />
+            <IconButton label="Search" onPress={onSearch} testID="top-search" onField>
+              <Search size={20} color={c.onField} />
             </IconButton>
           ) : null}
           {onBell ? (
-            <IconButton label={unread ? `Notifications, ${unread} unread` : "Notifications"} onPress={onBell} dot={unread > 0} testID="top-bell">
-              <Bell size={22} color={c.ink} />
+            <IconButton label={unread ? `Notifications, ${unread} unread` : "Notifications"} onPress={onBell} dot={unread > 0} testID="top-bell" onField>
+              <Bell size={20} color={c.onField} />
             </IconButton>
           ) : null}
         </View>
@@ -118,78 +118,29 @@ export type ScreenProps = {
   gap?: number;
   testID?: string;
   contentStyle?: StyleProp<ViewStyle>;
-  /** A tab screen's area: sets its one accent family and a soft glow behind the header. */
+  /** A tab screen's area: sets its one quiet accent family. */
   area?: Area;
+  /** Sits on the blue field, under the title and above the layer: a greeting, a FieldCard, a FieldProgress. Short. */
+  field?: React.ReactNode;
+  /** The whole screen is the layer colour, with no blue field (long forms, the reader, admin lists). */
+  plain?: boolean;
 };
 
-/** The soft pastel glow behind a tab screen's header: the area's wash fading into the canvas. Scrolls away with the page. */
-function AreaGlow({ area, wash }: { area: Area; /** A tab screen: the glow washes down from the top each time the tab comes to the front. */ wash?: boolean }) {
-  const a = useAccent();
-  const style = useWash(!!wash);
-  // One gradient id per area: tabs stay mounted side by side, and a shared id would paint every glow in the first tab's colour.
-  const id = `area-glow-${area}`;
-  return (
-    <Animated.View pointerEvents="none" accessible={false} importantForAccessibility="no-hide-descendants" testID="area-glow" style={[{ position: "absolute", top: 0, left: 0, right: 0, height: 260, transformOrigin: "top" }, style]}>
-      <Svg width="100%" height="100%">
-        <Defs>
-          <LinearGradient id={id} x1="0" y1="0" x2="0" y2="1">
-            <Stop offset="0" stopColor={a.wash} stopOpacity={0.85} />
-            <Stop offset="0.55" stopColor={a.wash} stopOpacity={0.35} />
-            <Stop offset="1" stopColor={a.wash} stopOpacity={0} />
-          </LinearGradient>
-        </Defs>
-        <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${id})`} />
-      </Svg>
-    </Animated.View>
-  );
-}
-
 /**
- * The area colour washing in when a tab comes to the front: the glow fades up
- * and pours down from the top edge (scaleY 0.6 to 1 from the top), 420ms,
- * just behind the tab's own fade through. Transform and opacity only, on the
- * UI thread. Low-end Android: the fade alone. Reduce Motion: still.
+ * Every screen sits in this. The blue field is the place you are in: it holds
+ * the top bar, the title and at most one short thing (`field`). The soft white
+ * layer rises over it with 30px corners and holds what you do now (`children`).
+ * Also: a 20px side margin, 32px between sections, safe areas, pull to
+ * refresh, an optional pinned footer, and a centred column on wide screens.
+ * When a card grew into this screen (`growFrom`), it opens out of that card.
  */
-function useWash(on: boolean) {
-  const focused = useIsFocused();
-  const reduce = useReducedMotion();
-  const { low } = useMotionTier();
-  // Starts clear on a tab (no full-strength frame before the wash), full elsewhere.
-  const v = useSharedValue(on && !reduce ? 0 : 1);
-  const seen = React.useRef(-1);
-  React.useEffect(() => {
-    if (!on || reduce || !focused) return;
-    // A frame later, once the tab bar has counted the switch: wash only when this tab came to the
-    // front (first visit or a tab switch), not when a page pushed over it was closed.
-    const raf = requestAnimationFrame(() => {
-      const n = tabSwitchCount();
-      if (n === seen.current) {
-        v.set(1);
-        return;
-      }
-      seen.current = n;
-      v.set(0);
-      v.set(withDelay(60, withTiming(1, { duration: 420, easing: curves.out })));
-    });
-    return () => cancelAnimationFrame(raf);
-  }, [on, focused, reduce, v]);
-  return useAnimatedStyle(() => ({
-    opacity: v.value,
-    transform: [{ scaleY: low ? 1 : 0.6 + 0.4 * v.value }],
-  }));
-}
-
-/**
- * Every screen sits in this: the app canvas, a 20px side margin, 32px between
- * sections, safe areas, a 200ms fade on arrival, pull to refresh, and an
- * optional pinned footer. Wide screens (tablets, landscape) keep a centred
- * column so lines stay readable.
- */
-export function Screen({ children, title, lead, top, footer, onRefresh, refreshing = false, scroll = true, safeTop, tab, bleed, gap = layout.section, testID, contentStyle, area }: ScreenProps) {
+export function Screen({ children, title, lead, top, footer, onRefresh, refreshing = false, scroll = true, safeTop, tab, bleed, gap = layout.section, testID, contentStyle, area, field, plain }: ScreenProps) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
   const tier = useMotionTier();
+  // The field is dark blue in both themes: status bar icons are white while this screen is in front.
+  useLightStatusBar(!plain);
   // Pull to refresh: the spinner shows only for the person's own pull (never
   // for quiet background refreshes), for at least 500ms so it never blinks.
   const [pulled, setPulled] = React.useState(false);
@@ -209,106 +160,126 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   const [footH, setFootH] = React.useState(0);
   useBottomChrome(footer ? footH : 0, !!tab, kb);
   const side = bleed ? 0 : layout.gutter;
-  const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
+  // The tab bar floats over the layer: the page scrolls under it, and its last thing must clear it.
+  const barH = bottomChrome.use((s) => s.tabBar);
+  const bar = tab && !kb ? barH || 74 : 0;
+  const padBottom = (footer ? 0 : tab ? bar : insets.bottom) + (tab && !footer ? space[4] : space[6]);
   // Arrival choreography (UI thread layout animations): header, then body. Low-end Android: fades only.
   const head = reduce ? undefined : presets.head(tier.low);
   const bodyIn = reduce ? undefined : presets.body(tier.low);
   const fromRow = useFromRow(title);
+  const grow = useGrowIn();
   const own = StyleSheet.flatten(contentStyle)?.gap;
   const flowGap = typeof own === "number" ? own : gap;
-  const body = (
-    <View style={[{ width: "100%", maxWidth: bleed ? undefined : layout.readingWidth + side * 2, alignSelf: "center", paddingLeft: Math.max(side, bleed ? 0 : insets.left), paddingRight: Math.max(side, bleed ? 0 : insets.right), paddingTop: space[5], paddingBottom: padBottom, gap }, contentStyle]}>
+  const padL = Math.max(side, bleed ? 0 : insets.left);
+  const padR = Math.max(side, bleed ? 0 : insets.right);
+  const column: ViewStyle = { width: "100%", maxWidth: bleed ? undefined : layout.readingWidth + side * 2, alignSelf: "center" };
+  const hasHead = !!(title || lead || field);
+  const onField = !plain;
+  // On the field: the title (gliding out of the row that opened it, when one did), the lead, then one short thing.
+  const headBlock = hasHead ? (
+    <View style={[column, { paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right), paddingTop: top ? space[2] : space[4], paddingBottom: onField ? space[5] : 0, gap: space[4] }]}>
       {title || lead ? (
-        // Header first: the title (gliding out of the row that opened it, when one did), then the lead.
         <Animated.View entering={fromRow ? undefined : head} style={{ gap: space[1] }}>
           {title ? (
             <Animated.View entering={fromRow}>
-              <T v="h1">{title}</T>
-              {tab ? <TitleInk title={title} /> : null}
+              <T v={title.length > 28 ? "h1" : "display"} tone={onField ? "onField" : "ink"}>
+                {title}
+              </T>
             </Animated.View>
           ) : null}
           {lead ? (
             <Animated.View entering={fromRow ? head : undefined}>
-              <T v="small" tone="muted">
+              <T v="small" tone={onField ? "onFieldMuted" : "muted"}>
                 {lead}
               </T>
             </Animated.View>
           ) : null}
         </Animated.View>
       ) : null}
-      {/* Then the body, 70ms behind (its own gap, so the sections keep their spacing). */}
-      <Animated.View entering={title || lead ? bodyIn : head} style={{ gap: flowGap }}>
-        <FlowGap.Provider value={flowGap}>{children}</FlowGap.Provider>
-      </Animated.View>
+      {field ? <Animated.View entering={head}>{field}</Animated.View> : null}
     </View>
-  );
-  const inner = area ? (
-    <View>
-      <AreaGlow area={area} wash={tab} />
-      {body}
-    </View>
-  ) : (
-    body
+  ) : onField ? (
+    <View style={{ height: top ? space[2] : space[3] }} />
+  ) : null;
+  // The layer: soft white, 30px top corners, one soft shadow onto the field.
+  const layer = (
+    <Animated.View testID="layer" entering={onField && !reduce ? presets.layer(tier.low) : undefined} style={[{ flexGrow: 1, backgroundColor: c.bg }, onField ? { borderTopLeftRadius: layout.radiusLayer, borderTopRightRadius: layout.radiusLayer, ...layerShadow(c) } : null]}>
+      <View style={[column, { paddingLeft: padL, paddingRight: padR, paddingTop: onField ? space[5] : space[5], paddingBottom: padBottom, gap }, contentStyle]}>
+        <Animated.View entering={hasHead ? bodyIn : head} style={{ gap: flowGap }}>
+          <FlowGap.Provider value={flowGap}>{children}</FlowGap.Provider>
+        </Animated.View>
+      </View>
+    </Animated.View>
   );
   return (
     <AreaProvider area={area}>
-    <View ref={root} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: safeTop ? insets.top : 0, paddingBottom: kb }}>
-      {top}
-      <OfflineLine />
-      <View style={{ flex: 1 }}>
-        {scroll ? (
-          <ScrollView
-            keyboardShouldPersistTaps="handled"
-            keyboardDismissMode="on-drag"
-            contentInsetAdjustmentBehavior="automatic"
-            showsVerticalScrollIndicator={false}
-            refreshControl={onRefresh ? <RefreshControl refreshing={spinning} onRefresh={pull} tintColor={c.muted} colors={[c.dark ? c.primary : c.brand]} progressBackgroundColor={c.card} /> : undefined}
-          >
-            {inner}
-          </ScrollView>
-        ) : (
-          <View style={{ flex: 1 }}>{inner}</View>
-        )}
-      </View>
-      {footer ? (
-        <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ backgroundColor: c.bg, borderTopWidth: 1, borderColor: c.hairline, paddingTop: space[3], paddingBottom: (tab || kb ? 0 : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
-          <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{footer}</View>
+      <Animated.View ref={root} onLayout={kbLayout} testID={testID} style={[{ flex: 1, backgroundColor: onField ? c.field : c.bg, paddingTop: safeTop ? insets.top : 0, paddingBottom: kb }, grow]}>
+        {top}
+        <OfflineLine />
+        <View style={{ flex: 1 }}>
+          {/* The layer colour under the lower half, so a pull at the end never shows the field below the layer. */}
+          {onField ? <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "45%", backgroundColor: c.bg }} /> : null}
+          {scroll ? (
+            <ScrollView
+              keyboardShouldPersistTaps="handled"
+              keyboardDismissMode="on-drag"
+              contentInsetAdjustmentBehavior="automatic"
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={{ flexGrow: 1 }}
+              // On the field the wait is shown by Jyo's flame (below); the system spinner is tinted to match.
+              refreshControl={onRefresh ? <RefreshControl refreshing={spinning} onRefresh={pull} tintColor={onField ? "transparent" : c.muted} colors={[onField ? c.lime : c.brand]} progressBackgroundColor={onField ? c.field : c.raised} /> : undefined}
+            >
+              {headBlock}
+              {layer}
+            </ScrollView>
+          ) : (
+            <View style={{ flex: 1 }}>
+              {headBlock}
+              {layer}
+            </View>
+          )}
         </View>
-      ) : null}
-    </View>
+        {onField && spinning ? (
+          <Animated.View pointerEvents="none" entering={reduce ? undefined : presets.pop(0)} exiting={reduce ? undefined : presets.out()} style={{ position: "absolute", left: 0, right: 0, top: (safeTop || top ? insets.top : 0) + 10, alignItems: "center" }}>
+            <Flame size={30} testID="refresh-flame" />
+          </Animated.View>
+        ) : null}
+        {footer ? (
+          <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ backgroundColor: c.bg, paddingTop: space[3], paddingBottom: (kb ? 0 : tab ? bar : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
+            <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{footer}</View>
+          </View>
+        ) : null}
+      </Animated.View>
     </AreaProvider>
   );
 }
 
 /**
- * The one thing to do on this screen. Large title, an optional thin progress
- * line, where they stopped, and one full-width lime button. No box around the
- * words. One per screen.
+ * The one thing to do on this screen, on a stone card: a short context line,
+ * the title, where they stopped, an optional thin progress line and the one
+ * lime button. One per screen.
  */
 export function Hero({ context, title, meta, progress, progressLabel, action, below }: { context?: string; title: string; meta?: string; progress?: number; progressLabel?: string; action: { label: string; onPress: () => void; icon?: React.ReactNode; testID?: string }; below?: React.ReactNode }) {
   const c = useTheme();
   const a = useAccent();
-  // In a tab screen the hero sits on a soft card in the area's wash, and a short context line speaks in the pixel voice.
-  const pix = a.on && !!context && context.length <= 28;
   return (
-    <View testID={a.on ? "hero-card" : undefined} style={[{ gap: space[4] }, a.on ? { backgroundColor: a.wash, borderRadius: 20, padding: space[5] } : null]}>
-      <View style={{ gap: space[2] }}>
+    <View testID={a.on ? "hero-card" : undefined} style={{ gap: space[4], backgroundColor: c.card, borderRadius: layout.radiusLg, padding: space[5] }}>
+      <View style={{ gap: space[1] }}>
         {context ? (
-          pix ? (
-            <T tone="accent" maxFontSizeMultiplier={1.3} style={{ fontFamily: fonts.pixel, fontSize: 12, lineHeight: 16, letterSpacing: 0.4 }}>
-              {context}
-            </T>
-          ) : (
-            <T v="small" tone="muted">
-              {context}
-            </T>
-          )
+          <T v="label" tone="muted">
+            {context}
+          </T>
         ) : null}
         {/* A long title steps down a size so the button stays in reach. */}
-        <T v={(title ?? "").length > 36 ? "h1" : "display"}>{title ?? ""}</T>
-        {meta ? <T tone="muted">{meta}</T> : null}
+        <T v={(title ?? "").length > 36 ? "h2" : "h1"}>{title ?? ""}</T>
+        {meta ? (
+          <T v="small" tone="muted">
+            {meta}
+          </T>
+        ) : null}
       </View>
-      {progress !== undefined ? <ProgressLine value={progress} label={progressLabel} track={a.on ? c.hairline : undefined} /> : null}
+      {progress !== undefined ? <ProgressLine value={progress} label={progressLabel} /> : null}
       <Button label={action.label} onPress={action.onPress} icon={action.icon} testID={action.testID} />
       {below}
     </View>
