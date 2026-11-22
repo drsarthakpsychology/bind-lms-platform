@@ -123,7 +123,7 @@ function sCurve(a: number, b: number, top: number, from = X0, to = X1): [number,
 }
 
 const SAY_DOSE: Record<DoseShape, string> = {
-  window: "Benefit and harm sit close together on the same scale of blood level, so the level is measured, not guessed.",
+  window: "Benefit and harm sit close together on the same scale of blood level, so the level is measured, not guessed. Check the target with the prescriber and the local lab.",
   targets: "Each target has its own dose-response curve: a low dose already reaches the sleep targets; mood needs a higher dose.",
   ceiling: "A full agonist keeps adding effect as the dose rises. A partial agonist levels off: a ceiling.",
 };
@@ -135,19 +135,21 @@ export function DoseSketch({ title, shape, caption }: { title: string; shape: Do
       <Sheet name={`dose-${shape}`} w={380} h={250} label={title}>
         {shape === "window" ? (
           <>
-            <R k="band" x={lv(0.6)} y={TOP} w={lv(1) - lv(0.6)} h={Y0 - TOP} stroke="none" fill={C.lime} gap={5} fw={1.6} />
+            {/* Usual target 0.6 to 0.8 mmol/L; 0.8 to 1.0 for some people; toxicity likely from about 1.5 (NICE CG185, SPS lithium monitoring). */}
+            <R k="band" x={lv(0.6)} y={TOP} w={lv(0.8) - lv(0.6)} h={Y0 - TOP} stroke="none" fill={C.lime} gap={4} fw={1.8} />
+            <R k="band-some" x={lv(0.8)} y={TOP} w={lv(1) - lv(0.8)} h={Y0 - TOP} stroke="none" fill={C.lime} gap={10} fw={1} />
             <R k="toxic" x={lv(1.5)} y={TOP} w={lv(2) - lv(1.5)} h={Y0 - TOP} stroke="none" fill={C.red} gap={6} fw={1} />
-            <L k="tox-start" x1={lv(1.2)} y1={TOP} x2={lv(1.2)} y2={Y0} stroke={C.red} sw={1.4} single dash="5 4" />
             <Axes k="li" yTitle="effect" />
             <Cv k="benefit" pts={sCurve(lv(0.3), lv(0.9), 0.85)} stroke={C.blue} sw={2.6} single rough={0.5} />
-            <Cv k="harm" pts={sCurve(lv(1.15), lv(1.9), 1, lv(1.0))} stroke={C.red} sw={2.6} single rough={0.5} />
-            {[0.6, 1, 1.5, 2].map((v) => (
+            <Cv k="harm" pts={sCurve(lv(1.0), lv(1.8), 1, lv(0.8))} stroke={C.red} sw={2.6} single rough={0.5} />
+            {[0.6, 0.8, 1, 1.5, 2].map((v) => (
               <Label key={v} x={lv(v)} y={Y0 + 18} size={13} anchor="middle" bold={false}>{v.toFixed(1)}</Label>
             ))}
-            <Label x={(lv(0.6) + lv(1)) / 2} y={TOP - 8} size={14} anchor="middle">useful</Label>
+            <Label x={(lv(0.6) + lv(0.8)) / 2} y={TOP - 8} size={14} anchor="middle">usual</Label>
+            <Label x={lv(1) + 6} y={TOP + 14} size={13} bold={false}>some people</Label>
             <Label x={(lv(1.5) + lv(2)) / 2} y={TOP - 8} size={14} anchor="middle" color={C.red}>toxic</Label>
             <Label x={lv(0.18)} y={84} size={14} color={C.blue}>benefit</Label>
-            <Label x={lv(0.98)} y={190} size={14} color={C.red}>harm</Label>
+            <Label x={lv(1.12)} y={190} size={14} color={C.red}>harm</Label>
             <Label x={X1} y={244} size={14} anchor="end">lithium blood level, mmol/L</Label>
           </>
         ) : null}

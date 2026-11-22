@@ -38,14 +38,19 @@ function diagramsOf(s: MedSample): MedDiagram[] {
   const m = s.med;
   const out: MedDiagram[] = [];
   if (s.mechanism) {
-    out.push({ kind: "receptor", medName: m.name, receptor: s.mechanism.receptor.name, pick: s.mechanism.receptor.pick, note: s.mechanism.receptor.note });
+    const r = s.mechanism.receptor;
+    const main = s.mechanism.targets[0];
+    if (main) out.push({ kind: "target", medName: m.name, target: main.target, action: main.action, effect: main.effect });
+    if (r.name === "a receptor") out.push({ kind: "note", text: r.note });
+    else if (r.messenger) out.push({ kind: "messenger", messenger: r.messenger, receptor: r.name, note: r.note });
+    else out.push({ kind: "receptor", medName: m.name, receptor: r.name, pick: r.pick, note: r.note });
     out.push({ kind: "journey", medName: m.name, target: s.mechanism.site, routes: (s.mechanism.routes.length ? s.mechanism.routes : ["oral"]) as ("oral" | "iv" | "nasal" | "depot")[], notes: null });
   }
   for (const v of s.visuals) {
     const d = v.data as Record<string, unknown>;
     if (v.kind === "release" || v.kind === "synapse3d") out.push({ kind: "synapse", medName: m.name, action: v.kind === "release" ? "reuptake" : /gaba/i.test(String(d.transmitter ?? "")) ? "gaba" : "glutamate", transmitter: String(d.transmitter ?? "messenger"), title: str(d.title) ?? `What ${m.name} changes at the synapse`, caption: str(d.caption) });
-    else if (v.kind === "curve") out.push(v.half ? { kind: "halfLife", title: str(d.title) ?? `How long ${m.name} stays in the body`, hl: v.half.hl, meaning: v.half.meaning } : { kind: "dose", title: str(d.title) ?? m.name, shape: "window", caption: str(d.caption) });
-    else if (v.kind === "pathways") out.push({ kind: "pathways", medName: m.name, caption: str(d.caption), atypical: false, focus: null });
+    else if (v.kind === "curve") out.push(v.half ? { kind: "halfLife", title: str(d.title) ?? `How long ${m.name} stays in the body`, hl: v.half.hl, meaning: v.half.meaning } : { kind: "dose", title: str(d.title) ?? m.name, shape: m.id === "trazodone" ? "targets" : m.id === "buprenorphine" ? "ceiling" : "window", caption: str(d.caption) });
+    else if (v.kind === "pathways") out.push({ kind: "pathways", medName: m.name, caption: str(d.caption), atypical: false, partial: m.id === "aripiprazole", focus: m.id === "trihexyphenidyl" ? "nigrostriatal" : null });
     else if (v.kind === "compare") out.push({ kind: "compare", title: str(d.title) ?? "Compared", a: d.a as never, b: d.b as never });
     else if (v.kind === "neuron") out.push({ kind: "neuron", medName: m.name, title: str(d.title) ?? `What ${m.name} calms`, caption: str(d.caption) });
     else if (v.kind === "nervoussystem") out.push({ kind: "nervous", medName: m.name, title: str(d.title) ?? `What ${m.name} quietens`, caption: str(d.caption) });

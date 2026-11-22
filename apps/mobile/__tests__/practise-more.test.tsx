@@ -185,10 +185,35 @@ describe("Medicine page", () => {
     await waitFor(() => expect(screen.getByTestId("med-section-uses")).toBeTruthy(), { timeout: 4000 });
     for (const id of ["doses", "side-effects", "monitoring", "warnings", "groups", "how-it-works"]) expect(screen.getByTestId(`med-section-${id}`)).toBeTruthy();
     expect(screen.getByTestId("med-diagrams")).toBeTruthy();
+    // Sertraline binds no serotonin receptor: the page opens on its main target, the pump, and the
+    // receptor picture is serotonin's own, with no medicine name on it.
+    expect(screen.getByTestId("d-main-target")).toBeTruthy();
+    expect(screen.getAllByText("Serotonin pump (SERT)").length).toBeGreaterThan(0);
+    expect(screen.getByText(/What sertraline does there: reuptake inhibition/)).toBeTruthy();
+    expect(screen.getByText("Serotonin, the body's own messenger, at 5-HT1A: full agonist")).toBeTruthy();
+    expect(screen.queryByText(/sertraline.*full agonist|full agonist.*sertraline/i)).toBeNull();
     expect(screen.getByTestId("d-receptor")).toBeTruthy();
     expect(screen.getByTestId("d-synapse-reuptake")).toBeTruthy();
     expect(screen.getByText(/blocks the pump/)).toBeTruthy();
     await fireEvent.press(screen.getByLabelText("Without the medicine"));
     await waitFor(() => expect(screen.getByText(/pump soon pulls the rest back/)).toBeTruthy());
+  });
+
+  it("draws lithium's window of blood levels, not an arousal curve, and says to check with the prescriber and lab", async () => {
+    params.mockReturnValue({ id: "lithium" });
+    await render(<MedicineScreen />);
+    await waitFor(() => expect(screen.getByTestId("d-dose-window")).toBeTruthy(), { timeout: 4000 });
+    expect(screen.queryByText(/arousal|performance/)).toBeNull();
+    expect(screen.getByText("lithium blood level, mmol/L")).toBeTruthy();
+    expect(screen.getAllByText(/check with the prescriber and the local lab|Check the target with the prescriber and the local lab/).length).toBeGreaterThan(0);
+  });
+
+  it("shows aripiprazole as partly switching D2 on, not as a blocker", async () => {
+    params.mockReturnValue({ id: "aripiprazole" });
+    await render(<MedicineScreen />);
+    await waitFor(() => expect(screen.getByTestId("w-pathways")).toBeTruthy(), { timeout: 4000 });
+    expect(screen.getByText("D2 partly switched on")).toBeTruthy();
+    expect(screen.getByText(/the partial agonist takes its place/)).toBeTruthy();
+    expect(screen.getByText("Aripiprazole at D2: partial agonist")).toBeTruthy();
   });
 });

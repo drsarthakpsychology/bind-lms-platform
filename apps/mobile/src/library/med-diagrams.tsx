@@ -6,6 +6,7 @@ import type { MedDiagram } from "@/practise/contract";
 import { WidgetView } from "@/study/widgets";
 import { fonts, space } from "@/theme";
 import { ReceptorScale } from "./diagrams";
+import { DoseSketch } from "./dose-sketch";
 import { SynapseSketch } from "./synapse";
 
 /**
@@ -13,7 +14,8 @@ import { SynapseSketch } from "./synapse";
  * plan (MedicinePage.sections how-it-works .diagrams, the same plan the
  * website draws from src/lib/meds/diagrams.ts), in the same order. Each one
  * is native and interactive: the synapse with and without the medicine, the
- * journey through the body by route, the half-life and dose curves, the
+ * journey through the body by route, the half-life curve, the dose picture
+ * (lithium's window of blood levels, ported from the website), the
  * pathways, the neuron, the nervous system, the brain map and a night of
  * sleep use the app's hand-drawn widgets.
  */
@@ -52,7 +54,7 @@ export function MedicineDiagram({ d, k }: { d: MedDiagram; k: string }) {
         </View>
       );
     case "dose":
-      return widget("curve", { kind: d.shape === "window" ? "inverted-u" : "dose-response", title: d.title, ...(d.caption ? { caption: d.caption } : {}) }, k);
+      return <DoseSketch title={d.title} shape={d.shape} caption={d.caption ?? undefined} />;
     case "pathways":
       return widget("pathways", { system: "dopamine", title: d.focus ? "What an antipsychotic does on the dopamine pathways" : `What ${d.medName} does in the dopamine pathways`, start: d.partial ? "partial" : d.atypical ? "d2-2a" : "d2", ...(d.caption ? { caption: d.caption } : {}) }, k);
     case "compare":
