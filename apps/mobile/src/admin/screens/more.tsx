@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { go } from "@/api/prefetch";
 import { router } from "expo-router";
-import { Award, BellRing, ChartNoAxesColumn, CircleHelp, ClipboardList, FileCheck, Flag, FlaskConical, Gauge, GraduationCap, KeyRound, LogOut, MailWarning, Megaphone, MessageCircleQuestion, Radar, Settings, ToggleRight, Trophy, Users } from "lucide-react-native";
+import { Award, BellRing, ChartNoAxesColumn, CircleHelp, ClipboardList, FileCheck, Flag, FlaskConical, Gauge, GraduationCap, KeyRound, LogOut, MailWarning, Megaphone, MessageCircleQuestion, Radar, Settings, ToggleRight, Trophy, UserX, Users } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -65,6 +65,7 @@ export function AdminMoreScreen() {
         <Panel rows>
           <Row title="Cohorts" icon={<IconDot icon={Users} />} onPress={() => router.push("/admin/cohorts")} testID="more-cohorts" />
           <Row title="Enquiries" meta="Who asked, and who to contact next" icon={<IconDot icon={Radar} />} onPress={() => router.push("/admin/people")} testID="more-people" />
+          <Row title="Remove people" meta="Take someone off VIBHA, or bring them back" icon={<IconDot icon={UserX} />} onPress={() => router.push("/admin/remove")} testID="more-remove" />
           <Row title="Forms" meta="Answers, and email who answered" icon={<IconDot icon={ClipboardList} />} onPress={() => router.push("/admin/forms")} testID="more-forms" />
           <Row title="Certificates" meta="Issue, issued list, types, settings" icon={<IconDot icon={Award} />} onPress={() => router.push("/admin/certificates")} testID="more-certificates" />
           <Row title="Leaderboard" meta="Every student, by cohort" icon={<IconDot icon={Trophy} />} onPress={() => router.push("/admin/leaderboard")} testID="more-leaderboards" />
