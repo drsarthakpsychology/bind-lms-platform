@@ -10,7 +10,7 @@ const at = (t: string, date = DAY) => instant(date, t);
 const ANU = "u-anu";
 const RAVI = "u-ravi";
 
-function session(over: Partial<ClinicMySession> & { my?: Partial<ClinicMySession["my"]> } = {}): ClinicMySession {
+function session(over: Partial<Omit<ClinicMySession, "my">> & { my?: Partial<ClinicMySession["my"]> } = {}): ClinicMySession {
   const { my, ...rest } = over;
   return {
     id: "s-class",
@@ -36,7 +36,7 @@ function session(over: Partial<ClinicMySession> & { my?: Partial<ClinicMySession
   };
 }
 
-const opdSession = (over: Partial<ClinicMySession> & { my?: Partial<ClinicMySession["my"]> } = {}) =>
+const opdSession = (over: Partial<Omit<ClinicMySession, "my">> & { my?: Partial<ClinicMySession["my"]> } = {}) =>
   session({ id: "s-opd", kind: "opd_evening", title: "OPD evening", start: "17:00", end: "20:00", place: "Clinic, Navrangpura", batch: "evening", assigned: true, ...over });
 
 const visit = (over: Partial<ClinicVisit> = {}): ClinicVisit => ({
