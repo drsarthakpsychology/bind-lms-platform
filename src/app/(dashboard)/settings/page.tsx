@@ -92,7 +92,7 @@ export default async function SettingsPage() {
         </MobileSection>
 
         {reminders ? (
-          <MobileSection title="Reminders">
+          <MobileSection title="Clinic reminders">
             <div className="rounded-lg border-2 border-foreground bg-card px-4 hard-shadow-xs">
               <ReminderSwitches initial={reminders} />
             </div>

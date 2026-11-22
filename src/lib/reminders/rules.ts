@@ -46,11 +46,6 @@ export type StudentFacts = {
   /** The student's published OPD visits (today's is enough). */
   visits: readonly ClinicVisit[];
   balance: ClinicLeaveBalance;
-  /**
-   * Sessions that belong to a test account's practice space: they remind only
-   * that account (session id to its owner). Real students never get them.
-   */
-  sandboxOwner?: ReadonlyMap<string, string>;
 };
 
 const MIN = 60_000;
@@ -85,16 +80,11 @@ const batchWord = (b: ClinicBatch) => (b === "morning" ? "morning" : "evening");
 /** Is `now` inside [from, until)? */
 const within = (now: number, from: number, until: number) => now >= from && now < until;
 
-function visible(s: { id: string }, f: StudentFacts): boolean {
-  const owner = f.sandboxOwner?.get(s.id);
-  return owner === undefined || owner === f.userId;
-}
-
 /** Every reminder this student is due right now (before the once-only check and their switches). */
 export function dueFor(f: StudentFacts, now: number): Reminder[] {
   const out: Reminder[] = [];
   const today = localDate(now);
-  const sessions = f.sessions.filter((s) => s.date === today && s.status === "scheduled" && visible(s, f));
+  const sessions = f.sessions.filter((s) => s.date === today && s.status === "scheduled");
 
   // OPD today.
   for (const v of f.visits) {

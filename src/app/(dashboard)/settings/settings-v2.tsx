@@ -61,7 +61,7 @@ export function SettingsV2({
       ) : null}
 
       {student && reminders ? (
-        <Section id="reminders" title="Reminders">
+        <Section id="reminders" title="Clinic reminders">
           <ReminderSwitches initial={reminders} />
         </Section>
       ) : null}

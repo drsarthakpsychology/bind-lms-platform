@@ -9,7 +9,6 @@ const at = (t: string, date = DAY) => instant(date, t);
 
 const ANU = "u-anu";
 const RAVI = "u-ravi";
-const TEST = "u-test";
 
 function session(over: Partial<ClinicMySession> & { my?: Partial<ClinicMySession["my"]> } = {}): ClinicMySession {
   const { my, ...rest } = over;
@@ -218,20 +217,5 @@ describe("each student's own switches", () => {
     ];
     const out = allowed(list, new Map([[ANU, { ...DEFAULT_REMINDERS, sessionSoon: false }]]));
     expect(out.map((r) => r.userId)).toEqual([RAVI]);
-  });
-});
-
-describe("test account practice sessions", () => {
-  const sandbox = new Map([["s-class", TEST]]);
-  it("remind only the test account, never a real student", () => {
-    expect(kinds(facts({ userId: RAVI, sessions: [session()], sandboxOwner: sandbox }), at("09:30"))).toEqual([]);
-    expect(kinds(facts({ userId: TEST, sessions: [session()], sandboxOwner: sandbox }), at("09:30"))).toEqual(["sessionSoon"]);
-  });
-
-  it("a practice OPD session does not send OPD today or log your cases to a real student", () => {
-    const opd = new Map([["s-opd", TEST]]);
-    const f = facts({ userId: RAVI, sessions: [opdSession()], visits: [visit()], sandboxOwner: opd });
-    expect(kinds(f, at("07:10"))).toEqual([]);
-    expect(kinds(f, at("21:00"))).toEqual([]);
   });
 });

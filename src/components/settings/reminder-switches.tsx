@@ -8,10 +8,10 @@ import { saveReminders } from "@/app/(dashboard)/settings/reminder-actions";
 
 const ROWS: { key: keyof ReminderPrefs; title: string; meta: string; icon: React.ReactNode }[] = [
   { key: "opdDay", title: "OPD day", meta: "In the morning of your OPD day", icon: <CalendarCheck /> },
-  { key: "sessionSoon", title: "Before a class or OPD", meta: "30 minutes before it starts", icon: <Timer /> },
+  { key: "sessionSoon", title: "Before a class or OPD", meta: "30 minutes before one you must attend", icon: <Timer /> },
   { key: "scanOut", title: "Forgot to scan out", meta: "Just after a session ends", icon: <LogOut /> },
-  { key: "caseLog", title: "Log your cases", meta: "The evening after OPD", icon: <ClipboardList /> },
-  { key: "leaveLow", title: "Leaves running out", meta: "When only 1 leave is left", icon: <BellRing /> },
+  { key: "caseLog", title: "Log your cases", meta: "The evening after OPD, if you have not yet", icon: <ClipboardList /> },
+  { key: "leaveLow", title: "Only 1 leave left", meta: "Once, when it happens", icon: <BellRing /> },
 ];
 
 /** The clinic reminder switches (same as Me, Settings, Reminders in the app). Saved for the account, on every device. */

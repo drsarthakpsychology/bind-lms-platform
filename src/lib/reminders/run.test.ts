@@ -18,6 +18,8 @@ const RAVI = "u-ravi";
 const MEERA = "u-meera"; // blocked
 const ADMIN = "u-admin";
 const TEST = "u-test";
+const OLD = "u-old"; // access ended
+const C2 = "c-test"; // the admin's test cohort
 
 const sess = (over: Record<string, unknown>) => ({
   cohort_ids: [C1],
@@ -35,19 +37,27 @@ const sess = (over: Record<string, unknown>) => ({
 
 function seed(): TestDb {
   return makeTestDb({
-    cohorts: [{ id: C1, name: "Cohort 2", created_at: "2026-10-01" }],
-    cohort_members: [ANU, RAVI, MEERA, ADMIN, TEST].map((user_id) => ({ cohort_id: C1, user_id, added_at: "2026-10-02T00:00:00Z" })),
+    cohorts: [
+      { id: C1, name: "Cohort 2", created_at: "2026-10-01" },
+      { id: C2, name: "Test mode ABCD1234", is_test: true, created_at: "2026-11-01" },
+    ],
+    cohort_members: [
+      ...[ANU, RAVI, MEERA, ADMIN, TEST, OLD].map((user_id) => ({ cohort_id: C1, user_id, added_at: "2026-10-02T00:00:00Z" })),
+      { cohort_id: C2, user_id: TEST, added_at: "2026-11-01T00:00:00Z" },
+    ],
+    test_mode: [{ admin_id: ADMIN, test_user_id: TEST, test_cohort_id: C2, mirror_cohort_id: C1, active: true }],
     profiles: [
       { id: ANU, name: "Anu", roll_number: "1", role: "student", status: "active" },
       { id: RAVI, name: "Ravi", roll_number: "2", role: "student", status: "active" },
       { id: MEERA, name: "Meera", roll_number: "3", role: "student", status: "blocked" },
       { id: ADMIN, name: "Admin", roll_number: null, role: "admin", status: "active" },
       { id: TEST, name: "Test", roll_number: null, role: "student", status: "active", is_test: true },
+      { id: OLD, name: "Old", roll_number: "4", role: "student", status: "active", expires_at: "2026-11-01T00:00:00Z" },
     ],
     clinic_sessions: [
       sess({ id: "s-class", start_time: "10:00:00", end_time: "13:00:00", kind: "class", title: "Class" }),
       sess({ id: "s-opd", start_time: "17:00:00", end_time: "20:00:00", kind: "opd_evening", title: "OPD evening" }),
-      sess({ id: "s-practice", start_time: "10:00:00", end_time: "11:00:00", kind: "class", title: "Practice class", sandbox_user_id: TEST }),
+      sess({ id: "s-practice", cohort_ids: [C2], start_time: "10:00:00", end_time: "11:00:00", kind: "class", title: "Practice class" }),
     ],
     clinic_opd_assignments: [
       { id: "a-anu", cohort_id: C1, user_id: ANU, date: DAY, batch: "evening", state: "published", source: "new", published_at: "x" },
@@ -99,17 +109,17 @@ describe("the reminder run", () => {
     expect(bell()).toEqual([`${ANU}: OPD today, evening 5 to 8`]);
   });
 
-  it("9:30 am: the class reminder reaches every active student; not blocked, not admins, practice only to the test account", async () => {
+  it("9:30 am: the class reminder reaches every active student; not blocked, not ended, not admins, not test accounts; the test cohort only its test student", async () => {
     await run("09:30");
     // Anu's OPD today is still due (it stays due until her OPD starts, in case 7 am was missed).
-    expect(bell()).toEqual([`${ANU}: Class in 30 minutes`, `${ANU}: OPD today, evening 5 to 8`, `${RAVI}: Class in 30 minutes`, `${TEST}: Class in 30 minutes`, `${TEST}: Practice class in 30 minutes`]);
+    expect(bell()).toEqual([`${ANU}: Class in 30 minutes`, `${ANU}: OPD today, evening 5 to 8`, `${RAVI}: Class in 30 minutes`, `${TEST}: Practice class in 30 minutes`]);
   });
 
   it("sends each reminder once, however often the clock runs", async () => {
     await run("09:30");
     const again = await run("09:40");
     expect(again.sent).toBe(0);
-    expect(bell()).toHaveLength(5);
+    expect(bell()).toHaveLength(4);
     expect(pushed).toHaveLength(1);
   });
 
@@ -162,6 +172,18 @@ describe("the reminder run", () => {
     (db.tables.clinic_sessions[0] as { status: string }).status = "cancelled";
     await run("09:30");
     expect(bell()).toEqual([`${ANU}: OPD today, evening 5 to 8`, `${TEST}: Practice class in 30 minutes`]);
+  });
+
+  it("test cohort: nothing once its admin turns test mode off", async () => {
+    (db.tables.test_mode[0] as { active: boolean }).active = false;
+    await run("09:30");
+    expect(bell().some((b) => b.startsWith(TEST))).toBe(false);
+  });
+
+  it("before the test mode database step a test cohort reminds nobody", async () => {
+    db.missing.add("test_mode");
+    await run("09:30");
+    expect(bell().some((b) => b.startsWith(TEST))).toBe(false);
   });
 
   it("the bell notice opens the right page", async () => {

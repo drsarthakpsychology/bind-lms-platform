@@ -9,7 +9,7 @@ import { Button, T, toast } from "@/ds";
 import { introSeen, markIntroSeen, permissions, type PermKind, type PermState } from "@/lib/permissions";
 import { Enter, Swap } from "@/motion";
 import { groupFor } from "@/nav/targets";
-import { enablePush } from "@/push";
+import { enablePush, pushSetupProblem } from "@/push";
 import { Gate } from "@/screens/auth/gates";
 import { LecturesOnlyGate, outsideLectures } from "@/screens/auth/scope";
 import { markTourSeen, TabTour, tourSeen } from "@/screens/auth/tour";
@@ -21,10 +21,11 @@ const STEPS: Record<PermKind, { icon: typeof Bell; title: string; line: string; 
 };
 
 /** Which permissions to ask for on this account: only those the phone can still ask. Camera only for students (the clinic scanner). */
-export function introSteps(me: Me | null, states: Record<PermKind, PermState>): PermKind[] {
+export function introSteps(me: Me | null, states: Record<PermKind, PermState>, pushCanWork = true): PermKind[] {
   const askable = (s: PermState) => s === "ask" || s === "retry";
   const out: PermKind[] = [];
-  if (askable(states.notifications)) out.push("notifications");
+  // Not asked when this build cannot get notifications at all (no Firebase file or project id).
+  if (pushCanWork && askable(states.notifications)) out.push("notifications");
   if (groupFor(me) === "(student)" && askable(states.camera)) out.push("camera");
   return out;
 }
@@ -88,7 +89,7 @@ export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | 
     void (async () => {
       if (await introSeen()) return;
       const [notifications, camera] = await Promise.all([permissions.read("notifications"), permissions.read("camera")]);
-      const s = introSteps(me, { notifications, camera });
+      const s = introSteps(me, { notifications, camera }, pushSetupProblem() === null);
       // Shown once: remembered as soon as it appears (or when there is nothing to ask).
       markIntroSeen();
       if (live && s.length) setSteps(s);

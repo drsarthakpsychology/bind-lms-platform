@@ -12,8 +12,20 @@ const APP_NAME = "Vibha Psychology";
 const PACKAGE = "com.vibhapsychology.app";
 const SITE = "vibhapsychology.com";
 const BLUE = "#1d44d8";
-/** Firebase file for push on Android. The build adds it when the owner has given it (docs/app/README.md). */
-const GOOGLE_SERVICES = fs.existsSync(path.join(__dirname, "google-services.json")) ? "./google-services.json" : undefined;
+/**
+ * Firebase file for push on Android. The build adds it when the owner has given it
+ * (GitHub secret GOOGLE_SERVICES_JSON, written to apps/mobile/google-services.json by the
+ * build; or a path in GOOGLE_SERVICES_FILE, as expo.dev file variables give it).
+ */
+function googleServices(): string | undefined {
+  const given = process.env.GOOGLE_SERVICES_FILE;
+  if (given && fs.existsSync(given)) return given;
+  return fs.existsSync(path.join(__dirname, "google-services.json")) ? "./google-services.json" : undefined;
+}
+const GOOGLE_SERVICES = googleServices();
+/** The Expo project id push tokens need (GitHub variable EAS_PROJECT_ID). A made-up value is ignored. */
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const EAS_PROJECT_ID = UUID.test((process.env.EAS_PROJECT_ID ?? "").trim()) ? (process.env.EAS_PROJECT_ID ?? "").trim() : undefined;
 /**
  * Version shown in the stores. Raise it by hand for each public release (1.0.0, 1.0.1, 1.1.0).
  * The build number (Android versionCode, iPhone buildNumber) must go up on every upload:
@@ -209,6 +221,8 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
     // "mock" serves fixtures from inside the app (no server needed). "live" calls apiUrl.
     apiMode: process.env.EXPO_PUBLIC_API_MODE ?? "live",
     site: `https://${SITE}`,
-    eas: { projectId: process.env.EAS_PROJECT_ID || undefined },
+    eas: { projectId: EAS_PROJECT_ID },
+    // What this build has for push, so Settings can say plainly when notifications are not set up.
+    push: { projectId: Boolean(EAS_PROJECT_ID), firebase: Boolean(GOOGLE_SERVICES) },
   },
 });

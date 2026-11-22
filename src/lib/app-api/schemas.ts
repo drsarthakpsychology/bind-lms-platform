@@ -30,6 +30,8 @@ export const EXPO_TOKEN_RE = /^Expo(nent)?PushToken\[[A-Za-z0-9_-]{10,100}\]$/;
 export const updateDeviceSchema = z.object({
   name: z.string().trim().min(1).max(80).optional(),
   pushToken: z.string().regex(EXPO_TOKEN_RE).nullable().optional(),
+  /** Why this phone has no push token (only logged, so the owner can see why push is not reaching phones). */
+  pushProblem: z.enum(["no_project_id", "no_firebase", "denied", "token_failed"]).optional(),
   appVersion: z.string().max(20).optional(),
   osVersion: z.string().max(40).optional(),
 });

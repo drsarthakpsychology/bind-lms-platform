@@ -93,9 +93,15 @@ export async function GET(req: Request) {
     case "clinic-reminders": {
       // Smart reminders (every 10 minutes): OPD today, session in 30 minutes,
       // forgot to scan out, log your cases, only 1 leave left. Each is sent once.
-      const { runRemindersNow } = await import("@/lib/reminders/run");
+      // Also checks the delivery receipts of earlier pushes and clears dead phones.
+      const [{ runRemindersNow }, { checkReceipts }] = await Promise.all([import("@/lib/reminders/run"), import("@/lib/app-api/push-receipts")]);
       const report = await runRemindersNow();
-      return NextResponse.json({ task, ...report });
+      const receipts = await checkReceipts();
+      return NextResponse.json({ task, ...report, receipts });
+    }
+    case "push-receipts": {
+      const { checkReceipts } = await import("@/lib/app-api/push-receipts");
+      return NextResponse.json({ ok: true, task, ...(await checkReceipts()) });
     }
     case "send-reminders": {
       // TODO(provider): daily digest via Resend when a template + key exist.

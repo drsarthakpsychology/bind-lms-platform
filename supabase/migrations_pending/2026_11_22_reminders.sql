@@ -1,5 +1,5 @@
 -- =============================================================================
--- Smart reminders (17 Nov 2026): push and bell reminders for the clinic
+-- Smart reminders (22 Nov 2026): push and bell reminders for the clinic
 --   opd_day       morning of an OPD day ("OPD today, evening 5 to 8")
 --   session_soon  30 minutes before a session the student must attend
 --   scan_out      shortly after a session ends, scanned in but not out
@@ -62,3 +62,20 @@ create policy "app_reminder_log_admin_select" on public.app_reminder_log
 revoke all on public.app_reminder_log from anon;
 revoke all on public.app_reminder_log from authenticated;
 grant select on public.app_reminder_log to authenticated;
+
+-- 3. Push delivery receipts. Each push Expo takes gives a ticket; about 15
+--    minutes later its receipt says whether Google or Apple delivered it. The
+--    server keeps the tickets here, the cron checks them, clears phones that
+--    are gone (the app was removed) and deletes tickets older than a day.
+--    Server only: nobody signed in can read or write it.
+create table if not exists public.app_push_tickets (
+  ticket_id text primary key check (char_length(ticket_id) between 1 and 200),
+  token text not null check (char_length(token) between 1 and 300),
+  user_id uuid references auth.users (id) on delete cascade,
+  created_at timestamptz not null default now()
+);
+create index if not exists app_push_tickets_created_at on public.app_push_tickets (created_at);
+
+alter table public.app_push_tickets enable row level security;
+revoke all on public.app_push_tickets from anon;
+revoke all on public.app_push_tickets from authenticated;

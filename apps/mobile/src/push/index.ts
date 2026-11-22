@@ -31,6 +31,59 @@ if (Platform.OS !== "web") {
 
 export type PushStatus = "granted" | "denied" | "undetermined" | "unavailable";
 
+/** Why push cannot work on this phone or this build. */
+export type PushProblem = "web" | "no_project_id" | "no_firebase" | "denied" | "token_failed";
+
+type BuildPush = { projectId?: boolean; firebase?: boolean };
+
+function projectIdOf(): string | undefined {
+  const extra = Constants.expoConfig?.extra as { eas?: { projectId?: string } } | undefined;
+  return extra?.eas?.projectId ?? Constants.easConfig?.projectId ?? undefined;
+}
+
+/**
+ * What this build has for push (set by app.config.ts). Null when push can work;
+ * otherwise the missing piece. Pure apart from the build's settings.
+ */
+export function pushSetupProblem(os: string = Platform.OS, isDevice: boolean = Device.isDevice, build: BuildPush | undefined = (Constants.expoConfig?.extra as { push?: BuildPush } | undefined)?.push, projectId: string | undefined = projectIdOf()): PushProblem | null {
+  if (os === "web" || !isDevice) return "web";
+  // Only what the build says for sure; anything else is found out by asking for a token.
+  if (!projectId && build?.projectId === false) return "no_project_id";
+  // iPhone push needs no Firebase file.
+  if (os === "android" && build?.firebase === false) return "no_firebase";
+  return null;
+}
+
+/** The last thing push said on this phone, for Settings. */
+let lastProblem: PushProblem | null = null;
+const listeners = new Set<() => void>();
+function setProblem(p: PushProblem | null) {
+  if (p === lastProblem) return;
+  lastProblem = p;
+  for (const l of listeners) l();
+}
+
+/** Why notifications cannot reach this phone right now (null: they can). */
+export function usePushProblem(): PushProblem | null {
+  const build = pushSetupProblem();
+  const last = React.useSyncExternalStore(
+    (l) => {
+      listeners.add(l);
+      return () => listeners.delete(l);
+    },
+    () => lastProblem,
+    () => lastProblem,
+  );
+  return build ?? last;
+}
+
+/** Tells the server why this phone has no push address (it only logs it). Never throws. */
+function report(problem: PushProblem): void {
+  setProblem(problem);
+  if (problem === "web") return;
+  void api.put<DeviceState>("/devices/current", { pushProblem: problem }).catch(() => undefined);
+}
+
 export async function pushStatus(): Promise<PushStatus> {
   if (Platform.OS === "web" || !Device.isDevice) return "unavailable";
   try {
@@ -47,12 +100,17 @@ export async function enablePush(): Promise<PushStatus> {
     return await enablePushInner();
   } catch {
     // Any failure (no Firebase set up on Android: "Default FirebaseApp is not initialized", no project id, a native error) only turns push off.
+    report("token_failed");
     return "unavailable";
   }
 }
 
 async function enablePushInner(): Promise<PushStatus> {
-  if (Platform.OS === "web" || !Device.isDevice) return "unavailable";
+  const setup = pushSetupProblem();
+  if (setup) {
+    report(setup);
+    return "unavailable";
+  }
   if (Platform.OS === "android") {
     // eslint-disable-next-line import/namespace -- re-exported with export *
     await Notifications.setNotificationChannelAsync("default", { name: "Messages and reminders", importance: Notifications.AndroidImportance.DEFAULT, lightColor: "#1d44d8" }).catch(() => undefined);
@@ -66,15 +124,41 @@ async function enablePushInner(): Promise<PushStatus> {
   }
   let p = await Notifications.getPermissionsAsync();
   if (!p.granted && p.canAskAgain) p = await Notifications.requestPermissionsAsync();
-  if (!p.granted) return p.canAskAgain ? "undetermined" : "denied";
+  if (!p.granted) {
+    if (!p.canAskAgain) report("denied");
+    return p.canAskAgain ? "undetermined" : "denied";
+  }
+  let token: string;
   try {
-    const projectId = (Constants.expoConfig?.extra as { eas?: { projectId?: string } } | undefined)?.eas?.projectId ?? Constants.easConfig?.projectId;
-    const token = await Notifications.getExpoPushTokenAsync(projectId ? { projectId } : undefined);
-    await api.put<DeviceState>("/devices/current", { pushToken: token.data });
-    return "granted";
-  } catch {
-    // No project id or no Google services yet: permission is granted but there is no token.
+    const projectId = projectIdOf();
+    token = (await Notifications.getExpoPushTokenAsync(projectId ? { projectId } : undefined)).data;
+  } catch (e) {
+    // Permission is granted but there is no token (Firebase not set up, or Google could not be reached).
+    if (__DEV__) console.warn("push token failed:", e instanceof Error ? e.message : e);
+    report("token_failed");
     return "unavailable";
+  }
+  // The server keeps it on this phone's row; a failed save is tried again on the next start.
+  await api.put<DeviceState>("/devices/current", { pushToken: token });
+  setProblem(null);
+  return "granted";
+}
+
+/**
+ * On each start, when push is on and allowed: hand the server the current token
+ * again (tokens can change, and a first save may have failed offline).
+ */
+export async function refreshPushToken(): Promise<void> {
+  if (pushSetupProblem()) return;
+  try {
+    const p = await Notifications.getPermissionsAsync();
+    if (!p.granted) {
+      if (!p.canAskAgain) setProblem("denied");
+      return;
+    }
+    await enablePushInner();
+  } catch {
+    /* tried again next start */
   }
 }
 
@@ -160,6 +244,14 @@ export function usePushRouting(): void {
       }
     };
   }, []);
+
+  // Once signed in: give the server this phone's current push address (once per run).
+  const refreshed = React.useRef(false);
+  React.useEffect(() => {
+    if (phase !== "ready" || refreshed.current || Platform.OS === "web") return;
+    refreshed.current = true;
+    void refreshPushToken();
+  }, [phase]);
 
   // A tap that arrived while the app was locked opens once the PIN is in.
   React.useEffect(() => {
