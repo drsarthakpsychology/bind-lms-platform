@@ -40,7 +40,10 @@ export function NoteView({
   serverState,
   save,
   position,
+  quick = [],
 }: {
+  /** Typed Quick Notes on this topic (criteria, comparisons, medicine tables). */
+  quick?: { id: string; title: string; typeLabel: string }[];
   note: Note;
   prev?: Note;
   next?: Note;
@@ -72,7 +75,7 @@ export function NoteView({
       <PageMotion>
       <article data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-8 px-1 sm:px-0")}>
         <header className="flex min-w-0 flex-col gap-2">
-          <BackLink href="/study/notes">Summaries</BackLink>
+          <BackLink href="/study/notes">Quick Notes</BackLink>
           <p className="type-small text-muted-foreground type-num">
             {WEEK_BLOCKS[note.block]} · note {position.index + 1}
           </p>
@@ -161,6 +164,19 @@ export function NoteView({
           </section>
         ) : null}
 
+        {quick.length ? (
+          <section className="flex min-w-0 flex-col gap-3" aria-labelledby="quick-notes">
+            <h2 id="quick-notes" className="type-h3">
+              Quick Notes on this topic
+            </h2>
+            <RowList>
+              {quick.map((q) => (
+                <Row key={q.id} href={`/study/notes/${q.id}`} title={q.title} meta={q.typeLabel} />
+              ))}
+            </RowList>
+          </section>
+        ) : null}
+
         <section className="flex min-w-0 flex-col gap-4" aria-labelledby="next-steps">
           <h2 id="next-steps" className="type-h3">
             What to do now
@@ -196,7 +212,7 @@ export function NoteView({
     <article className="mx-auto max-w-3xl space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link href="/study/notes" className={backLinkClass}>
-          <ArrowLeft className="size-4" aria-hidden /> Back to summaries
+          <ArrowLeft className="size-4" aria-hidden /> Back to Quick Notes
         </Link>
         <ViewToggle />
       </div>

@@ -131,7 +131,10 @@ export function ModuleViewV2({
   owner = "",
   labOpen = false,
   labLinks = [],
+  quickNotes = [],
 }: {
+  /** This module's Quick Notes (each note links back to the module). */
+  quickNotes?: { id: string; title: string }[];
   module: StudyModule;
   nextModule?: { id: string; title: string; num: number };
   serverState: LearnState | null;
@@ -368,6 +371,15 @@ export function ModuleViewV2({
               <ChevronRight aria-hidden className={chevron} />
             </Link>
           ) : null}
+          {quickNotes.map((q) => (
+            <Link key={q.id} href={`/study/notes/${q.id}`} className={rowLink}>
+              <span className="flex min-w-0 flex-1 flex-col">
+                <span className="type-body font-semibold [overflow-wrap:anywhere]">{q.title}</span>
+                <span className="type-small text-muted-foreground">Quick Note</span>
+              </span>
+              <ChevronRight aria-hidden className={chevron} />
+            </Link>
+          ))}
           {labOpen
             ? labLinks.map((x) => (
                 <Link key={x.id} href={`/games/lab/${x.id}`} className={rowLink}>

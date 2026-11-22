@@ -93,8 +93,8 @@ function backLabel(href: string): string {
   if (href === "/practise") return "Back to Practise";
   if (href === "/me") return "Back to Me";
   if (href === "/study") return "Back to Study";
-  if (href === "/study/notes") return "Back to notes";
-  if (href === "/study/reference") return "Back to Quick Reference";
+  if (href === "/study/notes") return "Back to Quick Notes";
+  if (href === "/study/reference") return "Back to Quick Notes";
   if (/^\/study\/notes\/[^/]+$/.test(href)) return "Back to the note";
   if (/^\/study\/[^/]+$/.test(href)) return "Back to the module";
   if (href.startsWith("/study/")) return "Back to Study";

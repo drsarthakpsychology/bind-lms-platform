@@ -1,47 +1,12 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { requireFeature } from "@/lib/flags";
-import { referenceIndex } from "@/lib/reference/data";
-import { ReferenceLibrary, type RefKind } from "@/components/reference/reference-library";
-import { backLinkClass } from "@/components/design-system/back-link";
-import { PageFrame } from "@/components/ds";
-import { ListHead } from "@/components/play/parts";
-import { uiV2 } from "@/lib/ui/v2-server";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = { title: "Quick Reference A to Z" };
-
-const KINDS = new Set(["disorder", "medicine", "term"]);
-
-/**
- * /study/reference: the Quick Reference A to Z: disorders, medicines and words,
- * each one tap from a short, deep summary. A separate library: nothing here
- * appears inside lessons (owner rule 2026-11-06).
- */
+/** /study/reference: the old Quick reference A to Z now lives inside Quick Notes. Keeps ?q= and ?kind=. */
 export default async function ReferencePage({ searchParams }: { searchParams: Promise<{ q?: string; kind?: string }> }) {
-  await requireFeature("learn");
   const sp = await searchParams;
-  const items = referenceIndex();
-  const kind = KINDS.has(sp.kind ?? "") ? (sp.kind as RefKind) : "all";
-  if (await uiV2()) {
-    return (
-      <PageFrame>
-        <ListHead back={{ href: "/study", label: "Study" }} tag="Quick reference" title="A to Z" lead="Disorders, medicines and words." />
-        <ReferenceLibrary items={items} initialQuery={(sp.q ?? "").slice(0, 80)} initialKind={kind} />
-      </PageFrame>
-    );
-  }
-  return (
-    <div className="mx-auto max-w-3xl space-y-6">
-      <Link href="/study" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Back to Study
-      </Link>
-      <header className="space-y-1">
-        <p className="text-eyebrow text-link">Quick Reference</p>
-        <h1 className="text-h1">A to Z</h1>
-        <p className="text-sm text-muted-foreground">Disorders, medicines and words.</p>
-      </header>
-      <ReferenceLibrary items={items} initialQuery={(sp.q ?? "").slice(0, 80)} initialKind={kind} />
-    </div>
-  );
+  const u = new URLSearchParams();
+  if (sp.q) u.set("q", sp.q.slice(0, 80));
+  const type = sp.kind === "disorder" ? "criteria" : sp.kind === "medicine" ? "pharm" : sp.kind === "term" ? "term" : null;
+  if (type) u.set("type", type);
+  const qs = u.toString();
+  redirect(qs ? `/study/notes?${qs}` : "/study/notes");
 }
