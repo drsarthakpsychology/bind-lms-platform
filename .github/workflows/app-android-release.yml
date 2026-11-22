@@ -11,7 +11,8 @@
 #   ANDROID_KEYSTORE_PASSWORD  the key file's password
 #   ANDROID_KEY_ALIAS          the key's name inside the file (we use: upload)
 #   ANDROID_KEY_PASSWORD       the key's password (same as the file's if you followed OWNER_STEPS.md)
-#   GOOGLE_SERVICES_JSON       optional: google-services.json from Firebase, base64 encoded.
+#   GOOGLE_SERVICES_JSON       optional: google-services.json from Firebase. Paste the whole file as it is
+#                              (base64 encoded also works).
 #                              Without it the app builds and works, but cannot get push messages.
 # Variables (Settings > Secrets and variables > Actions > Variables), all optional:
 #   APP_API_URL                server address, default https://vibhapsychology.com/api/app/v1
@@ -112,7 +113,8 @@ jobs:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
           if [ -n "$GOOGLE_SERVICES_JSON" ]; then
-            echo "$GOOGLE_SERVICES_JSON" | base64 -d > google-services.json
+            # Pasted as it is (starts with "{"), or base64 encoded.
+            if printf '%s' "$GOOGLE_SERVICES_JSON" | head -c 200 | grep -q '{'; then printf '%s' "$GOOGLE_SERVICES_JSON" > google-services.json; else echo "$GOOGLE_SERVICES_JSON" | base64 -d > google-services.json; fi
             if ! grep -q '"com.vibhapsychology.app"' google-services.json; then
               echo "::error::google-services.json is not for com.vibhapsychology.app. In Firebase, add an Android app with exactly that package name and download its file again."
               exit 1
@@ -121,6 +123,7 @@ jobs:
           else
             echo "::warning::No GOOGLE_SERVICES_JSON secret: this build cannot receive push messages. Everything else works."
           fi
+          if [ -z "$EAS_PROJECT_ID" ]; then echo "::warning::No EAS_PROJECT_ID variable: this build cannot receive push messages."; fi
 
       - name: Make the Android project
         run: npx expo prebuild --platform android --no-install --clean

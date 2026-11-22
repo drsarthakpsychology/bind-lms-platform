@@ -11,8 +11,8 @@
 #     ANDROID_KEYSTORE_PASSWORD its password
 #     ANDROID_KEY_ALIAS         the key alias inside it
 #     ANDROID_KEY_PASSWORD      the key password
-#     GOOGLE_SERVICES_JSON      the google-services.json file from Firebase,
-#                               base64 encoded (needed for push notifications)
+#     GOOGLE_SERVICES_JSON      the google-services.json file from Firebase, pasted
+#                               as it is or base64 encoded (needed for push notifications)
 #   Variables
 #     APP_API_MODE              "mock" (sample data inside the app, the default)
 #                               or "live" (the real server)
@@ -93,7 +93,17 @@ jobs:
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         if: env.GOOGLE_SERVICES_JSON != ''
-        run: echo "$GOOGLE_SERVICES_JSON" | base64 -d > google-services.json
+        run: |
+          # Pasted as it is (starts with "{"), or base64 encoded.
+          if printf '%s' "$GOOGLE_SERVICES_JSON" | head -c 200 | grep -q '{'; then printf '%s' "$GOOGLE_SERVICES_JSON" > google-services.json; else echo "$GOOGLE_SERVICES_JSON" | base64 -d > google-services.json; fi
+          grep -q '"com.vibhapsychology.app"' google-services.json || echo "::warning::google-services.json is not for com.vibhapsychology.app: push will not work."
+
+      - name: Say if push can work in this build
+        env:
+          HAS_FIREBASE: ${{ secrets.GOOGLE_SERVICES_JSON != '' }}
+        run: |
+          [ "$HAS_FIREBASE" = "true" ] || echo "::warning::No GOOGLE_SERVICES_JSON secret: this APK cannot get push notifications."
+          [ -n "$EAS_PROJECT_ID" ] || echo "::warning::No EAS_PROJECT_ID variable: this APK cannot get push notifications."
 
       - name: Make the Android project
         run: npx expo prebuild --platform android --no-install --clean
