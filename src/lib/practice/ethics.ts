@@ -200,8 +200,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Share the basics with him. He pays, he deserves something.", consequence: "You've breached confidentiality. Even a payer has no automatic right to clinical information. The client's trust is gone and you have no defence if it's complained about.", correct: false },
       {
-        label: "Compromise: tell him only that she's 'managing fine'. Nothing specific.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Tell him only that she is 'managing fine', and nothing specific.",
+        consequence: "Even 'managing fine' is information about her care that she has not agreed to share, and it confirms she is your client. It also invites more calls.",
         correct: false,
       },
       { label: "Tell him you can't share anything without her consent, and invite her to decide what, if anything, she wants him to know.", consequence: "Correct. Payment creates no disclosure right. The client decides; your job is to make that decision real and safe.", correct: true },
@@ -216,8 +216,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Provide the report: the employer is the payer and the consent to attend covers it.", consequence: "Wrong. Consent to attend is not consent to disclose content. The report would breach confidentiality and likely the MHCA's privacy provisions.", correct: false },
       {
-        label: "Compromise: give the employer a summary of each employee's 'mood' without details.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Give the employer a short note on each employee's 'mood', without details.",
+        consequence: "A mood rating is still clinical content. Naming employees and their mood breaks confidentiality and can harm their jobs.",
         correct: false,
       },
       { label: "Provide attendance-only data if agreed, never content, and get the employee's written consent for anything more.", consequence: "Correct. Anonymised/attendance data can be a legitimate employer arrangement; clinical content never flows without explicit consent.", correct: true },
@@ -232,8 +232,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Respond. They clearly need help and you don't want to abandon them.", consequence: "You've trained them that 11pm texting works, eroded the session boundary, and modelled unavailability in a crisis. The boundary, not the message, becomes the therapy issue.", correct: false },
       {
-        label: "Compromise: reply briefly tonight but ask them to message during sessions next time.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Reply briefly tonight, and ask them to message only during sessions next time.",
+        consequence: "A quick reply tonight teaches that late messages get answers, and a vague request will not change it. The boundary and a crisis plan need setting clearly in session.",
         correct: false,
       },
       { label: "In the next session, set the communication boundary explicitly: what counts as urgent, what to do in a real crisis, and when you will respond.", consequence: "Correct. Boundaries are therapeutic: a crisis plan and a response window protect both of you and teach the client a working model of care.", correct: true },
@@ -248,8 +248,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Write it: three weeks is enough to know, and they're relying on you.", consequence: "You've issued a medical-grade certificate without assessment: a false document that could harm the client and your registration if challenged.", correct: false },
       {
-        label: "Compromise: write a general letter saying they've 'been under stress' without a diagnosis.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Write a general letter saying they have 'been under stress', without a diagnosis.",
+        consequence: "A vague letter on your letterhead will be read as a professional opinion you have not formed. Describe only what you have observed and support a proper assessment.",
         correct: false,
       },
       { label: "Explain you can describe your observations and support the proper assessment pathway, but a diagnosis/certificate is not a three-week output.", consequence: "Correct. Certificates have legal weight; you support the process without fabricating it.", correct: true },
@@ -264,8 +264,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Write it. You're the expert and your client asked.", consequence: "You've offered an expert opinion beyond your assessment scope, in a legally consequential context, for a purpose you can't verify. That's a complaint waiting to happen.", correct: false },
       {
-        label: "Compromise: write the letter but phrase it vaguely so it can't be used directly.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Write the letter, but word it vaguely so it cannot be used directly in court.",
+        consequence: "A vague letter can still be used, and it may mislead the court. Write only an accurate summary of what you assessed, and explain your role.",
         correct: false,
       },
       { label: "Decline the advocacy framing; offer an accurate clinical summary of what you actually assessed, and explain the limits of your role.", consequence: "Correct. An honest clinical record can be used; a partisan 'strong letter' cannot be defended.", correct: true },
@@ -280,8 +280,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Respect the child's wish: breaking it will damage the relationship.", consequence: "You've chosen secrecy over safety. POCSO's reporting duty doesn't pause for the child's fear: the mandated reporter must act.", correct: false },
       {
-        label: "Compromise: tell the child you'll wait a week to see if they change their mind.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Tell the child you will wait a week to see if they change their mind.",
+        consequence: "Waiting leaves the child at risk, and POCSO requires reporting without delay. The child needs to hear, kindly, that you must tell a safe adult now.",
         correct: false,
       },
       { label: "Tell the child you must tell a safe adult and involve the school's child-protection lead, following the mandated reporting pathway.", consequence: "Correct. You manage the child's fear with honesty and support, but the report goes forward. That IS the child-protective act.", correct: true },
@@ -296,8 +296,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Give your best guess. They deserve an answer.", consequence: "A casual label without the assessment process behind it is worse than no label. It can be repeated, Googled, and internalised as identity.", correct: false },
       {
-        label: "Compromise: tell them a plausible label but say it's 'unofficial'.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Tell them a likely label, but say it is 'unofficial'.",
+        consequence: "An 'unofficial' label still sticks and may be wrong. Share your formulation and what you are still assessing instead.",
         correct: false,
       },
       { label: "Share your formulation honestly: what you see, what you're still assessing, and what the label would and wouldn't change about the work.", consequence: "Correct. The formulation is more honest and more useful than a premature label.", correct: true },
@@ -312,8 +312,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Refuse. They're a minor, parents must know everything.", consequence: "You've removed a functioning young person's access to help. The mature-minor doctrine and Gillick-style reasoning exist precisely for this case.", correct: false },
       {
-        label: "Compromise: continue seeing them but ask them to tell their parents eventually.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Keep seeing them, and ask them to tell their parents eventually.",
+        consequence: "This avoids the real question. Assess their capacity and agree clear limits now, including that safety issues go to parents.",
         correct: false,
       },
       { label: "Assess their capacity to consent, and negotiate a workable confidentiality arrangement: safety issues still go to parents.", consequence: "Correct. Capacity assessment, not age assumption. Safety overrides; otherwise their autonomy is respected.", correct: true },
@@ -328,8 +328,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Keep it confidential. They trust you, and nothing may have happened yet.", consequence: "You've withheld information about an identifiable threat of serious harm. The safety exception exists precisely here.", correct: false },
       {
-        label: "Compromise: mention it to a supervisor anonymously but take no other action.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Mention it to a supervisor without names, and take no other action.",
+        consequence: "Supervision is right, but following the colleague home is a real risk to someone. Anonymous advice alone does not protect them.",
         correct: false,
       },
       { label: "Address the risk directly, involve the appropriate authorities/support, and document the decision to break confidentiality.", consequence: "Correct. Imminent risk to an identifiable other is the classic exception: action, not secrecy, is the ethical move.", correct: true },
@@ -344,8 +344,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "It's the hospital's business, not your role to interfere.", consequence: "You've witnessed a likely MHA violation and stayed silent. The Act restricts restraint sharply; witnessing abuse has its own ethical duty.", correct: false },
       {
-        label: "Compromise: mention it to the nurse privately that it's 'not ideal'.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Tell the nurse quietly that it is 'not ideal', and leave it there.",
+        consequence: "A quiet word changes nothing. Restraint as a response to shouting breaks section 97 of the Mental Healthcare Act and must be raised properly.",
         correct: false,
       },
       { label: "Raise it through the hospital's grievance mechanism and with the treating team, documenting what you saw.", consequence: "Correct. MHCA 2017 severely restricts restraint; reporting observed violations is the ethical minimum.", correct: true },
@@ -360,8 +360,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Testify fully: the child needs you.", consequence: "You may breach the child's confidentiality AND the legal rules on counselling communications in POCSO matters. Your role is the child's wellbeing, not advocacy in their litigation.", correct: false },
       {
-        label: "Compromise: testify but only about the parts that help the child.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Agree to testify, but only about the parts that help the child.",
+        consequence: "A witness cannot pick only the helpful parts; that can damage the case and your credibility. Clarify the legal position before agreeing.",
         correct: false,
       },
       { label: "Clarify the legal position on counsellor testimony with the child's legal guardian and the court's procedure before agreeing to anything.", consequence: "Correct. Counselling communications have special protection; participation must follow legal process, not a request.", correct: true },
@@ -376,8 +376,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Take the case: refusing looks weak and they'll find someone else.", consequence: "You're practising beyond your competence without supervision: the single most common factor in RCI complaints.", correct: false },
       {
-        label: "Compromise: take the case and 'borrow' a senior's supervision informally.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Take the case and ask a senior for informal advice now and then.",
+        consequence: "Occasional informal advice is not supervision. With complex trauma and no arrangement in place, the client is at risk.",
         correct: false,
       },
       { label: "Take the case ONLY with a supervision arrangement in place, and be honest about your limits in the referral conversation.", consequence: "Correct. Supervision is the safety net that makes taking the case ethical.", correct: true },
@@ -392,8 +392,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Let them sit in. They're paying and they're the parents.", consequence: "You've hollowed out the therapy: the teen will not speak freely, and the sessions become a performance for the parents.", correct: false },
       {
-        label: "Compromise: let the parents sit in for the first session only.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Let the parents sit in on the first session only.",
+        consequence: "One session with parents present sets a pattern and may stop the teen talking freely. Agree the privacy arrangement with everyone at the start.",
         correct: false,
       },
       { label: "Offer the parents a separate initial session, explain the value of the teen's privacy, and negotiate a review structure that keeps them informed without surveillance.", consequence: "Correct. The teen's consent to therapy is real; parental involvement is negotiated, not assumed.", correct: true },
@@ -408,8 +408,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Share the notes: the family has a right to understand.", consequence: "Confidentiality survives death in most jurisdictions and codes. The notes contain third-party references and private material the client never consented to expose.", correct: false },
       {
-        label: "Compromise: share the notes with the child's own therapist only.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Share the notes with the son's or daughter's own therapist only.",
+        consequence: "Their therapist is still a third party. Confidentiality continues after death, and the notes may name other people.",
         correct: false,
       },
       { label: "Offer a compassionate summary that protects third parties, and discuss the bereavement support the family might use.", consequence: "Correct. A synthesis of what helps the family grieve, not a release of records, honours both the dead and the living.", correct: true },
@@ -424,8 +424,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Sell the package. They agreed, and it's their money.", consequence: "Exploiting vulnerability in a therapeutic relationship is an ethical breach; the 'agreement' is not meaningful consent under pressure.", correct: false },
       {
-        label: "Compromise: sell a smaller package, 10 sessions, and call it done.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Sell a smaller package of 10 sessions instead, and leave it there.",
+        consequence: "Smaller, but still sold to someone acting out of desperation. Name the pressure and agree a plan they can afford.",
         correct: false,
       },
       { label: "Recommend a sustainable plan, name the pressure openly, and refuse to profit from their desperation.", consequence: "Correct. The therapeutic relationship must not exploit distress. A smaller honest plan is the ethical sale.", correct: true },
@@ -440,8 +440,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Confirm what you can. You're all in the group together.", consequence: "You've breached the other member's confidentiality and fed a gossip dynamic that destroys group safety.", correct: false },
       {
-        label: "Compromise: confirm nothing but hint that 'it's complicated'.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Confirm nothing, but hint that 'it's complicated'.",
+        consequence: "A hint is a disclosure. It harms the other member and the group's trust.",
         correct: false,
       },
       { label: "Decline to confirm anything about another member, and address the boundary in group: both for the speaker and the group's safety.", consequence: "Correct. The group contract includes confidentiality BETWEEN members; you model protecting it.", correct: true },
@@ -456,8 +456,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Accept it: hospitals know what they're doing.", consequence: "Six hours of seclusion without documented review is a likely MHA violation you've witnessed and ignored.", correct: false },
       {
-        label: "Compromise: mention your concern to the client afterwards so they can complain.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Tell the client afterwards that they can complain if they want to.",
+        consequence: "Leaving it to the client puts the burden on the person who was harmed. Seclusion is not allowed under the Act; you should document it and raise it yourself.",
         correct: false,
       },
       { label: "Document what you saw, raise it with the treating team and the hospital's grievance channel, and support the client afterwards.", consequence: "Correct. Seclusion has strict limits and documentation duties under MHCA 2017; silence is complicity.", correct: true },
@@ -472,8 +472,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Record. They said fine.", consequence: "That 'fine' is not informed consent; it's pressure-induced compliance. The recording has no ethical basis.", correct: false },
       {
-        label: "Compromise: record but promise to delete it right after supervision.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Record it, but promise to delete it straight after supervision.",
+        consequence: "Deleting it later does not fix the consent. A 'fine' given under pressure is not real agreement.",
         correct: false,
       },
       { label: "Explain what the recording is for, who will hear it, how it's stored and deleted, and treat a 'fine' under pressure as a no.", consequence: "Correct. Informed consent is specific, voluntary, and revocable. You document the explanation and the agreement.", correct: true },
@@ -488,8 +488,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "It's the hospital's job. Nothing to do with you.", consequence: "You've missed a transition moment where relapse is likeliest. Discharge without understanding is a failed handover.", correct: false },
       {
-        label: "Compromise: tell the family to ask the pharmacy about the medicines.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Tell the family to ask the chemist about the medicines.",
+        consequence: "A chemist can explain the tablets, but not the plan. The treating team must give a proper handover, and you can help them ask for it.",
         correct: false,
       },
       { label: "Help them make a written medication/support plan for discharge, and flag the information gap to the treating team for a proper handover.", consequence: "Correct. Discharge planning is part of continuity of care; a confused patient leaving with medicines they don't understand is a foreseeable harm.", correct: true },
@@ -504,8 +504,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Laugh it off. It's just teenage talk.", consequence: "You've let a possible disclosure window close. Children test adults before telling; a closed response teaches them silence.", correct: false },
       {
-        label: "Compromise: tell them they can ask you anything anytime, without saying more.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Tell them they can ask you anything, any time, and say nothing more.",
+        consequence: "Kind, but it leaves the real question unanswered. A serious, open answer shows them you are safe to tell.",
         correct: false,
       },
       { label: "Answer seriously and openly: what the law says, what a child should do, and that you're a safe person to tell.", consequence: "Correct. This is the prevention conversation: the child learns the rule and that you are report-safe.", correct: true },
@@ -520,8 +520,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Write the full history: the psychiatrist needs it to do their job.", consequence: "You've shared information the client explicitly withheld consent for. A referral without consent is a breach, however well-intentioned.", correct: false },
       {
-        label: "Compromise: write the letter with the history but mark it 'confidential to psychiatrist'.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Write the full history, but mark the letter 'confidential to psychiatrist'.",
+        consequence: "Marking it confidential does not replace their consent. Explain why the history matters and agree the letter with them.",
         correct: false,
       },
       { label: "Explain why the history matters for safe care, and write a letter the client has seen and agreed to.", consequence: "Correct. The client's consent to the referral is explicit and informed; a letter they've seen builds trust and is safer.", correct: true },
@@ -536,8 +536,8 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     options: [
       { label: "Provide what you can. Someone has to help.", consequence: "You're taking on a medical role without the authority for it. Panic can mimic cardiac events; handing out sedatives is outside your scope entirely.", correct: false },
       {
-        label: "Compromise: give them a herbal calmant a family member suggested.",
-        consequence: "You chose a half-measure. It feels safer than either extreme, but it is the choice that satisfies no one and protects no one. The middle path here is where the real damage happens: not the worst act, but the one that looks reasonable until it is examined.",
+        label: "Give them a herbal calming remedy that a family member suggested.",
+        consequence: "Giving any remedy is outside your role and may be unsafe. Stay, help them breathe and arrange medical help.",
         correct: false,
       },
       { label: "Do what IS in your scope: stay, ground, breathe, and arrange the medical/psychiatric contact, while never dispensing medication.", consequence: "Correct. Your skills in the moment are real; your role is defined. Care without overstepping.", correct: true },
