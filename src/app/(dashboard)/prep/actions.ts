@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { after } from "next/server";
 import { z } from "zod";
 import { getSession } from "@/lib/auth/session";
 import { rateLimit } from "@/lib/rate-limit";
@@ -15,7 +16,7 @@ import { resultView, type MockResultView } from "@/lib/prep/results";
 import { sampleMock, type Paper } from "@/lib/prep/sampling";
 import { cleanChoice, scoreMock } from "@/lib/prep/scoring";
 import { selfScore } from "@/lib/prep/interview";
-import { finishAttempt, loadAttempt, loadProfile, loadSeen, loadSeenRows, recordPrep, saveInterview, standingFor, startAttempt, type InterviewItem } from "@/lib/prep/server";
+import { finishAttempt, loadAttempt, loadProfile, loadSeenRows, recordPrep, saveInterview, standingFor, startAttempt, type InterviewItem } from "@/lib/prep/server";
 import { loadAnswers, saveAnswer, saveAnswers, setSaved } from "@/lib/prep/answers";
 import { prepHistory } from "@/lib/prep/history";
 import { toView, type PrepQView, type PrepReveal } from "@/lib/prep/view";
@@ -26,6 +27,18 @@ async function who(): Promise<{ id: string; learner: boolean } | null> {
   const s = await getSession();
   if (s.status !== "ok") return null;
   return { id: s.profile.id, learner: s.profile.role === "student" || s.profile.role === "alumni" };
+}
+
+/**
+ * Run after the answer has gone back to the student (the learning model and
+ * "seen" marks are not needed to show the verdict), else in the background.
+ */
+function later(task: () => Promise<unknown>) {
+  try {
+    after(task);
+  } catch {
+    void task().catch(() => {});
+  }
 }
 
 const id = z.string().min(1).max(80);
@@ -50,7 +63,12 @@ export async function checkAnswer(input: { id: string; choice: number; ms?: numb
   if (!parsed.success || !q) throw new Error("Unknown question");
   const correct = parsed.data.choice === q.answer;
   const me = await who();
-  if (me?.learner) await Promise.all([recordPrep(me.id, [{ q, outcome: correct ? 1 : 0, ms: parsed.data.ms }]), saveAnswer(me.id, q.id, parsed.data.choice, correct)]);
+  if (me?.learner) {
+    // The bank's record (percent right, Wrong list, resume) is saved before the reply; the model update after it.
+    const learner = me.id;
+    later(() => recordPrep(learner, [{ q, outcome: correct ? 1 : 0, ms: parsed.data.ms }]));
+    await saveAnswer(me.id, q.id, parsed.data.choice, correct);
+  }
   return { ...reveal(q), correct };
 }
 
@@ -80,7 +98,9 @@ export async function startMock(specId: string): Promise<MockPaperView | { error
   const me = await who();
   if (!me) return { error: "Please sign in again." };
   const now = new Date();
-  const [seen, seenRows, book] = me.learner ? await Promise.all([loadSeen(me.id), loadSeenRows(me.id), loadAnswers(me.id)]) : [new Map<string, number>(), new Map(), null];
+  // One read of prep_seen gives both the counts and the times.
+  const [seenRows, book] = me.learner ? await Promise.all([loadSeenRows(me.id), loadAnswers(me.id)]) : [new Map<string, { n: number; at: string | null }>(), null];
+  const seen = new Map([...seenRows].map(([k, v]) => [k, v.n]));
   // Answer history order: never seen first, then wrong, right ones last (oldest first).
   const history = book ? prepHistory(book.map, seenRows) : undefined;
   const paper = sampleMock(BANK, spec, makeRng((now.getTime() ^ hash(me.id)) >>> 0), seen, { history, now: now.getTime() });

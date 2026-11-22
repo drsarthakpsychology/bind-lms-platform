@@ -29,26 +29,40 @@ export async function loadAnswers(userId: string): Promise<AnswerBook> {
   const map = new Map<string, AnswerState>();
   const db = admin();
   if (!db || !userId) return { ready: false, map };
+  const page = (from: number) =>
+    db
+      .from("prep_answers")
+      .select("item, last_choice, last_ok, right_n, wrong_n, saved, last_at")
+      .eq("user_id", userId)
+      .order("last_at", { ascending: false })
+      .order("item")
+      .range(from, from + PAGE - 1);
+  const add = (data: Record<string, unknown>[] | null) => {
+    for (const r of data ?? []) {
+      if (map.has(String(r.item))) continue;
+      map.set(String(r.item), {
+        choice: typeof r.last_choice === "number" ? r.last_choice : null,
+        ok: typeof r.last_ok === "boolean" ? r.last_ok : null,
+        right: Number(r.right_n) || 0,
+        wrong: Number(r.wrong_n) || 0,
+        saved: r.saved === true,
+        at: String(r.last_at),
+      });
+    }
+  };
   try {
-    for (let from = 0; from < MAX_ROWS; from += PAGE) {
-      const { data, error } = await db
-        .from("prep_answers")
-        .select("item, last_choice, last_ok, right_n, wrong_n, saved, last_at")
-        .eq("user_id", userId)
-        .order("last_at", { ascending: false })
-        .range(from, from + PAGE - 1);
-      if (error) return { ready: false, map };
-      for (const r of data ?? []) {
-        map.set(String(r.item), {
-          choice: typeof r.last_choice === "number" ? r.last_choice : null,
-          ok: typeof r.last_ok === "boolean" ? r.last_ok : null,
-          right: Number(r.right_n) || 0,
-          wrong: Number(r.wrong_n) || 0,
-          saved: r.saved === true,
-          at: String(r.last_at),
-        });
+    // The first page, then the rest four pages at a time in parallel (not one after another).
+    const first = await page(0);
+    if (first.error) return { ready: false, map };
+    add(first.data);
+    if ((first.data?.length ?? 0) >= PAGE) {
+      for (let from = PAGE; from < MAX_ROWS; from += PAGE * 4) {
+        const starts = [0, 1, 2, 3].map((k) => from + k * PAGE).filter((x) => x < MAX_ROWS);
+        const got = await Promise.all(starts.map(page));
+        if (got.some((g) => g.error)) return { ready: false, map };
+        for (const g of got) add(g.data);
+        if (got.some((g) => (g.data?.length ?? 0) < PAGE)) break;
       }
-      if ((data?.length ?? 0) < PAGE) break;
     }
     return { ready: true, map };
   } catch {

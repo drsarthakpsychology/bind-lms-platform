@@ -6,7 +6,8 @@ import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
 import { outbox } from "@/api/outbox";
 import { queueWrite } from "@/api/queued";
-import type { PractiseRecordKind, PractiseTool, PractiseToolId } from "./contract";
+import type { PractiseRecordKind, PractiseTool, PractiseToolId, PrepSet } from "./contract";
+import { queryClient } from "@/api/queries";
 
 /**
  * Every Practise move goes through one route: POST /play/:game/:action with
@@ -126,4 +127,46 @@ export function sendRecord(kind: PractiseRecordKind, body: Record<string, unknow
 /** Answers into the answer history (what comes back first next time). Kept on the phone until sent. */
 export function noteAnswers(tool: string, answers: { item: string; correct: boolean | null }[]): void {
   if (answers.length) void outbox.add({ kind: "history", payload: { tool, answers } }).catch(() => undefined);
+}
+
+/* ------------------------------------------------------- Exam Prep sets */
+
+export type PrepSetParams = { subject?: string; topic?: string; set?: string; list?: string };
+
+/** The server route for one Exam Prep set (a topic's set, Smart practice, or the Saved and Wrong lists). */
+export function prepSetPath(p: PrepSetParams): string {
+  const enc = encodeURIComponent;
+  if (p.list === "smart") return "/prep/smart";
+  if (p.list === "saved" || p.list === "wrong") return `/prep/lists/${p.list}`;
+  return `/prep/subjects/${enc(p.subject ?? "")}/topics/${enc(p.topic ?? "")}${p.set ? `?set=${enc(p.set)}` : ""}`;
+}
+
+/** The set route for an app address like /prep/set?subject=..&topic=..&set=.. (null for anything else). */
+export function prepSetPathOf(href: string): string | null {
+  const [path, query = ""] = href.split("?");
+  if (path !== "/prep/set") return null;
+  const q = new URLSearchParams(query.split("#")[0]);
+  const p: PrepSetParams = { subject: q.get("subject") ?? undefined, topic: q.get("topic") ?? undefined, set: q.get("set") ?? undefined, list: q.get("list") ?? undefined };
+  if (!p.list && !(p.subject && p.topic)) return null;
+  return prepSetPath(p);
+}
+
+/**
+ * One set, as a query so it can be loaded ahead (a tap, the Practise tab, the
+ * last question of the set before it). Never kept on the phone between
+ * launches ("prepSet" is in NEVER_PERSIST), never reloaded while it is being
+ * played (a reload would swap the questions under the student), and dropped
+ * when the set screen closes, so the next visit starts from the server again.
+ */
+export const prepSetQuery = (path: string) =>
+  queryOptions({ queryKey: ["prepSet", path], queryFn: () => api.get<PrepSet>(path), staleTime: 2 * 60_000, gcTime: 5 * 60_000, refetchOnMount: false, refetchOnWindowFocus: false, refetchOnReconnect: false, retry: 1 });
+
+/** Load a set ahead. Silent: the screen asks again and shows its own error. */
+export function prefetchPrepSet(path: string | null | undefined): void {
+  if (path) void queryClient.prefetchQuery(prepSetQuery(path)).catch(() => undefined);
+}
+
+/** Forget a set that was played (its progress has changed on the server). */
+export function dropPrepSet(path: string): void {
+  queryClient.removeQueries({ queryKey: ["prepSet", path], exact: true });
 }

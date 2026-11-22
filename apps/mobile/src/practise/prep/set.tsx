@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { Bookmark } from "lucide-react-native";
@@ -7,9 +8,8 @@ import { Label, QuietEmpty, Stone, T } from "@/ds";
 import { Press, Swap } from "@/motion";
 import { Rich } from "@/study/rich";
 import { layout, space, useTheme } from "@/theme";
-import { api } from "@/auth";
 import { haptic } from "@/lib/haptics";
-import { play, useLoad, useMove } from "../api";
+import { dropPrepSet, play, prefetchPrepSet, prepSetPath, prepSetQuery, useMove, type PrepSetParams } from "../api";
 import type { PrepSet } from "../contract";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StepStrip } from "../frame";
 import { Story } from "../parts";
@@ -67,7 +67,13 @@ export function QuestionBody({ q, bare }: { q: PrepQView; /** Leave the stem out
 
 /** One Exam Prep set: a question per screen, checked on the server (prep.check). */
 export function PrepSetScreen() {
-  const p = useLocalSearchParams<{ subject?: string; topic?: string; set?: string; list?: string }>();
+  const p = useLocalSearchParams<PrepSetParams>();
+  const path = prepSetPath(p);
+  // A new address is a new round: every count starts again.
+  return <PrepSetRun key={path} p={p} path={path} />;
+}
+
+function PrepSetRun({ p, path }: { p: PrepSetParams; path: string }) {
   const mv = useMove();
   const react = useReactions();
   const [i, setI] = React.useState(0);
@@ -75,9 +81,12 @@ export function PrepSetScreen() {
   const [missed, setMissed] = React.useState<{ q: PrepQView; r: PrepChecked }[]>([]);
   const started = React.useRef(0);
   const enc = encodeURIComponent;
-  const path = p.list === "smart" ? "/prep/smart" : p.list === "saved" || p.list === "wrong" ? `/prep/lists/${p.list}` : `/prep/subjects/${enc(p.subject ?? "")}/topics/${enc(p.topic ?? "")}${p.set ? `?set=${enc(p.set)}` : ""}`;
-  const q0 = useLoad(() => api.get<PrepSet>(path), path);
-  const set = q0.data;
+  // The set may already be here: loaded ahead on the tap, on the Practise tab, or during the set before.
+  const q0 = useQuery(prepSetQuery(path));
+  const set = q0.data ?? null;
+  const answered = React.useRef(false);
+  // A set that was played is forgotten on leaving, so coming back asks the server for where you are now.
+  React.useEffect(() => () => void (answered.current && dropPrepSet(path)), [path]);
   const [saved, setSaved] = React.useState<string[] | null>(null);
   const savedIds = saved ?? set?.saved ?? [];
   const [begun, setBegun] = React.useState(false);
@@ -91,13 +100,25 @@ export function PrepSetScreen() {
   React.useEffect(() => {
     started.current = Date.now();
   }, [set, i]);
-  if (q0.error) return <FrameError title="Exam Prep" web="/prep" error={q0.error} onRetry={q0.retry} />;
+  const nextSet = set?.sets.find((x) => x.n === set.set + 1);
+  const nearEnd = !!set && set.questions.length > 0 && i >= set.questions.length - 2;
+  const nextPath = !p.list && nextSet ? prepSetPath({ subject: p.subject, topic: p.topic, set: String(nextSet.n) }) : null;
+  // Two questions from the end, the next set starts loading, so "Next set" opens at once.
+  React.useEffect(() => {
+    if (nearEnd && nextPath) prefetchPrepSet(nextPath);
+  }, [nearEnd, nextPath]);
+  if (q0.error && !set) return <FrameError title="Exam Prep" web="/prep" error={q0.error} onRetry={() => void q0.refetch()} />;
   if (!set) return <FrameLoading title="Exam Prep" />;
 
   const q = set.questions[i] as PrepQView | undefined;
-  const nextSet = set.sets.find((x) => x.n === set.set + 1);
   const again = () => {
-    if (p.list) router.replace(`/prep/set?list=${p.list}`);
+    // A list (Smart, Saved, Wrong) is picked again from what you have just answered.
+    if (p.list) {
+      // Dropped here, before the new screen asks: closing this one must not drop the new one's set.
+      dropPrepSet(path);
+      answered.current = false;
+      router.replace(`/prep/set?list=${p.list}`);
+    }
     else if (nextSet) router.replace(`/prep/set?subject=${enc(p.subject ?? "")}&topic=${enc(p.topic ?? "")}&set=${nextSet.n}`);
     else router.back();
   };
@@ -140,6 +161,7 @@ export function PrepSetScreen() {
       saved={savedIds.includes(q.id)}
       onSave={(want) => setSaved(want ? [...savedIds, q.id] : savedIds.filter((x) => x !== q.id))}
       onChecked={(r) => {
+        answered.current = true;
         setMarks((m) => [...m, r.correct ? "ok" : "miss"]);
         if (!r.correct) setMissed((x) => [...x, { q, r }]);
         react.answer(r.correct);
