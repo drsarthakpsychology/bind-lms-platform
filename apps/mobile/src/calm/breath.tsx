@@ -120,7 +120,7 @@ export function BreathingScreen() {
             <>
               <View style={{ gap: space[2] }}>
                 <Label>Pattern</Label>
-                <Chips label="Breathing pattern" value={pattern} onChange={setPattern} options={(Object.keys(PATTERNS) as PatternId[]).map((id) => ({ id, name: PATTERNS[id].label }))} />
+                <Chips label="Breathing pattern" value={pattern} onChange={setPattern} options={(["box", "478", "slow"] as PatternId[]).map((id) => ({ id, name: PATTERNS[id].label }))} />
               </View>
               <View style={{ gap: space[2] }}>
                 <Label>How long</Label>

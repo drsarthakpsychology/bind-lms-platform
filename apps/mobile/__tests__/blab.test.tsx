@@ -302,8 +302,8 @@ describe("Psychology Lab", () => {
         </Catch>,
       );
       expect(`${e.id} ${errorText()}`).toBe(`${e.id} `);
-      expect(screen.queryAllByTestId("lab-run").length).toBeGreaterThan(0);
-      view.unmount();
+      expect(`${e.id} ${screen.queryAllByTestId("lab-run").length > 0}`).toBe(`${e.id} true`);
+      await view.unmount();
     }
   });
 });
