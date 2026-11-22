@@ -10,6 +10,7 @@ import { Enter } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { adminClinicCalls, cohortStore, useAdminClinicToday } from "../api";
 import { ClinicLoaded, Pills } from "./kit";
+import { SmallButton } from "@/admin/kit";
 import { dateLabel, minutesOf, rangeLabel, sessionTitle, timeLabel } from "../logic";
 import type { AdminSession } from "../contract";
 import { KIND_ICON } from "../parts";
@@ -78,13 +79,15 @@ export function SessionCard({ s, current, prefix }: { s: AdminSession; current: 
         {countsLine(s)}
       </T>
       {!cancelled ? (
-        <View style={{ flexDirection: "row", gap: space[2] }}>
-          <View style={{ flex: 1 }}>
-            <Button small kind={current ? "primary" : "quiet"} label="Show code" icon={<QrCode size={18} color={current ? c.onPrimary : c.ink} />} onPress={() => openCode(s.id)} testID={`${prefix}-${s.id}-code`} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Button small kind="quiet" label="Who is in" onPress={() => openSession(s.id)} testID={`${prefix}-${s.id}-list`} />
-          </View>
+        <View style={{ flexDirection: "row", gap: space[2], alignItems: "center" }}>
+          {current ? (
+            <View style={{ flex: 1 }}>
+              <Button small label="Show code" icon={<QrCode size={18} color={c.onPrimary} />} onPress={() => openCode(s.id)} testID={`${prefix}-${s.id}-code`} />
+            </View>
+          ) : (
+            <SmallButton label="Show code" icon={<QrCode size={18} color={c.ink} />} onPress={() => openCode(s.id)} testID={`${prefix}-${s.id}-code`} />
+          )}
+          <SmallButton label="Who is in" onPress={() => openSession(s.id)} testID={`${prefix}-${s.id}-list`} />
         </View>
       ) : null}
     </Panel>
