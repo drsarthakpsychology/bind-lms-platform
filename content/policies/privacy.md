@@ -23,6 +23,7 @@ For the purposes of the DPDP Act, VIBHA School of Psychology is the **Data Fiduc
 - Log data, IP address, browser and device type, pages visited, and time spent
 - Cookies and similar technologies (see the Cookie Policy)
 - Learning platform activity such as content accessed and progress
+- On the public website, private counts of the steps towards a request (a page seen, a Request button pressed, the request form opened, started, sent or not sent). These counts carry no name, contact detail, IP address or cookie, use a random number that lasts only for your browser tab session, are kept on our own server, and are not collected at all if your browser sends Do Not Track or Global Privacy Control
 
 **We receive from third parties:**
 - Payment confirmation and status from our payment gateway
