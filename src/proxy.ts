@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { DB_TIMEOUT_MS, fetchWithTimeout } from "@/lib/supabase/timeout-fetch";
 
 /**
  * Next.js 16 renamed `middleware.ts` to `proxy.ts` and narrowed its job to a
@@ -112,6 +113,7 @@ export async function proxy(request: NextRequest) {
           );
         },
       },
+      global: { fetch: fetchWithTimeout(DB_TIMEOUT_MS) },
     },
   );
 
