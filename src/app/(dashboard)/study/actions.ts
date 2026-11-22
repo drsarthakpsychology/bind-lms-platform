@@ -11,6 +11,7 @@ import { keepBestTests } from "@/lib/study/progress";
 import { withRetry } from "@/lib/save/retry";
 import { mergeCopies } from "@/lib/learn/merge";
 import { getSession } from "@/lib/auth/session";
+import { activeUserId } from "@/lib/auth/active";
 import { MODULES } from "@/lib/study";
 import { testSection } from "@/lib/study/plan";
 import { splitSection } from "@/lib/study/chunk";

@@ -215,16 +215,16 @@ export async function loadTimeline(admin: SupabaseClient, email: string): Promis
     admin.from("credential_invites").select("setup_completed_at").ilike("email", e).maybeSingle(),
   ]);
   const items: TimelineItem[] = [];
-  for (const q of enquiries) items.push({ at: q.created_at as string, kind: "enquiry", title: `Enquired${q.source ? ` via ${q.source}` : ""}`, body: (q.message as string) ?? null, tone: "lime" });
+  for (const q of enquiries ?? []) items.push({ at: q.created_at as string, kind: "enquiry", title: `Enquired${q.source ? ` via ${q.source}` : ""}`, body: (q.message as string) ?? null, tone: "lime" });
   for (const s of sends ?? []) {
     const at = (s.sent_at as string) ?? (s.created_at as string);
     items.push({ at, kind: "email", title: s.status === "failed" ? `Email failed: ${s.subject}` : `Email sent: ${s.subject}`, body: (s.error_reason as string) ?? null, tone: s.status === "failed" ? "red" : "blue" });
     if (s.opened_at) items.push({ at: s.opened_at as string, kind: "opened", title: `Opened: ${s.subject}`, tone: "blue" });
     if (s.bounced_at) items.push({ at: s.bounced_at as string, kind: "bounced", title: `Bounced: ${s.subject}`, tone: "red" });
   }
-  for (const r of inbound) items.push({ at: r.received_at as string, kind: "reply", title: `Replied: ${r.subject ?? "(no subject)"}`, body: (r.body_text as string)?.slice(0, 600) ?? null, tone: "lime" });
+  for (const r of inbound ?? []) items.push({ at: r.received_at as string, kind: "reply", title: `Replied: ${r.subject ?? "(no subject)"}`, body: (r.body_text as string)?.slice(0, 600) ?? null, tone: "lime" });
   const LABEL: Record<string, string> = { payment: "Payment", note: "Note", call: "Call", whatsapp: "WhatsApp", email: "Email (outside VIBHA)", meeting: "Meeting", stage: "Stage changed" };
-  for (const a of acts) items.push({ at: a.created_at as string, kind: a.kind as string, title: LABEL[a.kind as string] ?? String(a.kind), body: (a.body as string) ?? null, tone: a.kind === "stage" ? "ink" : "lime" });
+  for (const a of acts ?? []) items.push({ at: a.created_at as string, kind: a.kind as string, title: LABEL[a.kind as string] ?? String(a.kind), body: (a.body as string) ?? null, tone: a.kind === "stage" ? "ink" : "lime" });
   if (invite?.setup_completed_at) items.push({ at: invite.setup_completed_at as string, kind: "setup", title: "Set up their account", tone: "ink" });
   return items.sort((a, b) => b.at.localeCompare(a.at));
 }
