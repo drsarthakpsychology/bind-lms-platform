@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimitWrite } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -35,7 +35,6 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
  * Owner-scoped; RLS on mse_attempts enforces it.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/practice/mse", flag: "mse" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -71,7 +70,8 @@ export async function POST(req: Request) {
 
   // The per-level detail (labels, observations, picked/expert/amber) rides in
   // the tags jsonb column; level/domain/window live in their own columns.
-  const { error } = await supabase.from("mse_attempts").insert({
+  // Written by the server only, for the signed-in student (2026_11_22_status.sql).
+  const { error } = await admin.from("mse_attempts").insert({
     user_id: user.id,
     stimulus_id: stimulusId,
     level: parsed.data.level,

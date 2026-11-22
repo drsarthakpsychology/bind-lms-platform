@@ -278,7 +278,8 @@ export type DeliveryReport = {
 };
 
 async function setEmailStatus(admin: SupabaseClient, credentialId: string, status: "sent" | "queued" | "failed" | "none") {
-  await admin.from("credentials").update({ email_status: status }).eq("credential_id", credentialId);
+  const { error } = await admin.from("credentials").update({ email_status: status }).eq("credential_id", credentialId);
+  if (error) console.error("certificate email status:", error.message);
 }
 
 /**
@@ -338,6 +339,19 @@ export async function drainEmailQueue(admin: SupabaseClient, sentBy: string | nu
       await admin.from("certificate_email_queue").update({ status: "cancelled" }).eq("id", q.id);
       continue;
     }
+    // Claim the row BEFORE the email goes: a second "Send waiting" running at
+    // the same time, or a failed update after sending, can never send it twice.
+    const claim = await admin
+      .from("certificate_email_queue")
+      .update({ status: "sent", sent_at: new Date().toISOString(), attempts: (q.attempts as number) + 1 })
+      .eq("id", q.id)
+      .eq("status", "queued")
+      .select("id");
+    if (claim.error) {
+      console.error("certificate queue claim:", claim.error.message);
+      continue;
+    }
+    if (!claim.data?.length) continue; // someone else took it
     const res = await sendCertificateEmail(
       admin,
       { credentialId: r.credential_id, email: q.recipient as string, name: (q.name as string) || r.student_name, userId: (q.user_id as string | null) ?? null },
@@ -347,12 +361,13 @@ export async function drainEmailQueue(admin: SupabaseClient, sentBy: string | nu
     if (res.ok) {
       sent++;
       remaining--;
-      await admin.from("certificate_email_queue").update({ status: "sent", sent_at: new Date().toISOString(), attempts: (q.attempts as number) + 1 }).eq("id", q.id);
       await setEmailStatus(admin, r.credential_id, "sent");
-    } else if (isQuotaStop(res.error)) {
-      break;
     } else {
-      await admin.from("certificate_email_queue").update({ status: "failed", last_error: res.error, attempts: (q.attempts as number) + 1 }).eq("id", q.id);
+      // Not sent: put it back (quota) or mark it failed.
+      const back = isQuotaStop(res.error) ? { status: "queued", sent_at: null } : { status: "failed", sent_at: null, last_error: res.error };
+      const { error: backErr } = await admin.from("certificate_email_queue").update(back).eq("id", q.id);
+      if (backErr) console.error("certificate queue undo:", backErr.message);
+      if (isQuotaStop(res.error)) break;
       await setEmailStatus(admin, r.credential_id, "failed");
     }
   }

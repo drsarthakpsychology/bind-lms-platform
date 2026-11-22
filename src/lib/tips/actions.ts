@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { activeUserId } from "@/lib/auth/active";
 
 /**
  * Server copy of the first-time tips a student has closed (table
@@ -14,10 +15,9 @@ const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 export async function loadTips(): Promise<{ owner: string | null; ids: string[] | null }> {
   try {
     const supabase = await createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) return { owner: null, ids: null };
+    const uid = await activeUserId();
+    if (!uid) return { owner: null, ids: null };
+    const user = { id: uid };
     const { data, error } = await supabase.from("tip_dismissals").select("tip_id").eq("user_id", user.id).limit(500);
     if (error) return { owner: user.id, ids: null };
     return { owner: user.id, ids: (data ?? []).map((r) => String(r.tip_id)) };
@@ -32,10 +32,9 @@ export async function saveTips(ids: string[]): Promise<boolean> {
   if (!clean.length) return true;
   try {
     const supabase = await createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) return false;
+    const uid = await activeUserId();
+    if (!uid) return false;
+    const user = { id: uid };
     const { error } = await supabase.from("tip_dismissals").upsert(
       clean.map((tip_id) => ({ user_id: user.id, tip_id })),
       { onConflict: "user_id,tip_id", ignoreDuplicates: true },

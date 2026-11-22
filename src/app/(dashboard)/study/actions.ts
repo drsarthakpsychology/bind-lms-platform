@@ -11,6 +11,7 @@ import { keepBestTests } from "@/lib/study/progress";
 import { withRetry } from "@/lib/save/retry";
 import { mergeCopies } from "@/lib/learn/merge";
 import { getSession } from "@/lib/auth/session";
+import { activeUserId } from "@/lib/auth/active";
 import { MODULES } from "@/lib/study";
 import { testSection } from "@/lib/study/plan";
 import { splitSection } from "@/lib/study/chunk";
@@ -33,10 +34,9 @@ export type OwnedLearnState = LearnState & { owner?: string };
 export async function loadLearnState(): Promise<OwnedLearnState | null> {
   try {
     const supabase = await createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) return null;
+    const uid = await activeUserId();
+    if (!uid) return null;
+    const user = { id: uid };
     const { data, error } = await supabase.from("learn_progress").select("state").eq("user_id", user.id).maybeSingle();
     if (error) console.warn("loadLearnState: learn_progress read failed:", error.message);
     return { ...normalise(data?.state ?? null), owner: user.id };
@@ -56,10 +56,10 @@ export async function loadLearnState(): Promise<OwnedLearnState | null> {
 export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; clamped?: boolean; retry?: boolean }> {
   try {
     const supabase = await createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) return { ok: false, retry: true };
+    // Paused, ended, other-device and lectures-only accounts cannot save Learn progress.
+    const uid = await activeUserId({ full: true });
+    if (!uid) return { ok: false, retry: false };
+    const user = { id: uid };
     const next = normalise(state);
     // Size guard: a state is a few KB; refuse anything absurd.
     if (JSON.stringify(next).length > 200_000) return { ok: false, retry: false };

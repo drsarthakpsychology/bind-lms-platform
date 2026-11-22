@@ -30,6 +30,10 @@ vi.mock("@/lib/history/client", () => ({
   historyFor: () => EMPTY_HISTORY,
 }));
 const EMPTY_HISTORY = new Map();
+vi.mock("./osce/actions", async () => {
+  const { SEED_OSCE_STATIONS } = await import("@/lib/practice/osce");
+  return { loadOsceStation: vi.fn(async (id: string) => SEED_OSCE_STATIONS.find((s) => s.id === id) ?? null) };
+});
 vi.mock("@/lib/practice/competency-client", async (orig) => ({ ...(await orig<object>()), recordCompetencyEvent: vi.fn(async () => {}) }));
 
 import { TwoMinuteClinic } from "./two-minute-clinic/clinic";
@@ -42,6 +46,8 @@ import type { DrillItem } from "@/lib/practice/weak-spots";
 import { resetHowTo } from "@/components/help/how-to";
 import { JudgmentArena } from "./judgment/judgment-arena";
 import { panelDistribution, simulatedPanel, type SctItem } from "@/lib/practice/sct";
+import { SEED_OSCE_STATIONS } from "@/lib/practice/osce";
+import { toCards } from "@/lib/practice/osce-cards";
 
 beforeEach(() => {
   localStorage.clear();
@@ -73,8 +79,10 @@ describe("finish sticker in the Practice tools", () => {
   });
 
   it("OSCE: a full checklist is happy, an empty one is sad", async () => {
-    render(<OsceStationView />);
-    fireEvent.click(screen.getAllByRole("button", { name: /Station/ })[0]);
+    render(<OsceStationView cards={toCards(SEED_OSCE_STATIONS)} />);
+    await act(async () => {
+      fireEvent.click(screen.getAllByRole("button", { name: /Station/ })[0]);
+    });
     fireEvent.click(screen.getByRole("button", { name: /self-assess/ }));
     for (const box of screen.getAllByRole("checkbox")) fireEvent.click(box);
     await act(async () => {
@@ -83,7 +91,9 @@ describe("finish sticker in the Practice tools", () => {
     expect(showEndReaction).toHaveBeenCalledWith("streak");
 
     showEndReaction.mockClear();
-    fireEvent.click(screen.getAllByRole("button", { name: /Station/ })[0]);
+    await act(async () => {
+      fireEvent.click(screen.getAllByRole("button", { name: /Station/ })[0]);
+    });
     fireEvent.click(screen.getByRole("button", { name: /self-assess/ }));
     await act(async () => {
       fireEvent.click(screen.getByRole("button", { name: /Save & pick another/ }));

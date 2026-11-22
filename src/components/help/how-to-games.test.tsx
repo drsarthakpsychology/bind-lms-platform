@@ -36,7 +36,8 @@ import { ActivityTip } from "./activity-tip";
 import { resetHowTo } from "./how-to";
 import { TwoMinuteClinic } from "@/app/(dashboard)/practice/two-minute-clinic/clinic";
 import { BlitzGame } from "@/app/(dashboard)/games/blitz/blitz-game";
-import { ScenarioGame, TermsGame } from "@/components/learn/clinic-games";
+import { ScenarioGame } from "@/components/learn/clinic-games";
+import { TermsGame } from "@/components/learn/terms-game";
 import { Detective } from "@/components/learn/detective";
 import { TestRunner } from "@/components/study/interactive";
 
@@ -131,7 +132,12 @@ describe("how-to in real games", () => {
     render(
       <>
         <ActivityTip id="say-it-clinically" label="How it works" steps={["Pick the clinical term for the everyday phrase."]} />
-        <TermsGame serverState={null} save={save} />
+        <TermsGame
+          serverState={null}
+          save={save}
+          start={async () => ({ ok: true, token: "t", total: 1, question: { id: "q1", prompt: "They say: \u201cfeeling low\u201d. You write:", options: ["Low mood", "Euphoria"], kind: "term" } })}
+          answer={async () => ({ ok: true, reveal: { correct: true, answer: "Low mood", why: "Because." }, next: null })}
+        />
       </>,
     );
     await flush();

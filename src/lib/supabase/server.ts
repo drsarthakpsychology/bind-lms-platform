@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { appContext, type AppRequestContext } from "@/lib/app-api/context";
+import { DB_ADMIN_TIMEOUT_MS, DB_TIMEOUT_MS, fetchWithTimeout } from "./timeout-fetch";
 
 /**
  * Supabase client for Server Components, Server Actions, and Route Handlers.
@@ -35,6 +36,7 @@ export async function createClient() {
           }
         },
       },
+      global: { fetch: fetchWithTimeout(DB_TIMEOUT_MS) },
     },
   );
 }
@@ -64,7 +66,7 @@ function makeAppUserClient(app: AppRequestContext) {
         // No cookies for app requests.
       },
     },
-    global: { headers: { Authorization: `Bearer ${app.accessToken}` } },
+    global: { headers: { Authorization: `Bearer ${app.accessToken}` }, fetch: fetchWithTimeout(DB_TIMEOUT_MS) },
   });
   const auth = client.auth as unknown as { getUser: (jwt?: string) => Promise<unknown>; signOut: () => Promise<unknown> };
   const realGetUser = auth.getUser.bind(client.auth);
@@ -93,6 +95,7 @@ export function createAdminClient() {
           // No-op: the admin client never reads or writes session cookies.
         },
       },
+      global: { fetch: fetchWithTimeout(DB_ADMIN_TIMEOUT_MS) },
     },
   );
 }

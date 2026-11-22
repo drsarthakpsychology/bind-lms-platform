@@ -3,6 +3,7 @@ import "server-only";
 import { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import type { MediaProvider, SignedPlaybackResult, UploadResult } from "./provider";
+import { R2_CONNECT_TIMEOUT_MS, R2_REQUEST_TIMEOUT_MS } from "@/lib/supabase/timeout-fetch";
 
 /**
  * Cloudflare R2 media provider. R2 exposes an S3-compatible API, so we use
@@ -110,6 +111,10 @@ function makeR2Client(): S3Client {
     region: "auto",
     endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
     credentials: { accessKeyId, secretAccessKey },
+    // A store that never answers must not hold a request for 300 seconds.
+    // requestTimeout is the idle limit per socket, so a long segment stream
+    // that keeps sending bytes is not cut.
+    requestHandler: { connectionTimeout: R2_CONNECT_TIMEOUT_MS, requestTimeout: R2_REQUEST_TIMEOUT_MS },
   });
   return r2Client;
 }

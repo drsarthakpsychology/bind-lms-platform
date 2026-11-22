@@ -53,6 +53,12 @@ class Query implements PromiseLike<Result> {
     this.filters.push((r) => r[col] === v);
     return this;
   }
+  /** Case-insensitive match; `\\` escapes and no wildcards are used by the studio code. */
+  ilike(col: string, v: string) {
+    const want = v.replace(/\\(.)/g, "$1").toLowerCase();
+    this.filters.push((r) => String(r[col] ?? "").toLowerCase() === want);
+    return this;
+  }
   neq(col: string, v: unknown) {
     this.filters.push((r) => r[col] !== v);
     return this;

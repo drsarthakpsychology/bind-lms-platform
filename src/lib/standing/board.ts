@@ -2,6 +2,7 @@ import "server-only";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
+import { pageAll } from "@/lib/db/counts";
 import { displayName } from "@/lib/learn/leaderboard";
 import { normalise, addDays } from "@/lib/learn/engine";
 import { istToday } from "@/lib/practice/streaks";
@@ -33,14 +34,16 @@ export type StandingRow = {
  */
 export const loadStanding = cache(async (): Promise<{ rows: StandingRow[] }> => {
   const admin = createAdminClient();
-  const [{ data: profiles }, { data: learn }, totalsRes, cohorts] = await Promise.all([
-    admin.from("profiles").select("id, name, email, role, is_test").eq("role", "student").limit(5000),
-    admin.from("learn_progress").select("user_id, xp, state").limit(5000),
-    admin.rpc("standing_totals"),
+  type Total = { user_id: string; platform_seconds: number; watched_seconds: number; lessons_done: number };
+  // Paged: a function's rows obey the same 1000-row limit as a table's.
+  const [profiles, learn, totalRowsRes, cohorts] = await Promise.all([
+    pageAll<{ id: string; name: string | null; email: string | null; role: string; is_test: boolean | null }>(() => admin.from("profiles").select("id, name, email, role, is_test").eq("role", "student").order("id")),
+    pageAll<{ user_id: string; xp: number | null; state: unknown }>(() => admin.from("learn_progress").select("user_id, xp, state").order("user_id")),
+    pageAll<Total>(() => admin.rpc("standing_totals").order("user_id")),
     loadCohortMap(),
   ]);
-  const totals = new Map<string, { platform_seconds: number; watched_seconds: number; lessons_done: number }>();
-  const totalRows = !totalsRes.error && Array.isArray(totalsRes.data) ? (totalsRes.data as { user_id: string; platform_seconds: number; watched_seconds: number; lessons_done: number }[]) : [];
+  const totals = new Map<string, Total>();
+  const totalRows = totalRowsRes ?? [];
   for (const t of totalRows) {
     totals.set(t.user_id, t);
   }

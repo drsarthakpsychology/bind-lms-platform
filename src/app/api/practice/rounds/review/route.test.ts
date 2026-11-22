@@ -11,6 +11,8 @@ const { supabase, upsertMock } = vi.hoisted(() => {
 
 vi.mock("@/lib/supabase/server", () => ({
   createClient: () => supabase,
+  // Reviews are written with the server key (2026_11_22_status.sql).
+  createAdminClient: () => supabase,
 }));
 
 vi.mock("@/lib/auth/api-guard", () => ({

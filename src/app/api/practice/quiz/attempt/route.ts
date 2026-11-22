@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimitWrite } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -15,10 +15,9 @@ const schema = z.object({
 /**
  * POST /api/practice/quiz/attempt: persist one quiz answer on reveal so
  * /admin/triage can surface low-confidence quiz areas (per item, per user).
- * Owner-only RLS + rate-limited; failures are silent (a check, not a test).
+ * Written with the server key for the signed-in student only, rate-limited; failures are silent (a check, not a test).
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi();
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -31,7 +30,8 @@ export async function POST(req: Request) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
-  const { error } = await supabase.from("quiz_attempts").insert({
+  // Written by the server only: students cannot add their own attempts directly (2026_11_22_status.sql).
+  const { error } = await createAdminClient().from("quiz_attempts").insert({
     user_id: user.id,
     item_id: parsed.data.itemId,
     chosen: parsed.data.chosen,

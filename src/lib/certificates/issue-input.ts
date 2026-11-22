@@ -29,6 +29,8 @@ export type StudioIssueInput = {
   cohortId?: string | null;
   /** Also email (the in-app notice always goes). */
   email: boolean;
+  /** Once-only key (a UUID made when the form opens): the same submit twice issues once. */
+  key?: string | null;
 };
 
 export const MAX_RECIPIENTS = 300;

@@ -10,6 +10,7 @@ import { requireFeature } from "@/lib/flags";
 import { BackPill } from "@/components/study/back";
 import { SEED_OSCE_STATIONS } from "@/lib/practice/osce";
 import { caseContext } from "@/lib/cases/server";
+import { toCards } from "@/lib/practice/osce-cards";
 
 export const dynamic = "force-dynamic";
 
@@ -21,11 +22,13 @@ export const dynamic = "force-dynamic";
 export default async function OscePage() {
   await requireFeature("osce");
   const cases = await caseContext("osce", SEED_OSCE_STATIONS.map((s) => s.id), "osce");
+  // Titles and tasks only: each station's checklist is fetched when it is opened.
+  const cards = toCards(SEED_OSCE_STATIONS);
   if (await uiV2()) {
     return (
       <GameFrame title="OSCE stations" width="reading" tip={{ id: "osce", label: "How it works", steps: ["One task against the clock, like the real exam.", "Voice works best."] }}>
         <PlayStack>
-          <OsceStationView cases={cases} />
+          <OsceStationView cards={cards} cases={cases} />
           <Fold title="Quick check">
             <QuizCheck items={QUIZ_BANK.slice(6, 12)} />
           </Fold>
@@ -40,7 +43,7 @@ export default async function OscePage() {
       <ToolHeader title="OSCE stations" tip={{ id: "osce", steps: ["One task against the clock, like the real exam.", "Voice works best."] }} />
 
       <div className="mt-6">
-        <OsceStationView cases={cases} />
+        <OsceStationView cards={cards} cases={cases} />
       </div>
 
 <details className="group mt-8 rounded-md border-2 border-border bg-card">
