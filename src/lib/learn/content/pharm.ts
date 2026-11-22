@@ -148,9 +148,9 @@ export const STABILISERS: Unit = {
       title: "Lithium",
       goal: "Levels, toxicity and what raises them",
       items: [
-        mcq("li1", "Typical maintenance lithium blood level:", ["0.1 to 0.3 mmol/L", "0.6 to 1.0 mmol/L", "2.0 to 3.0 mmol/L", "5 to 10 mmol/L"], 1,
-          "Roughly 0.6 to 1.0. It's a narrow window.",
-          "Maintenance usually 0.6 to 1.0 mmol/L (mEq/L); acute mania may target up to about 1.2. Draw levels 12 hours after the last dose, at steady state (about 5 days after a change)."),
+        mcq("li1", "Typical maintenance lithium blood level:", ["0.1 to 0.3 mmol/L", "0.6 to 0.8 mmol/L", "2.0 to 3.0 mmol/L", "5 to 10 mmol/L"], 1,
+          "Usually 0.6 to 0.8. It's a narrow window.",
+          "Maintenance usually 0.6 to 0.8 mmol/L (mEq/L); 0.8 to 1.0 for some, such as after a relapse or in mania. Draw levels 12 hours after the last dose, at steady state (about 5 days after a change). Targets are set with the prescriber and the local lab."),
         mcq("li2", "Vomiting, diarrhoea, coarse tremor, unsteadiness and confusion in a patient on lithium suggest:", ["Normal side effects", "Lithium toxicity", "Anxiety", "A cold"], 1,
           "Toxicity. Needs urgent medical help and a blood level.",
           "Toxicity usually more than 1.5 mmol/L: GI upset, coarse tremor, ataxia, dysarthria, confusion, seizures, arrhythmias. Stop lithium, urgent level, U&E; haemodialysis if severe."),

@@ -608,7 +608,7 @@ const nmda: FigureDef = {
 const lithC = callouts(
   [
     { id: "nach", name: "Sodium channel", at: [86, 40], about: "Lithium is a small ion like sodium, so it slips into neurons through sodium channels." },
-    { id: "li", name: "Lithium ions", at: [62, 18], about: "Li+ ions. In the blood the target is about 0.6 to 1.0 mmol/L, checked 12 hours after the last dose; above 1.5 toxicity becomes likely." },
+    { id: "li", name: "Lithium ions", at: [62, 18], about: "Li+ ions. In the blood the usual target is 0.6 to 0.8 mmol/L (0.8 to 1.0 for some), checked 12 hours after the last dose; above about 1.5 toxicity becomes likely." },
     { id: "pump", name: "Sodium potassium pump", at: [234, 120], about: "The pump that throws sodium out handles lithium poorly, so lithium builds up a little inside cells." },
     { id: "impase", name: "IMPase blocked", at: [74, 128], about: "Lithium inhibits inositol monophosphatase, the enzyme that recycles inositol. Overactive neurons run short of inositol and their Gq signalling damps down: the inositol depletion idea." },
     { id: "gsk", name: "GSK-3 beta blocked", at: [180, 98], about: "Lithium inhibits glycogen synthase kinase 3 beta. This may protect neurons, raise BDNF and adjust the body clock." },

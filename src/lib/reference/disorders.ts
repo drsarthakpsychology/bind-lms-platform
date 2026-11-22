@@ -386,7 +386,7 @@ export const DISORDERS: DisorderRef[] = [
     chapter: "Trauma- and stressor-related disorders",
     core: "After a terrifying event: reliving it, avoiding reminders, feeling worse about self and world, and being on edge.",
     features: ["Intrusions: flashbacks, nightmares, distress at reminders", "Avoidance of thoughts or reminders", "Negative thoughts and mood: blame, detachment, unable to feel positive emotions", "Arousal: jumpy, poor sleep, irritability, hypervigilance, reckless behaviour"],
-    criteria: ["Exposure to actual or threatened death, serious injury or sexual violence (directly, witnessed, learned about for a close person, or repeated work exposure)", "At least 1 intrusion, 1 avoidance, 2 negative mood/thought and 2 arousal symptoms", "Separate criteria for children 6 years and younger"],
+    criteria: ["A real or threatened brush with death, serious injury or sexual violence: to the person, seen happening to others, learned about for someone close, or met again and again at work", "At least 1 intrusion, 1 avoidance, 2 negative mood/thought and 2 arousal symptoms", "Separate criteria for children 6 years and younger"],
     duration: "More than 1 month after the trauma (can start later: 'with delayed expression').",
     lookAlikes: [
       { name: "Acute stress disorder", tell: "3 days to 1 month after the event.", slug: "acute-stress-disorder" },
@@ -472,7 +472,7 @@ export const DISORDERS: DisorderRef[] = [
     chapter: "Somatic symptom and related disorders",
     core: "Real neurological symptoms (weakness, fits, numbness) that don't fit a neurological disease.",
     features: ["Weakness, abnormal movements, functional seizures, speech or sensory loss", "Positive signs on examination (e.g. Hoover's sign) show the mismatch"],
-    criteria: ["Clinical findings incompatible with recognised neurological disease", "Not deliberately produced", "Specify acute (less than 6 months) or persistent"],
+    criteria: ["Examination shows the symptom does not fit how known nerve or brain disease behaves", "Not deliberately produced", "Specify acute (less than 6 months) or persistent"],
     duration: "No minimum; specify episode length.",
     lookAlikes: [
       { name: "Factitious disorder or malingering", tell: "Symptoms are deliberately produced." },
@@ -697,8 +697,8 @@ export const DISORDERS: DisorderRef[] = [
     aka: ["Dementia with Lewy bodies", "DLB"],
     chapter: "Neurocognitive disorders",
     core: "Dementia with fluctuating alertness, vivid visual hallucinations and Parkinson-like movement.",
-    features: ["Core: fluctuating cognition, recurrent detailed visual hallucinations, parkinsonism after the cognitive decline, REM sleep behaviour disorder", "Severe sensitivity to antipsychotics; falls and fainting"],
-    criteria: ["Probable: 2 core features, or 1 suggestive feature with 1 or more core features"],
+    features: ["Core (DSM): fluctuating cognition, recurrent detailed visual hallucinations, parkinsonism that starts after the cognitive decline", "Suggestive (DSM): REM sleep behaviour disorder, severe sensitivity to antipsychotics", "Also common: falls, fainting, low blood pressure on standing"],
+    criteria: ["DSM probable: 2 core features, or 1 suggestive feature with 1 or more core features", "DSM possible: 1 core feature, or 1 or more suggestive features", "The 2017 international consensus criteria count REM sleep behaviour disorder as a core feature"],
     duration: "Gradual onset and progression.",
     lookAlikes: [{ name: "Parkinson's disease dementia", tell: "Movement problems come at least a year before the dementia." }],
     firstLine: ["A cholinesterase inhibitor (rivastigmine or donepezil); memantine is an option", "Avoid antipsychotics where possible (severe sensitivity reactions)"],

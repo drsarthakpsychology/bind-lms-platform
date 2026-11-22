@@ -277,7 +277,7 @@ export const ANTIPSYCHOTICS: Med[] = [
     forms: "Tablets 25, 50, 100 mg",
     student: "The most effective antipsychotic, used when two others have failed. It also lowers suicidal behaviour. It needs regular blood tests and careful watching for rare but serious side effects.",
     clinician: "Low D2 occupancy with broad 5-HT2A, H1, M1, alpha-1 activity. Risks: agranulocytosis (about 1%, mostly first 18 weeks), myocarditis (first 8 weeks), seizures (dose-related), ileus, hypersalivation, metabolic syndrome. Target plasma level at least 350 ng/mL. Smoking induces CYP1A2.",
-    standout: ["Works when other antipsychotics fail", "Blood tests on a fixed schedule", "Constipation can be fatal: ask every visit"],
+    standout: ["Works when other antipsychotics fail", "Regular blood counts, most often in the first months", "Constipation can be fatal: ask every visit"],
     uses: ["Treatment-resistant schizophrenia", "Persistent suicidal behaviour in schizophrenia", "Psychosis in Parkinson's disease (low dose)", "Intolerable EPS or tardive dyskinesia on other drugs"],
     doses: [
       { amount: "12.5 mg", label: "Day 1", use: "Starting", student: "Tiny first dose, with checks on pulse, blood pressure and temperature.", clinician: "12.5 mg once or twice on day 1; baseline FBC, ECG, troponin, CRP, metabolic bloods.", watch: ["Low BP, fainting", "Fast pulse", "Fever"] },
@@ -288,7 +288,7 @@ export const ANTIPSYCHOTICS: Med[] = [
     defaultDose: 2,
     common: ["Sleepiness", "Drooling at night", "Constipation", "Weight gain", "Fast pulse", "Dizziness"],
     serious: ["Agranulocytosis", "Myocarditis and cardiomyopathy", "Seizures", "Bowel obstruction (ileus)", "Diabetes"],
-    checks: ["Blood count weekly for 18 weeks, fortnightly to a year, then monthly", "Troponin and CRP weekly for 4 weeks", "Bowels every visit", "Metabolic checks", "Restart from 12.5 mg after 48 hours missed"],
+    checks: ["Blood count weekly for at least the first 18 weeks, then less often; the exact schedule follows the country's rules and the clinic's monitoring service", "Troponin and CRP weekly for 4 weeks", "Bowels every visit", "Metabolic checks", "Restart from 12.5 mg after 48 hours missed"],
     interactions: ["Smoking lowers levels; stopping raises them sharply", "Fluvoxamine and ciprofloxacin raise levels", "Carbamazepine: avoid (marrow suppression)"],
     groups: [{ label: "Parkinson's disease", text: "Very low doses for psychosis." }],
     tell: ["Fever, sore throat or mouth ulcers: get a blood test the same day", "No bowel movement for 2 days or tummy pain: urgent review", "Tell us if you stop or start smoking"],

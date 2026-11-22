@@ -382,7 +382,7 @@ Psilocybin given once or twice with psychological support has shown rapid and so
 - **Psilocybin (COMP360)**: two phase 3 trials in TRD reported positive primary outcomes (a single 25 mg dose in the first, two doses in the second with response maintained to 26 weeks in about 39% of the 25 mg arm); a rolling US application was expected to complete in late 2026. Functional unblinding and expectancy effects remain methodological concerns.
 - **MDMA**: the US regulator issued a complete response letter in August 2024 citing the need for an additional phase 3 trial.
 - **Orexin**: daridorexant (25 to 50 mg), lemborexant (5 to 10 mg) and suvorexant (10 to 20 mg) for insomnia; oveporexton approved in the US in August 2026 for narcolepsy type 1.
-- **ADHD**: centanafadine (serotonin, noradrenaline and dopamine reuptake inhibitor) approved in the US in mid-2026.
+- **ADHD**: centanafadine (serotonin, noradrenaline and dopamine reuptake inhibitor) approved in the US in July 2026.
 - **GLP-1 receptor agonists**: being studied for alcohol use disorder and binge eating; semaglutide failed to slow early Alzheimer's disease in phase 3 trials reported in late 2025.
 - **Failures worth teaching**: TAAR1 agonists in schizophrenia, many glutamatergic and anti-inflammatory add-ons, and kappa-opioid antagonists, showing how often promising mechanisms fail in phase 3.
 :::

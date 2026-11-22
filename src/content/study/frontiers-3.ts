@@ -424,7 +424,7 @@ State the receptor mechanism confidently; describe network and "relaxed beliefs"
 | Studied for | PTSD | Treatment-resistant depression; also alcohol use, end-of-life distress |
 | Rationale | Lowers fear so trauma memories can be revisited in therapy | Loosens rigid patterns of thought and feeling |
 | Main risks | Raised blood pressure and heart rate, overheating, low sodium, misuse; neurotoxicity concerns at high recreational doses | Anxiety, frightening experiences, raised blood pressure, headache; rare prolonged psychosis or perceptual disturbance |
-| Status (as described in this module) | FDA declined in August 2024; not approved in the USA; authorised prescribing in Australia | Two positive phase 3 trials; FDA application being completed; not approved |
+| Status (as described in this module) | FDA declined in August 2024; not approved in the USA; authorised prescribing in Australia | Two positive phase 3 trials; FDA application completed November 2026 and under review; not approved |
 | India | Controlled under the NDPS Act | Controlled under the NDPS Act |
 
 ### Shared problems

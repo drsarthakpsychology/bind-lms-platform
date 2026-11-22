@@ -621,7 +621,7 @@ Q: The main concerns of the 2024 FDA panel on MDMA-assisted therapy included:
 
 Q: As of November 2026, psilocybin (COMP360) for treatment-resistant depression is:
 - FDA-approved
-- *Supported by positive phase 3 trials, with an FDA application being completed
+- *Supported by positive phase 3 trials, with an FDA application under review
 - Rejected by the FDA
 - Approved in India
 > Not yet approved.
