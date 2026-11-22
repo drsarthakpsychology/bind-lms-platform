@@ -98,7 +98,10 @@ describe("Quiz", () => {
     expect(submit).toHaveBeenCalledWith({ q1: 1, q2: 2, q3: 0 });
     expect(await screen.findByTestId("quiz-result")).toBeTruthy();
     expect(screen.getByLabelText("2 of 3 right")).toBeTruthy();
-    expect(screen.getByTestId("verdict")).toBeTruthy();
+    // The result lists every question with its verdict; tapping one shows the right answer.
+    expect(screen.getByLabelText(/^Question 1, (right|not right)\./)).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("review-0"));
+    expect(screen.getByTestId("review-0-options")).toBeTruthy();
   });
 });
 

@@ -248,13 +248,18 @@ export function HoldToMark({ dir, onConfirm, disabled, busy, testID = "scan-conf
     timer.current = null;
   };
   React.useEffect(() => clear, []);
+  // A new choice, or the send came back unsent: ready for another hold.
+  const holdKey = busy ? null : `ready:${dir ?? ""}`;
+  const [readyFor, setReadyFor] = React.useState(holdKey);
+  if (holdKey !== readyFor) {
+    setReadyFor(holdKey);
+    if (holdKey) setDown(false);
+  }
   React.useEffect(() => {
-    // A new choice, or the send came back unsent: ready for another hold.
     if (busy) return;
     fired.current = false;
     cancelAnimation(v);
     v.set(0);
-    setDown(false);
   }, [dir, busy, v]);
   const off = !!disabled || dir === null;
   const k = dir ? dirColors(c, dir) : { bg: c.lime, fg: c.onLime };

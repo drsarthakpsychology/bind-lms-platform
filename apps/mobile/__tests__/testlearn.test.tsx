@@ -11,7 +11,7 @@ import { missWhy } from "@/practise/games/blitz";
 import { SortGame } from "@/practise/games/sort";
 import { WardGame } from "@/practise/games/ward";
 import { render } from "./utils";
-import { searchCovers, searchHint } from "@/screens/search/search";
+import { fixedDocs } from "@/search/screen";
 import { progressMeta } from "@/screens/me/me";
 import { longTitle } from "@/practise/prep/long";
 import { PrepHome } from "@/practise/prep";
@@ -73,14 +73,16 @@ describe("Content that rises in after a load keeps the column's gap", () => {
   });
 });
 
-describe("Search says only what this account can find", () => {
-  it("a lecture-only account is not promised modules, medicines, cases or games", () => {
-    expect(searchCovers({ study: false, medicines: false, practise: false, games: false })).toBe("Lectures and doubts.");
-    expect(searchHint(false, false)).toBe("Lectures, doubts");
+describe("Search offers only what this account can open", () => {
+  it("a lecture-only account is not offered cases, games, Exam Prep, the Lab or the shop", () => {
+    const docs = fixedDocs({ practise: false, games: false, study: false, lecturesOnly: true });
+    expect(docs.some((d) => d.type === "cases" || d.type === "practise")).toBe(false);
+    expect(docs.some((d) => d.href === "/shop" || d.href === "/saved")).toBe(false);
   });
-  it("a student sees the full list", () => {
-    expect(searchCovers({ study: true, medicines: true, practise: true, games: true })).toBe("Lectures, modules, notes, medicines, cases, games and Exam Prep.");
-    expect(searchHint(true, true)).toBe("Lectures, modules, medicines");
+  it("a student is offered cases, games, Exam Prep and the Lab", () => {
+    const docs = fixedDocs({ practise: true, games: true, study: true, lecturesOnly: false });
+    for (const href of ["/casebook", "/lab", "/interview", "/shop", "/saved"]) expect(docs.some((d) => d.href === href)).toBe(true);
+    expect(docs.some((d) => d.href.startsWith("/game/"))).toBe(true);
   });
 });
 

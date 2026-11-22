@@ -206,7 +206,8 @@ export function LectureScreen() {
   const control = React.useRef<PlayerControl | null>(null);
   const [chapter, setChapter] = React.useState(0);
   const [notes, setNotes] = React.useState<LectureNote[]>(MOCK_NOTES);
-  const [writing, setWriting] = React.useState(false);
+  // The time a new note is pinned to, taken when the note sheet opens (null: closed).
+  const [writing, setWriting] = React.useState<number | null>(null);
   const [draft, setDraft] = React.useState("");
   const chapters = React.useMemo(() => mockChapters(q.data?.durationSeconds ?? null), [q.data?.durationSeconds]);
   const scroller = React.useRef<React.ComponentRef<typeof ScrollView>>(null);
@@ -263,9 +264,10 @@ export function LectureScreen() {
   const saveNote = () => {
     const text = draft.trim();
     if (!text) return;
-    setNotes((n) => [...n, { id: `mine-${n.length}`, at: Math.floor(last.current.t), text }]);
+    const at = writing ?? 0;
+    setNotes((n) => [...n, { id: `mine-${n.length}`, at, text }]);
     setDraft("");
-    setWriting(false);
+    setWriting(null);
     haptic.success();
     toast.show("Note added");
   };
@@ -378,7 +380,7 @@ export function LectureScreen() {
                 </>
               ) : null}
               {tab === "chapters" ? <Chapters chapters={chapters} current={chapter} onSeek={seek} /> : null}
-              {tab === "notes" ? <Notes notes={notes} onSeek={seek} onWrite={() => setWriting(true)} /> : null}
+              {tab === "notes" ? <Notes notes={notes} onSeek={seek} onWrite={() => setWriting(Math.floor(last.current.t))} /> : null}
               {tab === "materials" ? <MaterialRows items={l.materials} courseId={l.courseId} /> : null}
               {tab === "assignment" ? (
                 <HandInSlot.Provider value={setHandIn}>
@@ -409,10 +411,10 @@ export function LectureScreen() {
               setAsk(false);
             }}
           />
-          <Sheet open={writing} onClose={() => setWriting(false)} title="A note on this lecture" testID="lecture-note-sheet">
+          <Sheet open={writing !== null} onClose={() => setWriting(null)} title="A note on this lecture" testID="lecture-note-sheet">
             <View style={{ gap: space[4] }}>
               <T v="small" tone="muted" num>
-                Pinned at {clock(Math.floor(last.current.t))}. Sample for now: it stays until you leave this lecture.
+                Pinned at {clock(writing ?? 0)}. Sample for now: it stays until you leave this lecture.
               </T>
               <Field label="Your note" area value={draft} onChangeText={setDraft} placeholder="What to remember from this part" maxLength={2000} testID="lecture-note-text" />
               <Button label="Add note" disabled={!draft.trim()} onPress={saveNote} testID="lecture-note-save" />

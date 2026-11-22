@@ -23,8 +23,9 @@ export function QuestMoment() {
   const qc = useQueryClient();
   const card = q.data?.quests ?? null;
   // What was done before this round ended (the first answer we saw).
-  const before = React.useRef<Set<string> | null>(null);
-  if (card && before.current === null) before.current = new Set(card.quests.filter((x) => x.done).map((x) => x.id));
+  const [seen, setSeen] = React.useState<Set<string> | null>(null);
+  const first = seen ?? (card ? new Set(card.quests.filter((x) => x.done).map((x) => x.id)) : null);
+  if (first && seen === null) setSeen(first);
   React.useEffect(() => {
     // The round's save is on its way: ask Home again shortly, and once more for a slow save.
     const a = setTimeout(() => void qc.invalidateQueries({ queryKey: ["home"] }), 700);
@@ -35,15 +36,15 @@ export function QuestMoment() {
     };
   }, [qc]);
   if (!card) return null;
-  const rows = card.quests.filter((x) => x.target.screen === "practice" || (x.done && !before.current?.has(x.id)));
+  const rows = card.quests.filter((x) => x.target.screen === "practice" || (x.done && !first?.has(x.id)));
   if (!rows.length) return null;
-  const allNow = card.done && card.quests.some((x) => !before.current?.has(x.id));
+  const allNow = card.done && card.quests.some((x) => !first?.has(x.id));
   return (
     <View style={{ gap: space[2] }} testID="quest-moment">
       <Label>Today's quests</Label>
       <View style={{ gap: space[2] }}>
         {rows.map((x) => (
-          <QuestRow key={x.id} quest={x} fresh={x.done && !before.current?.has(x.id)} xp={card.xpEach} />
+          <QuestRow key={x.id} quest={x} fresh={x.done && !first?.has(x.id)} xp={card.xpEach} />
         ))}
       </View>
       {allNow ? (

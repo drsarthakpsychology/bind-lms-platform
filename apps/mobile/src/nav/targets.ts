@@ -63,7 +63,7 @@ export function nativeFor(web: string | undefined): string | null {
     if (b === "long") return "/prep/long";
     // Off on the website too (it sends these back to /prep).
     if (b === "diagnostic" || b === "goal") return "/prep";
-    if (b === "interview") return null;
+    if (b === "interview") return "/interview";
     if (b === "practice") return c ? `/prep/${enc(c)}` : "/prep";
     if (c === "long") return `/prep/long?subject=${enc(b)}${d ? `&topic=${enc(d)}` : ""}${d && e ? `&id=${enc(e)}` : ""}`;
     if (c) return `/prep/set?subject=${enc(b)}&topic=${enc(c)}${q.get("set") ? `&set=${enc(q.get("set")!)}` : ""}`;
@@ -77,13 +77,20 @@ export function nativeFor(web: string | undefined): string | null {
   if (a === "practice") {
     if (b === "medicines") return c ? `/medicine/${enc(c)}` : "/medicines";
     if (b === "library") return "/case/library";
+    if (b === "ethics") return "/ethics";
     if (b === "leaderboard") return "/game/leaderboard";
     return null;
   }
   if (a === "games") {
     if (b === "leaderboard") return "/game/leaderboard";
     if (b === "progress") return "/progress";
+    if (b === "lab") return c === "cases" ? (d ? `/casebook/${enc(d)}` : "/casebook") : c ? `/lab/${enc(c)}` : "/lab";
     return null;
+  }
+  // Self-checks and calm (the website's free pages).
+  if (a === "free") {
+    if (b === "calm") return c ? `/calm/${enc(c)}` : "/calm";
+    return b ? `/selfcheck/${enc(b)}` : "/selfcheck";
   }
   if (a === "leaderboard") return b === "shop" ? "/shop" : "/game/leaderboard";
   if (a === "journey") return "/journey";
@@ -141,6 +148,7 @@ export function hrefFor(t: AppTarget): string | null {
       if (!t.tool) return "/practise";
       if (t.tool === "prep") return "/prep";
       if (t.tool === "medicines") return "/medicines";
+      if (t.tool === "ethics") return "/ethics";
       if (t.tool.startsWith("case-") || CASE_TOOLS.has(t.tool)) return `/case/${encodeURIComponent(WEB_TOOL[t.tool] ?? t.tool)}`;
       if (WEB_TOOL[t.tool]) return `/case/${WEB_TOOL[t.tool]}`;
       return "/practise";

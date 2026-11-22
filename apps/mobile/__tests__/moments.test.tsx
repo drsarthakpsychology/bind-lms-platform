@@ -36,6 +36,8 @@ describe("end of a round (storyboard 2)", () => {
   });
 
   it("a won round gets one success haptic, then the shared reaction sticker", async () => {
+    // Reaction pictures are off unless the student turns them on (Me > Settings).
+    settingsStore.set({ reactions: true });
     await render(
       <GameFrame title="Rx">
         <EndPanel score="80" right={8} total={10} />
@@ -44,7 +46,8 @@ describe("end of a round (storyboard 2)", () => {
     await waitFor(() => expect(note).toHaveBeenCalledWith("success"));
     expect(note).toHaveBeenCalledTimes(1);
     await waitFor(() => expect(screen.getByTestId("reaction")).toBeTruthy(), { timeout: 6000 });
-  });
+    settingsStore.set({ reactions: false });
+  }, 10000);
 });
 
 describe("lecture (storyboard 5)", () => {

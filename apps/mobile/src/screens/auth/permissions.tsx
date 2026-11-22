@@ -48,21 +48,24 @@ function webAsks(name: "tour" | "perms"): boolean {
  * account that opened a link to something outside its lectures.
  */
 export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | null }) {
-  const [tour, setTour] = React.useState<"unknown" | "show" | "done">("unknown");
-  const [steps, setSteps] = React.useState<PermKind[] | null>(null);
+  const [tourState, setTour] = React.useState<"unknown" | "show" | "done">("unknown");
+  const [nativeSteps, setSteps] = React.useState<PermKind[] | null>(null);
   const [i, setI] = React.useState(0);
   const [busy, setBusy] = React.useState(false);
   const checked = React.useRef(false);
   const toured = React.useRef(false);
   const group = groupFor(me);
   const top = useSegments()[0] as string | undefined;
+  // Decided at once, with nothing to read: staff never get the tour; the browser build shows it only with ?tour=1.
+  const quick: "show" | "done" | null = group !== "(student)" ? "done" : Platform.OS === "web" ? (webAsks("tour") ? "show" : "done") : null;
+  const tour = tourState === "unknown" && active && quick ? quick : tourState;
+  // The browser build cannot ask; ?perms=1 shows the steps for screenshots.
+  const steps = Platform.OS === "web" ? (webAsks("perms") ? (group === "(student)" ? (["notifications", "camera"] as PermKind[]) : (["notifications"] as PermKind[])) : null) : nativeSteps;
 
   // 1. The tour: students only, once.
   React.useEffect(() => {
-    if (!active || toured.current) return;
+    if (!active || toured.current || quick) return;
     toured.current = true;
-    if (group !== "(student)") return setTour("done");
-    if (Platform.OS === "web") return setTour(webAsks("tour") ? "show" : "done");
     let live = true;
     void tourSeen()
       .then((seen) => {
@@ -75,17 +78,12 @@ export function FirstRunPermissions({ active, me }: { active: boolean; me: Me | 
     return () => {
       live = false;
     };
-  }, [active, group]);
+  }, [active, group, quick]);
 
   // 2. The permissions, once the tour is out of the way.
   React.useEffect(() => {
-    if (!active || tour !== "done" || checked.current) return;
+    if (!active || tour !== "done" || checked.current || Platform.OS === "web") return;
     checked.current = true;
-    if (Platform.OS === "web") {
-      // The browser build cannot ask; ?perms=1 shows both steps for screenshots.
-      if (webAsks("perms")) setSteps(groupFor(me) === "(student)" ? ["notifications", "camera"] : ["notifications"]);
-      return;
-    }
     let live = true;
     void (async () => {
       if (await introSeen()) return;

@@ -77,12 +77,16 @@ function EditProfile({ open, onClose, number }: { open: boolean; onClose: () => 
   const [value, setValue] = React.useState(number ?? "");
   const [error, setError] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
-  React.useEffect(() => {
+  // Each time the sheet opens (or the number changes while open) it starts from the number on file.
+  const [shownFor, setShownFor] = React.useState<string | null>(null);
+  const openKey = open ? `open:${number ?? ""}` : null;
+  if (openKey !== shownFor) {
+    setShownFor(openKey);
     if (open) {
       setValue(number ?? "");
       setError(null);
     }
-  }, [open, number]);
+  }
   const digits = value.replace(/\D/g, "");
   const save = async () => {
     const problem = numberProblem(value);

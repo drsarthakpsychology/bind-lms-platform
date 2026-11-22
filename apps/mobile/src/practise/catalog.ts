@@ -33,7 +33,7 @@ export const CASE_TOOLS: (Entry & { kind: "daily" | "detective" | "tool"; toolId
   { id: "two-minute", title: "Two-minute clinic", line: "A patient, two minutes, your differential.", href: "/case/two-minute", icon: "clock", kind: "tool", toolId: "two-minute", tool: "two-minute" },
   { id: "say-it", title: "Say it clinically", line: "Everyday words into case-sheet words.", href: "/case/say-it", icon: "words", kind: "tool", toolId: "say-it" },
   { id: "judgment", title: "Judgment calls", line: "New facts change the odds.", href: "/case/judgment", icon: "gauge", kind: "tool", toolId: "judgment" },
-  { id: "ethics", title: "Ethics, law and referral", line: "What to do, then the law behind it.", href: "/case/ethics", icon: "scale", kind: "tool", toolId: "ethics" },
+  { id: "ethics", title: "Ethics, law and referral", line: "What to do, then the law behind it.", href: "/ethics", icon: "scale", kind: "tool", toolId: "ethics" },
   { id: "landmark", title: "Landmark cases", line: "Famous cases: what was believed, and what held up.", href: "/case/landmark", icon: "cap", kind: "tool", toolId: "landmark", tool: "landmark" },
   { id: "osce", title: "OSCE stations", line: "One task, out loud, against the clock.", href: "/case/osce", icon: "timer", kind: "tool", toolId: "osce", tool: "osce" },
   { id: "mse-trainer", title: "Mental state exam", line: "Describe what you see before you label it.", href: "/case/mse-trainer", icon: "brain", kind: "tool", toolId: "mse-trainer", tool: "mse-small" },

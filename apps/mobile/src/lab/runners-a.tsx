@@ -145,6 +145,11 @@ export function SerialPosition({ onDone, onClose }: RunnerProps) {
 
 /* ------------------------------------------------------------------ stroop */
 
+/** Milliseconds since a moment (called from a tap, never while drawing). */
+function msSince(t: number): number {
+  return Date.now() - t;
+}
+
 const STROOP_N = 16;
 
 export function Stroop({ onDone, onClose }: RunnerProps) {
@@ -165,7 +170,7 @@ export function Stroop({ onDone, onClose }: RunnerProps) {
   }, [gap, i]);
   const answer = (name: string) => {
     if (!trial || gap) return;
-    out.current.push({ ...trial, answer: name, rt: Date.now() - shownAt.current });
+    out.current.push({ ...trial, answer: name, rt: msSince(shownAt.current) });
     if (i + 1 >= trials.length) {
       const e = stroopEffect(out.current);
       onDone({
@@ -205,8 +210,10 @@ const SIZES = [2, 4, 6, 2, 4, 6, 4, 6, 2, 6, 4, 2];
 export function ChangeDetection({ onDone, onClose }: RunnerProps) {
   const c = useTheme();
   const palette = React.useMemo(() => [...STROOP_COLOURS.map((x) => x.css), c.sk.lime, c.onPaper], [c.sk.lime, c.onPaper]);
+  // A new pattern each time the runner opens, fixed for that run.
+  const [seed] = React.useState(() => Date.now() % 100000);
   const plan = React.useMemo(() => {
-    const rand = seeded(Date.now() % 100000);
+    const rand = seeded(seed);
     return SIZES.map((n, k) => {
       const cells = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8], rand).slice(0, n);
       const colours = cells.map(() => Math.floor(rand() * palette.length));
@@ -215,7 +222,7 @@ export function ChangeDetection({ onDone, onClose }: RunnerProps) {
       const after = colours.map((col, j) => (changed && j === which ? (col + 1 + Math.floor(rand() * (palette.length - 1))) % palette.length : col));
       return { n, cells, colours, after, changed };
     });
-  }, [palette.length]);
+  }, [palette.length, seed]);
   const [i, setI] = React.useState(-1);
   const [phase, setPhase] = React.useState<"study" | "blank" | "test">("study");
   const out = React.useRef<ChangeTrial[]>([]);

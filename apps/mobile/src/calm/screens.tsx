@@ -1,12 +1,13 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowRight, Check, Hand, Phone, Shuffle, StretchVertical, Wind } from "lucide-react-native";
 import * as React from "react";
-import { Linking, useWindowDimensions, View } from "react-native";
+import { useWindowDimensions, View } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, Field, Label, Layer, pebbleShape, QuietEmpty, Row, RowList, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { openLink } from "@/lib/open";
 import { BackBar, EntryCard, IconPatch, leave, OwnHeader, Page, PlayShell, type IconType } from "@/lab/shell";
 import { curves, Enter, GrowIn, Press, Swap } from "@/motion";
 import { fonts, layout, space, useLightStatusBar, useTheme } from "@/theme";
@@ -20,7 +21,7 @@ export function HelpLine({ urgent }: { urgent?: boolean }) {
   const c = useTheme();
   return (
     <RowList bare>
-      <Row testID="help-line" title={urgent ? "Please talk to someone today" : "Need to talk to someone right now?"} meta={`Call ${CRISIS.name} on ${CRISIS.number}. Free, private, day and night. In danger, call ${CRISIS.emergency}.`} icon={<Phone size={20} color={urgent ? c.danger : c.ink} />} accessibilityLabel={`Call ${CRISIS.name} on ${CRISIS.number}`} onPress={() => void Linking.openURL(CRISIS.href).catch(() => undefined)} chevron={false} />
+      <Row testID="help-line" title={urgent ? "Please talk to someone today" : "Need to talk to someone right now?"} meta={`Call ${CRISIS.name} on ${CRISIS.number}. Free, private, day and night. In danger, call ${CRISIS.emergency}.`} icon={<Phone size={20} color={urgent ? c.danger : c.ink} />} accessibilityLabel={`Call ${CRISIS.name} on ${CRISIS.number}`} onPress={() => void openLink(CRISIS.href)} chevron={false} />
     </RowList>
   );
 }

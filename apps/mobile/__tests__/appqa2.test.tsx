@@ -18,7 +18,7 @@ import * as R from "@/practise/mock/routes";
 import { shopState } from "@/practise/mock/routes";
 import { MocksScreen } from "@/practise/prep/mock";
 import { ShopScreen } from "@/practise/shop";
-import { SearchScreen } from "@/screens/search/search";
+import { SearchScreen } from "@/search/screen";
 import { AskScreen } from "@/screens/doubts/ask";
 import { render } from "./utils";
 

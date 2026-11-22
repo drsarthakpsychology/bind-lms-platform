@@ -271,19 +271,17 @@ export function ProtectedPlayer({ lessonId, onTime, compromised, intro, full = f
   const [captured, setCaptured] = React.useState(isCaptured());
   const [attempt, setAttempt] = React.useState(0);
   const pbRef = React.useRef<Playback | null>(null);
-  React.useEffect(() => {
-    if (!control) return;
-    control.current = {
-      seek: (t) => {
+  React.useImperativeHandle(
+    control,
+    () => ({
+      seek: (t: number) => {
         const pb = pbRef.current;
         if (pb?.ready) pb.seek(Math.max(0, pb.duration > 0 ? Math.min(t, pb.duration - 1) : t));
       },
       play: () => pbRef.current?.play(),
-    };
-    return () => {
-      control.current = null;
-    };
-  }, [control]);
+    }),
+    [],
+  );
   // Where the lecture was when its address ran out, to carry on from there with a new one.
   const carryOn = React.useRef(0);
   const renewed = React.useRef(0);

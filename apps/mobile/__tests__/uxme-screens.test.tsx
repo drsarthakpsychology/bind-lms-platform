@@ -8,7 +8,7 @@ import { AskScreen } from "@/screens/doubts/ask";
 import { MeScreen } from "@/screens/me/me";
 import { ProgressScreen } from "@/screens/me/progress";
 import { dayGroup } from "@/screens/notifications/list";
-import { SearchScreen } from "@/screens/search/search";
+import { SearchScreen } from "@/search/screen";
 import { render } from "./utils";
 
 beforeAll(async () => {

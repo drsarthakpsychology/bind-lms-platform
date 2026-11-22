@@ -28,7 +28,7 @@ const APP: Record<string, { href: string; icon: Icon }> = {
   "two-minute": { href: "/case/two-minute", icon: "clock" },
   terms: { href: "/case/say-it", icon: "words" },
   judgment: { href: "/case/judgment", icon: "gauge" },
-  ethics: { href: "/case/ethics", icon: "scale" },
+  ethics: { href: "/ethics", icon: "scale" },
   "out-of-depth": { href: "/case/out-of-depth", icon: "alert" },
   landmark: { href: "/case/landmark", icon: "cap" },
   osce: { href: "/case/osce", icon: "timer" },
