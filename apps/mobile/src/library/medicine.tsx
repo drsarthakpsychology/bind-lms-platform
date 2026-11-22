@@ -5,7 +5,6 @@ import { Pressable, View } from "react-native";
 
 import { ApiFailure } from "@/api/errors";
 import { Button, Label, QuietEmpty, Row, RowList, RowsSkeleton, Sheet, StillTrying, T } from "@/ds";
-import { recentMedicines } from "@/lib/recent";
 import { openTarget } from "@/nav/targets";
 import type { MedicinePage, MedSection } from "@/practise/contract";
 import { fonts, layout, space, useTheme } from "@/theme";
@@ -14,7 +13,7 @@ import { useMedicineList, useMedicinePage } from "./list";
 import { ClassMark } from "./marks";
 import { MedicineDiagrams } from "./med-diagrams";
 import { searchMeds } from "./meds";
-import { pinnedMeds } from "./pins";
+import { pinnedMeds, recentMeds } from "./pins";
 
 type View_ = "student" | "clinician";
 
@@ -50,7 +49,7 @@ export function MedicineScreen() {
   const q = useMedicinePage(String(id));
   const openedId = q.data?.id;
   React.useEffect(() => {
-    if (openedId) recentMedicines.add(openedId);
+    if (openedId) recentMeds.add(openedId);
   }, [openedId]);
   if (q.isError && q.data === undefined) {
     const soon = q.error instanceof ApiFailure && q.error.code === "not_found";

@@ -7,21 +7,47 @@ import { View } from "react-native";
 import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
 import { Chips, Label, QuietEmpty, Row, RowList, RowsSkeleton, Screen, StillTrying, T, TabRow, useProgressive } from "@/ds";
-import { recentMedicines } from "@/lib/recent";
 import { Enter, Swap } from "@/motion";
 import { SoonState } from "@/practise/soon";
 import type { MedicineList } from "@/practise/types";
-import type { MedicinePage } from "@/practise/contract";
+import type { MedicinePage, ReferenceHome } from "@/practise/contract";
 import { layout, space, useTheme } from "@/theme";
 import { LinkCard, QuietError, SearchField } from "./kit";
 import { ClassMark } from "./marks";
 import { searchMeds } from "./meds";
-import { MECHANISM_GROUPS } from "./mock";
-import { pinnedMeds } from "./pins";
+import { pinnedMeds, recentMeds } from "./pins";
 
 export const libraryKeys = { list: ["library", "medicines"] as const, med: (id: string) => ["library", "medicine", id] as const };
 /** GET /library/medicines: every medicine, searched on the phone (the website's rule). */
 export const useMedicineList = () => useQuery({ queryKey: libraryKeys.list, queryFn: () => api.get<MedicineList>("/library/medicines"), staleTime: 60 * 60_000 });
+/** GET /library/reference: the website's grouping by what each medicine acts on (mechanismIndex), read only when "By how they work" is open. */
+export const useByMechanism = (enabled: boolean) => useQuery({ queryKey: ["library", "reference"], queryFn: () => api.get<ReferenceHome>("/library/reference"), staleTime: 60 * 60_000, enabled });
+
+export type MechanismGroup = { tag: string; items: { m: MedRow; q: string | null }[] };
+/** The server's groups, matched to the app's medicine rows by slug or name. Medicines the app does not list are left out, and so are groups left empty. */
+export function mechanismGroups(home: ReferenceHome | undefined, rows: readonly MedRow[]): MechanismGroup[] {
+  if (!home) return [];
+  const byKey = new Map<string, MedRow>();
+  for (const r of rows) {
+    byKey.set(r.id.toLowerCase(), r);
+    byKey.set(r.name.trim().toLowerCase(), r);
+  }
+  return home.byMechanism
+    .map((g) => {
+      const seen = new Set<string>();
+      const items: MechanismGroup["items"] = [];
+      for (const d of g.drugs) {
+        const m = byKey.get(d.slug.toLowerCase()) ?? byKey.get(d.name.trim().toLowerCase());
+        if (m && !seen.has(m.id)) {
+          seen.add(m.id);
+          items.push({ m, q: d.qualifier });
+        }
+      }
+      return { tag: g.tag, items };
+    })
+    .filter((g) => g.items.length);
+}
+
 export const useMedicinePage = (id: string) => useQuery({ queryKey: libraryKeys.med(id), queryFn: () => api.get<MedicinePage>(`/library/medicines/${encodeURIComponent(id)}`), staleTime: 60 * 60_000, enabled: !!id });
 
 type MedRow = MedicineList["rows"][number];
@@ -40,7 +66,7 @@ export function LibraryScreen() {
   const [by, setBy] = React.useState<By>("class");
   const [group, setGroup] = React.useState("All");
   const pinned = pinnedMeds.use();
-  const recentIds = recentMedicines.use();
+  const recentIds = recentMeds.use();
   const all = React.useMemo(() => q.data?.rows ?? [], [q.data]);
   const found = React.useMemo(() => searchMeds(all, text), [all, text]);
   const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
@@ -149,7 +175,10 @@ function ByClass({ groups, rows, group, setGroup, row }: { groups: string[]; row
 /** What each medicine acts on. A medicine sits under every target it has, so the same name can show twice. */
 function ByHow({ rows, row }: { rows: MedRow[]; row: (m: MedRow, prefix?: string, qualifier?: string) => React.ReactNode }) {
   const c = useTheme();
-  const groups = MECHANISM_GROUPS.map((g) => ({ ...g, items: g.meds.map((m) => ({ m: rows.find((r) => r.id === m.id), q: m.qualifier })).filter((x): x is { m: MedRow; q: string | undefined } => !!x.m) })).filter((g) => g.items.length);
+  const q = useByMechanism(true);
+  const groups = React.useMemo(() => mechanismGroups(q.data, rows), [q.data, rows]);
+  if (q.isLoading) return <RowsSkeleton />;
+  if (q.isError && !q.data) return <QuietError what="the groups" error={q.error} onRetry={() => void q.refetch()} testID="how-error" />;
   if (!groups.length) return <QuietEmpty title="Not grouped yet" body="Browse by class for now. Each medicine page has How it works at the end." testID="how-empty" />;
   return (
     <>
@@ -162,12 +191,9 @@ function ByHow({ rows, row }: { rows: MedRow[]; row: (m: MedRow, prefix?: string
             <T v="bodyStrong" accessibilityRole="header">
               {g.tag}
             </T>
-            <T v="small" tone="muted">
-              {g.plain}
-            </T>
           </View>
           <RowList bare still>
-            {g.items.map((x) => row(x.m, `how-${i}`, x.q ?? g.plain))}
+            {g.items.map((x) => row(x.m, `how-${i}`, x.q ?? undefined))}
           </RowList>
         </View>
       ))}

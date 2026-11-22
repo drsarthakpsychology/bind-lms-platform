@@ -6,7 +6,7 @@
  * not carry this file or its content.
  */
 import type { RawResponse } from "@/api/client";
-import type { MedDiagram, MedicineList, MedicinePage, MedSection } from "../contract";
+import type { MedDiagram, MedicineList, MedicinePage, MedSection, ReferenceHome } from "../contract";
 import { DOSE_NOTE, SECTION_NAMES, shownSections, splitTell, washoutLine, type HalfLife, type Med as LMed, type Mechanism, type MedVisual } from "@/library/meds";
 import { CASES, resetCases } from "./cases";
 import * as R from "./routes";
@@ -98,12 +98,43 @@ export function medicinePage(id: string): MedicinePage | null {
   };
 }
 
+/*
+ * GET /library/reference for the mock build: the website's mechanismIndex
+ * groups for the sample medicines (targets copied from src/lib/meds/mechanisms.ts).
+ */
+const MECHANISMS: [string, [string, string?][]][] = [
+  ["Acetylcholinesterase", [["donepezil"]]],
+  ["Alpha-2 adrenergic", [["mirtazapine"]]],
+  ["Beta-1 and beta-2 adrenergic", [["propranolol"]]],
+  ["Dopamine D2", [["clozapine", "Weak, fast-off"], ["olanzapine"], ["risperidone"]]],
+  ["Dopamine D2 and D3", [["aripiprazole", "Partial agonist"]]],
+  ["Dopamine pump (DAT)", [["methylphenidate"], ["sertraline", "Weak, at higher doses"]]],
+  ["GABA-A receptor (benzodiazepine site)", [["clonazepam"], ["zolpidem", "Alpha1-preferring"]]],
+  ["Histamine H1", [["clozapine"], ["mirtazapine"], ["olanzapine"]]],
+  ["Inositol monophosphatase and GSK-3 beta", [["lithium"]]],
+  ["Muscarinic M1 to M3", [["clozapine"], ["olanzapine"], ["trihexyphenidyl"]]],
+  ["Noradrenaline pump (NET)", [["methylphenidate"], ["venlafaxine", "Rising with dose"]]],
+  ["Serotonin 5-HT2A", [["aripiprazole"], ["clozapine"], ["mirtazapine"], ["olanzapine"], ["risperidone"]]],
+  ["Serotonin pump (SERT)", [["escitalopram"], ["fluoxetine"], ["sertraline"], ["venlafaxine"]]],
+  ["Voltage-gated sodium channels", [["lamotrigine"], ["valproate"]]],
+];
+export function referenceHome(): ReferenceHome {
+  const name = (id: string) => MEDS.find((x) => x.med.id === id)?.med.name ?? id;
+  return {
+    v: 1,
+    drugs: MEDS.map(({ med }) => ({ slug: med.id, name: med.name })),
+    byMechanism: MECHANISMS.map(([tag, ds]) => ({ tag, drugs: ds.map(([id, q]) => ({ slug: id, name: name(id), qualifier: q ?? null })) })),
+    notice: "",
+  };
+}
+
 /** Answers a Practise or Library route, or null when the path is not one of them. */
 export function practiseRoute(method: string, path: string, body: unknown, kind: string): RawResponse | null {
   const seg = path.split("?")[0]!.split("/").filter(Boolean);
   if (seg[0] === "library") {
     if (kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");
     if (method === "GET" && seg[1] === "medicines" && seg.length === 2) return ok(medicineList());
+    if (method === "GET" && seg[1] === "reference" && seg.length === 2) return ok(referenceHome());
     if (method === "GET" && seg[1] === "medicines" && seg.length === 3) {
       const p = medicinePage(decodeURIComponent(seg[2]!));
       return p ? ok(p) : fail(404, "not_found", "That could not be found.");
