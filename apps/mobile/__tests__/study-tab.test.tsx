@@ -40,13 +40,13 @@ describe("the Study tab", () => {
     expect(screen.queryByTestId("notes-hub")).toBeNull();
   });
 
-  it("switches to Notes, shows the look-up shelves, and remembers the side", async () => {
+  it("switches to Notes, shows Quick Notes, and remembers the side", async () => {
     const v = await render(<StudyTab />);
     await fireEvent.press(await screen.findByTestId("study-side-notes"));
     expect(await screen.findByTestId("notes-hub")).toBeTruthy();
-    expect(screen.getByTestId("hub-notes")).toBeTruthy();
+    expect(screen.getByTestId("qn-search")).toBeTruthy();
+    expect(await screen.findByTestId("qn-shelf-criteria")).toBeTruthy();
     expect(screen.getByTestId("hub-medicines")).toBeTruthy();
-    expect(screen.getByTestId("hub-reference")).toBeTruthy();
     expect(screen.getByTestId("study-side-notes").props.accessibilityState).toEqual({ selected: true });
     await waitFor(async () => expect(await AsyncStorage.getItem("vibha.study.side")).toBe("notes"));
     await v.unmount();

@@ -11,6 +11,7 @@ import { learnKeys, useNote, useNotes, useTerms } from "@/api/learn";
 import { Chips, IconDot, Jyo, Label, QuietEmpty, Row, RowList, RowsSkeleton, Screen, Stone, T } from "@/ds";
 import { Block, Bullets, JumpChips, LinkCard, Loads, LookupScreen, PinButton, SearchField, useJump, type Jump } from "@/library/kit";
 import { pinnedNotes, recentNotes } from "@/library/pins";
+import { SummaryQuickNotes } from "@/library/quick-module";
 import { OnceHint } from "@/lib/once";
 import { ReadingSize } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
@@ -315,6 +316,7 @@ export function NoteBody({ n, view, neighbours, jump }: { n: RevisionNote; view:
           </View>
         </Block>
       ) : null}
+      <SummaryQuickNotes summaryId={n.id} />
       <View style={{ gap: space[2] }}>
         <Label>Practise this</Label>
         <LinkCard
