@@ -42,6 +42,10 @@ const CASES: Case[] = [
   { name: "practise/tools/blitz", path: "/practise/tools/blitz", mod: () => import("./practise/tools/[tool]/route"), params: { tool: "blitz" }, maxDepth: 4 },
   { name: "study/modules", path: "/study/modules", mod: () => import("./study/modules/route"), maxDepth: 2 },
   { name: "study/map/practice", path: "/study/map/practice", mod: () => import("./study/map/practice/route"), maxDepth: 3 },
+  { name: "study/modules/:id/checkpoints/1", path: "/study/modules/m/checkpoints/1", mod: () => import("./study/modules/[moduleId]/checkpoints/[n]/route"), params: { moduleId: "", n: "1" }, maxDepth: 3, maxBytes: 40_000 },
+  { name: "library/medicines", path: "/library/medicines", mod: () => import("./library/medicines/route"), maxDepth: 2 },
+  { name: "study/notes", path: "/study/notes", mod: () => import("./study/notes/route"), maxDepth: 3 },
+  { name: "study/map", path: "/study/map", mod: () => import("./study/map/route"), maxDepth: 3 },
   { name: "home", path: "/home", mod: () => import("./home/route"), maxDepth: 4 },
   { name: "admin/home", path: "/admin/home", mod: () => import("./admin/home/route"), admin: true, maxDepth: 3 },
   { name: "admin/people", path: "/admin/people", mod: () => import("./admin/people/route"), admin: true, maxDepth: 3 },
@@ -90,6 +94,12 @@ async function call(mod: Mod, c: Case, extra: Record<string, string> = {}) {
 describe("practice screens: server time and size", () => {
   for (const c of CASES) {
     it(c.name, async () => {
+      if (c.params && c.params.moduleId === "") {
+        // The first module that has a checkpoint.
+        const { MODULES } = await import("@/lib/study");
+        const { checkpoints } = await import("@/lib/study/checkpoints");
+        c.params.moduleId = MODULES.find((m) => checkpoints(m).length)?.id ?? "none";
+      }
       h.setUser(c.admin ? { id: ADMIN_ID, email: "owner@example.com" } : { id: STUDENT_ID, email: "asha@example.com" });
       vi.resetModules();
       const t = performance.now();
