@@ -47,6 +47,8 @@ describe("the rich case shape", () => {
     const k = SAMPLE_CASES[0]!.keys.s1!;
     const ids = SAMPLE_CASES[0]!.steps[0]!.options.map((o) => o.id);
     expect(scoreStep(k, ["b"], ids, 0, 1)).toBe(1);
+    // The first hint is free.
+    expect(scoreStep(k, ["b"], ids, 1, 1)).toBe(1);
     expect(scoreStep(k, ["b"], ids, 2, 1)).toBe(HINT_CAP[2]);
     expect(scoreStep(k, ["b"], ids, 0, 2)).toBe(0.5);
     expect(scoreStep(k, ["a"], ids, 0, 1)).toBeLessThan(0.5);

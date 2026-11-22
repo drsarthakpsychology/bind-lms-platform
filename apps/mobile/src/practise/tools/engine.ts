@@ -65,6 +65,10 @@ export type Key = {
   selfCheck?: boolean;
   /** Raw data a record needs (Judgment calls). */
   raw?: Record<string, unknown>;
+  /** Up to three written hints (What would you do). */
+  hints?: string[];
+  /** What to take away, shown with the last step's answer. */
+  learn?: { concept: string; point: string; errors: string[] };
 };
 export type Def = { id: string; title: string; line: string | null; setting: string | null; intro: string; steps: Key[]; takeaway: string; /** The step to open on (the small things walk resumes where it was left). */ start?: number };
 
@@ -118,7 +122,16 @@ function modalOf(panel: number[]): number {
 
 /* ----------------------------------------------------------- per tool */
 
-type Scenario = { id: string; who: string; topic: string; objective: string; beats: { says: string; context?: string; choices: { text: string; outcome: "best" | "ok" | "harm"; consequence: string }[] }[] };
+type Scenario = {
+  id: string;
+  who: string;
+  topic: string;
+  objective: string;
+  /** Free starting picture (newer servers). */
+  opening?: { setting: string; lines: string[] };
+  learn?: { concept: string; point: string; errors: string[] };
+  beats: { says: string; context?: string; hints?: string[]; choices: { text: string; outcome: "best" | "ok" | "harm"; consequence: string }[] }[];
+};
 type SayIt = { id: string; phrase: string; language: string; meaning: string; term: string; note?: string; wrong: string[]; why: string; topic: string; difficulty: number };
 type NoteTerm = { noteId: string; term: string; lay: string; topic: string };
 type Sct = { id: string; vignette: string; hypothesis: string; new_information: string; topic?: string };
@@ -146,8 +159,10 @@ function wwyd(d: Record<string, unknown>): Def[] {
     title: s.who,
     line: s.topic,
     setting: s.topic,
-    intro: s.beats[0]?.context ?? `${s.who}. ${s.objective}.`,
+    intro: s.opening ? [s.opening.setting, ...s.opening.lines].join("\n\n") : (s.beats[0]?.context ?? `${s.who}. ${s.objective}.`),
     steps: s.beats.map((b, n) => ({
+      hints: Array.isArray(b.hints) ? b.hints.slice(0, 3) : [],
+      ...(s.learn && n === s.beats.length - 1 ? { learn: s.learn } : {}),
       pub: { n, kind: "pick" as const, ask: b.says, options: b.choices.map((c) => c.text) },
       right: [b.choices.findIndex((c) => c.outcome === "best")],
       verdicts: b.choices.map((c) => c.outcome),

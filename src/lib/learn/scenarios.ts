@@ -6,9 +6,17 @@
  */
 import type { PrepExam } from "@/lib/prep/types";
 import { SCENARIO_BANK } from "./scenario-bank";
+import { withGuides } from "./scenario-guides";
+import { MERGED_AWAY, RICH_SCENARIOS } from "./scenario-rich";
 export type Outcome = "best" | "ok" | "harm";
-export type Choice = { text: string; outcome: Outcome; consequence: string };
-export type Beat = { says: string; context?: string; choices: Choice[] };
+/** `why`: the reason this choice is right or wrong here (rich cases); `consequence` is what happens next. */
+export type Choice = { text: string; outcome: Outcome; consequence: string; why?: string };
+/** `hints`: 1 the area to think in, 2 the key detail and why, 3 narrow the choice. Every beat has them once guides are added. */
+export type Beat = { says: string; context?: string; choices: Choice[]; hints?: [string, string, string] };
+/** The free starting picture: where you are and your role, then the story so far. */
+export type Opening = { setting: string; lines: string[] };
+/** What to take away (rich cases): the principle by name, the clinical point, common errors. */
+export type Learn = { concept: string; point: string; errors: string[] };
 /** Where the decision sits in clinical work. */
 export type Area = "assessment" | "risk" | "emergency" | "crisis" | "treatment" | "liaison" | "child-family" | "boundaries";
 /** Difficulty ladder: 1 recognise, 2 recall, 3 apply, 4 tell look-alikes apart, 5 full case. */
@@ -27,6 +35,8 @@ export type Scenario = {
   exams: PrepExam[];
   /** Study module for "Learn this". */
   moduleId: string;
+  opening?: Opening;
+  learn?: Learn;
 };
 
 const SCENARIOS_CORE: Scenario[] = [
@@ -268,7 +278,12 @@ const SCENARIOS_CORE: Scenario[] = [
 ];
 
 /** Core scenarios plus the authored bank; ids are stable. */
-export const SCENARIOS: Scenario[] = [...SCENARIOS_CORE, ...SCENARIO_BANK];
+export const SCENARIOS: Scenario[] = [...SCENARIOS_CORE, ...SCENARIO_BANK]
+  // The most used cases, rebuilt in the rich shape (same id, so answer history carries on).
+  .map((x) => RICH_SCENARIOS.get(x.id) ?? x)
+  // Near-duplicates folded into a rich case are no longer dealt.
+  .filter((x) => !MERGED_AWAY.has(x.id))
+  .map(withGuides);
 
 /** "Words matter": pick the better way to say it. */
 export const WORDS: { worse: string; better: string; why: string }[] = [
