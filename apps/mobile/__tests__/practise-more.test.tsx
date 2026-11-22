@@ -140,7 +140,7 @@ describe("Self-check records and the MSE trainer", () => {
     await fireEvent.changeText(screen.getByTestId("tool-mse-mood"), "irritable");
     await press("tool-submit");
     await waitFor(() => expect(screen.getByTestId("tool-lights")).toBeTruthy());
-    expect(screen.getAllByText("MATCHED").length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText("Matched").length).toBeGreaterThanOrEqual(2);
     await press("tool-next");
     expect(records("mse")[0]).toMatchObject({ stimulus_id: "mse4-sandeep", level: "4" });
   });
@@ -150,7 +150,7 @@ describe("Self-check records and the MSE trainer", () => {
     await render(<ToolCaseScreen tool="mse-trainer" />);
     await press("tool-moment-reveal");
     await waitFor(() => expect(screen.getByTestId("tool-moment-read")).toBeTruthy());
-    expect(screen.getByText("The move".toUpperCase())).toBeTruthy();
+    expect(screen.getByText("The move")).toBeTruthy();
     await press("tool-next");
     const marks = posted("/play/cases/mark").map((l) => (l.body as { args: unknown[] }).args);
     expect(marks).toContainEqual(["mse-small", "walk", { at: "st-2" }]);

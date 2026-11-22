@@ -161,8 +161,8 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, head
             ) : null}
           </View>
         </Layer>
-        {over}
         <StickerLayer above={thumb ? thumbH || undefined : insets.bottom} />
+        {over}
         <Confetti fire={confetti} count={scaled(36, tier)} />
         <HowToSheet open={help} onClose={closeHelp} steps={howTo ?? []} />
         <Sheet open={asking} onClose={closeAsk} title="Leave this round?">
@@ -505,7 +505,7 @@ export function Verdict({ right, title, why, seed = 0, learn, partial }: { right
  */
 export const END_AT = { land: beats.haptic, sticker: beats.sticker, stats: beats.stats, statStep: 60 } as const;
 
-export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, right, total, outcome, best, children }: { kicker?: string; score: string; scoreOf?: string; line?: string; stats?: { label: string; value: string }[]; right?: number; total?: number; outcome?: "won" | "lost" | "mixed"; /** A new personal best: confetti. */ best?: boolean; children?: React.ReactNode }) {
+export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, right, total, outcome, best, quiet, children }: { kicker?: string; /** A clinical case: no sticker and no confetti (docs/DESIGN.md, case player). */ quiet?: boolean; score: string; scoreOf?: string; line?: string; stats?: { label: string; value: string }[]; right?: number; total?: number; outcome?: "won" | "lost" | "mixed"; /** A new personal best: confetti. */ best?: boolean; children?: React.ReactNode }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const fx = React.useContext(FrameFx);
@@ -524,10 +524,10 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
     // One order for every win (the kit's beats): the score rolls, then the haptic, then particles, then the sticker.
     celebrate([
       { at: beats.haptic, run: won ? () => (haptic.success(), streakMoment.done()) : result === "lost" ? haptic.warn : haptic.tap },
-      ...(won ? [{ at: beats.particles, motion: true, run: () => (setBurst(1), perfect || best ? fx.confetti() : undefined) }] : []),
+      ...(won ? [{ at: beats.particles, motion: true, run: () => (setBurst(1), !quiet && (perfect || best) ? fx.confetti() : undefined) }] : []),
       ...(result === "lost" ? [{ at: beats.haptic, motion: true, run: () => dip.set(withSequence(withTiming(2, { duration: dur.micro, easing: curves.out }), withSpring(0, springs.smooth))) }] : []),
       // The shared reaction layer waits SETTLE_MS itself, so ask early enough to land on the beat.
-      { at: Math.max(0, beats.sticker - SETTLE_MS), run: () => reactions.show(mood) },
+      ...(quiet ? [] : [{ at: Math.max(0, beats.sticker - SETTLE_MS), run: () => reactions.show(mood) }]),
     ]);
     // Once per panel: a new round mounts a new panel.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -582,18 +582,18 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
       {stats?.length ? (
         <View style={{ flexDirection: "row", gap: space[2] }}>
           {stats.map((s, i) => {
-            // Points landing: the XP chip is the lime one, and its number rolls up.
+            // Points landing: the XP chip is ink (the lime one is Play again), and its number rolls up.
             const xp = s.label === "XP" ? /^\+(\d+)$/.exec(s.value) : null;
             return (
-              <Animated.View key={s.label} entering={reduce ? undefined : presets.rise(END_AT.stats + i * END_AT.statStep)} accessible accessibilityLabel={`${s.label}: ${s.value}`} testID={xp ? "end-xp" : undefined} style={{ flex: 1, backgroundColor: xp ? c.lime : c.card, borderRadius: layout.radius, paddingVertical: space[3], paddingHorizontal: space[3], gap: 2 }}>
+              <Animated.View key={s.label} entering={reduce ? undefined : presets.rise(END_AT.stats + i * END_AT.statStep)} accessible accessibilityLabel={`${s.label}: ${s.value}`} testID={xp ? "end-xp" : undefined} style={{ flex: 1, backgroundColor: xp ? c.ink : c.card, borderRadius: layout.radius, paddingVertical: space[3], paddingHorizontal: space[3], gap: 2 }}>
                 {xp ? (
-                  <RollingNumber value={Number(xp[1])} prefix="+" v="h2" style={{ color: c.onLime }} />
+                  <RollingNumber value={Number(xp[1])} prefix="+" v="h2" style={{ color: c.bg }} />
                 ) : (
                   <T v="h2" num numberOfLines={1} adjustsFontSizeToFit>
                     {s.value}
                   </T>
                 )}
-                <T v="caption" style={{ color: xp ? c.onLime : c.muted }}>
+                <T v="caption" style={{ color: xp ? c.bg : c.muted }}>
                   {s.label}
                 </T>
               </Animated.View>
