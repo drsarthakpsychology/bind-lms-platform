@@ -189,7 +189,7 @@ export function LectureScreen() {
   const params = useLocalSearchParams<{ lessonId: string; tab?: string }>();
   const lessonId = String(params.lessonId ?? "");
   const q = useLecture(lessonId);
-  const [tab, setTab] = React.useState<Tab>(params.tab === "assignment" ? "assignment" : params.tab === "materials" ? "materials" : "about");
+  const [tab, setTab] = React.useState<Tab>(params.tab === "assignment" ? "assignment" : "about");
   const [busy, setBusy] = React.useState(false);
   const [ask, setAsk] = React.useState(false);
   const [done, setDone] = React.useState(false);
@@ -302,7 +302,7 @@ export function LectureScreen() {
   // The skeleton only after 120ms, then at least 380ms (no grey flash).
   const gate = useLoadGate(!!l || q.isError);
   const tabs: { id: Tab; name: string }[] = l
-    ? [{ id: "about", name: "About" }, ...(l.hasVideo ? [{ id: "chapters" as Tab, name: "Chapters" }, { id: "notes" as Tab, name: "My notes" }] : []), ...(l.materials.length ? [{ id: "materials" as Tab, name: `Materials · ${l.materials.length}` }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
+    ? [{ id: "about", name: "About" }, ...(l.hasVideo ? [{ id: "chapters" as Tab, name: "Chapters" }, { id: "notes" as Tab, name: "Notes" }] : []), ...(l.materials.length && !l.hasVideo ? [{ id: "materials" as Tab, name: "Materials" }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
     : [];
   const watched = l ? l.progress.completed || done : false;
   const blockedByAssignment = !!l?.requiresAssignment && !l.assignment?.submission;
@@ -362,8 +362,16 @@ export function LectureScreen() {
                       <Tile testID="lecture-assignment-card" icon={NotebookPen} title={l.assignment.title} meta={l.requiresAssignment ? "Hand this in to finish the lecture" : "Assignment for this lecture"} trailing={<Pill tone="warm">To do</Pill>} onPress={() => { setDir(1); setTab("assignment"); scroller.current?.scrollTo({ y: 0, animated: true }); }} />
                     </Enter>
                   ) : null}
-                  {l.next ? (
+                  {l.materials.length && l.hasVideo ? (
                     <Enter i={2}>
+                      <Group>
+                        <Label>{`Materials · ${l.materials.length}`}</Label>
+                        <MaterialRows items={l.materials} courseId={l.courseId} />
+                      </Group>
+                    </Enter>
+                  ) : null}
+                  {l.next ? (
+                    <Enter i={3}>
                       <UpNext next={l.next} onOpen={() => go(l.next!.id)} />
                     </Enter>
                   ) : null}

@@ -81,7 +81,7 @@ export function AssignmentsBody({ items, now }: { items: AssignmentRow[]; now: n
             <Label>Waiting for a mark</Label>
             <StaggerList style={{ gap: space[2] }}>
               {waiting.map((a) => (
-                <Tile key={a.id} testID={`assignment-${a.id}`} icon={NotebookPen} title={a.title} meta={meta(a)} trailing={<Pill>Handed in</Pill>} plain onPress={() => openAssignment(a)} />
+                <Tile key={a.id} testID={`assignment-${a.id}`} icon={NotebookPen} title={a.title} meta={meta(a)} below={<View style={{ paddingTop: space[1] }}><Pill>Handed in</Pill></View>} plain onPress={() => openAssignment(a)} />
               ))}
             </StaggerList>
           </Group>
@@ -93,7 +93,7 @@ export function AssignmentsBody({ items, now }: { items: AssignmentRow[]; now: n
             <Label>Marked</Label>
             <StaggerList style={{ gap: space[2] }}>
               {marked.map((a) => (
-                <Tile key={a.id} testID={`assignment-${a.id}`} icon={Check} title={a.title} meta={meta(a)} trailing={<Pill tone="ink">{a.score !== null ? `${a.score} of 100` : "Marked"}</Pill>} plain onPress={() => openAssignment(a)} />
+                <Tile key={a.id} testID={`assignment-${a.id}`} icon={Check} title={a.title} meta={meta(a)} below={<View style={{ paddingTop: space[1] }}><Pill tone="ink">{a.score !== null ? `${a.score} of 100` : "Marked"}</Pill></View>} plain onPress={() => openAssignment(a)} />
               ))}
             </StaggerList>
           </Group>

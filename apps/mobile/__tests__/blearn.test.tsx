@@ -1,4 +1,4 @@
-import { fireEvent, screen } from "@testing-library/react-native";
+import { fireEvent, screen, waitFor } from "@testing-library/react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 
@@ -71,7 +71,8 @@ describe("the assignment page", () => {
     await render(<AssignmentScreen />);
     expect(await screen.findByTestId("handin-files")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("assignment-lecture"));
-    expect(router.push).toHaveBeenLastCalledWith("/lecture/l5");
+    // The card grows into the lecture, so the push comes a moment after the tap.
+    await waitFor(() => expect(router.push).toHaveBeenLastCalledWith("/lecture/l5"));
   });
 
   it("a recording assignment shows the recorder", async () => {
@@ -89,7 +90,7 @@ describe("the lecture page", () => {
     expect(await screen.findByTestId("lecture-upnext")).toBeTruthy();
     await fireEvent.press(screen.getByText("Chapters"));
     expect(await screen.findByTestId("chapter-0")).toBeTruthy();
-    await fireEvent.press(screen.getByText("My notes"));
+    await fireEvent.press(screen.getByText("Notes"));
     expect(await screen.findByTestId("lecture-note-add")).toBeTruthy();
   });
 });

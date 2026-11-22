@@ -95,7 +95,7 @@ function ThisWeek({ courseId }: { courseId: string }) {
           />
         ))}
         {due.map((a) => (
-          <Tile key={a.id} testID={`learn-due-${a.id}`} icon={ClipboardList} title={a.title} meta="Assignment to hand in" trailing={dueWord(a.dueAt, now) ? <Pill tone="warm">{dueWord(a.dueAt, now)!}</Pill> : undefined} onPress={() => router.push(`/assignment/${encodeURIComponent(a.lessonId)}`)} />
+          <Tile key={a.id} testID={`learn-due-${a.id}`} icon={ClipboardList} title={a.title} meta="Assignment to hand in" below={dueWord(a.dueAt, now) ? <View style={{ paddingTop: space[1] }}><Pill tone="warm">{dueWord(a.dueAt, now)!}</Pill></View> : undefined} onPress={() => router.push(`/assignment/${encodeURIComponent(a.lessonId)}`)} />
         ))}
       </StaggerList>
     </Group>

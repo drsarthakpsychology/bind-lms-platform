@@ -170,7 +170,7 @@ export function MapBody({ m }: { m: StudyMap }) {
           {m.weak.length ? (
             <StaggerList style={{ gap: space[2] }}>
               {m.weak.map((w) => (
-                <Tile key={w.skill} testID={`map-weak-${w.skill}`} lead={<Square state={w.state} size={26} />} title={w.label} meta={label(w.state)} trailing={<Pill>Quick quiz</Pill>} plain onPress={() => practise(w.topic)} accessibilityLabel={`${w.label}, ${label(w.state)}. Quick quiz`} />
+                <Tile key={w.skill} testID={`map-weak-${w.skill}`} lead={<Square state={w.state} size={26} />} title={w.label} meta={label(w.state)} onPress={() => practise(w.topic)} accessibilityLabel={`${w.label}, ${label(w.state)}. Quick quiz`} />
               ))}
             </StaggerList>
           ) : (
