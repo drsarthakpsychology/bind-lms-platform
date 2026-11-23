@@ -109,3 +109,28 @@ describe("Pipeline: email a filtered group", () => {
     expect(send).not.toHaveBeenCalled();
   });
 });
+
+describe("Pipeline: Not enrolled yet / Enrolled", () => {
+  beforeEach(() => {
+    loadPeople.mockResolvedValue([
+      person("aanya@example.com", "Aanya Rao"),
+      { ...person("dev@example.com", "Dev Shah"), isStudent: true, cohorts: [{ id: "c2", name: "Cohort 2" }], paidAt: null },
+      { ...person("meera@example.com", "Meera Iyer"), cohorts: [], paidAt: "2026-11-01T00:00:00Z" },
+      { ...person("ravi@example.com", "Ravi K"), isStudent: true, cohorts: [], paidAt: null },
+    ]);
+  });
+  it("checks the filter again on the server: only people with no cohort and no payment get a 'not enrolled' email", async () => {
+    const r = await emailPeople({ emails: ["aanya@example.com", "dev@example.com", "meera@example.com", "ravi@example.com"], subject: "Seats open", body: "Hi {first_name}", audience: "not_enrolled" });
+    expect(r.sent).toEqual(["Aanya Rao", "Ravi K"]);
+    expect(send.mock.calls.map((c) => c[0])).toEqual(["aanya@example.com", "ravi@example.com"]);
+  });
+  it("Enrolled is the opposite", async () => {
+    const r = await emailPeople({ emails: ["aanya@example.com", "dev@example.com", "meera@example.com", "ravi@example.com"], subject: "Hi", body: "Hi", audience: "enrolled" });
+    expect(r.sent).toEqual(["Dev Shah", "Meera Iyer"]);
+  });
+  it("says so when the filter leaves nobody, and sends nothing", async () => {
+    const r = await emailPeople({ emails: ["dev@example.com"], subject: "Hi", body: "Hi", audience: "not_enrolled" });
+    expect(r.error).toBe("All of them are enrolled already.");
+    expect(send).not.toHaveBeenCalled();
+  });
+});

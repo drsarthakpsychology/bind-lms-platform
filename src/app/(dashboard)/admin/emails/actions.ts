@@ -8,6 +8,9 @@ import { requireAdmin, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { sendResendEmail, sendCredentialEmails, logEmailSend } from "@/lib/auth/roster";
 import { isTestCohort } from "@/lib/test-mode/rules";
+import { cleanDesignedHtml, fillDesigned, prepareDesigned, type DesignedInput } from "@/lib/email/designed-html";
+import { mergeVars } from "@/lib/email/personal-plan";
+import { loadPeople } from "@/lib/crm/people";
 
 export type RecipientData = {
   courses: Array<{ id: string; title: string }>;
@@ -58,6 +61,36 @@ export async function loadRecipientData(): Promise<RecipientData> {
   };
 }
 
+/** Any HTML from the page, cleaned (styles and layout kept, anything that runs code taken out). */
+function safeHtml(raw: string): string {
+  const v = String(raw ?? "").trim();
+  if (!v) return "";
+  const c = cleanDesignedHtml(v);
+  return c.error ? "" : c.html;
+}
+
+/** Names for {{name}} and {{first_name}}, from the people list; an address without one uses its first part. */
+async function namesFor(admin: ReturnType<typeof createAdminClient>, emails: string[]): Promise<Map<string, string>> {
+  const want = new Set(emails);
+  const out = new Map<string, string>();
+  try {
+    for (const p of await loadPeople(admin)) if (want.has(p.email) && p.name?.trim()) out.set(p.email, p.name.trim());
+  } catch {
+    // Names are a nicety: the email still goes, greeting by the address.
+  }
+  return out;
+}
+
+/** The subject, text and HTML of a designed email for one person. */
+function personal(email: string, name: string | null, subject: string, d: { html: string; text: string }) {
+  const vars = mergeVars({ email, name });
+  return {
+    subject: fillDesigned(subject, vars, "text").replace(/[\r\n]+/g, " ").trim(),
+    text: fillDesigned(d.text, vars, "text").trim(),
+    html: fillDesigned(d.html, vars, "html"),
+  };
+}
+
 /** Cheap plain-text fallback derived from an HTML body (strip tags, collapse whitespace). */
 function htmlToText(html: string): string {
   return html
@@ -89,12 +122,18 @@ export async function sendCampaignEmail(input: {
   text?: string;
   recipientEmails: string[];
   templateId: string | null;
+  /** A designed (HTML) email: cleaned again here, {{name}} and {{first_name}} filled per person. */
+  designed?: DesignedInput;
 }): Promise<CampaignSendResult> {
   const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", sent: 0, failed: 0, results: [] };
 
   const subject = input.subject.trim();
-  const html = input.html.trim();
+  const ready = input.designed ? prepareDesigned(subject, input.designed) : null;
+  if (ready && "error" in ready) return { error: ready.error, sent: 0, failed: 0, results: [] };
+  const design = ready && !("error" in ready) ? ready : null;
+  // Whatever HTML the page sends is cleaned here too: nothing that runs code goes out.
+  const html = design ? design.html : safeHtml(input.html);
   const emails = Array.from(
     new Set(
       input.recipientEmails
@@ -104,7 +143,7 @@ export async function sendCampaignEmail(input: {
   );
 
   if (!subject) return { error: "Add a subject line.", sent: 0, failed: 0, results: [] };
-  if (!html && !input.text?.trim()) return { error: "Write the email first.", sent: 0, failed: 0, results: [] };
+  if (!design && !html && !input.text?.trim()) return { error: "Write the email first.", sent: 0, failed: 0, results: [] };
   if (emails.length === 0) return { error: "Select at least one recipient.", sent: 0, failed: 0, results: [] };
 
   const dailyLimit = Number(process.env.RESEND_DAILY_LIMIT ?? 100);
@@ -118,8 +157,9 @@ export async function sendCampaignEmail(input: {
   }
 
   const admin = createAdminClient();
-  const text = (input.text ?? htmlToText(html)).trim();
+  const text = design ? design.text : (input.text ?? htmlToText(html)).trim();
   const templateId = input.templateId ?? "custom";
+  const names = design ? await namesFor(admin, emails) : new Map<string, string>();
   const results: Array<{ email: string; ok: boolean; reason?: string }> = [];
   let sent = 0;
   let failed = 0;
@@ -132,20 +172,21 @@ export async function sendCampaignEmail(input: {
       results.push({ email, ok: false, reason: "Not sent: the daily sending limit was reached. Send again tomorrow." });
       continue;
     }
-    const res = await sendResendEmail(email, subject, text, html);
+    const m = design ? personal(email, names.get(email) ?? null, subject, design) : { subject, text, html };
+    const res = await sendResendEmail(email, m.subject, m.text, m.html || undefined);
     if (!res.ok && isQuotaStop(res.error)) quotaHit = true;
     await logEmailSend(admin, {
       recipient: email,
-      name: null,
-      subject,
+      name: names.get(email) ?? null,
+      subject: m.subject,
       templateId,
       status: res.ok ? "sent" : "failed",
       errorReason: res.ok ? null : (res.error ?? "Resend send failed."),
       sentAt: res.ok ? new Date().toISOString() : null,
       sentBy: profile.id,
       providerId: res.id ?? null,
-      bodyText: text,
-      html: html || null,
+      bodyText: m.text,
+      html: m.html || null,
     });
     if (res.ok) {
       sent++;
@@ -167,13 +208,26 @@ export async function sendTestCampaignEmail(input: {
   html: string;
   /** Plain-text emails: the text itself (html is then empty). */
   text?: string;
+  /** A designed (HTML) email, filled in for `sampleEmail` (the first person picked) when given. */
+  designed?: DesignedInput;
+  sampleEmail?: string | null;
 }): Promise<{ error: string | null; ok: boolean; detail: string }> {
   const profile = await requireSuperAdmin();
   if (!profile) return { error: "Not authorized.", ok: false, detail: "" };
   if (!profile.email) return { error: "Your account has no email on file.", ok: false, detail: "" };
 
+  if (input.designed) {
+    const d = prepareDesigned(input.subject, input.designed);
+    if ("error" in d) return { error: d.error, ok: false, detail: "" };
+    const sample = String(input.sampleEmail ?? "").trim().toLowerCase();
+    const name = sample ? ((await namesFor(createAdminClient(), [sample])).get(sample) ?? null) : null;
+    const m = personal(sample || profile.email, name, input.subject.trim(), d);
+    const r = await sendResendEmail(profile.email, `[TEST] ${m.subject}`, m.text, m.html);
+    return { error: null, ok: r.ok, detail: r.ok ? `Sent to ${profile.email}.` : (r.error ?? "Send failed.") };
+  }
+
   const subject = `[TEST] ${input.subject.trim()}` || "[TEST] no subject";
-  const html = input.html.trim();
+  const html = safeHtml(input.html);
   const plain = input.text?.trim() ?? "";
   if (!html && !plain) return { error: "Write the email first.", ok: false, detail: "" };
 

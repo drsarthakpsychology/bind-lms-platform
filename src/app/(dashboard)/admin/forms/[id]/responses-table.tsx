@@ -17,6 +17,8 @@ export type ResponseRow = {
   phone: string;
   contactId: string | null;
   answers: Record<string, string>;
+  /** In a cohort or marked paid (worked out on the server, src/lib/crm/enrolment.ts). */
+  enrolled?: boolean;
 };
 
 export type TableColumn = { key: string; label: string; removed: boolean; inTable: boolean };

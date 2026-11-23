@@ -9,6 +9,8 @@ const { send, requireSuperAdmin, loadForm, loadSubmissions } = vi.hoisted(() => 
 vi.mock("server-only", () => ({}));
 vi.mock("next/cache", () => ({ revalidatePath: vi.fn() }));
 vi.mock("@/lib/auth/guards", () => ({ requireSuperAdmin: () => requireSuperAdmin() }));
+const enrolled = vi.hoisted(() => ({ set: new Set<string>() }));
+vi.mock("@/lib/crm/enrolment", async (orig) => ({ ...(await orig<typeof import("@/lib/crm/enrolment")>()), enrolledEmails: async () => enrolled.set }));
 vi.mock("@/lib/forms/load", () => ({ loadForm: (...a: unknown[]) => loadForm(...a), loadSubmissions: (...a: unknown[]) => loadSubmissions(...a) }));
 vi.mock("@/lib/auth/roster", () => ({
   sendResendEmail: send,
@@ -160,5 +162,23 @@ describe("Designed (HTML) email to the people who filled a form", () => {
     expect(sent).toContain("Hi Aanya, from Aanya Rao");
     expect(sent).not.toMatch(/script/i);
     expect(db.tables.email_sends[0]).toMatchObject({ recipient: "owner@example.com", status: "sent", template_id: "test-email" });
+  });
+});
+
+describe("Not enrolled yet / Enrolled, for the people who filled a form", () => {
+  beforeEach(() => {
+    enrolled.set = new Set(["dev@example.com"]);
+  });
+  it("checks enrolment on the server and leaves enrolled people out", async () => {
+    const r = await emailFormRespondents({ formId: "f1", submissionIds: ["s1", "s2", "s5"], subject: "Seats", body: "Hi {first_name}", audience: "not_enrolled" });
+    expect(r.sent).toEqual(["Aanya Rao", "Meera Iyer"]);
+    expect(send.mock.calls.map((c) => c[0])).toEqual(["aanya@example.com", "meera@example.com"]);
+    expect(db.tables.admin_audit_log[0].details).toMatchObject({ audience: "not_enrolled", picked: 2 });
+  });
+  it("Enrolled keeps only them; a filter that leaves nobody sends nothing", async () => {
+    expect((await emailFormRespondents({ formId: "f1", submissionIds: "all", subject: "Hi", body: "x", audience: "enrolled" })).sent).toEqual(["Dev Shah"]);
+    send.mockClear();
+    expect((await emailFormRespondents({ formId: "f1", submissionIds: ["s2"], subject: "Hi", body: "x", audience: "not_enrolled" })).error).toBe("All of them are enrolled already.");
+    expect(send).not.toHaveBeenCalled();
   });
 });

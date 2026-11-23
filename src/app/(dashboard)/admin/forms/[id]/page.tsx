@@ -18,6 +18,7 @@ import { uiV2For } from "@/lib/ui/v2";
 import { loadFormEmailed } from "@/lib/forms/emailed";
 import { emailAllowance } from "@/lib/email/personal";
 import { ResponsesV2 } from "./responses-v2";
+import { enrolledEmails } from "@/lib/crm/enrolment";
 
 export const dynamic = "force-dynamic";
 
@@ -47,11 +48,11 @@ export default async function FormResponsesPage({ params, searchParams }: { para
 
   const tableColumns = columns.map((c) => ({ ...c, inTable: !hidden.has(c.key) }));
   if (uiV2For(await readFlags(), me.role)) {
-    const [emailed, allowance] = await Promise.all([loadFormEmailed(admin, id), emailAllowance(admin)]);
+    const [emailed, allowance, enrolled] = await Promise.all([loadFormEmailed(admin, id), emailAllowance(admin), enrolledEmails(admin).catch(() => new Set<string>())]);
     return (
       <ResponsesV2
         form={{ id: form.id, title: form.title, url: formUrl(form.slug), isActive: form.isActive }}
-        rows={rows}
+        rows={rows.map((r) => ({ ...r, enrolled: enrolled.has(r.email.trim().toLowerCase()) }))}
         columns={tableColumns}
         marks={emailed.marks}
         waiting={emailed.waiting}

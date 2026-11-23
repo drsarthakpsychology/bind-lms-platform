@@ -9,6 +9,7 @@ import { PERSONAL_LIMITS } from "@/lib/email/personal-plan";
 import { composeFor, sendPersonalEmails, sendWaitingPersonal, type PersonalReport } from "@/lib/email/personal";
 import { checkSendBody, prepareDesigned, type DesignedInput } from "@/lib/email/designed-html";
 import { formTemplateId } from "@/lib/forms/emailed";
+import { enrolledEmails, isEnrolFilter, keepEnrol, type EnrolFilter } from "@/lib/crm/enrolment";
 import { logEmailSend, sendResendEmail } from "@/lib/auth/roster";
 import { dailyEmailLimit } from "@/lib/certificates/email-plan";
 import { emailConfigured, emailsSentToday } from "@/lib/certificates/server";
@@ -21,7 +22,15 @@ import { emailConfigured, emailsSentToday } from "@/lib/certificates/server";
  */
 const NO: PersonalReport = { error: "Only the Super Admin can send emails.", sent: [], queued: [], failed: [], noEmail: [], duplicates: 0, remainingToday: 0, queueFailed: false };
 
-export async function emailFormRespondents(input: { formId: string; submissionIds: string[] | "all"; subject: string; body: string; designed?: DesignedInput }): Promise<PersonalReport> {
+export async function emailFormRespondents(input: {
+  formId: string;
+  submissionIds: string[] | "all";
+  subject: string;
+  body: string;
+  designed?: DesignedInput;
+  /** "Not enrolled yet" or "Enrolled": checked again here, so the page can never email someone the filter left out. */
+  audience?: EnrolFilter;
+}): Promise<PersonalReport> {
   const me = await requireSuperAdmin();
   if (!me) return NO;
   const ready = checkSendBody(input.subject, input.body, input.designed);
@@ -32,8 +41,14 @@ export async function emailFormRespondents(input: { formId: string; submissionId
   const subs = await loadSubmissions(admin, input.formId);
   const want = input.submissionIds === "all" ? null : new Set(input.submissionIds);
   // Newest answer first (loadSubmissions order), so a person who answered twice gets their latest name.
-  const picked = subs.filter((s) => !want || want.has(s.id));
+  let picked = subs.filter((s) => !want || want.has(s.id));
   if (!picked.length) return { ...NO, error: "Pick at least one person." };
+  const audience = isEnrolFilter(input.audience) ? input.audience : "";
+  if (audience) {
+    const enrolled = await enrolledEmails(admin);
+    picked = picked.filter((s) => keepEnrol(enrolled.has(String(s.email ?? "").trim().toLowerCase()), audience));
+    if (!picked.length) return { ...NO, error: audience === "enrolled" ? "None of them are enrolled." : "All of them are enrolled already." };
+  }
   if (picked.length > PERSONAL_LIMITS.recipients) return { ...NO, error: `${PERSONAL_LIMITS.recipients} people at a time at most.` };
 
   const report = await sendPersonalEmails(
@@ -45,7 +60,7 @@ export async function emailFormRespondents(input: { formId: string; submissionId
     action: "form.respondents_emailed",
     targetType: "link_form",
     targetId: form.id,
-    details: { picked: picked.length, sent: report.sent.length, queued: report.queued.length, failed: report.failed.length, subject: input.subject.trim().slice(0, 160), designed: Boolean(ready.designed) },
+    details: { picked: picked.length, sent: report.sent.length, queued: report.queued.length, failed: report.failed.length, subject: input.subject.trim().slice(0, 160), designed: Boolean(ready.designed), audience: audience || null },
     actor: me,
   }).catch(() => {});
   revalidatePath(`/admin/forms/${form.id}`);

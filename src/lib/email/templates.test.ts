@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { emailShell, EMAIL_TEMPLATES, welcomeTemplate, announcementTemplate } from "./templates";
 import { credentialsEmailHtml } from "../auth/roster";
+import { cleanDesignedHtml } from "./designed-html";
 
 describe("emailShell", () => {
   it("wraps content in an email-safe document (no <style> blocks, no scripts)", () => {
@@ -45,5 +46,15 @@ describe("credentialsEmailHtml", () => {
     expect(html).toContain("vibhapsychology.com/login");
     expect(html).toContain("<html>");
     expect(html).not.toContain("<style");
+  });
+});
+
+describe("templates in the designed (HTML) composer", () => {
+  it("open there and pass the cleaner untouched", () => {
+    for (const t of EMAIL_TEMPLATES) {
+      const r = cleanDesignedHtml(t.build({ appUrl: "https://vibhapsychology.com" }).html);
+      expect(r.error).toBeNull();
+      expect(r.removed).toEqual([]);
+    }
   });
 });

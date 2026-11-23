@@ -10,6 +10,7 @@ import { audit } from "@/lib/auth/audit";
 import { PERSONAL_LIMITS } from "@/lib/email/personal-plan";
 import { sendPersonalEmails, sendWaitingPersonal, type PersonalReport } from "@/lib/email/personal";
 import { checkSendBody, type DesignedInput } from "@/lib/email/designed-html";
+import { isEnrolFilter, isEnrolled, keepEnrol, type EnrolFilter } from "@/lib/crm/enrolment";
 
 type Result = { error: string | null };
 const NO_REPORT: PersonalReport = { error: null, sent: [], queued: [], failed: [], noEmail: [], duplicates: 0, remainingToday: 0, queueFailed: false };
@@ -154,7 +155,7 @@ export async function sendInvite(email: string, name: string): Promise<{ error: 
  * addresses that are in the pipeline are emailed, whatever the page sends.
  * Shared sender and daily allowance; the rest wait in the queue.
  */
-export async function emailPeople(input: { emails: string[]; subject: string; body: string; designed?: DesignedInput }): Promise<PersonalReport> {
+export async function emailPeople(input: { emails: string[]; subject: string; body: string; designed?: DesignedInput; audience?: EnrolFilter }): Promise<PersonalReport> {
   const me = await requireSuperAdmin();
   if (!me) return { ...NO_REPORT, error: "Only the Super Admin can send emails." };
   const ready = checkSendBody(input.subject, input.body, input.designed);
@@ -163,8 +164,12 @@ export async function emailPeople(input: { emails: string[]; subject: string; bo
   if (!want.size) return { ...NO_REPORT, error: "Pick at least one person." };
   if (want.size > PERSONAL_LIMITS.recipients) return { ...NO_REPORT, error: `${PERSONAL_LIMITS.recipients} people at a time at most.` };
   const admin = createAdminClient();
-  const people = (await loadPeople(admin)).filter((p) => want.has(p.email));
-  if (!people.length) return { ...NO_REPORT, error: "None of these people are in the pipeline." };
+  const audience = isEnrolFilter(input.audience) ? input.audience : "";
+  const inPipeline = (await loadPeople(admin)).filter((p) => want.has(p.email));
+  if (!inPipeline.length) return { ...NO_REPORT, error: "None of these people are in the pipeline." };
+  // The "Not enrolled yet" / "Enrolled" filter is checked again here, not trusted from the page.
+  const people = inPipeline.filter((p) => keepEnrol(isEnrolled(p), audience));
+  if (!people.length) return { ...NO_REPORT, error: audience === "enrolled" ? "None of them are enrolled." : "All of them are enrolled already." };
   const report = await sendPersonalEmails(
     admin,
     people.map((p) => ({ email: p.email, name: p.name })),
@@ -174,7 +179,7 @@ export async function emailPeople(input: { emails: string[]; subject: string; bo
     action: "pipeline.emailed",
     targetType: "crm",
     targetId: null,
-    details: { picked: people.length, sent: report.sent.length, queued: report.queued.length, failed: report.failed.length, subject: input.subject.trim().slice(0, 160), designed: Boolean(ready.designed) },
+    details: { picked: people.length, sent: report.sent.length, queued: report.queued.length, failed: report.failed.length, subject: input.subject.trim().slice(0, 160), designed: Boolean(ready.designed), audience: audience || null },
     actor: me,
   }).catch(() => {});
   revalidatePath("/admin/people");

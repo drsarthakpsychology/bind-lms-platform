@@ -13,6 +13,7 @@ import { emailFormRespondents, sendWaitingFormEmails } from "../email-actions";
 import { CopyButton } from "../forms-v2";
 import { FormRowActions } from "../form-row-actions";
 import type { ResponseRow, TableColumn } from "./responses-table";
+import { ENROL_OPTIONS, keepEnrol, type EnrolFilter } from "@/lib/crm/enrolment";
 
 const PAGE = 50;
 type SortKey = "at" | "name" | "email" | `a:${string}`;
@@ -37,9 +38,10 @@ const waLink = (phone: string) => {
 const day = (iso: string) => new Date(iso).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short" });
 
 /** Pure: which answers the search and the Emailed filter keep. Exported for tests. */
-export function filterResponses(rows: ResponseRow[], q: string, emailed: EmailedFilter, marks: Record<string, EmailedMark>): ResponseRow[] {
+export function filterResponses(rows: ResponseRow[], q: string, emailed: EmailedFilter, marks: Record<string, EmailedMark>, enrol: EnrolFilter = ""): ResponseRow[] {
   const needle = q.trim().toLowerCase();
   return rows.filter((r) => {
+    if (!keepEnrol(Boolean(r.enrolled), enrol)) return false;
     const m = marks[r.email.trim().toLowerCase()];
     if (emailed === "yes" && !(m && (m.sent || m.waiting))) return false;
     if (emailed === "not" && m && (m.sent || m.waiting)) return false;
@@ -84,16 +86,18 @@ export function ResponsesV2({
   const router = useRouter();
   const [q, setQ] = React.useState("");
   const [emailed, setEmailed] = React.useState<EmailedFilter>("");
+  const [enrol, setEnrol] = React.useState<EnrolFilter>("");
   const [sort, setSort] = React.useState<{ key: SortKey; dir: 1 | -1 }>({ key: "at", dir: -1 });
   const [page, setPage] = React.useState(0);
   const [selected, setSelected] = React.useState<Set<string>>(() => new Set());
-  const [compose, setCompose] = React.useState<{ ids: string[] | "all" } | null>(() => (startEmail && canEdit && rows.length ? { ids: "all" } : null));
+  const [compose, setCompose] = React.useState<{ ids: string[] | "all"; audience?: EnrolFilter } | null>(() => (startEmail && canEdit && rows.length ? { ids: "all" } : null));
   const [openId, setOpenId] = React.useState<string | null>(null);
   const [draining, setDraining] = React.useState(false);
   const [drainNote, setDrainNote] = React.useState<string | null>(null);
 
   const tableCols = columns.filter((c) => c.inTable);
-  const shown = React.useMemo(() => sortRows(filterResponses(rows, q, emailed, marks), sort.key, sort.dir), [rows, q, emailed, marks, sort]);
+  const shown = React.useMemo(() => sortRows(filterResponses(rows, q, emailed, marks, enrol), sort.key, sort.dir), [rows, q, emailed, marks, enrol, sort]);
+  const filtering = Boolean(q || emailed || enrol);
   const pages = Math.max(1, Math.ceil(shown.length / PAGE));
   const current = Math.min(page, pages - 1);
   const slice = shown.slice(current * PAGE, current * PAGE + PAGE);
@@ -117,7 +121,10 @@ export function ResponsesV2({
       return n;
     });
 
-  const composeRows = compose ? (compose.ids === "all" ? rows : compose.ids.map((id) => byId.get(id)).filter((r): r is ResponseRow => Boolean(r))) : [];
+  // The count in the email window (and its confirm step) is the count after the Enrolled filter.
+  const composeRows = compose
+    ? (compose.ids === "all" ? rows : compose.ids.map((id) => byId.get(id)).filter((r): r is ResponseRow => Boolean(r))).filter((r) => keepEnrol(Boolean(r.enrolled), compose.audience))
+    : [];
   const head = (key: SortKey, label: string) => {
     const on = sort.key === key;
     return (
@@ -218,6 +225,21 @@ export function ResponsesV2({
                 <option value="yes">Emailed from here</option>
               </select>
             </label>
+            <label className="min-w-0 flex-1 basis-40 sm:flex-none">
+              <span className="sr-only">Enrolled</span>
+              <select
+                value={enrol}
+                onChange={(e) => {
+                  setEnrol(e.target.value as EnrolFilter);
+                  setPage(0);
+                }}
+                className={cn(control, "w-full")}
+              >
+                {ENROL_OPTIONS.map((o) => (
+                  <option key={o.v} value={o.v}>{o.l}</option>
+                ))}
+              </select>
+            </label>
             <label className="min-w-0 flex-1 basis-40 md:hidden">
               <span className="sr-only">Sort</span>
               <select
@@ -234,8 +256,8 @@ export function ResponsesV2({
               </select>
             </label>
             {canEdit ? (
-              <button type="button" className={btn.primary} onClick={() => setCompose({ ids: "all" })}>
-                <Mail aria-hidden /> Email everyone
+              <button type="button" className={btn.primary} disabled={filtering && shown.length === 0} onClick={() => setCompose(filtering ? { ids: shown.map((r) => r.id), audience: enrol } : { ids: "all" })}>
+                <Mail aria-hidden /> {filtering ? `Email ${shown.length} shown` : "Email everyone"}
               </button>
             ) : null}
           </div>
@@ -244,9 +266,9 @@ export function ResponsesV2({
             <p className="type-small text-muted-foreground type-num" aria-live="polite">
               {shown.length === 0 ? "No answers match." : `Showing ${current * PAGE + 1} to ${current * PAGE + slice.length} of ${shown.length}`}
             </p>
-            {canEdit && shown.length > 0 && !allShownPicked && (q || emailed) ? (
-              <button type="button" className={btn.ghost} onClick={() => setSelected(new Set(shown.map((r) => r.id)))}>
-                Select all {shown.length} that match
+            {canEdit && shown.length > 0 && !allShownPicked ? (
+              <button type="button" className={btn.quiet} onClick={() => setSelected(new Set(shown.map((r) => r.id)))}>
+                Select all {shown.length} shown
               </button>
             ) : null}
           </div>
@@ -362,7 +384,7 @@ export function ResponsesV2({
             <button type="button" className={btn.ghost} onClick={() => setSelected(new Set())}>
               Clear
             </button>
-            <button type="button" className={btn.primary} onClick={() => setCompose({ ids: [...selected] })}>
+            <button type="button" className={btn.primary} onClick={() => setCompose({ ids: [...selected], audience: enrol })}>
               <Mail aria-hidden /> Email {selected.size}
             </button>
           </div>
@@ -383,7 +405,7 @@ export function ResponsesV2({
           extraFields={[{ key: "form", label: "Form name" }]}
           extraVars={{ form: form.title }}
           onSend={async (subject, body, designed) => {
-            const r = await emailFormRespondents({ formId: form.id, submissionIds: compose.ids, subject, body, designed });
+            const r = await emailFormRespondents({ formId: form.id, submissionIds: compose.ids, subject, body, designed, audience: compose.audience });
             if (!r.error) setSelected(new Set());
             return r;
           }}

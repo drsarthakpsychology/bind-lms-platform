@@ -36,14 +36,14 @@ beforeEach(() => {
 describe("EmailCompose designed mode", () => {
   it("switches between plain and designed, keeping the plain email as it was", () => {
     show();
-    expect(screen.getByRole("radio", { name: "Plain email" })).toHaveAttribute("aria-checked", "true");
+    expect(screen.getByRole("radio", { name: "Simple message" })).toHaveAttribute("aria-checked", "true");
     expect(screen.getByLabelText("Email")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("radio", { name: "Designed email (HTML)" }));
     expect(screen.getByRole("radio", { name: "Designed email (HTML)" })).toHaveAttribute("aria-checked", "true");
     expect(screen.queryByLabelText("Email")).not.toBeInTheDocument();
     expect(screen.getByLabelText("HTML")).toBeInTheDocument();
     expect(screen.getByLabelText("Plain-text version (optional)")).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("radio", { name: "Plain email" }));
+    fireEvent.click(screen.getByRole("radio", { name: "Simple message" }));
     expect(screen.getByLabelText("Email")).toHaveValue("Hi {first_name},\n\n");
   });
 

@@ -119,3 +119,9 @@ describe("follow-up due filter (Admin Today links to it)", () => {
   });
 });
 
+describe("Not enrolled yet / Enrolled filter", () => {
+  it("not enrolled: no cohort and not paid; enrolled is the rest", () => {
+    expect(emails(filterPipeline(all, { enrol: "not_enrolled" }, NOW))).toEqual(["fee@x.co", "new@x.co", "no@x.co", "old@x.co"]);
+    expect(emails(filterPipeline(all, { enrol: "enrolled" }, NOW))).toEqual(["inv@x.co", "paid@x.co", "unpaid@x.co"]);
+  });
+});

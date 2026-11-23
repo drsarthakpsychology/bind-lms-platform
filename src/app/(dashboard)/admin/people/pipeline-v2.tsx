@@ -24,6 +24,7 @@ import {
   type PipelineFilters,
   type QuickView,
 } from "@/lib/crm/views";
+import { ENROL_OPTIONS, isEnrolFilter, isEnrolled, keepEnrol, type EnrolFilter } from "@/lib/crm/enrolment";
 import { cn } from "@/lib/utils";
 import { Empty, Notice, RowItem, Rows, Status, btn, control, nameLink, table, type Tone } from "../_v2/kit";
 import { EmailCompose, type Allowance } from "../forms/email-compose";
@@ -46,9 +47,11 @@ export type PipelineInitial = {
   last: string;
   /** "1": follow-ups due only. */
   due: string;
+  /** "not_enrolled" or "enrolled". */
+  enrol: string;
 };
 
-type State = Required<Omit<PipelineFilters, "stage" | "lastContact" | "view">> & { view: QuickView; stage: StageId | ""; lastContact: LastContact };
+type State = Required<Omit<PipelineFilters, "stage" | "lastContact" | "view" | "enrol">> & { view: QuickView; stage: StageId | ""; lastContact: LastContact; enrol: EnrolFilter };
 
 function toState(i: Partial<PipelineInitial>): State {
   const quiet = Number(i.quiet);
@@ -64,6 +67,7 @@ function toState(i: Partial<PipelineInitial>): State {
     lastContact: (["week", "month", "older", "never"] as const).includes(i.last as Exclude<LastContact, "">) ? (i.last as LastContact) : "",
     // Admin Today links here with the old view name (?view=follow-up).
     due: i.due === "1" || i.view === "follow-up",
+    enrol: isEnrolFilter(i.enrol) ? i.enrol : "",
   };
 }
 
@@ -81,6 +85,7 @@ function writeUrl(s: State) {
     if (s.to) p.set("to", s.to);
     if (s.lastContact) p.set("last", s.lastContact);
     if (s.due) p.set("due", "1");
+    if (s.enrol) p.set("enrol", s.enrol);
     const q = p.toString();
     window.history.replaceState(null, "", `${window.location.pathname}${q ? `?${q}` : ""}`);
   } catch {
@@ -167,7 +172,9 @@ export function PipelineV2({
   const byEmail = React.useMemo(() => new Map(base.map((p) => [p.email, p])), [base]);
   const slice = shown.slice(0, limit);
   const otherFilters = Boolean(s.stage || s.cohortId || s.source || s.from || s.to || s.lastContact || s.due);
-  const filtering = otherFilters || Boolean(s.q);
+  // Who the email window gets: the picked people the Enrolled filter still keeps (checked again on the server).
+  const composeGroup = (emails: string[]) => groupOf(emails).filter((p) => keepEnrol(isEnrolled(p), s.enrol));
+  const filtering = otherFilters || Boolean(s.q || s.enrol);
   const allShownPicked = shown.length > 0 && shown.every((p) => selected.has(p.email));
 
   const toggle = (email: string) =>
@@ -255,6 +262,14 @@ export function PipelineV2({
             </select>
           </label>
         ) : null}
+        <label className="min-w-0 flex-1 basis-44 sm:flex-none">
+          <span className="sr-only">Enrolled</span>
+          <select value={s.enrol} onChange={(e) => set({ enrol: e.target.value as EnrolFilter })} className={cn(control, "w-full")}>
+            {ENROL_OPTIONS.map((o) => (
+              <option key={o.v} value={o.v}>{o.l}</option>
+            ))}
+          </select>
+        </label>
         <button type="button" aria-expanded={filtersOpen} aria-controls="pipeline-filters" onClick={() => setFiltersOpen((o) => !o)} className={cn(btn.quiet, otherFilters && "border-foreground")}>
           <SlidersHorizontal aria-hidden /> Filters{otherFilters ? " (on)" : ""}
         </button>
@@ -289,12 +304,12 @@ export function PipelineV2({
         </p>
         <div className="flex flex-wrap items-center gap-2">
           {canWrite && shown.length ? (
-            <button type="button" className={btn.ghost} onClick={pickAll}>
-              {allShownPicked ? "Unpick all" : `Pick all ${shown.length}`}
+            <button type="button" className={btn.quiet} onClick={pickAll}>
+              {allShownPicked ? "Unpick all" : `Select all ${shown.length} shown`}
             </button>
           ) : null}
           {filtering ? (
-            <button type="button" className={btn.ghost} onClick={() => set({ q: "", stage: "", cohortId: "", source: "", from: "", to: "", lastContact: "", due: false })}>
+            <button type="button" className={btn.ghost} onClick={() => set({ q: "", stage: "", cohortId: "", source: "", from: "", to: "", lastContact: "", due: false, enrol: "" })}>
               Clear filters
             </button>
           ) : null}
@@ -422,9 +437,9 @@ export function PipelineV2({
               router.refresh();
             }
           }}
-          recipients={groupOf(compose).map((p) => ({ key: p.email, name: p.name, email: p.email }))}
+          recipients={composeGroup(compose).map((p) => ({ key: p.email, name: p.name, email: p.email }))}
           allowance={allowance}
-          onSend={(subject, body, designed) => emailPeople({ emails: compose, subject, body, designed })}
+          onSend={(subject, body, designed) => emailPeople({ emails: composeGroup(compose).map((p) => p.email), subject, body, designed, audience: s.enrol })}
         />
       ) : null}
       {wa ? <WhatsAppLinks people={groupOf(wa)} onClose={() => setWa(null)} /> : null}

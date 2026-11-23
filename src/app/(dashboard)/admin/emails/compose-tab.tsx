@@ -1,9 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Code2, Eye, Loader2, MailCheck, PencilLine, Send, Terminal, Type, WandSparkles } from "lucide-react";
+import { Eye, Loader2, MailCheck, PencilLine, Send, Type, WandSparkles } from "lucide-react";
 import { RichEditor } from "@/components/admin/rich-editor";
 import { htmlToPlain, richToEmailHtml } from "@/lib/email/rich-html";
+import { cleanDesignedHtml, type DesignedInput } from "@/lib/email/designed-html";
+import { mergeVars, MERGE_FIELDS } from "@/lib/email/personal-plan";
+import { DesignedFields, DesignedPreview, ModeToggle, type ComposeMode, type PreviewWidth } from "../forms/designed-parts";
 import { sendCampaignEmail, sendTestCampaignEmail } from "./actions";
 import { RecipientPicker } from "./recipient-picker";
 import { Button } from "@/components/ui/button";
@@ -36,11 +39,11 @@ const BLANK_HTML = `<!DOCTYPE html>
 </body>
 </html>`;
 
-type Mode = "formatted" | "text" | "html";
+/** How a simple message is written. A designed (HTML) email is the other kind, chosen at the top. */
+type Mode = "formatted" | "text";
 const MODES: { id: Mode; label: string; hint: string; icon: React.ComponentType<{ className?: string }> }[] = [
   { id: "formatted", label: "Formatted", hint: "Headings, bold, lists and links with buttons. No code.", icon: WandSparkles },
   { id: "text", label: "Plain text", hint: "A simple text email, like a normal personal email.", icon: Type },
-  { id: "html", label: "HTML", hint: "Paste or edit your own HTML email (inline styles).", icon: Code2 },
 ];
 
 /**
@@ -65,16 +68,38 @@ export function ComposeTab({
 }) {
   const [templateId, setTemplateId] = React.useState("");
   const [subject, setSubject] = React.useState("");
+  const [kind, setKind] = React.useState<ComposeMode>("simple");
   const [mode, setMode] = React.useState<Mode>("formatted");
   const [rawHtml, setRawHtml] = React.useState(BLANK_HTML);
+  const [designText, setDesignText] = React.useState("");
+  const [view, setView] = React.useState<PreviewWidth>("phone");
+  const htmlRef = React.useRef<HTMLTextAreaElement>(null);
+  const designed = kind === "designed";
+  const cleaned = designed ? cleanDesignedHtml(rawHtml) : null;
+  const designPayload = (): DesignedInput => ({ html: cleaned?.html ?? "", text: designText.trim() || null });
   const [rich, setRich] = React.useState("");
   const [text, setText] = React.useState("");
   const [editorKey, setEditorKey] = React.useState(0);
   // What actually goes out, per mode. Plain text sends no HTML at all.
-  const html = mode === "html" ? rawHtml : mode === "formatted" ? (rich.replace(/<[^>]*>/g, "").trim() ? richToEmailHtml(rich) : "") : "";
-  const plain = mode === "text" ? text : mode === "formatted" ? htmlToPlain(rich) : "";
-  const hasBody = Boolean(html.trim() || plain.trim());
+  const html = designed ? "" : mode === "formatted" ? (rich.replace(/<[^>]*>/g, "").trim() ? richToEmailHtml(rich) : "") : "";
+  const plain = designed ? "" : mode === "text" ? text : htmlToPlain(rich);
+  const hasBody = designed ? Boolean(cleaned && !cleaned.error) : Boolean(html.trim() || plain.trim());
   const [selected, setSelected] = React.useState<Set<string>>(() => new Set(initialTo));
+  // The designed preview is filled in for the first person picked (or a sample when nobody is).
+  const firstPicked = Array.from(selected).sort()[0] ?? null;
+  const sampleVars = mergeVars({ email: firstPicked ?? adminEmail, name: null });
+
+  function insertField(key: string) {
+    const el = htmlRef.current;
+    const token = `{{${key}}}`;
+    const start = el?.selectionStart ?? rawHtml.length;
+    const end = el?.selectionEnd ?? rawHtml.length;
+    setRawHtml(rawHtml.slice(0, start) + token + rawHtml.slice(end));
+    requestAnimationFrame(() => {
+      el?.focus();
+      el?.setSelectionRange(start + token.length, start + token.length);
+    });
+  }
 
   const [testBusy, setTestBusy] = React.useState(false);
   const [testResult, setTestResult] = React.useState<{ ok: boolean; detail: string } | null>(null);
@@ -85,7 +110,9 @@ export function ComposeTab({
   // The preview lags a beat behind typing so a long HTML paste doesn't stall
   // the editor (React's useDeferredValue, the textarea stays responsive).
   const previewHtml = React.useDeferredValue(
-    mode === "text"
+    designed
+      ? ""
+      : mode === "text"
       ? `<pre style="margin:0;padding:24px;font:15px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;white-space:pre-wrap;color:#1a1a1a;background:#fff">${text.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</pre>`
       : html,
   );
@@ -111,7 +138,7 @@ export function ComposeTab({
       // Templates are designed HTML emails, so they open in HTML mode.
       setSubject(data.subject ?? "");
       setRawHtml(data.html);
-      setMode("html");
+      setKind("designed");
     }
   }
 
@@ -119,7 +146,9 @@ export function ComposeTab({
     if (testBusy) return;
     setTestBusy(true);
     setTestResult(null);
-    const res = await sendTestCampaignEmail({ subject, html, text: mode === "text" ? text : undefined });
+    const res = await sendTestCampaignEmail(
+      designed ? { subject, html: "", designed: designPayload(), sampleEmail: firstPicked } : { subject, html, text: mode === "text" ? text : undefined },
+    );
     setTestBusy(false);
     setTestResult({ ok: res.ok, detail: res.error ?? res.detail });
   }
@@ -134,6 +163,7 @@ export function ComposeTab({
       text: plain || undefined,
       recipientEmails: Array.from(selected),
       templateId: templateId || null,
+      ...(designed ? { designed: designPayload() } : {}),
     });
     setSendBusy(false);
     setConfirmOpen(false);
@@ -188,7 +218,8 @@ export function ComposeTab({
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Editor */}
-        <div className="space-y-4">
+        <div className="min-w-0 space-y-4">
+          <ModeToggle mode={kind} onChange={setKind} />
           <div className="space-y-1.5">
             <Label htmlFor="campaign-subject">Subject</Label>
             <Input
@@ -199,9 +230,33 @@ export function ComposeTab({
               placeholder="What this email is about"
             />
           </div>
+          {designed ? (
+            <>
+              <DesignedFields
+                idPrefix="campaign"
+                html={rawHtml}
+                onHtml={setRawHtml}
+                text={designText}
+                onText={setDesignText}
+                cleaned={cleaned}
+                htmlRef={htmlRef}
+              />
+              <div>
+                <p className="mb-1.5 type-small font-semibold">Add each person&apos;s name</p>
+                <div className="flex min-w-0 flex-wrap gap-2">
+                  {MERGE_FIELDS.filter((f) => f.key !== "email").map((f) => (
+                    <Button key={f.key} type="button" variant="outline" size="sm" onMouseDown={(e) => e.preventDefault()} onClick={() => insertField(f.key)}>
+                      {f.label}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
           <div className="space-y-2">
             <span className="text-sm font-semibold">How do you want to write it?</span>
-            <div role="radiogroup" aria-label="Email type" data-keep={v2 ? "" : undefined} className={v2 ? "grid grid-cols-3 gap-1 rounded-md border border-[var(--ds-card-line)] p-1" : "grid grid-cols-3 gap-1 rounded-xl border-2 border-foreground bg-card p-1"}>
+            <div role="radiogroup" aria-label="Email type" data-keep={v2 ? "" : undefined} className={v2 ? "grid grid-cols-2 gap-1 rounded-md border border-[var(--ds-card-line)] p-1" : "grid grid-cols-2 gap-1 rounded-xl border-2 border-foreground bg-card p-1"}>
               {MODES.map((m) => {
                 const Icon = m.icon;
                 const on = mode === m.id;
@@ -228,7 +283,7 @@ export function ComposeTab({
           </div>
           {mode === "formatted" ? (
             <RichEditor key={editorKey} id="campaign-rich" onChange={setRich} ariaLabel="Email message" />
-          ) : mode === "text" ? (
+          ) : (
             <div className="space-y-1.5">
               <Label htmlFor="campaign-text">Message</Label>
               <Textarea
@@ -240,22 +295,9 @@ export function ComposeTab({
                 className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-sm leading-relaxed"
               />
             </div>
-          ) : (
-            <div className="space-y-1.5">
-              <Label htmlFor="campaign-html" className="flex items-center gap-1.5">
-                <Terminal className="size-3.5 text-muted-foreground" aria-hidden />
-                Email HTML
-              </Label>
-              <Textarea
-                id="campaign-html"
-                value={rawHtml}
-                onChange={(e) => setRawHtml(e.target.value)}
-                rows={16}
-                spellCheck={false}
-                className="w-full rounded-md border-2 border-border bg-background px-3 py-2 font-mono text-xs leading-relaxed"
-              />
-              <p className="text-caption text-muted-foreground">Inline styles only, so it renders the same everywhere. A plain-text copy is made for you.</p>
-            </div>
+          )}
+
+            </>
           )}
 
           {/* Recipients */}
@@ -299,6 +341,15 @@ export function ComposeTab({
         </div>
 
         {/* Live preview: the whole point: verify before sending. */}
+        {designed ? (
+          <div className={cn("min-w-0 space-y-2", view === "desktop" && "lg:col-span-2")}>
+            <DesignedPreview subject={subject} cleaned={cleaned} vars={sampleVars} view={view} onView={setView} />
+            <p className="text-caption text-muted-foreground [overflow-wrap:anywhere]">
+              {firstPicked ? `Shown for ${firstPicked}. ` : ""}
+              {adminEmail ? `Test-sends go to ${adminEmail}.` : "Test-send is unavailable (no admin email on file)."}
+            </p>
+          </div>
+        ) : (
         <div className="space-y-1.5">
           <Label className="flex items-center gap-1.5">
             <Eye className="size-3.5 text-muted-foreground" aria-hidden />
@@ -316,6 +367,7 @@ export function ComposeTab({
             {adminEmail ? `Test-sends go to ${adminEmail}.` : "Test-send is unavailable (no admin email on file)."}
           </p>
         </div>
+        )}
       </div>
 
       {/* Confirm-before-send sheet */}
@@ -323,7 +375,7 @@ export function ComposeTab({
         open={confirmOpen}
         onOpenChange={setConfirmOpen}
         title="Send this email?"
-        description={`To ${selected.size} recipient${selected.size === 1 ? "" : "s"}: subject “${subject.trim() || "(no subject)"}”`}
+        description={`${designed ? "Designed email. " : ""}To ${selected.size} recipient${selected.size === 1 ? "" : "s"}: subject “${subject.trim() || "(no subject)"}”`}
         footer={
           <div className="flex flex-col gap-2">
             <Button type="button" onClick={runSend} disabled={sendBusy} className="w-full">

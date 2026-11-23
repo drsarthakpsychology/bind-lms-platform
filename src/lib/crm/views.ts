@@ -1,4 +1,5 @@
 import type { Person, StageId } from "./people";
+import { isEnrolled, keepEnrol, type EnrolFilter } from "./enrolment";
 
 /**
  * Pipeline quick views and filters. Pure, so the counts on the screen and the
@@ -41,6 +42,8 @@ export type PipelineFilters = {
   lastContact?: LastContact;
   /** Only people whose next follow-up is today or overdue (by tomorrow, as the Pipeline header counts it). */
   due?: boolean;
+  /** "Not enrolled yet" (no cohort, not paid) or "Enrolled". */
+  enrol?: EnrolFilter;
 };
 
 /** A follow-up is due: planned for before this time tomorrow. Same rule as the "follow-ups due" count. */
@@ -112,6 +115,7 @@ export function matchesFilters(p: Person, f: PipelineFilters, now: number): bool
   }
   if (f.lastContact && lastContactBucket(p, now) !== f.lastContact) return false;
   if (f.due && !followUpDue(p, now)) return false;
+  if (!keepEnrol(isEnrolled(p), f.enrol)) return false;
   return true;
 }
 
