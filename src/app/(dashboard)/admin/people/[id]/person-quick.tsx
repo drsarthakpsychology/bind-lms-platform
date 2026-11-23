@@ -50,7 +50,7 @@ export function PersonQuick({ p, canWrite, paymentReady, allowance }: { p: Perso
           title={`Email ${p.name}`}
           recipients={[{ key: p.email, name: p.name, email: p.email }]}
           allowance={allowance}
-          onSend={(subject, body) => emailPeople({ emails: [p.email], subject, body })}
+          onSend={(subject, body, designed) => emailPeople({ emails: [p.email], subject, body, designed })}
         />
       ) : null}
     </>

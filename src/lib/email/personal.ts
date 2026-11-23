@@ -6,6 +6,7 @@ import { emailConfigured, emailsSentToday } from "@/lib/certificates/server";
 import { isQuotaStop } from "./pace";
 import { escapeHtml, richToEmailHtml, textToHtml } from "./rich-html";
 import { mergeVars, planPersonal, renderMerge, type PersonalTarget } from "./personal-plan";
+import { fillDesigned } from "./designed-html";
 
 /**
  * Send one personal email to each person in a group, through the same Resend
@@ -30,13 +31,27 @@ export type PersonalReport = {
   queueFailed: boolean;
 };
 
-export type ComposeInput = { subject: string; body: string; templateId: string; sentBy: string; replyName?: string };
+/**
+ * A designed (HTML) email, already cleaned by prepareDesigned on the server.
+ * {{name}} and {{first_name}} are filled per person; the HTML is sent as
+ * designed, without the VIBHA shell.
+ */
+export type DesignedBody = { html: string; text: string };
+
+export type ComposeInput = { subject: string; body: string; templateId: string; sentBy: string; replyName?: string; designed?: DesignedBody };
 
 const nameOf = (t: PersonalTarget, email: string) => String(t.name ?? "").trim() || email;
 
 /** The subject, plain text and HTML for one person. */
-export function composeFor(t: PersonalTarget, subject: string, body: string): { subject: string; text: string; html: string } {
+export function composeFor(t: PersonalTarget, subject: string, body: string, designed?: DesignedBody): { subject: string; text: string; html: string } {
   const vars = mergeVars(t);
+  if (designed) {
+    return {
+      subject: fillDesigned(subject, vars, "text").replace(/[\r\n]+/g, " ").trim(),
+      text: fillDesigned(designed.text, vars, "text").trim(),
+      html: fillDesigned(designed.html, vars, "html"),
+    };
+  }
   const s = renderMerge(subject, vars).replace(/[\r\n]+/g, " ").trim();
   const text = renderMerge(body, vars).trim();
   return { subject: s, text, html: richToEmailHtml(textToHtml(text), { preheader: text.slice(0, 120) }) };
@@ -52,7 +67,7 @@ export async function sendPersonalEmails(admin: SupabaseClient, targets: Persona
 
   for (let i = 0; i < plan.send.length; i++) {
     const t = plan.send[i];
-    const m = composeFor(t, input.subject, input.body);
+    const m = composeFor(t, input.subject, input.body, input.designed);
     const res = await sendResendEmail(t.email, m.subject, m.text, m.html);
     if (!res.ok && isQuotaStop(res.error)) {
       // The provider says today is used up: everyone left waits.
@@ -83,7 +98,7 @@ export async function sendPersonalEmails(admin: SupabaseClient, targets: Persona
 
   if (wait.length) {
     const rows = wait.map((t) => {
-      const m = composeFor(t, input.subject, input.body);
+      const m = composeFor(t, input.subject, input.body, input.designed);
       return { recipient: t.email, name: String(t.name ?? "").trim() || null, subject: m.subject, template_id: input.templateId, status: "pending", sent_by: input.sentBy, body_text: m.text, html: m.html };
     });
     const { error } = await admin.from("email_sends").insert(rows);

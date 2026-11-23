@@ -7,8 +7,9 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { deriveName, generateCredential, issueSetupLink, sendCredentialEmails, sendResendEmail } from "@/lib/auth/roster";
 import { STAGE_LABEL, isStage, loadPeople } from "@/lib/crm/people";
 import { audit } from "@/lib/auth/audit";
-import { checkCompose, PERSONAL_LIMITS } from "@/lib/email/personal-plan";
+import { PERSONAL_LIMITS } from "@/lib/email/personal-plan";
 import { sendPersonalEmails, sendWaitingPersonal, type PersonalReport } from "@/lib/email/personal";
+import { checkSendBody, type DesignedInput } from "@/lib/email/designed-html";
 
 type Result = { error: string | null };
 const NO_REPORT: PersonalReport = { error: null, sent: [], queued: [], failed: [], noEmail: [], duplicates: 0, remainingToday: 0, queueFailed: false };
@@ -153,11 +154,11 @@ export async function sendInvite(email: string, name: string): Promise<{ error: 
  * addresses that are in the pipeline are emailed, whatever the page sends.
  * Shared sender and daily allowance; the rest wait in the queue.
  */
-export async function emailPeople(input: { emails: string[]; subject: string; body: string }): Promise<PersonalReport> {
+export async function emailPeople(input: { emails: string[]; subject: string; body: string; designed?: DesignedInput }): Promise<PersonalReport> {
   const me = await requireSuperAdmin();
   if (!me) return { ...NO_REPORT, error: "Only the Super Admin can send emails." };
-  const bad = checkCompose(input.subject, input.body);
-  if (bad) return { ...NO_REPORT, error: bad };
+  const ready = checkSendBody(input.subject, input.body, input.designed);
+  if ("error" in ready) return { ...NO_REPORT, error: ready.error };
   const want = new Set(input.emails.map(clean));
   if (!want.size) return { ...NO_REPORT, error: "Pick at least one person." };
   if (want.size > PERSONAL_LIMITS.recipients) return { ...NO_REPORT, error: `${PERSONAL_LIMITS.recipients} people at a time at most.` };
@@ -167,13 +168,13 @@ export async function emailPeople(input: { emails: string[]; subject: string; bo
   const report = await sendPersonalEmails(
     admin,
     people.map((p) => ({ email: p.email, name: p.name })),
-    { subject: input.subject, body: input.body, templateId: PIPELINE_TEMPLATE, sentBy: me.id },
+    { subject: input.subject, body: input.body, templateId: PIPELINE_TEMPLATE, sentBy: me.id, designed: ready.designed },
   );
   await audit(admin, {
     action: "pipeline.emailed",
     targetType: "crm",
     targetId: null,
-    details: { picked: people.length, sent: report.sent.length, queued: report.queued.length, failed: report.failed.length, subject: input.subject.trim().slice(0, 160) },
+    details: { picked: people.length, sent: report.sent.length, queued: report.queued.length, failed: report.failed.length, subject: input.subject.trim().slice(0, 160), designed: Boolean(ready.designed) },
     actor: me,
   }).catch(() => {});
   revalidatePath("/admin/people");

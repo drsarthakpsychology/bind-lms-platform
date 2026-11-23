@@ -382,8 +382,8 @@ export function ResponsesV2({
           allowance={allowance}
           extraFields={[{ key: "form", label: "Form name" }]}
           extraVars={{ form: form.title }}
-          onSend={async (subject, body) => {
-            const r = await emailFormRespondents({ formId: form.id, submissionIds: compose.ids, subject, body });
+          onSend={async (subject, body, designed) => {
+            const r = await emailFormRespondents({ formId: form.id, submissionIds: compose.ids, subject, body, designed });
             if (!r.error) setSelected(new Set());
             return r;
           }}

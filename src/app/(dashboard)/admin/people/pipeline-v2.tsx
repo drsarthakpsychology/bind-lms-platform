@@ -424,7 +424,7 @@ export function PipelineV2({
           }}
           recipients={groupOf(compose).map((p) => ({ key: p.email, name: p.name, email: p.email }))}
           allowance={allowance}
-          onSend={(subject, body) => emailPeople({ emails: compose, subject, body })}
+          onSend={(subject, body, designed) => emailPeople({ emails: compose, subject, body, designed })}
         />
       ) : null}
       {wa ? <WhatsAppLinks people={groupOf(wa)} onClose={() => setWa(null)} /> : null}

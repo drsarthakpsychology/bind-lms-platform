@@ -25,7 +25,7 @@ import { fakeDb, type FakeDb } from "@/lib/certificates/fake-db";
 let db: FakeDb;
 vi.mock("@/lib/supabase/server", () => ({ createAdminClient: () => db }));
 
-import { emailFormRespondents, sendWaitingFormEmails } from "./email-actions";
+import { emailFormRespondents, sendDesignedTest, sendWaitingFormEmails } from "./email-actions";
 
 const subs = [
   { id: "s1", created_at: "2026-11-14", name: "Aanya Rao", email: "aanya@example.com", phone: null, contact_id: null, responses: {} },
@@ -99,5 +99,66 @@ describe("Email the people who filled a form", () => {
     expect((await emailFormRespondents({ formId: "f1", submissionIds: "all", subject: "", body: "x" })).error).toBe("Add a subject line.");
     expect((await emailFormRespondents({ formId: "f1", submissionIds: ["nope"], subject: "Hi", body: "x" })).error).toBe("Pick at least one person.");
     expect(send).not.toHaveBeenCalled();
+  });
+});
+
+describe("Designed (HTML) email to the people who filled a form", () => {
+  const html = `<html><head><style>.b{color:#1d44d8}</style></head><body><table><tr><td class="b" onclick="x()">Hi {{first_name}}, from {{name}}</td></tr></table><img src="https://cdn.example.com/a.png" alt="Logo"><script>steal()</script><a href="javascript:alert(1)">bad</a></body></html>`;
+
+  it("cleans the design again on the server, personalises it per person and logs it", async () => {
+    const r = await emailFormRespondents({ formId: "f1", submissionIds: ["s1", "s2"], subject: "For {{first_name}}", body: "", designed: { html } });
+    expect(r.error).toBeNull();
+    expect(r.sent).toEqual(["Aanya Rao", "Dev Shah"]);
+    const [to, subject, text, sent] = send.mock.calls[1];
+    expect([to, subject]).toEqual(["dev@example.com", "For Dev"]);
+    expect(sent).toContain('<td class="b">Hi Dev, from Dev Shah</td>');
+    expect(sent).toContain("<style>.b{color:#1d44d8}</style>");
+    expect(sent).toContain('<img src="https://cdn.example.com/a.png" alt="Logo">');
+    expect(sent).not.toMatch(/script|onclick|javascript:/i);
+    expect(sent).not.toContain("VIBHA SCHOOL OF PSYCHOLOGY");
+    expect(text).toContain("Hi Dev, from Dev Shah");
+    expect(db.tables.email_sends.map((l) => [l.recipient, l.status, l.template_id])).toEqual([
+      ["aanya@example.com", "sent", "form:f1"],
+      ["dev@example.com", "sent", "form:f1"],
+    ]);
+    expect(db.tables.admin_audit_log[0].details).toMatchObject({ designed: true, sent: 2 });
+  });
+
+  it("uses the typed plain-text version, and puts a failed send in Failed emails", async () => {
+    send.mockResolvedValueOnce({ ok: false, error: "Mailbox does not exist" });
+    const r = await emailFormRespondents({ formId: "f1", submissionIds: ["s5"], subject: "Hi", body: "", designed: { html, text: "Hello {{first_name}}" } });
+    expect(r.failed).toEqual([{ name: "Meera Iyer", reason: "Mailbox does not exist" }]);
+    expect(send.mock.calls[0][2]).toBe("Hello Meera");
+    expect(db.tables.email_sends[0]).toMatchObject({ recipient: "meera@example.com", status: "failed" });
+  });
+
+  it("queues what is over today's allowance with the designed HTML kept", async () => {
+    vi.stubEnv("RESEND_DAILY_LIMIT", "1");
+    const r = await emailFormRespondents({ formId: "f1", submissionIds: "all", subject: "Hi", body: "", designed: { html } });
+    expect(r.queued).toEqual(["Dev Shah", "Meera Iyer"]);
+    const waiting = db.tables.email_sends.filter((l) => l.status === "pending");
+    expect(String(waiting[0].html)).toContain("Hi Dev, from Dev Shah");
+  });
+
+  it("refuses a view-only admin, empty or too big HTML, and sends nothing", async () => {
+    requireSuperAdmin.mockResolvedValueOnce(null);
+    expect((await emailFormRespondents({ formId: "f1", submissionIds: "all", subject: "Hi", body: "", designed: { html } })).error).toMatch(/Super Admin/);
+    expect((await emailFormRespondents({ formId: "f1", submissionIds: "all", subject: "Hi", body: "", designed: { html: " " } })).error).toMatch(/Paste the HTML/);
+    expect((await emailFormRespondents({ formId: "f1", submissionIds: "all", subject: "Hi", body: "", designed: { html: "x".repeat(500 * 1024) } })).error).toMatch(/400 KB/);
+    requireSuperAdmin.mockResolvedValueOnce(null);
+    expect((await sendDesignedTest({ subject: "Hi", designed: { html } })).error).toMatch(/Super Admin/);
+    expect(send).not.toHaveBeenCalled();
+  });
+
+  it("sends a test only to the signed-in Super Admin, filled in for the previewed person", async () => {
+    const r = await sendDesignedTest({ subject: "For {{first_name}}", designed: { html }, sample: { name: "Aanya Rao", email: "aanya@example.com" } });
+    expect(r).toEqual({ error: null, to: "owner@example.com" });
+    expect(send).toHaveBeenCalledTimes(1);
+    const [to, subject, , sent] = send.mock.calls[0];
+    expect(to).toBe("owner@example.com");
+    expect(subject).toBe("[Test] For Aanya");
+    expect(sent).toContain("Hi Aanya, from Aanya Rao");
+    expect(sent).not.toMatch(/script/i);
+    expect(db.tables.email_sends[0]).toMatchObject({ recipient: "owner@example.com", status: "sent", template_id: "test-email" });
   });
 });
